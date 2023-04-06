@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="user">
+	<select id="login" resultType="User">
+		SELECT * FROM user
+		WHERE id = #{id} AND passwd = PASSWORD(#{passwd})
+	</select>
+
+	<insert id="signup">
+		INSERT INTO user(id, passwd, name)
+		VALUES (#{id}, PASSWORD(#{passwd}), #{name})
+	</insert>
+	
+	<update id="getPoint">
+		UPDATE user SET point = point + #{point}
+		WHERE id = #{userId}
+	</update>
+	
+	
+	<select id="checkId" resultType="Integer">
+		SELECT COUNT(*) FROM user
+		WHERE id = #{id}
+	</select>
+</mapper>

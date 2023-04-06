@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="mannada">
+
+	<select id="total" resultType="Integer">
+		SELECT COUNT(*)
+		FROM mannada
+	</select>
+
+
+	<select id="list" resultType="Mannada">
+		SELECT @ROWNUM:=@ROWNUM+1 AS rnum, mannada.*
+		FROM (SELECT * FROM mannada ORDER BY id DESC) AS mannada,
+		 (SELECT @ROWNUM:=0) AS R
+		ORDER BY rnum DESC
+		LIMIT #{offset}, #{perPage}
+	</select>
+
+
+	<insert id="add">
+		INSERT INTO mannada (category, user_id, title, address, date, reg_date, content)
+		values (#{category}, #{userId}, #{title}, #{address}, #{date}, NOW(), #{content})
+
+		<selectKey keyColumn="id" keyProperty="id" resultType="Integer" order="AFTER">
+			SELECT LAST_INSERT_ID()
+		</selectKey>
+	</insert>
+
+
+	<select id="item" resultType="Mannada">
+		SELECT *
+		FROM mannada
+		WHERE id = #{id}
+	</select>
+
+
+	<update id="update">
+		UPDATE mannada
+		SET title = #{title}, content = #{content}
+		WHERE id = #{id}
+	</update>
+
+
+	<delete id="delete">
+		DELETE FROM mannada
+		WHERE id = #{id}
+	</delete>
+	
+	
+
+</mapper>
