@@ -4,6 +4,7 @@ import java.util.Date;
 
 public class Notice {
 	private int id;
+	private String mgrId;
 	private String title;
 	private Date regDate;
 	private String content;
@@ -14,6 +15,12 @@ public class Notice {
 	}
 	public void setId(int id) {
 		this.id = id;
+	}
+	public String getMgrId() {
+		return mgrId;
+	}
+	public void setMgrId(String mgrId) {
+		this.mgrId = mgrId;
 	}
 	public String getTitle() {
 		return title;
@@ -33,4 +40,5 @@ public class Notice {
 	public void setContent(String content) {
 		this.content = content;
 	}
+	
 }
