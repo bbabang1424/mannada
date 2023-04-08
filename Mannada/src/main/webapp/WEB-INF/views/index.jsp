@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>북북</title>
+<title></title>
 
 <link href="/resources/css/style.css" rel="stylesheet">
 
@@ -13,8 +13,8 @@
 <body>
 	<div class="container">
 		<div>
-			<a href="/userLogin">사용자 로그인</a>
-			<a href="/managerLogin">관리자 로그인</a>
+			<a href="/userLogin">사용자로그인</a>
+			<a href="/managerLogin">관리자로그인</a>
 			<a href="/signup">회원가입</a>
 			<a href="/logout">로그아웃</a>
 			<a href="/mypage">마이페이지</a>

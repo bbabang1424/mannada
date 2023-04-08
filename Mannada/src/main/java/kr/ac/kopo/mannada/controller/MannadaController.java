@@ -41,7 +41,7 @@ public class MannadaController {
 	}
 	
 	@PostMapping("/add")
-	public String add(Mannada item, @SessionAttribute User user) {
+	public String add(@SessionAttribute User user, Mannada item) {
 		
 		item.setUserId(user.getId());
 		service.add(item);
