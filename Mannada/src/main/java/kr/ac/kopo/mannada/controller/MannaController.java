@@ -11,25 +11,25 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.SessionAttribute;
 
-import kr.ac.kopo.mannada.model.Mannada;
+import kr.ac.kopo.mannada.model.Manna;
 import kr.ac.kopo.mannada.model.User;
 import kr.ac.kopo.mannada.pager.Pager;
-import kr.ac.kopo.mannada.service.MannadaService;
+import kr.ac.kopo.mannada.service.MannaService;
 
 @Controller
-@RequestMapping("/mannada")
-public class MannadaController {
-	final String path = "mannada/";
+@RequestMapping("/manna")
+public class MannaController {
+	final String path = "manna/";
 	
 	@Autowired
-	MannadaService service;
+	MannaService service;
 	
 	
 	@GetMapping("/list")
 	public String list(Model model, Pager pager	) {
 		pager.setPerPage(8);
 		
-		List<Mannada> list = service.list(pager);
+		List<Manna> list = service.list(pager);
 		model.addAttribute("list", list);
 		
 		return path + "list";
@@ -41,7 +41,7 @@ public class MannadaController {
 	}
 	
 	@PostMapping("/add")
-	public String add(@SessionAttribute User user, Mannada item) {
+	public String add(@SessionAttribute User user, Manna item) {
 		
 		item.setUserId(user.getId());
 		service.add(item);
@@ -52,14 +52,14 @@ public class MannadaController {
 	@GetMapping("/update/{id}")
 	public String update(@PathVariable int id, Model model) {
 		
-		Mannada item = service.item(id);
+		Manna item = service.item(id);
 		model.addAttribute("item", item);
 		
 		return path + "update";
 	}
 	
 	@PostMapping("/update/{id}")
-	public String update(@PathVariable int id, Mannada item) {
+	public String update(@PathVariable int id, Manna item) {
 		
 		item.setId(id);
 		service.update(item);
@@ -77,7 +77,7 @@ public class MannadaController {
 	@GetMapping("/detail/{id}")
 	public String detail(@PathVariable int id, Model model) {
 		
-		Mannada item = service.item(id);
+		Manna item = service.item(id);
 		model.addAttribute("item", item);
 		
 		return path + "detail";

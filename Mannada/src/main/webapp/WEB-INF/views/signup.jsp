@@ -20,7 +20,7 @@
 		</div>
 		<div>
 			<label>password</label>
-			<input type="password" name="passwd">
+			<input type="password" name="pw">
 		</div>
 		<div>
 			<button>signup</button>

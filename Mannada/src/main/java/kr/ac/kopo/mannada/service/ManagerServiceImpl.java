@@ -19,8 +19,9 @@ public class ManagerServiceImpl implements ManagerService {
 		Manager item = dao.login(manager);
 		
 		if(item != null) {
-			manager.setPasswd(null);
+			manager.setPw(item.getPw());
 			manager.setName(item.getName());
+			manager.setNickname(item.getNickname());
 			
 			return true;
 		} else

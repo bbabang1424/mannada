@@ -9,14 +9,14 @@
 	<typeAliases>
 		<typeAlias type="kr.ac.kopo.mannada.model.User" alias="User"/>
 		<typeAlias type="kr.ac.kopo.mannada.model.Manager" alias="Manager"/>
-		<typeAlias type="kr.ac.kopo.mannada.model.Mannada" alias="Mannada"/>
+		<typeAlias type="kr.ac.kopo.mannada.model.Manna" alias="Manna"/>
 		<typeAlias type="kr.ac.kopo.mannada.model.Notice" alias="Notice"/>
 	</typeAliases>
 	
 	<mappers>
 		<mapper resource="mybatis/user.xml" />	
 		<mapper resource="mybatis/manager.xml" />	
-		<mapper resource="mybatis/mannada.xml" />	
+		<mapper resource="mybatis/manna.xml" />	
 		<mapper resource="mybatis/notice.xml" />	
 	</mappers>
 </configuration>

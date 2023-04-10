@@ -18,9 +18,9 @@ public class UserServiceImpl implements UserService {
 		User item = dao.login(user);
 		
 		if(item != null) {
-			user.setPasswd(null);
+			user.setPw(null);
 			user.setName(item.getName());
-			user.setAddress(item.getAddress());
+			user.setNickname(item.getNickname());
 			
 			return true;
 		} else
@@ -29,8 +29,6 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	public void signup(User item) {
-		if(item.getName() == "")
-			item.setName(item.getId());
 		
 		dao.signup(item);
 	}

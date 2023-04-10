@@ -4,19 +4,13 @@
 <mapper namespace="user">
 	<select id="login" resultType="User">
 		SELECT * FROM user
-		WHERE id = #{id} AND passwd = PASSWORD(#{passwd})
+		WHERE id = #{id} AND pw = PASSWORD(#{pw})
 	</select>
 
 	<insert id="signup">
-		INSERT INTO user(id, passwd, name)
-		VALUES (#{id}, PASSWORD(#{passwd}), #{name})
-	</insert>
-	
-	<update id="getPoint">
-		UPDATE user SET point = point + #{point}
-		WHERE id = #{userId}
-	</update>
-	
+		INSERT INTO user(id, pw, name, reg_date)
+		VALUES (#{id}, PASSWORD(#{pw}), #{name}, NOW())
+	</insert>	
 	
 	<select id="checkId" resultType="Integer">
 		SELECT COUNT(*) FROM user

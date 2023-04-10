@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="mannada">
+<mapper namespace="manna">
 
 	<select id="total" resultType="Integer">
 		SELECT COUNT(*)
-		FROM mannada
+		FROM manna
 	</select>
 
 
-	<select id="list" resultType="Mannada">
-		SELECT @ROWNUM:=@ROWNUM+1 AS rnum, mannada.*
-		FROM (SELECT * FROM mannada ORDER BY id DESC) AS mannada,
+	<select id="list" resultType="Manna">
+		SELECT @ROWNUM:=@ROWNUM+1 AS rnum, manna.*
+		FROM (SELECT * FROM manna ORDER BY id DESC) AS manna,
 		 (SELECT @ROWNUM:=0) AS R
 		ORDER BY rnum DESC
 		LIMIT #{offset}, #{perPage}
@@ -19,7 +19,7 @@
 
 
 	<insert id="add">
-		INSERT INTO mannada (category, user_id, title, address, d_day, reg_date, content)
+		INSERT INTO manna (category, user_id, title, address, d_day, reg_date, content)
 		values (#{category}, #{userId}, #{title}, #{address}, #{dDay}, NOW(), #{content})
 
 		<selectKey keyColumn="id" keyProperty="id" resultType="Integer" order="AFTER">
@@ -28,22 +28,22 @@
 	</insert>
 
 
-	<select id="item" resultType="Mannada">
+	<select id="item" resultType="Manna">
 		SELECT *
-		FROM mannada
+		FROM manna
 		WHERE id = #{id}
 	</select>
 
 
 	<update id="update">
-		UPDATE mannada
+		UPDATE manna
 		SET category = #{category}, title = #{title}, address = #{address}, d_day = #{dDay}, content = #{content}
 		WHERE id = #{id}
 	</update>
 
 
 	<delete id="delete">
-		DELETE FROM mannada
+		DELETE FROM manna
 		WHERE id = #{id}
 	</delete>
 	

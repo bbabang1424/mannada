@@ -2,7 +2,7 @@ package kr.ac.kopo.mannada.model;
 
 import java.util.Date;
 
-public class Mannada {
+public class Manna {
 	
 	private int id;
 	private int category;

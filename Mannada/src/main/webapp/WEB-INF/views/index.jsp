@@ -17,12 +17,12 @@
 			<a href="/signup">회원가입</a>
 			<a href="/logout">로그아웃</a>
 			<a href="/mypage">마이페이지</a>
-			<a>${sessionScope.user.name }</a>
+			<a>${sessionScope.user.id }</a>
 		</div>
 
 		<div>
 			<ul>
-				<a href="/mannada/list"><li>만나다</li></a>
+				<a href="/manna/list"><li>만나다</li></a>
 				<a href="/community/list"><li>커뮤니티</li></a>
 				<li>공지사항
 					<ul>

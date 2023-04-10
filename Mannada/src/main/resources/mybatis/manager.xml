@@ -4,6 +4,6 @@
 <mapper namespace="manager">
 	<select id="login" resultType="Manager">
 		SELECT * FROM manager
-		WHERE id = #{id} AND passwd = PASSWORD(#{passwd})
+		WHERE id = #{id} AND pw = PASSWORD(#{pw})
 	</select>
 </mapper>

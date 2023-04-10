@@ -1,21 +1,29 @@
 package kr.ac.kopo.mannada.model;
 
+import java.util.Date;
+
 public class User {
 	private String id;
-	private String passwd;
+	private String pw;
 	private String name;
+	private String nickname;
 	private String address;
+	private String phone;
+	private String imgUrl;
+	private Date regDate;
+	
+	
 	public String getId() {
 		return id;
 	}
 	public void setId(String id) {
 		this.id = id;
 	}
-	public String getPasswd() {
-		return passwd;
+	public String getPw() {
+		return pw;
 	}
-	public void setPasswd(String passwd) {
-		this.passwd = passwd;
+	public void setPw(String pw) {
+		this.pw = pw;
 	}
 	public String getName() {
 		return name;
@@ -23,11 +31,35 @@ public class User {
 	public void setName(String name) {
 		this.name = name;
 	}
+	public String getNickname() {
+		return nickname;
+	}
+	public void setNickname(String nickname) {
+		this.nickname = nickname;
+	}
 	public String getAddress() {
 		return address;
 	}
 	public void setAddress(String address) {
 		this.address = address;
+	}
+	public String getPhone() {
+		return phone;
+	}
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
+	public String getImgUrl() {
+		return imgUrl;
+	}
+	public void setImgUrl(String imgUrl) {
+		this.imgUrl = imgUrl;
+	}
+	public Date getRegDate() {
+		return regDate;
+	}
+	public void setRegDate(Date regDate) {
+		this.regDate = regDate;
 	}
 	
 }

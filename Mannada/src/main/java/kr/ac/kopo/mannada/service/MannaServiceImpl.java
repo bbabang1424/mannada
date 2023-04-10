@@ -5,19 +5,19 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import kr.ac.kopo.mannada.dao.MannadaDao;
-import kr.ac.kopo.mannada.model.Mannada;
+import kr.ac.kopo.mannada.dao.MannaDao;
+import kr.ac.kopo.mannada.model.Manna;
 import kr.ac.kopo.mannada.pager.Pager;
 
 @Service
-public class MannadaServiceImpl implements MannadaService {
+public class MannaServiceImpl implements MannaService {
 	
 	@Autowired
-	MannadaDao dao;
+	MannaDao dao;
 	
 
 	@Override
-	public List<Mannada> list(Pager pager) {
+	public List<Manna> list(Pager pager) {
 		int total = dao.total(pager);
 
 		pager.setTotal(total);
@@ -27,7 +27,7 @@ public class MannadaServiceImpl implements MannadaService {
 
 
 	@Override
-	public void add(Mannada item) {
+	public void add(Manna item) {
 		if(item.getTitle() == "")
 			item.setTitle(null);
 		
@@ -36,13 +36,13 @@ public class MannadaServiceImpl implements MannadaService {
 
 
 	@Override
-	public Mannada item(int id) {
+	public Manna item(int id) {
 		return dao.item(id);
 	}
 
 
 	@Override
-	public void update(Mannada item) {
+	public void update(Manna item) {
 		if(item.getTitle() == "")
 			item.setTitle(null);
 		
