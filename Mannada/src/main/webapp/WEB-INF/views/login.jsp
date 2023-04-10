@@ -8,7 +8,27 @@
 </head>
 <body>
 <div>
-	<form method="post">
+<h3>사용자 로그인</h3>
+	<form method="post" action="userLogin">
+		<div>
+			<h3>login</h3>
+		</div>
+		<div>
+			<label>id</label>
+			<input type="text" name="id">
+		</div>
+		<div>
+			<label>password</label>
+			<input type="password" name="passwd">
+		</div>
+		<div>
+			<button>login</button>
+		</div>
+	</form>
+</div>
+<div>
+<h3>관리자 로그인</h3>
+	<form method="post" action="managerLogin">
 		<div>
 			<h3>login</h3>
 		</div>

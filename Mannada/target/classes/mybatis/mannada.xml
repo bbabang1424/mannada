@@ -19,8 +19,8 @@
 
 
 	<insert id="add">
-		INSERT INTO mannada (category, user_id, title, address, date, reg_date, content)
-		values (#{category}, #{userId}, #{title}, #{address}, #{date}, NOW(), #{content})
+		INSERT INTO mannada (category, user_id, title, address, d_day, reg_date, content)
+		values (#{category}, #{userId}, #{title}, #{address}, #{dDay}, NOW(), #{content})
 
 		<selectKey keyColumn="id" keyProperty="id" resultType="Integer" order="AFTER">
 			SELECT LAST_INSERT_ID()
@@ -37,7 +37,7 @@
 
 	<update id="update">
 		UPDATE mannada
-		SET title = #{title}, content = #{content}
+		SET category = #{category}, title = #{title}, address = #{address}, d_day = #{dDay}, content = #{content}
 		WHERE id = #{id}
 	</update>
 

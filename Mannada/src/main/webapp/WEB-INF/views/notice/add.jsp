@@ -24,10 +24,10 @@
 		<label>장소</label>
 		<input type="text" name="address">
 	</div>
-	<div>
+<!-- 	<div>
 		<label>날자</label>
-		<input type="date" name="dDay">
-	</div>
+		<input type="date" name="date">
+	</div> -->
 	<div>
 		<label>인원</label>
 		<input type="number" name="member">

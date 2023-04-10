@@ -11,25 +11,24 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.SessionAttribute;
 
-import kr.ac.kopo.mannada.model.Mannada;
-import kr.ac.kopo.mannada.model.User;
+import kr.ac.kopo.mannada.model.Manager;
+import kr.ac.kopo.mannada.model.Notice;
 import kr.ac.kopo.mannada.pager.Pager;
-import kr.ac.kopo.mannada.service.MannadaService;
+import kr.ac.kopo.mannada.service.NoticeService;
 
 @Controller
-@RequestMapping("/mannada")
-public class MannadaController {
-	final String path = "mannada/";
-	
+@RequestMapping("/notice")
+public class NoticeController {
+	final String path = "notice/";
+
 	@Autowired
-	MannadaService service;
+	NoticeService service;
 	
 	
 	@GetMapping("/list")
-	public String list(Model model, Pager pager	) {
-		pager.setPerPage(8);
+	public String list(Model model, Pager pager) {
 		
-		List<Mannada> list = service.list(pager);
+		List<Notice> list = service.list(pager);
 		model.addAttribute("list", list);
 		
 		return path + "list";
@@ -41,25 +40,25 @@ public class MannadaController {
 	}
 	
 	@PostMapping("/add")
-	public String add(@SessionAttribute User user, Mannada item) {
+	public String add(Notice item, @SessionAttribute Manager manager) {
 		
-		item.setUserId(user.getId());
+		item.setMgrId(manager.getId());
 		service.add(item);
 		
-		return "redirect:list";
+		return"redirect:list";
 	}
 	
 	@GetMapping("/update/{id}")
 	public String update(@PathVariable int id, Model model) {
 		
-		Mannada item = service.item(id);
+		Notice item = service.item(id);
 		model.addAttribute("item", item);
 		
 		return path + "update";
 	}
 	
 	@PostMapping("/update/{id}")
-	public String update(@PathVariable int id, Mannada item) {
+	public String update(@PathVariable int id, Notice item) {
 		
 		item.setId(id);
 		service.update(item);
@@ -67,20 +66,19 @@ public class MannadaController {
 		return "redirect:../list";
 	}
 	
-	@GetMapping("/delete/{id}")
+	@GetMapping("/delete({id}")
 	public String delete(@PathVariable int id) {
-		 service.delete(id);
-		 
-		 return "redirect:../list";
+		service.delete(id);
+		
+		return "redirect:../list";
 	}
 	
 	@GetMapping("/detail/{id}")
 	public String detail(@PathVariable int id, Model model) {
 		
-		Mannada item = service.item(id);
+		Notice item = service.item(id);
 		model.addAttribute("item", item);
 		
 		return path + "detail";
 	}
-
 }

@@ -34,10 +34,10 @@ public class RootController {
 	}
 
 	/* 로그인 */
-	@GetMapping("/userLogin")
-	public String userLogin() {
+	@GetMapping("/login")
+	public String login() {
 
-		return "userLogin";
+		return "login";
 	}
 
 	@PostMapping("/userLogin")
@@ -59,12 +59,6 @@ public class RootController {
 			return "redirect:.";
 	}
 	
-	
-	@GetMapping("/managerLogin")
-	public String managerLogin() {
-
-		return "managerLogin";
-	}
 
 	@PostMapping("/managerLogin")
 	public String userLogin(Manager manager, HttpSession session) {

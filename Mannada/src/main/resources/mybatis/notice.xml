@@ -20,8 +20,8 @@
 
 
 	<insert id="add">
-		INSERT INTO notice (member_id, title, reg_date, content)
-		values (#{memberId}, #{title}, NOW(), #{content})
+		INSERT INTO notice (mgr_id, title, reg_date, content)
+		values (#{mgrId}, #{title}, NOW(), #{content})
 
 		<selectKey keyColumn="id" keyProperty="id" resultType="Integer" order="AFTER">
 			SELECT LAST_INSERT_ID()
@@ -32,7 +32,7 @@
 	<select id="item" resultType="Notice">
 		SELECT notice.*, name
 		FROM (SELECT *, LAG(id) OVER (ORDER BY id) AS prevId, LEAD(id) OVER (ORDER BY id) AS nextId FROM notice) AS notice
-		LEFT OUTER JOIN member ON member_id = member.id
+		LEFT OUTER JOIN manager ON mgr_id = manager.id
 		WHERE notice.id = #{id}
 	</select>
 
@@ -52,7 +52,7 @@
 	
 	<sql id="search">
 		SELECT notice.*, name FROM notice
-		LEFT OUTER JOIN member ON member_id = member.id
+		LEFT OUTER JOIN manager ON mgr_id = manager.id
 		<where>
 			<if test="search == 1">
 				title LIKE CONCAT('%', #{keyword}, '%')
@@ -76,14 +76,14 @@
 
 	<!-- 북마크 -->
 	<insert id="addBookmark">
-		INSERT INTO bookmark(member_id, notice_id)
-		VALUES (#{memberId}, #{boardId})
+		INSERT INTO bookmark(mgr_id, notice_id)
+		VALUES (#{mgrId}, #{boardId})
 	</insert>
 
 
 	<delete id="deleteBookmark">
 		DELETE FROM bookmark
-		WHERE member_id = #{memberId} AND notice_id = #{boardId}
+		WHERE mgr_id = #{mgrId} AND notice_id = #{boardId}
 	</delete>
 
 </mapper>
