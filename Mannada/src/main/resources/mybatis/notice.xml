@@ -30,9 +30,9 @@
 
 
 	<select id="item" resultType="Notice">
-		SELECT notice.*, name
+		SELECT notice.*, nickname
 		FROM (SELECT *, LAG(id) OVER (ORDER BY id) AS prevId, LEAD(id) OVER (ORDER BY id) AS nextId FROM notice) AS notice
-		LEFT OUTER JOIN manager ON mgr_id = manager.id
+		LEFT OUTER JOIN manager ON notice.mgr_id = manager.id
 		WHERE notice.id = #{id}
 	</select>
 
@@ -51,8 +51,8 @@
 	
 	
 	<sql id="search">
-		SELECT notice.*, name FROM notice
-		LEFT OUTER JOIN manager ON mgr_id = manager.id
+		SELECT notice.*, nickname FROM notice
+		LEFT OUTER JOIN manager ON notice.mgr_id = manager.id
 		<where>
 			<if test="search == 1">
 				title LIKE CONCAT('%', #{keyword}, '%')
@@ -66,22 +66,16 @@
 		</where>
 	</sql>
 	
-	
-	<!-- 조회수 증가 -->
-	<update id="addViewcount">
-		UPDATE notice SET viewcount = viewcount + 1
-		WHERE id = #{id}
-	</update>
 
 
 	<!-- 북마크 -->
-	<insert id="addBookmark">
+	<insert id="bookmark_add">
 		INSERT INTO bookmark(mgr_id, notice_id)
 		VALUES (#{mgrId}, #{boardId})
 	</insert>
 
 
-	<delete id="deleteBookmark">
+	<delete id="bookmark_delete">
 		DELETE FROM bookmark
 		WHERE mgr_id = #{mgrId} AND notice_id = #{boardId}
 	</delete>

@@ -11,6 +11,7 @@
 		<typeAlias type="kr.ac.kopo.mannada.model.Manager" alias="Manager"/>
 		<typeAlias type="kr.ac.kopo.mannada.model.Manna" alias="Manna"/>
 		<typeAlias type="kr.ac.kopo.mannada.model.Notice" alias="Notice"/>
+		<typeAlias type="kr.ac.kopo.mannada.model.Community" alias="Community"/>
 	</typeAliases>
 	
 	<mappers>
@@ -18,5 +19,6 @@
 		<mapper resource="mybatis/manager.xml" />	
 		<mapper resource="mybatis/manna.xml" />	
 		<mapper resource="mybatis/notice.xml" />	
+		<mapper resource="mybatis/community.xml" />	
 	</mappers>
 </configuration>
