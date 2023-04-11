@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="question">
+
+	<select id="total" resultType="Integer">
+		SELECT COUNT(*)
+		FROM (<include refid="search"></include>) AS question
+	</select>
+
+
+	<select id="list" resultType="Question">
+		SELECT @ROWNUM:=@ROWNUM+1 AS rnum, question.*
+		FROM (<include refid="search"></include>
+			ORDER BY id DESC) AS question,
+		 (SELECT @ROWNUM:=0) AS R
+		ORDER BY rnum DESC
+		LIMIT #{offset}, #{perPage}
+	</select>
+
+
+	<insert id="add">
+		INSERT INTO question (num_id, title, reg_date, content)
+		values (#{num}, #{title}, NOW(), #{content})
+
+		<selectKey keyColumn="id" keyProperty="id" resultType="Integer" order="AFTER">
+			SELECT LAST_INSERT_ID()
+		</selectKey>
+	</insert>
+
+
+	<select id="item" resultType="Question">
+		SELECT question.*, nickname
+		FROM (SELECT *, LAG(id) OVER (ORDER BY id) AS prevId, LEAD(id) OVER (ORDER BY id) AS nextId FROM question) AS question
+		LEFT OUTER JOIN user ON question.num = user.num
+		WHERE question.id = #{id}
+	</select>
+
+
+	<update id="update">
+		UPDATE question
+		SET title = #{title}, content = #{content}
+		WHERE id = #{id}
+	</update>
+
+
+	<delete id="delete">
+		DELETE FROM question
+		WHERE id = #{id}
+	</delete>
+	
+	
+	<sql id="search">
+		SELECT question.*, nickname FROM question
+		LEFT OUTER JOIN user ON question.num = user.num
+		<where>
+			<if test="search == 1">
+				title LIKE CONCAT('%', #{keyword}, '%')
+			</if>
+			<if test="search == 2">
+				content LIKE CONCAT('%', #{keyword}, '%')
+			</if>
+			<if test="search == 3">
+				name LIKE CONCAT('%', #{keyword}, '%')
+			</if>
+		</where>
+	</sql>
+	
+	
+	<!-- 조회수 증가 -->
+	<update id="addViewcount">
+		UPDATE question SET viewcount = viewcount + 1
+		WHERE id = #{id}
+	</update>
+
+
+	<!-- 북마크 -->
+	<insert id="addBookmark">
+		INSERT INTO bookmark(num, question_id)
+		VALUES (#{num}, #{boardId})
+	</insert>
+
+
+	<delete id="deleteBookmark">
+		DELETE FROM bookmark
+		WHERE num = #{num} AND question_id = #{boardId}
+	</delete>
+
+</mapper>

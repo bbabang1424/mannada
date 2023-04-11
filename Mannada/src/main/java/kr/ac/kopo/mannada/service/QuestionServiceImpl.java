@@ -5,19 +5,19 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import kr.ac.kopo.mannada.dao.CommunityDao;
-import kr.ac.kopo.mannada.model.Community;
+import kr.ac.kopo.mannada.dao.QuestionDao;
+import kr.ac.kopo.mannada.model.Question;
 import kr.ac.kopo.mannada.pager.Pager;
 
 @Service
-public class CommunityServiceImpl implements CommunityService {
+public class QuestionServiceImpl implements QuestionService {
 	
 	@Autowired
-	CommunityDao dao;
+	QuestionDao dao;
 	
 
 	@Override
-	public List<Community> list(Pager pager) {
+	public List<Question> list(Pager pager) {
 		
 		int total = dao.total(pager);
 		pager.setTotal(total);
@@ -26,7 +26,7 @@ public class CommunityServiceImpl implements CommunityService {
 	}
 
 	@Override
-	public void add(Community item) {
+	public void add(Question item) {
 		
 		if(item.getTitle() == "")
 			item.setTitle(null);
@@ -35,12 +35,13 @@ public class CommunityServiceImpl implements CommunityService {
 	}
 
 	@Override
-	public Community item(int id) {
+	public Question item(int id) {
 		return dao.item(id);
 	}
 
 	@Override
-	public void update(Community item) {
+	public void update(Question item) {
+
 		
 		if(item.getTitle() == "")
 			item.setTitle(null);
