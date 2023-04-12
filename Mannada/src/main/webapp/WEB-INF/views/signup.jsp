@@ -16,7 +16,8 @@
 
 		<div>
 			<label>id</label>
-			<input type="text" name="id">
+			<input type="email" name="id">
+			<button>check</button>
 		</div>
 		<div>
 			<label>password</label>
