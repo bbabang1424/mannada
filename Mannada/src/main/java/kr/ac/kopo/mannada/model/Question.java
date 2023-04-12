@@ -2,15 +2,18 @@ package kr.ac.kopo.mannada.model;
 
 import java.util.Date;
 
-public class Notice {
+public class Question {
 	private int id;
-	private String mgrId;
+	private int num;
 	private String title;
 	private Date regDate;
 	private String content;
+	private int viewpoint;
 	
 	private String nickname;
 
+	
+	
 	public int getId() {
 		return id;
 	}
@@ -19,12 +22,12 @@ public class Notice {
 		this.id = id;
 	}
 
-	public String getMgrId() {
-		return mgrId;
+	public int getNum() {
+		return num;
 	}
 
-	public void setMgrId(String mgrId) {
-		this.mgrId = mgrId;
+	public void setNum(int num) {
+		this.num = num;
 	}
 
 	public String getTitle() {
@@ -51,6 +54,14 @@ public class Notice {
 		this.content = content;
 	}
 
+	public int getViewpoint() {
+		return viewpoint;
+	}
+
+	public void setViewpoint(int viewpoint) {
+		this.viewpoint = viewpoint;
+	}
+
 	public String getNickname() {
 		return nickname;
 	}
@@ -58,5 +69,4 @@ public class Notice {
 	public void setNickname(String nickname) {
 		this.nickname = nickname;
 	}
-	
 }
