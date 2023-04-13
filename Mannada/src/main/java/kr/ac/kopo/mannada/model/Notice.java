@@ -10,6 +10,17 @@ public class Notice {
 	private String content;
 	
 	private String nickname;
+	
+	private int rnum;
+	
+
+	public int getRnum() {
+		return rnum;
+	}
+
+	public void setRnum(int rnum) {
+		this.rnum = rnum;
+	}
 
 	public int getId() {
 		return id;

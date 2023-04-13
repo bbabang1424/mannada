@@ -6,6 +6,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import kr.ac.kopo.mannada.model.Answer;
 import kr.ac.kopo.mannada.model.Question;
 import kr.ac.kopo.mannada.pager.Pager;
 
@@ -44,6 +45,16 @@ public class QuestionDaoImpl implements QuestionDao {
 	@Override
 	public void delete(int id) {
 		sql.delete("question.delete", id);
+	}
+
+	@Override
+	public void addAnswer(Answer item) {
+		sql.insert("question.add_answer", item);
+	}
+
+	@Override
+	public void changeStatus(int questionId) {
+		sql.update("question.change_status", questionId);
 	}
 
 }

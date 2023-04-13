@@ -18,9 +18,19 @@ public class Manna {
 	
 	private String name;
 	private String category_;
+	
+	private int rnum;
 
 	
 	
+	public int getRnum() {
+		return rnum;
+	}
+
+	public void setRnum(int rnum) {
+		this.rnum = rnum;
+	}
+
 	public int getId() {
 		return id;
 	}

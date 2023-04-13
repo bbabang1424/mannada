@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import kr.ac.kopo.mannada.dao.QuestionDao;
+import kr.ac.kopo.mannada.model.Answer;
 import kr.ac.kopo.mannada.model.Question;
 import kr.ac.kopo.mannada.pager.Pager;
 
@@ -52,6 +53,12 @@ public class QuestionServiceImpl implements QuestionService {
 	@Override
 	public void delete(int id) {
 		dao.delete(id);
+	}
+
+	@Override
+	public void addAnswer(Answer item) {
+		dao.addAnswer(item);
+		dao.changeStatus(item.getQuestionId());
 	}
 
 }

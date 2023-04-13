@@ -64,7 +64,7 @@ public class RootController {
 	public String userLogin(Manager manager, HttpSession session) {
 		
 		if (managerService.login(manager)) {
-			session.setAttribute("user", manager);
+			session.setAttribute("manager", manager);
 
 			String targetUrl = (String) session.getAttribute("target_url");
 			System.out.println("RootController: " + targetUrl);

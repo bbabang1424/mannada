@@ -20,7 +20,7 @@
 
 
 	<insert id="add">
-		INSERT INTO question (num_id, title, reg_date, content)
+		INSERT INTO question (num, title, reg_date, content)
 		values (#{num}, #{title}, NOW(), #{content})
 
 		<selectKey keyColumn="id" keyProperty="id" resultType="Integer" order="AFTER">
@@ -67,23 +67,15 @@
 	</sql>
 	
 	
-	<!-- 조회수 증가 -->
-	<update id="addViewcount">
-		UPDATE question SET viewcount = viewcount + 1
-		WHERE id = #{id}
-	</update>
-
-
-	<!-- 북마크 -->
-	<insert id="addBookmark">
-		INSERT INTO bookmark(num, question_id)
-		VALUES (#{num}, #{boardId})
+	<insert id="add_answer">
+		INSERT INTO answer (question_id, mgr_id, reg_date, content)
+		VALUES (#{questionId}, #{mgrId}, NOW(), #{content})
 	</insert>
-
-
-	<delete id="deleteBookmark">
-		DELETE FROM bookmark
-		WHERE num = #{num} AND question_id = #{boardId}
-	</delete>
+	
+	<update id="change_status">
+		UPDATE question
+		SET status = 1
+		WHERE id = #{questionId}
+	</update>
 
 </mapper>

@@ -18,6 +18,7 @@
 			<a href="/logout">로그아웃</a>
 			<a href="/mypage">마이페이지</a>
 			<a>${sessionScope.user.id }</a>
+			<a>${sessionScope.manager.id }</a>
 		</div>
 
 		<div>

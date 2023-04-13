@@ -13,14 +13,15 @@
 		<typeAlias type="kr.ac.kopo.mannada.model.Notice" alias="Notice"/>
 		<typeAlias type="kr.ac.kopo.mannada.model.Community" alias="Community"/>
 		<typeAlias type="kr.ac.kopo.mannada.model.Question" alias="Question"/>
+		<typeAlias type="kr.ac.kopo.mannada.model.Answer" alias="Answer"/>
 	</typeAliases>
 	
 	<mappers>
-		<mapper resource="mybatis/user.xml" />	
-		<mapper resource="mybatis/manager.xml" />	
-		<mapper resource="mybatis/manna.xml" />	
-		<mapper resource="mybatis/notice.xml" />	
-		<mapper resource="mybatis/community.xml" />	
-		<mapper resource="mybatis/question.xml" />	
+		<mapper resource="mybatis/user.xml" />
+		<mapper resource="mybatis/manager.xml" />
+		<mapper resource="mybatis/manna.xml" />
+		<mapper resource="mybatis/notice.xml" />
+		<mapper resource="mybatis/community.xml" />
+		<mapper resource="mybatis/question.xml" />
 	</mappers>
 </configuration>

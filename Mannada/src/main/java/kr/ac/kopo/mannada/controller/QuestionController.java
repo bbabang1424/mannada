@@ -11,15 +11,17 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.SessionAttribute;
 
+import kr.ac.kopo.mannada.model.Answer;
+import kr.ac.kopo.mannada.model.Manager;
 import kr.ac.kopo.mannada.model.Question;
 import kr.ac.kopo.mannada.model.User;
 import kr.ac.kopo.mannada.pager.Pager;
 import kr.ac.kopo.mannada.service.QuestionService;
 
 @Controller
-@RequestMapping("/QnA")
+@RequestMapping("/qna")
 public class QuestionController {
-	final String path = "QnA/";
+	final String path = "qna/";
 	
 	@Autowired
 	QuestionService service;
@@ -78,8 +80,19 @@ public class QuestionController {
 	public String detail(@PathVariable int id, Model model) {
 		
 		Question item = service.item(id);
-		model.addAttribute("item", item);
+		model.addAttribute("question", item);
 		
 		return path + "detail";
 	}
+	
+	@PostMapping("/addAnswer")
+	public String addAnswer(@SessionAttribute Manager manager, Answer item) {
+		
+		item.setMgr_id(manager.getId());
+		service.addAnswer(item);
+		
+
+		return "redirect:detail" + item.getQuestionId();
+	}
+	
 }
