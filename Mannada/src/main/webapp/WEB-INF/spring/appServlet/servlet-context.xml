@@ -24,5 +24,7 @@
 	<context:component-scan base-package="kr.ac.kopo" />
 	
 	
+	<!-- 트랜젝션 -->
+	<tx:annotation-driven/>
 	
 </beans:beans>

@@ -88,11 +88,11 @@ public class QuestionController {
 	@PostMapping("/addAnswer")
 	public String addAnswer(@SessionAttribute Manager manager, Answer item) {
 		
-		item.setMgr_id(manager.getId());
+		item.setMgrId(manager.getId());
 		service.addAnswer(item);
 		
 
-		return "redirect:detail" + item.getQuestionId();
+		return "redirect:detail/" + item.getQuestionId();
 	}
 	
 }

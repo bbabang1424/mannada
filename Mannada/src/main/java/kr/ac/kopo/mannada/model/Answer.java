@@ -5,7 +5,7 @@ import java.util.Date;
 public class Answer {
 	private int id;
 	private int questionId;
-	private String mgr_id;
+	private String mgrId;
 	private Date regDate;
 	private String content;
 	
@@ -22,11 +22,11 @@ public class Answer {
 	public void setQuestionId(int questionId) {
 		this.questionId = questionId;
 	}
-	public String getMgr_id() {
-		return mgr_id;
+	public String getMgrId() {
+		return mgrId;
 	}
-	public void setMgr_id(String mgr_id) {
-		this.mgr_id = mgr_id;
+	public void setMgrId(String mgrId) {
+		this.mgrId = mgrId;
 	}
 	public Date getRegDate() {
 		return regDate;
@@ -40,5 +40,5 @@ public class Answer {
 	public void setContent(String content) {
 		this.content = content;
 	}
-
+	
 }
