@@ -25,6 +25,6 @@
 	
 	
 	<!-- 트랜젝션 -->
-	<tx:annotation-driven/>
+	<!-- <tx:annotation-driven/> -->
 	
 </beans:beans>
