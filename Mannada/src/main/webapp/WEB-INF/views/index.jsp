@@ -17,10 +17,11 @@
 			<li><a href="/logout">로그아웃</a></li>
 			<li><a href="/mypage">마이페이지</a></li>
 			<li><a>${sessionScope.user.name }</a></li>
+			<li><a>${sessionScope.manager.id }</a><li>
 		</ul>
 	
 		<ul> 
-			<a href="/mannada/list"><li>만나다</li></a>
+			<a href="/manna/list"><li>만나다</li></a>
 			<a href="/community/list"><li>커뮤니티</li></a>
 			<li>공지사항
 				<ul>
@@ -36,8 +37,9 @@
 			<a href="/mannada/category"><li>카테고리</li></a>
 			<a href="/mannada/category"><li>카테고리</li></a>
 			<a href="/mannada/category"><li>카테고리</li></a>
-			<p><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></p>
 		</ul>
-	</div> 
+	</div>
+	
+<jsp:include page="footer.jsp"></jsp:include>
 </body>
 </html>

@@ -4,9 +4,14 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title></title>
+<jsp:include page="header.jsp"></jsp:include>
+<link href="/resources/css/style.css" rel="stylesheet">
 </head>
 <body>
 
+<p>마이페이지</p>
+
+<jsp:include page="footer.jsp"></jsp:include>
 </body>
 </html>
