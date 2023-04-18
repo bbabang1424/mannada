@@ -21,6 +21,14 @@
 	<div>
 		<h3>list</h3>
 	</div>
+	<div id="sign_up_out">
+		<button class="sign_up_in">
+			<a href="add"><i class="bi bi-check"></i>글 등록</a>
+		</button>
+	</div>
+	
+	<a href="../">이전</a>
+	
 		<c:if test="${list.size() < 1 }">
 			<div>등록 된 게시글이 없습니다.</div>
 		</c:if>
@@ -54,11 +62,6 @@
 			</div>
 		</c:forEach>
 	</section>
-	<div id="sign_up_out">
-		<button class="sign_up_in">
-			<a href="add"><i class="bi bi-check"></i>글 등록</a>
-		</button>
-		<a href="../">이전</a>
-	</div>
+
 </body>
 </html>
