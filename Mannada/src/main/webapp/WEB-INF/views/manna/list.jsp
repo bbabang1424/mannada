@@ -8,9 +8,11 @@
 <meta charset="UTF-8">
 
 <title>만나다 리스트</title>
-<%-- <jsp:include page="header.jsp"></jsp:include>--%>
+   <jsp:include page="../header.jsp"></jsp:include> 
 <link rel="stylesheet" href="/resources/css/list.css">
 <link rel="stylesheet" href="/resources/js/list.js">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">
+
 
 </head>
 <body>
@@ -30,25 +32,24 @@
 					</div>
 				</div>
 
-				<div>
-					
-						<div class="title"><h3>${item.title }</h3></div>
-					
+				<div class="title">
+						<h5><strong>${item.title }</strong></h5>
 				</div>
+				 <div class="line"></div>
+				
 				<div class="interval">
-					<h4>
+					
 						<i class="bi bi-check"></i>${item.address}
-					</h4>
+				
 				</div>
 				<div class="interval">
-					<span><i class="bi bi-check"></i>${item.dDay}</span>
-				</div>
+					<i class="bi bi-check"></i>만나는 날: ${item.dDay} 
+					<%--<fmt:formatDate value="${item.regDate}" pattern="yyyy-MM-dd"/>--%>				</div>
 				<div class="interval">
-					<i class="bi bi-check"></i>${item.num }
+					<i class="bi bi-check"></i>인원: (${item.num })
 				</div>
 
 				<div id="gauge_bar">
-
 					<span class="gauge"><em></em></span>
 				</div>
 			</div>
@@ -60,30 +61,5 @@
 		</button>
 		<a href="../">이전</a>
 	</div>
-
-	<%-- <div>
-			<div>
-				<c:if test="${list.size() < 1 }">
-					<div>등록 된 게시글이 없습니다.</div>
-				</c:if>
-
-				<ul>
-					<c:forEach var="item" items="${list }">
-						<li>
-							<div>
-								<p>${item.category }</p>
-								<p>${item.title }</p>
-								<p>${item.userId }</p>
-								<a href="update/${item.id }">변경</a> <a href="delete/${item.id }">삭제</a>
-							</div>
-						</li>
-					</c:forEach>
-				</ul>
-			</div>
-
-			<div>
-				 <a href="../">이전</a>
-			</div>
-		</div> --%>
 </body>
 </html>

@@ -1,117 +1,115 @@
 @charset "UTF-8";
 
 * {
-    margin: 0;
-    padding: 0;
-    text-decoration: none;
-    color: unset;
-    font-family: 'Noto sans';
+	margin: 0;
+	padding: 0;
+	color: unset;
+	text-decoration: none;
+	font-family: 'Noto Sans KR';
 }
 
 .content {
-    max-width: 1200px;
-    margin: 5% auto;
+	max-width: 1200px;
+	margin: 5% auto;
 }
 
 .card {
-    border: 2px solid #D3D3D3;  
-    display: inline-block;
-    width: 250px;
-    height: 200px;
-    padding: 10px;
-    margin: 10px; 
-    
-    /* border-radius: 10%; */
-
-
-}
-.card:hover{
-    border-color: #0359d9;
-}
-/* .card div> h3:hover{
-    border-color: rgb(152, 152, 232);
-} */
-
-
-.interval{
-    margin-top: 12px;   
-    margin-left: 12px;
-}
-
-p{
-    font-size:20px;
-    position:absolute;
-    right:0;
-    top:-90px;
-}
-
-#gauge_bar{
-    width: 220px;
-    height: 10px;
-    background: #ccc;
-    margin-top: 15px;
-    margin-bottom: 10px;
-    margin-left: 10px;
-    border-radius: 50px;
+	border: 2px solid #D3D3D3;
+	display: inline-block;
+	width: 250px;
+	height: 210px;
+	padding: 10px;
+	margin: 10px;
     position: relative;
+
 }
 
-.gauge{
-    display:block;
-    width:80%;
-    height:10px;
-    border-radius:100px;
-    background:#0359d9;
-    
-    
-    animation-name:gauge;
-    animation-duration:2s;
-    animation-timing-function:linear;
-    animation-fill-mode:forwards;
+.card:hover {
+	border-color: #0359d9;
 }
 
-@keyframes gauge{
-    0%{width:0;}
-    100%{width:69%;}
+.interval {
+	margin-top: 5px;
+	margin-left: 8px;
+	position: inherit;
 }
 
+p {
+	font-size: 20px;
+	position: absolute;
+	right: 0;
+	top: -90px;
+}
 
-
-
-div > .gauge_bar > div:first-child {
+#gauge_bar {
+	width: 220px;
+	height: 10px;
+	background: #ccc;
+    margin-top: 9px;
     margin-bottom: 10px;
-    margin-top: 18px;
-}
-#sign_up_out{
-    text-align: right;
-}
-.sign_up_in{
-  width: 7em;
-  height: 2.5em;
-  margin:10em;
-  background-color: #555555;
-  color: white;
-  
+    margin-left: 4px;
+	border-radius: 50px;
+	position: absolute;
 }
 
-.Category{
- text-align: right;
- margin: 5px;
- color: #09080866;
-
-
-    
+.gauge {
+	display: block;
+	width: 80%;
+	height: 10px;
+	border-radius: 100px;
+	background: #0359d9;
+	animation-name: gauge;
+	animation-duration: 2s;
+	animation-timing-function: linear;
+	animation-fill-mode: forwards;
 }
 
-.card div> h3{
-    border-bottom:  solid 1.5px;
-    
-    border-color: #D3D3D3 ;
-    width: 250px;
-    
+@keyframes gauge { 0%{
+	width: 0;
 }
 
-.title{
-    margin-bottom:5px ;
-    padding-left: 12px;
+100%
+{
+width
+:
+69%;
 }
+}
+div>.gauge_bar>div:first-child {
+	margin-bottom: 10px;
+	margin-top: 18px;
+}
+
+#sign_up_out {
+	text-align: right;
+}
+
+.sign_up_in {
+	width: 7em;
+	height: 2.5em;
+	margin: 10em;
+	background-color: #555555;
+	color: white;
+}
+
+.Category {
+	text-align: right;
+	margin: 5px;
+	color: #09080866;
+}
+
+
+.title {
+	margin-bottom: 17px;
+	padding-left: 12px;
+    position: inherit;
+}
+.line{
+	width: 214px;
+    border: 1px solid;
+    border-color: #ccc;
+    position: absolute;
+    top: 36%;
+    left: 7%;
+}
+
