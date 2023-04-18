@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="chat">
+	<select id="manna_list" resultType="Manna">
+		SELECT category, title, d_day
+		FROM manna
+		WHERE num = #{num}
+	</select>
+	
+	<select id="chat_list" resultType="Chat">
+		SELECT *
+		FROM chatmessage
+		WHERE manna_id = #{mannaId}
+	</select>
+
+	<insert id="signup">
+		INSERT INTO chatmessage(manna_id, num, content, reg_date)
+		VALUES (#{mannaId}, #{num}, #{content}, NOW())
+		
+		<selectKey keyColumn="id" keyProperty="id" resultType="Integer" order="AFTER">
+			SELECT LAST_INSERT_ID()
+		</selectKey>
+	</insert>
+</mapper>
