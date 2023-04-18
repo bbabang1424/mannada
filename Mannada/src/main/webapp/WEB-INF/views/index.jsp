@@ -20,7 +20,7 @@
 		</ul>
 	
 		<ul> 
-			<a href="/mannada/list"><li>만나다</li></a>
+			<a href="/manna/list"><li>만나다</li></a>
 			<a href="/community/list"><li>커뮤니티</li></a>
 			<li>공지사항
 				<ul>

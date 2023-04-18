@@ -43,7 +43,7 @@ public class MannaController {
 	@PostMapping("/add")
 	public String add(@SessionAttribute User user, Manna item) {
 		
-		item.setUserId(user.getId());
+		item.setNum(user.getNum());
 		service.add(item);
 		
 		return "redirect:list";

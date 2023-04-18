@@ -6,7 +6,7 @@ public class Manna {
 	
 	private int id;
 	private int category;
-	private String userId;
+	private int num;
 	private int status;
 	private String title;
 	private String address;
@@ -20,16 +20,8 @@ public class Manna {
 	private String category_;
 	
 	private int rnum;
-
 	
 	
-	public int getRnum() {
-		return rnum;
-	}
-
-	public void setRnum(int rnum) {
-		this.rnum = rnum;
-	}
 
 	public int getId() {
 		return id;
@@ -47,12 +39,12 @@ public class Manna {
 		this.category = category;
 	}
 
-	public String getUserId() {
-		return userId;
+	public int getNum() {
+		return num;
 	}
 
-	public void setUserId(String userId) {
-		this.userId = userId;
+	public void setNum(int num) {
+		this.num = num;
 	}
 
 	public int getStatus() {
@@ -134,6 +126,13 @@ public class Manna {
 	public void setCategory_(String category_) {
 		this.category_ = category_;
 	}
-	
+
+	public int getRnum() {
+		return rnum;
+	}
+
+	public void setRnum(int rnum) {
+		this.rnum = rnum;
+	}
 	
 }

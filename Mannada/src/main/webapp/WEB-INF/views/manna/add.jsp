@@ -34,7 +34,7 @@
 	</div>
 	<div>
 		<label>내용</label>
-		<textarea rows="10" cols="30"></textarea>
+		<textarea rows="10" cols="30" name="content"></textarea>
 	</div>
 	
 	<div>
