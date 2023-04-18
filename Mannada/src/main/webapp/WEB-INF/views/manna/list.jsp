@@ -38,7 +38,6 @@
 				 <div class="line"></div>
 				
 				<div class="interval">
-					
 						<i class="bi bi-check"></i>${item.address}
 				
 				</div>
