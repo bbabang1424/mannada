@@ -22,7 +22,7 @@ li { list-style:none; }
 
 #header li { display:inline-block;}
 
-.max-width { position: relative; max-width: 1024px; margin: 0 auto; }
+.max-width { position: relative; max-width: 1200px; margin: 0 auto; }
 .flex {display: flex; align-items:center;}
 .flex-end {margin-left: auto!important; display: inline-flex; align-items: center;}
 
@@ -38,7 +38,7 @@ li { list-style:none; }
 .login button {
 	width: 90px;
     height: 35px;
-    background-color: #004fff;
+    background-color: #0359d9;
     border: none;
     color: white;
     border-radius: 20px;
@@ -100,7 +100,7 @@ li { list-style:none; }
 			<div class="flex-end">
 				<div class="menu">
 					<ul>
-						<li><a href="/mannada/list">만나다</a></li>
+						<li><a href="/manna/list">만나다</a></li>
 						<li><a href="/community/list">커뮤니티</a></li>
 						<li><a href="/notice/list">공지사항</a></li>
 					</ul>
