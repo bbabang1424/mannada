@@ -31,13 +31,7 @@
 			</li>
 		</ul>
 				
-		<ul>
-			<a href="/mannada/category"><li>카테고리</li></a>
-			<a href="/mannada/category"><li>카테고리</li></a>
-			<a href="/mannada/category"><li>카테고리</li></a>
-			<a href="/mannada/category"><li>카테고리</li></a>
-			<a href="/mannada/category"><li>카테고리</li></a>
-		</ul>
+		<a href="/chat/list">chat</a>
 	</div>
 	
 <jsp:include page="footer.jsp"></jsp:include>

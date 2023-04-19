@@ -1,5 +1,6 @@
 package kr.ac.kopo.mannada.controller;
 
+import java.util.HashMap;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +16,7 @@ import kr.ac.kopo.mannada.model.Manna;
 import kr.ac.kopo.mannada.model.User;
 import kr.ac.kopo.mannada.pager.Pager;
 import kr.ac.kopo.mannada.service.MannaService;
+import kr.ac.kopo.mannada.service.UserService;
 
 @Controller
 @RequestMapping("/manna")
@@ -24,10 +26,13 @@ public class MannaController {
 	@Autowired
 	MannaService service;
 	
+	@Autowired
+	UserService userService;
+	
 	
 	@GetMapping("/list")
 	public String list(Model model, Pager pager	) {
-		pager.setPerPage(8);
+		pager.setPerPage(12);
 		
 		List<Manna> list = service.list(pager);
 		model.addAttribute("list", list);
@@ -45,6 +50,11 @@ public class MannaController {
 		
 		item.setNum(user.getNum());
 		service.add(item);
+		
+		HashMap<String, Object> map = new HashMap<>();
+		map.put("mannaId", item.getId());
+		map.put("num", user.getNum());
+		userService.addPartner(map);
 		
 		return "redirect:list";
 	}
