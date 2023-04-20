@@ -17,4 +17,8 @@ public interface MannaService {
 
 	void delete(int id);
 
+	void dummy();
+
+	void init();
+
 }
