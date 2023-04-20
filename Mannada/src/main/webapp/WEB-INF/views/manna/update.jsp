@@ -1,46 +1,72 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>글 변경</title>
+
+<jsp:include page="../header.jsp"></jsp:include>
 </head>
 <body>
-<form method="post">
-	<div>
-		<label>카테고리</label>
-		<input type="radio" name="category" value="1" ${item.category == 1 ? 'checked' : '' }>공동구매 
-		<input type="radio" name="category" value="2" ${item.category == 2 ? 'checked' : '' }>운동 
-		<input type="radio" name="category" value="3" ${item.category == 3 ? 'checked' : '' }>게임
-		<input type="radio" name="category" value="4" ${item.category == 4 ? 'checked' : '' }>식사 
-		<input type="radio" name="category" value="5" ${item.category == 5 ? 'checked' : '' }>기타 
+	<div class="container">
+		<div>
+			<h3>글 등록</h3>
+		</div>
+		<div>
+			<form method="post" class="row g-4">
+				<div class="col-md-3">
+					<label for="id" class="form-label">제품번호</label>
+					<input id="id"  class="form-control" name="id" type="number" value="${item.id}" readonly>
+				</div>
+				
+				<div class="col-md-9">
+					<label for="title" class="form-label">제목</label>
+					<input id="title"  class="form-control" name="title" type="text" value="${item.title}">
+				</div>
+				
+				<div class="col-md-4">
+					<label for="category" class="form-label">카테고리</label>
+					<select id="category" class="form-select" name="category">
+						<option value="1" ${item.category==1?"selected":""}>공동구매</option>
+						<option value="2" ${item.category==2?"selected":""}>운동</option>
+						<option value="3" ${item.category==3?"selected":""}>식사</option>
+						<option value="4" ${item.category==4?"selected":""}>게임</option>
+						<option value="5" ${item.category==5?"selected":""}>기타</option>
+					</select>
+				</div>
+				
+				<div class="col-md-4">
+					<label for="member" class="form-label">모집인원</label>
+					<input id="member"  class="form-control" name="member" type="number" value="${item.member}">
+				</div>
+				
+				<div class="col-md-4">
+					<label for="dDay" class="form-label">모집일</label>
+					<input id="dDay"  class="form-control" name="dDay" type="date" value="${item.dDay}">
+				</div>
+				
+				<div class="col-md-12">
+					<label for="postnum" class="form-label">주소</label>			
+					<input id="postnum"  class="form-control" name="postnum" type="text" value="${item.postnum}" placeholder="우편번호">
+					<input type="button" class="btn btn-primary btn-icon-split btn-sm" onclick="DaumPostcode()" value="우편번호찾기">
+					<input id="road_addr" class="form-control" name="address" type="text" value="${item.address}" placeholder="주소">
+					<input id="detAddr" class="form-control" name="detAddress" type="text" value="${item.detAddress}" placeholder="상세주소">
+				</div>
+				
+				<div class="col-md-12">
+					<label class="form-label">내용</label>
+					<textarea id="summernote" class="form-control" name="content">${item.content}</textarea>
+				</div>
+				
+				<div>
+					<button class="btn btn-primary btn-sm">등록</button>
+					<a href="list"><button type="button" class="btn btn-light btn-sm">취소</button></a>
+				</div>
+			</form>
+		</div>
 	</div>
-	<div>
-		<label>제목</label>
-		<input type="text" name="title" value="${item.title }">
-	</div>
-	<div>
-		<label>장소</label>
-		<input type="text" name="address" value="${item.address }">
-	</div>
-	<div>
-		<label>날자</label>
-		<input type="date" name="dDay">
-	</div>
-	<div>
-		<label>인원</label>
-		<input type="number" name="member" value="${item.member }">
-	</div>
-	<div>
-		<label>내용</label>
-		<textarea rows="10" cols="30">${item.content }</textarea>
-	</div>
-	
-	<div>
-		<button>등록</button>
-			<a href="../list">이전</a>
-	</div>
-</form>
 </body>
+<jsp:include page="../header.jsp"></jsp:include>
 </html>
