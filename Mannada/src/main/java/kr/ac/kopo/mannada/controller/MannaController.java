@@ -24,15 +24,17 @@ public class MannaController {
 	
 	@Autowired
 	MannaService service;
+
 	
-	@ResponseBody
-	@GetMapping("/list/json/{page}")
-	public List<Manna> listJson(@PathVariable int page, Pager pager	) {
-		pager.setPage(page);
-		pager.setPerPage(12);
-		
-		return service.list(pager);
-	}
+	////	더보기 데이터 받기
+//	@ResponseBody
+//	@GetMapping("/list/json/{page}")
+//	public List<Manna> listJson(@PathVariable int page, Pager pager	) {
+//		pager.setPage(page);
+//		pager.setPerPage(12);
+//		
+//		return service.list(pager);
+//	}
 	
 	
 	@GetMapping("/list")
