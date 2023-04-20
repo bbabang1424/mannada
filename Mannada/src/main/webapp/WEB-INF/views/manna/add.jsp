@@ -4,7 +4,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>만나다 등록</title>
+<script src="/resources/js/manna_add.js"></script>
 </head>
 <body>
 <form method="post">
@@ -25,8 +26,8 @@
 		<input type="text" name="address">
 	</div>
 	<div>
-		<label>날자</label>
-		<input type="date" name="dDay">
+		<label>날짜</label>
+		<input id="currentDate" type="date" name="dDay">
 	</div>
 	<div>
 		<label>인원</label>

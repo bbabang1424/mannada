@@ -1,0 +1,165 @@
+@charset "UTF-8";
+
+* {
+	margin: 0;
+	padding: 0;
+	color: unset;
+	text-decoration: none;
+	font-family: 'Noto Sans KR';
+}
+
+.content {
+	max-width: 1200px;
+	position: relative;
+	margin: 7% auto;
+}
+
+.card_box {
+	margin: 0.5em;
+	padding: 0.5em;
+}
+
+#card {
+	border: 2px solid #D3D3D3;
+	display: inline-block;
+	width: 250px;
+	height: 210px;
+	padding: 10px;
+	margin: 10px;
+	position: relative;
+}
+
+.card:hover {
+	border-color: #0359d9;
+}
+
+.interval {
+	margin-top: 5px;
+	margin-left: 8px;
+	position: inherit;
+	top: 8%;
+}
+
+/* p {
+	font-size: 20px;
+	position: absolute;
+	right: 0;
+	top: -90px;
+} */
+
+#gauge_bar {
+	width: 210px;
+    height: 10px;
+    background: #ccc;
+    margin-top: 9px;
+    margin-bottom: 10px;
+    margin-left: 7px;
+    border-radius: 50px;
+    position: absolute;
+    top: 80%;
+}
+
+.gauge {
+	display: block;
+	width: 80%;
+	height: 10px;
+	border-radius: 100px;
+	background: #0359d9;
+	animation-name: gauge;
+	animation-duration: 2s;
+	animation-timing-function: linear;
+	animation-fill-mode: forwards;
+}
+
+@keyframes gauge { 0% {
+	width: 0;
+}
+
+100%{
+width:69%;
+}
+}
+
+div>.gauge_bar>div:first-child {
+	margin-bottom: 10px;
+	margin-top: 18px;
+}
+
+#sign_up_out {
+	text-align: right;
+	position: inherit;
+	left: 82.5%;
+	display: inline-block;
+}
+
+.sign_up_in {
+	width: 7em;
+	height: 2.5em;
+	background-color: #555555;
+	color: white;
+}
+
+.Category {
+	text-align: right;
+	margin: 5px;
+	color: #09080866;
+}
+
+.title {
+    width: 84%;
+    margin-left: 4%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    height: 20px;
+    word-wrap: break-word;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+}
+
+
+.line {
+	width: 214px;
+	border: 1px solid;
+	border-color: #ccc;
+	position: absolute;
+	top: 36%;
+	left: 7%;
+}
+
+button {
+  background-color: #046380;
+  color: #FFF;
+  border: none;
+  padding: 10px 15px;
+  font-size: 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  outline: none;
+  box-shadow: 2px 2px 0 #034154;
+  margin-bottom: 10px;
+  margin-left: 18px;
+  transition: opacity .4s ease-out, transform .4s ease-out, visibility .4s ease-out;
+  position: relative;
+  top: -10px;
+}
+
+button:hover {
+  background-color: #034F66;
+}
+
+button:active {
+  background-color: #034154;
+  box-shadow: none;
+  position: relative;
+  top: -8px;
+  left: 2px;
+}
+
+p {
+  padding: 4px 0 2px 8px;
+  line-height: 1.7;
+  border-bottom: 1px dotted #DDD;
+  list-style: none;
+  margin: 0;
+}

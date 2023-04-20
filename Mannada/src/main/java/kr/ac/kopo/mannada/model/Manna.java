@@ -20,8 +20,6 @@ public class Manna {
 	private String category_;
 	
 	private int rnum;
-	
-	
 
 	public int getId() {
 		return id;
@@ -134,5 +132,10 @@ public class Manna {
 	public void setRnum(int rnum) {
 		this.rnum = rnum;
 	}
+
+	
+	
+	
+
 	
 }
