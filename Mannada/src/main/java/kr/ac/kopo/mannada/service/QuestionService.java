@@ -20,4 +20,6 @@ public interface QuestionService {
 
 	void addAnswer(Answer item);
 
+	Answer answer(int id);
+
 }

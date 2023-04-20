@@ -16,4 +16,10 @@
 		SELECT COUNT(*) FROM user
 		WHERE id = #{id}
 	</select>
+	
+	
+	<insert id="add_partner">
+		INSERT INTO partner
+		VALUES (#{mannaId}, #{num})
+	</insert>
 </mapper>

@@ -1,5 +1,7 @@
 package kr.ac.kopo.mannada.dao;
 
+import java.util.HashMap;
+
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -26,6 +28,11 @@ public class UserDaoImpl implements UserDao {
 	@Override
 	public int checkId(String id) {
 		return sql.selectOne("user.check_id", id);
+	}
+
+	@Override
+	public void addPartner(HashMap<String, Object> map) {
+		sql.insert("user.add_partner", map);
 	}
 
 }

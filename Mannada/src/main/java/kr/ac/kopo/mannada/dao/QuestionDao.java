@@ -24,4 +24,6 @@ public interface QuestionDao {
 
 	void changeStatus(int questionId);
 
+	Answer answer(int id);
+
 }

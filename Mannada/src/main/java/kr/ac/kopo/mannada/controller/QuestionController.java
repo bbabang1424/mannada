@@ -82,6 +82,9 @@ public class QuestionController {
 		Question item = service.item(id);
 		model.addAttribute("question", item);
 		
+		Answer answer = service.answer(id);
+		model.addAttribute("answer", answer);
+		
 		return path + "detail";
 	}
 	
