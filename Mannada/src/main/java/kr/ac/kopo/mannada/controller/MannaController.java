@@ -27,24 +27,10 @@ public class MannaController {
 	@Autowired
 	MannaService service;
 
-	
-<<<<<<< HEAD
 	@Autowired
 	UserService userService;
 
-=======
-	////	더보기 데이터 받기
-//	@ResponseBody
-//	@GetMapping("/list/json/{page}")
-//	public List<Manna> listJson(@PathVariable int page, Pager pager	) {
-//		pager.setPage(page);
-//		pager.setPerPage(12);
-//		
-//		return service.list(pager);
-//	}
-	
->>>>>>> refs/remotes/origin/kimsoyoen
-	
+
 	@GetMapping("/list")
 	public String list(Model model, Pager pager	) {
 		pager.setPerPage(12);
