@@ -10,7 +10,7 @@
 	
 	<select id="chat_list" resultType="Chat">
 		SELECT c.*
-		FROM chatmessage c LEFT OUTER JOIN user u ON c.num = o.num
+		FROM chatmessage c LEFT OUTER JOIN user u ON c.num = u.num
 		WHERE c.manna_id = #{mannaId}
 	</select>
 </mapper>
