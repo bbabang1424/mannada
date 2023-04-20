@@ -17,9 +17,32 @@ public class Manna {
 	private int viewpoint;
 	
 	private String name;
-	private String category_;
 	
 	private int rnum;
+	
+	
+	public String getCategory_() {
+		String category_ = null;
+		
+		if(category == 1) {
+			category_ = "공동구매";
+			
+		} else if(category == 2) {
+			category_ = "운동";
+			
+		} else if(category == 3) {
+			category_ = "게임";
+			
+		} else if(category == 4) {
+			category_ = "식사";
+			
+		} else if (category == 5) {
+			category_ = "기타";
+		}
+		
+		return category_;
+		
+	}
 
 	public int getId() {
 		return id;
@@ -116,26 +139,6 @@ public class Manna {
 	public void setName(String name) {
 		this.name = name;
 	}
-
-	public String getCategory_() {
-		return category_;
-	}
-
-	public void setCategory_(String category_) {
-		this.category_ = category_;
-	}
-
-	public int getRnum() {
-		return rnum;
-	}
-
-	public void setRnum(int rnum) {
-		this.rnum = rnum;
-	}
-
 	
-	
-	
-
 	
 }
