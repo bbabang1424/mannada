@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <title>이메일 회원가입</title>
 <script type="/resources/js/signup_email.js"></script>
-<link href="signup_email.css" rel="stylesheet" />
+<link rel="stylesheet" href="/resources/css/ignup_email.css" />
 </head>
 <body>
 	<div class="wrapper">

@@ -4,6 +4,7 @@ import java.util.Date;
 
 public class Manna {
 	private int id;
+	private int num;
 	private String title;
 	private Date regDate;
 	private int member;
@@ -46,6 +47,16 @@ public class Manna {
 
 	public void setId(int id) {
 		this.id = id;
+	}
+
+
+	public int getNum() {
+		return num;
+	}
+
+
+	public void setNum(int num) {
+		this.num = num;
 	}
 
 

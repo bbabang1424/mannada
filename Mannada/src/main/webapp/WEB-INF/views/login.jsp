@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>로그인</title>
-<link rel="stylesheet" href="login.css">
+<link rel="stylesheet" href="/resources/css/login.css">
 </head>
 <body>
 	<div class="login-box">
@@ -64,18 +64,18 @@
             
         </div> 
 
-            <button type="button" class="naver-btn"><img src="image/naver_logo.png" alt="">네이버 계정으로 로그인</button>
+            <button type="button" class="naver-btn"><img src="/resources/image/naver_logo.png" alt="">네이버 계정으로 로그인</button>
             
-            <button  type="button" class="kakao-btn"><img src="image/kakao_logo.png" alt="">카카오 계정으로 로그인</button>
+            <button  type="button" class="kakao-btn"><img src="/resources/image/kakao_logo.png" alt="">카카오 계정으로 로그인</button>
 
-            <button  type="button" class="google-btn"><img src="image/google_logo.png" alt="">구글 계정으로 로그인</button>       
+            <button  type="button" class="google-btn"><img src="/resources/image/google_logo.png" alt="">구글 계정으로 로그인</button>       
 
             <div class="blank">
                 아직 회원이 아니신가요?
             </div>
 
             <div>
-                <a href=""><button type="button" class="signup">회원가입</button></a>
+                <a href="/signup"><button type="button" class="signup">회원가입</button></a>
             </div>
         </div>
 </body>
