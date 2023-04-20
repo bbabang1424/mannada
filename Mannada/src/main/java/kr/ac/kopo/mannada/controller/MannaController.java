@@ -31,7 +31,6 @@ public class MannaController {
 	UserService userService;
 
 	
-	
 	@GetMapping("/list")
 	public String list(Model model, Pager pager	) {
 		pager.setPerPage(12);
