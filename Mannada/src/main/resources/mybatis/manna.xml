@@ -2,51 +2,67 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="manna">
-
+	<sql id="search">
+		SELECT * FROM manna
+		<where>
+			<if test="search eq 1">
+				title LIKE CONCAT(CONCAT('%',#{keyword}),'%')
+			</if>
+			<if test="search eq 2">
+				member=#{keyword}
+			</if>
+			<if test="search eq 3">
+				d_day LIKE CONCAT(CONCAT('%',#{keyword}),'%')
+			</if>
+			<if test="search eq 4">
+				address LIKE CONCAT(CONCAT('%',#{keyword}),'%')
+				OR
+				det_address LIKE CONCAT(CONCAT('%',#{keyword}),'%')
+			</if>
+			<if test="search eq 5">
+				content LIKE CONCAT(CONCAT('%',#{keyword}),'%')
+			</if>
+		</where>
+		ORDER BY id DESC
+	</sql>
 	<select id="total" resultType="Integer">
-		SELECT COUNT(*)
-		FROM manna
+		SELECT COUNT(*) 
+		FROM (<include refid="search"></include>) manna
 	</select>
-
-
+	
 	<select id="list" resultType="Manna">
-		SELECT @ROWNUM:=@ROWNUM+1 AS rnum, manna.*
-		FROM (SELECT * FROM manna ORDER BY id DESC) AS manna,
-		 (SELECT @ROWNUM:=0) AS R
+		SELECT @ROWNUM:=@ROWNUM+1 AS rnum, manna.* 
+		FROM (<include refid="search"></include>) manna
+			 , (SELECT @ROWNUM:=0) R
 		ORDER BY rnum DESC
 		LIMIT #{offset}, #{perPage}
 	</select>
-
-
+	
 	<insert id="add">
-		INSERT INTO manna (category, user_id, title, address, d_day, reg_date, content)
-		values (#{category}, #{userId}, #{title}, #{address}, #{dDay}, NOW(), #{content})
-
+		INSERT INTO manna
+		(title, reg_date, member, d_day, content, category, postnum, address, det_address)
+		VALUES (#{title}, NOW(), #{member}, #{dDay}, #{content}, #{category}, #{postnum}, #{address}, #{detAddress})
+		
 		<selectKey keyColumn="id" keyProperty="id" resultType="Integer" order="AFTER">
 			SELECT LAST_INSERT_ID()
 		</selectKey>
 	</insert>
-
-
+	
 	<select id="item" resultType="Manna">
-		SELECT *
-		FROM manna
-		WHERE id = #{id}
+		SELECT * FROM manna
+		WHERE id=#{id}
 	</select>
-
-
+	
 	<update id="update">
 		UPDATE manna
-		SET category = #{category}, title = #{title}, address = #{address}, d_day = #{dDay}, content = #{content}
-		WHERE id = #{id}
+		SET title=#{title}, member=#{member}, d_day=#{dDay}, content=#{content}, category=#{category}
+			, postnum=#{postnum}, address=#{address}, det_address=#{detAddress}
+		WHERE id=#{id}
 	</update>
-
-
+	
 	<delete id="delete">
 		DELETE FROM manna
-		WHERE id = #{id}
+		WHERE id=#{id}
 	</delete>
 	
-	
-
 </mapper>

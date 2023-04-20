@@ -18,7 +18,9 @@ public class Manna {
 	/*외래키*/
 	private String userId;
 	private String name;
-
+	
+	/*구성키*/
+	private int rnum;
 	
 	/*category와 status 한글 처리 : 데이터베이스가 처리하지 못할 시 제한을 두는 역할*/
 	public String getCategory_() {
@@ -164,6 +166,16 @@ public class Manna {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+
+
+	public int getRnum() {
+		return rnum;
+	}
+
+
+	public void setRnum(int rnum) {
+		this.rnum = rnum;
 	}
 	
 }
