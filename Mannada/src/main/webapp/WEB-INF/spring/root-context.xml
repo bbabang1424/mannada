@@ -10,7 +10,7 @@
 		<!-- <property name="jdbcUrl" value="jdbc:mariadb://localhost:3306/mannada"></property>
 		<property name="username" value="mannada"></property> -->
 		
-		<property name="jdbcUrl" value="jdbc:mariadb://2302.team.callon.kr/team2"></property>
+		<property name="jdbcUrl" value="jdbc:mariadb://localhost:3306/team2"></property>
 		<property name="username" value="team2"></property>
 		<property name="password" value="1234"></property>
 	</bean>
