@@ -9,7 +9,8 @@ public class Question {
 	private Date regDate;
 	private String content;
 	private int viewpoint;
-	
+	private int status;
+
 	private String nickname;
 	
 	private int rnum;
@@ -78,5 +79,14 @@ public class Question {
 
 	public void setNickname(String nickname) {
 		this.nickname = nickname;
+	}
+
+	
+	public int getStatus() {
+		return status;
+	}
+
+	public void setStatus(int status) {
+		this.status = status;
 	}
 }

@@ -63,4 +63,9 @@ public class QuestionServiceImpl implements QuestionService {
 		dao.changeStatus(item.getQuestionId());
 	}
 
+	@Override
+	public Answer answer(int id) {
+		return dao.answer(id);
+	}
+
 }
