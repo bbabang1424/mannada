@@ -1,0 +1,245 @@
+* {
+	margin: 0;
+	padding: 0;
+	color: unset;
+	text-decoration: none;
+	font-family: 'Noto Sans KR';
+}
+
+.content {
+	max-width: 1220px;
+	position: relative;
+	margin: 7% auto;
+}
+
+.box {
+	/* height:887px; */
+	border: 1px solid;
+	border-color: #ccc;
+	/* position: relative; */
+	width: 70%;
+	text-align: center;
+}
+
+#interval {
+	display: inline-block;
+	margin: 1em 1em 1em 2em;
+	text-align: center;
+	background-color: lightblue
+}
+/*select_box  */
+/* .select{
+	display: inline-block;
+    width: 10%;
+    text-align: center;
+    padding: 0.375rem 1.25rem 0.375rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    background-color: #fff;
+    background-repeat: no-repeat;
+    background-position: right 0.75rem center;
+    background-size: 16px 12px;
+    border: 1px solid #ced4da;
+    border-radius: 0.375rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;  
+    appearance: none;
+}
+ */
+.title {
+	text-align: left;
+}
+
+#title {
+	margin: 1em;
+	display: inline-block;
+	width: 75%;
+	padding: 0.375rem 1.25rem 0.375rem 0.75rem;
+	font-size: 1rem;
+	font-weight: 400;
+	line-height: 1.5;
+	color: #212529;
+	background-color: #fff;
+	background-repeat: no-repeat;
+	background-position: right 0.75rem center;
+	background-size: 16px 12px;
+	border: 1px solid #ced4da;
+	border-radius: 0.375rem;
+	margin-left: 6%;
+}
+
+.category {
+	text-align: left;
+}
+
+.Choose_start {
+	margin-left: 3%;
+}
+
+.Choose {
+	margin-left: 8%;
+}
+
+.member {
+	text-align: left;
+}
+
+#member {
+	margin-left: 2%;
+	display: inline-block;
+	width: 6%;
+	text-align: center;
+	padding: 7px;
+	font-size: 1rem;
+	font-weight: 400;
+	line-height: 1.5;
+	color: #212529;
+	background-color: #fff;
+	background-repeat: no-repeat;
+	background-position: right 0.75rem center;
+	background-size: 16px 12px;
+	border: 1px solid #ced4da;
+	border-radius: 0.375rem;
+}
+
+.dDay {
+	text-align: left;
+}
+
+.postnum {
+	text-align: left;
+}
+
+#postnum {
+	margin-left: 6%;
+	display: inline-block;
+	width: 10%;
+	text-align: center;
+	padding: 7px;
+	font-size: 1rem;
+	font-weight: 400;
+	line-height: 1.5;
+	color: #212529;
+	background-color: #fff;
+	background-repeat: no-repeat;
+	background-position: right 0.75rem center;
+	background-size: 16px 12px;
+	border: 1px solid #ced4da;
+	border-radius: 0.375rem;
+	display: inline-block;
+}
+
+#postnum_search {
+	margin-left: 3%;
+	display: inline-block;
+	width: 9%;
+	text-align: center;
+	padding: 7px;
+	font-size: 1rem;
+	font-weight: 400;
+	line-height: 1.5;
+	background-color: #004fff;
+	color: white;
+	border: 1px solid;
+	border-color: #004fff;
+	border-radius: 0.375rem;
+}
+/* 모집일 */
+#currentDate {
+	margin-left: 4%;
+	display: inline-block;
+	width: 62% text-align: center;
+	padding: 7px;
+	font-size: 1rem;
+	font-weight: 400;
+	line-height: 1.5;
+	color: #212529;
+	background-color: #fff;
+	background-repeat: no-repeat;
+	background-position: right 0.75rem center;
+	background-size: 16px 12px;
+	border: 1px solid #ced4da;
+	border-radius: 0.375rem;
+}
+
+#road_addr {
+	margin-left: 3%;
+	display: inline-block;
+	width: 29%;
+	padding: 7px;
+	font-size: 1rem;
+	font-weight: 400;
+	line-height: 1.5;
+	color: #212529;
+	background-color: #fff;
+	background-repeat: no-repeat;
+	background-position: right 0.75rem center;
+	background-size: 16px 12px;
+	border: 1px solid #ced4da;
+	border-radius: 0.375rem;
+	text-align: left;
+}
+/* 상세주소 */
+#detAddr {
+	margin-left: 3%;
+	display: inline-block;
+	width: 13%;
+	padding: 7px;
+	font-size: 1rem;
+	font-weight: 400;
+	line-height: 1.5;
+	color: #212529;
+	background-color: #fff;
+	background-repeat: no-repeat;
+	background-position: right 0.75rem center;
+	background-size: 16px 12px;
+	border: 1px solid #ced4da;
+	border-radius: 0.375rem;
+}
+
+.detail {
+	text-align: left;
+}
+
+.control {
+	width: 93%;
+	height: 25.25em;
+	border: 1px solid;
+	resize: none;
+}
+
+.line {
+	margin: 0.5rem 0;
+	color: inherit;
+	border: 0;
+	border-top: 1px solid;
+	opacity: .25;
+}
+
+.lower {
+	text-align: right;
+	margin: 1em 1em 1em 1em;
+}
+
+.lower {
+	margin: 3%;
+}
+
+.raise_btn {
+	background-color: #2cb2ff;
+	border: #2cb2ff;
+	color: #fff;
+	width: 50px;
+	height: 30px;
+	margin-right: 2%;
+}
+
+.cancel_btn {
+	background-color: #de2f00;
+	border: #de2f00;
+	color: #fff;
+	width: 50px;
+	height: 30px;
+	margin-right: 3%;
+}
