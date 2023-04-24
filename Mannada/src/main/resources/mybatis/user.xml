@@ -8,8 +8,8 @@
 	</select>
 
 	<insert id="signup">
-		INSERT INTO user(id, pw, name, reg_date)
-		VALUES (#{id}, PASSWORD(#{pw}), #{name}, NOW())
+		INSERT INTO user(id, pw, name, nickname, reg_date)
+		VALUES (#{id}, PASSWORD(#{pw}), #{name}, #{nickname}, NOW())
 	</insert>	
 	
 	<select id="checkId" resultType="Integer">
@@ -19,7 +19,7 @@
 	
 	
 	<insert id="add_partner">
-		INSERT INTO partner
+		INSERT INTO join
 		VALUES (#{mannaId}, #{num})
 	</insert>
 </mapper>

@@ -39,6 +39,7 @@ public class MannaController {
 		
 		return path+"list";
 	}
+	
 	@GetMapping("/detail/{id}")
 	public String detail(@PathVariable int id, Model model) {
 		Manna item = service.item(id);
@@ -51,6 +52,7 @@ public class MannaController {
 	public String add() {
 		return path+"add";
 	}
+	
 	@PostMapping("/add")
 	public String add(@SessionAttribute User user, Manna item) {
 		
@@ -72,6 +74,7 @@ public class MannaController {
 		
 		return path+"update";
 	}
+	
 	@PostMapping("/update/{id}")
 	public String update(@PathVariable int id, Manna item) {
 		item.setId(id);

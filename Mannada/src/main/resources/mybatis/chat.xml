@@ -4,7 +4,7 @@
 <mapper namespace="chat">
 	<select id="manna_list" resultType="Manna">
 		SELECT m.id, category, title, d_day
-		FROM partner p LEFT OUTER JOIN manna m ON p.manna_id = m.id
+		FROM join j LEFT OUTER JOIN manna m ON j.manna_id = m.id
 		WHERE p.num = #{num}
 	</select>
 	
