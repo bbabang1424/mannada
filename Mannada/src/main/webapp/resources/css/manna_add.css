@@ -1,31 +1,61 @@
 * {
-	margin: 0;
+	margin: 0 auto;
 	padding: 0;
 	color: unset;
 	text-decoration: none;
 	font-family: 'Noto Sans KR';
 }
 
-.content {
+.container {
 	max-width: 1220px;
-	position: relative;
 	margin: 7% auto;
+}
+/*베너  */
+.banner {
+    color: white;
+    border-color: #60a8ef;
+    width: 100%;
+    background-color: #60a8ef;
+    border: 1px solid;
+    background-image: url(/resources/image/banner_imga.png);
+    background-repeat: no-repeat;
+    background-size: 269px 216px;
+    background-position: 74% -12px;
+}
+
+.banner_text {
+	width: 57%;
+}
+
+.banner_text>li {
+	display: inline-block;
+	font-weight: bold;
+	margin-top: 33px;
+}
+
+.page_title {
+	width: 53.5%;
+	margin-top: 21px;
+	font-weight: bolder;
+}
+
+.page_text {
+	width: 53.5%;
+	margin-bottom: 33px;
 }
 
 .box {
-	/* height:887px; */
-	border: 1px solid;
-	border-color: #ccc;
-	/* position: relative; */
-	width: 70%;
+	width: 80%;
 	text-align: center;
+	border-bottom: 1px solid #ccc;
+	border-top: 1px solid #ccc;
 }
-
+/* 간격*/
 #interval {
 	display: inline-block;
 	margin: 1em 1em 1em 2em;
 	text-align: center;
-	background-color: lightblue
+	font-weight: bold;
 }
 /*select_box  */
 /* .select{
@@ -54,7 +84,7 @@
 #title {
 	margin: 1em;
 	display: inline-block;
-	width: 75%;
+	width: 73%;
 	padding: 0.375rem 1.25rem 0.375rem 0.75rem;
 	font-size: 1rem;
 	font-weight: 400;
@@ -86,7 +116,7 @@
 }
 
 #member {
-	margin-left: 2%;
+	margin-left: 3%;
 	display: inline-block;
 	width: 6%;
 	text-align: center;
@@ -130,21 +160,6 @@
 	display: inline-block;
 }
 
-#postnum_search {
-	margin-left: 3%;
-	display: inline-block;
-	width: 9%;
-	text-align: center;
-	padding: 7px;
-	font-size: 1rem;
-	font-weight: 400;
-	line-height: 1.5;
-	background-color: #004fff;
-	color: white;
-	border: 1px solid;
-	border-color: #004fff;
-	border-radius: 0.375rem;
-}
 /* 모집일 */
 #currentDate {
 	margin-left: 4%;
@@ -162,11 +177,11 @@
 	border: 1px solid #ced4da;
 	border-radius: 0.375rem;
 }
-
+/* 주소 */
 #road_addr {
-	margin-left: 3%;
+	margin-left: 2%;
 	display: inline-block;
-	width: 29%;
+	width: 28%;
 	padding: 7px;
 	font-size: 1rem;
 	font-weight: 400;
@@ -182,9 +197,9 @@
 }
 /* 상세주소 */
 #detAddr {
-	margin-left: 3%;
+	margin-left: 2%;
 	display: inline-block;
-	width: 13%;
+	width: 17%;
 	padding: 7px;
 	font-size: 1rem;
 	font-weight: 400;
@@ -198,15 +213,31 @@
 	border-radius: 0.375rem;
 }
 
-.detail {
-	text-align: left;
+#postnum_search {
+	margin-left: 2%;
+	display: inline-block;
+	width: 9%;
+	text-align: center;
+	padding: 7px;
+	font-size: 1rem;
+	font-weight: 400;
+	line-height: 1.5;
+	background-color: #004fff;
+	color: white;
+	border: 1px solid;
+	border-color: #004fff;
+	border-radius: 0.375rem;
 }
-
+/* tex_box */
 .control {
-	width: 93%;
-	height: 25.25em;
+	width: 73%;
+	height: 21.25em;
 	border: 1px solid;
 	resize: none;
+}
+/* 내용 */
+.detail {
+	text-align: left;
 }
 
 .line {
@@ -216,16 +247,13 @@
 	border-top: 1px solid;
 	opacity: .25;
 }
-
+/*  하단 /취소,등록*/
 .lower {
 	text-align: right;
-	margin: 1em 1em 1em 1em;
-}
-
-.lower {
 	margin: 3%;
+	width: 87%;
 }
-
+/* 등록 */
 .raise_btn {
 	background-color: #2cb2ff;
 	border: #2cb2ff;
@@ -234,7 +262,7 @@
 	height: 30px;
 	margin-right: 2%;
 }
-
+/* 취소 */
 .cancel_btn {
 	background-color: #de2f00;
 	border: #de2f00;

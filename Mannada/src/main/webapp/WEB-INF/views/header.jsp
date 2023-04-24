@@ -22,7 +22,7 @@ li { list-style:none; }
 
 #header li { display:inline-block;}
 
-.max-width { position: relative; max-width: 1024px; margin: 0 auto; }
+.max-width { position: relative; max-width: 1200px; margin: 0 auto; }
 .flex {display: flex; align-items:center;}
 .flex-end {margin-left: auto!important; display: inline-flex; align-items: center;}
 
