@@ -10,23 +10,41 @@
 <title>Insert title here</title>
 <jsp:include page="../header.jsp"></jsp:include>
 <link href="/resources/css/style.css" rel="stylesheet">
+<link href="/resources/css/chat.css" rel="stylesheet">
 </head>
-<body> 
-	<div class="container">
-		<div>
-			<form action="../add" method="post">
-				<input type="text">
-				<button>전송</button>
-			</form>
-		</div>
-	
-		<c:forEach var="item" items="${list }">
-			<div>
-				<p>${item.nickname } : ${item.content } ${item.regDate }</p> 
-			</div>
-		</c:forEach>
-	</div>
-	
+<body>
+    <div class="container">
+        <div id="room">
+	        <c:forEach var="item" items="${roomList }">
+	            <a href="detail/${roomId}">
+	                <div class="list">
+	                    <p>${item.dDay }</p>
+	                    <p>${item.title }</p>
+	                </div>
+	            </a>
+	        </c:forEach>
+        </div>
+
+
+        <div id="chat">
+            <div class="message">
+	            <c:forEach var="item" items="${chatList }">
+	                <div class="list">
+	                    ${item.content}
+	                </div>
+	            </c:forEach>
+            </div>
+
+            <div class="send">
+                <form action="/add">
+                    <input type="number" name="${item.mannaId}" class="hidden" disabled>
+                    <input type="text" name="content" id="">
+                    <button>전송</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    
 <jsp:include page="../footer.jsp"></jsp:include>
 </body>
 </html>

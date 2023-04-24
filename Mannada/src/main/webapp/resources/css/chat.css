@@ -1,0 +1,50 @@
+@charset "UTF-8";
+
+.hidden {
+            display: none;
+        }
+
+        .container {
+            max-width: 1200px;
+            width: 100%;
+            height: 600px;
+            margin: auto;
+            border: 1px solid #ccc;
+            display: flex;
+        }
+
+        #room {
+            width: 40%;
+            overflow-y: scroll;
+        }
+
+        #room .list {
+            border: 1px solid #ccc;
+            line-height: .4em;
+            margin: 10px;
+            padding: 10px;
+        }
+
+        #chat {
+            width: 60%;
+        }
+
+        .message {
+            height: 540px;
+            overflow-y: scroll;
+        }
+
+        .send {
+            background-color: #ccc;
+            text-align: right;
+            padding: 10px;
+        }
+
+        .send input {
+            width: 80%;
+            padding: 10px;
+        }
+
+        .send button {
+            padding: 10px;
+        }

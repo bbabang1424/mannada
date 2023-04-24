@@ -36,10 +36,15 @@ public class ChatController {
 	}
 	
 	@GetMapping("/detail/{mannaId}")
-	public String detail(@PathVariable int mannaId, Model model) {
+	public String detail(@PathVariable int mannaId, @SessionAttribute User user, Model model) {
+
+		int num = user.getNum();
 		
-		List<Chat> list = service.chatList(mannaId);
-		model.addAttribute("list", list);
+		List<Manna> roomList = service.mannaList(num);
+		model.addAttribute("roomList", roomList);
+		
+		List<Chat> chatList = service.chatList(mannaId);
+		model.addAttribute("chatList", chatList);
 		
 		return path + "detail";
 	}
