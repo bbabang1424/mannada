@@ -17,6 +17,17 @@
 
 </head>
 <body>
+	<div class="banner">
+		<ul class="banner_text">
+			<li>만나다</li>
+			<i class="bi bi-caret-right-fill"></i>
+			<li>글 목록</li>
+		</ul>
+		<h3 class="page_title">글 목록</h3>
+		<p class="page_text">새로운 만남을 만날수 있는 곧 입니다. 관심있는 카드를 눌러 참여하세요!</p>
+	</div>
+	
+	<div class="container">
 
 	<section class="content ">
 		<div id="sign_up_out">
@@ -65,8 +76,10 @@
 
 			</c:forEach>
 		</div>
-
-		<tfoot>
+		</section>
+		
+		
+			<tfoot>
 			<tr>
 				<td colspan="5">
 					<ol class="pagination pagination-sm justify-content-center"
@@ -90,5 +103,9 @@
 				</td>
 			</tr>
 		</tfoot>
+		
+		</div>
+
+		
 </body>
 </html>
