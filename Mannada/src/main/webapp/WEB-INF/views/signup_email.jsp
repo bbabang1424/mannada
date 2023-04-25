@@ -38,47 +38,32 @@
 				<div id="passwordCheckError" class="error"></div>
 			</div>
 
-			<div class="nickname">
-				<input id="nickname" type="text" name="nickname"
-					placeholder="닉네임 (공백없이 한글, 영문, 숫자만 입력 가능)">
-				<div id="nicknameError" class="error"></div>
-			</div>
+			<div class="nickname-title">닉네임</div>
+        <div class="nickname">            
+            <input name="nickname" id="nickname" type="text" placeholder="닉네임 (공백없이 한글, 영문, 숫자만 입력 가능)">
+            <button type="button" class="id_overlap_button" onclick="id_overlap_check()" style="float:right;">중복확인</button>
+            <div id="nicknameError" class="error"></div>            
+        </div>      
 
-			<div class="phone-number">
-				휴대폰 번호
-				<div class="phone">
-					<input id="phone1" type="text" size="1" maxlength="3"
-						oninput="changePhone1()"> - <input id="phone2" type="text"
-						size="3" maxlength="4" oninput="changePhone2()"> - <input
-						id="phone3" type="text" size="3" maxlength="4"
-						oninput="changePhone3()">
-				</div>
-			</div>
-			<div class="auth">
-				<div id="certificationNumber">000000</div>
-				<button type="button" disabled id="sendMessage" onclick="getToken()">인증번호
-					전송</button>
-			</div>
+    <div class="phone-title">휴대폰 번호</div>               
+        <div class="phone">
+            <input type="tel" name="phone" id="phone" placeholder="휴대폰 번호 (-) 없이">
+            <button type="button" class="id_overlap_button" style="float:right;">본인인증</button>
+        </div>
 
-			<div class="timer">
-				<div id="timeLimit">03:00</div>
-				<button type="button" disabled id="completion" onclick="checkCompletion()">인증확인</button>
-			</div>
+        <div class="line">
+            <hr>
+        </div>
 
-			<div class="gender">
-				<input id="gender_man" type="radio" name="gender">남성 <input
-					id="gender_woman" type="radio" name="gender">여성
-				<div id="genderError" class="error"></div>
-			</div>
-
-			<div class="line">
-				<hr>
-			</div>
-
-			<div class="signUp">
-				<button id="signUpButton" disabled onclick="signUpCheck()">가입하기</button>
-			</div>
-		</form>
-	</div>
+        <div class="inline">
+            <div class="signUp">
+                <button type="button">회원가입</button>
+            </div>
+    
+            <div class="go_back">
+                <button type="button">취소</button>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
