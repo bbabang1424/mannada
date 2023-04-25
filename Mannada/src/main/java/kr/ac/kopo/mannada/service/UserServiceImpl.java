@@ -1,5 +1,7 @@
 package kr.ac.kopo.mannada.service;
 
+import java.util.HashMap;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -40,6 +42,11 @@ public class UserServiceImpl implements UserService {
 			return true;
 		
 		return false;
+	}
+
+	@Override
+	public void addPartner(HashMap<String, Object> map) {
+		dao.addPartner(map);
 	}
 
 }

@@ -1,0 +1,137 @@
+* {
+    margin: 0px;
+    box-sizing: border-box;
+    font-size: 11px;
+}
+
+html {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+body {
+    width: 600px;
+    border: 1px solid black;
+}
+
+input{
+    border: 1px solid black;
+    border-radius: 3px;
+    line-height: 35px;
+    font-size: 12px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.wrapper {
+    padding: 10px;
+}
+
+div {
+    padding-top: 3px;
+    padding-bottom: 8px;
+}
+
+.title {
+    text-align: center;
+    font-weight: 700;
+    color: #0359d9;
+}
+
+.email input {
+    width: 100%;
+}
+
+.email-title {
+    font-weight: bold;
+}
+
+.name input {
+    width: 100%;
+}
+
+.name-title {
+    font-weight: bold;
+}
+
+.password input {
+    width: 100%;
+}
+
+.password-title {
+    font-weight: bold;
+}
+
+.passwordCheck input {
+    width: 100%;
+}
+
+.passwordCheck-title {
+    font-weight: bold;
+}
+
+.nickname input {
+    width: 70%;
+}
+
+.nickname-title {
+    font-weight: bold;
+}
+
+.id_overlap_button {
+    width: 28%;
+    background-color: #0359d9;
+    border-radius: 3px; 
+    border: none;
+}
+
+.phone input {
+    width: 70%;
+}
+
+.phone-title {
+    font-weight: bold;
+}
+
+.gender {
+    text-align: center;
+    margin-top: 5%;
+}
+
+.signUp button {
+    
+    width: 225px;
+    background-color: #0359d9;
+    border: none;
+}
+
+
+.go_back button {
+   
+    width: 225px;
+    background-color: #d9d9d9;
+    border: none;
+    color: black;
+   
+}
+
+button{
+    cursor: pointer;
+    height: 40px;
+    color: white;
+}
+
+.error{
+    font-size: 1px;
+    height: 20px;
+    color:red;
+    font-weight: 700;
+}
+
+.inline {
+    display: flex;
+    justify-content: space-around;
+}

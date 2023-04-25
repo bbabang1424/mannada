@@ -3,23 +3,14 @@
 
 <mapper namespace="chat">
 	<select id="manna_list" resultType="Manna">
-		SELECT category, title, d_day
-		FROM manna
-		WHERE num = #{num}
+		SELECT m.id, category, title, d_day
+		FROM joins j LEFT OUTER JOIN manna m ON j.manna_id = m.id
+		WHERE j.num = #{num}
 	</select>
 	
 	<select id="chat_list" resultType="Chat">
-		SELECT *
-		FROM chatmessage
-		WHERE manna_id = #{mannaId}
+		SELECT c.*
+		FROM chat c LEFT OUTER JOIN user u ON c.num = u.num
+		WHERE c.manna_id = #{mannaId}
 	</select>
-
-	<insert id="signup">
-		INSERT INTO chatmessage(manna_id, num, content, reg_date)
-		VALUES (#{mannaId}, #{num}, #{content}, NOW())
-		
-		<selectKey keyColumn="id" keyProperty="id" resultType="Integer" order="AFTER">
-			SELECT LAST_INSERT_ID()
-		</selectKey>
-	</insert>
 </mapper>

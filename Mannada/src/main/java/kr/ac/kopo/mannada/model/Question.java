@@ -8,8 +8,9 @@ public class Question {
 	private String title;
 	private Date regDate;
 	private String content;
-	private int viewpoint;
-	
+	private int viewCnt;
+	private int status;
+
 	private String nickname;
 	
 	private int rnum;
@@ -64,12 +65,12 @@ public class Question {
 		this.content = content;
 	}
 
-	public int getViewpoint() {
-		return viewpoint;
+	public int getViewCnt() {
+		return viewCnt;
 	}
 
-	public void setViewpoint(int viewpoint) {
-		this.viewpoint = viewpoint;
+	public void setViewCnt(int viewCnt) {
+		this.viewCnt = viewCnt;
 	}
 
 	public String getNickname() {
@@ -78,5 +79,14 @@ public class Question {
 
 	public void setNickname(String nickname) {
 		this.nickname = nickname;
+	}
+
+	
+	public int getStatus() {
+		return status;
+	}
+
+	public void setStatus(int status) {
+		this.status = status;
 	}
 }

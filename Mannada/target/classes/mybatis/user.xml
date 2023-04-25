@@ -8,12 +8,18 @@
 	</select>
 
 	<insert id="signup">
-		INSERT INTO user(id, pw, name, reg_date)
-		VALUES (#{id}, PASSWORD(#{pw}), #{name}, NOW())
+		INSERT INTO user(id, pw, name, nickname, reg_date)
+		VALUES (#{id}, PASSWORD(#{pw}), #{name}, #{nickname}, NOW())
 	</insert>	
 	
 	<select id="checkId" resultType="Integer">
 		SELECT COUNT(*) FROM user
 		WHERE id = #{id}
 	</select>
+	
+	
+	<insert id="add_partner">
+		INSERT INTO joins
+		VALUES (#{mannaId}, #{num})
+	</insert>
 </mapper>

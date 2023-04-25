@@ -20,7 +20,11 @@
 	
 	<hr>
 	
-	<c:if test="${sessionScope.manager != null }">
+	<div>
+		<p>${answer.mgrId }</p>
+		<p>${answer.content }</p>
+	</div>
+	<c:if test="${sessionScope.manager != null && question.status == 0}">
 		<form action="../addAnswer" method="post">
 			<input type="hidden" name="questionId" value="${question.id }">
 			<textarea rows="20" cols="30" name="content"></textarea>

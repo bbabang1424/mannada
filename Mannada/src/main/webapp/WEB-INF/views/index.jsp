@@ -4,40 +4,112 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title></title>
 <jsp:include page="header.jsp"></jsp:include>
-<link href="/resources/css/style.css" rel="stylesheet">
+<link href="/resources/css/style.css" rel="stylesheet"> 
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+<link href="/resources/css/index.css" rel="stylesheet"> 
+<script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDI-f5yrjAVhR8g9-FlTF-s_kLAEnZZ55k&callback=initMap"></script>
+<script>
+window.initMap = function () {
+	  const map = new google.maps.Map(document.getElementById("map"), {
+	    center: { lat: 36.350402, lng: 127.453371 },
+	    zoom: 15,
+	    disableDefaultUI:true,
+	  });
+	};
+</script>
 </head>
 <body> 
-	<div class="container">
+ 	<div class="swiper mySwiper">
+	    <div class="swiper-wrapper">
+		      <div class="swiper-slide">Slide 1</div>
+		      <div class="swiper-slide">Slide 2</div>
+		      <div class="swiper-slide">Slide 3</div>
+		</div>
+		    <div class="swiper-button-next"></div>
+		    <div class="swiper-button-prev"></div>
+		    <div class="swiper-pagination"></div>
+	</div> 
+
+	<div class="container"> 
+		<div>
+			<div class="category center">
+				<div>
+					<h2>Category</h2>
+				</div>
+
+				<div>
+					<div class="category-inner">
+						<ul>
+							<li><a href="/mannada/category">
+								<div class="icon"><img src="/resources/image/purchases.png">
+								#공동구매
+								</div>
+								</a></li>
+							<li><a href="/mannada/category">
+								<div class="icon"><img src="/resources/image/game.png">
+								#게임
+								</div>
+								</a></li>
+							<li><a href="/mannada/category">
+								<div class="icon"><img src="/resources/image/spoon.png">
+								#식사
+								</div>
+								</a></li>
+							<li><a href="/mannada/category">
+								<div class="icon"><img src="/resources/image/sport.png">
+								#스포츠
+								</div>
+								</a></li>
+							<li><a href="/mannada/category">
+								<div class="icon"><img src="/resources/image/more.png">
+								#기타
+								</div>
+								</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
 		<ul>
 			<li><a href="/login">사용자로그인</a></li>
 			<li><a href="/signup">회원가입</a></li>
 			<li><a href="/logout">로그아웃</a></li>
 			<li><a href="/mypage">마이페이지</a></li>
 			<li><a>${sessionScope.user.name }</a></li>
+			<li><a>${sessionScope.manager.id }</a><li>
 		</ul>
 	
 		<ul> 
-			<a href="/manna/list"><li>만나다</li></a>
-			<a href="/community/list"><li>커뮤니티</li></a>
+			<li><a href="/manna/list">만나다</a></li>
+			<li><a href="/community/list">커뮤니티</a></li>
 			<li>공지사항
 				<ul>
-					<a href="/notice/list">공지사항</a>
-					<a href="/qna/list">QnA</a>
+					<li><a href="/notice/list">공지사항</a></li>
+					<li><a href="/qna/list">QnA</a></li>
 				</ul>
 			</li>
 		</ul>
 				
-		<ul>
-			<a href="/mannada/category"><li>카테고리</li></a>
-			<a href="/mannada/category"><li>카테고리</li></a>
-			<a href="/mannada/category"><li>카테고리</li></a>
-			<a href="/mannada/category"><li>카테고리</li></a>
-			<a href="/mannada/category"><li>카테고리</li></a>
-			<p><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></p>
-		</ul>
-	</div> 
+	</div>
+</div>
+	
+ 	<div class="mannam-map"> 
+		<div id="map-layer">
+			<div class="layer-inner">
+				<div>
+					<h3>나에게 맞는 <b>맞춤 만남</b>은?</h3>
+				</div>
+			</div>
+		</div> 
+ 		<div id="map" style="width: 100%; height: 550px;"></div>
+ 	</div>
+ 
+<jsp:include page="footer.jsp"></jsp:include>
+ <!-- Swiper JS -->
+ <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+ <!-- Initialize Swiper -->
+ <script src="/resources/js/index.js"></script>
+
 </body>
 </html>

@@ -94,6 +94,12 @@ public class RootController {
 
 		return "signup";
 	}
+	
+	@GetMapping("/signup_email")
+	public String signupEmail() {
+		
+		return "signup_email";
+	}
 
 	@PostMapping("/signup")
 	public String signup(User item) {

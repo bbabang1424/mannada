@@ -77,5 +77,10 @@
 		SET status = 1
 		WHERE id = #{questionId}
 	</update>
+	
+	<select id="answer" resultType="Answer">
+		SELECT * FROM answer
+		WHERE question_id = #{id}
+	</select>
 
 </mapper>

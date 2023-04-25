@@ -1,16 +1,13 @@
 package kr.ac.kopo.mannada.controller;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.SessionAttribute;
 
 import kr.ac.kopo.mannada.model.Chat;
@@ -18,41 +15,37 @@ import kr.ac.kopo.mannada.model.Manna;
 import kr.ac.kopo.mannada.model.User;
 import kr.ac.kopo.mannada.service.ChatService;
 
-@RestController
+@Controller
 @RequestMapping("/chat")
 public class ChatController {
+	final String path = "chat/";
 	
 	@Autowired
 	ChatService service;
 	
 	
-	@GetMapping
-	public Map<String, Object> list(@SessionAttribute User user){
-		HashMap<String, Object> map = new HashMap<String, Object>();
+	@GetMapping("/list")
+	public String list(@SessionAttribute User user, Model model) {
 		
 		int num = user.getNum();
 		
-		List<Manna> mannaList = service.mannaList(num);
-		map.put("manna", mannaList);
+		List<Manna> list = service.mannaList(num);
+		model.addAttribute("list", list);
 		
-		return map;
+		return path + "list";
 	}
 	
-	@GetMapping("/{mannaId}")
-	public Map<String, Object> chat(@PathVariable int mannaId){
-		HashMap<String, Object> map = new HashMap<String, Object>();
-		
-		List<Chat> chatList= service.chatList(mannaId);
-		map.put("chat", chatList);
-		
-		return map;
-	}
+	@GetMapping("/detail/{mannaId}")
+	public String detail(@PathVariable int mannaId, @SessionAttribute User user, Model model) {
 
-	
-	@PostMapping
-	public Chat sendMessage(@RequestBody Chat item) {
-		service.sendMessage(item);
+		int num = user.getNum();
 		
-		return item;
+		List<Manna> roomList = service.mannaList(num);
+		model.addAttribute("roomList", roomList);
+		
+		List<Chat> chatList = service.chatList(mannaId);
+		model.addAttribute("chatList", chatList);
+		
+		return path + "detail";
 	}
 }

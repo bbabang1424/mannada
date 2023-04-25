@@ -57,4 +57,9 @@ public class QuestionDaoImpl implements QuestionDao {
 		sql.update("question.change_status", questionId);
 	}
 
+	@Override
+	public Answer answer(int id) {
+		return sql.selectOne("question.answer", id);
+	}
+
 }

@@ -4,29 +4,31 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
-
+<title>회원가입</title>
+<jsp:include page="header.jsp"></jsp:include>
+<link rel="stylesheet" href="/resources/css/signup.css">
 </head>
 <body>
-<div>
-	<form method="post">
-		<div>
-			<h3>signup</h3>
-		</div>
+ <div class="signup-box">
+        <div class="title">
+            회원가입
+        </div>
+        <br>
+        <div class="blank">
 
-		<div>
-			<label>id</label>
-			<input type="email" name="id">
-			<button>check</button>
-		</div>
-		<div>
-			<label>password</label>
-			<input type="password" name="pw">
-		</div>
-		<div>
-			<button>signup</button>
-		</div>
-	</form>
-</div>
+           <button type="button" class="naver-btn"><img src="/resources/image/naver_logo.png" alt="">네이버로 회원가입 하기</button>
+           
+           <button  type="button" class="kakao-btn"><img src="/resources/image/kakao_logo.png" alt="">카카오로 회원가입 하기</button>
+           
+           <button  type="button" class="google-btn"><img src="/resources/image/google_logo.png" alt="">구글로 회원가입 하기</button>       
+           
+           <div class="blank">
+               또는
+            </div>
+            
+            <a href="/signup_email"><button type="button" class="email-btn">이메일로 회원가입 하기</button></a>
+            
+        </div>
+    </div>
 </body>
 </html>
