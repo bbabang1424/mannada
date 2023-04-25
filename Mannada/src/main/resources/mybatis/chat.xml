@@ -11,6 +11,15 @@
 	<select id="chat_list" resultType="Chat">
 		SELECT c.*
 		FROM chat c LEFT OUTER JOIN user u ON c.num = u.num
-		WHERE c.manna_id = #{mannaId}
+		WHERE c.manna_id = #{id}
 	</select>
+	
+	<insert id="send_message">
+		INSERT INTO chat(manna_id, num, content, reg_date)
+		VALUES (#{mannaId}, #{num},#{content}, NOW())
+		
+		<selectKey keyColumn="id" keyProperty="id" resultType="Integer" order="AFTER">
+			SELECT LAST_INSERT_ID()
+		</selectKey>
+	</insert>
 </mapper>

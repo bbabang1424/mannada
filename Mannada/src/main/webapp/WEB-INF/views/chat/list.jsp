@@ -16,7 +16,7 @@
     <div class="container">
         <div id="room">
 	        <c:forEach var="item" items="${list }">
-	            <a href="detail/${roomId}">
+	            <a href="detail/${item.id}">
 	                <div class="list">
 	                    <p>${item.dDay }</p>
 	                    <p>${item.title }</p>

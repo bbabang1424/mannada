@@ -19,4 +19,6 @@ public interface MannaDao {
 
 	void delete(int id);
 
+	void deleteJoins(int id);
+
 }

@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
  
 <title>만나다</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -196,8 +197,14 @@ $(function() {
 				
 				<div class="login">
 					<ul>
-						<li><a href="/signup">회원가입</a></li>
-						<li><button onclick="location.href='/login'">로그인</button></li>
+						<c:if test="${sessionScope.user == null}">
+							<li><a href="/signup">회원가입</a></li>
+							<li><button onclick="location.href='/login'">로그인</button></li>
+						</c:if>
+						
+						<c:if test="${sessionScope.user != null}">
+							<li><button onclick="location.href='/logout'">로그아웃</button></li>
+						</c:if>
 					</ul>
 				</div>
 			</div>

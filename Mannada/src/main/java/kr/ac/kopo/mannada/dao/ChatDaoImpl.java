@@ -22,12 +22,12 @@ public class ChatDaoImpl implements ChatDao {
 	}
 
 	@Override
-	public List<Chat> chatList(int mannaId) {
-		return sql.selectList("chat.chat_list", mannaId);
+	public List<Chat> chatList(int id) {
+		return sql.selectList("chat.chat_list", id);
 	}
 
 	@Override
-	public void sendMessage(Chat item) {
+	public void add(Chat item) {
 		sql.insert("chat.send_message", item);
 	}
 

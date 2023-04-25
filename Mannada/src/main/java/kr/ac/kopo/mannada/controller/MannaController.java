@@ -56,6 +56,8 @@ public class MannaController {
 	@PostMapping("/add")
 	public String add(@SessionAttribute User user, Manna item) {
 		
+		System.out.println(user.getNum());
+		
 		item.setNum(user.getNum());
 		service.add(item);
 		
