@@ -40,8 +40,8 @@
 	
 	<insert id="add">
 		INSERT INTO manna
-		(title, reg_date, member, d_day, content, category, postnum, address, det_address)
-		VALUES (#{title}, NOW(), #{member}, #{dDay}, #{content}, #{category}, #{postnum}, #{address}, #{detAddress})
+		(num, title, reg_date, member, d_day, content, category, postnum, address, det_address)
+		VALUES (#{num}, #{title}, NOW(), #{member}, #{dDay}, #{content}, #{category}, #{postnum}, #{address}, #{detAddress})
 		
 		<selectKey keyColumn="id" keyProperty="id" resultType="Integer" order="AFTER">
 			SELECT LAST_INSERT_ID()

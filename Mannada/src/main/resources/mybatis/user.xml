@@ -19,7 +19,7 @@
 	
 	
 	<insert id="add_partner">
-		INSERT INTO join
+		INSERT INTO joins
 		VALUES (#{mannaId}, #{num})
 	</insert>
 </mapper>

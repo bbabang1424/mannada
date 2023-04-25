@@ -44,7 +44,7 @@
 		<div class="card_box">
 			<!-- c:forEach 반복 필요할때 쓰는 것-->
 			<c:forEach var="item" items="${list}">
-				<a href="detail/${item.id }"><div id="card">
+				<a href="detail/${item.id}"><div id="card">
 						<div>
 							<div class="Category">
 								<span>${item.category }</span>
@@ -90,7 +90,8 @@
 							href="?page=${pager.prev}${pager.query}" class="page-link">이전</a></li>
 
 						<c:forEach var="page" items="${pager.list}">
-							<li class="page_nation_item"><a
+							<li class="page_nation_item"><a 
+							style="background-color: #555555; border-color: #555555;"
 								href="?page=${page}${pager.query}"
 								class="page-link ${page eq pager.page ? 'active' : ''}">${page}</a></li>
 						</c:forEach>
