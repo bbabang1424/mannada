@@ -40,6 +40,8 @@ public class MannaServiceImpl implements MannaService {
 
 	@Override
 	public void delete(int id) {
+		dao.deleteJoins(id);
+		
 		dao.delete(id);
 	}
 

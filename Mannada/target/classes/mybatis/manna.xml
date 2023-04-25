@@ -65,4 +65,9 @@
 		WHERE id=#{id}
 	</delete>
 	
+	<delete id="delete_joins">
+		DELETE FROM joins
+		WHERE manna_id = #{id}
+	</delete>
+	
 </mapper>
