@@ -2,6 +2,21 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="notice">
+	<sql id="search">
+		SELECT notice.*, nickname FROM notice
+		LEFT OUTER JOIN manager ON notice.mgr_id = manager.id
+		<where>
+			<if test="search == 1">
+				title LIKE CONCAT('%', #{keyword}, '%')
+			</if>
+			<if test="search == 2">
+				content LIKE CONCAT('%', #{keyword}, '%')
+			</if>
+			<if test="search == 3">
+				name LIKE CONCAT('%', #{keyword}, '%')
+			</if>
+		</where>
+	</sql>
 
 	<select id="total" resultType="Integer">
 		SELECT COUNT(*)
@@ -31,7 +46,7 @@
 
 	<select id="item" resultType="Notice">
 		SELECT notice.*, nickname
-		FROM (SELECT *, LAG(id) OVER (ORDER BY id) AS prevId, LEAD(id) OVER (ORDER BY id) AS nextId FROM notice) AS notice
+		FROM notice
 		LEFT OUTER JOIN manager ON notice.mgr_id = manager.id
 		WHERE notice.id = #{id}
 	</select>
@@ -47,37 +62,6 @@
 	<delete id="delete">
 		DELETE FROM notice
 		WHERE id = #{id}
-	</delete>
-	
-	
-	<sql id="search">
-		SELECT notice.*, nickname FROM notice
-		LEFT OUTER JOIN manager ON notice.mgr_id = manager.id
-		<where>
-			<if test="search == 1">
-				title LIKE CONCAT('%', #{keyword}, '%')
-			</if>
-			<if test="search == 2">
-				content LIKE CONCAT('%', #{keyword}, '%')
-			</if>
-			<if test="search == 3">
-				name LIKE CONCAT('%', #{keyword}, '%')
-			</if>
-		</where>
-	</sql>
-	
-
-
-	<!-- 북마크 -->
-	<insert id="bookmark_add">
-		INSERT INTO bookmark(mgr_id, notice_id)
-		VALUES (#{mgrId}, #{boardId})
-	</insert>
-
-
-	<delete id="bookmark_delete">
-		DELETE FROM bookmark
-		WHERE mgr_id = #{mgrId} AND notice_id = #{boardId}
 	</delete>
 
 </mapper>

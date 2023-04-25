@@ -25,7 +25,6 @@ public class RootController {
 	
 	@Autowired
 	ManagerService managerService;
-	
 
 	@RequestMapping("/")
 	public String index(Model model, Pager pager) {
@@ -124,6 +123,5 @@ public class RootController {
 	public String mypage() {
 		return "mypage";
 	}
-
-
+	
 }

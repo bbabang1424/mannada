@@ -9,6 +9,7 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
 <link href="/resources/css/index.css" rel="stylesheet"> 
 <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDI-f5yrjAVhR8g9-FlTF-s_kLAEnZZ55k&callback=initMap"></script>
+<script src="/resources/js/searchAddress.js"></script>
 <script>
 window.initMap = function () {
 	  const map = new google.maps.Map(document.getElementById("map"), {

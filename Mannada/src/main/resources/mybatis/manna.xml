@@ -22,6 +22,10 @@
 			<if test="search eq 5">
 				content LIKE CONCAT(CONCAT('%',#{keyword}),'%')
 			</if>
+			<!-- 주소검색관련-->
+			<if test="search eq 6">
+				address LIKE CONCAT(CONCAT('%',#{keyword}),'%')
+			</if>
 		</where>
 		ORDER BY id DESC
 	</sql>
