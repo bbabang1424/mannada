@@ -10,16 +10,27 @@
 <title>Insert title here</title>
 <jsp:include page="../header.jsp"></jsp:include>
 <link href="/resources/css/style.css" rel="stylesheet">
+<link href="/resources/css/chat.css" rel="stylesheet">
 </head>
-<body> 
-	<div class="container">
-		<c:forEach var="item" items="${list }">
-			<div>
-				<a href="detail/${item.id }">${item.title }</a> 
-			</div>
-		</c:forEach>
-	</div>
-	
+<body>
+    <div class="container">
+        <div id="room">
+	        <c:forEach var="item" items="${list }">
+	            <a href="detail/${item.id}">
+	                <div class="list">
+	                    <p>${item.dDay }</p>
+	                    <p>${item.title }</p>
+	                </div>
+	            </a>
+	        </c:forEach>
+        </div>
+
+
+        <div id="chat">
+            채팅을 해보세요
+        </div>
+    </div>
+    
 <jsp:include page="../footer.jsp"></jsp:include>
 </body>
 </html>

@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.SessionAttribute;
 
@@ -14,6 +15,7 @@ import kr.ac.kopo.mannada.model.Chat;
 import kr.ac.kopo.mannada.model.Manna;
 import kr.ac.kopo.mannada.model.User;
 import kr.ac.kopo.mannada.service.ChatService;
+import kr.ac.kopo.mannada.service.MannaService;
 
 @Controller
 @RequestMapping("/chat")
@@ -22,6 +24,9 @@ public class ChatController {
 	
 	@Autowired
 	ChatService service;
+	
+	@Autowired
+	MannaService mannaService;
 	
 	
 	@GetMapping("/list")
@@ -35,12 +40,29 @@ public class ChatController {
 		return path + "list";
 	}
 	
-	@GetMapping("/detail/{mannaId}")
-	public String detail(@PathVariable int mannaId, Model model) {
+	@GetMapping("/detail/{id}")
+	public String detail(@PathVariable int id, @SessionAttribute User user, Model model) {
+
+		int num = user.getNum();
 		
-		List<Chat> list = service.chatList(mannaId);
-		model.addAttribute("list", list);
+		List<Manna> roomList = service.mannaList(num);
+		model.addAttribute("roomList", roomList);
+		
+		Manna item = mannaService.item(id);
+		model.addAttribute("item", item);
+		
+		List<Chat> chatList = service.chatList(id);
+		model.addAttribute("chatList", chatList);
 		
 		return path + "detail";
+	}
+	
+	@PostMapping("/add")
+	public String add(@SessionAttribute User user, Chat item) {
+		item.setNum(user.getNum());
+		
+		service.add(item);
+		
+		return "redirect:detail/"+ item.getId(); 
 	}
 }

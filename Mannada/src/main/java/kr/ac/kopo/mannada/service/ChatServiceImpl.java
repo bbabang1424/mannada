@@ -21,13 +21,13 @@ public class ChatServiceImpl implements ChatService {
 	}
 
 	@Override
-	public List<Chat> chatList(int mannaId) {
-		return dao.chatList(mannaId);
+	public List<Chat> chatList(int id) {
+		return dao.chatList(id);
 	}
 
 	@Override
-	public void sendMessage(Chat item) {
-		dao.sendMessage(item);
+	public void add(Chat item) {
+		dao.add(item);
 	}
 
 }

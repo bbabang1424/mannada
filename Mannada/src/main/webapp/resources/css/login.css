@@ -47,7 +47,7 @@
 }
 
 #user-login {
-    display: none; /* 사용자 로그인, 관리자 로그인 숨김 */
+    display: block; /* 사용자 로그인, 관리자 로그인 숨김 */
 }
 
 .login-button {

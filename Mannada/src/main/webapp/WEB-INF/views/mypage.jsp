@@ -11,6 +11,7 @@
 <body>
 
 <p>마이페이지</p>
+<a href="../chat/list">채팅 이동</a>
 
 <jsp:include page="footer.jsp"></jsp:include>
 </body>

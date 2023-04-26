@@ -58,7 +58,7 @@
 
 .card_box {
 	margin: 0.5em;
-	text-align: center;
+	text-align: left;
 	padding: 0.5em;
 }
 
@@ -172,12 +172,4 @@ div>.gauge_bar>div:first-child {
 	background-color: #555555;
 	color: white;
 	border-color: #555555;
-}
-
-.active>.page-link, .page-link.active {
-	z-index: 3;
-	color: #555555;
-	background-color: white;
-	border-color: #555555;
-	background-color: white;
 }

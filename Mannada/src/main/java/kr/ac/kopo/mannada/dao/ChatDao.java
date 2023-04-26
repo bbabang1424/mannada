@@ -9,8 +9,8 @@ public interface ChatDao {
 
 	List<Manna> mannaList(int num);
 
-	List<Chat> chatList(int mannaId);
+	List<Chat> chatList(int id);
 
-	void sendMessage(Chat item);
+	void add(Chat item);
 
 }
