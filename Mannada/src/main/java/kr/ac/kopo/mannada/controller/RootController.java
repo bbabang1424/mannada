@@ -1,5 +1,7 @@
 package kr.ac.kopo.mannada.controller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,10 +13,14 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import kr.ac.kopo.mannada.model.Address;
 import kr.ac.kopo.mannada.model.Manager;
+import kr.ac.kopo.mannada.model.Manna;
 import kr.ac.kopo.mannada.model.User;
 import kr.ac.kopo.mannada.pager.Pager;
+import kr.ac.kopo.mannada.service.AddressService;
 import kr.ac.kopo.mannada.service.ManagerService;
+import kr.ac.kopo.mannada.service.MannaService;
 import kr.ac.kopo.mannada.service.UserService;
 
 @Controller
@@ -26,6 +32,11 @@ public class RootController {
 	@Autowired
 	ManagerService managerService;
 	
+	@Autowired
+	AddressService addressService;
+	
+	@Autowired
+	MannaService mannaService;
 
 	@RequestMapping("/")
 	public String index(Model model, Pager pager) {
@@ -106,7 +117,7 @@ public class RootController {
 
 		service.signup(item);
 
-		return "redirect:.";
+		return "signup_ok";
 	}
 
 	/* 회원가입 시 중복 아이디 확인. */
@@ -124,6 +135,45 @@ public class RootController {
 	public String mypage() {
 		return "mypage";
 	}
-
-
+	
+	/*selectbox 주소관련*/
+	@ResponseBody
+	@GetMapping("/metro")
+	public List<Address> metro() {
+		 return addressService.metro();
+	}	
+	@ResponseBody
+	@GetMapping("/city")
+	public List<Address> city(String metro) {
+		 return addressService.city(metro);
+	}	
+	@ResponseBody
+	@GetMapping("/road")
+	public List<Address> road(Address address) {
+		 return addressService.road(address);
+	}	
+	@ResponseBody
+	@GetMapping("/jibun")
+	public List<Address> jibun(Address address) {
+		 return addressService.jibun(address);
+	}
+	/*주소검색*/
+	@GetMapping("/searchAddress")
+	public String searchAddress(String addressType, String metro, String city, String address, Model model) {
+		/** address 를 select값 제대로 불러오는지 확인하는 코드
+		model.addAttribute("address", metro + " " + city + " " + address);
+		**/		
+		// pager
+		Pager pager = new Pager();
+		//manna.xml의 "search eq 6"과 keyword값 설정
+		pager.setSearch(6);
+		pager.setKeyword(metro + " " + city + " " + address);
+		
+		// 만나다 검색
+		List<Manna> mannaList = mannaService.list(pager);
+		model.addAttribute("mannaList", mannaList);
+		
+		return "searchAddress";
+	}
+	
 }

@@ -9,6 +9,7 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
 <link href="/resources/css/index.css" rel="stylesheet"> 
 <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDI-f5yrjAVhR8g9-FlTF-s_kLAEnZZ55k&callback=initMap"></script>
+<script src="/resources/js/searchAddress.js"></script>
 <script>
 window.initMap = function () {
 	  const map = new google.maps.Map(document.getElementById("map"), {
@@ -100,11 +101,34 @@ window.initMap = function () {
 				<div>
 					<h3>나에게 맞는 <b>맞춤 만남</b>은?</h3>
 				</div>
+				<form name="addrSearch" action="searchAddress">
+					<div>
+						<input type="radio" name="addressType" value="road" checked>도로명 <input type="radio" name="addressType" value="jibun">지번 
+					</div>
+					<div>
+						<select id="metro" name="metro">
+							<option value="선택하세요">선택하세요</option>				
+						</select>
+					</div>
+					<div>
+						<select id="city" name="city">
+							<option value="선택하세요">선택하세요</option>
+						</select>
+					</div>
+					<div>
+						<select id="address" name="address">
+							<option value="0">선택하세요</option>
+						</select>
+					</div>
+					<div>
+						<button id="searchAddress">검색</button>
+					</div>
+				</form>
 			</div>
 		</div> 
  		<div id="map" style="width: 100%; height: 550px;"></div>
  	</div>
- 
+ 	
 <jsp:include page="footer.jsp"></jsp:include>
  <!-- Swiper JS -->
  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
