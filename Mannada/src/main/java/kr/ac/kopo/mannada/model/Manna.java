@@ -18,7 +18,7 @@ public class Manna {
 	
 	/*외래키*/
 	private String userId;
-	private String name;
+	private String nickname;
 	
 	/*구성키*/
 	private int rnum;
@@ -170,13 +170,13 @@ public class Manna {
 	}
 
 
-	public String getName() {
-		return name;
+	public String getNickname() {
+		return nickname;
 	}
 
 
-	public void setName(String name) {
-		this.name = name;
+	public void setNickname(String nickname) {
+		this.nickname = nickname;
 	}
 
 
