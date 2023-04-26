@@ -63,6 +63,6 @@ public class ChatController {
 		
 		service.add(item);
 		
-		return "redirect:detail/"+ item.getId(); 
+		return "redirect:detail/"+ item.getMannaId(); 
 	}
 }

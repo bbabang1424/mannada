@@ -1,46 +1,57 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>community_add</title>
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">
+
+<link rel="stylesheet" href="/resources/css/community_add.css">
+<jsp:include page="../header.jsp"></jsp:include>
 </head>
 <body>
-<form method="post">
-	<div>
-		<label>카테고리</label>
-		<input type="radio" name="category" value="1">공동구매 
-		<input type="radio" name="category" value="2">운동 
-		<input type="radio" name="category" value="3">게임
-		<input type="radio" name="category" value="4">식사 
-		<input type="radio" name="category" value="5" checked="checked">기타 
+	<div class="banner">
+		<ul class="banner_text">
+			<li>커뮤니티</li>
+			<i class="bi bi-caret-right-fill"></i>
+			<li>글 등록</li>
+		</ul>
+		<h3 class="page_title">커뮤니티</h3>
+		<p class="page_text">자유롭게 서로의 생각을 글로 표현 해주세요.</p>
 	</div>
-	<div>
-		<label>제목</label>
-		<input type="text" name="title">
-	</div>
-	<div>
-		<label>장소</label>
-		<input type="text" name="address">
-	</div>
-<!-- 	<div>
-		<label>날자</label>
-		<input type="date" name="date">
-	</div> -->
-	<div>
-		<label>인원</label>
-		<input type="number" name="member">
-	</div>
-	<div>
-		<label>내용</label>
-		<textarea rows="10" cols="30"></textarea>
-	</div>
-	
-	<div>
-		<button>등록</button>
-			<a href="list">이전</a>
-	</div>
-</form>
+	<div class="container">
+			<form method="post" >
+			<table class="box">
+				<colgroup>
+					<col width="10%" />
+					<col width="35%" />
+				</colgroup>
+
+				<tbody>
+					<tr style="border-bottom: 1px solid #ccc;">
+						<th id="interval">제 목</th>
+						<td class="title"><input id="title" name="title" type="text">${item.id}</td>
+					</tr>
+
+					<tr>
+						<th id="interval">본문내용</th>
+						<td class="detail">
+						<textarea id="summernote" name="content" class="control" placeholder="텍스트 내용을 입력해주세요"></textarea>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<!-- 하단:lower -->
+			<div class="lower">
+				<button class="raise_btn">등록</button>
+				<a href="list"><button type="button" class="cancel_btn">취소</button></a>
+			</div>
+		</form>
+	 </div>
 </body>
+
 </html>

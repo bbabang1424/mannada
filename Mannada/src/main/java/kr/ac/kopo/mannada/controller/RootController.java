@@ -105,7 +105,7 @@ public class RootController {
 
 		service.signup(item);
 
-		return "redirect:.";
+		return "signup_ok";
 	}
 
 	/* 회원가입 시 중복 아이디 확인. */

@@ -12,7 +12,7 @@ public class Manna {
 	private String content;
 	private int category;      //1.공동구매 2.운동 3.식사 4.게임 5.기타
 	private int viewCnt;	
-	private int postnum;       //우편번호
+	private String postnum;       //우편번호
 	private String address;    //주소
 	private String detAddress;  //상세주소
 	
@@ -39,154 +39,125 @@ public class Manna {
 			return "없음";
 	}
 
-
 	public int getId() {
 		return id;
 	}
-
 
 	public void setId(int id) {
 		this.id = id;
 	}
 
-
 	public int getNum() {
 		return num;
 	}
-
 
 	public void setNum(int num) {
 		this.num = num;
 	}
 
-
 	public String getTitle() {
 		return title;
 	}
-
 
 	public void setTitle(String title) {
 		this.title = title;
 	}
 
-
 	public Date getRegDate() {
 		return regDate;
 	}
-
 
 	public void setRegDate(Date regDate) {
 		this.regDate = regDate;
 	}
 
-
 	public int getMember() {
 		return member;
 	}
-
 
 	public void setMember(int member) {
 		this.member = member;
 	}
 
-
 	public String getdDay() {
 		return dDay;
 	}
-
 
 	public void setdDay(String dDay) {
 		this.dDay = dDay;
 	}
 
-
 	public String getContent() {
 		return content;
 	}
-
 
 	public void setContent(String content) {
 		this.content = content;
 	}
 
-
 	public int getCategory() {
 		return category;
 	}
-
 
 	public void setCategory(int category) {
 		this.category = category;
 	}
 
-
 	public int getViewCnt() {
 		return viewCnt;
 	}
-
 
 	public void setViewCnt(int viewCnt) {
 		this.viewCnt = viewCnt;
 	}
 
-
-	public int getPostnum() {
+	public String getPostnum() {
 		return postnum;
 	}
 
-
-	public void setPostnum(int postnum) {
+	public void setPostnum(String postnum) {
 		this.postnum = postnum;
 	}
-
 
 	public String getAddress() {
 		return address;
 	}
 
-
 	public void setAddress(String address) {
 		this.address = address;
 	}
-
 
 	public String getDetAddress() {
 		return detAddress;
 	}
 
-
 	public void setDetAddress(String detAddress) {
 		this.detAddress = detAddress;
 	}
-
 
 	public String getUserId() {
 		return userId;
 	}
 
-
 	public void setUserId(String userId) {
 		this.userId = userId;
 	}
-
 
 	public String getName() {
 		return name;
 	}
 
-
 	public void setName(String name) {
 		this.name = name;
 	}
-
 
 	public int getRnum() {
 		return rnum;
 	}
 
-
 	public void setRnum(int rnum) {
 		this.rnum = rnum;
 	}
+
 	
 }

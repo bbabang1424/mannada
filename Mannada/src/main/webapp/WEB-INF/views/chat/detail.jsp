@@ -34,18 +34,17 @@
             <div class="message">
 	            <c:forEach var="item" items="${chatList }">
 	                <div class="list">
-	                	${item.num }
-	                    ${item.content }
-	                    ${item.regDate }
+	                	<p>${item.nickname } | ${item.regDate }</p>
+	                	<p>${item.content }</p>
 	                </div>
 	            </c:forEach>
             </div>
 
             <div class="send">
                 <form action="../add" method="post">
-                    <input type="number" name="mannaId" value="${item.id}" class="hidden" disabled>
+                    <input type="number" name="mannaId" value="${item.id}" class="hidden">
                     <input type="text" name="content">
-                    <button>전송</button>
+                    <button type="button" onclick="send_message">전송</button>
                 </form>
             </div>
         </div>
