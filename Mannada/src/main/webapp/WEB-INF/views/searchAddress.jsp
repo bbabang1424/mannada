@@ -7,7 +7,7 @@
 <meta charset="UTF-8">
 
 <title>manna_list</title>
-<jsp:include page="../header.jsp"></jsp:include>
+<jsp:include page="header.jsp"></jsp:include>
 <link rel="stylesheet" href="/resources/css/manna_list.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">
 </head>
@@ -100,4 +100,6 @@
 		</table>			
 	</div>		
 </body>
+
+<jsp:include page="footer.jsp"></jsp:include>
 </html>

@@ -15,6 +15,7 @@
 		<typeAlias type="kr.ac.kopo.mannada.model.Question" alias="Question"/>
 		<typeAlias type="kr.ac.kopo.mannada.model.Answer" alias="Answer"/>
 		<typeAlias type="kr.ac.kopo.mannada.model.Chat" alias="Chat"/>
+		<typeAlias type="kr.ac.kopo.mannada.model.Address" alias="Address"/>
 	</typeAliases>
 	
 	<mappers>
@@ -25,5 +26,6 @@
 		<mapper resource="mybatis/community.xml" />
 		<mapper resource="mybatis/question.xml" />
 		<mapper resource="mybatis/chat.xml" />
+		<mapper resource="mybatis/address.xml" />
 	</mappers>
 </configuration>
