@@ -23,7 +23,7 @@ window.initMap = function () {
 <body> 
  	<div class="swiper mySwiper">
 	    <div class="swiper-wrapper">
-		      <div class="swiper-slide">Slide 1</div>
+		      <div class="swiper-slide" style="background-image:url(/resources/image/swiper1.jpg);"><span id="slide-1">혼자를 떠나, 모두를 만나다.</span></div>
 		      <div class="swiper-slide">Slide 2</div>
 		      <div class="swiper-slide">Slide 3</div>
 		</div>
@@ -94,6 +94,16 @@ window.initMap = function () {
 				
 	</div>
 </div>
+
+	<div class="tutorial">
+		<div class="max-width">
+			<ul>
+				<li><img src="/resources/image/tuto1.png"><span>만나다 사이트에서<br>함께하고 싶은 모집글 등록</span></li>
+				<li><img src="/resources/image/tuto2.png"><span>다른 사람이<br>내 모집글에 참여</span></li>
+				<li><img src="/resources/image/tuto3.png"><span>그 사람과 직접 만나<br>하고 싶은 일을 하기!</span></li>
+			</ul>
+		</div>
+	</div>
 	
  	<div class="mannam-map"> 
 		<div id="map-layer">

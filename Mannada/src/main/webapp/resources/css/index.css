@@ -3,10 +3,10 @@
 a { color: #000; }
 
 :root { 
-	-swiper-navigation-size: 44px; 
-	-swiper-navigation-color: #fff; 
-	-swiper-pagination-color: #fff; 
-	-swiper-pagination-progressbar-bg-color: rgba(255, 255, 255, 0.25);
+	--swiper-navigation-size: 44px; 
+	--swiper-navigation-color: #fff; 
+	--swiper-pagination-color: #fff; 
+	--swiper-pagination-progressbar-bg-color: rgba(255, 255, 255, 0.25);
 }
 
 .swiper {
@@ -21,6 +21,9 @@ a { color: #000; }
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	-webkit-background-size: cover;
+    background-size: cover;
+    background-position: center;
 }
 
 .swiper-slide img {
@@ -39,6 +42,14 @@ a { color: #000; }
 	width: calc(100% - 1180px);
 }
 
+#slide-1 {
+	font-size: 35pt;
+    font-weight: 900;
+    color: #fff;
+    text-shadow: 0 0 10px rgba(0,0,0,0.4);
+    letter-spacing: -1.5pt;
+}
+
 .center { text-align: center; }
 .category {
 	margin: 60px 0;
@@ -49,6 +60,28 @@ a { color: #000; }
 .category li { display: inline-block; padding: 10px 30px;}
 .category-inner { max-width:1000px; margin: 0 auto;}
 .icon img { width:70px; display: block; margin-bottom: 10px; }
+
+.tutorial {
+	width: 100%;
+	padding: 90px;
+	background-color: #0359d9;
+	color: #fff;
+	font-size: 14pt;
+}
+
+.tutorial img { margin-bottom: 20px; }
+
+.tutorial ul {
+	display: flex;
+	justify-content: space-between;
+    padding-left: 0; 
+    margin-bottom: 0;
+}
+
+.tutorial li {
+	width: min-content;
+	text-align: center; 
+}
 
 .mannam-map {
 	position: relative;
