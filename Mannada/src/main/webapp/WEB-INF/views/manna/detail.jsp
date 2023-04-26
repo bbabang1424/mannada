@@ -74,8 +74,8 @@
 			<div class="lower">
 				<!-- modify:수정하다란 뜻 -->
 				<button class="button_chatting">채팅</button>
-				<button class="button_modify">수정</button>
-				<button class="button_delete">삭제</button>
+				<a href="../update/${id}"><button class="button_modify">수정</button></a>
+				<a href="../delete/${id}"><button class="button_delete">삭제</button></a>
 			</div>
 		</div>
 	</section>
