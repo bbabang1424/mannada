@@ -36,14 +36,14 @@
 }
 
 .page_title {
-	width: 61.5%;
+	width: 62%;
 	padding-top: 21px;
 	font-weight: bolder;
 	margin: 0 auto;
 }
 
 .page_text {
-	width: 61.5%;
+	width: 62%;
 	padding-bottom: 33px;
 	margin: 0 auto;
 }
@@ -57,10 +57,10 @@
 }
 /* 간격*/
 #interval {
+	padding-right: 24%;
 	display: inline-block;
-	margin: 1em 1em 1em 2em;
-	text-align: center;
-	font-weight: bold;
+	margin: 2em 2em 2em;
+	text-align: left;
 }
 /*select_box  */
 /* .select{
@@ -89,7 +89,7 @@
 #title {
 	margin: 1em;
 	display: inline-block;
-	width: 73%;
+	width: 89%;
 	padding: 0.375rem 1.25rem 0.375rem 0.75rem;
 	font-size: 1rem;
 	font-weight: 400;
@@ -101,7 +101,7 @@
 	background-size: 16px 12px;
 	border: 1px solid #ced4da;
 	border-radius: 0.375rem;
-	margin-left: 6%;
+	padding: 0.375rem 1.25rem 0.375rem 0.75rem;
 }
 
 .category {
@@ -124,7 +124,7 @@
 	margin-left: 3%;
 	display: inline-block;
 	width: 6%;
-	text-align: center;
+	text-align: left;
 	padding: 7px;
 	font-size: 1rem;
 	font-weight: 400;
@@ -147,9 +147,9 @@
 }
 
 #postnum {
-	margin-left: 6%;
+	margin-left: 2%;
 	display: inline-block;
-	width: 10%;
+	width: 11%;
 	text-align: center;
 	padding: 7px;
 	font-size: 1rem;
@@ -167,7 +167,7 @@
 
 /* 모집일 */
 #currentDate {
-	margin-left: 4%;
+	margin-left: 2.5%;
 	display: inline-block;
 	width: 62% text-align: center;
 	padding: 7px;
@@ -186,7 +186,7 @@
 #road_addr {
 	margin-left: 2%;
 	display: inline-block;
-	width: 28%;
+	width: 35%;
 	padding: 7px;
 	font-size: 1rem;
 	font-weight: 400;
@@ -204,7 +204,7 @@
 #detAddr {
 	margin-left: 2%;
 	display: inline-block;
-	width: 17%;
+	width: 24%;
 	padding: 7px;
 	font-size: 1rem;
 	font-weight: 400;
@@ -233,9 +233,11 @@
 	border-color: #004fff;
 	border-radius: 0.375rem;
 }
+
 /* tex_box */
 .control {
-	width: 73%;
+	margin: 5em 1em 4em 1em;
+	width: 87.5%;
 	height: 21.25em;
 	border: 1px solid;
 	resize: none;
@@ -245,17 +247,10 @@
 	text-align: left;
 }
 
-.line {
-	margin: 0.5rem 0;
-	color: inherit;
-	border: 0;
-	border-top: 1px solid;
-	opacity: .25;
-}
 /*  하단 /취소,등록*/
 .lower {
+	margin-top: 3%;
 	text-align: right;
-	margin: 3%;
 	width: 87%;
 }
 /* 등록 */
@@ -274,5 +269,5 @@
 	color: #fff;
 	width: 50px;
 	height: 30px;
-	margin-right: 3%;
+	margin-right: 4%;
 }

@@ -104,135 +104,7 @@
 	padding: 0.375rem 1.25rem 0.375rem 0.75rem;
 }
 
-.category {
-	text-align: left;
-}
 
-.Choose_start {
-	margin-left: 3%;
-}
-
-.Choose {
-	margin-left: 8%;
-}
-
-.member {
-	text-align: left;
-}
-
-#member {
-	margin-left: 3%;
-	display: inline-block;
-	width: 6%;
-	text-align: left;
-	padding: 7px;
-	font-size: 1rem;
-	font-weight: 400;
-	line-height: 1.5;
-	color: #212529;
-	background-color: #fff;
-	background-repeat: no-repeat;
-	background-position: right 0.75rem center;
-	background-size: 16px 12px;
-	border: 1px solid #ced4da;
-	border-radius: 0.375rem;
-}
-
-.dDay {
-	text-align: left;
-}
-
-.postnum {
-	text-align: left;
-}
-
-#postnum {
-	margin-left: 2%;
-	display: inline-block;
-	width: 11%;
-	text-align: center;
-	padding: 7px;
-	font-size: 1rem;
-	font-weight: 400;
-	line-height: 1.5;
-	color: #212529;
-	background-color: #fff;
-	background-repeat: no-repeat;
-	background-position: right 0.75rem center;
-	background-size: 16px 12px;
-	border: 1px solid #ced4da;
-	border-radius: 0.375rem;
-	display: inline-block;
-}
-
-/* 모집일 */
-#currentDate {
-	margin-left: 2.5%;
-	display: inline-block;
-	width: 62% text-align: center;
-	padding: 7px;
-	font-size: 1rem;
-	font-weight: 400;
-	line-height: 1.5;
-	color: #212529;
-	background-color: #fff;
-	background-repeat: no-repeat;
-	background-position: right 0.75rem center;
-	background-size: 16px 12px;
-	border: 1px solid #ced4da;
-	border-radius: 0.375rem;
-}
-/* 주소 */
-#road_addr {
-	margin-left: 2%;
-	display: inline-block;
-	width: 35%;
-	padding: 7px;
-	font-size: 1rem;
-	font-weight: 400;
-	line-height: 1.5;
-	color: #212529;
-	background-color: #fff;
-	background-repeat: no-repeat;
-	background-position: right 0.75rem center;
-	background-size: 16px 12px;
-	border: 1px solid #ced4da;
-	border-radius: 0.375rem;
-	text-align: left;
-}
-/* 상세주소 */
-#detAddr {
-	margin-left: 2%;
-	display: inline-block;
-	width: 24%;
-	padding: 7px;
-	font-size: 1rem;
-	font-weight: 400;
-	line-height: 1.5;
-	color: #212529;
-	background-color: #fff;
-	background-repeat: no-repeat;
-	background-position: right 0.75rem center;
-	background-size: 16px 12px;
-	border: 1px solid #ced4da;
-	border-radius: 0.375rem;
-}
-
-#postnum_search {
-	margin-left: 2%;
-	display: inline-block;
-	width: 9%;
-	text-align: center;
-	padding: 7px;
-	font-size: 1rem;
-	font-weight: 400;
-	line-height: 1.5;
-	background-color: #004fff;
-	color: white;
-	border: 1px solid;
-	border-color: #004fff;
-	border-radius: 0.375rem;
-}
 
 /* tex_box */
 .control {
@@ -249,8 +121,8 @@
 
 /*  하단 /취소,등록*/
 .lower {
-	text-align: right;
 	margin-top: 3%;
+	text-align: right;
 	width: 87%;
 }
 /* 등록 */

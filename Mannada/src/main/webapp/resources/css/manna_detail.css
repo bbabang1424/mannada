@@ -1,91 +1,92 @@
 * {
-    margin: 0;
-    padding: 0;
-    text-decoration: none;
-    color: unset;
-    /* font-family: 'Noto sans'; */
+	margin: 0;
+	padding: 0;
+	text-decoration: none;
+	color: unset;
+	/* font-family: 'Noto sans'; */
 }
+
 .content {
-    max-width: 1200px;
-    margin: 0 auto;
-}
-.box{
-    border: 2px solid #D3D3D3;  
-    width: 950px;
-    height: 500px;
-    padding: 10px;
-    margin: 10px; 
-    display: inline-block;
-    position: relative;
-}
-.img{
-    border: 1px solid;
-    border-color: #fff;
-    width: 150px;
-    height: 130px;
-    display: inline-block;
-    margin: 1em;
-    background-color: #D3D3D3;
-
-}
-.Category{
-  
-    display: inline-block;
-    position: absolute;
-    left: 22%;
-    top: 5%;
-    
-   
-}
-.address{
-    display: inline-block;
-    position: absolute;
-    left: 31%;
-    top:5%;
-
-}
-.title{
-    display: inline-block;
-    position: absolute;
-    left:22%;
-    top: 11%;
+	max-width: 1200px;
+	margin: 0 auto;
 }
 
-.Writer{
-    display: inline-block;
-    position: absolute;
-    left: 22%;
-    top: 21%; 
+.box {
+	border: 2px solid #D3D3D3;
+	width: 950px;
+	height: 500px;
+	padding: 10px;
+	margin: 10px;
+	display: inline-block;
+	position: relative;
 }
-.grade{
-    display: inline-block;
-    position: absolute;
-    top: 21%;
-    left: 34%;
+
+.img {
+	border: 1px solid;
+	border-color: #fff;
+	width: 150px;
+	height: 130px;
+	display: inline-block;
+	margin: 1em;
+	background-color: #D3D3D3;
+}
+
+.Category {
+	display: inline-block;
+	position: absolute;
+	left: 22%;
+	top: 5%;
+}
+
+.address {
+	display: inline-block;
+	position: absolute;
+	left: 31%;
+	top: 5%;
+}
+
+.title {
+	display: inline-block;
+	position: absolute;
+	left: 22%;
+	top: 11%;
+}
+
+.Writer {
+	display: inline-block;
+	position: absolute;
+	left: 22%;
+	top: 21%;
+}
+
+.grade {
+	display: inline-block;
+	position: absolute;
+	top: 21%;
+	left: 34%;
 }
 /* .grade>i{
     color: rgb(243, 243, 35); 
 } */
-.views{
-    display: inline-block;
-    position: absolute;
-    top: 26%;
-    left: 89.5%;
-}
-.date{
-    display: inline-block;
-    position: absolute;
-    left: 22%;
-    top:  26%;
-        
+.views {
+	display: inline-block;
+	position: absolute;
+	top: 26%;
+	left: 89.5%;
 }
 
-.personnel{
-    display: inline-block;
-    position: absolute;
-    left: 83%;
-    top:64px;
-   
+.date {
+	display: inline-block;
+	position: absolute;
+	left: 22%;
+	top: 26%;
+}
+
+.personnel {
+	display: inline-block;
+	position: absolute;
+	left: 83%;
+	top: 64px;
 }
 /* #gauge_bar{
     width: 249px;
@@ -100,7 +101,6 @@
     display: inline-block;
  
 }
-
 .gauge{
     display:block;
     width: 20px;
@@ -112,128 +112,143 @@
     animation-timing-function:linear;
     animation-fill-mode:forwards;
 } */
-
-progress{	
-    border: 0;
+progress {
+	border: 0;
 	border-radius: 9px;
 	position: absolute;
 	top: 19%;
 	left: 71%;
-	width: 23%;}
+	width: 23%;
+}
 /* 크기 조절은 height에서 */
-progress::-webkit-progress-bar{
+progress::-webkit-progress-bar {
 	background-color: #ccc;
 	border: 0;
 	height: 20px;
-	border-radius:9px; 
+	border-radius: 9px;
 }
-progress::-webkit-progress-value{
+
+progress::-webkit-progress-value {
 	background-color: #0359d9;
 	border: 0;
 	height: 20px;
-	border-radius:9px; 
+	border-radius: 9px;
 }
 
-.line{
-    width: 900px;
-    border: 1px solid;
-    border-color: #ccc;
-    position: absolute;
-    top: 37%;
-    left: 3%;
-}
-.member{
-    display: inline-block;
-    position: absolute;
-    top: 48%;
-    left: 7%;
+.line {
+	width: 900px;
+	border: 1px solid;
+	border-color: #ccc;
+	position: absolute;
+	top: 37%;
+	left: 3%;
 }
 
-.member_num{
-    position: absolute;
-    top: 42%;
-    left: 22%;
-    width: 550px;
-    height: 80px;
-    overflow:auto;
+.member {
+	display: inline-block;
+	position: absolute;
+	top: 48%;
+	left: 7%;
 }
-.member_num>div{
-    
-    display: inline-block;
-    padding: 8px;
-    margin: 2px;
-    /* text-align: center;
+
+.member_num {
+	position: absolute;
+	top: 42%;
+	left: 22%;
+	width: 550px;
+	height: 80px;
+	overflow: auto;
+}
+
+.member_num>div {
+	display: inline-block;
+	padding: 8px;
+	margin: 2px;
+	/* text-align: center;
     width: 70px;
     height: 15px;
     border-color: #0359d9;
     border: 1px solid;
     border-radius: 10%; */
 }
-.Partic{
-    display: inline-block;
-}
-.Partic > button {
-    display: inline-block;
-    position: absolute;
-   left: 81%;
-    top: 45%;
 
-    width: 120px;
-    height: 50px;
-    background-color: #0359d9;
-    border: #0359d9;
-    color: #fff;
-    font-size: 15px;
-}
-.text_box{
-    width: 850px;
-    height: 110px;
-    position: absolute;
-    top: 64%;
-    left: 6%;
-    overflow:auto;
-    border:none;
-    resize: none;
+.Partic {
+	display: inline-block;
 }
 
-.lower{
-    display: inline-block;
-    position: absolute;
-    top: 89%;
-    left: 74%;
-}
-.lower>button{
-    margin: 5px;
-    width: 50px;
-    height: 30px;
-}
-.button_chatting{
-    background-color: #ed9818;
-    border: #ed9818;
-    color: white;
-}
-.button_modify{
-    background-color: #fff;
-    color: #000;
-    border-color:#000;
-    border: 1px solid;
-}
-.button_modify:hover{
-    background-color: #2cb2ff;
-    border: #2cb2ff;
-    color: #fff;
-}
-.button_delete{
-    background-color: white;
-    border-color:#000;
-    border: 1px solid;
-    color: #000;
-}
-.button_delete:hover{
-     background-color: #de2f00;
-     border: #de2f00;
-     color: #fff;
+.Partic>button {
+	display: inline-block;
+	position: absolute;
+	left: 81%;
+	top: 45%;
+	width: 120px;
+	height: 50px;
+	background-color: #0359d9;
+	border: #0359d9;
+	color: #fff;
+	font-size: 15px;
 }
 
+.text_box {
+	width: 850px;
+	height: 110px;
+	position: absolute;
+	top: 64%;
+	left: 6%;
+	overflow: auto;
+	border: none;
+	resize: none;
+}
 
+.lower {
+	display: inline-block;
+	position: absolute;
+	top: 89%;
+	left: 74%;
+}
 
+.lower>button {
+	margin: 5px;
+	width: 50px;
+	height: 30px;
+}
+
+.button_chatting {
+	background-color: #ed9818;
+	border: #ed9818;
+	color: white;
+}
+
+.button_modify {
+	margin: 5px;
+	width: 50px;
+	height: 30px;
+	background-color: #fff;
+	color: #000;
+	border-color: #000;
+	border: 1px solid;
+	text-align: center;
+}
+
+.button_modify:hover {
+	background-color: #2cb2ff;
+	border: #2cb2ff;
+	color: #fff;
+}
+
+.button_delete {
+	margin: 5px;
+	width: 50px;
+	height: 30px;
+	text-align: center;
+	background-color: white;
+	border-color: #000;
+	border: 1px solid;
+	color: #000;
+}
+
+.button_delete:hover {
+	background-color: #de2f00;
+	border: #de2f00;
+	color: #fff;
+}
