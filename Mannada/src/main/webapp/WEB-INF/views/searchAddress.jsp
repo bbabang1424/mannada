@@ -34,7 +34,7 @@
 			<!-- <a href="../">이전</a> -->
 			
 			<c:if test="${list.size() < 1 }">
-				<div>등록 된 게시글이 없습니다.</div>
+				<div>검색된 게시글이 없습니다.</div>
 			</c:if>
 			<div class="card_box">
 				<!-- c:forEach 반복 필요할때 쓰는 것-->

@@ -170,8 +170,8 @@ public class RootController {
 		pager.setKeyword(metro + " " + city + " " + address);
 		
 		// 만나다 검색
-		List<Manna> list = mannaService.list(pager);
-		model.addAttribute("list", list);
+		List<Manna> mannaList = mannaService.list(pager);
+		model.addAttribute("mannaList", mannaList);
 		
 		return "searchAddress";
 	}

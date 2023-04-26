@@ -103,7 +103,7 @@ window.initMap = function () {
 				</div>
 				<form name="addrSearch" action="searchAddress">
 					<div>
-						<input type="radio" name="addressType" value="road">도로명 <input type="radio" name="addressType" value="jibun" checked>지번 
+						<input type="radio" name="addressType" value="road" checked>도로명 <input type="radio" name="addressType" value="jibun">지번 
 					</div>
 					<div>
 						<select id="metro" name="metro">
