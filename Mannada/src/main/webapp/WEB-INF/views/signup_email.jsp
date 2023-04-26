@@ -39,31 +39,32 @@
 			</div>
 
 			<div class="nickname-title">닉네임</div>
-        <div class="nickname">            
-            <input name="nickname" id="nickname" type="text" placeholder="닉네임 (공백없이 한글, 영문, 숫자만 입력 가능)">
-            <button type="button" class="id_overlap_button" onclick="id_overlap_check()" style="float:right;">중복확인</button>
-            <div id="nicknameError" class="error"></div>            
-        </div>      
-
-    <div class="phone-title">휴대폰 번호</div>               
-        <div class="phone">
-            <input type="tel" name="phone" id="phone" placeholder="휴대폰 번호 (-) 없이">
-            <button type="button" class="id_overlap_button" style="float:right;">본인인증</button>
-        </div>
-
-        <div class="line">
-            <hr>
-        </div>
-
-        <div class="inline">
-            <div class="signUp">
-                <button type="button">회원가입</button>
-            </div>
-    
-            <div class="go_back">
-                <button type="button">취소</button>
-            </div>
-        </div>
+	        <div class="nickname">            
+	            <input name="nickname" id="nickname" type="text" placeholder="닉네임 (공백없이 한글, 영문, 숫자만 입력 가능)">
+	            <button type="button" class="id_overlap_button" onclick="id_overlap_check()" style="float:right;">중복확인</button>
+	            <div id="nicknameError" class="error"></div>            
+	        </div>      
+	
+		    <div class="phone-title">휴대폰 번호</div>               
+	        <div class="phone">
+	            <input type="tel" name="phone" id="phone" placeholder="휴대폰 번호 (-) 없이">
+	            <button type="button" class="id_overlap_button" style="float:right;">본인인증</button>
+	        </div>
+	
+	        <div class="line">
+	            <hr>
+	        </div>
+	
+	        <div class="inline">
+	            <div class="signUp">
+	                <button>회원가입</button>
+	            </div>
+	    
+	            <div class="go_back">
+	                <button type="button">취소</button>
+	            </div>
+	        </div>
+        </form>
     </div>
 </body>
 </html>
