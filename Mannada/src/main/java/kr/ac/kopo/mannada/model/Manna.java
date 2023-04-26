@@ -143,24 +143,12 @@ public class Manna {
 		this.userId = userId;
 	}
 
-<<<<<<< HEAD
-	public String getName() {
-		return name;
-=======
-
 	public String getNickname() {
 		return nickname;
->>>>>>> branch 'master' of https://github.com/xyident/mannada.git
 	}
-
-<<<<<<< HEAD
-	public void setName(String name) {
-		this.name = name;
-=======
 
 	public void setNickname(String nickname) {
 		this.nickname = nickname;
->>>>>>> branch 'master' of https://github.com/xyident/mannada.git
 	}
 
 	public int getRnum() {
@@ -169,7 +157,5 @@ public class Manna {
 
 	public void setRnum(int rnum) {
 		this.rnum = rnum;
-	}
-
-	
+	}	
 }
