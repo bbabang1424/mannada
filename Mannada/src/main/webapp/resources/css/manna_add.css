@@ -36,14 +36,14 @@
 }
 
 .page_title {
-	width: 61.5%;
+	width: 62%;
 	padding-top: 21px;
 	font-weight: bolder;
 	margin: 0 auto;
 }
 
 .page_text {
-	width: 61.5%;
+	width: 62%;
 	padding-bottom: 33px;
 	margin: 0 auto;
 }
@@ -61,7 +61,6 @@
 	display: inline-block;
 	margin: 2em 2em 2em;
 	text-align: left;
-
 }
 /*select_box  */
 /* .select{

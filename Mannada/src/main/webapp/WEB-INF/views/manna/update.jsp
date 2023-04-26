@@ -23,8 +23,8 @@
 			<i class="bi bi-caret-right-fill"></i>
 			<li>글 변경</li>
 		</ul>
-		<h3 class="page_title">글 등록</h3>
-		<p class="page_text">새로운 사람을 모집하는 공고를 올리는 공간입니다.</p>
+		<h3 class="page_title">글 변경</h3>
+		<p class="page_text">등록 된 글의 내용을 수정하는 공간입니다.</p>
 	</div>
 	<div class="container">
 			<form method="post" >
@@ -39,16 +39,15 @@
 						<th id="interval">제 목</th>
 						<td class="title"><input id="title" name="title" type="text" value="${item.title}"></td>
 					</tr>
-
+					<!--뭘로 가져와야 할까...?  -->
 					<tr  style="border-bottom: 1px solid #ccc;">
 						<th id="interval">카테고리</th>
-						<td class="category"><input class="Choose_start" type="radio"
-							name="category" value="1"> 공동구매 <input class="Choose"
-							type="radio" name="category" value="2"> 운동 <input
-							class="Choose" type="radio" name="category" value="3"> 게임
-							<input class="Choose" type="radio" name="category" value="4">식사
-							<input class="Choose" type="radio" name="category" value="5"
-							checked="checked">기타</td>
+						<td class="category">
+						<input class="Choose_start" type="radio" name="category"  value="1" ${item.category==1?"selected":""}> 공동구매 
+						<input class="Choose" type="radio" name="category"  value="2" ${item.category==2?"selected":""}> 운동 
+						<input class="Choose" type="radio" name="category"  value="3" ${item.category==3?"selected":""}> 게임
+						<input class="Choose" type="radio" name="category"  value="4" ${item.category==4?"selected":""}>식사
+						<input class="Choose" type="radio" name="category" checked="checked" value="5" ${item.category==5?"selected":""}>기타</td>
 					</tr>
 					<tr style="border-bottom: 1px solid #ccc;">
 						<th id="interval">모집인원</th>

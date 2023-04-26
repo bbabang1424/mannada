@@ -52,8 +52,9 @@
 						<tr>
 							<td>${item.rnum}</td>
 							<td><a href="detail/${item.id}">${item.title}</a></td>
-							<td></td>
-							<td>${item.regDate}</td>
+							<td>${item.nickname}</td>
+							<td><fmt:formatDate value="${item.regDate}"
+									pattern="yyyy-MM-dd " /></td>
 							<td>${item.viewpoint}</td>
 						</tr>
 					</c:forEach>
@@ -73,7 +74,7 @@
 
 						<c:forEach var="page" items="${pager.list}">
 							<li class="page_nation_item"><a
-								style="background-color: #555555; border-color: #555555;"
+								style="color: white; background-color: #555555; border-color: #555555;"
 								href="?page=${page}${pager.query}"
 								class="page-link ${page eq pager.page ? 'active' : ''}">${page}</a></li>
 						</c:forEach>
@@ -89,7 +90,7 @@
 	</div>
 
 	<div>
-		<a href="add">추가</a> <a href="../">이전</a>
+		<a href="add">글 등록</a> <a href="../">이전</a>
 	</div>
 </body>
 </html>

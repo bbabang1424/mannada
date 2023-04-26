@@ -24,31 +24,34 @@
 		<p class="page_text">자유롭게 서로의 생각을 글로 표현 해주세요.</p>
 	</div>
 	<div class="container">
+			<form method="post" >
+			<table class="box">
+				<colgroup>
+					<col width="10%" />
+					<col width="35%" />
+				</colgroup>
 
-		<div>
-			<form method="post" class="box">
-				<div class="title">
-					<label id="interval">제목</label> <input id="title" name="title"
-						type="text">
-				</div>
+				<tbody>
+					<tr style="border-bottom: 1px solid #ccc;">
+						<th id="interval">제 목</th>
+						<td class="title"><input id="title" name="title" type="text">${item.id}</td>
+					</tr>
 
-				<div class="line"></div>
-
-				<div class="detail">
-					<label id="interval">내용</label>
-				</div>
-				<div>
-					<textarea id="summernote" name="content" class="control"
-						placeholder="텍스트 내용을 입력해주세요"></textarea>
-				</div>
-				<!-- 하단:lower -->
-				<div class="lower">
-					<button class="raise_btn">등록</button>
-					<a href="list"><button type="button" class="cancel_btn">취소</button></a>
-				</div>
-			</form>
-		</div>
-	</div>
+					<tr>
+						<th id="interval">본문내용</th>
+						<td class="detail">
+						<textarea id="summernote" name="content" class="control" placeholder="텍스트 내용을 입력해주세요"></textarea>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<!-- 하단:lower -->
+			<div class="lower">
+				<button class="raise_btn">등록</button>
+				<a href="list"><button type="button" class="cancel_btn">취소</button></a>
+			</div>
+		</form>
+	 </div>
 </body>
 
 </html>

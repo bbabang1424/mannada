@@ -91,7 +91,7 @@
 
 						<c:forEach var="page" items="${pager.list}">
 							<li class="page_nation_item"><a
-								style="background-color: #555555; border-color: #555555;"
+								style="background-color: #555555; border-color: #555555; color: white;"
 								href="?page=${page}${pager.query}"
 								class="page-link ${page eq pager.page ? 'active' : ''}">${page}</a></li>
 						</c:forEach>

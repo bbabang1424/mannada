@@ -27,8 +27,8 @@
 			SELECT LAST_INSERT_ID()
 		</selectKey>
 	</insert>
-
-
+	
+	
 	<select id="item" resultType="community">
 		SELECT community.*, nickname
 		FROM (SELECT *, LAG(id) OVER (ORDER BY id) AS prevId, LEAD(id) OVER (ORDER BY id) AS nextId FROM community) AS community
