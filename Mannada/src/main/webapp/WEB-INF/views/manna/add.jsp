@@ -63,11 +63,11 @@
 
 					<tr style="border-bottom: 1px solid #ccc; width: 500px;">
 						<th id="interval">주소</th>
-						<td class="postnum"><input id="postnum" name="postnum"
-							type="text" placeholder="우편번호"> <input id="road_addr"
-							name="address" type="text" placeholder="주소"> <input
-							id="detAddr" name="detAddress" type="text" placeholder="상세주소">
-							<input id="postnum_search" type="button" onclick="DaumPostcode()"
+						<td class="postnum">
+						<input id="postnum" name="postnum" type="text" placeholder="우편번호">
+						 <input class="road_addr" id="address"name="address" type="text" placeholder="주소"> 
+						 <input class="detAddr" id="detAddress" name="detAddress" type="text" placeholder="상세주소">
+						<input id="postnum_search" type="button" onclick="DaumPostcode()"
 							value="찾기">${item.postnum} ${item.address}
 							${item.detAddress}</td>
 					</tr>

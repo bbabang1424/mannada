@@ -32,7 +32,7 @@
 		<section class="content ">
 			<div id="sign_up_out">
 				<a href="add"><button class="sign_up_in">
-						<i class="bi bi-check"></i>글 등록
+						<i class="bi bi-check"></i>글쓰기
 					</button></a>
 			</div>
 
@@ -80,10 +80,10 @@
 
 
 		<tfoot>
-			<tr>
+			<tr> 
 				<td colspan="5">
 					<ol class="pagination pagination-sm justify-content-center"
-						style="margin: 0">
+						style="margin-bottom: 5">
 						<li class="page_nation_item"><a href="?page=1${pager.query}"
 							class="page-link">처음</a></li>
 						<li class="page_nation_item"><a
@@ -106,7 +106,6 @@
 		</tfoot>
 
 	</div>
-
-
+	<jsp:include page="../footer.jsp"></jsp:include>
 </body>
 </html>
