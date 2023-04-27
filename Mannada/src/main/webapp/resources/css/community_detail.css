@@ -1,0 +1,174 @@
+* {
+	margin: 0;
+	padding: 0;
+	color: unset;
+	text-decoration: none;
+	font-family: 'Noto Sans KR';
+}
+
+.container {
+	text-align: center;
+	max-width: 1220px;
+	margin: 7em 18%;
+}
+
+/*베너  */
+.banner {
+	color: white;
+	border-color: #60a8ef;
+	width: 100%;
+	background-color: #60a8ef;
+	border: 1px solid;
+	background-image: url(/resources/image/banner_imga.png);
+	background-repeat: no-repeat;
+	background-size: 269px 216px;
+	background-position: 79% -12px;
+}
+
+.banner_text {
+	width: 65%;
+	margin: 0 auto;
+}
+
+.banner_text>li {
+	display: inline-block;
+	font-weight: bold;
+	padding-top: 33px;
+	margin: 0 auto;
+}
+
+.page_title {
+	width: 62%;
+	padding-top: 21px;
+	font-weight: bolder;
+	margin: 0 auto;
+}
+
+.page_text {
+	width: 62%;
+	padding-bottom: 33px;
+	margin: 0 auto;
+}
+
+.box {
+	border-top: 2px solid blue;
+	text-align: center;
+	border-bottom: 1px solid #ccc;
+}
+
+.title {
+	width: 95%;
+	display: inline-block;
+	text-align: left;
+}
+
+h4 {
+	margin: 0.5em;
+}
+
+hr {
+	margin: 1px;
+	color: inherit;
+	border: 0;
+	border-top: 1px solid;
+	opacity: .25;
+}
+
+.person {
+	margin: 0.5%;
+	color: #ccc;
+	width: 36px;
+	height: 31px;
+}
+
+.Writer_date_views {
+	background-color: #f3f3f3;
+	/*  font-size: larger; */
+}
+
+.Writer {
+	display: inline-block;
+	margin-top: 0.5px;
+	margin-bottom: 0.5%;
+}
+
+.date {
+	color: #5F5F5F;
+	display: inline-block;
+	margin-left: 69%;
+}
+
+.views {
+	color:	#5F5F5F;
+	display: inline-block;
+}
+
+.text_box {
+	text-align: left;
+	padding-top: 34px;
+	padding-bottom: 35px;
+	font-size: 15px;
+	line-height: 24px;
+	word-break: break-all;
+	white-space: pre-line;
+	padding-left: 4%;
+	padding-right: 4%;
+}
+
+.lower {
+	display: inline-block;
+	margin-top: 3%;
+	text-align: right;
+	width: 100%;
+}
+
+.lower>button {
+	margin: 5px;
+	width: 50px;
+	height: 30px;
+}
+
+.button_list {
+	margin: 5px;
+	width: 50px;
+	height: 30px;
+	background-color: #ed9818;;
+	color: white;
+	border-color: #ed9818;
+	border: 1px solid;
+	text-align: center;
+}
+
+.button_modify {
+	margin: 5px;
+	width: 50px;
+	height: 30px;
+	background-color: #fff;
+	color: #000;
+	border-color: #000;
+	border: 1px solid;
+	text-align: center;
+}
+
+.button_modify:hover {
+	background-color: #2cb2ff;
+	border: #2cb2ff;
+	color: #fff;
+}
+
+.button_delete {
+	margin: 5px;
+	width: 50px;
+	height: 30px;
+	text-align: center;
+	background-color: white;
+	border-color: #000;
+	border: 1px solid;
+	color: #000;
+}
+
+.button_delete:hover {
+	background-color: #de2f00;
+	border: #de2f00;
+	color: #fff;
+}
