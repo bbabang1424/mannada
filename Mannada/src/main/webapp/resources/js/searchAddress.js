@@ -22,7 +22,7 @@ $(function() {
 				//option 생성
 				const option = document.createElement("option");
 				
-				option.value = item.addrId;
+				option.value = item[type]; //item.addrId;
 				option.textContent = item[type];
 				
 				$("#address").append(option);

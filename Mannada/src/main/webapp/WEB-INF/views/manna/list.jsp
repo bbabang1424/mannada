@@ -44,7 +44,7 @@
 					<a href="detail/${item.id}"><div id="card">
 							<div>
 								<div class="Category">
-									<span>${item.category }</span>
+									<span>${item.category_}</span>
 								</div>
 							</div>
 

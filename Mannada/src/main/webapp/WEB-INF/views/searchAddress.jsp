@@ -6,7 +6,7 @@
 <head>
 <meta charset="UTF-8">
 
-<title>manna_list</title>
+<title>searchList</title>
 <jsp:include page="header.jsp"></jsp:include>
 <link rel="stylesheet" href="/resources/css/manna_list.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">
@@ -26,9 +26,9 @@
 
 		<section class="content ">
 			<div id="sign_up_out">
-				<a href="add"><button class="sign_up_in">
-						<i class="bi bi-check"></i>글 등록
-					</button></a>
+				<a href="/manna/add">
+					<button class="sign_up_in"> <i class="bi bi-check"></i>글 등록</button>
+				</a>
 			</div>
 
 			<!-- <a href="../">이전</a> -->
@@ -38,11 +38,11 @@
 			</c:if>
 			<div class="card_box">
 				<!-- c:forEach 반복 필요할때 쓰는 것-->
-				<c:forEach var="item" items="${list}">
-					<a href="detail/${item.id}"><div id="card">
+				<c:forEach var="item" items="${mannaList}">
+					<a href="/manna/detail/${item.id}"><div id="card">
 							<div>
 								<div class="Category">
-									<span>${item.category }</span>
+									<span>${item.category_}</span>
 								</div>
 							</div>
 
@@ -71,33 +71,6 @@
 				</c:forEach>
 			</div>
 		</section>
-		
-		<table>
-			<tfoot>
-				<tr>
-					<td colspan="5">
-						<ol class="pagination pagination-sm justify-content-center"
-							style="margin: 0">
-							<li class="page_nation_item"><a href="?page=1${pager.query}"
-								class="page-link">처음</a></li>
-							<li class="page_nation_item"><a
-								href="?page=${pager.prev}${pager.query}" class="page-link">이전</a></li>
-	
-							<c:forEach var="page" items="${pager.list}">
-								<li class="page_nation_item"><a
-									href="?page=${page}${pager.query}"
-									class="page-link ${page eq pager.page ? 'active' : ''}">${page}</a></li>
-							</c:forEach>
-	
-							<li class="page_nation_item"><a
-								href="?page=${pager.next}${pager.query}" class="page-link">다음</a></li>
-							<li class="page_nation_item"><a
-								href="?page=${pager.last}${pager.query}" class="page-link">마지막</a></li>
-						</ol>
-					</td>
-				</tr>
-			</tfoot>
-		</table>			
 	</div>		
 </body>
 
