@@ -1,6 +1,7 @@
 package kr.ac.kopo.mannada.service;
 
 import java.util.HashMap;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -13,7 +14,6 @@ public class UserServiceImpl implements UserService {
 
 	@Autowired
 	UserDao dao;
-	
 	
 	@Override
 	public boolean login(User user) {
@@ -31,8 +31,7 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public void signup(User item) {
-		
+	public void signup(User item) {		
 		dao.signup(item);
 	}
 
@@ -40,8 +39,8 @@ public class UserServiceImpl implements UserService {
 	public boolean checkId(String id) {
 		if(dao.checkId(id) == 0)
 			return true;
-		
-		return false;
+		else
+			return false;
 	}
 
 	@Override
@@ -49,4 +48,33 @@ public class UserServiceImpl implements UserService {
 		dao.addPartner(map);
 	}
 
+	/*회원정보수정 및 탈퇴 관련*/
+	@Override
+	public List<User> profile() {
+		return dao.profile();
+	}
+
+	@Override
+	public User item(String id) {
+		return dao.item(id);
+	}
+
+	@Override
+	public void proUpdate(User item) {
+		dao.proUpdate(item);
+	}
+
+	@Override
+	public boolean checkPW(String id) {
+		if(dao.checkPW(id) == 1)
+			return true;
+		else
+			return false;
+	}
+
+	@Override
+	public void updatePW(User user) {
+		dao.updatePW(user);
+	}
+	
 }

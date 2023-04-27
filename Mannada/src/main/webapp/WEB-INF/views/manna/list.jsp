@@ -73,7 +73,7 @@
 				</c:forEach>
 			</div>
 		</section>
-		<tfoot >
+		<tfoot>
 				<tr>
 					<td colspan="5">
 						<ol class="pagination pagination-sm justify-content-center"

@@ -13,6 +13,8 @@ public class User {
 	private String imgUrl;
 	private Date regDate;
 	
+	private String newPW;
+	
 	
 	public int getNum() {
 		return num;
@@ -67,6 +69,12 @@ public class User {
 	}
 	public void setRegDate(Date regDate) {
 		this.regDate = regDate;
+	}
+	public String getNewPW() {
+		return newPW;
+	}
+	public void setNewPW(String newPW) {
+		this.newPW = newPW;
 	}
 	
 }
