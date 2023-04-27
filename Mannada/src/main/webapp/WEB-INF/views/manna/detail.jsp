@@ -18,7 +18,7 @@
 			<div class="first">
 				<div class="img"></div>
 
-				<div class="Category">[${item.category }]</div>
+				<div class="Category">[${item.category_}]</div>
 				<div class="address">
 					<i class="bi bi-geo-alt"></i> ${item.address}
 				</div>
