@@ -28,7 +28,7 @@
 				</div>
 				
 				<!-- 데이터 가져 올려고 했는데 오류가 나서 안됨 가져 올수 있는거 가져 옴 -->
-				<div class="Writer">작성자: 홍길동<%-- ${item.name} --%></div>
+				<div class="Writer">작성자: <%-- ${item.nickname} --%></div>
 				<div class="grade">
 					<i class="bi bi-star"></i> 4.5<%-- ${item.star}  --%>
 				</div>
@@ -68,7 +68,7 @@
 				<div class="Partic">
 					<button>참여</button>
 				</div>
-				<textarea class="text_box"><%-- ${item.content} --%></textarea>
+				<textarea class="text_box">${item.content}></textarea>
 			</div>
 			<!-- lower:하단이란 뜻 -->
 			<div class="lower">

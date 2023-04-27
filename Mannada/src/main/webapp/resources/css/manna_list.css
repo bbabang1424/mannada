@@ -73,7 +73,7 @@
 	position: relative;
 }
 
-.card:hover {
+#card:hover {
 	border-color: #0359d9;
 }
 /* 감추는 코드 */

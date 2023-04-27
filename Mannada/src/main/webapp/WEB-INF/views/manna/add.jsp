@@ -35,7 +35,7 @@
 				</colgroup>
 
 				<tbody>
-					<tr style="border-bottom: 1px solid #ccc;">
+					<tr style="border-bottom: 1px solid #ccc; ">
 						<th id="interval">제 목</th>
 						<td class="title"><input id="title" name="title" type="text">${item.id}</td>
 					</tr>
@@ -87,6 +87,7 @@
 			</div>
 		</form>
 	 </div>
+	 <jsp:include page="../footer.jsp"></jsp:include>
 </body>
 
 </html>

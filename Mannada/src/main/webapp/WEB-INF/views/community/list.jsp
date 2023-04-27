@@ -58,8 +58,7 @@
 							<td>${item.rnum}</td>
 							<td><a href="detail/${item.id}">${item.title}</a></td>
 							<td class="nickname">${item.nickname}</td>
-							<td><fmt:formatDate value="${item.regDate}"
-									pattern="yyyy-MM-dd " /></td>
+							<td><fmt:formatDate value="${item.regDate}" pattern="yyyy-MM-dd " /></td>
 							<td>${item.viewpoint}</td>
 						</tr>
 					</c:forEach>

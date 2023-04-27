@@ -41,7 +41,8 @@
 			<div class="card_box">
 				<!-- c:forEach 반복 필요할때 쓰는 것-->
 				<c:forEach var="item" items="${list}">
-					<a href="detail/${item.id}"><div id="card">
+					<a href="detail/${item.id}">
+					<div id="card">
 							<div>
 								<div class="Category">
 									<span>${item.category }</span>
@@ -69,7 +70,8 @@
 							<progress value="40" max="100">
 								<strong>Progress:10%</strong>
 							</progress>
-						</div></a>
+						</div>
+						</a>
 				</c:forEach>
 			</div>
 		</section>
