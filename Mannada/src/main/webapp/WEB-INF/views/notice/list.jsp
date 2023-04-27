@@ -55,7 +55,7 @@
 					<c:forEach var="item" items="${list}">
 						<tr style="border: 1px solid #dddddd; padding-top: 10px;">
 							<td>${item.rnum}</td>
-							<td><a href="detail/${item.id}">${item.title}</a></td>
+							<td><a style="color: black;" href="detail/${item.id}">${item.title}</a></td>
 							<td class="nickname">${item.nickname}</td>
 							<td><fmt:formatDate value="${item.regDate}" pattern="yyyy-MM-dd " /></td>
 							<td>${item.viewCnt}</td>
