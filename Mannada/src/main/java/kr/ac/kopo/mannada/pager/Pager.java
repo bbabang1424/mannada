@@ -11,7 +11,6 @@ public class Pager {
 	
 	private int search;
 	private String keyword;
-	
 
 	public int getSearch() {
 		return search;
@@ -35,9 +34,6 @@ public class Pager {
 
 		return "&search=" + search + "&keyword=" + keyword;
 	}
-
-	
-	
 
 	public int getPerGroup() {
 		return perGroup;

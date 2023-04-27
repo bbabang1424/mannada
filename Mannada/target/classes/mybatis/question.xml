@@ -2,12 +2,26 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="question">
+	<sql id="search">
+		SELECT question.*, nickname FROM question
+		LEFT OUTER JOIN user ON question.num = user.num
+		<where>
+			<if test="search == 1">
+				title LIKE CONCAT('%', #{keyword}, '%')
+			</if>
+			<if test="search == 2">
+				content LIKE CONCAT('%', #{keyword}, '%')
+			</if>
+			<if test="search == 3">
+				name LIKE CONCAT('%', #{keyword}, '%')
+			</if>
+		</where>
+	</sql>
 
 	<select id="total" resultType="Integer">
 		SELECT COUNT(*)
 		FROM (<include refid="search"></include>) AS question
 	</select>
-
 
 	<select id="list" resultType="Question">
 		SELECT @ROWNUM:=@ROWNUM+1 AS rnum, question.*
@@ -17,7 +31,6 @@
 		ORDER BY rnum DESC
 		LIMIT #{offset}, #{perPage}
 	</select>
-
 
 	<insert id="add">
 		INSERT INTO question (num, title, reg_date, content)
@@ -31,7 +44,7 @@
 
 	<select id="item" resultType="Question">
 		SELECT question.*, nickname
-		FROM (SELECT *, LAG(id) OVER (ORDER BY id) AS prevId, LEAD(id) OVER (ORDER BY id) AS nextId FROM question) AS question
+		FROM question
 		LEFT OUTER JOIN user ON question.num = user.num
 		WHERE question.id = #{id}
 	</select>
@@ -48,24 +61,6 @@
 		DELETE FROM question
 		WHERE id = #{id}
 	</delete>
-	
-	
-	<sql id="search">
-		SELECT question.*, nickname FROM question
-		LEFT OUTER JOIN user ON question.num = user.num
-		<where>
-			<if test="search == 1">
-				title LIKE CONCAT('%', #{keyword}, '%')
-			</if>
-			<if test="search == 2">
-				content LIKE CONCAT('%', #{keyword}, '%')
-			</if>
-			<if test="search == 3">
-				name LIKE CONCAT('%', #{keyword}, '%')
-			</if>
-		</where>
-	</sql>
-	
 	
 	<insert id="add_answer">
 		INSERT INTO answer (question_id, mgr_id, reg_date, content)

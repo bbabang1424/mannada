@@ -48,13 +48,60 @@
 	margin: 0 auto;
 }
 
-table {
-	width: 100%;
-	border: 1px solid #444444;
+.table_menu {
+	background-color: #eeeeee;
+	text-align: center;
+	color: #000000;
 }
 
-th, td {
-	border: 1px solid #444444;
+.table>:not(caption)>*>* {
+	padding: 0.5rem 0.5rem;
+	background-color: var(- -bs-table-bg);
+	border-bottom-width: 1px;
+	box-shadow: inset 0 0 0 9999px var(- -bs-table-accent-bg);
+	width: 12%;
+}
+
+.table_table {
+	text-align: center;
+	margin: auto;
+	border: 1px solid #dddddd;
+	width: 300px;
+}
+/* 글자 수 넘으면 ...표시 */
+td>a {
+	text-decoration:none;
+	color: black;
+	word-wrap: break-word;
+	display: inline-block;
+	width: 200px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+/* 작성자도 글자수 넘으면 ...표시 할랬는데 안해도 되려나 */
+/* .nickname{
+	word-wrap: break-word;
+	display: inline-block;
+	width: 200px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+ */
+.writing {
+	text-align: right;
+	width: 84.9%;
+	margin-top: 4%;
+	
+}
+
+.writing_btn {
+	background: #555555;
+	border: 1px solid #555555;
+	color: white;
+	width: 86px;
+	height: 37px;
 }
 
 /*페이지 네이션  */
