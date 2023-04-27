@@ -55,8 +55,10 @@
 	</insert>
 	
 	<select id="item" resultType="Manna">
-		SELECT * FROM manna
-		WHERE id=#{id}
+		SELECT *, nickname
+     	FROM manna
+      	LEFT OUTER JOIN user ON(manna.num = user.num)
+      	WHERE id=#{id}
 	</select>
 	
 	<update id="update">
