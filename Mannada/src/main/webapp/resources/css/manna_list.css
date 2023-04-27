@@ -152,6 +152,7 @@ div>.gauge_bar>div:first-child {
 }
 
 .Category {
+	width: 89%;
 	text-align: right;
 	margin: 5px;
 	color: #09080866;
