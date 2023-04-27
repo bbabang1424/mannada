@@ -9,6 +9,7 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
 <link href="/resources/css/index.css" rel="stylesheet"> 
 <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDI-f5yrjAVhR8g9-FlTF-s_kLAEnZZ55k&callback=initMap"></script>
+<script src="/resources/js/searchAddress.js"></script>
 <script>
 window.initMap = function () {
 	  const map = new google.maps.Map(document.getElementById("map"), {
@@ -22,7 +23,7 @@ window.initMap = function () {
 <body> 
  	<div class="swiper mySwiper">
 	    <div class="swiper-wrapper">
-		      <div class="swiper-slide">Slide 1</div>
+		      <div class="swiper-slide" style="background-image:url(/resources/image/swiper1.jpg);"><span id="slide-1">혼자를 떠나, 모두를 만나다.</span></div>
 		      <div class="swiper-slide">Slide 2</div>
 		      <div class="swiper-slide">Slide 3</div>
 		</div>
@@ -93,6 +94,16 @@ window.initMap = function () {
 				
 	</div>
 </div>
+
+	<div class="tutorial">
+		<div class="max-width">
+			<ul>
+				<li><img src="/resources/image/tuto1.png"><span>만나다 사이트에서<br>함께하고 싶은 모집글 등록</span></li>
+				<li><img src="/resources/image/tuto2.png"><span>다른 사람이<br>내 모집글에 참여</span></li>
+				<li><img src="/resources/image/tuto3.png"><span>그 사람과 직접 만나<br>하고 싶은 일을 하기!</span></li>
+			</ul>
+		</div>
+	</div>
 	
  	<div class="mannam-map"> 
 		<div id="map-layer">
@@ -100,11 +111,34 @@ window.initMap = function () {
 				<div>
 					<h3>나에게 맞는 <b>맞춤 만남</b>은?</h3>
 				</div>
+				<form name="addrSearch" action="searchAddress">
+					<div>
+						<input type="radio" name="addressType" value="road" checked>도로명 <input type="radio" name="addressType" value="jibun">지번 
+					</div>
+					<div>
+						<select id="metro" name="metro">
+							<option value="선택하세요">선택하세요</option>				
+						</select>
+					</div>
+					<div>
+						<select id="city" name="city">
+							<option value="선택하세요">선택하세요</option>
+						</select>
+					</div>
+					<div>
+						<select id="address" name="address">
+							<option value="0">선택하세요</option>
+						</select>
+					</div>
+					<div>
+						<button id="searchAddress">검색</button>
+					</div>
+				</form>
 			</div>
 		</div> 
  		<div id="map" style="width: 100%; height: 550px;"></div>
  	</div>
- 
+ 	
 <jsp:include page="footer.jsp"></jsp:include>
  <!-- Swiper JS -->
  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>

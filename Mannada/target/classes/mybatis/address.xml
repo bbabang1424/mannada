@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="address">
+	<select id="metro" resultType="Address">
+		SELECT addr_id, metro FROM jibunAddress GROUP BY metro
+	</select>
+	
+	<select id="city" resultType="Address">
+		SELECT addr_id, city FROM jibunAddress WHERE metro=#{metro} GROUP BY metro, city	
+	</select>
+	
+	<select id="road" resultType="Address">
+		SELECT addr_id, road FROM roadAddress WHERE metro=#{metro} 
+		<if test="metro != '세종특별자치시'">
+			AND city=#{city}
+		</if>				
+		GROUP BY metro, city, road
+	</select>
+			
+	<select id="jibun" resultType="Address">
+		SELECT addr_id, jibun FROM jibunAddress WHERE metro=#{metro} 
+		<if test="metro != '세종특별자치시'">
+			AND city=#{city}
+		</if>
+		GROUP BY metro, city, jibun
+	</select>
+
+</mapper>

@@ -183,7 +183,7 @@
 	border-radius: 0.375rem;
 }
 /* 주소 */
-#road_addr {
+.road_addr {
 	margin-left: 2%;
 	display: inline-block;
 	width: 35%;
@@ -201,7 +201,7 @@
 	text-align: left;
 }
 /* 상세주소 */
-#detAddr {
+.detAddr {
 	margin-left: 2%;
 	display: inline-block;
 	width: 24%;

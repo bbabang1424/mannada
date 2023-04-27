@@ -10,11 +10,8 @@
 <title>manna_list</title>
 <jsp:include page="../header.jsp"></jsp:include>
 <link rel="stylesheet" href="/resources/css/manna_list.css">
-
 <link rel="stylesheet"
 	href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">
-
-
 </head>
 <body>
 	<div class="banner">
@@ -32,7 +29,7 @@
 		<section class="content ">
 			<div id="sign_up_out">
 				<a href="add"><button class="sign_up_in">
-						<i class="bi bi-check"></i>글 등록
+						<i class="bi bi-check"></i>글쓰기
 					</button></a>
 			</div>
 
@@ -73,40 +70,38 @@
 								<strong>Progress:10%</strong>
 							</progress>
 						</div></a>
-
 				</c:forEach>
 			</div>
 		</section>
-
-
-		<tfoot>
-			<tr>
-				<td colspan="5">
-					<ol class="pagination pagination-sm justify-content-center"
-						style="margin: 0">
-						<li class="page_nation_item"><a href="?page=1${pager.query}"
-							class="page-link">처음</a></li>
-						<li class="page_nation_item"><a
-							href="?page=${pager.prev}${pager.query}" class="page-link">이전</a></li>
-
-						<c:forEach var="page" items="${pager.list}">
+		<tfoot >
+				<tr>
+					<td colspan="5">
+						<ol class="pagination pagination-sm justify-content-center"
+							style="margin-bottom: 5%; margin-top: 5%;">
+							<li class="page_nation_item"><a href="?page=1${pager.query}"
+								class="page-link">처음</a></li>
 							<li class="page_nation_item"><a
-								style="background-color: #555555; border-color: #555555; color: white;"
-								href="?page=${page}${pager.query}"
-								class="page-link ${page eq pager.page ? 'active' : ''}">${page}</a></li>
-						</c:forEach>
+								href="?page=${pager.prev}${pager.query}" class="page-link">이전</a></li>
 
-						<li class="page_nation_item"><a
-							href="?page=${pager.next}${pager.query}" class="page-link">다음</a></li>
-						<li class="page_nation_item"><a
-							href="?page=${pager.last}${pager.query}" class="page-link">마지막</a></li>
-					</ol>
-				</td>
-			</tr>
-		</tfoot>
+							<c:forEach var="page" items="${pager.list}">
+								<li class="page_nation_item"><a
+									style="color: white; background-color: #555555; border-color: #555555;"
+									href="?page=${page}${pager.query}"
+									class="page-link ${page eq pager.page ? 'active' : ''}">${page}</a></li>
+							</c:forEach>
 
-	</div>
-
-
+							<li class="page_nation_item"><a
+								href="?page=${pager.next}${pager.query}" class="page-link">다음</a></li>
+							<li class="page_nation_item"><a
+								href="?page=${pager.last}${pager.query}" class="page-link">마지막</a></li>
+						</ol>
+					</td>
+				</tr>
+			</tfoot>
+		</div>
+	
+	<!-- <a href="../">이전</a> -->
+	<jsp:include page="../footer.jsp"></jsp:include>
+</body>
 </body>
 </html>

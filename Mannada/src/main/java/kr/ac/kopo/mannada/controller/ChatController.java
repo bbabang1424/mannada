@@ -8,7 +8,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.SessionAttribute;
 
 import kr.ac.kopo.mannada.model.Chat;
@@ -57,8 +59,9 @@ public class ChatController {
 		return path + "detail";
 	}
 	
+	@ResponseBody
 	@PostMapping("/add")
-	public String add(@SessionAttribute User user, Chat item) {
+	public String add(@SessionAttribute User user, @RequestBody Chat item) {
 		item.setNum(user.getNum());
 		
 		service.add(item);

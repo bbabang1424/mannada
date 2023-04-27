@@ -76,16 +76,22 @@
 .card:hover {
 	border-color: #0359d9;
 }
-
+/* 감추는 코드 */
+/*   display: inline-block;
+    width: 200px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;  */
 .date_day {
-	word-wrap: break-word;
-	display: -webkit-box;
-	-webkit-line-clamp: 1;
-	-webkit-box-orient: vertical;
+	display: inline-block;
+	width: 200px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
 	margin-top: 3px;
 	margin-left: 8px;
 	position: inherit;
-	top: 9%;
+	top: 12%;
 	color: black;
 }
 
@@ -133,16 +139,16 @@ div>.gauge_bar>div:first-child {
 }
 
 #sign_up_out {
-	text-align: right;
-	margin-right: 20px;
+    width: 97.8%;
+    text-align: right;
 }
 
 .sign_up_in {
-	width: 7em;
-	height: 2.5em;
-	background-color: #555555;
+	background: #555555;
+	border: 1px solid #555555;
 	color: white;
-	margin-right: 10px;
+	width: 86px;
+	height: 37px;
 }
 
 .Category {

@@ -63,8 +63,8 @@
 					<tr style="border-bottom: 1px solid #ccc; width: 500px;">
 						<th id="interval">주소</th>
 						<td class="postnum"><input id="postnum" name="postnum" type="text" placeholder="우편번호" value="${item.postnum}">
-						 <input id="road_addr"name="address" type="text" value="${item.address}" placeholder="주소"> 
-						 <input id="detAddr" name="detAddress" type="text" value="${item.detAddress}" placeholder="상세주소">
+						 <input class="road_addr" id="address"name="address" type="text" value="${item.address}" placeholder="주소"> 
+						 <input class="detAddr" id="detAddress" name="detAddress" type="text" value="${item.detAddress}" placeholder="상세주소">
 						<input id="postnum_search" type="button"  onclick="DaumPostcode()" value="찿기"></td>
 					</tr>
 
@@ -83,6 +83,7 @@
 			</div>
 		</form>
 	 </div>
+	 <jsp:include page="../footer.jsp"></jsp:include>
 </body>
 
 </html>
