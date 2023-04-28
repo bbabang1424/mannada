@@ -6,6 +6,31 @@
 <meta charset="UTF-8">
 <title>로그인</title>
 <link rel="stylesheet" href="/resources/css/login.css">
+
+<script type="text/javascript">
+
+$(function(){
+	$(".title li").eq(0).click(function() {
+		$(".title li").css("text-decoration", "unset");
+		$(".title li").eq(0).css("text-decoration", "underline");
+		$("#manager-login").css("display", "none");
+		$("#user-login").css("display", "unset");
+	});
+
+	$(".title li").eq(1).click(function() {
+		$(".title li").css("text-decoration", "unset");
+		$(".title li").eq(1).css("text-decoration", "underline");
+		$("#user-login").css("display", "none");
+		$("#manager-login").css("display", "unset");
+	});
+});
+</script>
+
+<style type="text/css">
+	#manager-login{
+		display: none;
+	}
+</style>
 </head>
 <body>
 	<div class="login-box">

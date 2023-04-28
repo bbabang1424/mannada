@@ -7,10 +7,79 @@
 <title>이메일 회원가입</title>
 <script src="/resources/js/signup_email.js"></script>
 <link rel="stylesheet" href="/resources/css/signup_email.css" />
+
+<script>
+   let idCheck;
+   
+   function checkId(){
+      const form = document.signup_form;
+      
+      const xhr = new XMLHttpRequest();
+      
+      xhr.onreadystatechange = function(){
+         console.log(xhr.readyState);
+         
+         if(xhr.readyState == XMLHttpRequest.DONE){
+            if(xhr.status == 200) { 
+                  
+               const result = xhr.responseText;
+               console.log("응답 : " + result);
+               
+               if(result == "OK") {
+                  alert("사용 가능한 아이디 입니다");
+                  idCheck = form.id.value;
+               } else
+                  alert("이미 사용중인 아이디 입니다");
+            }
+         }
+      };
+      
+      xhr.open("GET", "checkId/" + form.id.value, true);
+      
+      xhr.send();
+      
+   }
+
+   function signup() {
+      const form = document.signup_form;
+
+      if(idCheck != form.id.value){
+         alert("아이디 중복 검사를 해야 합니다.");
+         return;
+      }
+      
+      if(form.id.value == "") {
+         alert("아이디를 입력 해 주세요");
+         form.id.focus();
+         return;
+      }
+      
+      if(form.pw.value == "") {
+         alert("비밀번호를 입력 해 주세요");
+         form.pw.focus();
+         return;
+      }
+      
+      if(form.passwd_valid.value == "") {
+         alert("비밀번호 확인을 입력 해 주세요");
+         form.pw_v.focus();
+         return;
+      }
+      
+      if(form.pw.value != form.pw_v.value) {
+         alert("비밀번호가 일치하지 않습니다");
+         form.pw.focus();
+         return;
+      }
+      
+      form.submit();
+   }
+
+</script>
 </head>
 <body>
 	<div class="wrapper">
-		<form action="/signup" method="post">
+		<form name="signup_form" action="/signup" method="post">
 
 			<div class="title">
 				<h1 style="font-size: 21px;">회원가입</h1>
