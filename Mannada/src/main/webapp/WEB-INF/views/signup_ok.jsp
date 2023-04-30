@@ -11,7 +11,6 @@
 </head>
 <body>
 	<div class="signup-box">
-		
         <div class="signup_ok">
         <div>
           <img src="/resources/image/checkmark_logo.png" alt="">
