@@ -24,6 +24,7 @@
 		</div>
 		<div>
 			<button>변경</button>
+			<a href="../proUpdate/{item.id}"><button>목록</button></a>
 		</div>
 	</div>
 </body>

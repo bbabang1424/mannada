@@ -1,4 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,6 +18,7 @@
 		<form id="submitForm" method="post">
 			<input type="password" name="pw" placeholder="현재비밀번호">
 			<button>회원 탈퇴</button>
+			<a href="../"><button>목록</button></a>
 		</form>
 	</div>
 </body>

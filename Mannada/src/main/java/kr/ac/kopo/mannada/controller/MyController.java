@@ -43,9 +43,10 @@ public class MyController {
 	public String proUpdate(@PathVariable String id, @SessionAttribute User item) {
 		item.setId(id);
 		
-		service.proUpdate(item);
+		if(item.getId().equals(id))	
+			service.proUpdate(item);
 		
-		return "redirect:../profile";
+		return "redirect:proUpdate";
 	}	
 	
 	//비밀번호변경창	
@@ -68,7 +69,7 @@ public class MyController {
 		if(item.getId().equals(id))
 			service.updatePW(user);
 		
-		return "redirect:../";
+		return "redirect:proUpdate";
 	}
 	
 	//회원탈퇴창

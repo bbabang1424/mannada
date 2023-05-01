@@ -33,14 +33,7 @@
 					
 					<tr>
 						<th>비밀번호</th>
-						<td><a href="password"><button type="button">비밀번호 변경하기</button></a></td>
-					</tr>
-	
-					<tr>
-						<th>이름</th>
-						<td>
-							<input type="text" name="name" value="${item.name}">
-						</td>
+						<td><a href="../password/{item.id}"><button type="button">비밀번호 변경하기</button></a></td>
 					</tr>
 					
 					<tr>
@@ -53,23 +46,26 @@
 					</tr>
 					
 					<tr>
+						<th>이름</th>
+						<td>
+							<input type="text" name="name" value="${item.name}">
+						</td>
+					</tr>
+					
+					<tr>
 						<th>전화번호</th>
 						<td>
 							<input type="tel" name="phone" id="phone" value="${item.phone}" placeholder="휴대폰 번호 (-) 없이">
 							<button>본인확인</button>
 		            	</td>
 					</tr>
-					
-					<tr>
-						<th>가입날짜</th>
-						<td><fmt:formatDate value="${item.regDate}" pattern="yyyy-MM-dd"/></td>
-					</tr>
 				</tbody>
 			</table>
 			
 			<div>
-				<button>완료</button>
-				<a href="../profile"><button>목록</button></a>
+				<a href="#"><button>회원탈퇴</button></a>
+				<button>수정하기</button>
+				<a href="/"><button>목록</button></a>
 			</div>
 		</form>
 	</div>

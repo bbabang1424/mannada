@@ -16,12 +16,14 @@
 			<colgroup>
 				<col width="15%" />
 				<col width="35%" />
+				<col width="15%" />
+				<col width="35%" />
 			</colgroup>
 			
 			<tbody>
 				<tr>
-					<th>프로필사진</th>
-					<td>
+					<th rowspan="7">프로필사진</th>
+					<td rowspan="7">
 							
 					</td>
 				</tr>
@@ -31,38 +33,29 @@
 				</tr>
 				
 				<tr>
-					<th>비밀번호</th>
-					<td><a href="password"><button type="button">비밀번호 변경하기</button></a></td>
-				</tr>
-
-				<tr>
-					<th>이름</th>
-					<td>${item.name}</td>
-				</tr>
-				
-				<tr>
 					<th>별명</th>
 					<td>${item.nickname}</td>
 				</tr>
 				
 				<tr>
-					<th>전화번호</th>
-					<td>${item.phone}</td>
+					<th>게시글</th>
+					<td></td>
 				</tr>
 				
 				<tr>
-					<th>가입날짜</th>
-					<td><fmt:formatDate value="${item.regDate}" pattern="yyyy-MM-dd"/></td>
+					<th>별점</th>
+					<td></td>
 				</tr>
 			</tbody>
 		</table>
 		
 		<div>
-			<a href="#"><button>회원탈퇴</button></a>
-			<a href="../proUpdate/${item.id}"><button>변경</button></a>
 			<button>목록</button>
 		</div>
 	</div>
 <jsp:include page="../footer.jsp"></jsp:include>
 </body>
+<script>
+	fun
+</script>
 </html>
