@@ -11,7 +11,13 @@
 	href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">
 <link rel="stylesheet" href="/resources/css/community_list.css">
 <jsp:include page="../header.jsp"></jsp:include>
-
+<style type="text/css">
+.page_nation_item .page-link.active {
+	color: white !important;
+	background-color: #555555 !important;
+	border-color: #555555 !important;
+}
+</style>
 </head>
 <body>
 	<div class="banner">
@@ -37,7 +43,7 @@
 		</div>
 
 			<table class="table table-hover table_table "
-				style="width: 70%; margin-top: 2%;">
+				style="text-align: center; width: 65%; margin-top: 2%;">
 				<thead>
 					<tr class="table_menu">
 						<th>No</th>
@@ -59,7 +65,7 @@
 							<td><a style="color: black;" href="detail/${item.id}">${item.title}</a></td>
 							<td class="nickname">${item.nickname}</td>
 							<td><fmt:formatDate value="${item.regDate}" pattern="yyyy-MM-dd " /></td>
-							<td>${item.viewpoint}</td>
+							<td>${item.viewCnt}</td>
 						</tr>
 					</c:forEach>
 				</tbody>
@@ -78,7 +84,6 @@
 
 							<c:forEach var="page" items="${pager.list}">
 								<li class="page_nation_item"><a
-									style="color: white; background-color: #555555; border-color: #555555;"
 									href="?page=${page}${pager.query}"
 									class="page-link ${page eq pager.page ? 'active' : ''}">${page}</a></li>
 							</c:forEach>

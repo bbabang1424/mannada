@@ -38,7 +38,7 @@
 			</div>
 				<div class="date_views">
 					<fmt:formatDate value="${item.regDate}" pattern="yyyy-MM-dd " />
-				| 조회수 ${item.viewpoint}
+				| 조회수 ${item.viewCnt}
 				</div>
 			
 			</div>

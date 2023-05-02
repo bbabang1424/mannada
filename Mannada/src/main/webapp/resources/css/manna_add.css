@@ -236,6 +236,7 @@
 
 /* tex_box */
 .control {
+	padding:1em;
 	margin: 5em 1em 4em 1em;
 	width: 87.5%;
 	height: 21.25em;

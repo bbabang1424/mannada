@@ -18,74 +18,83 @@
 	<div>
 		<div class="banner">
 		<ul class="banner_text">
-			<li>커뮤니티</li>
+			<li>Q & A</li>
 			<i class="bi bi-caret-right-fill"></i>
 			<li>목록</li>
 		</ul>
-		<h3 class="page_title">커뮤니티</h3>
-		<p class="page_text">사람들과 소통하는 공간입니다.</p>
+		<h3 class="page_title">Q & A</h3>
+		<p class="page_text">궁금한 점, 문의할 점을 올려주세요!</p>
 	</div>
-			
-			<c:if test="${sessionScope.member.id != null }">
-				<a href="add"><button>글쓰기</button></a>
+		<div>	
+		<div>
+			<div class="writing">
+			<c:if test="${sessionScope.user.id != null }">
+				<a href="add">
+					<button class="writing_btn">
+						<i class="bi bi-check"></i>글쓰기
+					</button>
+				</a>
 			</c:if>
 		</div>
 
-
-		<div>
-			<table border="1">
+			<table class="table table-hover table_table "
+				style="text-align: center; width: 65%; margin-top: 2%;">
 				<thead>
-					<tr>
+					<tr class="table_menu">
 						<th>No</th>
 						<th>제목</th>
 						<th>작성자</th>
 						<th>작성일</th>
+						<th>조회수</th>
 					</tr>
 				</thead>
-
 				<tbody>
 					<c:if test="${list.size() < 1}">
 						<tr>
-							<td colspan="4">등록된 글이 없습니다.</td>
+							<td colspan="5">등록된 글이 없습니다.</td>
 						</tr>
 					</c:if>
-
 					<c:forEach var="item" items="${list}">
-						<tr>
+						<tr style="border: 1px solid #dddddd; padding-top: 10px;">
 							<td>${item.rnum}</td>
-							<td><a href="detail/${item.id}">${item.title}</a></td>
-							<td><a href="../mypage/${item.num}">${item.num}</a></td>
-							<td><fmt:formatDate value="${item.regDate}"
-									pattern="yyyy-MM-dd" /></td>
+							<td><a style="color: black;" href="detail/${item.id}">${item.title}</a></td>
+							<td class="nickname">${item.nickname}</td>
+							<td><fmt:formatDate value="${item.regDate}" pattern="yyyy-MM-dd " /></td>
+							<td>${item.viewCnt}</td>
 						</tr>
 					</c:forEach>
-
 				</tbody>
 			</table>
 		</div>
 
+		<tfoot >
+				<tr>
+					<td colspan="5">
+						<ol class="pagination pagination-sm justify-content-center"
+							style="margin-bottom: 5%; margin-top: 5%;">
+							<li class="page_nation_item"><a href="?page=1${pager.query}"
+								class="page-link">처음</a></li>
+							<li class="page_nation_item"><a
+								href="?page=${pager.prev}${pager.query}" class="page-link">이전</a></li>
 
-		<div class="pagenation">
-			<ul class="pagination pagination-sm justify-content-center">
+							<c:forEach var="page" items="${pager.list}">
+								<li class="page_nation_item"><a
+									style="color: white; background-color: #555555; border-color: #555555;"
+									href="?page=${page}${pager.query}"
+									class="page-link ${page eq pager.page ? 'active' : ''}">${page}</a></li>
+							</c:forEach>
 
-				<li><a href="?page=1"> << </a></li>
-				<li><a href="?page=${pager.prev}">이전</a></li>
-
-				<c:forEach var="page" items="${pager.list}">
-					<li><a href="?page=${page}"
-						class="${page eq pager.page ? 'active' : ''}">${page}</a></li>
-				</c:forEach>
-
-				<li><a href="?page=${pager.next}">다음</a></li>
-				<li><a href="?page=${pager.last}"> >> </a></li>
-			</ul>
+							<li class="page_nation_item"><a
+								href="?page=${pager.next}${pager.query}" class="page-link">다음</a></li>
+							<li class="page_nation_item"><a
+								href="?page=${pager.last}${pager.query}" class="page-link">마지막</a></li>
+						</ol>
+					</td>
+				</tr>
+			</tfoot>
 		</div>
-	</div>
-
-		<div>
-			<a href="add">추가</a>
-			<a href="../">이전</a>
-		</div>
-	</div>
+		<!-- <a href="../">이전</a> -->
+	<jsp:include page="../footer.jsp"></jsp:include>
+		
 </body>
 </html>

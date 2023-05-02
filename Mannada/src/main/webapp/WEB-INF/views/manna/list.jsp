@@ -12,6 +12,14 @@
 <link rel="stylesheet" href="/resources/css/manna_list.css">
 <link rel="stylesheet"
 	href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">
+
+<style type="text/css">
+.page_nation_item .page-link.active {
+	color: white !important;
+	background-color: #555555 !important;
+	border-color: #555555 !important;
+}
+</style>
 </head>
 <body>
 	<div class="banner">
@@ -87,7 +95,6 @@
 
 							<c:forEach var="page" items="${pager.list}">
 								<li class="page_nation_item"><a
-									style="color: white; background-color: #555555; border-color: #555555;"
 									href="?page=${page}${pager.query}"
 									class="page-link ${page eq pager.page ? 'active' : ''}">${page}</a></li>
 							</c:forEach>
