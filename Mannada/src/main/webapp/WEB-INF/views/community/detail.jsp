@@ -30,15 +30,17 @@
 				<h4>${item.title}</h4>
 			</div>
 			<hr>
-			<div class="Writer_date_views">
-				<img src="/resources/image/person.png" class="person">
-				<div class="Writer">
+				<div class="Writer_date_views">
+			<div class="Writer_date">
+				<img src="/resources/image/person.png" class="person"><div class="Writer">
 					<span> 작성자</span> ${item.nickname}
 				</div>
-				<div class="date">
+			</div>
+				<div class="date_views">
 					<fmt:formatDate value="${item.regDate}" pattern="yyyy-MM-dd " />
+				| 조회수 ${item.viewpoint}
 				</div>
-				<div class="views">| 조회수 ${item.viewpoint}</div>
+			
 			</div>
 
 			<div>

@@ -82,6 +82,7 @@ hr {
 }
 
 .Writer_date_views {
+	position: relative;
 	background-color: #f3f3f3;
 	/*  font-size: larger; */
 }
@@ -92,15 +93,19 @@ hr {
 	margin-bottom: 0.5%;
 }
 
-.date {
+.date_views {
+	position: absolute;
+	top: 21.5%;
+	left: 84%;
 	color: #5F5F5F;
 	display: inline-block;
-	margin-left: 69%;
 }
 
-.views {
-	color:	#5F5F5F;
-	display: inline-block;
+.Writer_date {
+	
+    text-align: left;
+    padding-left: 2.5%;
+
 }
 
 .text_box {
