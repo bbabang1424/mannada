@@ -65,7 +65,7 @@ public class NoticeController {
 		return "redirect:../list";
 	}
 	
-	@GetMapping("/delete({id}")
+	@GetMapping("/delete/{id}")
 	public String delete(@PathVariable int id) {
 		service.delete(id);
 		

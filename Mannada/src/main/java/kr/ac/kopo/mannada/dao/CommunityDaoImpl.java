@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import kr.ac.kopo.mannada.model.Community;
+import kr.ac.kopo.mannada.model.Reply;
 import kr.ac.kopo.mannada.pager.Pager;
 
 @Repository
@@ -44,6 +45,37 @@ public class CommunityDaoImpl implements CommunityDao {
 	@Override
 	public void delete(int id) {
 		sql.delete("community.delete", id);
+	}
+
+	
+	/* 댓글 */
+	
+	@Override
+	public void addReply(Reply reply) {
+		sql.insert("community.add_reply", reply);
+	}
+
+	@Override
+	public Reply replyItem(int id) {
+		return sql.selectOne("community.item_reply", id);
+	}
+
+	@Override
+	public void updateReply(Reply item) {
+		sql.update("community.update_reply", item);
+	}
+
+	@Override
+	public void deleteReply(int id) {
+		sql.delete("community.delete_reply", id);
+	}
+
+	
+	/* 조회수 증가 */
+	
+	@Override
+	public void addViewCnt(int id) {
+		sql.update("community.addViewCnt", id);
 	}
 
 }

@@ -8,7 +8,7 @@ public class Community {
 	private String title;
 	private Date regDate;
 	private String content;
-	private int viewpoint;
+	private int viewCnt;
 	
 	private String nickname;
 	
@@ -64,12 +64,12 @@ public class Community {
 		this.content = content;
 	}
 
-	public int getViewpoint() {
-		return viewpoint;
+	public int getViewCnt() {
+		return viewCnt;
 	}
 
-	public void setViewpoint(int viewpoint) {
-		this.viewpoint = viewpoint;
+	public void setViewCnt(int viewCnt) {
+		this.viewCnt = viewCnt;
 	}
 
 	public String getNickname() {

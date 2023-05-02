@@ -65,9 +65,37 @@
 	</delete>
 	
 	<!-- 조회수 증가 -->
-	<update id="addViewcount">
-		UPDATE community SET viewcount = viewcount + 1
+	<update id="addViewCnt">
+		UPDATE community SET viewCnt = viewCnt + 1
 		WHERE id = #{id}
 	</update>
+	
+	
+	
+	<!-- 댓글 -->
+	
+	<insert id="add_reply">
+		INSERT INTO reply(commu_id, num, content, reg_date)
+		VALUES(#{commuId}, #{num}, #{content}, NOW())
+	</insert>
+
+	<!-- 댓글 단일 조회 -->
+	<select id="reply_item" resultType="Reply">
+		SELECT id, commu_id, num, content, reg_date
+		FROM reply
+		WHERE id = #{id}
+	</select>
+
+	<!-- 댓글 수정 -->
+	<update id="update_reply">
+		UPDATE reply SET content = #{content}
+		WHERE id = #{id}
+	</update>
+
+	<!-- 댓글 삭제 -->
+	<delete id="delete_reply">
+		DELETE FROM reply
+		WHERE id = #{id}
+	</delete>
 
 </mapper>
