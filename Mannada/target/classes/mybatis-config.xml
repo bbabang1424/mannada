@@ -16,6 +16,7 @@
 		<typeAlias type="kr.ac.kopo.mannada.model.Answer" alias="Answer"/>
 		<typeAlias type="kr.ac.kopo.mannada.model.Chat" alias="Chat"/>
 		<typeAlias type="kr.ac.kopo.mannada.model.Address" alias="Address"/>
+		<typeAlias type="kr.ac.kopo.mannada.model.Reply" alias="Reply"/>
 	</typeAliases>
 	
 	<mappers>

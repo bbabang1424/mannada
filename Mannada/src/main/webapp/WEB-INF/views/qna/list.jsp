@@ -6,26 +6,25 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
-<style type="text/css">
-	li {
-		display: inline-block;
-		border: 1px solid black;
-		margin: 10px;
-	}
-</style>
+<title>qna_list</title>
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">
+<link rel="stylesheet" href="/resources/css/qna_list.css">
+<jsp:include page="../header.jsp"></jsp:include>
+
+
 </head>
 <body>
 	<div>
-		<div>
-			<h3>list</h3>
-		</div>
-
-		<div class="menu">
-			<div class="title">
-				<h3>공지사항</h3>
-
-			</div>
+		<div class="banner">
+		<ul class="banner_text">
+			<li>커뮤니티</li>
+			<i class="bi bi-caret-right-fill"></i>
+			<li>목록</li>
+		</ul>
+		<h3 class="page_title">커뮤니티</h3>
+		<p class="page_text">사람들과 소통하는 공간입니다.</p>
+	</div>
 			
 			<c:if test="${sessionScope.member.id != null }">
 				<a href="add"><button>글쓰기</button></a>

@@ -26,7 +26,7 @@
 	<div>	
 		<div>
 			<div class="writing">
-			<c:if test="${sessionScope.user.id != null }">
+			<c:if test="${sessionScope.manager.id != null }">
 				<a href="add">
 					<button class="writing_btn">
 						<i class="bi bi-check"></i>글쓰기
