@@ -131,11 +131,6 @@ public class RootController {
 			return "FAIL";
 	}
 	
-	@GetMapping("/mypage")
-	public String mypage() {
-		return "mypage";
-	}
-	
 	/*selectbox 주소관련*/
 	@ResponseBody
 	@GetMapping("/metro")

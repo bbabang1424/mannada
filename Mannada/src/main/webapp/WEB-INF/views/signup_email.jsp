@@ -4,14 +4,15 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<jsp:include page="header.jsp"></jsp:include>
 <title>이메일 회원가입</title>
-<script src="/resources/js/signup_email.js"></script>
 <link rel="stylesheet" href="/resources/css/signup_email.css" />
+
 </head>
 <body>
+	<div class="body">
 	<div class="wrapper">
-		<form action="/signup" method="post">
-
+		<form name="signup_form" action="/signup" method="post">
 			<div class="title">
 				<h1 style="font-size: 21px;">회원가입</h1>
 			</div>
@@ -66,5 +67,6 @@
 	        </div>
         </form>
     </div>
+	</div>
 </body>
 </html>

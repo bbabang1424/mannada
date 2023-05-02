@@ -13,26 +13,26 @@
 <link href="/resources/css/chat.css" rel="stylesheet">
 
     <script type="text/javascript">
-    	function sendMessage(){
-            fetch("../add", {
-                method: "POST",
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(item)
-            }).then(resp => {
-                if (resp.status == 200)
-                    return resp.json();
-            }).then(result => {
-                console.log(result);
-
-                const message = document.querySelector("#message");
-                const div = makeItem(result);
-
-                console.log(message);
-                console.log(div);
-
-                message.after(div);
-            });
-    	};
+    	document.getElementById('sendMessage').addEventListener('click', () => {
+	    	fetch("../add", {
+	            method: "POST",
+	            headers: { 'Content-Type': 'application/json' },
+	            body: JSON.stringify(item)
+	        }).then(resp => {
+	            if (resp.status == 200)
+	                return resp.json();
+	        }).then(result => {
+	            console.log(result);
+	
+	            const message = document.querySelector("#message");
+	            const div = makeItem(result);
+	
+	            console.log(message);
+	            console.log(div);
+	
+	            message.after(div);
+	        });
+    	});
     	
     	function makeItem(element){
     		const div = document.createElement("div");
@@ -83,7 +83,7 @@
                 <form action="../add" method="post">
                     <input type="number" name="mannaId" value="${item.id}" class="hidden">
                     <input type="text" name="content">
-                    <button type="button" onclick="sendMessage()">전송</button>
+                    <button type="button" id="sendMessage">전송</button>
                 </form>
             </div>
         </div>

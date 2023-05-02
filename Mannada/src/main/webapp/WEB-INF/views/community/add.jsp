@@ -9,7 +9,6 @@
 <title>community_add</title>
 <link rel="stylesheet"
 	href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">
-
 <link rel="stylesheet" href="/resources/css/community_add.css">
 <jsp:include page="../header.jsp"></jsp:include>
 </head>
@@ -18,7 +17,7 @@
 		<ul class="banner_text">
 			<li>커뮤니티</li>
 			<i class="bi bi-caret-right-fill"></i>
-			<li>글 등록</li>
+			<li>글쓰기</li>
 		</ul>
 		<h3 class="page_title">커뮤니티</h3>
 		<p class="page_text">자유롭게 서로의 생각을 글로 표현 해주세요.</p>
@@ -32,7 +31,7 @@
 				</colgroup>
 
 				<tbody>
-					<tr style="border-bottom: 1px solid #ccc;">
+					<tr style="border-bottom: 1px solid #ccc; ">
 						<th id="interval">제 목</th>
 						<td class="title"><input id="title" name="title" type="text">${item.id}</td>
 					</tr>

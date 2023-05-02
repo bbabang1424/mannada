@@ -4,7 +4,7 @@
 <mapper namespace="user">
 	<select id="login" resultType="User">
 		SELECT * FROM user
-		WHERE id = #{id} AND pw = PASSWORD(#{pw})
+		WHERE id=#{id} AND pw=PASSWORD(#{pw})
 	</select>
 
 	<insert id="signup">
@@ -14,12 +14,38 @@
 	
 	<select id="checkId" resultType="Integer">
 		SELECT COUNT(*) FROM user
-		WHERE id = #{id}
-	</select>
-	
+		WHERE id=#{id}
+	</select>	
 	
 	<insert id="add_partner">
 		INSERT INTO joins
 		VALUES (#{mannaId}, #{num})
 	</insert>
+	
+	<!-- 회원정보수정 및 탈퇴 관련 -->
+	<select id="profile" resultType="User">
+		SELECT * FROM user
+	</select>
+	
+	<select id="item" resultType="User">
+		SELECT * FROM user
+		WHERE id=#{id}
+	</select>
+	
+	<update id="proUpdate">
+		UPDATE user
+		SET name=#{name}, nickname=#{nickname}, phone=#{phone}, img_url=#{imgUrl}
+		WHERE id=#{id}
+	</update>
+	
+	<select id="checkPW" resultType="Integer">
+		SELECT COUNT(*) FROM user 
+		WHERE id=#{id} AND pw=#{pw};
+	</select>
+	
+	<update id="updatePW">
+		UPDATE user
+		SET pw=#{newPW} 
+		WHERE id=#{id} AND pw=#{pw}
+	</update>
 </mapper>

@@ -25,7 +25,7 @@
       </div>
       <br>
       <div class="signup_edit">
-        <p>*회원가입 내역 확인 및 수정은 <span style="color: red;">마이페이지 > 회원정보 수정</span>에서 가능합니다.</p>
+        <p>*회원가입 내역 확인 및 수정은 <span style="color: red;">마이페이지 > 프로필 수정</span>에서 가능합니다.</p>
       </div>
       <br>
       <div class="line">
