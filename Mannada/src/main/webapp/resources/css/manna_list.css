@@ -91,7 +91,7 @@
 	margin-top: 3px;
 	margin-left: 8px;
 	position: inherit;
-	top: 12%;
+	top: 10%;
 	color: black;
 }
 
@@ -99,7 +99,7 @@
 	margin-top: 3px;
 	margin-left: 8px;
 	position: inherit;
-	top: 9%;
+	top: 7%;
 	color: black;
 }
 
@@ -159,16 +159,16 @@ div>.gauge_bar>div:first-child {
 }
 
 .title {
-	color: black;
-	width: 84%;
-	margin-left: 4%;
-	overflow: hidden;
-	text-overflow: ellipsis;
-	height: 22px;
-	word-wrap: break-word;
-	display: -webkit-box;
-	-webkit-line-clamp: 1;
-	-webkit-box-orient: vertical;
+    color: black;
+    width: 84%;
+    margin-left: 4%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    height: 22px;
+    word-wrap: break-word;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
 }
 
 .line {
@@ -176,7 +176,7 @@ div>.gauge_bar>div:first-child {
 	border: 1px solid;
 	border-color: #ccc;
 	position: absolute;
-	top: 36%;
+	top: 35%;
 	left: 7%;
 }
 
