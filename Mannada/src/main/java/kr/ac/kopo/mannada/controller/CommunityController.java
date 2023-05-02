@@ -78,10 +78,10 @@ public class CommunityController {
 	@GetMapping("/detail/{id}")
 	public String detail(@PathVariable int id, Model model) {
 		
-		service.addViewCnt(id);
-		
 		Community item = service.item(id);
 		model.addAttribute("item", item);
+		
+		service.addViewCnt(id);
 		
 		return path + "detail";
 	}

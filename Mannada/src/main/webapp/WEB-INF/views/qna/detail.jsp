@@ -48,7 +48,7 @@
 		</div>
 		<c:if test="${question.status == 1 }">
 			<div class="answer_answer">
-				<div class="answer_mgrId">${answer.mgrId }</div>
+				<div class="answer_mgrId">${answer.nickname }</div>
 				<div class="answer_date">
 					<fmt:formatDate value="${answer.regDate}" pattern="yyyy-MM-dd " />
 				</div>
@@ -69,7 +69,7 @@
 			<hr>
 			<!-- modify:수정하다란 뜻 -->
 			<a href="../list"><button class="button_list">목록</button></a>
-			<c:if test="${sessionScope.manager != null && question.status == 0}">
+			<c:if test="${sessionScope.user != null && question.status == 0}">
 				<a href="../update/${id}"><button class="button_modify">수정</button></a>
 				<a href="../delete/${id}"><button class="button_delete">삭제</button></a>
 			</c:if>

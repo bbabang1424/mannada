@@ -74,7 +74,7 @@
 	</update>
 	
 	<select id="answer" resultType="Answer">
-		SELECT * FROM answer
+		SELECT answer.*, manager.nickname FROM answer LEFT JOIN manager ON answer.mgr_id = manager.id
 		WHERE question_id = #{id}
 	</select>
 
