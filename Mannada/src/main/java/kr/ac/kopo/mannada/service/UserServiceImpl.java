@@ -47,34 +47,5 @@ public class UserServiceImpl implements UserService {
 	public void addPartner(HashMap<String, Object> map) {
 		dao.addPartner(map);
 	}
-
-	/*회원정보수정 및 탈퇴 관련*/
-	@Override
-	public List<User> profile() {
-		return dao.profile();
-	}
-
-	@Override
-	public User item(String id) {
-		return dao.item(id);
-	}
-
-	@Override
-	public void proUpdate(User item) {
-		dao.proUpdate(item);
-	}
-
-	@Override
-	public boolean checkPW(String id) {
-		if(dao.checkPW(id) == 1)
-			return true;
-		else
-			return false;
-	}
-
-	@Override
-	public void updatePW(User user) {
-		dao.updatePW(user);
-	}
 	
 }
