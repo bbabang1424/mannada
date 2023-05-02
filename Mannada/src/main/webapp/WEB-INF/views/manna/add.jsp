@@ -6,15 +6,15 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>글 등록</title>
-<link rel="stylesheet"
-	href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">
-<!-- 우편번호 찿기인데.. 번지수 까지 안되더라.. -->
+<title>manna_add</title>
+
+<!-- 우편번호 찿기인데.. -->
 <script
 	src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
-<script src="/resources/js/manna_add.js"></script>
+
 <link rel="stylesheet" href="/resources/css/manna_add.css">
 <jsp:include page="../header.jsp"></jsp:include>
+<script src="/resources/js/manna_add.js"></script>
 </head>
 <body>
 	<div class="banner">
@@ -75,7 +75,7 @@
 					<tr>
 						<th id="interval">본문내용</th>
 						<td class="detail">
-						<textarea id="summernote" name="content" class="control" placeholder="텍스트 내용을 입력해주세요"></textarea>
+						<textarea class="control" placeholder="텍스트 내용을 입력해주세요"></textarea>
 						</td>
 					</tr>
 				</tbody>

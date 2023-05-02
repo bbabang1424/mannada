@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <title>로그인</title>
 <link rel="stylesheet" href="/resources/css/login.css">
-
+<script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
 <script type="text/javascript">
 
 $(function(){
@@ -28,7 +28,7 @@ $(function(){
 
 <style type="text/css">
 	#manager-login{
-		display: none;
+		 display: none;
 	}
 </style>
 </head>

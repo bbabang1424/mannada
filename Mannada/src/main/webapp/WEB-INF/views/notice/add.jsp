@@ -9,6 +9,19 @@
 	href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">
 <link rel="stylesheet" href="/resources/css/notice_add.css">
 <jsp:include page="../header.jsp"></jsp:include>
+<!--jQuery 최신버전-->
+<script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+<!-- bootstrap -->
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+	rel="stylesheet">
+<!-- include summernote css/js -->
+<link href="/resources/summernote/summernote-lite.css" rel="stylesheet">
+<script src="/resources/summernote/summernote-lite.js"></script>
+<script src="/resources/summernote/lang/summernote-ko-KR.js"></script>
+<script src="/resources/js/notice_add.js"></script>
 </head>
 <body>
 <div class="banner">
@@ -37,7 +50,7 @@
 					<tr>
 						<th id="interval">본문내용</th>
 						<td class="detail">
-						<textarea id="summernote" name="content" class="control" placeholder="텍스트 내용을 입력해주세요"></textarea>
+						<textarea id="summernote" name="content" placeholder="텍스트 내용을 입력해주세요"></textarea>
 						</td>
 					</tr>
 				</tbody>
