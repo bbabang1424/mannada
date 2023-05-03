@@ -61,6 +61,7 @@
 				<input type="hidden" name="questionId" value="${question.id }">
 				<textarea id="answer_box" name="content" placeholder="답변을 입력해주세요"></textarea>
 				<button class="answer_btn">답변</button>
+				
 
 			</form>
 		</c:if>
