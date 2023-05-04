@@ -84,4 +84,10 @@ public class CommunityServiceImpl implements CommunityService {
 		dao.addViewCnt(id);
 	}
 
+	@Override
+	public List<Reply> replyList(Pager pager) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

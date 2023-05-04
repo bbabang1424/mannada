@@ -28,4 +28,6 @@ public interface CommunityService {
 
 	void addViewCnt(int id);
 
+	List<Reply> replyList(Pager pager);
+
 }

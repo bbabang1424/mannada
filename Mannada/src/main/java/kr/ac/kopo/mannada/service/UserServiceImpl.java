@@ -47,5 +47,23 @@ public class UserServiceImpl implements UserService {
 	public void addPartner(HashMap<String, Object> map) {
 		dao.addPartner(map);
 	}
+
+	@Override
+	public User item(String id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void modify(User item) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void pwModify(User item) {
+		// TODO Auto-generated method stub
+		
+	}
 	
 }
