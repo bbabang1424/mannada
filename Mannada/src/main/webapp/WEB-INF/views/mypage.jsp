@@ -101,26 +101,26 @@ th {
 
             <div>
                <div id="card-photo">
-                  <c:if test="${member.imageUrl != null }">
-                     <img src="${member.imageUrl }">
+                  <c:if test="${user.imgUrl != null }">
+                     <img src="${user.imgUrl }">
                   </c:if>
 
-                  <c:if test="${member.imageUrl == null }">
+                  <c:if test="${user.imgUrl == null }">
                      <div class="img"></div>
                   </c:if>
                </div>
-               <div style="padding-top: 5px;">${user.name}</div>
+               <div style="padding-top: 5px;">${user.nickname}</div>
             </div>
 
 
             <div style="font-size: large;">
-               <div style="font-size: 1.3em; padding-bottom: 10px;">Lv.${member.level }</div>
-               <div>${member.point}point</div>
+               <div style="font-size: 1.3em; padding-bottom: 10px;">☆ ${review.star}</div>
+               <div>${review.content}</div>
             </div>
 
 
             <div>
-               <c:if test="${member.id == sessionScope.member.id }">
+               <c:if test="${user.id == sessionScope.user.id }">
                   <div style="padding-bottom: 10px;">
                      <button class="modal_open" id="modify_modal_open">회원 정보
                         수정</button>
@@ -130,17 +130,13 @@ th {
                         변경</button>
                   </div>
                </c:if>
-
-               <c:if test="${member.id != sessionScope.member.id }">
-                  <div>쪽지보내기</div>
-               </c:if>
             </div>
 
          </section>
       </div>
 
 
-      <c:if test="${member.id == sessionScope.member.id }">
+      <c:if test="${user.id == sessionScope.user.id}">
          <div>
             <nav class="my-nav">
                <ul>
@@ -164,37 +160,33 @@ th {
 
                   <div id="my-info">
                      <table>
-                        <tr>
-                           <th>아이디</th>
-                           <td>${member.id }</td>
-                        </tr>
-                        <tr>
-                           <th>닉네임</th>
-                           <td>${member.name }</td>
-                        </tr>
-                        <tr>
+                     	<tr>
                            <th>프로필 사진</th>
-                           <td><c:if test="${member.imageUrl != null }">
-                                 <img src="${member.imageUrl }">
-                              </c:if> <c:if test="${member.imageUrl == null }">
+                           <td><c:if test="${user.imgUrl != null}">
+                                 <img src="${user.imgUrl}">
+                              </c:if> <c:if test="${user.imgUrl == null}">
                                  <div class="img"></div>
                               </c:if></td>
                         </tr>
                         <tr>
-                           <th>소개</th>
-                           <td>${member.introduce }</td>
+                           <th>아이디</th>
+                           <td>${user.id}</td>
                         </tr>
                         <tr>
-                           <th>포인트</th>
-                           <td>${member.point }</td>
+                           <th>닉네임</th>
+                           <td>${user.nickname}</td>
                         </tr>
                         <tr>
-                           <th>레벨</th>
-                           <td>${member.level }</td>
+                           <th>이름</th>
+                           <td>${user.name}</td>
+                        </tr>
+                        <tr>
+                           <th>전화번호</th>
+                           <td>${user.phone}</td>
                         </tr>
                         <tr>
                            <th>가입일</th>
-                           <td><fmt:formatDate value="${member.regDate}"
+                           <td><fmt:formatDate value="${user.regDate}"
                                  pattern="yyyy-MM-dd" /></td>
                         </tr>
                      </table>
@@ -204,7 +196,7 @@ th {
          </section>
 
 
-         <c:if test="${member.id == sessionScope.member.id }">
+         <c:if test="${user.id == sessionScope.user.id }">
             <section class="my-set" id="my-post">
                <div class="board">
                   <div>
@@ -212,6 +204,36 @@ th {
                         <h3>작성 글</h3>
                      </div>
                      <table border="1">
+                        <tr>
+                           <th>No</th>
+                           <th>카테고리</th>
+                           <th>제목</th>
+                           <th>작성일자</th>
+                        </tr>
+                        <c:forEach var="item" items="${mypost}">
+                           <tr>
+                              <td>${item.rnum}</td>
+                              <td>${item.category}</td>
+                              <td><a href="../${item.boardname }/detail/${item.id}">${item.title}</a></td>
+                              <td><fmt:formatDate value="${item.regDate}"
+                                    pattern="yyyy-MM-dd" /></td>
+                           </tr>
+                        </c:forEach>
+                        <tr>
+                           <th>No</th>
+                           <th>카테고리</th>
+                           <th>제목</th>
+                           <th>작성일자</th>
+                        </tr>
+                        <c:forEach var="item" items="${mypost}">
+                           <tr>
+                              <td>${item.rnum}</td>
+                              <td>${item.category}</td>
+                              <td><a href="../${item.boardname }/detail/${item.id}">${item.title}</a></td>
+                              <td><fmt:formatDate value="${item.regDate}"
+                                    pattern="yyyy-MM-dd" /></td>
+                           </tr>
+                        </c:forEach>
                         <tr>
                            <th>No</th>
                            <th>카테고리</th>
@@ -313,25 +335,28 @@ th {
             <h3>회원정보 수정</h3>
          </div>
          <div>
-            <form name="modify_form" method="post" action="../modify/${member.id}">
+            <form name="modify_form" method="post" action="../modify/${user.id}">
 
                <div>
-                  <div>
-                     <label>닉네임</label> <input type="text" name="name"
-                        value="${member.name }">
+               	  <div>
+                     <label>프로필 사진</label> <input type="file" name="imgUrl"
+                        id="input-image" value="${user.imageUrl}"> <img id="preview-image" src="${user.imgUrl}">
                   </div>
-
+                  
                   <div>
-                     <label>프로필 사진</label> <input type="file" name="imageUrl"
-                        id="input-image" value="${member.imageUrl }"> <img id="preview-image" src="${member.imageUrl }">
+                     <label>닉네임</label> <input type="text" name="nickname"
+                        value="${user.nickname}">
                   </div>
-
+                  
                   <div>
-                     <label>소개</label>
-                     <textarea rows="" cols="" name="introduce"
-                        style="border: 1px solid;">${member.introduce }</textarea>
+                     <label>이름</label> <input type="text" name="name"
+                        value="${user.name}">
                   </div>
-
+                  
+                  <div>
+                     <label>전화번호</label> <input type="text" name="phone"
+                        value="${user.phone}">
+                  </div>
                </div>
 
                <div>
@@ -371,7 +396,7 @@ th {
 
    <script type="text/javascript">
       
-   if(${sessionScope.member.id == member.id}){
+   if(${sessionScope.user.id == user.id}){
       
       const modifyModal = document.querySelector('#modify_modal');
       const modifyModalOpen = document.querySelector('#modify_modal_open');
