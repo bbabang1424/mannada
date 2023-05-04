@@ -3,7 +3,7 @@ package kr.ac.kopo.mannada.pager;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Pager {
+public class replyPager {
 	private int page = 1;
 	private int perPage = 10;
 	private float total;
@@ -11,6 +11,7 @@ public class Pager {
 	
 	private int search;
 	private String keyword;
+
 	
 	public int getSearch() {
 		return search;

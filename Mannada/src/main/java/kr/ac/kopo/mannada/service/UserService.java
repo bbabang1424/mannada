@@ -13,4 +13,10 @@ public interface UserService {
 
 	void addPartner(HashMap<String, Object> map);
 
+	User item(String id);
+
+	void modify(User item);
+
+	void pwModify(User item);
+
 }
