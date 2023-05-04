@@ -10,6 +10,19 @@
 
 <link rel="stylesheet" href="/resources/css/community_update.css">
 <jsp:include page="../header.jsp"></jsp:include>
+<!--jQuery 최신버전-->
+<script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+<!-- bootstrap -->
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+	rel="stylesheet">
+<!-- include summernote css/js -->
+<link href="/resources/summernote/summernote-lite.css" rel="stylesheet">
+<script src="/resources/summernote/summernote-lite.js"></script>
+<script src="/resources/summernote/lang/summernote-ko-KR.js"></script>
+<script src="/resources/js/community_update.js"></script>
 
 </head>
 <body>

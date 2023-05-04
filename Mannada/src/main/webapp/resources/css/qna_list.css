@@ -79,7 +79,7 @@ td>a {
 	text-overflow: ellipsis;
 }
 /* 작성자도 글자수 넘으면 ...표시 할랬는데 안해도 되려나 */
-/* .nickname{
+.nickname{
 	word-wrap: break-word;
 	display: inline-block;
 	width: 200px;
@@ -87,7 +87,6 @@ td>a {
 	overflow: hidden;
 	text-overflow: ellipsis;
 }
- */
 .writing {
 	text-align: right;
 	width: 82.5%;

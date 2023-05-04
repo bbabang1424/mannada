@@ -46,6 +46,7 @@
 }
 
 .title {
+	
 	display: inline-block;
 	position: absolute;
 	left: 22%;
@@ -53,7 +54,12 @@
 }
 
 .Writer {
+	word-wrap: break-word;
 	display: inline-block;
+	width: 150px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
 	position: absolute;
 	left: 22%;
 	top: 21%;
@@ -63,7 +69,7 @@
 	display: inline-block;
 	position: absolute;
 	top: 21%;
-	left: 34%;
+	    left: 39%;
 }
 /* .grade>i{
     color: rgb(243, 243, 35); 
