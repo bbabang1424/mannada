@@ -53,7 +53,7 @@
 					<fmt:formatDate value="${answer.regDate}" pattern="yyyy-MM-dd " />
 				</div>
 				<hr>
-				<div class="answer_content">${answer.content }</div>
+				<textarea class="answer_content">${answer.content }</textarea>
 			</div>
 		</c:if>
 		<c:if test="${sessionScope.manager != null && question.status == 0}">
@@ -61,8 +61,6 @@
 				<input type="hidden" name="questionId" value="${question.id }">
 				<textarea id="answer_box" name="content" placeholder="답변을 입력해주세요"></textarea>
 				<button class="answer_btn">답변</button>
-				
-
 			</form>
 		</c:if>
 		<!-- lower:하단이란 뜻 -->
@@ -75,8 +73,7 @@
 				<a href="../delete/${id}"><button class="button_delete">삭제</button></a>
 			</c:if>
 		</div>
-
-
 	</section>
+	<jsp:include page="../footer.jsp"></jsp:include>
 </body>
 </html>

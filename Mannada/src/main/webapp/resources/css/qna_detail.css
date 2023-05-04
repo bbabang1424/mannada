@@ -122,19 +122,19 @@ hr {
 	background-color: #f3f3f3;
 	position: relative;
 	left: -3%;
-	border: 1px solid #ddd;
 	width: 100%;
-	margin: 2em;
 	padding: 1em;
 	border: 1px solid #ddd;
 	margin: 2em;
 }
 
 .answer_mgrId {
+	margin-left: 1%;
 	text-align: left;
 }
 
 .answer_date {
+	color: #5F5F5F;
 	text-align: right;
 	position: absolute;
 	top: 10%;
@@ -142,11 +142,13 @@ hr {
 }
 
 .answer_content {
+	width: 100%;
 	margin-top: 1em;
 	padding: 1em;
 	text-align: left;
 	background-color: white;
 	border: 1px solid white;
+	margin-top: 1em;
 }
 
 #answer_box {
