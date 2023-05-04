@@ -53,17 +53,17 @@
 					<fmt:formatDate value="${answer.regDate}" pattern="yyyy-MM-dd " />
 				</div>
 				<hr>
-				<textarea class="answer_content">${answer.content }</textarea>
-				<button class="delete_btn">삭제</button>
+				<div style="overflow:scroll; width:100%; height: 100px;" class="answer_content">${answer.content }</div>
 			</div>
+			<c:if test="${sessionScope.manager.id != null }">
+			<button class="delete_btn">삭제</button>
+			</c:if>
 		</c:if>
 		<c:if test="${sessionScope.manager != null && question.status == 0}">
 			<form action="../addAnswer" method="post">
 				<input type="hidden" name="questionId" value="${question.id }">
 				<textarea id="answer_box" name="content" placeholder="답변을 입력해주세요"></textarea>
-				
 				<button class="answer_btn">답변</button>
-				
 			</form>
 		</c:if>
 		<!-- lower:하단이란 뜻 -->

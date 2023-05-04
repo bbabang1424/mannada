@@ -69,7 +69,7 @@
 					<button>참여</button>
 				</div>
 				<!--내용 안불러 와짐 -->
-				<textarea class="text_box">${item.content}></textarea>
+				<div class="text_box">${item.content}</div>
 			</div>
 			<!-- lower:하단이란 뜻 -->
 			<div class="lower">

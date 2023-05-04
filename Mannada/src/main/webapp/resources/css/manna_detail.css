@@ -46,7 +46,6 @@
 }
 
 .title {
-	
 	display: inline-block;
 	position: absolute;
 	left: 22%;
@@ -69,7 +68,7 @@
 	display: inline-block;
 	position: absolute;
 	top: 21%;
-	    left: 39%;
+	left: 39%;
 }
 /* .grade>i{
     color: rgb(243, 243, 35); 
@@ -196,13 +195,13 @@ progress::-webkit-progress-value {
 }
 
 .text_box {
-	width: 850px;
+	overflow: scroll;
+	width: 87%;
 	height: 110px;
 	position: absolute;
 	top: 64%;
 	left: 6%;
-	overflow: auto;
-	border: none;
+	border: 1px solid #ccc;
 	resize: none;
 }
 
