@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Manna_detail_Publishing</title>
+<title>Manna_detail</title>
 <link rel="stylesheet" href="/resources/css/manna_detail.css">
 <link rel="stylesheet"
 	href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">

@@ -57,6 +57,7 @@
 			</div>
 			<c:if test="${sessionScope.manager.id != null }">
 			<button class="delete_btn">삭제</button>
+			<button class="update_btn">수정</button>
 			</c:if>
 		</c:if>
 		<c:if test="${sessionScope.manager != null && question.status == 0}">

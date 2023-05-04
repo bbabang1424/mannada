@@ -177,6 +177,16 @@ hr {
 	color: white;
 	background-color: #ff0000;
 }
+.update_btn{
+	margin-right:1%;
+		float: right;
+	display: inline-block;
+	width: 50px;
+	height: 30px;
+	border: 1px solid #0080ff;
+	color: white;
+	background-color: #0080ff;
+}
 
 .lower {
 	display: inline-block;
