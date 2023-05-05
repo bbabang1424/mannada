@@ -92,7 +92,7 @@
 	<update id="unchange_status">
 		UPDATE question
 		SET status = 0
-		WHERE id = (SELECT question_id FROM answer WHERE id = #{id})
+		WHERE id = #{id}
 	</update>
 	
 	

@@ -100,22 +100,33 @@ public class QuestionController {
 		return "redirect:detail/" + item.getQuestionId();
 	}
 	
+	@GetMapping("/updateAnswer/{id}")
+	public String updateAnswer(@PathVariable int id, Model model) {
+		
+		Question item = service.item(id);
+		model.addAttribute("question", item);
+		
+		Answer answer = service.answer(id);
+		model.addAttribute("answer", answer);
+		
+		return path + "updateAnswer";
+	}
 	
 	@PostMapping("/updateAnswer/{id}")
 	public String updateAnswer(@PathVariable int id, Answer item) {
 		
-		item.setId(id);
+		item.setQuestionId(id);
 		service.updateAnswer(item);
 		
-		return "redirect:../detail/" + item.getQuestionId();
+		return "redirect:../detail/" + id;
 	}
 	
-	@GetMapping("/detail/deleteAnswer/{id}")
+	@GetMapping("/deleteAnswer/{id}")
 	public String deleteAnswer(@PathVariable int id) {
 		
 		service.deleteAnswer(id);
 
-		return "redirect:../../detail/" + id;
+		return "redirect:../detail/" + id;
 	}
 	
 }

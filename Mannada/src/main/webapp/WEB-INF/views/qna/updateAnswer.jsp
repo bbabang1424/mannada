@@ -47,37 +47,14 @@
 				<div class="text_box">${question.content }</div>
 			</div>
 		</div>
-		<c:if test="${question.status == 1 }">
-				<div class="answer_answer">
-					<div class="answer_mgrId">${answer.nickname }</div>
-					<div class="answer_date">
-						<fmt:formatDate value="${answer.regDate}" pattern="yyyy-MM-dd " />
-					</div>
-					<hr>
-					<div style="overflow:scroll; width:100%; height: 100px;" class="answer_content">${answer.content }</div>
-				</div>
-				<c:if test="${sessionScope.manager.id != null }">
-					<a href="../updateAnswer/${question.id }"><button class="update_btn" type="button">수정</button></a>
-					<a href="../deleteAnswer/${question.id }"><button class="delete_btn" type="button">삭제</button></a>
-				</c:if>
-		</c:if>
-		<c:if test="${sessionScope.manager != null && question.status == 0}">
-			<form action="../addAnswer" method="post">
+		
+			<form method="post">
 				<input type="hidden" name="questionId" value="${question.id }">
-				<textarea id="answer_box" name="content" placeholder="답변을 입력해주세요"></textarea>
-				<button class="answer_btn">답변</button>
+				<textarea id="answer_box" name="content" placeholder="답변을 입력해주세요">${answer.content }</textarea>
+				<button class="answer_btn">수정</button>
+				<a href="../detail/${question.id }"><button class="answer_btn" type="button">취소</button></a>
 			</form>
-		</c:if>
-		<!-- lower:하단이란 뜻 -->
-		<div class="lower">
-			<hr>
-			<!-- modify:수정하다란 뜻 -->
-			<a href="../list"><button class="button_list">목록</button></a>
-			<c:if test="${sessionScope.user != null && question.status == 0}">
-				<a href="../update/${id}"><button class="button_modify">수정</button></a>
-				<a href="../delete/${id}"><button class="button_delete">삭제</button></a>
-			</c:if>
-		</div>
+		
 	</section>
 	<jsp:include page="../footer.jsp"></jsp:include>
 </body>
