@@ -81,8 +81,8 @@ public class QuestionServiceImpl implements QuestionService {
 	@Transactional
 	@Override
 	public void deleteAnswer(int id) {
-		dao.deleteAnswer(id);
 		dao.unChangeStatus(id);
+		dao.deleteAnswer(id);
 	}
 
 }

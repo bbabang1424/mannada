@@ -107,7 +107,7 @@ public class QuestionController {
 		item.setId(id);
 		service.updateAnswer(item);
 		
-		return "redirect:detail/" + item.getQuestionId();
+		return "redirect:../detail/" + item.getQuestionId();
 	}
 	
 	@GetMapping("/detail/deleteAnswer/{id}")
@@ -115,7 +115,7 @@ public class QuestionController {
 		
 		service.deleteAnswer(id);
 
-		return "redirect:detail/" + id;
+		return "redirect:../../detail/" + id;
 	}
 	
 }

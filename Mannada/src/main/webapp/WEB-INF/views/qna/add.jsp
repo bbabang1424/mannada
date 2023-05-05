@@ -21,7 +21,7 @@
 <link href="/resources/summernote/summernote-lite.css" rel="stylesheet">
 <script src="/resources/summernote/summernote-lite.js"></script>
 <script src="/resources/summernote/lang/summernote-ko-KR.js"></script>
-<script src="/resources/js/qna_add.js"></script>
+<script src="/resources/js/summernote.js"></script>
 </head>
 <body>
 	<div class="banner">

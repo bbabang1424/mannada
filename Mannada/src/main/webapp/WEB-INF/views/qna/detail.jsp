@@ -12,6 +12,7 @@
 <link rel="stylesheet"
 	href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">
 
+<script src="/resources/js/question.js"></script>
 </head>
 <body>
 	<div class="banner">
@@ -58,8 +59,8 @@
 					<div style="overflow:scroll; width:100%; height: 100px;" class="answer_content">${answer.content }</div>
 				</div>
 				<c:if test="${sessionScope.manager.id != null }">
+					<button class="update_btn" type="button" id="answer_update">수정</button>
 					<a href="deleteAnswer/${question.id }"><button class="delete_btn" type="button">삭제</button></a>
-					<button class="update_btn">수정</button>
 				</c:if>
 			</form>
 		</c:if>
