@@ -22,4 +22,10 @@ public interface QuestionService {
 
 	Answer answer(int id);
 
+	void addViewCnt(int id);
+
+	void updateAnswer(Answer item);
+
+	void deleteAnswer(int id);
+
 }

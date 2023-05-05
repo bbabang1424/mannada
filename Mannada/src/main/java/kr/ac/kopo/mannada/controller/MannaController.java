@@ -42,6 +42,9 @@ public class MannaController {
 	
 	@GetMapping("/detail/{id}")
 	public String detail(@PathVariable int id, Model model) {
+		
+		service.addViewCnt(id);
+		
 		Manna item = service.item(id);
 		model.addAttribute("item", item);
 		

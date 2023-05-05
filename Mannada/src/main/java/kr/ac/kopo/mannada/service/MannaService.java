@@ -21,4 +21,6 @@ public interface MannaService {
 
 	void init();
 
+	void addViewCnt(int id);
+
 }

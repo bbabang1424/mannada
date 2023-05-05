@@ -51,4 +51,9 @@ public class MannaDaoImpl implements MannaDao {
 		sql.delete("manna.delete_joins", id);
 	}
 
+	@Override
+	public void addViewCnt(int id) {
+		sql.update("manna.addViewCnt", id);
+	}
+
 }

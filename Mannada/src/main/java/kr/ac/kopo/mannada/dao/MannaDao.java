@@ -21,4 +21,6 @@ public interface MannaDao {
 
 	void deleteJoins(int id);
 
+	void addViewCnt(int id);
+
 }

@@ -71,4 +71,9 @@ public class MannaServiceImpl implements MannaService {
 		}
 	}
 
+	@Override
+	public void addViewCnt(int id) {
+		dao.addViewCnt(id);
+	}
+
 }

@@ -47,18 +47,21 @@
 			</div>
 		</div>
 		<c:if test="${question.status == 1 }">
-			<div class="answer_answer">
-				<div class="answer_mgrId">${answer.nickname }</div>
-				<div class="answer_date">
-					<fmt:formatDate value="${answer.regDate}" pattern="yyyy-MM-dd " />
+			<form action="../updateAnswer/${answer.id }" method="post">
+			
+				<div class="answer_answer">
+					<div class="answer_mgrId">${answer.nickname }</div>
+					<div class="answer_date">
+						<fmt:formatDate value="${answer.regDate}" pattern="yyyy-MM-dd " />
+					</div>
+					<hr>
+					<div style="overflow:scroll; width:100%; height: 100px;" class="answer_content">${answer.content }</div>
 				</div>
-				<hr>
-				<div style="overflow:scroll; width:100%; height: 100px;" class="answer_content">${answer.content }</div>
-			</div>
-			<c:if test="${sessionScope.manager.id != null }">
-			<button class="delete_btn">삭제</button>
-			<button class="update_btn">수정</button>
-			</c:if>
+				<c:if test="${sessionScope.manager.id != null }">
+					<a href="deleteAnswer/${question.id }"><button class="delete_btn" type="button">삭제</button></a>
+					<button class="update_btn">수정</button>
+				</c:if>
+			</form>
 		</c:if>
 		<c:if test="${sessionScope.manager != null && question.status == 0}">
 			<form action="../addAnswer" method="post">

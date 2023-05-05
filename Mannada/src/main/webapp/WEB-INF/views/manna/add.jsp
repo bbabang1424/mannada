@@ -75,7 +75,7 @@
 					<tr>
 						<th id="interval">본문내용</th>
 						<td class="detail">
-						<textarea class="control" placeholder="텍스트 내용을 입력해주세요"></textarea>
+						<textarea class="control" placeholder="텍스트 내용을 입력해주세요" name="content"></textarea>
 						</td>
 					</tr>
 				</tbody>

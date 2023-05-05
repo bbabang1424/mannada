@@ -78,4 +78,11 @@
 		WHERE manna_id = #{id}
 	</delete>
 	
+	
+	<!-- 조회수 증가 -->
+	<update id="addViewCnt">
+		UPDATE manna SET viewCnt = viewCnt + 1
+		WHERE id = #{id}
+	</update>
+	
 </mapper>

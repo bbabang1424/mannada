@@ -77,5 +77,29 @@
 		SELECT answer.*, manager.nickname FROM answer LEFT JOIN manager ON answer.mgr_id = manager.id
 		WHERE question_id = #{id}
 	</select>
+	
+	<update id="update_answer">
+		UPDATE answer
+		SET content = #{content}
+		WHERE id = #{id}
+	</update>
+	
+	<delete id="delete_answer">
+		DELETE FROM answer
+		WHERE question_id = #{id}
+	</delete>
+		
+	<update id="unchange_status">
+		UPDATE question
+		SET status = 0
+		WHERE id = (SELECT question_id FROM answer WHERE id = #{id})
+	</update>
+	
+	
+	<!-- 조회수 증가 -->
+	<update id="addViewCnt">
+		UPDATE question SET viewCnt = viewCnt + 1
+		WHERE id = #{id}
+	</update>
 
 </mapper>
