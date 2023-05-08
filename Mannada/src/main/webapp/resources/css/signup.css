@@ -1,96 +1,94 @@
 @charset "UTF-8";
 
-*{
-    margin: 0;
-    padding: 0;
-    text-decoration: none;
-    color: unset;
+.background-image {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	background-image: url("/resources/image/swiper1.jpg");
+	background-repeat: no-repeat;
+	background-attachment: scroll;
+	background-size: cover;
+	opacity: 0.5;
 }
 
-html {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    padding-top: 20px;
-    padding-bottom: 20px;
-}
-   
 .signup-box {
-       border: 1px solid;
-       color: black;
-       width: 500px;
-       height: 630px;
-       margin: 5em auto;
-       padding: 50px 30px;
+	border: 1px solid whitesmoke;
+	color: black;
+	width: 500px;
+	height: 550px;
+	margin: 3em auto;
+	padding: 50px 30px;
+	position: relative;
+	background-color: white
 }
 
 .signup-box .title {
-    border-bottom: 1px solid black;
-    font-weight: bold;
-    margin-top: 5%;
-    padding: 20px;
+	border-bottom: 1px solid black;
+	font-weight: bold;
+	margin-top: 5%;
+	padding: 20px;
 }
 
 .naver-btn {
-    width: 100%;
-    height: 40px;    
-    background-color: #03C75A;
-    color: white;
-    border: none;    
-    margin-top: 10px;
-    /* border-radius: 12px; 모서리 둥글게 */
+	width: 100%;
+	height: 40px;
+	background-color: #03C75A;
+	color: white;
+	border: none;
+	margin-top: 10px;
+	/* border-radius: 12px; 모서리 둥글게 */
 }
 
 .naver-btn img {
-    width: 20px;
-    height: 20px;
-    display: inline;
- }
+	width: 20px;
+	height: 20px;
+	display: inline;
+}
 
 .kakao-btn {
-    width: 100%;
-    height: 40px;    
-    background-color: #FEE500;
-    color: black;
-    border: none;
-    margin-top: 10px;
-    /* border-radius: 12px; */
+	width: 100%;
+	height: 40px;
+	background-color: #FEE500;
+	color: black;
+	border: none;
+	margin-top: 10px;
+	/* border-radius: 12px; */
 }
 
 .kakao-btn img {
-    width: 20px;
-    height: 20px;
-    display: inline;
- }
+	width: 20px;
+	height: 20px;
+	display: inline;
+}
 
 .google-btn {
-    width: 100%;
-    height: 40px;    
-    background-color: #E0E0E0;
-    color: black;
-    border: none;
-    margin-top: 10px;
-    /* border-radius: 12px; */
+	width: 100%;
+	height: 40px;
+	background-color: #E0E0E0;
+	color: black;
+	border: none;
+	margin-top: 10px;
+	/* border-radius: 12px; */
 }
 
 .google-btn img {
-    width: 20px;
-    height: 20px;
-    display: inline;
- }
+	width: 20px;
+	height: 20px;
+	display: inline;
+}
 
 .blank {
-    margin-top: 10px;
-    text-align: center;
-    font-size: 0.8em;
-    padding: 20px 0;
+	margin-top: 10px;
+	text-align: center;
+	font-size: 0.8em;
+	padding: 20px 0;
 }
 
 .email-btn {
- 	width: 100%;
-    height: 40px;    
-    background-color: #0359D9;
-    color: white;
-    margin-top: 10px;
-    border: none;
+	width: 100%;
+	height: 40px;
+	background-color: #0359D9;
+	color: white;
+	margin-top: 10px;
+	border: none;
 }

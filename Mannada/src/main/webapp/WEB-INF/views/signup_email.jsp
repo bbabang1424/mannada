@@ -7,14 +7,23 @@
 <jsp:include page="header.jsp"></jsp:include>
 <title>이메일 회원가입</title>
 <link rel="stylesheet" href="/resources/css/signup_email.css" />
+<link rel="stylesheet" href="/resources/image/swiper1.jpg"/>
 
+
+<style type="text/css">
+	#top-button{
+		display: none;
+	}
+</style>
 </head>
 <body>
+<div class="background-image">
+</div>
 	<div class="body">
 	<div class="wrapper">
 		<form name="signup_form" action="/signup" method="post">
 			<div class="title">
-				<h1 style="font-size: 21px;">회원가입</h1>
+				<h1 style="font-size: 21px; font-weight:bold;">회원가입</h1>
 			</div>
 			<div class="email-title">이메일</div>
 			<div class="email">
