@@ -78,4 +78,10 @@ public class CommunityDaoImpl implements CommunityDao {
 		sql.update("community.addViewCnt", id);
 	}
 
+	/* 댓글리스트 */
+	@Override
+	public List<Reply> replyList(Pager pager) {
+		return sql.selectList("community.reply_list", pager);
+	}
+
 }

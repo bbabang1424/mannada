@@ -1,8 +1,6 @@
 package kr.ac.kopo.mannada.service;
 
 import java.util.HashMap;
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -49,21 +47,20 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public User item(String id) {
-		// TODO Auto-generated method stub
-		return null;
+	public User item(User user) {
+		return dao.item(user);
 	}
-
+	
 	@Override
 	public void modify(User item) {
-		// TODO Auto-generated method stub
-		
+		dao.modify(item);
 	}
 
 	@Override
 	public void pwModify(User item) {
-		// TODO Auto-generated method stub
-		
+		dao.pwModify(item);
 	}
+
+
 	
 }

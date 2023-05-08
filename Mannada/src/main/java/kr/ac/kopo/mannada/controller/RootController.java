@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.SessionAttribute;
 
 import kr.ac.kopo.mannada.model.Address;
 import kr.ac.kopo.mannada.model.Community;
@@ -184,46 +185,50 @@ public class RootController {
 	}
 	
 	/*마이페이지 관련*/
-	@RequestMapping("/mypage/{id}")
-	   public String mypage(@PathVariable String id, HttpSession session, Model model, Pager pager) {
-
-	      User user = service.item(id);
-	      model.addAttribute("user", user);
-
+	@RequestMapping("/mypage")
+	public String mypage(@SessionAttribute User user, Model model, Pager pager) {
+		
+		service.item(user);
+		model.addAttribute("user", user);    
+		
+		pager.setPerPage(5);
+		
+		List<Manna> myManna = mannaService.list(pager);
+		model.addAttribute("myManna", myManna);
+		
+		List<Question> myQuest = questService.list(pager);
+		model.addAttribute("myQuest", myQuest);
 	      
-	      List<Manna> myManna = mannaService.list(pager);
-	      model.addAttribute("myManna", myManna);
-	      
-	      List<Question> myQuest = questService.list(pager);
-	      model.addAttribute("myQuest", myQuest);
-	      
-	      List<Community> myCommu = commuService.list(pager);
-	      model.addAttribute("myCommu", myCommu);
+		List<Community> myCommu = commuService.list(pager);
+		model.addAttribute("myCommu", myCommu);
+		
+		Pager rePager = new Pager();
+		rePager.setPerPage(10);
+		rePager.setKeyword(user.getId());
+		
+		List<Reply> commuReply = commuService.replyList(rePager); //커뮤티니 service,dao 처리하기
+		model.addAttribute("commuReply", commuReply);
 
-	      List<Reply> commuReply = commuService.replyList(pager); //커뮤티니 service,dao 처리하기
-	      model.addAttribute("commuReply", commuReply);
-
-	      return "mypage";
-	   }
+		return "mypage";
+	}
 	   
 	   
-	   /* 회원정보수정 */
-	   @PostMapping("/modify/{id}")
-	   public String modify(@PathVariable String id, User item) {
+	/* 회원정보수정 */
+	@PostMapping("/modify/{id}")
+	public String modify(@PathVariable String id, User item) {
 	      
-	      item.setId(id);
-	      service.modify(item);
+		item.setId(id);
+		service.modify(item);
 	      
-	      return "redirect:/mypage/" + id;
-	   }
+		return "redirect:/mypage/" + id;
+	}
 	   
-	   /* 비밀번호변경 */
-	   @PostMapping("/pwModify/{id}")
-	   public String pwModify(@PathVariable String id, User item) {
+	/* 비밀번호변경 */
+	@PostMapping("/pwModify/{id}")
+	public String pwModify(@PathVariable String id, User item) {
+		item.setId(id);
+		service.pwModify(item);
 	      
-	      item.setId(id);
-	      service.pwModify(item);
-	      
-	      return "redirect:/mypage/" + id;
-	   }
+		return "redirect:/mypage/" + id;
+	}
 }

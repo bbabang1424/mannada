@@ -30,4 +30,6 @@ public interface CommunityDao {
 
 	void addViewCnt(int id);
 
+	List<Reply> replyList(Pager pager);
+
 }
