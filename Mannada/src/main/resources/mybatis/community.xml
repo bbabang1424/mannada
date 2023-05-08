@@ -72,8 +72,7 @@
 	
 	
 	
-	<!-- 댓글 -->
-	
+	<!-- 댓글 -->	
 	<insert id="add_reply">
 		INSERT INTO reply(commu_id, num, content, reg_date)
 		VALUES(#{commuId}, #{num}, #{content}, NOW())
@@ -97,5 +96,12 @@
 		DELETE FROM reply
 		WHERE id = #{id}
 	</delete>
+	
+	<!-- 마이페이지의 댓글 리스트 -->
+	<select id="reply_list" resultType="Reply">
+		SELECT @ROWNUM:=@ROWNUM+1 AS rnum, reply.*
+		FROM reply, (SELECT @ROWNUM:=0) AS R
+		WHERE id = #{keyword} 
+	</select>
 
 </mapper>

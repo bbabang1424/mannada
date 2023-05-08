@@ -22,30 +22,23 @@
 		VALUES (#{mannaId}, #{num})
 	</insert>
 	
-	<!-- 회원정보수정 및 탈퇴 관련 -->
-	<select id="profile" resultType="User">
-		SELECT * FROM user
-	</select>
-	
+	<!-- 마이페이지 -->
 	<select id="item" resultType="User">
-		SELECT * FROM user
+		SELECT *
+		FROM user
 		WHERE id=#{id}
 	</select>
 	
-	<update id="proUpdate">
+	<update id="modify">
+		UPDATE user 
+		SET  img_url=#{imgUrl}, nickname=#{nickname}, name =#{name}, phone=#{phone}
+		WHERE id = #{id}
+	</update>
+   
+	<update id="pw_modify">
 		UPDATE user
-		SET name=#{name}, nickname=#{nickname}, phone=#{phone}, img_url=#{imgUrl}
-		WHERE id=#{id}
+		SET pw=PASSWORD(#{pw}) 
+		WHERE id=#{id} 
 	</update>
 	
-	<select id="checkPW" resultType="Integer">
-		SELECT COUNT(*) FROM user 
-		WHERE id=#{id} AND pw=#{pw};
-	</select>
-	
-	<update id="updatePW">
-		UPDATE user
-		SET pw=#{newPW} 
-		WHERE id=#{id} AND pw=#{pw}
-	</update>
 </mapper>
