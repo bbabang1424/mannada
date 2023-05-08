@@ -6,13 +6,53 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>qna_detail</title>
+<title>qna_update_Answer</title>
 <jsp:include page="../header.jsp"></jsp:include>
 <link rel="stylesheet" href="/resources/css/qna_detail.css">
 <link rel="stylesheet"
 	href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">
+<!--jQuery 최신버전-->
+<script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+<!-- bootstrap -->
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+	rel="stylesheet">
+<!-- include summernote css/js -->
+<link href="/resources/summernote/summernote-lite.css" rel="stylesheet">
+<script src="/resources/summernote/summernote-lite.js"></script>
+<script src="/resources/summernote/lang/summernote-ko-KR.js"></script>
 
-<script src="/resources/js/question.js"></script>
+<script type="text/javascript">
+	//window.onload = 
+	$(document).ready(
+			function() {
+				//여기 아래 부분
+				$('#summernote').summernote({
+
+					'width' : '100%',
+					height : 100, // 에디터 높이
+					minHeight : null, // 최소 높이
+					maxHeight : null, // 최대 높이
+					focus : false, // 에디터 로딩후 포커스를 맞출지 여부
+					lang : "ko-KR", // 한글 설정
+					placeholder : '답변을 입력해주세요' //placeholder 설정
+
+				});
+
+				document.getElementById('currentDate').value = new Date()
+						.toISOString().substring(0, 10);
+			});
+</script>
+
+<style type="text/css">
+/*텍스트 왼쪽 정렬  */
+.note-editable {
+	text-align: left !important;
+}
+</style>
+
 </head>
 <body>
 	<div class="banner">
@@ -50,12 +90,16 @@
 		
 			<form method="post">
 				<input type="hidden" name="questionId" value="${question.id }">
-				<textarea id="answer_box" name="content" placeholder="답변을 입력해주세요">${answer.content }</textarea>
-				<button class="answer_btn">수정</button>
-				<a href="../detail/${question.id }"><button class="answer_btn" type="button">취소</button></a>
+				<div style="margin-top: 2%;">
+				<textarea id="summernote" class="answer_box" name="content" placeholder="답변을 입력해주세요">${answer.content }</textarea>
+				</div>
+				<a href="../detail/${question.id }"><button class="cancell_btn" type="button">취소</button></a>
+				<button class="update_Answer_btn">수정</button>
+				
 			</form>
-		
+		<hr style="width: 100%;">
 	</section>
+	
 	<jsp:include page="../footer.jsp"></jsp:include>
 </body>
 </html>
