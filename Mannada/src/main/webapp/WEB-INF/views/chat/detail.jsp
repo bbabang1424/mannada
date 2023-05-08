@@ -12,43 +12,8 @@
 <link href="/resources/css/style.css" rel="stylesheet">
 <link href="/resources/css/chat.css" rel="stylesheet">
 
-    <script type="text/javascript">
-    	document.getElementById('sendMessage').addEventListener('click', () => {
-	    	fetch("../add", {
-	            method: "POST",
-	            headers: { 'Content-Type': 'application/json' },
-	            body: JSON.stringify(item)
-	        }).then(resp => {
-	            if (resp.status == 200)
-	                return resp.json();
-	        }).then(result => {
-	            console.log(result);
-	
-	            const message = document.querySelector("#message");
-	            const div = makeItem(result);
-	
-	            console.log(message);
-	            console.log(div);
-	
-	            message.after(div);
-	        });
-    	});
-    	
-    	function makeItem(element){
-    		const div = document.createElement("div");
-    		div.classList.add("list");
-    		
-    		const head = document.createElement("p");
-    		head.textContent = ${item.nickname} + " | " + ${item.regDate};
-    		div.append(head);
-    		
-    		const content = document.createElement("p");
-    		content.textContent = ${item.content};
-    		div.append(content);
-    		
-    		return div;
-    	};
-    </script>
+<script src="/resources/js/chat.js"></script>
+<script src="/resources/js/sockjs.min.js"></script>
     
 </head>
 <body>
@@ -81,8 +46,9 @@
 
             <div class="send">
                 <form action="../add" method="post">
+                    <input type="number" name="num" value="${sessionScope.user.num}" id="session_id" class="hidden">
                     <input type="number" name="mannaId" value="${item.id}" class="hidden">
-                    <input type="text" name="content">
+                    <input type="text" name="content" id="message-content">
                     <button type="button" id="sendMessage">전송</button>
                 </form>
             </div>
