@@ -38,7 +38,7 @@
 	<update id="pw_modify">
 		UPDATE user
 		SET pw=PASSWORD(#{pw}) 
-		WHERE id=#{id}
+		WHERE id=#{id} 
 	</update>
 	
 </mapper>

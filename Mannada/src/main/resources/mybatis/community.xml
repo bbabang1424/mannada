@@ -101,7 +101,7 @@
 	<select id="reply_list" resultType="Reply">
 		SELECT @ROWNUM:=@ROWNUM+1 AS rnum, reply.*
 		FROM reply, (SELECT @ROWNUM:=0) AS R
-		WHERE id = #{keyword}
+		WHERE id = #{keyword} 
 	</select>
 
 </mapper>

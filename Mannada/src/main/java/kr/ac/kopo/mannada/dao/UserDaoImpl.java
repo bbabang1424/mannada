@@ -11,7 +11,7 @@ import kr.ac.kopo.mannada.model.User;
 public class UserDaoImpl implements UserDao {
 
 	@Autowired
-	SqlSession sql;
+	SqlSession sql; 
 	
 	
 	@Override

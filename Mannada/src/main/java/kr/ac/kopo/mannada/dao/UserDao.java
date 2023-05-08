@@ -13,7 +13,7 @@ public interface UserDao {
 
 	void addPartner(HashMap<String, Object> map);
 
-	User item(User user);
+	User item(User user); 
 
 	void modify(User item);
 

@@ -11,7 +11,7 @@ public class User {
 	private String address;
 	private String phone;
 	private String imgUrl;
-	private Date regDate;
+	private Date regDate; 
 	
 	
 	public int getNum() {

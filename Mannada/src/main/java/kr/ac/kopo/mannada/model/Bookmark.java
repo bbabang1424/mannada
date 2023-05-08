@@ -13,7 +13,7 @@ public class Bookmark {
 		this.id = id;
 	}
 	public int getMannaId() {
-		return mannaId;
+		return mannaId; 
 	}
 	public void setMannaId(int mannaId) {
 		this.mannaId = mannaId;

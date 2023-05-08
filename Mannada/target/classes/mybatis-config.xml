@@ -19,7 +19,7 @@
 		<typeAlias type="kr.ac.kopo.mannada.model.Reply" alias="Reply"/>
 		<typeAlias type="kr.ac.kopo.mannada.model.Bookmark" alias="Bookmark"/>
 	</typeAliases>
-	
+	 
 	<mappers>
 		<mapper resource="mybatis/user.xml" />
 		<mapper resource="mybatis/manager.xml" />

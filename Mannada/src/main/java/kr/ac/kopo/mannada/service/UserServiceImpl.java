@@ -49,7 +49,7 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public User item(User user) {
 		return dao.item(user);
-	}
+	} 
 	
 	@Override
 	public void modify(User item) {
