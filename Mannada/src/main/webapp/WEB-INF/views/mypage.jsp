@@ -442,7 +442,7 @@ function pw_modify() {
 				<div>
 					<label>프로필 사진</label>
 					<input type="file" name="imgUrl" id="input-image" value="${user.imgUrl}"> 
-					<img id="preview-image" src="${user.imgUrl}">
+					<img id="preview-image" src="${user.img}">
                   </div>
                   
 				<div>
