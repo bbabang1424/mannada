@@ -4,7 +4,9 @@
 <head>
 <meta charset="UTF-8">
 <title>로그인</title>
+<jsp:include page="header.jsp"></jsp:include>
 <link rel="stylesheet" href="/resources/css/login.css">
+<link rel="stylesheet" href="/resources/image/swiper1.jpg"/>
 <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
 <script type="text/javascript">
 
@@ -32,6 +34,8 @@ $(function(){
 </style>
 </head>
 <body>
+<div class="background-image">
+</div>
 	<div class="login-box">
         <br>
         <div class="title">
@@ -103,8 +107,6 @@ $(function(){
 					<button class="login-button" type="submit">로그인</button>
 				</form>
 	        </div>
-        </div>
-        
-         
+        </div>     
 </body>
 </html>
