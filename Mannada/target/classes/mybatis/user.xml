@@ -24,9 +24,10 @@
 	
 	<!-- 마이페이지 -->
 	<select id="item" resultType="User">
-		SELECT *
+		SELECT user.*, pro.id as img
 		FROM user
-		WHERE id=#{id}
+		LEFT OUTER JOIN profile pro ON(user.num=pro.num)
+		WHERE user.id=#{id}
 	</select>
 	
 	<update id="modify">

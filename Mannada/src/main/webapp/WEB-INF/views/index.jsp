@@ -77,8 +77,8 @@ window.initMap = function () {
 			<li><a href="/signup">회원가입</a></li>
 			<li><a href="/logout">로그아웃</a></li>
 			<li><a href="mypage/${id}">마이페이지</a></li>
-			<li><a>${sessionScope.user.name }</a></li>
-			<li><a>${sessionScope.manager.id }</a><li>
+			<li><a>${sessionScope.user.nickname}</a></li>
+			<li><a>${sessionScope.manager.id}</a><li>
 		</ul>
 	
 		<ul> 
