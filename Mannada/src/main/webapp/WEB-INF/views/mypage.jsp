@@ -26,10 +26,14 @@ th {
    width: auto !important;
 }
 
-.modal button {
+.modal button:not {
    margin-top: 20px;
    width: 100px;
    height: 35px;
+}
+
+#my-post, #my-reply, #my-set{
+	display: none;
 }
 </style>
 
@@ -95,11 +99,11 @@ function pw_modify() {
 			<form method="post" class="card">
 				<div>
 					<div id="card-photo">
-						<c:if test="${user.imgUrl != null }">
-							<img src="${user.imgUrl}">
+						<c:if test="${user.img != null}">
+							<img src="${user.img}">
 						</c:if>
 
-						<c:if test="${user.imgUrl == null }">
+						<c:if test="${user.img == null }">
 							<div class="img"></div>
 						</c:if>
 					</div>
