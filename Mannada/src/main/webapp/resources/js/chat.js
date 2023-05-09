@@ -1,37 +1,3 @@
-let url = "ws://" + window.location.hostname + ":" + window.location.port + "/chat";
-console.log(url);
-
-let connect = false;
-let socket = new WebSocket(url);
-
-socket.onopen = function() {
-	connect = true;
-	alert("서버 연결 완료");
-}
-
-socket.onclose = function() {
-	connect = false;
-	alert("서버 연결 종료");
-}
-
-socket.onmessage = function(msg) {
-	let chat = document.getElementById("chat");
-	
-	chat.innerHTML += "<li>" + msg.data + "</li>";
-}
-
-function send() {
-	if(connect) {
-		let msg = document.getElementById("msg");
-		
-		socket.send(msg.value);
-		
-		msg.value = "";
-	}
-}
-
-
-
 
 // window.onload = function () {
 

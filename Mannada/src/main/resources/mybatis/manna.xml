@@ -55,10 +55,16 @@
 	</insert>
 	
 	<select id="item" resultType="Manna">
-		SELECT manna.*, nickname
+		SELECT manna.*, nickname, (SELECT (count(*) - 1) FROM joins WHERE manna_id = #{id}) as sum
 		FROM manna
 		LEFT OUTER JOIN user ON(manna.num = user.num)
 		WHERE manna.id=#{id}
+	</select>
+	
+	<select id="member_list" resultType="User">
+		SELECT j.num, nickname
+		FROM joins j LEFT OUTER JOIN user u ON j.num = u.num
+		WHERE manna_id = #{id}
 	</select>
 	
 	<update id="update">
