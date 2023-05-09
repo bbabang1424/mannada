@@ -81,7 +81,7 @@
 	<update id="update_answer">
 		UPDATE answer
 		SET content = #{content}
-		WHERE id = #{id}
+		WHERE question_id = #{id}
 	</update>
 	
 	<delete id="delete_answer">

@@ -12,11 +12,12 @@ public interface UserService {
 	boolean checkId(String id);
 
 	void addPartner(HashMap<String, Object> map);
-
-	User item(String id);
+	
+	User item(User user); 
 
 	void modify(User item);
 
 	void pwModify(User item);
+
 
 }

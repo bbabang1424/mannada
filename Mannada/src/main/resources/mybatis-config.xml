@@ -17,8 +17,10 @@
 		<typeAlias type="kr.ac.kopo.mannada.model.Chat" alias="Chat"/>
 		<typeAlias type="kr.ac.kopo.mannada.model.Address" alias="Address"/>
 		<typeAlias type="kr.ac.kopo.mannada.model.Reply" alias="Reply"/>
+		<typeAlias type="kr.ac.kopo.mannada.model.Bookmark" alias="Bookmark"/>
+		<typeAlias type="kr.ac.kopo.mannada.model.Attach" alias="Attach"/>
 	</typeAliases>
-	
+	 
 	<mappers>
 		<mapper resource="mybatis/user.xml" />
 		<mapper resource="mybatis/manager.xml" />

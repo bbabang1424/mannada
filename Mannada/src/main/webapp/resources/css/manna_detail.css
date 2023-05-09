@@ -195,7 +195,7 @@ progress::-webkit-progress-value {
 }
 
 .text_box {
-	overflow: scroll;
+	overflow: auto;
 	width: 87%;
 	height: 110px;
 	position: absolute;

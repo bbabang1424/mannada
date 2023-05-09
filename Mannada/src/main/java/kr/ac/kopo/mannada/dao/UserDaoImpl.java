@@ -11,7 +11,7 @@ import kr.ac.kopo.mannada.model.User;
 public class UserDaoImpl implements UserDao {
 
 	@Autowired
-	SqlSession sql;
+	SqlSession sql; 
 	
 	
 	@Override
@@ -34,4 +34,18 @@ public class UserDaoImpl implements UserDao {
 		sql.insert("user.add_partner", map);
 	}
 
+	@Override
+	public User item(User user) {
+		return sql.selectOne("user.item", user);
+	}
+	
+	@Override
+	public void modify(User item) {
+		sql.update("user.modify", item);
+	}
+
+	@Override
+	public void pwModify(User item) {
+		sql.update("user.pw_modify", item);
+	}
 }

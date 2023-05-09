@@ -35,11 +35,13 @@
 	<div class="container">
 
 		<section class="content ">
+		<c:if test="${sessionScope.user.id != null }">
 			<div id="sign_up_out">
 				<a href="add"><button class="sign_up_in">
 						<i class="bi bi-check"></i>글쓰기
 					</button></a>
 			</div>
+			</c:if>
 
 			<!-- <a href="../">이전</a> -->
 

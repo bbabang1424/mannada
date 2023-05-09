@@ -55,7 +55,7 @@ public class CommunityServiceImpl implements CommunityService {
 	}
 	
 	/* 댓글 */
-
+	
 	@Override
 	public void addReply(Reply reply) {
 		dao.addReply(reply);
@@ -83,11 +83,11 @@ public class CommunityServiceImpl implements CommunityService {
 	public void addViewCnt(int id) {
 		dao.addViewCnt(id);
 	}
-
+	
+	/*댓글 리스트*/
 	@Override
 	public List<Reply> replyList(Pager pager) {
-		// TODO Auto-generated method stub
-		return null;
+		return dao.replyList(pager);
 	}
 
 }
