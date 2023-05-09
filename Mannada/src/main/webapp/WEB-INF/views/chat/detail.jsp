@@ -13,7 +13,6 @@
 <link href="/resources/css/chat.css" rel="stylesheet">
 
 <script src="/resources/js/chat.js"></script>
-<script src="/resources/js/sockjs.min.js"></script>
     
 </head>
 <body>
@@ -48,7 +47,7 @@
                 <form action="../add" method="post">
                     <input type="number" name="num" value="${sessionScope.user.num}" id="session_id" class="hidden">
                     <input type="number" name="mannaId" value="${item.id}" class="hidden">
-                    <input type="text" name="content" id="message-content">
+                    <input type="text" name="content" id="msg">
                     <button type="button" id="sendMessage">전송</button>
                 </form>
             </div>
