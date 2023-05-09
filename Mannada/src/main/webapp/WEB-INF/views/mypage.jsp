@@ -7,6 +7,8 @@
 <meta charset="UTF-8">
 <title>마이페이지</title>
 <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">
 
 <style>
 .body {
@@ -32,62 +34,12 @@ th {
    height: 35px;
 }
 
-#my-post, #my-reply, #my-set{
+#my-post, #my-reply, #my-set, #my-calender {
 	display: none;
 }
 </style>
 
-<script type="text/javascript">
-$(function() {
-	$(".my-nav li").click(function() {
-		$(".my-nav li").css("text-decoration", "unset");
-		$(".my-nav li").eq(0).css("text-decoration", "underline");
-		$(".my-set").css("display", "none");
-		$("#info").css("display", "unset");
-	});
 
-	$(".my-nav li").eq(1).click(function() {
-		$(".my-nav li").css("text-decoration", "unset");
-		$(".my-nav li").eq(1).css("text-decoration", "underline");
-		$(".my-set").css("display", "none");
-		$("#my-post").css("display", "unset");
-	});
-
-	$(".my-nav li").eq(2).click(function() {
-		$(".my-nav li").css("text-decoration", "unset");
-		$(".my-nav li").eq(2).css("text-decoration", "underline");
-		$(".my-set").css("display", "none");
-		$("#my-reply").css("display", "unset");
-	});
-
-	$(".my-nav li").eq(3).click(function() {
-		$(".my-nav li").css("text-decoration", "unset");
-		$(".my-nav li").eq(3).css("text-decoration", "underline");
-		$(".my-set").css("display", "none");
-		$("#my-bookmark").css("display", "unset");
-	});
-});
- 
-function pw_modify() {
-	const form = document.pw_modify_form;
-   
-	if(form.pw.value == "" && form.pw.value == " ") {
-		alert("비밀번호를 입력해주세요");
-		form.pw.focus();
-		return;
-	}else if(form.passwd_valid.value == "" && form.passwd_valid.value == " ") {
-		alert("비밀번호 확인을 입력해주세요");
-		form.passwd_valid.focus();
-		return;
-	}else if(form.pw.value != form.passwd_valid.value) {
-		alert("비밀번호가 불일치합니다");
-		form.pw.focus();
-		return;
-	}
-      
-	form.submit();
-}
-</script>
 
 </head>
 <body>
@@ -104,8 +56,9 @@ function pw_modify() {
 						</c:if>
 
 						<c:if test="${user.img == null }">
-							<div class="img"></div>
+							<i class="bi bi-person-fill"></i>
 						</c:if>
+						<button>프로필사진 수정</button>
 					</div>
 					<div>${user.nickname}</div>
 				</div>
@@ -128,6 +81,7 @@ function pw_modify() {
 					<li>작성 글</li>
 					<li>작성 댓글</li>
 					<li>북마크</li>
+					<li>캘린더</li>
 				</ul>
 			</nav>
 		</div>
@@ -143,11 +97,11 @@ function pw_modify() {
 						<tr>
 	   						<th>프로필 사진</th>
 							<td>
-								<c:if test="${user.imgUrl != null}">
-									<img src="${user.imgUrl}">
+								<c:if test="${user.img != null}">
+									<img src="${user.img}">
 								</c:if>
-								<c:if test="${user.imgUrl == null}">
-									<div class="img"></div>
+								<c:if test="${user.img == null}">
+									<i class="bi bi-person-fill"></i>
 								</c:if>
 							</td>
 						</tr>
@@ -423,6 +377,14 @@ function pw_modify() {
 				</c:if>
 			</div>
 		</section> -->
+		
+		<!-- <section class="my-set" id="my-calender">
+			<div class="board">
+				<div>
+					<h3>캘린더</h3>
+				</div>
+			</div>
+		</section> -->
 	</c:if>
 
 
@@ -441,7 +403,7 @@ function pw_modify() {
 			<div>
 				<div>
 					<label>프로필 사진</label>
-					<input type="file" name="imgUrl" id="input-image" value="${user.imgUrl}"> 
+					<input type="file" name="img" id="input-image" value="${user.img}"> 
 					<img id="preview-image" src="${user.img}">
                   </div>
                   
@@ -493,10 +455,68 @@ function pw_modify() {
 		</form>
 	</div>
 </div>
-  
-
+<jsp:include page="footer.jsp"></jsp:include>
 
 <script type="text/javascript">
+/*메뉴탭 관련*/
+$(function() {
+	$(".my-nav li").click(function() {
+		$(".my-nav li").css("text-decoration", "unset");
+		$(".my-nav li").eq(0).css("text-decoration", "underline");
+		$(".my-set").css("display", "none");
+		$("#info").css("display", "unset");
+	});
+
+	$(".my-nav li").eq(1).click(function() {
+		$(".my-nav li").css("text-decoration", "unset");
+		$(".my-nav li").eq(1).css("text-decoration", "underline");
+		$(".my-set").css("display", "none");
+		$("#my-post").css("display", "unset");
+	});
+
+	$(".my-nav li").eq(2).click(function() {
+		$(".my-nav li").css("text-decoration", "unset");
+		$(".my-nav li").eq(2).css("text-decoration", "underline");
+		$(".my-set").css("display", "none");
+		$("#my-reply").css("display", "unset");
+	});
+
+	$(".my-nav li").eq(3).click(function() {
+		$(".my-nav li").css("text-decoration", "unset");
+		$(".my-nav li").eq(3).css("text-decoration", "underline");
+		$(".my-set").css("display", "none");
+		$("#my-bookmark").css("display", "unset");
+	});
+
+	$(".my-nav li").eq(4).click(function() {
+		$(".my-nav li").css("text-decoration", "unset");
+		$(".my-nav li").eq(4).css("text-decoration", "underline");
+		$(".my-set").css("display", "none");
+		$("#my-calender").css("display", "unset");
+	});
+});
+/*비밀번호 확인*/
+function pw_modify() {
+	const form = document.pw_modify_form;
+   
+	if(form.pw.value == "" && form.pw.value == " ") {
+		alert("비밀번호를 입력해주세요");
+		form.pw.focus();
+		return;
+	}else if(form.passwd_valid.value == "" && form.passwd_valid.value == " ") {
+		alert("비밀번호 확인을 입력해주세요");
+		form.passwd_valid.focus();
+		return;
+	}else if(form.pw.value != form.passwd_valid.value) {
+		alert("비밀번호가 불일치합니다");
+		form.pw.focus();
+		return;
+	}
+      
+	form.submit();
+}
+
+/*회원정보와 비밀번호변경 modal 관련*/
 if(${sessionScope.user.id == user.id}){
 	const modifyModal = document.querySelector('#modify_modal');
 	const modifyModalOpen = document.querySelector('#modify_modal_open');
@@ -564,6 +584,5 @@ if(${sessionScope.user.id == user.id}){
 	});
 }
 </script>
-
 </body>
 </html>
