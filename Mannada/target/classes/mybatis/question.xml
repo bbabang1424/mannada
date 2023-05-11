@@ -10,10 +10,10 @@
 				title LIKE CONCAT('%', #{keyword}, '%')
 			</if>
 			<if test="search == 2">
-				content LIKE CONCAT('%', #{keyword}, '%')
+				nickname LIKE CONCAT('%', #{keyword}, '%')
 			</if>
 			<if test="search == 3">
-				name LIKE CONCAT('%', #{keyword}, '%')
+				content LIKE CONCAT('%', #{keyword}, '%')
 			</if>
 		</where>
 	</sql>

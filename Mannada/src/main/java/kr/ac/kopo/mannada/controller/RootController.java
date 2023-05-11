@@ -174,8 +174,8 @@ public class RootController {
 		**/		
 		// pager
 		Pager pager = new Pager();
-		//manna.xml의 "search eq 6"과 keyword값 설정
-		pager.setSearch(6);
+		//manna.xml의 "search eq 7"과 keyword값 설정
+		pager.setSearch(7);
 		pager.setKeyword(metro + " " + city + " " + address);
 		
 		// 만나다 검색
@@ -186,9 +186,9 @@ public class RootController {
 	}
 	
 	/*마이페이지 관련*/
-	@RequestMapping("/mypage")
+	@RequestMapping("/mypage/{id}")
 	@Transactional
-	public String mypage(@SessionAttribute User user, Model model, Pager pager) {
+	public String mypage(@PathVariable String id, @SessionAttribute User user, Model model, Pager pager) {
 		
 		service.item(user); 
 		model.addAttribute("user", user);    

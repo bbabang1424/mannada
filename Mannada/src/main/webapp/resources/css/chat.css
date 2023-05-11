@@ -53,7 +53,13 @@
 .message {
 	height: 560px;
 	overflow-y: auto;
-	flex-direction: column_reverse
+}
+
+.message .list {
+/*
+	border: 1px solid #ccc;
+	padding: 5px;
+	*/
 }
 
 .send {

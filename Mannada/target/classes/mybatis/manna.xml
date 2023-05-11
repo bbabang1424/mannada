@@ -9,21 +9,24 @@
 				title LIKE CONCAT(CONCAT('%',#{keyword}),'%')
 			</if>
 			<if test="search eq 2">
-				member=#{keyword}
+				nickname LIKE CONCAT(CONCAT('%',#{keyword}),'%')
 			</if>
 			<if test="search eq 3">
-				d_day LIKE CONCAT(CONCAT('%',#{keyword}),'%')
+				member=#{keyword}
 			</if>
 			<if test="search eq 4">
+				d_day LIKE CONCAT(CONCAT('%',#{keyword}),'%')
+			</if>
+			<if test="search eq 5">
 				address LIKE CONCAT(CONCAT('%',#{keyword}),'%')
 				OR
 				det_address LIKE CONCAT(CONCAT('%',#{keyword}),'%')
 			</if>
-			<if test="search eq 5">
+			<if test="search eq 6">
 				content LIKE CONCAT(CONCAT('%',#{keyword}),'%')
 			</if>
 			<!-- index의 selectBox 주소검색 RootController랑 연관있음 -->
-			<if test="search eq 6">
+			<if test="search eq 7">
 				address LIKE CONCAT(CONCAT('%',#{keyword}),'%')
 				OR
 				det_address LIKE CONCAT(CONCAT('%',#{keyword}),'%')
