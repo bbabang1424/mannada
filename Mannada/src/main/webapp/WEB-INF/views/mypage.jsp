@@ -11,10 +11,6 @@
 	href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">
 
 <style>
-.body {
-   min-height: calc(100vh - 240px);
-}
-
 .board {
    background-color: white;
 }
@@ -34,20 +30,148 @@ th {
    height: 35px;
 }
 
-#my-post, #my-reply, #my-set, #my-calender {
+#my-info, #my-reply, #my-set, #my-calender {
 	display: none;
+}
+
+.bi bi-person-fill {
+	font-size: xxx-large;
+    text-align: center;
 }
 </style>
 
+<script>
+/*메뉴탭 관련*/
+$(function() {
+	$(".my-nav li").click(function() {
+		$(".my-nav li").css("text-decoration", "unset");
+		$(".my-nav li").eq(0).css("text-decoration", "underline");
+		$(".my-set").css("display", "none");
+		$("#my-post").css("display", "unset");
+	});
 
+	$(".my-nav li").eq(1).click(function() {
+		$(".my-nav li").css("text-decoration", "unset");
+		$(".my-nav li").eq(1).css("text-decoration", "underline");
+		$(".my-set").css("display", "none");
+		$("#my-reply").css("display", "unset");
+	});
 
+	$(".my-nav li").eq(2).click(function() {
+		$(".my-nav li").css("text-decoration", "unset");
+		$(".my-nav li").eq(2).css("text-decoration", "underline");
+		$(".my-set").css("display", "none");
+		$("#my-bookmark").css("display", "unset");
+	});
+
+	$(".my-nav li").eq(3).click(function() {
+		$(".my-nav li").css("text-decoration", "unset");
+		$(".my-nav li").eq(3).css("text-decoration", "underline");
+		$(".my-set").css("display", "none");
+		$("#my-calender").css("display", "unset");
+	});
+
+	$(".my-nav li").eq(4).click(function() {
+		$(".my-nav li").css("text-decoration", "unset");
+		$(".my-nav li").eq(4).css("text-decoration", "underline");
+		$(".my-set").css("display", "none");
+		$("#info").css("display", "unset");
+	});
+});
+/*비밀번호 확인*/
+function pw_modify() {
+	const form = document.pw_modify_form;
+   
+	if(form.pw.value == "" && form.pw.value == " ") {
+		alert("비밀번호를 입력해주세요");
+		form.pw.focus();
+		return;
+	}else if(form.passwd_valid.value == "" && form.passwd_valid.value == " ") {
+		alert("비밀번호 확인을 입력해주세요");
+		form.passwd_valid.focus();
+		return;
+	}else if(form.pw.value != form.passwd_valid.value) {
+		alert("비밀번호가 불일치합니다");
+		form.pw.focus();
+		return;
+	}
+      
+	form.submit();
+}
+
+/*회원정보와 비밀번호변경 modal 관련*/
+if(${sessionScope.user.id == user.id}){
+	const modifyModal = document.querySelector('#modify_modal');
+	const modifyModalOpen = document.querySelector('#modify_modal_open');
+	
+	const pw_modifyModal = document.querySelector('#pw_modify_modal');
+	const pw_modifyModalOpen = document.querySelector('#pw_modify_modal_open');
+      
+      
+	modifyModalOpen.addEventListener('click', () => {
+		modifyModal.classList.toggle('show');
+         
+		if(modifyModal.classList.contains('show')) {
+			body.style.overflow = 'hidden';
+         }
+	});
+      
+	modifyModal.addEventListener('click', (event) => {
+		if(event.target === modifyModal) {
+			modifyModal.classList.toggle('show');
+		}   
+		if(!modifyModal.classList.contains('show')) {
+			body.style.overflow = 'auto';
+		}  
+	});
+      
+      
+	pw_modifyModalOpen.addEventListener('click', () => {
+		pw_modifyModal.classList.toggle('show');
+         
+		if(pw_modifyModal.classList.contains('show')) {
+			body.style.overflow = 'hidden';
+		}
+	});
+      
+	pw_modifyModal.addEventListener('click', (event) => {
+		if(event.target === pw_modifyModal) {
+			pw_modifyModal.classList.toggle('show');
+		}   
+		if(!pw_modifyModal.classList.contains('show')) {
+			body.style.overflow = 'auto';
+		}
+	});
+
+	/* 정보수정 프로필사진 이미지 띄우기 */
+	function readImage(input) {
+		// 인풋 태그에 파일이 있는 경우
+		if(input.files && input.files[0]) {
+			// FileReader 인스턴스 생성
+			const reader = new FileReader()
+			// 이미지가 로드가 된 경우
+			reader.onload = e => {
+				const previewImage = document.getElementById("preview-image")
+					previewImage.src = e.target.result
+			}
+	   
+			// reader가 이미지 읽도록 하기
+			reader.readAsDataURL(input.files[0])
+		}
+	};
+	   
+	/* input file에 change 이벤트 부여 */
+	const inputImage = document.getElementById("input-image")
+	inputImage.addEventListener("change", e => {
+		readImage(e.target)
+	});
+}
+</script>
 </head>
 <body>
-<!-- 헤더 -->
 <jsp:include page="header.jsp"></jsp:include>
-   
-	<div class="body">
-		<div class="content">
+	<header id="userCard">
+		<div>
 			<form method="post" class="card">
 				<div>
 					<div id="card-photo">
@@ -70,70 +194,21 @@ th {
 				</div> -->
 			</form>
 		</div>
-	</div>
+	</header>
 
 
 	<c:if test="${user.id == sessionScope.user.id}">
 		<div>
 			<nav class="my-nav">
 				<ul>
-					<li>회원 정보</li>
 					<li>작성 글</li>
 					<li>작성 댓글</li>
 					<li>북마크</li>
 					<li>캘린더</li>
+					<li>회원 정보</li>
 				</ul>
 			</nav>
 		</div>
-
-		<section class="my-set" id="info">
-			<div class="board">
-				<div>
-	 				<h3>information</h3>
-				</div>
-	
-				<div id="my-info">
-					<table>
-						<tr>
-	   						<th>프로필 사진</th>
-							<td>
-								<c:if test="${user.img != null}">
-									<img src="${user.img}">
-								</c:if>
-								<c:if test="${user.img == null}">
-									<i class="bi bi-person-fill"></i>
-								</c:if>
-							</td>
-						</tr>
-						<tr>
-							<th>아이디</th>
-							<td>${user.id}</td>
-	 					</tr>
-						<tr>
-							<th>닉네임</th>
-							<td>${user.nickname}</td>
-						</tr>					
-						<tr>
-							<th>이름</th>
-							<td>${user.name}</td>
-						</tr>
-						<tr>
-							<th>전화번호</th>
-							<td>${user.phone}</td>
-						</tr>
-					</table>
-					<div>
-						<div>
-							<button class="modal_open" id="modify_modal_open">회원정보수정</button>
-						</div>
-						<div>
-	  						<button class="modal_open" id="pw_modify_modal_open">비밀번호변경</button>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-
 
 		<section class="my-set" id="my-post">
 			<div class="board">
@@ -240,7 +315,7 @@ th {
 								</ol>
 							</td>
 						</tr>
-					</tfoot> 
+					</tfoot>
 				</table>
 				<table border="1">
 					<thead>
@@ -385,232 +460,116 @@ th {
 				</div>
 			</div>
 		</section> -->
+		
+		<section class="my-set" id="my-info">
+			<div class="board">
+				<div>
+	 				<h3>information</h3>
+				</div>
+				<table>
+					<tr>
+	  					<th>프로필 사진</th>
+						<td>
+							<c:if test="${user.img != null}">
+								<img src="${user.img}">
+							</c:if>
+							<c:if test="${user.img == null}">
+								<i class="bi bi-person-fill"></i>
+							</c:if>
+						</td>
+					</tr>
+					<tr>
+						<th>아이디</th>
+						<td>${user.id}</td>
+	 				</tr>
+					<tr>
+						<th>닉네임</th>
+						<td>${user.nickname}</td>
+					</tr>					
+					<tr>
+						<th>이름</th>
+						<td>${user.name}</td>
+					</tr>
+					<tr>
+						<th>전화번호</th>
+						<td>${user.phone}</td>
+					</tr>
+				</table>
+				<div>
+					<div>
+						<button class="modal_open" id="modify_modal_open">회원정보수정</button>
+					</div>
+					<div>
+  						<button class="modal_open" id="pw_modify_modal_open">비밀번호변경</button>
+					</div>
+				</div>
+			</div>
+		</section>
 	</c:if>
 
 
-<!-- 푸터 -->
-<jsp:include page="footer.jsp"></jsp:include>
 
-
-
-<!-- 회원정보 수정 모달 -->
-<div class="modal" id="modify_modal">
-	<div class="modal_body">
-		<div>
-			<h3>회원정보 수정</h3>
-		</div>
-		<form name="modify_form" method="post" action="../modify/${user.id}">
+	<!-- 회원정보 수정 모달 -->
+	<div class="modal" id="modify_modal">
+		<div class="modal_body">
 			<div>
-				<div>
-					<label>프로필 사진</label>
-					<input type="file" name="img" id="input-image" value="${user.img}"> 
-					<img id="preview-image" src="${user.img}">
-                  </div>
-                  
-				<div>
-					<label>닉네임</label>
-					<input type="text" name="nickname" value="${user.nickname}">
-				</div>
-                  
-				<div>
-					<label>이름</label>
-					<input type="text" name="name" value="${user.name}">
-				</div>
-                  
-				<div>
-					<label>전화번호</label>
-					<input type="text" name="phone" value="${user.phone}">
-				</div>
- 			</div>
-
-			<div>
-				<button>변경</button>
+				<h3>회원정보 수정</h3>
 			</div>
-		</form>
-	</div>
-</div>
-
-
-<!-- 비밀번호 변경 모달 -->
-<div class="modal" id="pw_modify_modal">
-	<div class="modal_body">
-		<div>
-			<h3>비밀번호 변경</h3>
-		</div>		
-		<form name="pw_modify_form" method="post" action="../pwModify/${user.id}">
-			<div>
+			<form name="modify_form" method="post" action="../modify/${user.id}">
 				<div>
-					<label>비밀번호</label> 
-					<input type="password" name="pw">
-				</div>
-				<div>
-					<label>비밀번호 확인</label>
-					<input type="password" name="passwd_valid">
-				</div>
-
-				<div>
-					<button type="button" onclick="pw_modify()">변경</button>
-				</div>
-			 </div>
-		</form>
-	</div>
-</div>
-<div class="modal" tabindex="-1">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">비밀번호 변경</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <form name="pw_modify_form" method="post" action="pwModify/${user.id}">
-			<div>
-				<div>
-					<label>비밀번호</label> 
-					<input type="password" name="pw">
-				</div>
-				<div>
-					<label>비밀번호 확인</label>
-					<input type="password" name="passwd_valid">
-				</div>
-			 </div>
-		</form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">목록</button>
-        <button type="button" class="btn btn-primary">등록</button>
-      </div>
-    </div>
-  </div>
-</div>
-<jsp:include page="footer.jsp"></jsp:include>
-
-<script type="text/javascript">
-/*메뉴탭 관련*/
-$(function() {
-	$(".my-nav li").click(function() {
-		$(".my-nav li").css("text-decoration", "unset");
-		$(".my-nav li").eq(0).css("text-decoration", "underline");
-		$(".my-set").css("display", "none");
-		$("#info").css("display", "unset");
-	});
-
-	$(".my-nav li").eq(1).click(function() {
-		$(".my-nav li").css("text-decoration", "unset");
-		$(".my-nav li").eq(1).css("text-decoration", "underline");
-		$(".my-set").css("display", "none");
-		$("#my-post").css("display", "unset");
-	});
-
-	$(".my-nav li").eq(2).click(function() {
-		$(".my-nav li").css("text-decoration", "unset");
-		$(".my-nav li").eq(2).css("text-decoration", "underline");
-		$(".my-set").css("display", "none");
-		$("#my-reply").css("display", "unset");
-	});
-
-	$(".my-nav li").eq(3).click(function() {
-		$(".my-nav li").css("text-decoration", "unset");
-		$(".my-nav li").eq(3).css("text-decoration", "underline");
-		$(".my-set").css("display", "none");
-		$("#my-bookmark").css("display", "unset");
-	});
-
-	$(".my-nav li").eq(4).click(function() {
-		$(".my-nav li").css("text-decoration", "unset");
-		$(".my-nav li").eq(4).css("text-decoration", "underline");
-		$(".my-set").css("display", "none");
-		$("#my-calender").css("display", "unset");
-	});
-});
-/*비밀번호 확인*/
-function pw_modify() {
-	const form = document.pw_modify_form;
-   
-	if(form.pw.value == "" && form.pw.value == " ") {
-		alert("비밀번호를 입력해주세요");
-		form.pw.focus();
-		return;
-	}else if(form.passwd_valid.value == "" && form.passwd_valid.value == " ") {
-		alert("비밀번호 확인을 입력해주세요");
-		form.passwd_valid.focus();
-		return;
-	}else if(form.pw.value != form.passwd_valid.value) {
-		alert("비밀번호가 불일치합니다");
-		form.pw.focus();
-		return;
-	}
-      
-	form.submit();
-}
-
-/*회원정보와 비밀번호변경 modal 관련*/
-if(${sessionScope.user.id == user.id}){
-	const modifyModal = document.querySelector('#modify_modal');
-	const modifyModalOpen = document.querySelector('#modify_modal_open');
+					<div>
+						<label>프로필 사진</label>
+						<input type="file" name="img" id="input-image" value="${user.img}"> 
+						<img id="preview-image" src="${user.img}">
+	                  </div>
+	                  
+					<div>
+						<label>닉네임</label>
+						<input type="text" name="nickname" value="${user.nickname}">
+					</div>
+	                  
+					<div>
+						<label>이름</label>
+						<input type="text" name="name" value="${user.name}">
+					</div>
+	                  
+					<div>
+						<label>전화번호</label>
+						<input type="text" name="phone" value="${user.phone}">
+					</div>
+	 			</div>
 	
-	const pw_modifyModal = document.querySelector('#pw_modify_modal');
-	const pw_modifyModalOpen = document.querySelector('#pw_modify_modal_open');
-      
-      
-	modifyModalOpen.addEventListener('click', () => {
-		modifyModal.classList.toggle('show');
-         
-		if(modifyModal.classList.contains('show')) {
-			body.style.overflow = 'hidden';
-         }
-	});
-      
-	modifyModal.addEventListener('click', (event) => {
-		if(event.target === modifyModal) {
-			modifyModal.classList.toggle('show');
-		}   
-		if(!modifyModal.classList.contains('show')) {
-			body.style.overflow = 'auto';
-		}  
-	});
-      
-      
-	pw_modifyModalOpen.addEventListener('click', () => {
-		pw_modifyModal.classList.toggle('show');
-         
-		if(pw_modifyModal.classList.contains('show')) {
-			body.style.overflow = 'hidden';
-		}
-	});
-      
-	pw_modifyModal.addEventListener('click', (event) => {
-		if(event.target === pw_modifyModal) {
-			pw_modifyModal.classList.toggle('show');
-		}   
-		if(!pw_modifyModal.classList.contains('show')) {
-			body.style.overflow = 'auto';
-		}
-	});
-
-	/* 정보수정 프로필사진 이미지 띄우기 */
-	function readImage(input) {
-		// 인풋 태그에 파일이 있는 경우
-		if(input.files && input.files[0]) {
-			// FileReader 인스턴스 생성
-			const reader = new FileReader()
-			// 이미지가 로드가 된 경우
-			reader.onload = e => {
-				const previewImage = document.getElementById("preview-image")
-					previewImage.src = e.target.result
-			}
-	   
-			// reader가 이미지 읽도록 하기
-			reader.readAsDataURL(input.files[0])
-		}
-	};
-	   
-	/* input file에 change 이벤트 부여 */
-	const inputImage = document.getElementById("input-image")
-	inputImage.addEventListener("change", e => {
-		readImage(e.target)
-	});
-}
-</script>
+				<div>
+					<button>변경</button>
+				</div>
+			</form>
+		</div>
+	</div>
+	
+	<!-- 비밀번호 변경 모달 -->
+	<div class="modal" id="pw_modify_modal">
+		<div class="modal_body">
+			<div>
+				<h3>비밀번호 변경</h3>
+			</div>		
+			<form name="pw_modify_form" method="post" action="../pwModify/${user.id}">
+				<div>
+					<div>
+						<label>비밀번호</label> 
+						<input type="password" name="pw">
+					</div>
+					<div>
+						<label>비밀번호 확인</label>
+						<input type="password" name="passwd_valid">
+					</div>
+	
+					<div>
+						<button type="button" onclick="pw_modify()">변경</button>
+					</div>
+				 </div>
+			</form>
+		</div>
+	</div>
+<jsp:include page="footer.jsp"></jsp:include>
 </body>
 </html>
