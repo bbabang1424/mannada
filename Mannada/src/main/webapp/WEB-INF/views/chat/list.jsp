@@ -25,9 +25,10 @@
 	        </c:forEach>
         </div>
 
-
         <div id="chat">
-            채팅을 해보세요
+            <div>
+            	채팅을 해보세요
+            </div>
         </div>
     </div>
     

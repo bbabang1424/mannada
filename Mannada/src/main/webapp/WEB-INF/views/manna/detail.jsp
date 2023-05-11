@@ -42,7 +42,7 @@
 				<!-- personnel:인원이란 뜻 -->
 				<div class="personnel">
 					<!-- 참여인원/모집인원 : 참여버튼을 눌른 이용자의 인원이 나와야함-->
-					<span>참여현황:${item.num }/${item.member}</span>
+					<span>참여현황:${item.sum }/${item.member}</span>
 				</div>
 				<progress value="40" max="100">
 					<strong>Progress:10%</strong>
@@ -53,20 +53,22 @@
 				<div class="member">참여인원</div>
 
 				<div class="member_num">
-					<!-- 참여버튼을 누른 사람의 아이디를 가져와야함-->
-					<%-- <c:forEach var="item" items="${list}"> --%>
 					<!-- 조건을 참여버튼을 누른 사람의 아이디를 가져오게 해야함 -->
-					<%-- <c:if test="${num.size()>0}"> --%>
-					<div>${item.num}</div>
-					<div>${item.num}</div>
-					<%-- </c:if> --%>
-					<%-- </c:forEach> --%>
+					<c:if test="${sum.size()>0}">
+						<div>${item.num}</div>
+						<div>${item.num}</div>
+					</c:if>
+					
+					<!-- 참여버튼을 누른 사람의 아이디를 가져와야함-->
+					<c:forEach var="member" items="${list}">
+						<div>${member.nickname }</div>
+					</c:forEach>
 				</div>
 
 				<!-- Partic: 참여란 뜻으로 참여버튼 -->
 				<!-- 참여버튼 눌렀을때 인원 표시되게 해야 함-->
 				<div class="Partic">
-					<button>참여</button>
+					<button type="button" id="join_btn"">참여</button>
 				</div>
 				<!--내용 안불러 와짐 -->
 				<div class="text_box">${item.content}</div>

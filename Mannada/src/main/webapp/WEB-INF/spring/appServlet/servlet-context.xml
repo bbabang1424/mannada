@@ -8,11 +8,7 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/mvc https://www.springframework.org/schema/mvc/spring-mvc.xsd
 		http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd
-		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.3.xsd
-		http://www.springframework.org/schema/websocket http://www.springframework.org/schema/websocket/spring-websocket-4.3.xsd"
-		
-		
-	xmlns:websocket="http://www.springframework.org/schema/websocket">
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.3.xsd">
 
 	<!-- DispatcherServlet Context: defines this servlet's request-processing 
 		infrastructure -->
@@ -40,16 +36,6 @@
 	<tx:annotation-driven />
 
 
-	<!-- WebSocket -->
-	<beans:bean id="webSocketHandler"
-		class="kr.ac.kopo.mannada.websocket.WebSocketHandler" />
-	<websocket:handlers>
-		<websocket:mapping handler="webSocketHandler"
-			path="/websocket" />
-		<websocket:handshake-interceptors>
-			<beans:bean
-				class="org.springframework.web.socket.server.support.HttpSessionHandshakeInterceptor" />
-		</websocket:handshake-interceptors>
-	</websocket:handlers>
+
 
 </beans:beans>

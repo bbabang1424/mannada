@@ -7,8 +7,18 @@
 <title>회원가입</title>
 <jsp:include page="header.jsp"></jsp:include>
 <link rel="stylesheet" href="/resources/css/signup.css">
+<link rel="stylesheet" href="/resources/image/swiper1.jpg"/>
+
+
+<style type="text/css">
+	#top-button{
+		display: none;
+	}
+</style>
 </head>
 <body>
+<div class="background-image">
+</div>
  <div class="signup-box">
         <div class="title">
             회원가입

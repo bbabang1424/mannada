@@ -1,62 +1,46 @@
-var socket = null;
 
-$(document).ready(function(){
-  if(!isEmpty($("#session_id").val()));
-  connectWS();
-});
+// window.onload = function () {
 
-function connectWS(){
-  sock.onopen = function(){
-    console.log('info: connection opened.');
-  };
+//   document.getElementById('sendMessage').addEventListener('click', () => {
 
-}
+//     const item = document.getElementById("msg").value;
 
+//     console.log(item);
 
-window.onload = function () {
+//     fetch("../add", {
+//       method: "POST",
+//       headers: { 'Content-Type': 'application/json' },
+//       body: JSON.stringify(item)
+//     }).then(resp => {
+//       if (resp.status == 200)
+//         return resp.json();
+//     }).then(result => {
+//       console.log(result);
 
-  document.getElementById('sendMessage').addEventListener('click', () => {
+//       const message = document.querySelector("#message");
+//       const div = makeItem(result);
 
-    const item = document.getElementById("message-content").value;
+//       console.log(message);
+//       console.log(div);
 
-    console.log(item);
+//       message.append(div);
+//     });
+//   });
 
-    fetch("../add", {
-      method: "POST",
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(item)
-    }).then(resp => {
-      if (resp.status == 200)
-        return resp.json();
-    }).then(result => {
-      console.log(result);
-
-      const message = document.querySelector("#message");
-      const div = makeItem(result);
-
-      console.log(message);
-      console.log(div);
-
-      message.append(div);
-    });
-  });
-
-};
+// };
 
 
-function makeItem(element) {
-  const div = document.createElement("div");
-  div.classList.add("list");
+// function makeItem(element) {
+//   const div = document.createElement("div");
+//   div.classList.add("list");
 
-  const head = document.createElement("p");
-  head.textContent = '${item.nickname}' + " | " + '${item.regDate}';
-  div.append(head);
+//   const head = document.createElement("p");
+//   head.textContent = '${item.nickname}' + " | " + '${item.regDate}';
+//   div.append(head);
 
-  const content = document.createElement("p");
-  content.textContent = '${item.content}';
-  div.append(content);
+//   const content = document.createElement("p");
+//   content.textContent = '${item.content}';
+//   div.append(content);
 
-  return div;
-};
-
-
+//   return div;
+// };

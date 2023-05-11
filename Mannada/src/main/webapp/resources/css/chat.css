@@ -1,14 +1,29 @@
 @charset "UTF-8";
+*{
+	margin: 0;
+	padding: 0;
+	color: unset;
+	text-decoration: none;
+}
+
 
 .hidden {
 	display: none;
 }
 
+
+.container-title {
+	width: 1200px;
+    margin: auto;
+    text-align: center;
+}
+
 .container {
 	max-width: 1200px;
     width: 100%;
-    height: 620px;
-    margin: 50px auto;
+    height: 680px;
+    margin: 20px auto;
+    padding: 0;
     border: 1px solid #ccc;
     display: flex;
 }
@@ -29,8 +44,14 @@
 	width: 60%;
 }
 
+#chat > div:first-child {
+	margin: 10px;
+	padding: 10px;
+	border: 1px solid #ccc;
+}
+
 .message {
-	height: 525px;
+	height: 560px;
 	overflow-y: auto;
 	flex-direction: column_reverse
 }
@@ -39,6 +60,7 @@
 	background-color: #ccc;
 	text-align: right;
 	padding: 10px;
+    margin: 10px;
 }
 
 .send input {

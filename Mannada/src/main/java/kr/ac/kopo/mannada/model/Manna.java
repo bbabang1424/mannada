@@ -23,6 +23,20 @@ public class Manna {
 	/*구성키*/
 	private int rnum;
 	
+	
+	private int sum;
+	
+	
+	
+	
+	public int getSum() {
+		return sum;
+	}
+
+	public void setSum(int sum) {
+		this.sum = sum;
+	}
+
 	/*category와 status 한글 처리 : 데이터베이스가 처리하지 못할 시 제한을 두는 역할*/
 	public String getCategory_() {
 		if(category==1)

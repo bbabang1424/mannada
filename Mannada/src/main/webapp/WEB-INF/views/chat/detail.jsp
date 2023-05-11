@@ -12,12 +12,45 @@
 <link href="/resources/css/style.css" rel="stylesheet">
 <link href="/resources/css/chat.css" rel="stylesheet">
 
-<script src="/resources/js/chat.js"></script>
-<script src="/resources/js/sockjs.min.js"></script>
-    
+<!-- <script src="/resources/js/chat.js"></script> -->
+
+<script>
+	let url = "ws://" + window.location.hostname + ":" + window.location.port + "/chat/detail";
+	console.log(url);
+	
+	let connect = false;
+	let socket = new WebSocket(url);
+	
+	socket.onopen = function() {
+		connect = true;
+		alert("서버 연결 완료");
+	}
+	
+	socket.onclose = function() {
+		connect = false;
+		alert("서버 연결 종료");
+	}
+	
+	socket.onmessage = function(msg) {
+		let chat = document.getElementById("chat");
+		
+		chat.innerHTML += "<li>" + msg.data + "</li>";
+	}
+	
+	function send() {
+		if(connect) {
+			let msg = document.getElementById("msg");
+			
+			socket.send(msg.value);
+			
+			msg.value = "";
+		}
+	}
+	
+</script>
 </head>
 <body>
-	<div>
+	<div class="container-title">
 		<h2>${item.title }</h2>
 	</div>
 	
@@ -33,23 +66,24 @@
 	        </c:forEach>
         </div>
 
-
         <div id="chat">
-            <div class="message" id="message">
-	            <c:forEach var="item" items="${chatList }">
-	                <div class="list">
-	                	<p>${item.nickname } | ${item.regDate }</p>
-	                	<p>${item.content }</p>
-	                </div>
-	            </c:forEach>
-            </div>
-
+	        <div>
+	            <div class="message" id="message">
+		            <c:forEach var="item" items="${chatList }">
+		                <div class="list">
+		                	<p>${item.nickname } | ${item.regDate }</p>
+		                	<p>${item.content }</p>
+		                </div>
+		            </c:forEach>
+	            </div>
+	        </div>
+	
             <div class="send">
                 <form action="../add" method="post">
                     <input type="number" name="num" value="${sessionScope.user.num}" id="session_id" class="hidden">
                     <input type="number" name="mannaId" value="${item.id}" class="hidden">
-                    <input type="text" name="content" id="message-content">
-                    <button type="button" id="sendMessage">전송</button>
+                    <input type="text" name="content" id="msg">
+                    <button type="button" id="sendMessage" onclick="send()">전송</button>
                 </form>
             </div>
         </div>
