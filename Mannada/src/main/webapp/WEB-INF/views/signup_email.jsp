@@ -9,7 +9,6 @@
 <link rel="stylesheet" href="/resources/css/signup_email.css" />
 <link rel="stylesheet" href="/resources/image/swiper1.jpg"/>
 
-
 <style type="text/css">
 	#top-button{
 		display: none;
@@ -67,7 +66,7 @@
 	
 	        <div class="inline">
 	            <div class="signUp">
-	                <button>회원가입</button>
+	                <button type="button" id="infoCheck">회원가입</button>
 	            </div>
 	    
 	            <div class="go_back">
