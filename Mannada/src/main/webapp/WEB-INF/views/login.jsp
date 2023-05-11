@@ -61,7 +61,7 @@ $(function(){
 	                    <input type="checkbox" id="remember-check">자동 로그인
 	                </div>
 	                
-					<button class="login-button" type="submit">로그인</button>
+					<button class="login-button" type="button">로그인</button>
 	            </form>
 	        </div>
 	
@@ -84,7 +84,7 @@ $(function(){
 	            </div>
 	
 	            <div>
-	                <a href="/signup"><button type="button" class="signup">회원가입</button></a>
+	                <a href="/signup"><button type="submit" class="signup">회원가입</button></a>
 	            </div>
 	        </div>
 	        

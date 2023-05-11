@@ -437,7 +437,7 @@ th {
 		<div>
 			<h3>비밀번호 변경</h3>
 		</div>		
-		<form name="pw_modify_form" method="post" action="../pwModify/${member.id}">
+		<form name="pw_modify_form" method="post" action="../pwModify/${user.id}">
 			<div>
 				<div>
 					<label>비밀번호</label> 
@@ -454,6 +454,34 @@ th {
 			 </div>
 		</form>
 	</div>
+</div>
+<div class="modal" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">비밀번호 변경</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form name="pw_modify_form" method="post" action="pwModify/${user.id}">
+			<div>
+				<div>
+					<label>비밀번호</label> 
+					<input type="password" name="pw">
+				</div>
+				<div>
+					<label>비밀번호 확인</label>
+					<input type="password" name="passwd_valid">
+				</div>
+			 </div>
+		</form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">목록</button>
+        <button type="button" class="btn btn-primary">등록</button>
+      </div>
+    </div>
+  </div>
 </div>
 <jsp:include page="footer.jsp"></jsp:include>
 
