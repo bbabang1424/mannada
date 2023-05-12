@@ -90,4 +90,9 @@ public class CommunityServiceImpl implements CommunityService {
 		return dao.replyList(pager);
 	}
 
+	@Override
+	public List<Reply> detailReply(int id) {
+		return dao.detailReply(id);
+	}
+
 }

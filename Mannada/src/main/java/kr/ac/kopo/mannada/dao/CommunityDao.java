@@ -32,4 +32,6 @@ public interface CommunityDao {
 
 	List<Reply> replyList(Pager pager);
 
+	List<Reply> detailReply(int id);
+
 }

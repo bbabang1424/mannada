@@ -84,4 +84,9 @@ public class CommunityDaoImpl implements CommunityDao {
 		return sql.selectList("community.reply_list", pager);
 	}
 
+	@Override
+	public List<Reply> detailReply(int id) {
+		return sql.selectList("community.detail_reply", id);
+	}
+
 }

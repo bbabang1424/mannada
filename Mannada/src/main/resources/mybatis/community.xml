@@ -103,5 +103,11 @@
 		FROM reply, (SELECT @ROWNUM:=0) AS R
 		WHERE id = #{keyword} 
 	</select>
+	
+	<select id="detail_reply" resultType="Reply">
+		SELECT reply.*, user.nickname
+		FROM reply LEFT OUTER JOIN user ON reply.num = user.num
+		WHERE commu_id = #{id} 
+	</select>
 
 </mapper>

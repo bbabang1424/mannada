@@ -10,12 +10,8 @@
 <title>Insert title here</title>
 <jsp:include page="../header.jsp"></jsp:include>
 
-<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-
 <link href="/resources/css/style.css" rel="stylesheet">
 <link href="/resources/css/chat.css" rel="stylesheet">
-
-<!-- <script src="/resources/js/chat.js"></script> -->
 
 <script>
 	let url = "ws://" + window.location.hostname + ":" + window.location.port + "/chatserver";
@@ -57,7 +53,18 @@
 			
 			let content = document.getElementById("content");
 			
-			socket.send('${sessionScope.user.nickname}:' + content.value);
+			let today = new Date();   
+
+			let year = today.getFullYear(); // 년도
+			let month = today.getMonth() + 1;  // 월
+			let date = today.getDate();  // 날짜
+			let hours = today.getHours(); // 시
+			let minutes = today.getMinutes();  // 분
+			
+			let regDate = year + "-" + month + "-" + date + " " + hours + ":" + minutes;
+			
+			
+			socket.send('${sessionScope.user.nickname} | ' + regDate + "</p><p>" + content.value);
 			
 			content.value = "";
 			content.focus();
@@ -95,12 +102,13 @@
 	            <div class="message" id="message">
 		            <c:forEach var="item" items="${chatList }">
 		                <div class="list">
-		                	<p>${item.nickname } : ${item.content }</p>
+		                	<p>${item.nickname } | <fmt:formatDate value="${item.regDate }" pattern="yyyy-MM-dd hh:mm"/></p>
+		                	<p>${item.content }</p>
 		                </div>
 		            </c:forEach>
 	            </div>
 	        </div>
-	        
+        
             <div class="send">
                 <form id="message_form">
                     <input type="number" name="mannaId" value="${item.id}" class="hidden" id="mannaId">
@@ -114,6 +122,10 @@
     
 <jsp:include page="../footer.jsp"></jsp:include>
 
+	        
+	<script type="text/javascript">
+		$('#message').scrollTop($('#message')[0].scrollHeight);
 
+	</script>
 </body>
 </html>

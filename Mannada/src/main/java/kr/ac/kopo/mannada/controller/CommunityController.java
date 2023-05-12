@@ -83,6 +83,9 @@ public class CommunityController {
 		Community item = service.item(id);
 		model.addAttribute("item", item);
 		
+		List<Reply> reply = service.detailReply(id);
+		model.addAttribute("reply", reply);
+		
 		return path + "detail";
 	}
 	
