@@ -38,6 +38,11 @@
     border-bottom: 1px solid black;
 }
 
+.login-box .title ul {
+	padding: 2px;
+	margin-bottom: auto;
+}
+
 .login-box .title ul li {
     list-style-type: none;
     display: inline-block;
@@ -84,6 +89,7 @@
     color: white;
     border: none;    
     margin-top: 10px;
+    font-size: 0.8em;
 }
 
 .naver-btn img {
@@ -103,6 +109,7 @@
     color: black;
     border: none;
     margin-top: 10px;
+    font-size: 0.8em;
 }
 
 .kakao-btn img {
@@ -118,6 +125,7 @@
     color: black;
     border: none;
     margin-top: 10px;
+    font-size: 0.8em;
 }
 
 .google-btn img {

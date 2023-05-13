@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <jsp:include page="header.jsp"></jsp:include>
-<title>이메일 회원가입</title>
+<title>회원가입</title>
 <link rel="stylesheet" href="/resources/css/signup_email.css" />
 <link rel="stylesheet" href="/resources/image/swiper1.jpg"/>
 

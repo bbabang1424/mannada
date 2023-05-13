@@ -40,8 +40,8 @@ $(function(){
         <br>
         <div class="title">
             <ul>
-                <li>사용자 로그인</li>
-                <li>관리자 로그인</li>
+                <li style="cursor: pointer;">사용자 로그인</li>
+                <li style="cursor: pointer;">관리자 로그인</li>
             </ul>
         </div>
 
