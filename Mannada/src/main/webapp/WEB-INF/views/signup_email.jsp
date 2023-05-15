@@ -66,7 +66,7 @@
 	
 	        <div class="inline">
 	            <div class="signUp">
-	                <button type="button" id="infoCheck">회원가입</button>
+	                <button type="submit">회원가입</button>
 	            </div>
 	    
 	            <div class="go_back">
