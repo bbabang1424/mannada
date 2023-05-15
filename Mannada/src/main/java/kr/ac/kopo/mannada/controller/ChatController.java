@@ -61,8 +61,7 @@ public class ChatController {
 	
 	@ResponseBody
 	@PostMapping("/add")
-	public String add(@SessionAttribute User user, @RequestBody Chat item) {
-		item.setNum(user.getNum());
+	public String add(Chat item) {
 		
 		service.add(item);
 		

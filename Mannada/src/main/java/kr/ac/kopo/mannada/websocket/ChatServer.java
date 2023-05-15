@@ -35,7 +35,7 @@ public class ChatServer extends TextWebSocketHandler {
 		System.out.println("메세지: " + message.getPayload() + ", " + session.getRemoteAddress());
 		
 		for(WebSocketSession client : list)
-			client.sendMessage( new TextMessage(user + ": " + message.getPayload()) );
+			client.sendMessage( new TextMessage(message.getPayload()) );
 		
 	}
 

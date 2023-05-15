@@ -9,13 +9,12 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <jsp:include page="../header.jsp"></jsp:include>
+
 <link href="/resources/css/style.css" rel="stylesheet">
 <link href="/resources/css/chat.css" rel="stylesheet">
 
-<!-- <script src="/resources/js/chat.js"></script> -->
-
 <script>
-	let url = "ws://" + window.location.hostname + ":" + window.location.port + "/chat/detail";
+	let url = "ws://" + window.location.hostname + ":" + window.location.port + "/chatserver";
 	console.log(url);
 	
 	let connect = false;
@@ -23,30 +22,61 @@
 	
 	socket.onopen = function() {
 		connect = true;
-		alert("서버 연결 완료");
+		/* alert("서버 연결 완료"); */
 	}
 	
 	socket.onclose = function() {
 		connect = false;
-		alert("서버 연결 종료");
+		/* alert("서버 연결 종료"); */
 	}
 	
 	socket.onmessage = function(msg) {
-		let chat = document.getElementById("chat");
+		let message = document.getElementById("message");
 		
-		chat.innerHTML += "<li>" + msg.data + "</li>";
+		message.innerHTML += "<div class='list'><p>" + msg.data + "</p></div>";
+		
+		$('#message').scrollTop($('#message')[0].scrollHeight);
 	}
 	
 	function send() {
 		if(connect) {
-			let msg = document.getElementById("msg");
 			
-			socket.send(msg.value);
+			$.ajax({
+				url : "../add",
+				dataType : "json",
+				type : "post",
+				data : $("#message_form").serialize(),
+				success : function(data){
+				}
+			});
 			
-			msg.value = "";
+			
+			let content = document.getElementById("content");
+			
+			let today = new Date();   
+
+			let year = today.getFullYear(); // 년도
+			let month = today.getMonth() + 1;  // 월
+			let date = today.getDate();  // 날짜
+			let hours = today.getHours(); // 시
+			let minutes = today.getMinutes();  // 분
+			
+			let regDate = year + "-" + month + "-" + date + " " + hours + ":" + minutes;
+			
+			
+			socket.send('${sessionScope.user.nickname} | ' + regDate + "</p><p>" + content.value);
+			
+			content.value = "";
+			content.focus();
 		}
 	}
 	
+	function enterkey() {
+		if (window.event.keyCode == 13) {
+	    	send();
+	    }
+	}
+
 </script>
 </head>
 <body>
@@ -66,29 +96,36 @@
 	        </c:forEach>
         </div>
 
+
         <div id="chat">
 	        <div>
 	            <div class="message" id="message">
 		            <c:forEach var="item" items="${chatList }">
 		                <div class="list">
-		                	<p>${item.nickname } | ${item.regDate }</p>
+		                	<p>${item.nickname } | <fmt:formatDate value="${item.regDate }" pattern="yyyy-MM-dd hh:mm"/></p>
 		                	<p>${item.content }</p>
 		                </div>
 		            </c:forEach>
 	            </div>
 	        </div>
-	
+        
             <div class="send">
-                <form action="../add" method="post">
-                    <input type="number" name="num" value="${sessionScope.user.num}" id="session_id" class="hidden">
-                    <input type="number" name="mannaId" value="${item.id}" class="hidden">
-                    <input type="text" name="content" id="msg">
-                    <button type="button" id="sendMessage" onclick="send()">전송</button>
+                <form id="message_form">
+                    <input type="number" name="mannaId" value="${item.id}" class="hidden" id="mannaId">
+                    <input type="number" name="num" value="${sessionScope.user.num}" class="hidden" id="num">
+                    <input type="text" name="content" id="content" onkeyup="enterkey()">
+                    <button type="button" onclick="send()">전송</button>
                 </form>
             </div>
         </div>
     </div>
     
 <jsp:include page="../footer.jsp"></jsp:include>
+
+	        
+	<script type="text/javascript">
+		$('#message').scrollTop($('#message')[0].scrollHeight);
+
+	</script>
 </body>
 </html>

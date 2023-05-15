@@ -30,4 +30,6 @@ public interface CommunityService {
 
 	List<Reply> replyList(Pager pager);
 
+	List<Reply> detailReply(int id);
+
 }
