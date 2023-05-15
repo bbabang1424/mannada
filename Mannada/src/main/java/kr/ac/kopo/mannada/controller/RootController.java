@@ -217,9 +217,9 @@ public class RootController {
 	   
 	/* 회원정보수정 */
 	@PostMapping("/modify/{id}")
-	public String modify(@PathVariable String id, User item) {
-	      
+	public String modify(@PathVariable String id, User item) {  
 		item.setId(id);
+		
 		service.modify(item);
 	      
 		return "redirect:/mypage/" + id;
