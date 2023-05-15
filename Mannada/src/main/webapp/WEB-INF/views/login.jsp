@@ -111,7 +111,7 @@ function mgValue() {
 	            </div>
 	
 	            <div>
-	                <a href="/signup"><button type="submit" class="signup">회원가입</button></a>
+	                <a href="/signup"><button type="button" class="signup">회원가입</button></a>
 	            </div>
 	        </div>
 	        

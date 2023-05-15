@@ -7,6 +7,8 @@
 <meta charset="UTF-8">
 <title>마이페이지</title>
 <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
 <link rel="stylesheet"
 	href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">
 
@@ -75,7 +77,7 @@ $(function() {
 		$(".my-nav li").css("text-decoration", "unset");
 		$(".my-nav li").eq(4).css("text-decoration", "underline");
 		$(".my-set").css("display", "none");
-		$("#info").css("display", "unset");
+		$("#my-info").css("display", "unset");
 	});
 });
 /*비밀번호 확인*/
@@ -98,83 +100,15 @@ function pw_modify() {
       
 	form.submit();
 }
-
-/*회원정보와 비밀번호변경 modal 관련*/
-if(${sessionScope.user.id == user.id}){
-	const modifyModal = document.querySelector('#modify_modal');
-	const modifyModalOpen = document.querySelector('#modify_modal_open');
-	
-	const pw_modifyModal = document.querySelector('#pw_modify_modal');
-	const pw_modifyModalOpen = document.querySelector('#pw_modify_modal_open');
-      
-      
-	modifyModalOpen.addEventListener('click', () => {
-		modifyModal.classList.toggle('show');
-         
-		if(modifyModal.classList.contains('show')) {
-			body.style.overflow = 'hidden';
-         }
-	});
-      
-	modifyModal.addEventListener('click', (event) => {
-		if(event.target === modifyModal) {
-			modifyModal.classList.toggle('show');
-		}   
-		if(!modifyModal.classList.contains('show')) {
-			body.style.overflow = 'auto';
-		}  
-	});
-      
-      
-	pw_modifyModalOpen.addEventListener('click', () => {
-		pw_modifyModal.classList.toggle('show');
-         
-		if(pw_modifyModal.classList.contains('show')) {
-			body.style.overflow = 'hidden';
-		}
-	});
-      
-	pw_modifyModal.addEventListener('click', (event) => {
-		if(event.target === pw_modifyModal) {
-			pw_modifyModal.classList.toggle('show');
-		}   
-		if(!pw_modifyModal.classList.contains('show')) {
-			body.style.overflow = 'auto';
-		}
-	});
-
-	/* 정보수정 프로필사진 이미지 띄우기 */
-	function readImage(input) {
-		// 인풋 태그에 파일이 있는 경우
-		if(input.files && input.files[0]) {
-			// FileReader 인스턴스 생성
-			const reader = new FileReader()
-			// 이미지가 로드가 된 경우
-			reader.onload = e => {
-				const previewImage = document.getElementById("preview-image")
-					previewImage.src = e.target.result
-			}
-	   
-			// reader가 이미지 읽도록 하기
-			reader.readAsDataURL(input.files[0])
-		}
-	};
-	   
-	/* input file에 change 이벤트 부여 */
-	const inputImage = document.getElementById("input-image")
-	inputImage.addEventListener("change", e => {
-		readImage(e.target)
-	});
-}
 </script>
 </head>
 <body>
 <jsp:include page="header.jsp"></jsp:include>
 	<header id="userCard">
 		<div>
-			<form method="post" class="card">
+			<form method="post">
 				<div>
-					<div id="card-photo">
+					<div>
 						<c:if test="${user.img != null}">
 							<img src="${user.img}">
 						</c:if>
@@ -182,16 +116,19 @@ if(${sessionScope.user.id == user.id}){
 						<c:if test="${user.img == null }">
 							<i class="bi bi-person-fill"></i>
 						</c:if>
-						<button>프로필사진 수정</button>
-					</div>
+					</div>		
 					<div>${user.nickname}</div>
+					<%-- <div>☆${review.starAvg}</div> --%>
 				</div>
-				
-			<!-- <div>
+			<!-- 
+			<section class="my-set" id="my-review">
+				<div>
 					<div>평균 star : ☆${review.starAvg}</div>
 					<div>${review.star}</div>
 					<div>${review.content}</div>
-				</div> -->
+				</div>
+			</section>	
+			 -->
 			</form>
 		</div>
 	</header>
@@ -468,7 +405,7 @@ if(${sessionScope.user.id == user.id}){
 				</div>
 				<table>
 					<tr>
-	  					<th>프로필 사진</th>
+	  					<th>사진파일</th>
 						<td>
 							<c:if test="${user.img != null}">
 								<img src="${user.img}">
@@ -497,79 +434,50 @@ if(${sessionScope.user.id == user.id}){
 				</table>
 				<div>
 					<div>
-						<button class="modal_open" id="modify_modal_open">회원정보수정</button>
+						<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#updateModal">
+  							회원정보수정
+  						</button>
 					</div>
 					<div>
-  						<button class="modal_open" id="pw_modify_modal_open">비밀번호변경</button>
+  						<button type="button" id="pw-update">비밀번호변경</button>
 					</div>
 				</div>
 			</div>
 		</section>
 	</c:if>
 
-
-
-	<!-- 회원정보 수정 모달 -->
-	<div class="modal" id="modify_modal">
-		<div class="modal_body">
-			<div>
-				<h3>회원정보 수정</h3>
-			</div>
-			<form name="modify_form" method="post" action="../modify/${user.id}">
-				<div>
-					<div>
-						<label>프로필 사진</label>
-						<input type="file" name="img" id="input-image" value="${user.img}"> 
-						<img id="preview-image" src="${user.img}">
-	                  </div>
-	                  
-					<div>
-						<label>닉네임</label>
-						<input type="text" name="nickname" value="${user.nickname}">
-					</div>
-	                  
-					<div>
-						<label>이름</label>
-						<input type="text" name="name" value="${user.name}">
-					</div>
-	                  
-					<div>
-						<label>전화번호</label>
-						<input type="text" name="phone" value="${user.phone}">
-					</div>
-	 			</div>
-	
-				<div>
-					<button>변경</button>
-				</div>
-			</form>
-		</div>
-	</div>
-	
-	<!-- 비밀번호 변경 모달 -->
-	<div class="modal" id="pw_modify_modal">
-		<div class="modal_body">
-			<div>
-				<h3>비밀번호 변경</h3>
-			</div>		
-			<form name="pw_modify_form" method="post" action="../pwModify/${user.id}">
-				<div>
-					<div>
-						<label>비밀번호</label> 
-						<input type="password" name="pw">
-					</div>
-					<div>
-						<label>비밀번호 확인</label>
-						<input type="password" name="passwd_valid">
-					</div>
-	
-					<div>
-						<button type="button" onclick="pw_modify()">변경</button>
-					</div>
-				 </div>
-			</form>
-		</div>
-	</div>
+<!-- 회원정보수정 Modal -->
+<div class="modal fade" id="updateModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">회원정보변경</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form action="/modify/{id}">
+        	<div>
+        		<label>사진설정</label>
+        		<input type="file" name="img" value="${item.img}">
+        	</div>
+        	<div>
+        		<label>이메일</label>
+        		<input type="email" name="img" value="${item.id}" readonly>
+        	</div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">목록</button>
+        <button type="button" class="btn btn-primary">등록</button>
+      </div>
+    </div>
+  </div>
+</div>
 <jsp:include page="footer.jsp"></jsp:include>
 </body>
+<script>
+$(function() {
+	$("#updatemodal").modal("show");
+});
+</script>
 </html>
