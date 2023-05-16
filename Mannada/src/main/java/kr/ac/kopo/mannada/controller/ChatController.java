@@ -47,6 +47,9 @@ public class ChatController {
 
 		int num = user.getNum();
 		
+		model.addAttribute("id", id);
+		model.addAttribute("num", num);
+		
 		List<Manna> roomList = service.mannaList(num);
 		model.addAttribute("roomList", roomList);
 		
@@ -61,8 +64,7 @@ public class ChatController {
 	
 	@ResponseBody
 	@PostMapping("/add")
-	public String add(@SessionAttribute User user, @RequestBody Chat item) {
-		item.setNum(user.getNum());
+	public String add(Chat item) {
 		
 		service.add(item);
 		

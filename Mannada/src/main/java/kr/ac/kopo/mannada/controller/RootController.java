@@ -174,8 +174,8 @@ public class RootController {
 		**/		
 		// pager
 		Pager pager = new Pager();
-		//manna.xml의 "search eq 6"과 keyword값 설정
-		pager.setSearch(6);
+		//manna.xml의 "search eq 7"과 keyword값 설정
+		pager.setSearch(7);
 		pager.setKeyword(metro + " " + city + " " + address);
 		
 		// 만나다 검색
@@ -217,9 +217,9 @@ public class RootController {
 	   
 	/* 회원정보수정 */
 	@PostMapping("/modify/{id}")
-	public String modify(@PathVariable String id, User item) {
-	      
+	public String modify(@PathVariable String id, User item) {  
 		item.setId(id);
+		
 		service.modify(item);
 	      
 		return "redirect:/mypage/" + id;

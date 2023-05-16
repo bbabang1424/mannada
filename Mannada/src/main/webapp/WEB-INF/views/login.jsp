@@ -25,6 +25,33 @@ $(function(){
 		$("#manager-login").css("display", "unset");
 	});
 });
+
+/*아이디, 비밀번호 입력하면 로그인*/
+function userValue() {
+	const form = document.user_login;
+	
+	if(form.id.value == '') {
+		form.id.focus();
+		return;
+	}else if(form.pw.value == ''){
+		form.pw.focus();
+		return;
+	}
+	form.submit();
+}
+
+function mgValue() {
+	const form = document.mg_login;
+	
+	if(form.id.value == '') {
+		form.id.focus();
+		return;
+	}else if(form.pw.value == ''){
+		form.pw.focus();
+		return;
+	}
+	form.submit();
+}
 </script>
 
 <style type="text/css">
@@ -47,13 +74,13 @@ $(function(){
 
         <div id="user-login">
 	        <div>
-	            <form method="post" action="/userLogin" class="login-form">
+	            <form name="user_login" method="post" action="/userLogin" class="login-form">
 	                <div>
-	                    <input class="input" type="email" id="textbox" name="id" placeholder="아이디(이메일) 입력">
+	                    <input class="input" type="email" id="textbox user_id" name="id" placeholder="아이디(이메일) 입력">
 	                </div>
 	                
 	                <div>
-	                    <input class="input" type="password" id="textbox" name="pw" placeholder="비밀번호 입력">
+	                    <input class="input" type="password" id="textbox user_pw" name="pw" placeholder="비밀번호 입력">
 	                </div>
 	                
 	                <div>
@@ -61,7 +88,7 @@ $(function(){
 	                    <input type="checkbox" id="remember-check">자동 로그인
 	                </div>
 	                
-					<button class="login-button" type="submit">로그인</button>
+					<button class="login-button" type="button" onclick="userValue()">로그인</button>
 	            </form>
 	        </div>
 	
@@ -90,13 +117,13 @@ $(function(){
 	        
 	        
 	        <div id="manager-login">
-	            <form method="post" action="/managerLogin" class="login-form">
+	            <form name="mg_login" method="post" action="/managerLogin" class="login-form">
 	                <div>
-	                    <input class="input" type="email" id="textbox" name="id" placeholder="아이디(이메일) 입력">
+	                    <input class="input" type="email" id="textbox mg_id" name="id" placeholder="아이디(이메일) 입력">
 	                </div>
 	                
 	                <div>
-	                    <input class="input" type="password" id="textbox" name="pw" placeholder="비밀번호 입력">
+	                    <input class="input" type="password" id="textbox mg_pw" name="pw" placeholder="비밀번호 입력">
 	                </div>
 	                
 	                <div>
@@ -104,7 +131,7 @@ $(function(){
 	                    <input type="checkbox" id="remember-check">자동 로그인
 	                </div>
 	                
-					<button class="login-button" type="submit">로그인</button>
+					<button class="login-button" type="button" onclick="mgValue()">로그인</button>
 				</form>
 	        </div>
         </div>     

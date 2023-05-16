@@ -20,7 +20,6 @@ public class UserServiceImpl implements UserService {
 		if(item != null) {
 			user.setNum(item.getNum());
 			user.setPw(null);
-			user.setName(item.getName());
 			user.setNickname(item.getNickname());
 			
 			return true;

@@ -12,6 +12,7 @@
 <link rel="stylesheet"
 	href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">
 
+
 </head>
 <body>
 	<div class="banner">
@@ -56,6 +57,65 @@
 		</div>
 	</section>
 
+
+	
+	<!-- 댓글 영역 -->
+	<div class="content">
+						
+		<c:if test="${sessionScope.user != null}">
+			<!-- 댓글 입력 -->
+			<div class="replyFrom">
+				<form action="../replyAdd" method="post">
+					<div class="text-board">
+						<textarea rows="5" cols="50" name="content"></textarea>
+						<input type="hidden" name="commuId" value="${item.id }">
+					</div>
+					<div>
+						<button>댓글 작성</button>
+					</div>
+				</form>
+			</div>
+		</c:if>
+	
+		<!-- 댓글 목록 -->
+		<div class="reply-box">
+			<ul id="reply-list-box">
+				<c:forEach var="reply" items="${reply }">
+					<li>
+						<div>
+							<div class="replyTag">
+								<div>
+									<span>${reply.nickname }</span>
+									<span>
+										<fmt:formatDate value="${reply.regDate}" pattern="yyyy-MM-dd hh:mm" />
+									</span>
+								</div>
+								<div>
+									<c:if test="${sessionScope.user.num == reply.num }">
+										<button class="reply-update-btn ${reply.id }" type="button" onclick="replyUpdate(${reply.id}, ${reply.commuId }, ${reply.content })">수정</button>
+										<a href="../replyDelete/${reply.id }?id=${item.id}">삭제</a>
+									</c:if>
+								</div>
+							</div>
+	
+							<div class="reply-content id${reply.id }">${reply.content }</div>
+							
+						</div>
+						
+					</li>
+				</c:forEach>
+			</ul>
+		</div>
+	
+		<!-- 댓글 페이지네이션 넣고싶은데 -->
+		
+	
+	</div>
+
+
 	<jsp:include page="../footer.jsp"></jsp:include>
+	
+
 </body>
+<script src="/resources/js/reply.js"></script>
 </html>

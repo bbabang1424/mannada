@@ -9,7 +9,7 @@
 <meta charset="UTF-8">
 <title>notice_detail</title>
 <jsp:include page="../header.jsp"></jsp:include>
-<link rel="stylesheet" href="/resources/css/notice_detail.css">
+<link rel="stylesheet" href="/resources/css/community_detail.css">
 <link rel="stylesheet"
 	href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">
 </head>

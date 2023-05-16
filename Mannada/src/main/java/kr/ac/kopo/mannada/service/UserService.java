@@ -18,6 +18,4 @@ public interface UserService {
 	void modify(User item);
 
 	void pwModify(User item);
-
-
 }
