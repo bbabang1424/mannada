@@ -1,24 +1,52 @@
 function replyUpdate(replyId, commuId, content){
-	const reply = document.querySelector(".reply-content." + replyId);
+  
+	const reply = document.querySelector(".reply-content.id" + replyId);
 	
-	const div = '<div id = "reply-update">';
-    div += '<form id = "reply-update-form" action="../replyUpdate/' + replyId + '" method="post">';
-    div += '<input name="commuId" value="' + commuId + '" type="hidden">';
-    div += '<textarea rows="5" cols="50" name="content" value="' + content + '"></textarea>';
-    div += '<button type="button" id="reply-update-submit">수정하기</button></form></div>';
+	const div = document.createElement("div");
+    div.classList.add("reply-update");
 
+    const input = document.createElement("input");
+    input.name = "commuId";
+    input.value = commuId;
+    input.type = "hidden";
+    div.append(input);
+
+    const textarea = document.createElement("textarea");
+    textarea.rows = "5";
+    textarea.cols = "50";
+    textarea.name = "content";
+    textarea.value = content;
+    div.append(textarea);
+
+    const button = document.createElement("button");
+    button.type = "button";
+    button.classList.add("reply-update-submit");
+    button.id = replyId;
+    button.textContent = "수정하기";
+    div.append(button);
+    
     reply.after(div);
 };
 
-document.querySelector("#reply-update-submit").addEventListener("click", e => {
+
+$(document).on('click', '.reply-update-submit', function(e) {
+
+	const Id = $(this).attr("id");
+	const content = $(this).prev().text();
+	
     $.ajax({
-        url : "../add",
+        url : "../replyUpdate/" + Id,
         dataType : "json",
-        type : "post",
-        data : $("#reply-update-form").serialize(),
+        type : "put",
+        data : JSON.stringify({
+        	id: Id,
+        	content: content
+        }),
         success : function(data){
         }
     });
-
+	
+	const reply = document.querySelector(".reply-update-submit").closest(".reply-update");
     reply.remove();
 });
+

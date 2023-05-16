@@ -12,7 +12,7 @@
 <link rel="stylesheet"
 	href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">
 
-<script src="/resources/js/reply.js"></script>
+
 </head>
 <body>
 	<div class="banner">
@@ -98,9 +98,10 @@
 								</div>
 							</div>
 	
-							<div class="reply-content ${reply.id }">${reply.content }</div>
+							<div class="reply-content id${reply.id }">${reply.content }</div>
 							
 						</div>
+						
 					</li>
 				</c:forEach>
 			</ul>
@@ -114,35 +115,7 @@
 
 	<jsp:include page="../footer.jsp"></jsp:include>
 	
-	
-	<script type="text/javascript">
-	
-		/* 댓글 삭제 명령 */
-		$(document).on('click', '.replyDelete', function(e) {
-		
-			e.preventDefault();
-			const Id = $(this).attr("id");
-			const commuId = '${item.id}';
-			
-			console.log(Id, commuId);
-			
-			
-			$.ajax({
-				data: {
-					id: Id,
-					commuId: commuId
-				},
-				url: '../replyDelete/' + Id,
-				type: 'POST',
-				success: function(result) {
-					   
-					li.remove();
-					   
-					alert('삭제가 완료되엇습니다.');
-				}
-			});
-		});
-	
-	</script>
+
 </body>
+<script src="/resources/js/reply.js"></script>
 </html>

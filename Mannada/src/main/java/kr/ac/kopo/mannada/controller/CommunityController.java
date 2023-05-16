@@ -8,8 +8,11 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.SessionAttribute;
 
 import kr.ac.kopo.mannada.model.Community;
@@ -101,21 +104,14 @@ public class CommunityController {
 		return "redirect:detail/" + reply.getCommuId();
 	}
 
-	@GetMapping("/replyUpdate/{id}")
-	public String replyUpdate(@PathVariable int id, Model model) {
-		
-		Reply reply= service.replyItem(id);
-		model.addAttribute("reply", reply);
-
-		return path + "replyUpdate";
-	}
 	
-	@PostMapping("/replyUpdate/{id}")
-	public String replyUpdate(@PathVariable int id, @RequestParam(value = "id") int commuId, Reply item) {
+	@ResponseBody
+	@PutMapping("/replyUpdate/{id}")
+	public Reply replyUpdate(@PathVariable int id, @RequestBody Reply item) {
 
 		service.updateReply(item);
 
-		return "redirect:../detail/" + commuId;
+		return item;
 	}
 	
 
