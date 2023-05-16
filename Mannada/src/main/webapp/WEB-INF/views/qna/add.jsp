@@ -7,7 +7,7 @@
 <head>
 <meta charset="UTF-8">
 <title>qna_add</title>
-<link rel="stylesheet" href="/resources/css/qna_add.css">
+<link rel="stylesheet" href="/resources/css/community_add.css">
 <jsp:include page="../header.jsp"></jsp:include>
 <!--jQuery 최신버전-->
 <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>

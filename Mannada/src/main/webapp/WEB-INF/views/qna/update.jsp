@@ -7,8 +7,7 @@
 <title>qna_update</title>
 <link rel="stylesheet"
 	href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">
-
-<link rel="stylesheet" href="/resources/css/qna_update.css">
+<link rel="stylesheet" href="/resources/css/community_update.css">
 <jsp:include page="../header.jsp"></jsp:include>
 <!--jQuery 최신버전-->
 <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>

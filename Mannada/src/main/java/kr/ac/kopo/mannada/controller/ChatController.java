@@ -47,6 +47,9 @@ public class ChatController {
 
 		int num = user.getNum();
 		
+		model.addAttribute("id", id);
+		model.addAttribute("num", num);
+		
 		List<Manna> roomList = service.mannaList(num);
 		model.addAttribute("roomList", roomList);
 		

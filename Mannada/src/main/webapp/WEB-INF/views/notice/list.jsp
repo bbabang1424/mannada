@@ -9,7 +9,7 @@
 <title>notice_list</title>
 <link rel="stylesheet"
 	href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">
-<link rel="stylesheet" href="/resources/css/notice_list.css">
+<link rel="stylesheet" href="/resources/css/community_list.css">
 <jsp:include page="../header.jsp"></jsp:include>
 <style type="text/css">
 .page_nation_item .page-link.active {

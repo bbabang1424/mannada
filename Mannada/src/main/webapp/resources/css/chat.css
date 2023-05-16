@@ -1,79 +1,214 @@
 @charset "UTF-8";
-*{
+
+* {
 	margin: 0;
 	padding: 0;
 	color: unset;
 	text-decoration: none;
 }
+/*베너  */
+.banner {
+	color: white;
+	border-color: #60a8ef;
+	width: 100%;
+	background-color: #60a8ef;
+	border: 1px solid;
+}
 
+.banner_text {
+	width: 66%;
+	margin: 0 auto;
+}
+
+.banner_text>li {
+	display: inline-block;
+	font-weight: bold;
+	padding-bottom: 13px;
+	padding-top: 13px;
+	margin: 0 auto;
+	padding-top: 13px;
+}
+
+.list_box:hover {
+	color: blue;
+}
+
+.list_box {
+	color: black;
+	border: 1px solid #ccc;
+	line-height: .4em;
+	margin: 15px;
+	padding: 15px;
+	border: 1px solid #ccc;
+}
 
 .hidden {
 	display: none;
 }
 
-
 .container-title {
 	width: 1200px;
-    margin: auto;
-    text-align: center;
+	margin: auto;
+	text-align: center;
 }
 
 .container {
 	max-width: 1200px;
-    width: 100%;
-    height: 680px;
-    margin: 20px auto;
-    padding: 0;
-    border: 1px solid #ccc;
-    display: flex;
+	width: 100%;
+	height: 680px;
+	margin: 50px auto;
+	padding: 0;
+	display: flex;
 }
 
 #room {
+	border: 1px solid #ccc;
 	width: 40%;
 	overflow-y: auto;
+}
+
+.list_box.active {
+	/* background-color: rgba(79, 145, 240, 0.2); 까만색(0,0,0) 80% 불투명도
+	border: 1px solid rgba(79, 145, 240, 0.2);
+ */
+	background: #6ca7e399;
+	border: #6ca7e399;
 }
 
 #room .list {
 	border: 1px solid #ccc;
 	line-height: .4em;
-	margin: 10px;
-	padding: 10px;
+	margin: 15px;
+	padding: 15px;
 }
 
 #chat {
 	width: 60%;
-}
-
-#chat > div:first-child {
-	margin: 10px;
-	padding: 10px;
 	border: 1px solid #ccc;
 }
 
-.message {
-	height: 560px;
-	overflow-y: auto;
+.chat_all {
+	border: 1px solid white; width : 60%;
+	color: white;
+	background-image: url(/resources/image/chat.png);
+	background-repeat: no-repeat;
+	background-size: 152% 102%;
+	background-position: 67% -13px;
+	width: 60%;
 }
 
-.message .list {
-/*
+.chat_chat {
+	height: 95%;
 	border: 1px solid #ccc;
-	padding: 5px;
-	*/
+	width: 96%;
+	margin: 15px;
+	padding: 24px;
+	text-align: right;
+	padding: 24px;
+	border: 1px solid #ccc;
+}
+
+.chat_text_two {
+	text-align: right;
+	display: inline-block;
+}
+
+#chat>div:first-child {
+	margin: 15px;
+	padding: 24px;
+	border: 1px solid #ccc;
+	height: 84%;
+}
+
+.you .time {
+	display: inline-block;
+	width: auto;
+	max-width: 300px;
+	max-height: 300px;
+	clear: both;
+	font-size: 0.8em;
+	padding-left: 2%;
+}
+
+.name {
+	margin-left: 1%;
+	margin-bottom: 0.5%;
+	display: inline-block;
+}
+/* 줄바꿈 코드:word-break:break-all; */
+.balloon {
+	width: auto;
+	max-width: 300px;
+	height: auto;
+	-webkit-border-radius: 11px;
+	-moz-border-radius: 11px;
+	border-radius: 11px;
+	word-break: break-all;
+	background: #ccc;
+	padding: 2%;
+	margin-bottom: 3%;
+	text-align: left;
+}
+
+.you .balloon {
+	float: left;
+	background: #ddd;
+}
+
+.my .balloon {
+	float: right;
+	background: #6ca7e399;;
+}
+
+.my .time {
+	display: inline-block;
+	width: auto;
+	max-width: 300px;
+	max-height: 300px;
+	clear: both;
+	font-size: 0.8em;
+}
+
+.my p {
+	margin-bottom: 0;
+	margin-right: 2%;
+}
+
+#chat .message .my {
+	text-align: right;
+	clear: both;
+}
+
+#chat .message .my .name {
+	display: none !important;
+}
+
+#chat .message .list {
+	clear: both;
 }
 
 .send {
-	background-color: #ccc;
-	text-align: right;
-	padding: 10px;
-    margin: 10px;
+	background-color: #dee2e6;
+	text-align: left;
+	width: 96%;
+	padding-left: 2%;
+	padding-top: 1%;
+	padding-bottom: 1%;
+	margin-left: 13.8px;
 }
 
 .send input {
-	width: 80%;
+	width: 86%;
 	padding: 10px;
 }
 
 .send button {
+	margin-left: 1.5%;
+	background: #0359d9;
+	color: white;
+	border: 1px solid #0359d9;
+	width: 61px;
 	padding: 10px;
+	height: 47px;
+	border: 1px solid #0359d9;
 }
