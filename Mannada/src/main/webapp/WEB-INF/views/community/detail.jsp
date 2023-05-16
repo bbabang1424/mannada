@@ -127,7 +127,7 @@
 				</form>
 			</div>
 		</c:if>
-<<<<<<< HEAD
+
 
 		<!-- 페이지네이션 형태만 잡음-->
 		<tfoot>
@@ -153,49 +153,11 @@
 					</ol>
 				</td>
 			</tr>
-		</tfoot>
-
-=======
-	
-		<!-- 댓글 목록 -->
-		<div class="reply-box">
-			<ul id="reply-list-box">
-				<c:forEach var="reply" items="${reply }">
-					<li>
-						<div>
-							<div class="replyTag">
-								<div>
-									<span>${reply.nickname }</span>
-									<span>
-										<fmt:formatDate value="${reply.regDate}" pattern="yyyy-MM-dd hh:mm" />
-									</span>
-								</div>
-								<div>
-									<c:if test="${sessionScope.user.num == reply.num }">
-										<button class="reply-update-btn ${reply.id }" type="button" onclick="replyUpdate(${reply.id}, ${reply.commuId }, ${reply.content })">수정</button>
-										<a href="../replyDelete/${reply.id }?id=${item.id}">삭제</a>
-									</c:if>
-								</div>
-							</div>
-	
-							<div class="reply-content id${reply.id }">${reply.content }</div>
-							
-						</div>
-						
-					</li>
-				</c:forEach>
-			</ul>
-		</div>
-	
-		<!-- 댓글 페이지네이션 넣고싶은데 -->
-		
-	
->>>>>>> branch 'master' of https://github.com/xyident/mannada.git
+		</tfoot>	
 	</div>
 
 
 	<jsp:include page="../footer.jsp"></jsp:include>
-<<<<<<< HEAD
 
 
 	<script type="text/javascript">
@@ -227,10 +189,7 @@
 		});
 	
 	</script>
-=======
-	
 
->>>>>>> branch 'master' of https://github.com/xyident/mannada.git
 </body>
 <script src="/resources/js/reply.js"></script>
 </html>
