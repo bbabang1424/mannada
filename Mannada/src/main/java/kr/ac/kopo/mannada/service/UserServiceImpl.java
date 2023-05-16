@@ -45,21 +45,4 @@ public class UserServiceImpl implements UserService {
 		dao.addPartner(map);
 	}
 
-	@Override
-	public User item(User user) {
-		return dao.item(user);
-	} 
-	
-	@Override
-	public void modify(User item) {
-		dao.modify(item);
-	}
-
-	@Override
-	public void pwModify(User item) {
-		dao.pwModify(item);
-	}
-
-
-	
 }

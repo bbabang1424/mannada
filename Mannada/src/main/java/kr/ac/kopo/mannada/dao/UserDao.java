@@ -12,11 +12,5 @@ public interface UserDao {
 	int checkId(String id);
 
 	void addPartner(HashMap<String, Object> map);
-
-	User item(User user); 
-
-	void modify(User item);
-
-	void pwModify(User item);
-
+	
 }
