@@ -102,10 +102,8 @@ hr {
 }
 
 .Writer_date {
-	
-    text-align: left;
-    padding-left: 2.5%;
-
+	text-align: left;
+	padding-left: 2.5%;
 }
 
 .text_box {
@@ -131,17 +129,6 @@ hr {
 	margin: 5px;
 	width: 50px;
 	height: 30px;
-}
-
-.button_list {
-	margin: 5px;
-	width: 50px;
-	height: 30px;
-	background-color: #ed9818;;
-	color: white;
-	border-color: #ed9818;
-	border: 1px solid;
-	text-align: center;
 }
 
 .button_modify {
@@ -176,4 +163,195 @@ hr {
 	background-color: #de2f00;
 	border: #de2f00;
 	color: #fff;
+}
+/* 댓글 리시트  */
+.content {
+	padding: 0;
+	text-align: center;
+	max-width: 1220px;
+	margin: 3em 19%;
+	width: 65%;
+}
+
+.reply_text {
+	text-align: left;
+	margin-bottom: 1%;
+}
+
+.all_reply {
+	font-weight: bold;
+	margin-left: 1%;
+}
+
+.reply-box {
+	border-top: 2px solid blue;
+	border-bottom: 1px solid #ccc;
+	margin-bottom: 2%;
+}
+
+.list_btn {
+	width: 100%;
+}
+
+.button_list {
+	float: right;
+	margin: 20px;
+	width: 50px;
+	height: 30px;
+	background-color: #ed9818;;
+	color: white;
+	border-color: #ed9818;
+	border: 1px solid;
+	text-align: center;
+}
+
+.replyTag {
+	width: 100%;
+	border-top: 1px solid #eee;
+	border-bottom: 1px solid #eee;
+}
+
+.profile {
+	margin-top: 12%;
+	margin-bottom: 12%;
+	width: 116px;
+	margin-left: 16%;
+	height: 104px;
+}
+
+.separator2 {
+	background-color: #f5f5f5;
+	padding: 0px;
+	width: 0.7%;
+}
+
+.reply_name_date {
+	position: relative;
+	display: inline-block;
+	width: 100%;
+}
+
+.reply_nickname {
+	margin-top: 1%;
+	font-weight: bold;
+	margin-left: 2%;
+	width: 103%;
+	display: inline-block;
+	text-align: left;
+}
+
+.reply_date {
+	margin-left: 1%;
+	left: 21%;
+	font-size: 0.8em;
+	margin-right: 54%;
+	color: #adb5bd;
+	text-align: right;
+	display: inline-block;
+}
+
+.content_info {
+	text-align: left;
+	width: 100%;
+}
+
+.reply-content {
+	White-space: pre-line;
+	margin-top: 0.5%;
+	word-break: break-all;
+	margin-left: 2%;
+	margin-bottom: 1%;
+	height: 55px;
+	overflow: auto;
+}
+
+/* 댓글 입력 */
+.replyFrom {
+	margin-top: 6%;
+	border-top: 2px solid blue;
+	border-bottom: 1px solid #ccc;
+}
+
+.text-board {
+	margin-top: 2%;
+	text-align: left;
+}
+
+textarea {
+	margin: 1em;
+	display: inline-block;
+	padding: 0.375rem 1.25rem 0.375rem 0.75rem;
+	border: 1px solid #ced4da;
+	width: 100%;
+	margin-left: 0%;
+}
+
+.reply_btn {
+	margin-bottom: 2%;
+	width: 100%;
+	text-align: right;
+	display: inline-block;
+}
+
+.reply-update-btn {
+	margin-r: 2%;
+	width: 50px;
+	margin-top: 1%;
+	margin-right: 1%;
+	height: 30px;
+	background: white;
+	border: 1px solid black;
+}
+
+.reply-update-btn:hover {
+	background-color: #2cb2ff;
+	border: #2cb2ff;
+	color: #fff;
+}
+
+.reply_delete {
+	margin-right: 1.5%;
+	color: black;
+	display: inline-block;
+	width: 50px;
+	height: 30px;
+	background: white;
+	border: 1px solid black;
+	display: inline-block;
+}
+
+.reply_delete:hover {
+	background-color: #de2f00;
+	border: #de2f00;
+	color: #fff;
+}
+
+/* 댓글 등록 버튼 */
+.reply_up {
+	width: 189%;
+	margin-bottom: 2%;
+	margin-left: 4%;
+}
+
+.reply_up_btn {
+	margin-right: 2.5%;
+	background: #555555;
+	border: 1px solid #555555;
+	color: white;
+	width: 50px;
+	height: 30px;
+}
+
+/*페이지 네이션  */
+.page_nation_item>a {
+	background-color: white;
+	color: #555555;
+	border-color: #ccc;
+	font-weight: bold;
+}
+
+.page_nation_item>a:hover {
+	background-color: #555555;
+	color: white;
+	border-color: #555555;
 }
