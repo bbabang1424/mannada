@@ -13,29 +13,16 @@ public class Manna {
 	private int category;      //1.공동구매 2.운동 3.식사 4.게임 5.기타
 	private int viewCnt;	
 	private String postnum;       //우편번호
-	private String address;    //주소
-	private String detAddress;  //상세주소
+	private String address;       //주소
+	private String detAddress;    //상세주소
 	
 	/*외래키*/
 	private String userId;
 	private String nickname;
 	
 	/*구성키*/
-	private int rnum;
-	
-	
+	private int rnum;	
 	private int sum;
-	
-	
-	
-	
-	public int getSum() {
-		return sum;
-	}
-
-	public void setSum(int sum) {
-		this.sum = sum;
-	}
 
 	/*category와 status 한글 처리 : 데이터베이스가 처리하지 못할 시 제한을 두는 역할*/
 	public String getCategory_() {
@@ -171,5 +158,13 @@ public class Manna {
 
 	public void setRnum(int rnum) {
 		this.rnum = rnum;
-	}	
+	}
+	
+	public int getSum() {
+		return sum;
+	}
+
+	public void setSum(int sum) {
+		this.sum = sum;
+	}
 }

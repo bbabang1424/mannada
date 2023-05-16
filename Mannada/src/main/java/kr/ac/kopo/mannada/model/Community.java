@@ -5,6 +5,7 @@ import java.util.Date;
 public class Community {
 	private int id;
 	private int num;
+	private int category;
 	private String title;
 	private Date regDate;
 	private String content;
@@ -14,7 +15,15 @@ public class Community {
 	
 	private int rnum;
 
-	
+	/*category와 status 한글 처리 : 데이터베이스가 처리하지 못할 시 제한을 두는 역할*/
+	public String getCategory_() {
+		if(category==1)
+			return "후기";
+		else if(category==2)
+			return "소통";
+		else
+			return "없음";
+	}
 	
 	public int getRnum() {
 		return rnum;
