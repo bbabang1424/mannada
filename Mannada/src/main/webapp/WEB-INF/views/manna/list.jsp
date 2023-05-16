@@ -107,7 +107,7 @@
 								<i class="bi bi-check"></i>만나는 날: ${item.dDay}
 							</div>
 							<div class="interval">
-								<i class="bi bi-check"></i>인원: (${item.num }/${item.member})
+								<i class="bi bi-check"></i>인원: (${item.sum }/${item.member})
 							</div>
 							<progress value="40" max="100">
 								<strong>Progress:10%</strong>
