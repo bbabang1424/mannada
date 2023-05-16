@@ -186,8 +186,8 @@ public class RootController {
 	}
 	
 	/*마이페이지 관련*/
-	@RequestMapping("/mypage")
 	@Transactional
+	@RequestMapping("/mypage")
 	public String mypage(@SessionAttribute User user, Model model, Pager pager) {
 		
 		service.item(user); 
