@@ -9,7 +9,7 @@
 }
 
 .container {
-	margin: 5% auto;
+	margin: 0% auto;
 }
 
 /*베너  */
@@ -57,6 +57,7 @@
 }
 
 .card_box {
+	max-width: 1201px;
 	margin: 0.5em;
 	text-align: left;
 	padding: 0.5em;
@@ -138,10 +139,15 @@ div>.gauge_bar>div:first-child {
 	margin-top: 18px;
 }
 
+.select_lsit {
+	max-width: 1200px;
+}
+
 .category_select {
 	text-align: left;
 	display: inline-block;
-	width: 89.5%;
+	max-width: 1200px;
+	width: 100%;
 }
 
 .search_box {
@@ -182,7 +188,8 @@ div>.gauge_bar>div:first-child {
 
 .writing {
 	display: inline-block;
-	width: 10%;
+	width: 53%;
+	text-align: right;
 }
 
 .writing_btn {
