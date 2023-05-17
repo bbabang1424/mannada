@@ -5,19 +5,8 @@ window.addEventListener("load", () => {
     document.getElementById("search-btn").addEventListener("click", e => {
         const search = document.querySelector("select[name='search']").value;
         const keyword = document.querySelector("input[name='keyword']").value;
-        const minPrice = document.querySelector("input[name='minPrice']").value;
-        const maxPrice = document.querySelector("input[name='maxPrice']").value;
-        const category = document.querySelector("select[name='category']").value;
-        const status = document.querySelector("select[name='status']").value;
 
-        if (search == 1 || search == 2)
-            getPage(1, { search, keyword });
-        else if (search == 3)
-            getPage(1, { search, minPrice, maxPrice });
-        else if (search == 4)
-            getPage(1, { search, keyword: category });
-        else if (search == 5)
-            getPage(1, { search, keyword: status });
+        getPage(1, { search, keyword });
     });
 });
 
@@ -32,11 +21,12 @@ function getPage(page, query) {
     fetch(url)
         .then(resp => resp.json())
         .then(result => {
+        
             if (result.list.length)
                 document.querySelector("#empty_list").classList.add("hide");
             else
                 document.querySelector("#empty_list").classList.remove("hide");
-
+            
             
             document.querySelector("#more-btn").onclick = e => getPage(page + 1, query);
 
@@ -51,6 +41,10 @@ function getPage(page, query) {
                     box.append(item);
                 });
             };
+
+            if(page >= result.pager.last){
+                document.querySelector("#more-btn").classList.add("hide");
+            }
                 
         });
 }
@@ -58,9 +52,10 @@ function getPage(page, query) {
 
 
 function makeItem(element){
+    const link = document.createElement("a");
+
     const card = document.createElement("div");
     card.classList.add("card");    
-    card.dataset.id = element.id;
 
 
     const category = document.createElement("div");
@@ -124,7 +119,10 @@ function makeItem(element){
     progress.max = element["member"];
 
     card.append(progress);
+    
+    
+    link.append(card);
 
 
-    return card;
+    return link;
 }

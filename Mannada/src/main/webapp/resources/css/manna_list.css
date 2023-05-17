@@ -9,7 +9,7 @@
 }
 
 .container {
-	margin: 5% auto;
+	margin: 0% auto;
 }
 
 /*베너  */
@@ -57,12 +57,13 @@
 }
 
 .card_box {
+	max-width: 1201px;
 	margin: 0.5em;
 	text-align: left;
 	padding: 0.5em;
 }
 
-#card {
+.card {
 	border: 2px solid #D3D3D3;
 	display: inline-block;
 	width: 272px;
@@ -73,7 +74,7 @@
 	position: relative;
 }
 
-#card:hover {
+.card:hover {
 	border-color: #0359d9;
 }
 /* 감추는 코드 */
@@ -103,12 +104,6 @@
 	color: black;
 }
 
-/* p {
-	font-size: 20px;
-	position: absolute;
-	right: 0;
-	top: -90px;
-} */
 progress {
 	border: 0;
 	border-radius: 9px;
@@ -138,10 +133,15 @@ div>.gauge_bar>div:first-child {
 	margin-top: 18px;
 }
 
+.select_lsit {
+	max-width: 1200px;
+}
+
 .category_select {
 	text-align: left;
 	display: inline-block;
-	width: 89.5%;
+	max-width: 1200px;
+	width: 100%;
 }
 
 .search_box {
@@ -182,10 +182,12 @@ div>.gauge_bar>div:first-child {
 
 .writing {
 	display: inline-block;
-	width: 10%;
+	width: 53%;
+	text-align: right;
 }
 
 .writing_btn {
+	 font-weight: bold;
 	background: #555555;
 	border: 1px solid #555555;
 	color: white;
@@ -233,4 +235,22 @@ div>.gauge_bar>div:first-child {
 	background-color: #555555;
 	color: white;
 	border-color: #555555;
+}
+.more{
+	text-align: center;
+}
+#more-btn{
+	padding:5px 20px;
+	border-radius:20px;
+    background: white;
+    border: 1px solid black;
+	font-weight: bold;
+}
+#more-btn:hover {
+    padding: 5px 20px;
+    border-radius: 20px;
+    background: #555555;
+    border: unset;
+    color:white;
+    font-weight: bold;
 }
