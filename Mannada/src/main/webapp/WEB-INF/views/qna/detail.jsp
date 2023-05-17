@@ -67,14 +67,14 @@
 	<section class="container">
 		<div class="box">
 			<div class="title">
-				<h4>${question.title }</h4>
+				<h4 class="title_size">${question.title }</h4>
 			</div>
 			<hr>
 			<div class="Writer_date_views">
 				<div class="Writer_date">
 					<img src="/resources/image/person.png" class="person">
 					<div class="Writer">
-						<span> 작성자</span> ${question.nickname}
+						<span style="font-weight: bold; "> 작성자</span> ${question.nickname}
 					</div>
 				</div>
 				<div class="date_views">
