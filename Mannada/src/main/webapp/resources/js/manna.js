@@ -2,22 +2,11 @@ window.addEventListener("load", () => {
 
     getPage(1);
 
-    document.getElementById("search-btn").addEventListener("click", e => {
+    document.querySelector(".search_btn").addEventListener("click", e => {
         const search = document.querySelector("select[name='search']").value;
         const keyword = document.querySelector("input[name='keyword']").value;
-        const minPrice = document.querySelector("input[name='minPrice']").value;
-        const maxPrice = document.querySelector("input[name='maxPrice']").value;
-        const category = document.querySelector("select[name='category']").value;
-        const status = document.querySelector("select[name='status']").value;
 
-        if (search == 1 || search == 2)
-            getPage(1, { search, keyword });
-        else if (search == 3)
-            getPage(1, { search, minPrice, maxPrice });
-        else if (search == 4)
-            getPage(1, { search, keyword: category });
-        else if (search == 5)
-            getPage(1, { search, keyword: status });
+        getPage(1, { search, keyword });
     });
 });
 
@@ -32,18 +21,19 @@ function getPage(page, query) {
     fetch(url)
         .then(resp => resp.json())
         .then(result => {
+        
             if (result.list.length)
                 document.querySelector("#empty_list").classList.add("hide");
             else
                 document.querySelector("#empty_list").classList.remove("hide");
-
+            
             
             document.querySelector("#more-btn").onclick = e => getPage(page + 1, query);
 
 
             // 더보기 조건    
             if(page <= result.pager.last){
-                const box = document.querySelector("#card-box");
+                const box = document.querySelector(".card_box");
     
                 result.list.forEach(element => {
                     const item = makeItem(element);
@@ -51,6 +41,10 @@ function getPage(page, query) {
                     box.append(item);
                 });
             };
+
+            if(page >= result.pager.last){
+                document.querySelector("#more-btn").classList.add("hide");
+            }
                 
         });
 }
@@ -58,42 +52,68 @@ function getPage(page, query) {
 
 
 function makeItem(element){
-    const card = document.createElement("div");
-    card.classList.add("card");    
-    card.dataset.id = element.id;
 
+    const card = document.createElement("div");
+    card.classList.add("card");
+    card.addEventListener("click", e => {
+        const id = element.id;
+
+        fetch("/api/item/" + id)
+        .then(resp => resp.json())
+        .then(result => {
+            const memberBox = document.querySelector(".member_num");
+            
+            for(var i in result.member){
+                const span = document.createElement("span");
+                span.textContent = result.member.nickname;
+
+                memberBox.append(span);
+            };
+              
+            const modal = new bootstrap.Modal(document.getElementById("detailModal"));
+            modal.toggle();  
+        });
+    });
+
+
+	const div = document.createElement("div");
 
     const category = document.createElement("div");
-    category.classList.add("category");
+    category.classList.add("Category");
 
     const span = document.createElement("span");
     span.textContent = element["category_"];
 
     category.append(span);
-    card.append(category);
+    div.append(category);
+    card.append(div);
 
 
     const title = document.createElement("div");
-    category.classList.add("title");
+    title.classList.add("title");
 
     const h5 = document.createElement("h5");
-    h5.textContent = element["title"];
 
+    const strong = document.createElement("strong");
+    strong.textContent = element["title"];
+
+    h5.append(strong);
     title.append(h5);
-    card.append("title");
+    card.append(title);
 
 
     const line = document.createElement("div");
-    category.classList.add("line");
+    line.classList.add("line");
 
     card.append(line);
 
 
     const i = document.createElement("i");
     i.classList.add("bi", "bi-check");
+    
 
     const address = document.createElement("div");
-    address.classList.add("address");
+    address.classList.add("date_day");
 
     address.append(i);
     address.textContent = element["address"];
@@ -102,19 +122,19 @@ function makeItem(element){
     
     
     const dDay = document.createElement("div");
-    dDay.classList.add("dDay");
+    dDay.classList.add("interval");
     
     dDay.append(i);
-    dDay.textContent = element["dDay"];
+    dDay.textContent = "D-day : " + element["dDay"];
     
     card.append(dDay);
 
 
     const member = document.createElement("div");
-    member.classList.add("member");
+    member.classList.add("interval");
 
     member.append(i);
-    member.textContent = "(" + element["sum"] + "/" + element["member"] + ")";
+    member.textContent = "인원 : " + "(" + element["sum"] + "/" + element["member"] + ")";
     
     card.append(member);
 
@@ -124,6 +144,7 @@ function makeItem(element){
     progress.max = element["member"];
 
     card.append(progress);
+ 
 
 
     return card;

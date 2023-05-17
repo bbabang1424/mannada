@@ -29,7 +29,6 @@
 			<div class="title">
 				<h4>${item.title}</h4>
 			</div>
-			<hr>
 		<div class="Writer_date_views">
 			<div class="Writer_date">
 				<img src="/resources/image/person.png" class="person">

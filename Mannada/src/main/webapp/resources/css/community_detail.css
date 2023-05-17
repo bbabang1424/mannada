@@ -66,14 +66,6 @@ h4 {
 	margin: 1%;
 }
 
-hr {
-	margin: 1px;
-	color: inherit;
-	border: 0;
-	border-top: 1px solid;
-	opacity: .25;
-}
-
 .person {
 	margin-top: 0.7%;
 	margin-bottom: 0.7%;
@@ -95,14 +87,16 @@ hr {
 }
 
 .date_views {
+	font-size: 0.96em;
 	position: absolute;
 	top: 21.5%;
-	    left: 84.5%;
+	left: 84.5%;
 	color: #5F5F5F;
 	display: inline-block;
 }
 
 .Writer_date {
+	border-top: 1px solid #ddd;
 	text-align: left;
 	padding-left: 2%;
 }
@@ -187,17 +181,22 @@ hr {
 
 .reply_text {
 	text-align: left;
-	margin-bottom: 1%;
+	margin-bottom: 0.5%;
 }
 
 .all_reply {
 	font-weight: bold;
 }
 
+.mow_many {
+	margin-left: 1%;
+	display: inline-block;
+}
+
 .reply-box {
-	    box-sizing: border-box;
-    width: 1200px;
-	border-top: 2px solid blue;
+	box-sizing: border-box;
+	width: 1200px;
+	border-top: 2px solid #ccc;
 	border-bottom: 1px solid #ccc;
 	margin-bottom: 2%;
 }
@@ -239,13 +238,13 @@ hr {
 }
 
 .reply_nickname {
-	    margin-top: 1.5%;
-    font-weight: bold;
-    margin-bottom: 0.5%;
-    margin-left: 2%;
-    width: 103%;
-    display: inline-block;
-    text-align: left;
+	margin-top: 1.5%;
+	font-weight: bold;
+	margin-bottom: 0.5%;
+	margin-left: 2%;
+	width: 103%;
+	display: inline-block;
+	text-align: left;
 }
 
 .reply_date {
@@ -264,18 +263,35 @@ hr {
 }
 
 .reply-content {
-	    White-space: pre-line;
-        margin-top: 0.5%;
-    word-break: break-all;
-    margin-left: 2%;
-    margin-bottom: 1%;
+	White-space: pre-line;
+	margin-top: 0.5%;
+	word-break: break-all;
+	margin-left: 2%;
+	margin-bottom: 1%;
 }
 
 /* 댓글 입력 */
 .replyFrom {
+	max-width: 1200px;
 	margin-top: 6%;
 	border-top: 2px solid blue;
-	border-bottom: 1px solid #ccc;
+	border-bottom: 2px solid blue;
+	margin-bottom: 4%;
+}
+/* 댓글 등록 버튼 */
+.reply_up {
+	width: 189%;
+	margin-bottom: 2%;
+	margin-left: 4%;
+}
+
+.reply_up_btn {
+	margin-right: 0.5%;
+	background: #555555;
+	border: 1px solid #555555;
+	color: white;
+	width: 50px;
+	height: 30px;
 }
 
 .text-board {
@@ -284,6 +300,7 @@ hr {
 }
 
 textarea {
+	resize: none;
 	margin: 1em;
 	display: inline-block;
 	padding: 0.375rem 1.25rem 0.375rem 0.75rem;
@@ -329,22 +346,6 @@ textarea {
 	background-color: #de2f00;
 	border: #de2f00;
 	color: #fff;
-}
-
-/* 댓글 등록 버튼 */
-.reply_up {
-	width: 189%;
-	margin-bottom: 2%;
-	margin-left: 4%;
-}
-
-.reply_up_btn {
-	margin-right: 0.5%;
-	background: #555555;
-	border: 1px solid #555555;
-	color: white;
-	width: 50px;
-	height: 30px;
 }
 
 /*페이지 네이션  */

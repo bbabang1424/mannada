@@ -13,7 +13,7 @@
 <script
 	src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 <script src="/resources/js/manna_update.js"></script>
-<link rel="stylesheet" href="/resources/css/manna_update.css">
+<link rel="stylesheet" href="/resources/css/manna_add.css">
 <jsp:include page="../header.jsp"></jsp:include>
 <!--jQuery 최신버전-->
 <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>

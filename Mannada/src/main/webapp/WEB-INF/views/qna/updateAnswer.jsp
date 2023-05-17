@@ -70,7 +70,7 @@
 			<div class="title">
 				<h4>${question.title }</h4>
 			</div>
-			<hr>
+		
 			<div class="Writer_date_views">
 				<div class="Writer_date">
 					<img src="/resources/image/person.png" class="person">
@@ -87,19 +87,23 @@
 				<div class="text_box">${question.content }</div>
 			</div>
 		</div>
+
+		<form method="post">
+			<input type="hidden" name="questionId" value="${question.id }">
+			<div class="summernote_top">
+				<textarea id="summernote" class="answer_box" name="content"
+					placeholder="답변을 입력해주세요">${answer.content }</textarea>
+			</div>
+			<div class="answer_btn_lsit">
+			<a href="../detail/${question.id }"><button class="cancell_btn"
+					type="button">취소</button></a>
+			<button class="update_Answer_btn">수정</button>
+			</div>
+
+		</form>
 		
-			<form method="post">
-				<input type="hidden" name="questionId" value="${question.id }">
-				<div style="margin-top: 2%;">
-				<textarea id="summernote" class="answer_box" name="content" placeholder="답변을 입력해주세요">${answer.content }</textarea>
-				</div>
-				<a href="../detail/${question.id }"><button class="cancell_btn" type="button">취소</button></a>
-				<button class="update_Answer_btn">수정</button>
-				
-			</form>
-		<hr style="width: 100%;">
 	</section>
-	
+
 	<jsp:include page="../footer.jsp"></jsp:include>
 </body>
 </html>
