@@ -40,8 +40,8 @@
 			<div class="footer-contents">
 				<div class="footer-top">
 					<span><a href="#">개인정보처리방침</a></span>
-					<span><a href="#">공지사항</a></span>
-					<span><a href="#">QnA</a></span>
+					<span><a href="/notice/list">공지사항</a></span>
+					<span><a href="/qna/list">QnA</a></span>
 				</div>
 				
 				<div class="footer-info">

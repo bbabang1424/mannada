@@ -1,0 +1,206 @@
+@charset "UTF-8";
+
+a {text-decoration: none;}
+li { list-style:none; }
+#header {
+	width: 100%;
+	background-color: #fff; 
+	position: sticky;
+	top: 0;
+	z-index: 100;
+    padding: 10px 0;
+    border-bottom:1px solid #d9d9d9;
+}
+
+#header li { display:inline-block;}
+
+.max-width { position: relative; max-width: 1200px; margin: 0 auto; }
+.flex {display: flex; align-items:center;}
+.flex-end {margin-left: auto!important; display: inline-flex; align-items: center;}
+
+#logo {display: inline-block;}
+#logo img { width: 170px; filter: invert(20%) sepia(85%) saturate(7275%) hue-rotate(211deg) brightness(97%) contrast(98%); }
+
+.menu, .login { position: relative;}
+.menu ul, .login ul { margin-bottom: 0; }
+.menu li, .login li { padding: 0 13px; font-size: 12pt; }
+.menu a, .login a { color: #000; }
+.menu li { font-weight:700; }
+.login { margin-right: 10px; }
+.login button {
+	width: 90px;
+    height: 35px;
+    background-color: #0359d9;
+    border: none;
+    color: white;
+    border-radius: 20px;
+}
+ 
+#check_box { display: none; }
+
+#check_box + label {
+  position: relative;
+  display: block;
+  width: 25px;
+  height: 17px;
+  cursor: pointer;
+}
+
+#check_box + label > span {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 2.5px;
+  background: #000; 
+  transition: all 300ms;
+}
+
+#check_box:checked + label > span:nth-child(1) {
+  top: 50%;
+  transform: translate(0, -50%);
+  transform: rotate(45deg);
+} 
+
+#check_box + label > span:nth-child(2) {
+  top: 50%;
+  transform: translate(0, -50%);
+}
+
+#check_box:checked + label > span:nth-child(2) {
+  opacity: 0;
+}
+
+#check_box + label > span:nth-child(3) {
+  bottom: 0;
+}
+
+#check_box:checked + label > span:nth-child(3) {
+  top: 50%;
+  transform: translate(0, -50%);
+  transform: rotate(-45deg);
+}
+
+.header-nav { display:none; background-color:#fff;  border-bottom:1px solid #d9d9d9;  position: fixed; top: 87.76px; width:100%; z-index:99; } 
+.header-inner {   display: flex; }
+.header-line { border-left: 1px solid #d9d9d9; }
+.header-line:last-child { border-right: 1px solid #d9d9d9;}
+.header-nav ul { padding: 60px 80px 60px 50px; margin-bottom: 0;}
+.header-nav h5 { position: relative; padding: 0 13px 15px; margin-bottom: 0; font-weight: 600; }
+.header-nav li {padding: 3px 15px; letter-spacing: -0.4pt;}
+ 
+ 
+#top-button {
+  display: inline-block;
+  background-color:#0359d9;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  border-radius: 25px;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  transition: background-color .3s, 
+    opacity .5s, visibility .5s;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 1000;
+  color:#fff
+}
+#top-button::before {
+  content: "\f077";
+  display: block;
+  font-family: FontAwesome;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 5pt;
+  color: #fff;
+  padding-top: 16px;
+  line-height: 0px;
+}
+#top-button::after {
+  content: "TOP";
+  font-weight: 900; 
+  font-style: normal;
+  font-size: 5pt;
+  line-height: 10px;
+  color: #fff;
+}
+#top-button:hover {
+  cursor: pointer;
+  background-color: #333;
+}
+#top-button:active {
+  background-color: #555;
+}
+#top-button.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+#talk-button {
+  display: inline-block;
+  background-color:#f6f6f6;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  border-radius: 25px;
+  border: 1px solid #ddd;
+  position: fixed;
+  bottom: 90px;
+  right: 30px;
+  transition: background-color .3s, 
+    opacity .5s, visibility .5s;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 1000;
+  color:#0359d9;
+}
+#talk-button::before {
+  content: "\f075";
+  display: block;
+  font-family: FontAwesome;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 5pt;
+  color: #0359d9;
+  padding-top: 16px;
+  line-height: 0px;
+}
+#talk-button::after {
+  content: "Talk";
+  font-weight: 900; 
+  font-style: normal;
+  font-size: 5pt;
+  line-height: 10px;
+  color: #0359d9;
+}
+#talk-button:hover  {
+  cursor: pointer;
+  color: #fff;
+  background-color: #0359d9;
+  border: 1px solid #0359d9;
+}
+#talk-button:hover:after {
+  cursor: pointer;
+  color: #fff;  
+}
+#talk-button:hover:before {
+  content: "\f075";
+  display: block;
+  font-family: FontAwesome;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 5pt;
+  color: #fff;
+  padding-top: 16px;
+  line-height: 0px;
+}
+#talk-button:active {
+  color: #fff;
+  background-color: #0359d9;
+}
+#talk-button.show {
+  opacity: 1;
+  visibility: visible;
+}
+ 
