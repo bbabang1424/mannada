@@ -35,7 +35,7 @@
 				<div class="Writer_date">
 					<img src="/resources/image/person.png" class="person">
 					<div class="Writer">
-						<span> 작성자</span> ${item.nickname}
+						<span style="font-weight: bold;">작성자</span> ${item.nickname}
 					</div>
 				</div>
 				<div class="date_views">
@@ -51,6 +51,7 @@
 		</div>
 		<!-- lower:하단이란 뜻 -->
 		<div class="lower">
+		<a href="../list"><button class="button_back">목록</button></a>
 			<!-- modify:수정하다란 뜻 -->
 			<a href="../update/${id}"><button class="button_modify">수정</button></a>
 			<a href="../delete/${id}"><button class="button_delete">삭제</button></a>
@@ -68,7 +69,8 @@
 		<!-- 댓글 목록 -->
 		<div class="reply-box">
 			<div class="list_btn">
-				<a href="../list"><button class="button_list">목록</button></a>
+				 <!-- <a href="../list"><button class="button_list">목록</button></a> -->
+				 <div style="margin-top: 5%;"></div>
 			</div>
 
 			<c:forEach var="reply" items="${reply }">
@@ -77,10 +79,10 @@
 						<table class="replyTag">
 							<tbody class="leply_list">
 								<tr>
-									<td width="5%;" align="left"><img class="profile"
+									<td width="5%;" align="left" valign="top"><img class="profile"
 										src="/resources/image/profile.png"></td>
-									<td class="separator2"><span></span></td>
-									<td style="margin: 5%; width: 45%;">
+									<td style="width: 0%;" ></td>
+									<td style="margin: 5%; width: 51%;">
 
 										<div class="reply_name_date">
 
