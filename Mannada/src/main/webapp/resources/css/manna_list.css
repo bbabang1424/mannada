@@ -94,6 +94,7 @@
 	position: inherit;
 	top: 10%;
 	color: black;
+	top: 10%;
 }
 
 .interval {
@@ -111,6 +112,7 @@ progress {
 	top: 85%;
 	left: 8%;
 	width: 80%;
+	left: 8%;
 }
 
 /* 크기 조절은 height에서 */
@@ -187,7 +189,7 @@ div>.gauge_bar>div:first-child {
 }
 
 .writing_btn {
-	 font-weight: bold;
+	font-weight: bold;
 	background: #555555;
 	border: 1px solid #555555;
 	color: white;
@@ -236,21 +238,252 @@ div>.gauge_bar>div:first-child {
 	color: white;
 	border-color: #555555;
 }
-.more{
+
+.more {
 	text-align: center;
 }
-#more-btn{
-	padding:5px 20px;
-	border-radius:20px;
-    background: white;
-    border: 1px solid black;
+
+#more-btn {
+	padding: 5px 20px;
+	border-radius: 20px;
+	background: white;
+	border: 1px solid black;
 	font-weight: bold;
 }
+
 #more-btn:hover {
-    padding: 5px 20px;
-    border-radius: 20px;
-    background: #555555;
-    border: unset;
-    color:white;
-    font-weight: bold;
+	padding: 5px 20px;
+	border-radius: 20px;
+	background: #555555;
+	border: unset;
+	color: white;
+	font-weight: bold;
+}
+
+.model_content {
+	max-width: 1200px;
+	/* width: 20%; */
+	margin: 10px;
+	padding: 10px;
+}
+
+.modal-content {
+	/* max-width: 1200px; */
+	position: relative;
+	left: -33%;
+	display: flex;
+	width: 162%;
+	color: var(- -bs-modal-color);
+	pointer-events: auto;
+	background-color: var(- -bs-modal-bg);
+	background-clip: padding-box;
+	border: var(- -bs-modal-border-width) solid
+		var(- -bs-modal-border-color);
+	border-radius: var(- -bs-modal-border-radius);
+	outline: 0;
+	align-content: flex-start;
+}
+
+.img {
+	width: 130px;
+	height: 112px;
+	background: #ccc;
+}
+
+.model_Category {
+	display: inline-block;
+	position: absolute;
+	left: 22%;
+	top: 6%;
+}
+
+.model_address {
+	display: inline-block;
+	position: absolute;
+	left: 41%;
+	top: 6%;
+}
+
+
+.model_title {
+	display: inline-block;
+	position: absolute;
+	left: 22%;
+	    top: 21%;
+}
+
+.model_Writer {
+	word-wrap: break-word;
+	display: inline-block;
+	width: 150px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	position: absolute;
+	left: 22%;
+	top: 33%;
+}
+
+.model_grade {
+	display: inline-block;
+	position: absolute;
+	top: 33%;
+	left: 43%;
+}
+
+.model_views {
+	display: inline-block;
+	position: absolute;
+	top: 26%;
+	left: 89.5%;
+}
+
+.model_date {
+	display: inline-block;
+	position: absolute;
+	left: 22%;
+	top: 42%;
+}
+
+.model_personnel {
+	display: inline-block;
+	position: absolute;
+	left: 83%;
+	top: 64px;
+}
+
+.model_progress {
+	border: 0;
+	border-radius: 9px;
+	position: absolute;
+	top: 19%;
+	left: 71%;
+	width: 23%;
+}
+/* 크기 조절은 height에서 */
+.model_progress ::-webkit-progress-bar {
+	background-color: #ccc;
+	border: 0;
+	height: 20px;
+	border-radius: 9px;
+}
+
+.model_progress::-webkit-progress-value {
+	background-color: #0359d9;
+	border: 0;
+	height: 20px;
+	border-radius: 9px;
+}
+
+.model_line {
+	width: 767px;
+    border: 1px solid;
+    border-color: #ccc;
+    position: absolute;
+    top: 55%;
+    left: 3%;
+}
+
+.model_middle {
+	
+}
+
+.model_member {
+	display: inline-block;
+	position: absolute;
+	top: 48%;
+	left: 7%;
+}
+
+.model_member_num {
+	position: absolute;
+	top: 42%;
+	left: 22%;
+	width: 550px;
+	height: 80px;
+	overflow: auto;
+}
+
+.model_member_num>div {
+	display: inline-block;
+	padding: 8px;
+	margin: 2px;
+}
+
+.model_Partic {
+	display: inline-block; } .model_Partic > button {
+	display: inline-block;
+	position: absolute;
+	left: 81%;
+	top: 45%;
+	width: 120px;
+	height: 50px;
+	background-color: #0359d9;
+	border: #0359d9;
+	color: #fff;
+	font-size: 15px;
+}
+
+.model_text_box {
+	overflow: auto;
+	width: 87%;
+	height: 110px;
+	position: absolute;
+	top: 64%;
+	left: 6%;
+	border: 1px solid #ccc;
+	resize: none;
+}
+
+.model_lower {
+	display: inline-block;
+	position: absolute;
+	top: 89%;
+	left: 74%;
+}
+
+.model_lower>button {
+	margin: 5px;
+	width: 50px;
+	height: 30px;
+}
+
+.button_chatting {
+	background-color: #ed9818;
+	border: #ed9818;
+	color: white;
+}
+
+.button_modify {
+	margin: 5px;
+	width: 50px;
+	height: 30px;
+	background-color: #fff;
+	color: #000;
+	border-color: #000;
+	border: 1px solid;
+	text-align: center;
+}
+
+.button_modify:hover {
+	background-color: #2cb2ff;
+	border: #2cb2ff;
+	color: #fff;
+}
+
+.button_delete {
+	margin: 5px;
+	width: 50px;
+	height: 30px;
+	text-align: center;
+	background-color: white;
+	border-color: #000;
+	border: 1px solid;
+	color: #000;
+}
+
+.button_delete:hover {
+	background-color: #de2f00;
+	border: #de2f00;
+	color: #fff;
 }
