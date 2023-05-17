@@ -2,7 +2,7 @@ window.addEventListener("load", () => {
 
     getPage(1);
 
-    document.getElementById("search-btn").addEventListener("click", e => {
+    document.querySelector(".search_btn").addEventListener("click", e => {
         const search = document.querySelector("select[name='search']").value;
         const keyword = document.querySelector("input[name='keyword']").value;
 
@@ -33,7 +33,7 @@ function getPage(page, query) {
 
             // 더보기 조건    
             if(page <= result.pager.last){
-                const box = document.querySelector("#card-box");
+                const box = document.querySelector(".card_box");
     
                 result.list.forEach(element => {
                     const item = makeItem(element);
@@ -52,43 +52,68 @@ function getPage(page, query) {
 
 
 function makeItem(element){
-    const link = document.createElement("a");
 
     const card = document.createElement("div");
-    card.classList.add("card");    
+    card.classList.add("card");
+    card.addEventListener("click", e => {
+        const id = element.id;
 
+        fetch("/api/item/" + id)
+        .then(resp => resp.json())
+        .then(result => {
+            const memberBox = document.querySelector(".member_num");
+            
+            for(var i in result.member){
+                const span = document.createElement("span");
+                span.textContent = result.member.nickname;
+
+                memberBox.append(span);
+            };
+              
+            const modal = new bootstrap.Modal(document.getElementById("detailModal"));
+            modal.toggle();  
+        });
+    });
+
+
+	const div = document.createElement("div");
 
     const category = document.createElement("div");
-    category.classList.add("category");
+    category.classList.add("Category");
 
     const span = document.createElement("span");
     span.textContent = element["category_"];
 
     category.append(span);
-    card.append(category);
+    div.append(category);
+    card.append(div);
 
 
     const title = document.createElement("div");
-    category.classList.add("title");
+    title.classList.add("title");
 
     const h5 = document.createElement("h5");
-    h5.textContent = element["title"];
 
+    const strong = document.createElement("strong");
+    strong.textContent = element["title"];
+
+    h5.append(strong);
     title.append(h5);
-    card.append("title");
+    card.append(title);
 
 
     const line = document.createElement("div");
-    category.classList.add("line");
+    line.classList.add("line");
 
     card.append(line);
 
 
     const i = document.createElement("i");
     i.classList.add("bi", "bi-check");
+    
 
     const address = document.createElement("div");
-    address.classList.add("address");
+    address.classList.add("date_day");
 
     address.append(i);
     address.textContent = element["address"];
@@ -97,19 +122,19 @@ function makeItem(element){
     
     
     const dDay = document.createElement("div");
-    dDay.classList.add("dDay");
+    dDay.classList.add("interval");
     
     dDay.append(i);
-    dDay.textContent = element["dDay"];
+    dDay.textContent = "D-day : " + element["dDay"];
     
     card.append(dDay);
 
 
     const member = document.createElement("div");
-    member.classList.add("member");
+    member.classList.add("interval");
 
     member.append(i);
-    member.textContent = "(" + element["sum"] + "/" + element["member"] + ")";
+    member.textContent = "인원 : " + "(" + element["sum"] + "/" + element["member"] + ")";
     
     card.append(member);
 
@@ -119,10 +144,8 @@ function makeItem(element){
     progress.max = element["member"];
 
     card.append(progress);
-    
-    
-    link.append(card);
+ 
 
 
-    return link;
+    return card;
 }

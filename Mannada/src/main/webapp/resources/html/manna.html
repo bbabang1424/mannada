@@ -309,9 +309,6 @@
 	<a id="top-button"></a>
 	
 	
-	
-	
-	
 	<div class="banner">
 		<ul class="banner_text">
 			<li>만나다</li>
@@ -321,43 +318,50 @@
 		<h3 class="page_title">글 목록</h3>
 		<p class="page_text">새로운 만남을 만날수 있는 곧 입니다. 관심있는 카드를 눌러 참여하세요!</p>
 	</div>
-
-	<div class="container select_list">
-		<div class="selelct_lsit">
-				<div class="category_select">
-					<select name="search" class="form-select form-select-sm">
-						<option value="1">제목</option>
-						<option value="2">내용</option>
-					</select>
-					<input class="search_box" id="category" name="category" type="text">
-					<div class="search">
-						<button type="button" id="search-btn" class="search_btn">검색</button>
+		
+	
+	<div class="container">
+		<section class="content ">
+		
+			<div class="select_list">
+				<div class="selelct_lsit">
+						<div class="category_select">
+							<select name="search" class="form-select form-select-sm">
+								<option value="1">제목</option>
+								<option value="2">내용</option>
+							</select>
+							<input class="search_box" id="category" name="category" type="text">
+							<div class="search">
+								<button class="search_btn">검색</button>
+							</div>
+							
+							
+							<div class="writing">
+								<a href="../../manna/add">
+									<button class="writing_btn">
+										<i class="bi bi-pencil-fill"></i> 글쓰기
+									</button>
+								</a>
+							</div>
+						</div>
+					
 					</div>
+				
+				
+				
+				<div class="card_box">
+					<div id="empty_list">등록 된 게시글이 없습니다.</div>
 				</div>
-
-
-				<div class="writing">
-					<a href="../../manna/add">
-						<button class="writing_btn">
-							<i class="bi bi-pencil-fill"></i> 글쓰기
-						</button>
-					</a>
-				</div>
-			
+				
 			</div>
-		
-		
-		
-		<div id="card-box">
-			<div id="empty_list">등록 된 게시글이 없습니다.</div>
-		</div>
-		
-		
-		<div>
-			<button type="button" id="more-btn">더보기</button>
-		</div>
+	
+		</section>
 	</div>
 
+		
+	<div class="more">
+		<button type="button" id="more-btn">더보기</button>
+	</div>
 
 
 	
@@ -398,6 +402,76 @@
 	</div>
 	
 	
+	
+	
+<div class="modal" id="detailModal" tabindex="-1">
+		<div class="modal-dialog">
+			<div class="modal-content">
 
+				<section class="content">
+					<div class="box">
+						<div class="first">
+							<div class="img"></div>
+				
+							<div class="Category">[${item.category_}]</div>
+							<div class="address">
+								<i class="bi bi-geo-alt"></i> ${item.address}
+							</div>
+				
+							<div class="title">
+								<h3>${item.title}</h3>
+							</div>
+							
+							<!-- 데이터 가져 올려고 했는데 오류가 나서 안됨 가져 올수 있는거 가져 옴 -->
+							<div class="Writer">작성자:  ${item.nickname} </div>
+							<div class="grade">
+								<i class="bi bi-star"></i> 4.5<!-- ${item.star}  -->
+							</div>
+							<div class="views">
+								<i class="bi bi-eye"></i> <!-- ${item.view}  a-jax.. -->
+							</div>
+							<div class="date">
+								<i class="bi bi-calendar-check"></i> ${item.dDay}
+							</div>
+				
+							<!-- personnel:인원이란 뜻 -->
+							<div class="personnel">
+								<!-- 참여인원/모집인원 : 참여버튼을 눌른 이용자의 인원이 나와야함-->
+								<span>참여현황:${item.sum }/${item.member}</span>
+							</div>
+							<progress value="${item.sum }" max="${item.member}">
+							</progress>
+							<div class="line"></div>
+						</div>
+						<div class="middle">
+							<div class="member">참여인원</div>
+				
+							<div class="member_num">
+								<!-- 참여버튼을 누른 사람의 아이디를 가져와야함-->
+								<c:forEach var="member" items="${list}">
+									<div>${member.nickname }</div>
+								</c:forEach>
+							</div>
+				
+							<!-- Partic: 참여란 뜻으로 참여버튼 -->
+							<!-- 참여버튼 눌렀을때 인원 표시되게 해야 함-->
+							<div class="Partic">
+								<button type="button" id="join_btn"">참여</button>
+							</div>
+							<!--내용 안불러 와짐 -->
+							<div class="text_box">${item.content}</div>
+						</div>
+						<!-- lower:하단이란 뜻 -->
+						<div class="lower">
+							<!-- modify:수정하다란 뜻 -->
+							<button class="button_chatting">채팅</button>
+							<a href="../update/${id}"><button class="button_modify">수정</button></a>
+							<a href="../delete/${id}"><button class="button_delete">삭제</button></a>
+						</div>
+					</div>
+				</section>
+			</div>
+		</div>
+	</div>
 </body>
 </html>
