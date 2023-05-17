@@ -34,7 +34,7 @@
 			<div class="Writer_date">
 				<img src="/resources/image/person.png" class="person">
 				<div class="Writer">
-					<span> 작성자</span> ${item.nickname}
+					<span style="font-weight: bold;"> 작성자</span> ${item.nickname}
 				</div>
 			</div>
 				<div class="date_views">
@@ -51,7 +51,7 @@
 		<!-- lower:하단이란 뜻 -->
 		<div class="lower">
 			<!-- modify:수정하다란 뜻 -->
-			<a href="../list"><button class="button_list">목록</button></a>
+			<a href="../list"><button class="button_back">목록</button></a>
 			<c:if test="${sessionScope.manager.id != null }"> 
 			<a href="../update/${id}"><button class="button_modify">수정</button></a>
 			<a href="../delete/${id}"><button class="button_delete">삭제</button></a>
