@@ -1,4 +1,4 @@
-function replyUpdate(replyId, commuId, content){
+function replyUpdate(replyId, commuId){
   
 	const reply = document.querySelector(".reply-content.id" + replyId);
 	
@@ -15,7 +15,7 @@ function replyUpdate(replyId, commuId, content){
     textarea.rows = "5";
     textarea.cols = "50";
     textarea.name = "content";
-    textarea.value = content;
+    textarea.value = "content";
     div.append(textarea);
 
     const button = document.createElement("button");
@@ -26,26 +26,31 @@ function replyUpdate(replyId, commuId, content){
     div.append(button);
     
     reply.after(div);
+    
+    reply.style.display = "hidden";
 };
 
 
 $(document).on('click', '.reply-update-submit', function(e) {
 
 	const Id = $(this).attr("id");
-	const content = $(this).prev().text();
+	const Content = $(".reply-update textarea").text();
 	
+	alert(Content);
+	/*
     $.ajax({
         url : "../replyUpdate/" + Id,
+        contentType: "application/json",
         dataType : "json",
         type : "put",
         data : JSON.stringify({
-        	id: Id,
-        	content: content
+        	"id" : Id,
+        	"content" : Content
         }),
         success : function(data){
         }
     });
-	
+	*/
 	const reply = document.querySelector(".reply-update-submit").closest(".reply-update");
     reply.remove();
 });

@@ -92,7 +92,7 @@
 								</div>
 								<div>
 									<c:if test="${sessionScope.user.num == reply.num }">
-										<button class="reply-update-btn ${reply.id }" type="button" onclick="replyUpdate(${reply.id}, ${reply.commuId }, ${reply.content })">수정</button>
+										<button class="reply-update-btn ${reply.id }" type="button" onclick="replyUpdate(${reply.id}, ${reply.commuId })">수정</button>
 										<a href="../replyDelete/${reply.id }?id=${item.id}">삭제</a>
 									</c:if>
 								</div>
@@ -100,6 +100,9 @@
 	
 							<div class="reply-content id${reply.id }">${reply.content }</div>
 							
+							<div>
+								
+							</div>
 						</div>
 						
 					</li>
