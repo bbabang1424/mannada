@@ -146,6 +146,7 @@ td>a {
 }
 
 .writing_btn {
+	font-weight: bold;
 	background: #555555;
 	border: 1px solid #555555;
 	color: white;

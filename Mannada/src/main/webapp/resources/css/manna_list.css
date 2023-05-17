@@ -104,12 +104,6 @@
 	color: black;
 }
 
-/* p {
-	font-size: 20px;
-	position: absolute;
-	right: 0;
-	top: -90px;
-} */
 progress {
 	border: 0;
 	border-radius: 9px;
@@ -193,6 +187,7 @@ div>.gauge_bar>div:first-child {
 }
 
 .writing_btn {
+	 font-weight: bold;
 	background: #555555;
 	border: 1px solid #555555;
 	color: white;
@@ -240,4 +235,22 @@ div>.gauge_bar>div:first-child {
 	background-color: #555555;
 	color: white;
 	border-color: #555555;
+}
+.more{
+	text-align: center;
+}
+#more-btn{
+	padding:5px 20px;
+	border-radius:20px;
+    background: white;
+    border: 1px solid black;
+	font-weight: bold;
+}
+#more-btn:hover {
+    padding: 5px 20px;
+    border-radius: 20px;
+    background: #555555;
+    border: unset;
+    color:white;
+    font-weight: bold;
 }

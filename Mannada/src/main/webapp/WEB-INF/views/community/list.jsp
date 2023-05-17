@@ -43,7 +43,7 @@
 			<li>목록</li>
 		</ul>
 		<h3 class="page_title">커뮤니티</h3>
-		<p class="page_text">만남에 대한 후기와 소통을 자유옵게 글로 적어주세요!</p>
+		<p class="page_text">만남에 대한 후기와 소통을 자유롭게 글로 적어주세요!</p>
 	</div>
 	<div>
 		<div class="selelct_lsit">
