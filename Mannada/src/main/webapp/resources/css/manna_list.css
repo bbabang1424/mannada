@@ -304,12 +304,11 @@ div>.gauge_bar>div:first-child {
 	top: 6%;
 }
 
-
 .model_title {
 	display: inline-block;
 	position: absolute;
 	left: 22%;
-	    top: 21%;
+	top: 22%;
 }
 
 .model_Writer {
@@ -321,13 +320,13 @@ div>.gauge_bar>div:first-child {
 	text-overflow: ellipsis;
 	position: absolute;
 	left: 22%;
-	top: 33%;
+	top: 34%;
 }
 
 .model_grade {
 	display: inline-block;
 	position: absolute;
-	top: 33%;
+	top: 34%;
 	left: 43%;
 }
 
@@ -377,11 +376,11 @@ div>.gauge_bar>div:first-child {
 
 .model_line {
 	width: 767px;
-    border: 1px solid;
-    border-color: #ccc;
-    position: absolute;
-    top: 55%;
-    left: 3%;
+	border: 1px solid;
+	border-color: #ccc;
+	position: absolute;
+	top: 55%;
+	left: 3%;
 }
 
 .model_middle {
@@ -411,7 +410,10 @@ div>.gauge_bar>div:first-child {
 }
 
 .model_Partic {
-	display: inline-block; } .model_Partic > button {
+	display: inline-block;
+}
+
+.model_Partic>button {
 	display: inline-block;
 	position: absolute;
 	left: 81%;
