@@ -88,7 +88,7 @@
 				<!-- c:forEach 반복 필요할때 쓰는 것-->
 				<c:forEach var="item" items="${list}">
 					<a href="detail/${item.id}">
-						<div id="card">
+						<div class="card">
 							<div>
 								<div class="Category">
 									<span>${item.category_}</span>
