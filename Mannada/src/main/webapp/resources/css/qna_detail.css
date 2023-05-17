@@ -54,6 +54,8 @@
 	border-top: 2px solid blue;
 	text-align: center;
 	border-bottom: 1px solid #ccc;
+	max-width: 1200px;
+	margin: auto;
 }
 
 .title {
@@ -96,9 +98,10 @@ hr {
 }
 
 .date_views {
+	    font-size: 0.96em;
 	position: absolute;
 	top: 21.5%;
-	left: 84.5%;
+	left: 83.5%;
 	color: #5F5F5F;
 	display: inline-block;
 }
@@ -122,25 +125,25 @@ hr {
 
 .answer_answer {
 	background-color: #f3f3f3;
-	position: relative;
-	left: -3%;
+	max-width: 1200px;
 	width: 100%;
-	padding: 1em;
+	padding: 0.5em;
 	border-top: 2px solid blue;
-	margin: 2em;
+	margin: auto;
 }
 
 .answer_mgrId {
+	width: 90%;
+	display: inline-block;
 	margin-left: 1%;
 	text-align: left;
 }
 
 .answer_date {
+	margin-right: 1%;
 	color: #5F5F5F;
 	text-align: right;
-	position: absolute;
-	top: 10%;
-	left: 90%;
+	display: inline-block;
 }
 
 .answer_content {
@@ -153,6 +156,8 @@ hr {
 
 .summernote_top {
 	margin-top: 2%;
+	max-width: 1200px;
+	margin-left: 3.5%;
 }
 
 .answer_box {
@@ -161,6 +166,10 @@ hr {
 	margin-top: 2em;
 	width: 100%;
 	resize: none;
+}
+
+.answer_btn_lsit {
+	width: 96%;
 }
 
 .update_Answer_btn {
@@ -187,6 +196,10 @@ hr {
 	background-color: #ff0000;
 }
 
+.answer_btn_info {
+	width: 96%;
+}
+
 .answer_btn {
 	float: right;
 	margin-top: 2%;
@@ -196,6 +209,11 @@ hr {
 	border: 1px solid #0707d9;
 	color: white;
 	background-color: #0707d9;
+}
+
+.delete_update_btn {
+	width: 96.2%;
+	margin-top: 1%;
 }
 
 .delete_btn {
@@ -223,7 +241,7 @@ hr {
 	display: inline-block;
 	margin-top: 2%;
 	text-align: right;
-	width: 100%;
+	width: 93%;
 }
 
 .lower>button {
@@ -241,6 +259,10 @@ hr {
 	border-color: #ed9818;
 	border: 1px solid;
 	text-align: center;
+}
+
+.btn_list {
+	width: 50%;
 }
 
 .button_modify {

@@ -12,7 +12,6 @@
 <link rel="stylesheet"
 	href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">
 
-
 </head>
 <body>
 	<div class="banner">
@@ -30,7 +29,7 @@
 			<div class="title">
 				<h4>${item.title}</h4>
 			</div>
-			<hr>
+
 			<div class="Writer_date_views">
 				<div class="Writer_date">
 					<img src="/resources/image/person.png" class="person">
@@ -51,7 +50,7 @@
 		</div>
 		<!-- lower:하단이란 뜻 -->
 		<div class="lower">
-		<a href="../list"><button class="button_back">목록</button></a>
+			<a href="../list"><button class="button_back">목록</button></a>
 			<!-- modify:수정하다란 뜻 -->
 			<a href="../update/${id}"><button class="button_modify">수정</button></a>
 			<a href="../delete/${id}"><button class="button_delete">삭제</button></a>
@@ -63,14 +62,30 @@
 	<!-- 댓글 영역 -->
 
 	<div class="content">
+
+		<!-- 댓글 쓰기  -->
+		<c:if test="${sessionScope.user != null}">
+			<!-- 댓글 입력 -->
+			<div class="replyFrom">
+				<form action="../replyAdd" method="post">
+					<div class="text-board">
+						<textarea rows="5" name="content" placeholder="로그인 후 코멘트를 달아주세요!"></textarea>
+						<input type="hidden" name="commuId" value="${item.id }">
+					</div>
+					<div class="reply_up">
+						<button class="reply_up_btn">등록</button>
+					</div>
+				</form>
+			</div>
+		</c:if>
 		<div class="reply_text">
 			<span class="all_reply">전체 댓글</span>
+			<div class="mow_many">0</div>
 		</div>
 		<!-- 댓글 목록 -->
 		<div class="reply-box">
 			<div class="list_btn">
-				 <!-- <a href="../list"><button class="button_list">목록</button></a> -->
-				 <div style="margin-top: 5%;"></div>
+				<div style="margin-top: 2%;"></div>
 			</div>
 
 			<c:forEach var="reply" items="${reply }">
@@ -79,9 +94,9 @@
 						<table class="replyTag">
 							<tbody class="leply_list">
 								<tr>
-									<td width="5%;" align="left" valign="top"><img class="profile"
-										src="/resources/image/profile.png"></td>
-									<td style="width: 0%;" ></td>
+									<td width="5%;" align="left" valign="top"><img
+										class="profile" src="/resources/image/profile.png"></td>
+									<td style="width: 0%;"></td>
 									<td style="margin: 5%; width: 51%;">
 
 										<div class="reply_name_date">
@@ -108,27 +123,11 @@
 					</div>
 				</li>
 			</c:forEach>
-			
-			
-			<div style="border-top:1px solid #ccc ; margin-top:6%;  ">
-				
-			</div>
+
+
+			<div style="border-top: 1px solid #ccc; margin-top: 2%;"></div>
 		</div>
-		<!-- 댓글 쓰기  -->
-		<c:if test="${sessionScope.user != null}">
-			<!-- 댓글 입력 -->
-			<div class="replyFrom">
-				<form action="../replyAdd" method="post">
-					<div class="text-board">
-						<textarea rows="5" name="content" placeholder="로그인 후 코멘트를 달아주세요!"></textarea>
-						<input type="hidden" name="commuId" value="${item.id }">
-					</div>
-					<div class="reply_up">
-						<button class="reply_up_btn">등록</button>
-					</div>
-				</form>
-			</div>
-		</c:if>
+
 
 
 		<!-- 페이지네이션 형태만 잡음-->
@@ -155,7 +154,7 @@
 					</ol>
 				</td>
 			</tr>
-		</tfoot>	
+		</tfoot>
 	</div>
 
 

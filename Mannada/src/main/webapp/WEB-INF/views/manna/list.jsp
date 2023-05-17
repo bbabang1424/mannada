@@ -49,6 +49,8 @@
 
 	<div class="container">
 		<section class="content ">
+			
+			
 			<div class="selelct_lsit">
 				<div class="category_select">
 					<select name="search" class="form-select form-select-sm">
@@ -59,10 +61,8 @@
 					<div class="search">
 						<button class="search_btn">검색</button>
 					</div>
-				</div>
-
-
-				<c:if test="${sessionScope.user.id != null }">
+					
+					<c:if test="${sessionScope.user.id != null }">
 					<div class="writing">
 						<a href="add">
 							<button class="writing_btn">
@@ -71,6 +71,10 @@
 						</a>
 					</div>
 				</c:if>
+				</div>
+
+
+				
 				<c:if test="${sessionScope.user.id == null }">
 					<div class="writing"></div>
 				</c:if>
