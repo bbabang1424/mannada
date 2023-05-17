@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import kr.ac.kopo.mannada.dao.MannaDao;
 import kr.ac.kopo.mannada.model.Manna;
+import kr.ac.kopo.mannada.model.User;
 import kr.ac.kopo.mannada.pager.Pager;
 
 @Service
@@ -69,6 +70,16 @@ public class MannaServiceImpl implements MannaService {
 			for(Manna item : list)
 				dao.delete(item.getId());
 		}
+	}
+
+	@Override
+	public void addViewCnt(int id) {
+		dao.addViewCnt(id);
+	}
+
+	@Override
+	public List<User> memberList(int id) {
+		return dao.memberList(id);
 	}
 
 }

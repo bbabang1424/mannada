@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import kr.ac.kopo.mannada.model.Manna;
+import kr.ac.kopo.mannada.model.User;
 import kr.ac.kopo.mannada.pager.Pager;
 
 @Repository
@@ -49,6 +50,16 @@ public class MannaDaoImpl implements MannaDao {
 	@Override
 	public void deleteJoins(int id) {
 		sql.delete("manna.delete_joins", id);
+	}
+
+	@Override
+	public void addViewCnt(int id) {
+		sql.update("manna.addViewCnt", id);
+	}
+
+	@Override
+	public List<User> memberList(int id) {
+		return sql.selectList("manna.member_list", id);
 	}
 
 }

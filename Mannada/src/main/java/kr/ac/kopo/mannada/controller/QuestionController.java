@@ -79,6 +79,8 @@ public class QuestionController {
 	@RequestMapping("/detail/{id}")
 	public String detail(@PathVariable int id, Model model) {
 		
+		service.addViewCnt(id);
+		
 		Question item = service.item(id);
 		model.addAttribute("question", item);
 		
@@ -96,6 +98,35 @@ public class QuestionController {
 		
 
 		return "redirect:detail/" + item.getQuestionId();
+	}
+	
+	@GetMapping("/updateAnswer/{id}")
+	public String updateAnswer(@PathVariable int id, Model model) {
+		
+		Question item = service.item(id);
+		model.addAttribute("question", item);
+		
+		Answer answer = service.answer(id);
+		model.addAttribute("answer", answer);
+		
+		return path + "updateAnswer";
+	}
+	
+	@PostMapping("/updateAnswer/{id}")
+	public String updateAnswer(@PathVariable int id, Answer item) {
+		
+		item.setQuestionId(id);
+		service.updateAnswer(item);
+		
+		return "redirect:../detail/" + id;
+	}
+	
+	@GetMapping("/deleteAnswer/{id}")
+	public String deleteAnswer(@PathVariable int id) {
+		
+		service.deleteAnswer(id);
+
+		return "redirect:../detail/" + id;
 	}
 	
 }

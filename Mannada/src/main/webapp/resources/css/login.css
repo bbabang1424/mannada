@@ -7,13 +7,27 @@
  color: unset;
 }
 
+
+.background-image {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	background-image: url("/resources/image/swiper1.jpg");
+	background-repeat: no-repeat;
+	background-attachment: scroll;
+	background-size: cover;
+    opacity: 0.5;
+}
+
 .login-box {
-    border: 1px solid;
+    border: 1px solid whitesmoke;
     color: black;
     width: 500px;
     height: 630px;
-    margin: 5em auto;
-    padding: 50px 30px;
+    margin: 1em auto;
+    padding: 15px 45px;
+    position: relative;
+    background-color: white;
 }
 
 .login-box > * {
@@ -22,6 +36,11 @@
 
 .login-box .title {
     border-bottom: 1px solid black;
+}
+
+.login-box .title ul {
+	padding: 2px;
+	margin-bottom: auto;
 }
 
 .login-box .title ul li {
@@ -70,7 +89,7 @@
     color: white;
     border: none;    
     margin-top: 10px;
-    /* border-radius: 12px; 모서리 둥글게 */
+    font-size: 0.8em;
 }
 
 .naver-btn img {
@@ -90,7 +109,7 @@
     color: black;
     border: none;
     margin-top: 10px;
-    /* border-radius: 12px; */
+    font-size: 0.8em;
 }
 
 .kakao-btn img {
@@ -106,7 +125,7 @@
     color: black;
     border: none;
     margin-top: 10px;
-    /* border-radius: 12px; */
+    font-size: 0.8em;
 }
 
 .google-btn img {
@@ -116,10 +135,10 @@
  }
 
 .blank {
-    margin-top: 10px;
+    margin-top: 3px;
     text-align: center;
     font-size: 0.8em;
-    padding: 20px 0;
+    padding: 10px 0;
 }
 
 .login-box .signup {

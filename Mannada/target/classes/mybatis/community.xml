@@ -10,10 +10,10 @@
 				title LIKE CONCAT('%', #{keyword}, '%')
 			</if>
 			<if test="search == 2">
-				content LIKE CONCAT('%', #{keyword}, '%')
+				nickname LIKE CONCAT('%', #{keyword}, '%')
 			</if>
 			<if test="search == 3">
-				name LIKE CONCAT('%', #{keyword}, '%')
+				content LIKE CONCAT('%', #{keyword}, '%')
 			</if>
 		</where>
 	</sql>
@@ -65,9 +65,49 @@
 	</delete>
 	
 	<!-- 조회수 증가 -->
-	<update id="addViewcount">
-		UPDATE community SET viewcount = viewcount + 1
+	<update id="addViewCnt">
+		UPDATE community SET viewCnt = viewCnt + 1
 		WHERE id = #{id}
 	</update>
+	
+	
+	
+	<!-- 댓글 -->	
+	<insert id="add_reply">
+		INSERT INTO reply(commu_id, num, content, reg_date)
+		VALUES(#{commuId}, #{num}, #{content}, NOW())
+	</insert>
+
+	<!-- 댓글 단일 조회 -->
+	<select id="reply_item" resultType="Reply">
+		SELECT id, commu_id, num, content, reg_date
+		FROM reply
+		WHERE id = #{id}
+	</select>
+
+	<!-- 댓글 수정 -->
+	<update id="update_reply">
+		UPDATE reply SET content = #{content}
+		WHERE id = #{id}
+	</update>
+
+	<!-- 댓글 삭제 -->
+	<delete id="delete_reply">
+		DELETE FROM reply
+		WHERE id = #{id}
+	</delete>
+	
+	<!-- 마이페이지의 댓글 리스트 -->
+	<select id="reply_list" resultType="Reply">
+		SELECT @ROWNUM:=@ROWNUM+1 AS rnum, reply.*
+		FROM reply, (SELECT @ROWNUM:=0) AS R
+		WHERE id = #{keyword} 
+	</select>
+	
+	<select id="detail_reply" resultType="Reply">
+		SELECT reply.*, user.nickname
+		FROM reply LEFT OUTER JOIN user ON reply.num = user.num
+		WHERE commu_id = #{id} 
+	</select>
 
 </mapper>

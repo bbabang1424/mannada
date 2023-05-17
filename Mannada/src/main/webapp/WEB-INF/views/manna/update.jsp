@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>글 변경</title>
+<title>manna_update</title>
 <link rel="stylesheet"
 	href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">
 <!-- 우편번호 찿기인데.. 번지수 까지 안되더라.. -->
@@ -15,6 +15,17 @@
 <script src="/resources/js/manna_update.js"></script>
 <link rel="stylesheet" href="/resources/css/manna_update.css">
 <jsp:include page="../header.jsp"></jsp:include>
+<!--jQuery 최신버전-->
+<script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+<!-- bootstrap -->
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+	rel="stylesheet">
+<!-- include summernote css/js -->
+<link href="/resources/summernote/summernote-lite.css" rel="stylesheet">
+<script src="/resources/summernote/summernote-lite.js"></script>
+<script src="/resources/summernote/lang/summernote-ko-KR.js"></script>
+<script src="/resources/js/summernote.js"></script>
 </head>
 <body>
 	<div class="banner">

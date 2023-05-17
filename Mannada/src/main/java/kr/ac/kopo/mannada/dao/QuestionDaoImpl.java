@@ -62,4 +62,24 @@ public class QuestionDaoImpl implements QuestionDao {
 		return sql.selectOne("question.answer", id);
 	}
 
+	@Override
+	public void addViewCnt(int id) {
+		sql.update("question.addViewCnt", id);
+	}
+
+	@Override
+	public void updateAnswer(Answer item) {
+		sql.update("question.update_answer", item);
+	}
+
+	@Override
+	public void deleteAnswer(int id) {
+		sql.delete("question.delete_answer", id);
+	}
+
+	@Override
+	public void unChangeStatus(int id) {
+		sql.update("question.unchange_status", id);
+	}
+
 }

@@ -87,9 +87,8 @@
 }
 
 #title {
-	margin: 1em;
 	display: inline-block;
-	width: 89%;
+	width: 92%;
 	padding: 0.375rem 1.25rem 0.375rem 0.75rem;
 	font-size: 1rem;
 	font-weight: 400;
@@ -104,26 +103,17 @@
 	padding: 0.375rem 1.25rem 0.375rem 0.75rem;
 }
 
-
-
-/* tex_box */
-.control {
-	margin: 5em 1em 4em 1em;
-	width: 87.5%;
-	height: 21.25em;
-	border: 1px solid;
-	resize: none;
-}
-/* 내용 */
 .detail {
 	text-align: left;
+	padding-top: 3%;
+	padding-bottom: 3%;
 }
 
 /*  하단 /취소,등록*/
 .lower {
 	margin-top: 3%;
 	text-align: right;
-	width: 87%;
+	width: 88%;
 }
 /* 등록 */
 .raise_btn {
@@ -132,7 +122,7 @@
 	color: #fff;
 	width: 50px;
 	height: 30px;
-	margin-right: 2%;
+	margin-right: 1%;
 }
 /* 취소 */
 .cancel_btn {

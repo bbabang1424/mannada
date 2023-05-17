@@ -3,6 +3,7 @@ package kr.ac.kopo.mannada.dao;
 import java.util.List;
 
 import kr.ac.kopo.mannada.model.Community;
+import kr.ac.kopo.mannada.model.Reply;
 import kr.ac.kopo.mannada.pager.Pager;
 
 public interface CommunityDao {
@@ -18,5 +19,19 @@ public interface CommunityDao {
 	void update(Community item);
 
 	void delete(int id);
+
+	void addReply(Reply reply);
+
+	Reply replyItem(int id);
+
+	void updateReply(Reply item);
+
+	void deleteReply(int id);
+
+	void addViewCnt(int id);
+
+	List<Reply> replyList(Pager pager);
+
+	List<Reply> detailReply(int id);
 
 }

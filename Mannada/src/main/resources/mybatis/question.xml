@@ -10,10 +10,10 @@
 				title LIKE CONCAT('%', #{keyword}, '%')
 			</if>
 			<if test="search == 2">
-				content LIKE CONCAT('%', #{keyword}, '%')
+				nickname LIKE CONCAT('%', #{keyword}, '%')
 			</if>
 			<if test="search == 3">
-				name LIKE CONCAT('%', #{keyword}, '%')
+				content LIKE CONCAT('%', #{keyword}, '%')
 			</if>
 		</where>
 	</sql>
@@ -74,8 +74,32 @@
 	</update>
 	
 	<select id="answer" resultType="Answer">
-		SELECT * FROM answer
+		SELECT answer.*, manager.nickname FROM answer LEFT JOIN manager ON answer.mgr_id = manager.id
 		WHERE question_id = #{id}
 	</select>
+	
+	<update id="update_answer">
+		UPDATE answer
+		SET content = #{content}
+		WHERE question_id = #{id}
+	</update>
+	
+	<delete id="delete_answer">
+		DELETE FROM answer
+		WHERE question_id = #{id}
+	</delete>
+		
+	<update id="unchange_status">
+		UPDATE question
+		SET status = 0
+		WHERE id = #{id}
+	</update>
+	
+	
+	<!-- 조회수 증가 -->
+	<update id="addViewCnt">
+		UPDATE question SET viewCnt = viewCnt + 1
+		WHERE id = #{id}
+	</update>
 
 </mapper>

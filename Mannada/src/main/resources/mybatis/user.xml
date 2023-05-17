@@ -4,7 +4,7 @@
 <mapper namespace="user">
 	<select id="login" resultType="User">
 		SELECT * FROM user
-		WHERE id = #{id} AND pw = PASSWORD(#{pw})
+		WHERE id=#{id} AND pw=PASSWORD(#{pw})
 	</select>
 
 	<insert id="signup">
@@ -12,14 +12,34 @@
 		VALUES (#{id}, PASSWORD(#{pw}), #{name}, #{nickname}, NOW())
 	</insert>	
 	
-	<select id="checkId" resultType="Integer">
+	<select id="check_id" resultType="Integer">
 		SELECT COUNT(*) FROM user
-		WHERE id = #{id}
-	</select>
-	
+		WHERE id=#{id}
+	</select>	
 	
 	<insert id="add_partner">
 		INSERT INTO joins
 		VALUES (#{mannaId}, #{num})
 	</insert>
+	
+	<!-- 마이페이지 -->
+	<select id="item" resultType="User">
+		SELECT user.*, pro.id as img
+		FROM user
+		LEFT OUTER JOIN profile pro ON(user.num=pro.num)
+		WHERE user.id=#{id}
+	</select>
+	
+	<update id="modify">
+		UPDATE user 
+		SET  img_url=#{imgUrl}, nickname=#{nickname}, name =#{name}, phone=#{phone}
+		WHERE id = #{id}
+	</update>
+   
+	<update id="pw_modify">
+		UPDATE user
+		SET pw=PASSWORD(#{pw}) 
+		WHERE id=#{id} 
+	</update>
+	
 </mapper>

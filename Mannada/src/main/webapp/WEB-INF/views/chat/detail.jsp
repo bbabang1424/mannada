@@ -2,93 +2,147 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
-	
+
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>chat_detail</title>
 <jsp:include page="../header.jsp"></jsp:include>
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">
 <link href="/resources/css/style.css" rel="stylesheet">
 <link href="/resources/css/chat.css" rel="stylesheet">
 
-    <script type="text/javascript">
-    	function sendMessage(){
-            fetch("../add", {
-                method: "POST",
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(item)
-            }).then(resp => {
-                if (resp.status == 200)
-                    return resp.json();
-            }).then(result => {
-                console.log(result);
+<script>
+	let url = "ws://" + window.location.hostname + ":" + window.location.port
+			+ "/chatserver";
+	console.log(url);
 
-                const message = document.querySelector("#message");
-                const div = makeItem(result);
+	let connect = false;
+	let socket = new WebSocket(url);
 
-                console.log(message);
-                console.log(div);
+	socket.onopen = function() {
+		connect = true;
+		/* alert("서버 연결 완료"); */
+	}
 
-                message.after(div);
-            });
-    	};
-    	
-    	function makeItem(element){
-    		const div = document.createElement("div");
-    		div.classList.add("list");
-    		
-    		const head = document.createElement("p");
-    		head.textContent = ${item.nickname} + " | " + ${item.regDate};
-    		div.append(head);
-    		
-    		const content = document.createElement("p");
-    		content.textContent = ${item.content};
-    		div.append(content);
-    		
-    		return div;
-    	};
-    </script>
-    
+	socket.onclose = function() {
+		connect = false;
+		/* alert("서버 연결 종료"); */
+	}
+
+	socket.onmessage = function(msg) {
+		let message = document.getElementById("message");
+
+		message.innerHTML += "<div class='list'><p>" + msg.data + "</p></div>";
+
+		$('#message').scrollTop($('#message')[0].scrollHeight);
+	}
+
+	function send() {
+		if (connect) {
+
+			$.ajax({
+				url : "../add",
+				dataType : "json",
+				type : "post",
+				data : $("#message_form").serialize(),
+				success : function(data) {
+				}
+			});
+
+			let content = document.getElementById("content");
+
+			let today = new Date();
+
+			let year = today.getFullYear(); // 년도
+			let month = today.getMonth() + 1; // 월
+			let date = today.getDate(); // 날짜
+			let hours = today.getHours(); // 시
+			let minutes = today.getMinutes(); // 분
+
+			let regDate = year + "-" + month + "-" + date + " " + hours + ":"
+					+ minutes;
+
+			socket.send('${sessionScope.user.nickname} | ' + regDate
+					+ "</p><p>" + content.value);
+
+			content.value = "";
+			content.focus();
+		}
+	}
+
+	function enterkey() {
+		if (window.event.keyCode == 13) {
+			send();
+		}
+	}
+</script>
 </head>
 <body>
-	<div>
-		<h2>${item.title }</h2>
+	<div class="banner">
+		<ul class="banner_text">
+			<li>HOME</li>
+			<i class="bi bi-caret-right-fill"></i>
+			<li>채팅</li>
+		</ul>
 	</div>
-	
-    <div class="container">
-        <div id="room">
-	        <c:forEach var="item" items="${roomList }">
-	            <a href="../detail/${item.id}">
-	                <div class="list">
-	                    <p>${item.dDay }</p>
-	                    <p>${item.title }</p>
-	                </div>
-	            </a>
-	        </c:forEach>
-        </div>
+	<div class="container">
+		<div id="room">
+			<c:forEach var="item" items="${roomList }">
+				<div class="active-color">
+					<a href="../detail/${item.id}">
+						<div class="list_box ${item.id == id ? 'active' : ''}">
+							<p>${item.dDay}</p>
+							<p class="">${item.title }</p>
+						</div>
+					</a>
+				</div>
+			</c:forEach>
+		</div>
 
 
-        <div id="chat">
-            <div class="message" id="message">
-	            <c:forEach var="item" items="${chatList }">
-	                <div class="list">
-	                	<p>${item.nickname } | ${item.regDate }</p>
-	                	<p>${item.content }</p>
-	                </div>
-	            </c:forEach>
-            </div>
 
-            <div class="send">
-                <form action="../add" method="post">
-                    <input type="number" name="mannaId" value="${item.id}" class="hidden">
-                    <input type="text" name="content">
-                    <button type="button" onclick="sendMessage()">전송</button>
-                </form>
-            </div>
-        </div>
-    </div>
-    
-<jsp:include page="../footer.jsp"></jsp:include>
+		<div id="chat">
+			<div style="overflow: auto;">
+				<div class="message" id="message">
+
+					<c:forEach var="item" items="${chatList }">
+						<div class="list ${item.num == num ? 'my' : 'you' }">
+							<div class="user">
+								<div class="name">${item.nickname }</div>
+							</div>
+							<div class="balloon ">${item.content }</div>
+							<div class="user">
+								<p class="time">
+									<fmt:formatDate value="${item.regDate }"
+										pattern="yyyy-MM-dd hh:mm" />
+								</p>
+							</div>
+						</div>
+					</c:forEach>
+				</div>
+			</div>
+
+			<div class="send">
+				<form id="message_form">
+					<input type="number" name="mannaId" value="${item.id}"
+						class="hidden" id="mannaId"> <input type="number"
+						name="num" value="${sessionScope.user.num}" class="hidden"
+						id="num"> <input type="text" name="content" id="content"
+						onkeyup="enterkey()">
+					<button type="button" onclick="send()">전송</button>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<jsp:include page="../footer.jsp"></jsp:include>
+
+
+	<script type="text/javascript">
+		$('#message').scrollTop($('#message')[0].scrollHeight);
+	</script>
 </body>
 </html>

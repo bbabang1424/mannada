@@ -68,4 +68,21 @@ public class QuestionServiceImpl implements QuestionService {
 		return dao.answer(id);
 	}
 
+	@Override
+	public void addViewCnt(int id) {
+		dao.addViewCnt(id);
+	}
+
+	@Override
+	public void updateAnswer(Answer item) {
+		dao.updateAnswer(item);
+	}
+
+	@Transactional
+	@Override
+	public void deleteAnswer(int id) {
+		dao.unChangeStatus(id);
+		dao.deleteAnswer(id);
+	}
+
 }

@@ -160,13 +160,6 @@
 		</dependency>
 		
 		
-		<!-- 트랜잭션 추가 -->
-		<dependency>
-			<groupId>com.atomikos</groupId>
-			<artifactId>transactions</artifactId>
-			<version>3.9.3</version>
-		</dependency>
-		
 		
 		<!-- 웹소캣 -->
 		<dependency>
@@ -182,11 +175,7 @@
 			<scope>provided</scope>
 		</dependency>
 		
-		<dependency>
-			<groupId>com.googlecode.json-simple</groupId>
-			<artifactId>json-simple</artifactId>
-			<version>1.1.1</version>
-		</dependency>
+		
 		
 		<!-- json -->
 		<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-core -->
@@ -200,6 +189,14 @@
 		    <groupId>com.fasterxml.jackson.core</groupId>
 		    <artifactId>jackson-databind</artifactId>
 		    <version>2.14.2</version>
+		</dependency>
+		
+		<!-- 첨부파일관련 -->
+		<!-- https://mvnrepository.com/artifact/commons-fileupload/commons-fileupload -->
+		<dependency>
+		    <groupId>commons-fileupload</groupId>
+		    <artifactId>commons-fileupload</artifactId>
+		    <version>1.5</version>
 		</dependency>
 		
 

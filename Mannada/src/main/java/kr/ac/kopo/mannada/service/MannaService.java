@@ -3,6 +3,7 @@ package kr.ac.kopo.mannada.service;
 import java.util.List;
 
 import kr.ac.kopo.mannada.model.Manna;
+import kr.ac.kopo.mannada.model.User;
 import kr.ac.kopo.mannada.pager.Pager;
 
 public interface MannaService {
@@ -20,5 +21,9 @@ public interface MannaService {
 	void dummy();
 
 	void init();
+
+	void addViewCnt(int id);
+
+	List<User> memberList(int id);
 
 }

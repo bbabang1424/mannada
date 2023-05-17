@@ -62,7 +62,7 @@
 	padding: 0.5em;
 }
 
-#card {
+.card {
 	border: 2px solid #D3D3D3;
 	display: inline-block;
 	width: 272px;
@@ -91,7 +91,7 @@
 	margin-top: 3px;
 	margin-left: 8px;
 	position: inherit;
-	top: 12%;
+	top: 10%;
 	color: black;
 }
 
@@ -99,7 +99,7 @@
 	margin-top: 3px;
 	margin-left: 8px;
 	position: inherit;
-	top: 9%;
+	top: 7%;
 	color: black;
 }
 
@@ -138,20 +138,63 @@ div>.gauge_bar>div:first-child {
 	margin-top: 18px;
 }
 
-#sign_up_out {
-    width: 97.8%;
-    text-align: right;
+.category_select {
+	text-align: left;
+	display: inline-block;
+	width: 89.5%;
 }
 
-.sign_up_in {
+.search_box {
+	margin-left: 1%;
+	display: inline-block;
+	width: 30%;
+	padding: 7px;
+	font-size: 1rem;
+	font-weight: 400;
+	line-height: 1.5;
+	color: #212529;
+	background-color: #fff;
+	background-repeat: no-repeat;
+	background-position: right 0.75rem center;
+	background-size: 16px 12px;
+	border: 1px solid #ced4da;
+	border-radius: 0.375rem;
+	text-align: left;
+}
+
+.search {
+	display: inline-block;
+	width: 3%;
+}
+
+.search_btn {
+	margin-left: 20%;
+	border-radius: 8%;
+	width: 70px;
+	height: 40px;
+	background-color: #0080ff;
+	color: white;
+	border-color: #0080ff;
+	border: 1px solid;
+	text-align: center;
+	height: 40px;
+}
+
+.writing {
+	display: inline-block;
+	width: 10%;
+}
+
+.writing_btn {
 	background: #555555;
 	border: 1px solid #555555;
 	color: white;
-	width: 86px;
-	height: 37px;
+	width: 94px;
+	height: 40px;
 }
 
 .Category {
+	width: 89%;
 	text-align: right;
 	margin: 5px;
 	color: #09080866;
@@ -175,7 +218,7 @@ div>.gauge_bar>div:first-child {
 	border: 1px solid;
 	border-color: #ccc;
 	position: absolute;
-	top: 36%;
+	top: 35%;
 	left: 7%;
 }
 

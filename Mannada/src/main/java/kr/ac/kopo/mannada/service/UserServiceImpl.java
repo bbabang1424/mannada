@@ -1,7 +1,6 @@
 package kr.ac.kopo.mannada.service;
 
 import java.util.HashMap;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,7 +13,6 @@ public class UserServiceImpl implements UserService {
 	@Autowired
 	UserDao dao;
 	
-	
 	@Override
 	public boolean login(User user) {
 		User item = dao.login(user);
@@ -22,7 +20,6 @@ public class UserServiceImpl implements UserService {
 		if(item != null) {
 			user.setNum(item.getNum());
 			user.setPw(null);
-			user.setName(item.getName());
 			user.setNickname(item.getNickname());
 			
 			return true;
@@ -31,8 +28,7 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public void signup(User item) {
-		
+	public void signup(User item) {		
 		dao.signup(item);
 	}
 
@@ -40,8 +36,8 @@ public class UserServiceImpl implements UserService {
 	public boolean checkId(String id) {
 		if(dao.checkId(id) == 0)
 			return true;
-		
-		return false;
+		else
+			return false;
 	}
 
 	@Override

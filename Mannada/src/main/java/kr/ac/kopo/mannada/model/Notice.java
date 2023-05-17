@@ -8,6 +8,7 @@ public class Notice {
 	private String title;
 	private Date regDate;
 	private String content;
+	private int viewCnt;
 	
 	private String nickname;
 	
@@ -68,6 +69,14 @@ public class Notice {
 
 	public void setNickname(String nickname) {
 		this.nickname = nickname;
+	}
+
+	public int getViewCnt() {
+		return viewCnt;
+	}
+
+	public void setViewCnt(int viewCnt) {
+		this.viewCnt = viewCnt;
 	}
 	
 }

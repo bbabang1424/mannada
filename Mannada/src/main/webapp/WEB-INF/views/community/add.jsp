@@ -7,18 +7,28 @@
 <head>
 <meta charset="UTF-8">
 <title>community_add</title>
-<link rel="stylesheet"
-	href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">
-
 <link rel="stylesheet" href="/resources/css/community_add.css">
 <jsp:include page="../header.jsp"></jsp:include>
+<!--jQuery 최신버전-->
+<script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+<!-- bootstrap -->
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+	rel="stylesheet">
+<!-- include summernote css/js -->
+<link href="/resources/summernote/summernote-lite.css" rel="stylesheet">
+<script src="/resources/summernote/summernote-lite.js"></script>
+<script src="/resources/summernote/lang/summernote-ko-KR.js"></script>
+<script src="/resources/js/summernote.js"></script>
 </head>
 <body>
 	<div class="banner">
 		<ul class="banner_text">
 			<li>커뮤니티</li>
 			<i class="bi bi-caret-right-fill"></i>
-			<li>글 등록</li>
+			<li>글쓰기</li>
 		</ul>
 		<h3 class="page_title">커뮤니티</h3>
 		<p class="page_text">자유롭게 서로의 생각을 글로 표현 해주세요.</p>
@@ -32,15 +42,15 @@
 				</colgroup>
 
 				<tbody>
-					<tr style="border-bottom: 1px solid #ccc;">
+					<tr style="border-bottom: 1px solid #ccc; ">
 						<th id="interval">제 목</th>
-						<td class="title"><input id="title" name="title" type="text">${item.id}</td>
+						<td class="title"><input id="title" name="title" type="text" >${item.id}</td>
 					</tr>
 
 					<tr>
 						<th id="interval">본문내용</th>
 						<td class="detail">
-						<textarea id="summernote" name="content" class="control" placeholder="텍스트 내용을 입력해주세요"></textarea>
+						<textarea id="summernote" name="content"  placeholder="텍스트 내용을 입력해주세요"></textarea>
 						</td>
 					</tr>
 				</tbody>

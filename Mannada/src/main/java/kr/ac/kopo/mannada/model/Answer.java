@@ -9,7 +9,15 @@ public class Answer {
 	private Date regDate;
 	private String content;
 	
+	private String nickname;
 	
+	
+	public String getNickname() {
+		return nickname;
+	}
+	public void setNickname(String nickname) {
+		this.nickname = nickname;
+	}
 	public int getId() {
 		return id;
 	}
