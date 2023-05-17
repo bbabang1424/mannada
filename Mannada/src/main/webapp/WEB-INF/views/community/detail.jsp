@@ -127,7 +127,64 @@
 
 			<div style="border-top: 1px solid #ccc; margin-top: 2%;"></div>
 		</div>
+<<<<<<< HEAD
 
+=======
+		<!-- 댓글 쓰기  -->
+		<c:if test="${sessionScope.user != null}">
+			<!-- 댓글 입력 -->
+			<div class="replyFrom">
+				<form action="../replyAdd" method="post">
+					<div class="text-board">
+						<textarea rows="5" name="content" placeholder="로그인 후 코멘트를 달아주세요!"></textarea>
+						<input type="hidden" name="commuId" value="${item.id }">
+					</div>
+					<div class="reply_up">
+						<button class="reply_up_btn">등록</button>
+					</div>
+				</form>
+			</div>
+		</c:if>
+<<<<<<< HEAD
+	
+		<!-- 댓글 목록 -->
+		<div class="reply-box">
+			<ul id="reply-list-box">
+				<c:forEach var="reply" items="${reply }">
+					<li>
+						<div>
+							<div class="replyTag">
+								<div>
+									<span>${reply.nickname }</span>
+									<span>
+										<fmt:formatDate value="${reply.regDate}" pattern="yyyy-MM-dd hh:mm" />
+									</span>
+								</div>
+								<div>
+									<c:if test="${sessionScope.user.num == reply.num }">
+										<button class="reply-update-btn ${reply.id }" type="button" onclick="replyUpdate(${reply.id}, ${reply.commuId })">수정</button>
+										<a href="../replyDelete/${reply.id }?id=${item.id}">삭제</a>
+									</c:if>
+								</div>
+							</div>
+	
+							<div class="reply-content id${reply.id }">${reply.content }</div>
+							
+							<div>
+								
+							</div>
+						</div>
+						
+					</li>
+				</c:forEach>
+			</ul>
+		</div>
+	
+		<!-- 댓글 페이지네이션 넣고싶은데 -->
+		
+	
+=======
+>>>>>>> branch 'master' of https://github.com/xyident/mannada.git
 
 
 		<!-- 페이지네이션 형태만 잡음-->
@@ -154,7 +211,12 @@
 					</ol>
 				</td>
 			</tr>
+<<<<<<< HEAD
 		</tfoot>
+=======
+		</tfoot>	
+>>>>>>> refs/remotes/origin/master
+>>>>>>> branch 'master' of https://github.com/xyident/mannada.git
 	</div>
 
 
