@@ -54,6 +54,11 @@ public class RootController {
 
 	@RequestMapping("/")
 	public String index(Model model, Pager pager) {
+		List<Manna> mannaList = mannaService.list(pager);
+		model.addAttribute("mannaList", mannaList);
+		
+		List<Community> commuList = commuService.list(pager);
+		model.addAttribute("commuList", commuList);
 
 		return "index";
 	}
