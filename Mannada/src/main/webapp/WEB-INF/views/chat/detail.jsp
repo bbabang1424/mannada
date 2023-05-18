@@ -99,7 +99,7 @@
 								<div>${item.dDay }</div>
 							</div>
 							<div class="box_title">
-								<div>${item.title }</div>
+								<div >${item.title }</div>
 							</div>
 						</div>
 					</a>
