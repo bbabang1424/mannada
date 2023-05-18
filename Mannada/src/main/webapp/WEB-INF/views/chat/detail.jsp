@@ -109,9 +109,9 @@
 
 
 		<div id="chat">
-		<!--box_box에 넣어서 스타일 줘봤는데 안 먹음  -->
+			<!--box_box에 넣어서 스타일 줘봤는데 안 먹음  -->
 			<div class="box_box"
-				style="margin-left: 4.5%; margin-top: 4%; width: 91%; height: 81%; border: white;">
+				style="margin-left: 4.5%; margin-top: 4%; width: 91%; height: 81%; border: #9bbbd4;">
 				<div class="message" id="message">
 
 					<c:forEach var="item" items="${chatList }">

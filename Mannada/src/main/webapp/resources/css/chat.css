@@ -1,5 +1,13 @@
 @charset "UTF-8";
 
+body {
+	-ms-overflow-style: none;
+}
+
+::-webkit-scrollbar {
+	display: none;
+}
+
 * {
 	margin: 0;
 	padding: 0;
@@ -63,7 +71,7 @@
 
 .box_title {
 	width: 100%;
-	margin-top: 7%;
+	margin-top: 6%;
 	margin-bottom: 3%;
 	display: inline-block;
 	font-size: 22px;
@@ -73,21 +81,17 @@
 	background: white;
 	color: black;
 	line-height: .4em;
-	margin: 15px;
 	padding: 15px;
-	border: 1px solid white;
+	border: 1px solid #eee;
 }
 
-.list_box:hover {
+/* .list_box:hover {
 	color: blue;
-}
+} */
 
 .list_box.active {
-	/* background-color: rgba(79, 145, 240, 0.2); 까만색(0,0,0) 80% 불투명도
-	border: 1px solid rgba(79, 145, 240, 0.2);
- */
-	background: #6ca7e399;
-	border: #6ca7e399;
+	background: #eee;
+	border: #eee;
 }
 
 #room .list {
@@ -98,11 +102,12 @@
 }
 
 #chat {
-	border-color: #6ca7e399;
-	background: #9bbbd4;
+	border-color: #9bbbd4; background : #9bbbd4;
 	width: 60%;
 	border: 1px solid #ccc;
+	background: #9bbbd4;
 }
+
 .chat_chat {
 	height: 95%;
 	border: 1px solid #ccc;
@@ -126,10 +131,9 @@
 	height: 84%;
 }
 
-
 .box_box {
 	overflow: auto;
-	background: white;
+	background: #9bbbd4;
 }
 
 .chat_all {
@@ -141,7 +145,6 @@
 	background-size: 191% 103%;
 	background-position: 52% -1px;
 }
-
 
 .you .time {
 	display: inline-block;
@@ -175,12 +178,12 @@
 
 .you .balloon {
 	float: left;
-	background: #ddd;
+	background: white;
 }
 
 .my .balloon {
 	float: right;
-	background: #6ca7e399;;
+	background: #fef01b;;
 }
 
 .my .time {
