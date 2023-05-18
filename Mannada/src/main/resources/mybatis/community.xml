@@ -36,8 +36,8 @@
 
 	<insert id="add">
 		INSERT INTO community
-		(title, category, reg_date, content)
-		VALUES (#{title}, #{category}, NOW(), #{content}) 
+		(num, title, category, reg_date, content)
+		VALUES (#{num}, #{title}, #{category}, NOW(), #{content}) 
 
 		<selectKey keyColumn="id" keyProperty="id" resultType="Integer" order="AFTER">
 			SELECT LAST_INSERT_ID()
