@@ -81,6 +81,16 @@
 		DELETE FROM manna
 		WHERE id=#{id}
 	</delete>
+		
+	<insert id="add_join">
+		INSERT INTO joins
+		VALUES (#{mannaId}, #{num})
+	</insert>	
+	
+	<delete id="delete_join">
+		DELETE FROM joins
+		WHERE manna_id = #{id} AND num = #{num}
+	</delete>
 	
 	<delete id="delete_joins">
 		DELETE FROM joins

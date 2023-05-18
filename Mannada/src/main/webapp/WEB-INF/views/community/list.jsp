@@ -92,6 +92,7 @@
 						<tr
 							style="border: 1px solid #dddddd; padding-top: 10px; border-right: 1px solid White; border-left: 1px solid White;">
 							<td>${item.rnum}</td>
+							<%-- <td>${item.Category_}</td> --%>
 							<td><a style="color: black;" href="detail/${item.id}">${item.title}</a></td>
 							<td><div class="nickname">${item.nickname}</div></td>
 							<td><fmt:formatDate value="${item.regDate}"
