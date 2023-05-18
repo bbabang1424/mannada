@@ -51,7 +51,6 @@
 						</select> 
 						<input id="title" name="title" type="text">${item.id}</td>
 
-
 					</tr>
 
 
