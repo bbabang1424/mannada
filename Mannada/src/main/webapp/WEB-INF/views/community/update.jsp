@@ -48,6 +48,7 @@
 					<tr style="border-bottom: 1px solid #ccc; ">
 						<th id="interval">제 목</th>
 						<td class="title"><input id="title" name="title" type="text" value="${item.title}"></td>
+						<%-- <td class="title"><input id="Category" name="Category" type="text" value="${item.Category_}"></td> --%>
 					</tr>
 
 					<tr>
