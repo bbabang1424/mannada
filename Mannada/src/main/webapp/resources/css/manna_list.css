@@ -53,7 +53,7 @@
 .content {
 	max-width: 1220px;
 	position: relative;
-	margin: 7% auto;
+	margin: 8% 3% auto;
 }
 /* 바꿈에 따라 html과 jsp에서 적용 되는게 다름 결정 정해지면 바꾸기 */
 .card_box {
@@ -171,6 +171,7 @@ div>.gauge_bar>div:first-child {
 	display: inline-block;
 	max-width: 1200px;
 	width: 100%;
+	margin-bottom: 1%;
 }
 
 .search_box {
@@ -211,7 +212,7 @@ div>.gauge_bar>div:first-child {
 
 .writing {
 	display: inline-block;
-	width: 53%;
+	width: 51%;
 	text-align: right;
 }
 
@@ -224,21 +225,10 @@ div>.gauge_bar>div:first-child {
 	height: 40px;
 }
 
-.page_nation_item>a {
-	background-color: white;
-	color: #555555;
-	border-color: #ccc;
-	font-weight: bold;
-}
-
-.page_nation_item>a:hover {
-	background-color: #555555;
-	color: white;
-	border-color: #555555;
-}
-
 .more {
 	text-align: center;
+	margin-bottom: 5%;
+	margin-top: 3%;
 }
 
 #more-btn {
@@ -345,8 +335,8 @@ div>.gauge_bar>div:first-child {
 .model_personnel {
 	display: inline-block;
 	position: absolute;
-	left: 74%;
-	top: 71px;
+	left: 87%;
+	top: 69px;
 }
 
 .model_progress {
@@ -445,7 +435,7 @@ div>.gauge_bar>div:first-child {
 	margin-top: 2.5%;
 	height: 110px;
 	margin-right: 5%;
-	border: 1px solid #ccc;
+	border: 1px solid #eee;
 	resize: none;
 }
 

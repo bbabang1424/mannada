@@ -47,10 +47,7 @@
 	];
 
 </script>
-
 <script src="/resources/js/manna.js"></script>
-
-
 </head>
 <body>
 
@@ -63,7 +60,6 @@
 		<h3 class="page_title">글 목록</h3>
 		<p class="page_text">새로운 만남을 만날수 있는 곧 입니다. 관심있는 카드를 눌러 참여하세요!</p>
 	</div>
-
 
 	<div class="container">
 		<section class="content ">
@@ -160,22 +156,32 @@
 							<div class="model_line"></div>
 						</div>
 						<div class="model_middle">
-							<div class="model_member">참여인원</div>
 
-							<div class="member_num">
-								<!-- 참여버튼을 누른 사람의 아이디를 가져와야함-->
+							
+								<div class="model_member">참여인원</div>
+								
+								<div class="model_member_num_box_info">
+								<div id="box_info">
+								<div style="border: 1px solid #ddd;" class="member_num" id="model_member_num">
+									<!-- 참여버튼을 누른 사람의 아이디를 가져와야함-->
+									<c:forEach var="member" items="${list}">
+										<div>${member.nickname }</div>
+									</c:forEach>
+								</div>
+								</div>
+								<!-- Partic: 참여란 뜻으로 참여버튼 -->
+								<!-- 참여버튼 눌렀을때 인원 표시되게 해야 함-->
+								<div class="model_Partic">
+									<button type="button" id="join_btn"">참여</button>
+								</div>
 							</div>
 
-							<!-- Partic: 참여란 뜻으로 참여버튼 -->
-							<!-- 참여버튼 눌렀을때 인원 표시되게 해야 함-->
-							<div class="Partic">
-								<button type="button" id="join_btn"">참여</button>
-							</div>
+
 							<!--내용 안불러 와짐 -->
-							<div class="text_box">${item.content}</div>
+							<div class="model_text_box">${item.content}</div>
 						</div>
 						<!-- lower:하단이란 뜻 -->
-						<div class="lower">
+						<div class="model_lower">
 							<!-- modify:수정하다란 뜻 -->
 							<button class="button_chatting">채팅</button>
 							<a href="../update/${id}"><button class="button_modify">수정</button></a>
