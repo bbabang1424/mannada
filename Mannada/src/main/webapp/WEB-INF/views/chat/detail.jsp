@@ -35,7 +35,7 @@
 	socket.onmessage = function(msg) {
 		let message = document.getElementById("message");
 
-		message.innerHTML += "<div class='list'><p>" + msg.data + "</p></div>";
+		message.innerHTML += "<div class='list ${item.num == num ? 'my' : 'you' }'>" + msg.data + "</div>";
 
 		$('#message').scrollTop($('#message')[0].scrollHeight);
 	}
@@ -65,8 +65,9 @@
 			let regDate = year + "-" + month + "-" + date + " " + hours + ":"
 					+ minutes;
 
-			socket.send('${sessionScope.user.nickname} | ' + regDate
-					+ "</p><p>" + content.value);
+			socket.send("<div class='user'><div class='name'>" + '${sessionScope.user.nickname}'
+					+ "</div></div><div class='balloon'>" + content.value + "</div><div class='user'>"
+					 + "</div><div class='user'><p class='time'>" + regDate + "</p></div>");
 
 			content.value = "";
 			content.focus();

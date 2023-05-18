@@ -107,6 +107,21 @@ function makeItem(element){
 
                 memberBox.append(nameDiv);
             };
+            
+            document.querySelector(".model_Category").textContent = "[" + result.item.category_ + "]";
+            document.querySelector(".model_address").innerHTML = '<i class="bi bi-geo-alt"></i> ' + result.item.address;
+            document.querySelector(".model_title h4").textContent = result.item.title;
+            document.querySelector(".model_Writer").textContent = "작성자: " + result.item.nickname;
+            document.querySelector(".model_grade").innerHTML = '<i class="bi bi-star"></i> ' + result.item.star;
+            document.querySelector(".model_views").innerHTML = '<i class="bi bi-eye"></i> ' + result.item.viewCnt;
+            document.querySelector(".model_date").innerHTML = '<i class="bi bi-calendar-check"></i> ' + result.item.dDay;
+            
+            document.querySelector(".model_personnel span").textContent = "참여 현황: " + result.item.sum + "/" + result.item.member;
+            document.querySelector("#model_progress").value = result.item.sum;
+            document.querySelector("#model_progress").max = result.item.member;
+            
+            document.querySelector(".model_text_box").innerHTML = result.item.content;
+            
               
             const modal = new bootstrap.Modal(document.getElementById("detailModal"));
             modal.toggle();  
