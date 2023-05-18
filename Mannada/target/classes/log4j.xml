@@ -31,6 +31,15 @@
 	<logger name="org.springframework.web">
 		<level value="info" />
 	</logger>
+	
+	<!-- 추가 -->
+	<logger name="com.zaxxer.hikari">
+	 	<level value="info" />	
+	 </logger>
+	 
+	 <logger name="org.mariadkb.jdbc">
+	 		<level value="debug" />
+	 </logger>
 
 	<!-- Root Logger -->
 	<root>

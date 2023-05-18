@@ -9,11 +9,19 @@ public class User {
 	private String nickname;
 	private String intro;
 	private Date regDate;
-	private int Status;
+	private int status;
+	private Date delDate;
 	
 	private String img;
+	private String newPW;
 
-	
+	public String getStatus_() {
+		if(status==0)
+			return "회원가입";
+		else
+			return "회원탈퇴";
+	}
+
 	public int getNum() {
 		return num;
 	}
@@ -63,11 +71,19 @@ public class User {
 	}
 
 	public int getStatus() {
-		return Status;
+		return status;
 	}
 
 	public void setStatus(int status) {
-		Status = status;
+		this.status = status;
+	}
+
+	public Date getDelDate() {
+		return delDate;
+	}
+
+	public void setDelDate(Date delDate) {
+		this.delDate = delDate;
 	}
 
 	public String getImg() {
@@ -76,6 +92,14 @@ public class User {
 
 	public void setImg(String img) {
 		this.img = img;
+	}
+
+	public String getNewPW() {
+		return newPW;
+	}
+
+	public void setNewPW(String newPW) {
+		this.newPW = newPW;
 	}
 	
 }
