@@ -1,8 +1,10 @@
 package kr.ac.kopo.mannada.dao;
 
+import java.util.HashMap;
 import java.util.List;
 
 import kr.ac.kopo.mannada.model.Manna;
+import kr.ac.kopo.mannada.model.User;
 import kr.ac.kopo.mannada.pager.Pager;
 
 public interface MannaDao {
@@ -22,5 +24,11 @@ public interface MannaDao {
 	void deleteJoins(int id);
 
 	void addViewCnt(int id);
+
+	List<User> memberList(int id);
+
+	void addJoin(HashMap<String, Object> map);
+
+	void deleteJoin(HashMap<String, Object> map);
 
 }

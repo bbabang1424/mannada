@@ -1,6 +1,6 @@
 @charset "UTF-8";
 
-a { color: #000; }
+a { color: #000; } 
 
 :root { 
 	--swiper-navigation-size: 44px; 
@@ -61,6 +61,17 @@ a { color: #000; }
 .category-inner { max-width:1000px; margin: 0 auto;}
 .icon img { width:70px; display: block; margin-bottom: 10px; }
 
+.recent-manna {
+	display: flex;
+    padding: 0 40px;
+    justify-content: space-between;
+    align-items: baseline;
+}
+  
+.recent-manna h6 {
+	color:#0359d9; 
+}
+
 .tutorial {
 	width: 100%;
 	padding: 90px;
@@ -102,4 +113,49 @@ a { color: #000; }
 
 .layer-inner {
 	padding: 40px 20px;
+}
+
+.layer-inner form {
+	margin-top: 30px;
+}
+
+.grid-container {
+	display: grid;
+	grid-template-columns: 1fr 2fr;
+	grid-row-gap: 20px;
+	
+}
+
+.item:nth-child(1) {
+	grid-row: 2 / 4;
+}
+
+.item label {
+	display: inline;
+	text-align:right;
+}
+.item label h5 {
+	padding-right: 10px;
+}
+
+.select-option {
+	border: none;
+    width: 218px;
+    color: #0359d9;
+    border-bottom: 2px solid #0359d9;
+}
+
+.buttons { margin-top: 25px; display:flex; justify-content: space-evenly; } 
+#searchAddress {
+	background-color: #0359d9;
+    border: none;
+    color: white; 
+    padding: 6px 55px;
+}
+
+#reset {
+	background-color: #999;
+    border: none;
+    color: white; 
+    padding: 6px 55px;
 }

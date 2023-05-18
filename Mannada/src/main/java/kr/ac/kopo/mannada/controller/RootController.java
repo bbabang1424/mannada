@@ -54,6 +54,11 @@ public class RootController {
 
 	@RequestMapping("/")
 	public String index(Model model, Pager pager) {
+		List<Manna> mannaList = mannaService.list(pager);
+		model.addAttribute("mannaList", mannaList);
+		
+		List<Community> commuList = commuService.list(pager);
+		model.addAttribute("commuList", commuList);
 
 		return "index";
 	}
@@ -174,8 +179,8 @@ public class RootController {
 		**/		
 		// pager
 		Pager pager = new Pager();
-		//manna.xml의 "search eq 6"과 keyword값 설정
-		pager.setSearch(6);
+		//manna.xml의 "search eq 7"과 keyword값 설정
+		pager.setSearch(7);
 		pager.setKeyword(metro + " " + city + " " + address);
 		
 		// 만나다 검색
@@ -183,54 +188,5 @@ public class RootController {
 		model.addAttribute("mannaList", mannaList);
 		
 		return "searchAddress";
-	}
-	
-	/*마이페이지 관련*/
-	@RequestMapping("/mypage")
-	@Transactional
-	public String mypage(@SessionAttribute User user, Model model, Pager pager) {
-		
-		service.item(user); 
-		model.addAttribute("user", user);    
-		
-		pager.setPerPage(5);
-		
-		List<Manna> myManna = mannaService.list(pager);
-		model.addAttribute("myManna", myManna);
-		
-		List<Question> myQuest = questService.list(pager);
-		model.addAttribute("myQuest", myQuest);
-	      
-		List<Community> myCommu = commuService.list(pager);
-		model.addAttribute("myCommu", myCommu);
-		
-		Pager rePager = new Pager();
-		rePager.setPerPage(10);
-		rePager.setKeyword(user.getId());
-		
-		List<Reply> commuReply = commuService.replyList(rePager); //커뮤티니 service,dao 처리하기
-		model.addAttribute("commuReply", commuReply);
-
-		return "mypage";
-	}
-	   
-	   
-	/* 회원정보수정 */
-	@PostMapping("/modify/{id}")
-	public String modify(@PathVariable String id, User item) {
-	      
-		item.setId(id);
-		service.modify(item);
-	      
-		return "redirect:/mypage/" + id;
-	}
-	   
-	/* 비밀번호변경 */
-	@PostMapping("/pwModify/{id}")
-	public String pwModify(@PathVariable String id, User item) {
-		item.setId(id);
-		service.pwModify(item);
-	      
-		return "redirect:/mypage/" + id;
 	}
 }

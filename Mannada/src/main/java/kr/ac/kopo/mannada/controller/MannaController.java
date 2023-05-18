@@ -31,12 +31,7 @@ public class MannaController {
 
 
 	@GetMapping("/list")
-	public String list(Model model, Pager pager	) {
-		pager.setPerPage(12);
-		
-		List<Manna> list = service.list(pager);
-		model.addAttribute("list", list);
-		
+	public String list() {
 		return path+"list";
 	}
 	
@@ -47,6 +42,9 @@ public class MannaController {
 		
 		Manna item = service.item(id);
 		model.addAttribute("item", item);
+		
+		List<User> memberList = service.memberList(id); 
+		model.addAttribute("list", memberList);
 		
 		return path + "detail";
 	}

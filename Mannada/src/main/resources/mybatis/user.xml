@@ -8,11 +8,11 @@
 	</select>
 
 	<insert id="signup">
-		INSERT INTO user(id, pw, name, nickname, reg_date)
-		VALUES (#{id}, PASSWORD(#{pw}), #{name}, #{nickname}, NOW())
+		INSERT INTO user(id, pw, nickname, reg_date)
+		VALUES (#{id}, PASSWORD(#{pw}), #{nickname}, NOW())
 	</insert>	
 	
-	<select id="checkId" resultType="Integer">
+	<select id="check_id" resultType="Integer">
 		SELECT COUNT(*) FROM user
 		WHERE id=#{id}
 	</select>	
@@ -24,9 +24,10 @@
 	
 	<!-- 마이페이지 -->
 	<select id="item" resultType="User">
-		SELECT *
+		SELECT user.*, pro.id as img
 		FROM user
-		WHERE id=#{id}
+		LEFT OUTER JOIN profile pro ON(user.num=pro.num)
+		WHERE user.id=#{id}
 	</select>
 	
 	<update id="modify">

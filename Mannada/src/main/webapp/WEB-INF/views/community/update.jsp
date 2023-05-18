@@ -8,7 +8,7 @@
 <link rel="stylesheet"
 	href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">
 
-<link rel="stylesheet" href="/resources/css/community_update.css">
+<link rel="stylesheet" href="/resources/css/community_add.css">
 <jsp:include page="../header.jsp"></jsp:include>
 <!--jQuery 최신버전-->
 <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
@@ -47,7 +47,12 @@
 				<tbody>
 					<tr style="border-bottom: 1px solid #ccc; ">
 						<th id="interval">제 목</th>
-						<td class="title"><input id="title" name="title" type="text" value="${item.title}"></td>
+						<td class="title">
+						<select name="category" class="select">
+								<option value="1">후기</option>
+								<option value="2">소통</option>
+						</select>
+						<input id="title" name="title" type="text" value="${item.title}"></td>
 					</tr>
 
 					<tr>

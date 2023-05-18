@@ -18,6 +18,7 @@
 		<typeAlias type="kr.ac.kopo.mannada.model.Address" alias="Address"/>
 		<typeAlias type="kr.ac.kopo.mannada.model.Reply" alias="Reply"/>
 		<typeAlias type="kr.ac.kopo.mannada.model.Bookmark" alias="Bookmark"/>
+		<typeAlias type="kr.ac.kopo.mannada.model.Attach" alias="Attach"/>
 	</typeAliases>
 	 
 	<mappers>

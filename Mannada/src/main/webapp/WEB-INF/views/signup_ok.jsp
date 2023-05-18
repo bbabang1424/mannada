@@ -5,11 +5,14 @@
 <head>
 <meta charset="UTF-8">
 <jsp:include page="header.jsp"></jsp:include>
-<title>회원가입</title>
+<title>만나다</title>
 <link rel="stylesheet" href="/resources/css/signup_ok.css">
+<link rel="stylesheet" href="/resources/image/swiper1.jpg"/>
 
 </head>
 <body>
+<div class="background-image">
+</div>
 	<div class="signup-box">
         <div class="signup_ok">
         <div>

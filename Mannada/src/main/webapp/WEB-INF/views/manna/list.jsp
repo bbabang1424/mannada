@@ -7,21 +7,50 @@
 <head>
 <meta charset="UTF-8">
 
-<title>manna_list</title>
+<title>만나다</title>
 <jsp:include page="../header.jsp"></jsp:include>
 <link rel="stylesheet" href="/resources/css/manna_list.css">
 <link rel="stylesheet"
 	href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">
 
 <style type="text/css">
-.page_nation_item .page-link.active {
-	color: white !important;
-	background-color: #555555 !important;
-	border-color: #555555 !important;
+.form-select {
+	display: inline-block ! important;
+	padding: 0.375rem 2.25rem 0.375rem 0.75rem;
+	font-size: 1rem;
+	font-weight: 400;
+	line-height: 1.5;
+	background-repeat: no-repeat;
+	background-position: right 0.75rem center;
+	background-size: 16px 12px;
+	border: 1px solid #ced4da;
+	border-radius: 0.375rem;
+	width: 9% !important;
+	margin-left: 2% !important;
+}
+
+.hide {
+	display: none;
 }
 </style>
+
+<script type="text/javascript">
+	const pager_url = "/api/manna";
+	const pager_item = [
+		{name : "id"},
+		{name : "category_"},
+		{name : "title"},
+		{name : "address"},
+		{name : "dDay"},
+		{name : "sum"},
+		{name : "member"}
+	];
+
+</script>
+<script src="/resources/js/manna.js"></script>
 </head>
 <body>
+
 	<div class="banner">
 		<ul class="banner_text">
 			<li>만나다</li>
@@ -33,86 +62,139 @@
 	</div>
 
 	<div class="container">
-
 		<section class="content ">
-		<c:if test="${sessionScope.user.id != null }">
-			<div id="sign_up_out">
-				<a href="add"><button class="sign_up_in">
-						<i class="bi bi-check"></i>글쓰기
-					</button></a>
+
+			<div class="select_list">
+				<div class="selelct_lsit">
+					<div class="category_select">
+						<select name="search" class="form-select form-select-sm">
+							<option value="1">제목</option>
+							<option value="2">내용</option>
+						</select> <input class="search_box" id="category" name="category"
+							type="text">
+						<div class="search">
+							<button class="search_btn">검색</button>
+						</div>
+
+
+						<c:if test="${sessionScope.user != null }">
+							<div class="writing">
+								<a href="../../manna/add">
+									<button class="writing_btn">
+										<i class="bi bi-pencil-fill"></i> 글쓰기
+									</button>
+								</a>
+							</div>
+						</c:if>
+					</div>
+					
+					<c:if test="${sessionScope.user.id == null }">
+						<div class="writing"></div>
+					</c:if>
+
+				</div>
+
+
+
+				<div class="card_box">
+					<div id="empty_list">등록 된 게시글이 없습니다.</div>
+				</div>
+
 			</div>
-			</c:if>
 
-			<!-- <a href="../">이전</a> -->
+		</section>
+	</div>
 
-			<c:if test="${list.size() < 1 }">
-				<div>등록 된 게시글이 없습니다.</div>
-			</c:if>
-			<div class="card_box">
-				<!-- c:forEach 반복 필요할때 쓰는 것-->
-				<c:forEach var="item" items="${list}">
-					<a href="detail/${item.id}">
-					<div id="card">
-							<div>
-								<div class="Category">
-									<span>${item.category_}</span>
+
+	<div class="more">
+		<button type="button" id="more-btn">더보기</button>
+	</div>
+
+
+
+
+
+	<!-- 모달 -->
+	<div class="modal" id="detailModal" tabindex="-1">
+		<div class="modal-dialog">
+			<div class="modal-content">
+
+				<section class="model_content">
+					<div class="box">
+						<div class="first">
+							<div class="img"></div>
+
+							<div class="model_Category">[${item.category_}]</div>
+							<div class="model_address">
+								<i class="bi bi-geo-alt"></i> ${item.address}
+							</div>
+
+							<div class="model_title">
+								<h4 >${item.title}</h4>
+							</div>
+
+							<!-- 데이터 가져 올려고 했는데 오류가 나서 안됨 가져 올수 있는거 가져 옴 -->
+							<div class="model_Writer">작성자: ${item.nickname}</div>
+							<div class="model_grade">
+								<i class="bi bi-star"></i> 4.5
+								<!-- ${item.star}  -->
+							</div>
+							<div class="model_views">
+								<i class="bi bi-eye"></i>
+								<!-- ${item.view}  a-jax.. -->
+							</div>
+							<div class="model_date">
+								<i class="bi bi-calendar-check"></i> ${item.dDay}
+							</div>
+
+							<!-- personnel:인원이란 뜻 -->
+							<div class="model_personnel">
+								<!-- 참여인원/모집인원 : 참여버튼을 눌른 이용자의 인원이 나와야함-->
+								<span>참여현황:${item.sum }/${item.member}</span>
+							</div>
+							<progress id="model_progress" value="${item.sum }" max="${item.member}"> </progress>
+							<div class="model_line"></div>
+						</div>
+						<div class="model_middle">
+
+							
+								<div class="model_member">참여인원</div>
+								
+								<div class="model_member_num_box_info">
+								<div id="box_info">
+								<div style="border: 1px solid #ddd;" class="member_num" id="model_member_num">
+									<!-- 참여버튼을 누른 사람의 아이디를 가져와야함-->
+									<c:forEach var="member" items="${list}">
+										<div>${member.nickname }</div>
+									</c:forEach>
+								</div>
+								</div>
+								<!-- Partic: 참여란 뜻으로 참여버튼 -->
+								<!-- 참여버튼 눌렀을때 인원 표시되게 해야 함-->
+								<div class="model_Partic">
+									<button type="button" id="join_btn"">참여</button>
 								</div>
 							</div>
 
-							<div class="title">
 
-								<h5>
-									<strong>${item.title}</strong>
-								</h5>
-							</div>
-							<div class="line"></div>
-
-							<div class="date_day">
-								<i class="bi bi-check"></i>${item.address}
-
-							</div>
-							<div class="interval">
-								<i class="bi bi-check"></i>만나는 날: ${item.dDay}
-							</div>
-							<div class="interval">
-								<i class="bi bi-check"></i>인원: (${item.num }/${item.member})
-							</div>
-							<progress value="40" max="100">
-								<strong>Progress:10%</strong>
-							</progress>
+							<!--내용 안불러 와짐 -->
+							<div class="model_text_box">${item.content}</div>
 						</div>
-						</a>
-				</c:forEach>
+						<!-- lower:하단이란 뜻 -->
+						<div class="model_lower">
+							<!-- modify:수정하다란 뜻 -->
+							<!-- 수정이랑 목록 이동 모르겠음... -->
+							<a href="../update/${id}"><button class="button_modify">수정</button></a>
+							<a href="../delete/${id}"><button class="button_delete">삭제</button></a>
+							<button class="button_chatting">채팅</button>
+							<a href="../lsit"><button class="button_back">목록</button></a>
+						</div>
+					</div>
+				</section>
 			</div>
-		</section>
-		<tfoot>
-				<tr>
-					<td colspan="5">
-						<ol class="pagination pagination-sm justify-content-center"
-							style="margin-bottom: 5%; margin-top: 5%;">
-							<li class="page_nation_item"><a href="?page=1${pager.query}"
-								class="page-link">처음</a></li>
-							<li class="page_nation_item"><a
-								href="?page=${pager.prev}${pager.query}" class="page-link">이전</a></li>
-
-							<c:forEach var="page" items="${pager.list}">
-								<li class="page_nation_item"><a
-									href="?page=${page}${pager.query}"
-									class="page-link ${page eq pager.page ? 'active' : ''}">${page}</a></li>
-							</c:forEach>
-
-							<li class="page_nation_item"><a
-								href="?page=${pager.next}${pager.query}" class="page-link">다음</a></li>
-							<li class="page_nation_item"><a
-								href="?page=${pager.last}${pager.query}" class="page-link">마지막</a></li>
-						</ol>
-					</td>
-				</tr>
-			</tfoot>
 		</div>
+	</div>
 	
-	<!-- <a href="../">이전</a> -->
 	<jsp:include page="../footer.jsp"></jsp:include>
-</body>
 </body>
 </html>
