@@ -4,7 +4,7 @@ public class Attach {
 	//기본 구성키
 	private int id;
 	private String filename;
-	private String uuid; 
+	private String uuid;
 	//외래키
 	private int num;
 	private int noticeId;
