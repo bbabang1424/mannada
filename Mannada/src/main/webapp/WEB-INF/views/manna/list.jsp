@@ -152,7 +152,7 @@
 								<!-- 참여인원/모집인원 : 참여버튼을 눌른 이용자의 인원이 나와야함-->
 								<span>참여현황:${item.sum }/${item.member}</span>
 							</div>
-							<progress class="model_progress" value="${item.sum }" max="${item.member}"> </progress>
+							<progress id="model_progress" value="${item.sum }" max="${item.member}"> </progress>
 							<div class="model_line"></div>
 						</div>
 						<div class="model_middle">
@@ -183,9 +183,11 @@
 						<!-- lower:하단이란 뜻 -->
 						<div class="model_lower">
 							<!-- modify:수정하다란 뜻 -->
-							<button class="button_chatting">채팅</button>
+							<!-- 수정이랑 목록 이동 모르겠음... -->
 							<a href="../update/${id}"><button class="button_modify">수정</button></a>
 							<a href="../delete/${id}"><button class="button_delete">삭제</button></a>
+							<button class="button_chatting">채팅</button>
+							<a href="../lsit"><button class="button_back">목록</button></a>
 						</div>
 					</div>
 				</section>

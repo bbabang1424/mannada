@@ -29,8 +29,12 @@
 				<a href="detail/${item.id}">
 					<div class=active-color>
 						<div class="list_box">
-							<p>${item.dDay }</p>
-							<p>${item.title }</p>
+							<div class="day_day">
+								<div>${item.dDay }</div>
+							</div>
+							<div class="box_title">
+							<div>${item.title }</div>
+							</div>
 						</div>
 					</div>
 				</a>

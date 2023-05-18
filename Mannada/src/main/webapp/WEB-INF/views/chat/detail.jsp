@@ -94,8 +94,12 @@
 				<div class="active-color">
 					<a href="../detail/${item.id}">
 						<div class="list_box ${item.id == id ? 'active' : ''}">
-							<p>${item.dDay}</p>
-							<p class="">${item.title }</p>
+							<div class="day_day">
+								<div>${item.dDay }</div>
+							</div>
+							<div class="box_title">
+								<div>${item.title }</div>
+							</div>
 						</div>
 					</a>
 				</div>
@@ -105,7 +109,9 @@
 
 
 		<div id="chat">
-			<div style="overflow: auto;">
+		<!--box_box에 넣어서 스타일 줘봤는데 안 먹음  -->
+			<div class="box_box"
+				style="margin-left: 4.5%; margin-top: 4%; width: 91%; height: 81%; border: white;">
 				<div class="message" id="message">
 
 					<c:forEach var="item" items="${chatList }">

@@ -129,7 +129,7 @@
 	margin-top: 3px;
 	margin-left: 10px;
 	position: inherit;
-	top: 2%;
+	top: 3%;
 	color: black;
 }
 
@@ -146,14 +146,14 @@ progress {
 progress::-webkit-progress-bar {
 	background-color: #ccc;
 	border: 0;
-	height: 15px;
+	height: 17px;
 	border-radius: 9px;
 }
 
 progress::-webkit-progress-value {
 	background-color: #0359d9;
 	border: 0;
-	height: 20px;
+	height: 17px;
 	border-radius: 9px;
 }
 
@@ -339,28 +339,13 @@ div>.gauge_bar>div:first-child {
 	top: 69px;
 }
 
-.model_progress {
+#model_progress {
 	border: 0;
 	border-radius: 9px;
 	position: absolute;
 	top: 19%;
 	left: 74%;
 	width: 23%;
-}
-
-/* 크기 조절은 height에서 */
-.model_progress>progress::-webkit-progress-bar {
-	background-color: #ccc;
-	border: 0;
-	height: 20px;
-	border-radius: 9px;
-}
-
-.model_progress>progress ::-webkit-progress-value {
-	background-color: #0359d9;
-	border: 0;
-	height: 20px;
-	border-radius: 9px;
 }
 
 .model_line {
@@ -442,8 +427,8 @@ div>.gauge_bar>div:first-child {
 .model_lower {
 	text-align: right;
 	display: inline-block;
-	width: 101%;
-	/* margin-top: 1%; */
+	width: 100%;
+	
 	margin-top: 2%;
 }
 
@@ -451,12 +436,6 @@ div>.gauge_bar>div:first-child {
 	margin: 5px;
 	width: 50px;
 	height: 30px;
-}
-
-.button_chatting {
-	background-color: #ed9818;
-	border: #ed9818;
-	color: white;
 }
 
 .button_modify {
@@ -479,7 +458,6 @@ div>.gauge_bar>div:first-child {
 .button_delete {
 	margin: 5px;
 	width: 50px;
-	margin-right: 1%;
 	height: 30px;
 	text-align: center;
 	background-color: white;
@@ -492,4 +470,19 @@ div>.gauge_bar>div:first-child {
 	background-color: #de2f00;
 	border: #de2f00;
 	color: #fff;
+}
+
+.button_chatting {
+	background-color: #ed9818;
+	border: #ed9818;
+	color: white;
+}
+
+.button_back {
+	width: 50px;
+	height: 30px;
+	background: #ed9818;
+     border: 1px solid #ed9818;
+     color: white;
+     margin: 0.5%;
 }
