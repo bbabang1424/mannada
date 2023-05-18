@@ -4,6 +4,7 @@ public class Attach {
 	//기본 구성키
 	private int id;
 	private String filename;
+	private String uuid;
 	//외래키
 	private int num;
 	private int noticeId;
@@ -32,6 +33,12 @@ public class Attach {
 	}
 	public void setNoticeId(int noticeId) {
 		this.noticeId = noticeId;
+	}
+	public String getUuid() {
+		return uuid;
+	}
+	public void setUuid(String uuid) {
+		this.uuid = uuid;
 	}
 	
 }
