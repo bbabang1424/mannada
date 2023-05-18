@@ -8,8 +8,8 @@
 	</select>
 
 	<insert id="signup">
-		INSERT INTO user(id, pw, name, nickname, reg_date)
-		VALUES (#{id}, PASSWORD(#{pw}), #{name}, #{nickname}, NOW())
+		INSERT INTO user(id, pw, nickname, reg_date)
+		VALUES (#{id}, PASSWORD(#{pw}), #{nickname}, NOW())
 	</insert>	
 	
 	<select id="check_id" resultType="Integer">
