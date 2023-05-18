@@ -1,5 +1,6 @@
 package kr.ac.kopo.mannada.service;
 
+import java.util.HashMap;
 import java.util.List;
 
 import kr.ac.kopo.mannada.model.Manna;
@@ -25,5 +26,9 @@ public interface MannaService {
 	void addViewCnt(int id);
 
 	List<User> memberList(int id);
+
+	void addJoin(HashMap<String, Object> map);
+
+	void deleteJoin(HashMap<String, Object> map);
 
 }

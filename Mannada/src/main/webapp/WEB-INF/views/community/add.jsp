@@ -34,7 +34,7 @@
 		<p class="page_text">자유롭게 서로의 생각을 글로 표현 해주세요.</p>
 	</div>
 	<div class="container">
-			<form method="post" >
+		<form method="post">
 			<table class="box">
 				<colgroup>
 					<col width="10%" />
@@ -42,16 +42,23 @@
 				</colgroup>
 
 				<tbody>
-					<tr style="border-bottom: 1px solid #ccc; ">
+					<tr style="border-bottom: 1px solid #ccc;">
 						<th id="interval">제 목</th>
-						<td class="title"><input id="title" name="title" type="text" >${item.id}</td>
+						<td class="title" >
+						<select name="category" class="select">
+								<option value="1">후기</option>
+								<option value="2">소통</option>
+						</select> 
+						<input id="title" name="title" type="text">${item.id}</td>
+
 					</tr>
+
+
 
 					<tr>
 						<th id="interval">본문내용</th>
-						<td class="detail">
-						<textarea id="summernote" name="content"  placeholder="텍스트 내용을 입력해주세요"></textarea>
-						</td>
+						<td class="detail"><textarea id="summernote" name="content"
+								placeholder="텍스트 내용을 입력해주세요"></textarea></td>
 					</tr>
 				</tbody>
 			</table>
@@ -61,8 +68,8 @@
 				<a href="list"><button type="button" class="cancel_btn">취소</button></a>
 			</div>
 		</form>
-	 </div>
-	 <jsp:include page="../footer.jsp"></jsp:include>
+	</div>
+	<jsp:include page="../footer.jsp"></jsp:include>
 </body>
 
 </html>

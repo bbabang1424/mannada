@@ -1,9 +1,11 @@
 package kr.ac.kopo.mannada.service;
 
+import java.util.HashMap;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import kr.ac.kopo.mannada.dao.MannaDao;
 import kr.ac.kopo.mannada.model.Manna;
@@ -39,6 +41,7 @@ public class MannaServiceImpl implements MannaService {
 		dao.update(item);
 	}
 
+	@Transactional
 	@Override
 	public void delete(int id) {
 		dao.deleteJoins(id);
@@ -80,6 +83,16 @@ public class MannaServiceImpl implements MannaService {
 	@Override
 	public List<User> memberList(int id) {
 		return dao.memberList(id);
+	}
+
+	@Override
+	public void addJoin(HashMap<String, Object> map) {
+		dao.addJoin(map);
+	}
+
+	@Override
+	public void deleteJoin(HashMap<String, Object> map) {
+		dao.deleteJoin(map);
 	}
 
 }

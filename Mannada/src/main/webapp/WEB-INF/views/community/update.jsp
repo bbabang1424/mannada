@@ -47,7 +47,12 @@
 				<tbody>
 					<tr style="border-bottom: 1px solid #ccc; ">
 						<th id="interval">제 목</th>
-						<td class="title"><input id="title" name="title" type="text" value="${item.title}"></td>
+						<td class="title">
+						<select name="category" class="select">
+								<option value="1">후기</option>
+								<option value="2">소통</option>
+						</select>
+						<input id="title" name="title" type="text" value="${item.title}"></td>
 					</tr>
 
 					<tr>

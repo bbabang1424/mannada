@@ -35,8 +35,9 @@
 
 
 	<insert id="add">
-		INSERT INTO community (num, title, reg_date, content)
-		values (#{num}, #{title}, NOW(), #{content})
+		INSERT INTO community
+		(num, title, category, reg_date, content)
+		VALUES (#{num}, #{title}, #{category}, NOW(), #{content}) 
 
 		<selectKey keyColumn="id" keyProperty="id" resultType="Integer" order="AFTER">
 			SELECT LAST_INSERT_ID()
@@ -54,7 +55,7 @@
 
 	<update id="update">
 		UPDATE community
-		SET title = #{title}, content = #{content}
+		SET title = #{title}, content = #{content}, category=#{category}
 		WHERE id = #{id}
 	</update>
 

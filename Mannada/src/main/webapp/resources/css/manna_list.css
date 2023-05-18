@@ -9,7 +9,7 @@
 }
 
 .container {
-	margin: 0% auto;
+	margin: 0% 16%;
 }
 
 /*베너  */
@@ -53,9 +53,9 @@
 .content {
 	max-width: 1220px;
 	position: relative;
-	margin: 7% auto;
+	margin: 8% 3% auto;
 }
-
+/* 바꿈에 따라 html과 jsp에서 적용 되는게 다름 결정 정해지면 바꾸기 */
 .card_box {
 	max-width: 1201px;
 	margin: 0.5em;
@@ -83,6 +83,35 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;  */
+.Category {
+	width: 89%;
+	text-align: right;
+	margin: 5px;
+	color: #09080866;
+}
+
+.title {
+	color: black;
+	width: 84%;
+	margin-left: 4%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 27px;
+	word-wrap: break-word;
+	display: -webkit-box;
+	-webkit-line-clamp: 1;
+	-webkit-box-orient: vertical;
+}
+
+.line {
+	width: 82%;
+	border: 1px solid;
+	border-color: #ccc;
+	position: absolute;
+	top: 36%;
+	left: 7%;
+}
+
 .date_day {
 	display: inline-block;
 	width: 200px;
@@ -90,18 +119,17 @@
 	overflow: hidden;
 	text-overflow: ellipsis;
 	margin-top: 3px;
-	margin-left: 8px;
+	margin-left: 12px;
 	position: inherit;
-	top: 10%;
 	color: black;
-	top: 10%;
+	top: 6%;
 }
 
 .interval {
 	margin-top: 3px;
-	margin-left: 8px;
+	margin-left: 10px;
 	position: inherit;
-	top: 7%;
+	top: 2%;
 	color: black;
 }
 
@@ -109,8 +137,7 @@ progress {
 	border: 0;
 	border-radius: 9px;
 	position: absolute;
-	top: 85%;
-	left: 8%;
+	top: 82%;
 	width: 80%;
 	left: 8%;
 }
@@ -144,6 +171,7 @@ div>.gauge_bar>div:first-child {
 	display: inline-block;
 	max-width: 1200px;
 	width: 100%;
+	margin-bottom: 1%;
 }
 
 .search_box {
@@ -184,7 +212,7 @@ div>.gauge_bar>div:first-child {
 
 .writing {
 	display: inline-block;
-	width: 53%;
+	width: 51%;
 	text-align: right;
 }
 
@@ -197,50 +225,10 @@ div>.gauge_bar>div:first-child {
 	height: 40px;
 }
 
-.Category {
-	width: 89%;
-	text-align: right;
-	margin: 5px;
-	color: #09080866;
-}
-
-.title {
-	color: black;
-	width: 84%;
-	margin-left: 4%;
-	overflow: hidden;
-	text-overflow: ellipsis;
-	height: 22px;
-	word-wrap: break-word;
-	display: -webkit-box;
-	-webkit-line-clamp: 1;
-	-webkit-box-orient: vertical;
-}
-
-.line {
-	width: 214px;
-	border: 1px solid;
-	border-color: #ccc;
-	position: absolute;
-	top: 35%;
-	left: 7%;
-}
-
-.page_nation_item>a {
-	background-color: white;
-	color: #555555;
-	border-color: #ccc;
-	font-weight: bold;
-}
-
-.page_nation_item>a:hover {
-	background-color: #555555;
-	color: white;
-	border-color: #555555;
-}
-
 .more {
 	text-align: center;
+	margin-bottom: 5%;
+	margin-top: 3%;
 }
 
 #more-btn {
@@ -260,19 +248,12 @@ div>.gauge_bar>div:first-child {
 	font-weight: bold;
 }
 
-.model_content {
-	max-width: 1200px;
-	/* width: 20%; */
-	margin: 10px;
-	padding: 10px;
-}
-
 .modal-content {
 	/* max-width: 1200px; */
 	position: relative;
-	left: -33%;
+	left: -39%;
 	display: flex;
-	width: 162%;
+	width: 179%;
 	color: var(- -bs-modal-color);
 	pointer-events: auto;
 	background-color: var(- -bs-modal-bg);
@@ -284,6 +265,13 @@ div>.gauge_bar>div:first-child {
 	align-content: flex-start;
 }
 
+.model_content {
+	max-width: 1200px;
+	/* width: 20%; */
+	margin: 10px;
+	padding: 15px;
+}
+
 .img {
 	width: 130px;
 	height: 112px;
@@ -293,22 +281,22 @@ div>.gauge_bar>div:first-child {
 .model_Category {
 	display: inline-block;
 	position: absolute;
-	left: 22%;
-	top: 6%;
+	left: 178px;
+	top: 22px;
 }
 
 .model_address {
 	display: inline-block;
 	position: absolute;
-	left: 41%;
-	top: 6%;
+	left: 331px;
+	top: 22px;
 }
 
 .model_title {
 	display: inline-block;
 	position: absolute;
-	left: 22%;
-	top: 22%;
+	left: 180px;
+	top: 52px;
 }
 
 .model_Writer {
@@ -319,36 +307,36 @@ div>.gauge_bar>div:first-child {
 	overflow: hidden;
 	text-overflow: ellipsis;
 	position: absolute;
-	left: 22%;
-	top: 34%;
+	left: 180px;
+	top: 94px;
 }
 
 .model_grade {
 	display: inline-block;
 	position: absolute;
-	top: 34%;
-	left: 43%;
+	top: 94px;
+	left: 337px;
 }
 
 .model_views {
 	display: inline-block;
 	position: absolute;
-	top: 26%;
-	left: 89.5%;
+	top: 23.5%;
+	left: 92.5%;
 }
 
 .model_date {
 	display: inline-block;
 	position: absolute;
-	left: 22%;
-	top: 42%;
+	left: 180px;
+	top: 117px;
 }
 
 .model_personnel {
 	display: inline-block;
 	position: absolute;
-	left: 83%;
-	top: 64px;
+	left: 87%;
+	top: 69px;
 }
 
 .model_progress {
@@ -356,18 +344,19 @@ div>.gauge_bar>div:first-child {
 	border-radius: 9px;
 	position: absolute;
 	top: 19%;
-	left: 71%;
+	left: 74%;
 	width: 23%;
 }
+
 /* 크기 조절은 height에서 */
-.model_progress ::-webkit-progress-bar {
+.model_progress>progress::-webkit-progress-bar {
 	background-color: #ccc;
 	border: 0;
 	height: 20px;
 	border-radius: 9px;
 }
 
-.model_progress::-webkit-progress-value {
+.model_progress>progress ::-webkit-progress-value {
 	background-color: #0359d9;
 	border: 0;
 	height: 20px;
@@ -375,35 +364,47 @@ div>.gauge_bar>div:first-child {
 }
 
 .model_line {
-	width: 767px;
+	width: 837px;
 	border: 1px solid;
 	border-color: #ccc;
-	position: absolute;
-	top: 55%;
-	left: 3%;
+	margin-top: 3%;
+	margin-bottom: 2%;
 }
 
 .model_middle {
-	
+	width: 100%;
 }
 
 .model_member {
-	display: inline-block;
+	font-weight: bold;
 	position: absolute;
-	top: 48%;
+	top: 45%;
 	left: 7%;
+	display: inline-block;
 }
 
-.model_member_num {
-	position: absolute;
-	top: 42%;
-	left: 22%;
-	width: 550px;
-	height: 80px;
+.model_member_num_box_info {
+	width: 100%;
+	text-align: left;
+}
+
+#box_info {
+	display: inline-block;
+	width: 60%;
+	text-align: left;
+	margin-left: 19%;
+	margin-top: 1%;
+}
+
+#model_member_num {
+	display: inline-block;
+	width: 504px;
+	height: 90px;
 	overflow: auto;
+	position: relative;
 }
 
-.model_member_num>div {
+#model_member_num>div {
 	display: inline-block;
 	padding: 8px;
 	margin: 2px;
@@ -411,13 +412,15 @@ div>.gauge_bar>div:first-child {
 
 .model_Partic {
 	display: inline-block;
+	position: absolute;
+	top: 42%;
+	text-align: right;
+	left: 83%;
 }
 
 .model_Partic>button {
 	display: inline-block;
-	position: absolute;
-	left: 81%;
-	top: 45%;
+	width: 57%;
 	width: 120px;
 	height: 50px;
 	background-color: #0359d9;
@@ -428,20 +431,20 @@ div>.gauge_bar>div:first-child {
 
 .model_text_box {
 	overflow: auto;
-	width: 87%;
+	width: 100%;
+	margin-top: 2.5%;
 	height: 110px;
-	position: absolute;
-	top: 64%;
-	left: 6%;
-	border: 1px solid #ccc;
+	margin-right: 5%;
+	border: 1px solid #eee;
 	resize: none;
 }
 
 .model_lower {
+	text-align: right;
 	display: inline-block;
-	position: absolute;
-	top: 89%;
-	left: 74%;
+	width: 101%;
+	/* margin-top: 1%; */
+	margin-top: 2%;
 }
 
 .model_lower>button {
@@ -476,6 +479,7 @@ div>.gauge_bar>div:first-child {
 .button_delete {
 	margin: 5px;
 	width: 50px;
+	margin-right: 1%;
 	height: 30px;
 	text-align: center;
 	background-color: white;

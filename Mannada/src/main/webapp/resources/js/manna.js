@@ -8,6 +8,44 @@ window.addEventListener("load", () => {
 
         getPage(1, { search, keyword });
     });
+
+
+    document.querySelector("#join_btn").addEventListener("click", e => {
+        const mannaId = 9;
+
+        fetch("../../addJoin/" + mannaId, {
+            method: "POST",
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify()
+        }).then(resp => {
+            if (resp.status == 200)
+                return resp.json();
+        }).then(result => {
+            const joinBtn =  document.querySelector("#join_btn");
+            joinBtn.textContent = "참여 취소";
+        });
+
+    });
+
+
+    document.querySelector("#join_btn.cancle").addEventListener("click", e => {
+        const mannaId = 9;
+
+        fetch("../../deleteJoin/" + mannaId, {
+            method: "DELETE",
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify()
+        }).then(resp => {
+            if (resp.status == 200)
+                return resp.json();
+        }).then(result => {
+            const joinBtn =  document.querySelector("#join_btn");
+            joinBtn.textContent = "참여";
+        });
+
+    });
+
+
 });
 
 function getPage(page, query) {
@@ -64,10 +102,10 @@ function makeItem(element){
             const memberBox = document.querySelector(".member_num");
             
             for(var i in result.member){
-                const span = document.createElement("span");
-                span.textContent = result.member.nickname;
+                const nameDiv = document.createElement("div");
+                nameDiv.textContent = result.member.nickname;
 
-                memberBox.append(span);
+                memberBox.append(nameDiv);
             };
               
             const modal = new bootstrap.Modal(document.getElementById("detailModal"));
