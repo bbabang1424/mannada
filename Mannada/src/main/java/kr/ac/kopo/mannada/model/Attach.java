@@ -1,10 +1,10 @@
 package kr.ac.kopo.mannada.model;
 
 public class Attach {
+	//기본 구성키
 	private int id;
 	private String filename;
-	
-	/*외래키*/
+	//외래키
 	private int num;
 	private int noticeId;
 	
@@ -33,6 +33,5 @@ public class Attach {
 	public void setNoticeId(int noticeId) {
 		this.noticeId = noticeId;
 	}
-	
 	
 }
