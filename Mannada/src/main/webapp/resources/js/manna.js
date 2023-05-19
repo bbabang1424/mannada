@@ -11,9 +11,9 @@ window.addEventListener("load", () => {
 
 
     document.querySelector("#join_btn").addEventListener("click", e => {
-        const mannaId = 9;
+        const mannaId = 1;
 
-        fetch("../../addJoin/" + mannaId, {
+        fetch("/addJoin/" + mannaId, {
             method: "POST",
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify()
@@ -31,7 +31,7 @@ window.addEventListener("load", () => {
     document.querySelector("#join_btn.cancle").addEventListener("click", e => {
         const mannaId = 9;
 
-        fetch("../../deleteJoin/" + mannaId, {
+        fetch("/deleteJoin/" + mannaId, {
             method: "DELETE",
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify()
