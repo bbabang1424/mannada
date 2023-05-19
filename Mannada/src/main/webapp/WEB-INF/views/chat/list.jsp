@@ -27,7 +27,7 @@
 	<div class="container">
 		<div id="room">
 			<div class="chat_banner">
-		<div class="chat_text">ROOM<i class="bi bi-chat-dots-fill" style="position: absolute; top: 14%; left: 26%;"></i></div>
+		<div class="chat_text">ROOM<i class="bi bi-chat-fill" style="position: absolute; top: 14%; left: 26%;"></i></div>
 		</div>
 			<c:forEach var="item" items="${list }">
 				<a href="detail/${item.id}">
