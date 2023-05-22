@@ -44,14 +44,6 @@
 	</insert>
 
 
-	<select id="item" resultType="Notice">
-		SELECT notice.*, nickname
-		FROM notice
-		LEFT OUTER JOIN manager ON notice.mgr_id = manager.id
-		WHERE notice.id = #{id}
-	</select>
-
-
 	<update id="update">
 		UPDATE notice
 		SET title = #{title}, content = #{content}
@@ -61,6 +53,41 @@
 
 	<delete id="delete">
 		DELETE FROM notice
+		WHERE id = #{id}
+	</delete>
+
+
+	<select id="item" resultMap="NoticeMap">
+		SELECT notice.*, nickname, attach.id attach_id, uuid, filename
+		FROM notice
+		LEFT OUTER JOIN manager ON notice.mgr_id = manager.id
+		LEFT JOIN attach ON notice.id = attach.notice_id
+		WHERE notice.id = #{id}
+	</select>
+	
+	
+	<resultMap type="Notice" id="NoticeMap" autoMapping="true">
+		<id column="id" property="id"/>
+		
+		<collection property="attachs" column="notice_id" ofType="Attach" javaType="ArrayList" autoMapping="true">
+			<id column="attach_id" property="id"/>
+		</collection>
+	</resultMap>
+	
+	
+	<insert id="add_attach">
+		INSERT INTO attach
+		(notice_id, filename, uuid)
+		VALUES (#{noticeId}, #{filename}, #{uuid})
+	</insert>
+	
+	<delete id="delete_attach_noticeId">
+		DELETE FROM attach
+		WHERE notice_id = #{noticeId}
+	</delete>
+	
+	<delete id="delete_attach">
+		DELETE FROM attach
 		WHERE id = #{id}
 	</delete>
 

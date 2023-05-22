@@ -36,6 +36,7 @@
 	 	<level value="info" />	
 	 </logger>
 	 
+
 	 <logger name="org.mariadkb.jdbc">
 	 	<level value="debug" /> 
 	 </logger>

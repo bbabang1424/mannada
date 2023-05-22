@@ -34,7 +34,7 @@
 				<div class="Writer_date">
 					<img src="/resources/image/person.png" class="person">
 					<div class="Writer">
-						<span style="font-weight: bold;">작성자</span> ${item.nickname}
+						<span style="font-weight: bold; margin-right: 3px;">작성자</span> ${item.nickname}
 					</div>
 				</div>
 				<div class="date_views">
@@ -110,10 +110,10 @@
 										</div> <!-- 수정 삭제 -->
 										<div class="reply_btn">
 											<c:if test="${sessionScope.user.num == reply.num }">
-												<button class="reply-update-btn ${reply.id }" type="button"
-													onclick="replyUpdate(${reply.id}, ${reply.commuId }, ${reply.content })">수정</button>
-												<a href="../replyDelete/${reply.id }?id=${item.id}"><button
-														class="reply_delete">삭제</button></a>
+												<a href="../replyUpdate/${reply.id}"><button class="reply-update-btn ${reply.id }" type="button"
+													onclick="replyUpdate(${reply.id}, ${reply.commuId }, ${reply.content })">수정</button></a>
+												<a href="../replyDelete/${reply.id }?id=${item.id}">
+												<button class="reply_delete">삭제</button></a>
 											</c:if>
 										</div>
 									</td>

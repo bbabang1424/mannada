@@ -1,6 +1,9 @@
 package kr.ac.kopo.mannada.model;
 
 import java.util.Date;
+import java.util.List;
+
+import org.springframework.web.multipart.MultipartFile;
 
 public class Notice {
 	private int id;
@@ -14,6 +17,25 @@ public class Notice {
 	
 	private int rnum;
 	
+	private List<MultipartFile> attach;
+	private List<Attach> attachs;
+	
+
+	public List<MultipartFile> getAttach() {
+		return attach;
+	}
+
+	public void setAttach(List<MultipartFile> attach) {
+		this.attach = attach;
+	}
+
+	public List<Attach> getAttachs() {
+		return attachs;
+	}
+
+	public void setAttachs(List<Attach> attachs) {
+		this.attachs = attachs;
+	}
 
 	public int getRnum() {
 		return rnum;
