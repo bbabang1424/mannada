@@ -31,7 +31,7 @@
 	<logger name="org.springframework.web">
 		<level value="info" />
 	</logger>
-	
+	<!-- 교수님 요구사항(서버관련) -->
 	 <logger name="com.zaxxer.hikari">
 	 	<level value="info" />	
 	 </logger>
