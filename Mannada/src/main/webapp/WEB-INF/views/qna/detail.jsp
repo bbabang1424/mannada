@@ -28,7 +28,7 @@
 function EtValue() {
 	const form = document.write_post;
 	
-	if(form.content.value == '' || form.title.value == ' ') {
+	if(form.content.value == '' || form.content.value == ' ') {
         swal('','답변을 입력해주세요.','error')
 		form.content.focus();
 		return;

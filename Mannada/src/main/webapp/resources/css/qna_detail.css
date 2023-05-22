@@ -40,18 +40,18 @@
 }
 
 .page_title {
-	    width: 100%;
-    padding-bottom: 9px;
-    margin: 0 auto;
-    max-width: 1181px;
-    padding-top: 3px;
+	width: 100%;
+	padding-bottom: 9px;
+	margin: 0 auto;
+	max-width: 1181px;
+	padding-top: 3px;
 }
 
 .page_text {
-	    max-width: 1178px;
-    width: 100%;
-    padding-bottom: 33px;
-    margin: 0 auto;
+	max-width: 1178px;
+	width: 100%;
+	padding-bottom: 33px;
+	margin: 0 auto;
 }
 
 .box {
@@ -96,6 +96,7 @@ hr {
 }
 
 .Writer {
+	margin-bottom: 1%;
 	margin-top: 1%;
 	width: 95%;
 	display: inline-block;

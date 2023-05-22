@@ -19,16 +19,17 @@
 	rel="stylesheet">
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script type="text/javascript">
-function EtValue() {
-	const form = document.write_post;
-	
-	if(form.content.value == '' || form.content.value == ' ') {
-        swal('','수정할 내용을 입력해주세요.','error')
-		form.content.focus();
-		return;
+	function EtValue() {
+		const form = document.write_post;
+
+		if (form.content.value == '' || form.content.value == ' ') {
+			swal('', '수정할 내용을 입력해주세요.', 'error')
+			form.content.focus();
+			return;
+		}
+		form.submit();
 	}
-	form.submit();
-}</script>
+</script>
 </head>
 <body>
 	<div class="banner">

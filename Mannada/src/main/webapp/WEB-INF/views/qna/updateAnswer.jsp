@@ -26,6 +26,9 @@
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
 <script type="text/javascript">
+/*EtValue>> enrolment:등록 EtValue>
+줄여서 등록값*/
+/*제목 아이디 써야 등록*/
 function EtValue() {
 	const form = document.write_post;
 	
@@ -82,7 +85,7 @@ function EtValue() {
 			<div class="title">
 				<h4 class="title_size">${question.title }</h4>
 			</div>
-		
+
 			<div class="Writer_date_views">
 				<div class="Writer_date">
 					<div class="Writer">
@@ -106,13 +109,13 @@ function EtValue() {
 					placeholder="답변을 입력해주세요">${answer.content }</textarea>
 			</div>
 			<div class="answer_btn_lsit">
-			<a href="../detail/${question.id }"><button class="cancell_btn"
-					type="button">취소</button></a>
-			<button class="update_Answer_btn" type="button" onclick="EtValue()">수정</button>
+				<a href="../detail/${question.id }"><button class="cancell_btn"
+						type="button">취소</button></a>
+				<button class="update_Answer_btn" type="button" onclick="EtValue()">수정</button>
 			</div>
 
 		</form>
-		
+
 	</section>
 
 	<jsp:include page="../footer.jsp"></jsp:include>
