@@ -61,6 +61,17 @@ a { color: #000; }
 .category-inner { max-width:1000px; margin: 0 auto;}
 .icon img { width:70px; display: block; margin-bottom: 10px; }
 
+.recent-manna {
+	display: flex;
+    padding: 0 40px;
+    justify-content: space-between;
+    align-items: baseline;
+}
+  
+.recent-manna h6 {
+	color:#0359d9; 
+}
+
 .tutorial {
 	width: 100%;
 	padding: 90px;
@@ -104,19 +115,27 @@ a { color: #000; }
 	padding: 40px 20px;
 }
 
+.layer-inner form {
+	margin-top: 30px;
+}
+
 .grid-container {
 	display: grid;
 	grid-template-columns: 1fr 2fr;
 	grid-row-gap: 20px;
+	
 }
 
 .item:nth-child(1) {
-	grid-row: 1 / 5;
+	grid-row: 2 / 4;
 }
 
 .item label {
 	display: inline;
 	text-align:right;
+}
+.item label h5 {
+	padding-right: 10px;
 }
 
 .select-option {

@@ -53,7 +53,7 @@
 .content {
 	max-width: 1220px;
 	position: relative;
-	margin: 7% auto;
+	margin: 8% 3% auto;
 }
 /* 바꿈에 따라 html과 jsp에서 적용 되는게 다름 결정 정해지면 바꾸기 */
 .card_box {
@@ -129,7 +129,7 @@
 	margin-top: 3px;
 	margin-left: 10px;
 	position: inherit;
-	top: 2%;
+	top: 3%;
 	color: black;
 }
 
@@ -146,14 +146,14 @@ progress {
 progress::-webkit-progress-bar {
 	background-color: #ccc;
 	border: 0;
-	height: 15px;
+	height: 17px;
 	border-radius: 9px;
 }
 
 progress::-webkit-progress-value {
 	background-color: #0359d9;
 	border: 0;
-	height: 20px;
+	height: 17px;
 	border-radius: 9px;
 }
 
@@ -171,6 +171,7 @@ div>.gauge_bar>div:first-child {
 	display: inline-block;
 	max-width: 1200px;
 	width: 100%;
+	margin-bottom: 1%;
 }
 
 .search_box {
@@ -211,7 +212,7 @@ div>.gauge_bar>div:first-child {
 
 .writing {
 	display: inline-block;
-	width: 53%;
+	width: 51%;
 	text-align: right;
 }
 
@@ -224,21 +225,10 @@ div>.gauge_bar>div:first-child {
 	height: 40px;
 }
 
-.page_nation_item>a {
-	background-color: white;
-	color: #555555;
-	border-color: #ccc;
-	font-weight: bold;
-}
-
-.page_nation_item>a:hover {
-	background-color: #555555;
-	color: white;
-	border-color: #555555;
-}
-
 .more {
 	text-align: center;
+	margin-bottom: 5%;
+	margin-top: 3%;
 }
 
 #more-btn {
@@ -298,7 +288,7 @@ div>.gauge_bar>div:first-child {
 .model_address {
 	display: inline-block;
 	position: absolute;
-	left: 331px;
+	left: 230px;
 	top: 22px;
 }
 
@@ -306,7 +296,16 @@ div>.gauge_bar>div:first-child {
 	display: inline-block;
 	position: absolute;
 	left: 180px;
-	top: 52px;
+	top: 58px;
+	color: black;
+	width: 48%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 27px;
+	word-wrap: break-word;
+	display: -webkit-box;
+	-webkit-line-clamp: 1;
+	-webkit-box-orient: vertical;
 }
 
 .model_Writer {
@@ -324,15 +323,15 @@ div>.gauge_bar>div:first-child {
 .model_grade {
 	display: inline-block;
 	position: absolute;
-	top: 94px;
-	left: 337px;
+	top: 93px;
+	left: 338px;
 }
 
 .model_views {
 	display: inline-block;
 	position: absolute;
 	top: 23.5%;
-	left: 92.5%;
+	left: 93%;
 }
 
 .model_date {
@@ -345,32 +344,17 @@ div>.gauge_bar>div:first-child {
 .model_personnel {
 	display: inline-block;
 	position: absolute;
-	left: 74%;
-	top: 71px;
+	left: 86%;
+	top: 66px;
 }
 
-.model_progress {
+#model_progress {
 	border: 0;
 	border-radius: 9px;
 	position: absolute;
 	top: 19%;
 	left: 74%;
 	width: 23%;
-}
-
-/* 크기 조절은 height에서 */
-.model_progress>progress::-webkit-progress-bar {
-	background-color: #ccc;
-	border: 0;
-	height: 20px;
-	border-radius: 9px;
-}
-
-.model_progress>progress ::-webkit-progress-value {
-	background-color: #0359d9;
-	border: 0;
-	height: 20px;
-	border-radius: 9px;
 }
 
 .model_line {
@@ -402,13 +386,14 @@ div>.gauge_bar>div:first-child {
 	display: inline-block;
 	width: 60%;
 	text-align: left;
-	margin-left: 19%;
+	margin-left: 18%;
 	margin-top: 1%;
 }
 
 #model_member_num {
+	padding: 10px;
 	display: inline-block;
-	width: 504px;
+	width: 515px;
 	height: 90px;
 	overflow: auto;
 	position: relative;
@@ -440,33 +425,22 @@ div>.gauge_bar>div:first-child {
 }
 
 .model_text_box {
+	padding: 15px;
 	overflow: auto;
 	width: 100%;
 	margin-top: 2.5%;
 	height: 110px;
 	margin-right: 5%;
-	border: 1px solid #ccc;
+	border: 1px solid #eee;
 	resize: none;
 }
 
 .model_lower {
+	position: relative;
 	text-align: right;
 	display: inline-block;
-	width: 101%;
-	/* margin-top: 1%; */
+	width: 93%;
 	margin-top: 2%;
-}
-
-.model_lower>button {
-	margin: 5px;
-	width: 50px;
-	height: 30px;
-}
-
-.button_chatting {
-	background-color: #ed9818;
-	border: #ed9818;
-	color: white;
 }
 
 .button_modify {
@@ -489,7 +463,6 @@ div>.gauge_bar>div:first-child {
 .button_delete {
 	margin: 5px;
 	width: 50px;
-	margin-right: 1%;
 	height: 30px;
 	text-align: center;
 	background-color: white;
@@ -502,4 +475,26 @@ div>.gauge_bar>div:first-child {
 	background-color: #de2f00;
 	border: #de2f00;
 	color: #fff;
+}
+
+.button_back {
+	width: 50px;
+	height: 30px;
+	background: #ed9818;
+	border: 1px solid #ed9818;
+	color: white;
+	margin: 0.5%;
+}
+
+.button_chatting {
+	margin: 5px;
+	position: absolute;
+	left: 91%;
+	top: 87%;
+	width: 50px;
+	height: 30px;
+	padding-bottom: 1%;
+	background: #0359d9;
+	border: 1px solid #0359d9;
+	color: white;
 }

@@ -12,6 +12,10 @@
 <link href="/resources/css/index.css" rel="stylesheet"> 
 <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDI-f5yrjAVhR8g9-FlTF-s_kLAEnZZ55k&callback=initMap"></script>
 <script src="/resources/js/searchAddress.js"></script>
+<link rel="stylesheet" href="/resources/css/manna_list.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">
 <script>
 window.initMap = function () {
 	  const map = new google.maps.Map(document.getElementById("map"), {
@@ -73,12 +77,12 @@ window.initMap = function () {
 					</div>
 				</div>
 			</div>
-
+		<!-- 
 		<ul>
 			<li><a href="/login">사용자로그인</a></li>
 			<li><a href="/signup">회원가입</a></li>
 			<li><a href="/logout">로그아웃</a></li>
-			<li><a href="#">마이페이지</a></li>
+			<li><a href="/mypage">마이페이지</a></li>
 			<li><a>${sessionScope.user.nickname}</a></li>
 			<li><a>${sessionScope.manager.id}</a><li>
 		</ul>
@@ -93,30 +97,28 @@ window.initMap = function () {
 				</ul>
 			</li>
 		</ul>
-				
+		 -->	
 	</div>
 </div>
 
-	<div class="tutorial">
-		<div class="max-width">
-			<ul>
-				<li><img src="/resources/image/tuto1.png"><span>만나다 사이트에서<br>함께하고 싶은 모집글 등록</span></li>
-				<li><img src="/resources/image/tuto2.png"><span>다른 사람이<br>내 모집글에 참여</span></li>
-				<li><img src="/resources/image/tuto3.png"><span>그 사람과 직접 만나<br>하고 싶은 일을 하기!</span></li>
-			</ul>
+	<div>
+		<section class="content">
+		<div class="recent-manna">
+			<h4><b>최근 게시글</b></h4>
+			<div>
+				<a href="/manna/list"><h6>더보기 ></h6></a>
+				<i class="fa-solid fa-greater-than"></i>
+			</div>
 		</div>
-	</div>
-	
-		<div>
-			<c:if test="${mannaList.size() < 1 }">
+			<c:if test="${list.size() < 1 }">
 				<div>등록 된 게시글이 없습니다.</div>
 			</c:if>
 			
 			<div class="card_box">
 				<!-- c:forEach 반복 필요할때 쓰는 것-->
 				<c:forEach var="item" items="${mannaList}">
-					<a href="detail/${item.id}">
-						<div id="card">
+					<a href="/manna/detail/${item.id}">
+						<div class="card">
 							<div>
 								<div class="Category">
 									<span>${item.category_}</span>
@@ -139,7 +141,7 @@ window.initMap = function () {
 								<i class="bi bi-check"></i>만나는 날: ${item.dDay}
 							</div>
 							<div class="interval">
-								<i class="bi bi-check"></i>인원: (${item.num }/${item.member})
+								<i class="bi bi-check"></i>인원: (${item.sum }/${item.member})
 							</div>
 							<progress value="40" max="100">
 								<strong>Progress:10%</strong>
@@ -148,7 +150,21 @@ window.initMap = function () {
 					</a>
 				</c:forEach>
 			</div>
+			
+		</section>
 	</div>
+
+	<div class="tutorial">
+		<div class="max-width">
+			<ul>
+				<li><img src="/resources/image/tuto1.png"><span>만나다 사이트에서<br>함께하고 싶은 모집글 등록</span></li>
+				<li><img src="/resources/image/tuto2.png"><span>다른 사람이<br>내 모집글에 참여</span></li>
+				<li><img src="/resources/image/tuto3.png"><span>그 사람과 직접 만나<br>하고 싶은 일을 하기!</span></li>
+			</ul>
+		</div>
+	</div>
+	
+
 	
  	<div class="mannam-map"> 
 		<div id="map-layer">
@@ -159,15 +175,16 @@ window.initMap = function () {
 				<form name="addrSearch" action="searchAddress">
 					<div class="grid-container">
 						<div class="item">
+							<label>도로명</label>
+							<input type="radio" name="addressType" value="road" checked>
+							<label>지번</label>
+							<input type="radio" name="addressType" value="jibun">
+						</div>
+		
+						<div class="item">
 							<label><h5>지역</h5></label>
 						</div>
-						
-							<div class="item">
-								<label>도로명</label>
-								<input type="radio" name="addressType" value="road" checked>
-								<label>지번</label>
-								<input type="radio" name="addressType" value="jibun">
-							</div>
+		
 							<div class="item">
 								<select id="metro" name="metro" class="select-option">
 									<option value="선택하세요">선택하세요</option>				

@@ -25,6 +25,14 @@ public class Community {
 			return "없음";
 	}
 	
+	public int getCategory() {
+		return category;
+	}
+	
+	public void setCategory(int category) {
+		this.category = category;
+	}
+	
 	public int getRnum() {
 		return rnum;
 	}

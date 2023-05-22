@@ -46,8 +46,8 @@
 						<th id="interval">제 목</th>
 						<td class="title" >
 						<select name="category" class="select">
-								<option value="1">후기</option>
-								<option value="2">소통</option>
+								<option name="category" value="1">후기</option>
+								<option name="category" value="2">소통</option>
 						</select> 
 						<input id="title" name="title" type="text">${item.id}</td>
 

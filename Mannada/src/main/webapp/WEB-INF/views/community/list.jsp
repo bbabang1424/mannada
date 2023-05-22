@@ -76,7 +76,6 @@
 				<thead>
 					<tr class="table_menu">
 						<th>No</th>
-						
 						<th>카테고리</th>
 						<th>제목</th>
 						<th>작성자</th>
@@ -84,7 +83,7 @@
 						<th>조회수</th>
 					</tr>
 				</thead>
-				<tbody style="">
+				<tbody >
 					<c:if test="${list.size() < 1}">
 						<tr>
 							<td colspan="5">등록된 글이 없습니다.</td>
@@ -94,7 +93,7 @@
 						<tr
 							style="border: 1px solid #dddddd; padding-top: 10px; border-right: 1px solid White; border-left: 1px solid White;">
 							<td>${item.rnum}</td>
-							 <td>${item.category_}</td> 
+							 <td><div class="category_color"></div>${item.category_}</td> 
 							<td><a style="color: black;" href="detail/${item.id}">${item.title}</a></td>
 							<td><div class="nickname">${item.nickname}</div></td>
 							<td><fmt:formatDate value="${item.regDate}"

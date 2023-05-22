@@ -35,7 +35,8 @@
 	socket.onmessage = function(msg) {
 		let message = document.getElementById("message");
 
-		message.innerHTML += "<div class='list'><p>" + msg.data + "</p></div>";
+		message.innerHTML += "<div class='list ${item.num == num ? 'my' : 'you' }'>"
+				+ msg.data + "</div>";
 
 		$('#message').scrollTop($('#message')[0].scrollHeight);
 	}
@@ -65,8 +66,12 @@
 			let regDate = year + "-" + month + "-" + date + " " + hours + ":"
 					+ minutes;
 
-			socket.send('${sessionScope.user.nickname} | ' + regDate
-					+ "</p><p>" + content.value);
+			socket.send("<div class='user'><div class='name'>"
+					+ '${sessionScope.user.nickname}'
+					+ "</div></div><div class='balloon'>" + content.value
+					+ "</div><div class='user'>"
+					+ "</div><div class='user'><p class='time'>" + regDate
+					+ "</p></div>");
 
 			content.value = "";
 			content.focus();
@@ -88,14 +93,26 @@
 			<li>채팅</li>
 		</ul>
 	</div>
+
 	<div class="container">
 		<div id="room">
+
+			<div class="chat_banner">
+				<div class="chat_text">
+					ROOM <i class="bi bi-chat-fill" style="position: absolute; top: 14%; left: 26%;"></i>
+				</div>
+			</div>
+
 			<c:forEach var="item" items="${roomList }">
 				<div class="active-color">
 					<a href="../detail/${item.id}">
 						<div class="list_box ${item.id == id ? 'active' : ''}">
-							<p>${item.dDay}</p>
-							<p class="">${item.title }</p>
+							<div class="day_day">
+								<div>${item.dDay }</div>
+							</div>
+							<div class="box_title">
+								<div>${item.title }</div>
+							</div>
 						</div>
 					</a>
 				</div>
@@ -105,7 +122,9 @@
 
 
 		<div id="chat">
-			<div style="overflow: auto;">
+			<!--box_box에 넣어서 스타일 줘봤는데 안 먹음  -->
+			<div class="box_box"
+				style="margin-left: 4.5%; margin-top: 4%; width: 91%; height: 81%; border: #9bbbd4;">
 				<div class="message" id="message">
 
 					<c:forEach var="item" items="${chatList }">
