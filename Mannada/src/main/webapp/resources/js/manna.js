@@ -80,10 +80,11 @@ function getPage(page, query) {
                 });
             };
 
-            if(page >= result.pager.last){
+            if(page >= result.pager.last || window.location.pathname == '/'){
                 document.querySelector("#more-btn").classList.add("hide");
             }
-                
+            
+
         });
 }
 
@@ -99,6 +100,7 @@ function makeItem(element){
         fetch("/api/item/" + id)
         .then(resp => resp.json())
         .then(result => {
+            e.preventDefault();  
             const memberBox = document.querySelector(".member_num");
             
             for(var i in result.member){

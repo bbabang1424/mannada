@@ -17,4 +17,6 @@ public interface NoticeService {
 
 	void delete(int id);
 
+	boolean deleteAttach(int id);
+
 }

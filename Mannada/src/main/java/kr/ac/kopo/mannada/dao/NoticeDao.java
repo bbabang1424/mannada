@@ -2,6 +2,7 @@ package kr.ac.kopo.mannada.dao;
 
 import java.util.List;
 
+import kr.ac.kopo.mannada.model.Attach;
 import kr.ac.kopo.mannada.model.Notice;
 import kr.ac.kopo.mannada.pager.Pager;
 
@@ -18,5 +19,11 @@ public interface NoticeDao {
 	void update(Notice item);
 
 	void delete(int id);
+
+	void addAttach(Attach attach);
+
+	void deleteAttachNoticeId(int id);
+
+	boolean deleteAttach(int id);
 
 }
