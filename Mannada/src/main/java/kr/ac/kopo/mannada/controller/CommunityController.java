@@ -105,13 +105,15 @@ public class CommunityController {
 	}
 
 	
-	@ResponseBody
-	@PutMapping("/replyUpdate/{id}")
-	public Reply replyUpdate(@PathVariable int id, @RequestBody Reply item) {
-
+	@GetMapping("replyUpdate/{id}")
+	public String replyUpdate(@PathVariable int id) {
+		return path + "replyUpdate";
+	}
+	
+	@PostMapping("replyUPdate/{id}")
+	public String replyUpdate(@PathVariable int id, Reply item) {
 		service.updateReply(item);
-
-		return item;
+		return "redirect:../detail/" + item.getCommuId(); 
 	}
 	
 
