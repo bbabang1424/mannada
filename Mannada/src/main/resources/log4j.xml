@@ -37,7 +37,7 @@
 	 </logger>
 	 
 	 <logger name="org.mariadkb.jdbc">
-	 		<level value="debug" />
+	 		<level value="debug" /> 
 	 </logger>
 
 	<!-- Root Logger -->
