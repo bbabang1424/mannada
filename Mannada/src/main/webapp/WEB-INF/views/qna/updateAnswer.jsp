@@ -23,8 +23,20 @@
 <link href="/resources/summernote/summernote-lite.css" rel="stylesheet">
 <script src="/resources/summernote/summernote-lite.js"></script>
 <script src="/resources/summernote/lang/summernote-ko-KR.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
 <script type="text/javascript">
+function EtValue() {
+	const form = document.write_post;
+	
+	if(form.content.value == '' || form.content.value == ' ') {
+        swal('','수정할 내용을 입력해주세요.','error')
+		form.content.focus();
+		return;
+	}
+	form.submit();
+}
+
 	//window.onload = 
 	$(document).ready(
 			function() {
@@ -87,7 +99,7 @@
 			</div>
 		</div>
 
-		<form method="post">
+		<form method="post" name="write_post">
 			<input type="hidden" name="questionId" value="${question.id }">
 			<div class="summernote_top">
 				<textarea id="summernote" class="answer_box" name="content"
@@ -96,7 +108,7 @@
 			<div class="answer_btn_lsit">
 			<a href="../detail/${question.id }"><button class="cancell_btn"
 					type="button">취소</button></a>
-			<button class="update_Answer_btn">수정</button>
+			<button class="update_Answer_btn" type="button" onclick="EtValue()">수정</button>
 			</div>
 
 		</form>

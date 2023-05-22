@@ -22,6 +22,8 @@
 <script src="/resources/summernote/summernote-lite.js"></script>
 <script src="/resources/summernote/lang/summernote-ko-KR.js"></script>
 <script src="/resources/js/summernote.js"></script>
+<script src="/resources/js/submit.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </head>
 <body>
 	<div class="banner">
@@ -34,7 +36,7 @@
 		<p class="page_text">궁금한 점, 문의할 점을 올려주세요!</p>
 	</div>
 	<div class="container">
-			<form method="post" >
+			<form method="post" name="write_post" >
 			<table class="box">
 				<colgroup>
 					<col width="10%" />
@@ -44,7 +46,7 @@
 				<tbody>
 					<tr style="border-bottom: 1px solid #ccc; ">
 						<th id="interval">제 목</th>
-						<td class="title"><input id="title" name="title" type="text">${item.id}</td>
+						<td class="title"><input id="notice_title" name="title" type="text">${item.id}</td>
 					</tr>
 
 					<tr>
@@ -57,7 +59,7 @@
 			</table>
 			<!-- 하단:lower -->
 			<div class="lower">
-				<button class="raise_btn">등록</button>
+				<button class="raise_btn" type="button" onclick="EtValue()">등록</button>
 				<a href="list"><button type="button" class="cancel_btn">취소</button></a>
 			</div>
 		</form>

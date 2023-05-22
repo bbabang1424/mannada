@@ -12,6 +12,7 @@
 }
 /*베너  */
 .banner {
+	max-width: 1920px;
 	color: white;
 	border-color: #60a8ef;
 	width: 100%;
@@ -24,7 +25,8 @@
 }
 
 .banner_text {
-	width: 65%;
+	max-width: 1241px;
+	width: 100%;
 	margin: 0 auto;
 }
 
@@ -36,16 +38,18 @@
 }
 
 .page_title {
-	width: 62%;
-	padding-top: 21px;
-	font-weight: bolder;
-	margin: 0 auto;
+	    width: 100%;
+    padding-bottom: 9px;
+    margin: 0 auto;
+    max-width: 1181px;
+    padding-top: 3px;
 }
 
 .page_text {
-	width: 62%;
-	padding-bottom: 33px;
-	margin: 0 auto;
+	    max-width: 1178px;
+    width: 100%;
+    padding-bottom: 33px;
+    margin: 0 auto;
 }
 
 .table_menu {
@@ -62,12 +66,11 @@
 	border: 1px solid #ccc;
 	width: 13px;
 	height: 13px;
-	margin-right: 5%;	
+	margin-right: 5%;
 }
 
 .category_color_1 {
 	background: purple;
-	
 }
 
 .category_color_2 {
