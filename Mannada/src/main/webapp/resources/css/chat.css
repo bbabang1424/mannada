@@ -1,6 +1,6 @@
 @charset "UTF-8";
 
-body {
+#room #chat{
 	-ms-overflow-style: none;
 }
 
