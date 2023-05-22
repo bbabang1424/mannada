@@ -26,15 +26,24 @@
 
 	<section class="container">
 		<div class="box">
-			<div class="title">
-				<h4>${item.title}</h4>
+			<div class="category_title_box">
+				<div class="category_color category_color_${item.category}">
+
+					<div class="category_title">
+						<h1 class="comm_category">
+							<span class="b">${item.category_}</span>
+							<div class="a">${item.title}</div>
+						</h1>
+
+					</div>
+				</div>
 			</div>
 
 			<div class="Writer_date_views">
 				<div class="Writer_date">
-					<img src="/resources/image/person.png" class="person">
 					<div class="Writer">
-						<span style="font-weight: bold; margin-right: 3px;">작성자</span> ${item.nickname}
+						<span style="font-weight: bold; margin-right: 3px;">작성자</span>
+						${item.nickname}
 					</div>
 				</div>
 				<div class="date_views">

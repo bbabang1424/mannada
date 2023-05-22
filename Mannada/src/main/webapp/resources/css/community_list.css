@@ -56,13 +56,22 @@
 	border-right: 1px solid White;
 	border-left: 1px solid White;
 }
-.category_color{
-	    display: inline-block;
-    border: 1px solid #ccc;
-    width: 13px;
-    height: 13px;
-    margin-right: 5%;
-    background: coral;
+
+.category_color {
+	display: inline-block;
+	border: 1px solid #ccc;
+	width: 13px;
+	height: 13px;
+	margin-right: 5%;	
+}
+
+.category_color_1 {
+	background: purple;
+	
+}
+
+.category_color_2 {
+	background: coral;
 }
 
 .table>:not(caption)>*>* {
