@@ -74,7 +74,7 @@
 				<div class="Writer_date">
 					<img src="/resources/image/person.png" class="person">
 					<div class="Writer">
-						<span style="font-weight: bold; "> 작성자</span> ${question.nickname}
+						<span style="font-weight: bold; margin-right: 3px;"> 작성자</span> ${question.nickname}
 					</div>
 				</div>
 				<div class="date_views">
