@@ -33,7 +33,7 @@
 			<li>글 변경</li>
 		</ul>
 		<h3 class="page_title">커뮤니티</h3>
-		<p class="page_text">등록 된 글의 내용을 변경하는 공간 입니다.</p>
+		<p class="page_text">만남에 대한 후기와 소통을 자유롭게 글로 적어주세요!</p>
 	</div>
 
 	<div class="container">

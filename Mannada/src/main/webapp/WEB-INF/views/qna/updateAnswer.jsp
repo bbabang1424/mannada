@@ -68,7 +68,7 @@
 	<section class="container">
 		<div class="box">
 			<div class="title">
-				<h4>${question.title }</h4>
+				<h4 class="title_size">${question.title }</h4>
 			</div>
 		
 			<div class="Writer_date_views">

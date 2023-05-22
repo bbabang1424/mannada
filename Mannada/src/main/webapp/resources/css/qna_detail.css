@@ -98,7 +98,7 @@ hr {
 }
 
 .date_views {
-	    font-size: 0.96em;
+	font-size: 0.96em;
 	position: absolute;
 	top: 21.5%;
 	left: 83.5%;
@@ -127,7 +127,7 @@ hr {
 	background-color: #f3f3f3;
 	max-width: 1200px;
 	width: 100%;
-	padding: 0.5em;
+	padding: 1.5em;
 	border-top: 2px solid blue;
 	margin: auto;
 }

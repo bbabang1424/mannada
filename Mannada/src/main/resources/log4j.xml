@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE log4j:configuration PUBLIC "-//APACHE//DTD LOG4J 1.2//EN" "http://logging.apache.org/log4j/1.2/apidocs/org/apache/log4j/xml/doc-files/log4j.dtd">
+<!DOCTYPE log4j:configuration PUBLIC "-//APACHE//DTD LOG4J 1.2//EN" "log4j.dtd">
 <log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
 
 	<!-- Appenders -->
@@ -31,14 +31,18 @@
 	<logger name="org.springframework.web">
 		<level value="info" />
 	</logger>
-	
-	<!-- 추가 -->
-	<logger name="com.zaxxer.hikari">
+	<!-- 교수님 요구사항(서버관련) -->
+	 <logger name="com.zaxxer.hikari">
 	 	<level value="info" />	
 	 </logger>
 	 
-	 <logger name="org.mariadkb.jdbc">
+<<<<<<< HEAD
+	 <logger name="org.mariadb.jdbc">
 	 		<level value="debug" />
+=======
+	 <logger name="org.mariadkb.jdbc">
+	 	<level value="debug" /> 
+>>>>>>> branch 'master' of https://github.com/xyident/mannada.git
 	 </logger>
 
 	<!-- Root Logger -->
