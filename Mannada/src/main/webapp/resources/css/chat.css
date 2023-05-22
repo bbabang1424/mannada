@@ -57,14 +57,14 @@ body {
 }
 
 #room {
-	background: white;
-	border: 1px solid #eee;
+	background: #e9ecef;
+	border: 1px solid #e9ecef;
 	width: 40%;
 	overflow-y: auto;
 }
 
 .chat_banner {
-	background: white;
+	background: #e9ecef;
 	position: sticky;
 	width: 100%;
 	top: 0%;
@@ -95,11 +95,12 @@ body {
 }
 
 .list_box {
+	margin: 1px 1%;
 	background: white;
 	color: black;
 	line-height: .4em;
 	padding: 15px;
-	border: 1px solid #f1f3f5;
+	border: 1px solid white;
 }
 
 /* .list_box:hover {
