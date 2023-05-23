@@ -95,7 +95,7 @@ function EtValue() {
 			<div class="replyFrom">
 				<form action="../replyAdd" method="post" name="write_post">
 					<div class="text-board">
-						<textarea rows="5" name="content" placeholder="로그인 후 코멘트를 달아주세요!"></textarea>
+						<textarea name="content" placeholder="로그인 후 코멘트를 달아주세요!"></textarea>
 						<input type="hidden" name="commuId" value="${item.id }">
 					</div>
 					<div class="reply_up">
