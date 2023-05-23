@@ -68,7 +68,6 @@
 
 	<div class="container">
 		<section class="content ">
-
 			<div class="select_list">
 				<div class="selelct_lsit">
 					<div class="category_select">
@@ -106,7 +105,6 @@
 				</div>
 
 			</div>
-
 		</section>
 	</div>
 

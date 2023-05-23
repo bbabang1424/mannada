@@ -44,7 +44,10 @@ public class MannaRestController {
 	}
 	
 	@GetMapping("/api/item/{id}")
-		public Map<String, Object> item(@PathVariable int id){
+	public Map<String, Object> item(@PathVariable int id){
+		
+		service.addViewCnt(id);
+		
 		Map<String, Object> map = new HashMap<String, Object>();
 		
 		Manna item = service.item(id);

@@ -45,8 +45,8 @@
 		<h3 class="page_title">커뮤니티</h3>
 		<p class="page_text">만남에 대한 후기와 소통을 자유롭게 글로 적어주세요!</p>
 	</div>
-	<div>
-		<div class="selelct_lsit">
+	<section class="table_info">
+		<div class="selelct_list">
 			<div class="category">
 				<select name="search" class="form-select form-select-sm">
 					<option value="1">제목</option>
@@ -104,7 +104,7 @@
 				</tbody>
 			</table>
 		</div>
-	</div>
+	</section>
 
 	<tfoot>
 		<tr>

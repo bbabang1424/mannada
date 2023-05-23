@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -22,7 +22,8 @@
 <script src="/resources/summernote/summernote-lite.js"></script>
 <script src="/resources/summernote/lang/summernote-ko-KR.js"></script>
 <script src="/resources/js/summernote.js"></script>
-
+<script src="/resources/js/submit.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
 <script type="text/javascript">
 	$(function() {
@@ -55,7 +56,7 @@
 </script>
 </head>
 <body>
-<div class="banner">
+	<div class="banner">
 		<ul class="banner_text">
 			<li>공지사항</li>
 			<i class="bi bi-caret-right-fill"></i>
@@ -65,7 +66,7 @@
 		<p class="page_text">만나다의 새로운 소식, 시스템 점검등을 공지하는 공간입니다.</p>
 	</div>
 	<div class="container">
-			<form method="post" enctype="multipart/form-data">
+		<form method="post" name="write_post" enctype="multipart/form-data">
 			<table class="box">
 				<colgroup>
 					<col width="10%" />
@@ -73,18 +74,17 @@
 				</colgroup>
 
 				<tbody>
-					<tr style="border-bottom: 1px solid #ccc; ">
+					<tr style="border-bottom: 1px solid #ccc;">
 						<th id="interval">제 목</th>
-						<td class="title"><input id="title" name="title" type="text">${item.id}</td>
+						<td class="title"><input id="notice_title" name="title" type="text">${item.id}</td>
 					</tr>
 
 					<tr>
 						<th id="interval">본문내용</th>
-						<td class="detail">
-							<textarea id="summernote" name="content" placeholder="텍스트 내용을 입력해주세요"></textarea>
-						</td>
+						<td class="detail"><textarea id="summernote" name="content"
+								placeholder="텍스트 내용을 입력해주세요"></textarea></td>
 					</tr>
-					
+
 					<tr>
 						<th>첨부파일</th>
 						<td class="detail">
@@ -94,15 +94,15 @@
 					</tr>
 				</tbody>
 			</table>
-			
+
 			<!-- 하단:lower -->
 			<div class="lower">
-				<button class="raise_btn">등록</button>
+				<button class="raise_btn" type="button" onclick="EtValue()">등록</button>
 				<a href="list"><button type="button" class="cancel_btn">취소</button></a>
 			</div>
 		</form>
-	 </div>
-	 <jsp:include page="../footer.jsp"></jsp:include>
-</form>
+	</div>
+	<jsp:include page="../footer.jsp"></jsp:include>
+	</form>
 </body>
 </html>

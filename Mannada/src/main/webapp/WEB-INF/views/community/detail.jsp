@@ -11,7 +11,24 @@
 <link rel="stylesheet" href="/resources/css/community_detail.css">
 <link rel="stylesheet"
 	href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
+<script type="text/javascript">
+
+/*EtValue>> enrolment:등록 EtValue>
+줄여서 등록값*/
+/*제목 아이디 써야 등록*/
+function EtValue() {
+	const form = document.write_post;
+	
+	if(form.content.value == '' || form.content.value == ' ') {
+        swal('','코맨트를 입력해주세요.','error')
+		form.content.focus();
+		return;
+	}
+	form.submit();
+}
+</script>
 </head>
 <body>
 	<div class="banner">
@@ -76,13 +93,13 @@
 		<c:if test="${sessionScope.user != null}">
 			<!-- 댓글 입력 -->
 			<div class="replyFrom">
-				<form action="../replyAdd" method="post">
+				<form action="../replyAdd" method="post" name="write_post">
 					<div class="text-board">
-						<textarea rows="5" name="content" placeholder="로그인 후 코멘트를 달아주세요!"></textarea>
+						<textarea name="content" placeholder="로그인 후 코멘트를 달아주세요!"></textarea>
 						<input type="hidden" name="commuId" value="${item.id }">
 					</div>
 					<div class="reply_up">
-						<button class="reply_up_btn">등록</button>
+						<button class="reply_up_btn" type="button" onclick="EtValue()">등록</button>
 					</div>
 				</form>
 			</div>

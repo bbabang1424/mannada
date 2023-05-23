@@ -45,6 +45,14 @@
 			<div>
 				<div class="text_box">${item.content }</div>
 			</div>
+			
+			<div>
+				<ul>
+					<c:forEach var="attach" items="${item.attachs }">
+						<li><a href="/upload/${attach.uuid }_${attach.filename}">${attach.filename }</a></li>
+					</c:forEach>
+				</ul>
+			</div>
 		</div>
 		<!-- lower:하단이란 뜻 -->
 		<div class="lower">
