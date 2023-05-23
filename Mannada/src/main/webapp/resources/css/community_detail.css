@@ -7,19 +7,23 @@
 }
 
 .container {
+	width: 100%;
 	text-align: center;
 	max-width: 1220px;
-	margin: 7em 18%;
+	margin-top: 5%;
 }
 /*replyupdate> 위에 컨테이너 안 먹어서 class따로 줌  */
 .container_box {
+	width: 100%;
 	text-align: center;
 	max-width: 1220px;
-	margin: 7em 18%;
+	margin: auto;
+	margin-top: 5%;
 }
 
 /*베너  */
 .banner {
+	max-width: 1920px;
 	color: white;
 	border-color: #60a8ef;
 	width: 100%;
@@ -32,7 +36,8 @@
 }
 
 .banner_text {
-	width: 65%;
+	max-width: 1241px;
+	width: 100%;
 	margin: 0 auto;
 }
 
@@ -44,14 +49,16 @@
 }
 
 .page_title {
-	width: 62%;
-	padding-top: 21px;
-	font-weight: bolder;
+	width: 100%;
+	padding-bottom: 9px;
 	margin: 0 auto;
+	max-width: 1181px;
+	padding-top: 3px;
 }
 
 .page_text {
-	width: 62%;
+	max-width: 1178px;
+	width: 100%;
 	padding-bottom: 33px;
 	margin: 0 auto;
 }
@@ -166,6 +173,7 @@ h4 {
 	margin-top: 3%;
 	text-align: right;
 	width: 100%;
+	margin-bottom: 5%;
 }
 
 .lower>button {
@@ -224,8 +232,8 @@ h4 {
 	padding: 0;
 	text-align: center;
 	max-width: 1220px;
-	margin: 3em 19%;
-	width: 65%;
+	margin: auto;
+	width: 100%;
 }
 
 .reply_text {
@@ -243,9 +251,10 @@ h4 {
 }
 
 .reply-box {
+	max-width: 1200px;
 	background: #f1f3f5;
 	box-sizing: border-box;
-	width: 1200px;
+	width: 100%;
 	border-top: 2px solid #ccc;
 	border-bottom: 1px solid #ccc;
 	margin-bottom: 2%;
@@ -323,7 +332,10 @@ h4 {
 
 /* 댓글 입력 */
 .replyFrom {
+	text-align: center;
+	width: 100%;
 	max-width: 1200px;
+	margin: auto;
 	margin-top: 6%;
 	border-top: 2px solid blue;
 	border-bottom: 2px solid blue;
@@ -416,6 +428,7 @@ textarea {
 }
 /* 댓글 수정  */
 .replyupdate_box {
+	margin-bottom: 4%;
 	background: #f1f3f5;
 }
 

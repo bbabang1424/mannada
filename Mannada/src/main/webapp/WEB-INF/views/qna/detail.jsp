@@ -22,8 +22,27 @@
 <link href="/resources/summernote/summernote-lite.css" rel="stylesheet">
 <script src="/resources/summernote/summernote-lite.js"></script>
 <script src="/resources/summernote/lang/summernote-ko-KR.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
 <script type="text/javascript">
+function EtValue() {
+	const form = document.write_post;
+	
+	let content = form.content.value.replace(/&nbsp;/g, '');
+	content = content.replace("<br>", '');
+	content = content.replace("<p>", '');
+	content = content.replace("</p>", '');
+	
+	// alert(">" + content + "<");
+	
+	if(content.trim() == '') {
+        swal('','수정할 내용을 입력해주세요.','error')
+		form.content.focus();
+		return;
+	}
+	
+	form.submit();
+}
 	//window.onload = 
 	$(document).ready(
 			function() {
@@ -109,14 +128,14 @@
 
 		<!-- 삭제를 눌렀을때 다시 답글을 달수 있도록 -->
 		<c:if test="${sessionScope.manager != null && question.status == 0}">
-			<form action="../addAnswer" method="post">
+			<form action="../addAnswer" name="write_post" method="post">
 				<input type="hidden" name="questionId" value="${question.id }">
 				
 				<div class="summernote_top">
 				<textarea class="answer_box" id="summernote" name="content"></textarea>
 				</div>
 				<div class="answer_btn_info">
-				<button class="answer_btn">답변</button>
+				<button class="answer_btn" type="button" onclick="EtValue()">답변</button>
 				</div>
 			</form>
 		</c:if>
