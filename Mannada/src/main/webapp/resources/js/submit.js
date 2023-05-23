@@ -4,12 +4,18 @@
 function EtValue() {
 	const form = document.write_post;
 	
+	let content = form.content.value.replace(/&nbsp;/g, '');
+	content = content.replace("<br>", '');
+	content = content.replace("<p>", '');
+	content = content.replace("</p>", '');
+	
+
 	if(form.title.value == '' || form.title.value == ' ') {
-        swal('','글의 내용을 입력해주세요.','error')
+        swal('','제목을 입력해주세요.','error')
 		form.title.focus();
 		return;
-	}else if(form.content.value == '' || form.content.value == ' '){
-        
+	}else if(content.trim() == '') {
+        swal('','내용을 입력해주세요.','error')
 		form.content.focus();
 		return;
 	}

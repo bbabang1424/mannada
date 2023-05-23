@@ -36,15 +36,15 @@
 		const form = document.write_post;
 
 		if (form.title.value == '' || form.title.value == ' ') {
-			swal('', '글의 내용을 입력해주세요.', 'error')
+			swal('', '제목을 입력해주세요.', 'error')
 			form.title.focus();
 			return;
-		} else if (form.content.value == '' || form.content.value == ' ') {
-
+		} else if (form.member.value == '') {
+			swal('', ' 참여인원을 지정해주세요.', 'error')
 			form.content.focus();
 			return;
-		} else if (form.member.value == '') {
-
+		} else if (form.content.value == '' || form.content.value == ' ') {
+			swal('', '내용을 입력해주세요.', 'error')
 			form.content.focus();
 			return;
 		}

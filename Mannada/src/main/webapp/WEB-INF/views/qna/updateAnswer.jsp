@@ -32,11 +32,19 @@
 function EtValue() {
 	const form = document.write_post;
 	
-	if(form.content.value == '' || form.content.value == ' ') {
+	let content = form.content.value.replace(/&nbsp;/g, '');
+	content = content.replace("<br>", '');
+	content = content.replace("<p>", '');
+	content = content.replace("</p>", '');
+	
+	// alert(">" + content + "<");
+	
+	if(content.trim() == '') {
         swal('','수정할 내용을 입력해주세요.','error')
 		form.content.focus();
 		return;
 	}
+	
 	form.submit();
 }
 

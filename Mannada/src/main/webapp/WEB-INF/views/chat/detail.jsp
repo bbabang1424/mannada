@@ -83,16 +83,6 @@
 			send();
 		}
 	}
-	
-	/* const form = document.message_form;
-	
-	if(form.content.value == '' || form.content.value == ' ') {
-        swal('','수정할 내용을 입력해주세요.','error')
-		form.content.focus();
-		return;
-	}
-	form.submit();
-} */
 </script>
 </head>
 <body>
