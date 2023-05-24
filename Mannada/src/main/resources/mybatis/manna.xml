@@ -107,4 +107,11 @@
 		WHERE id = #{id}
 	</update>
 	
+	
+	<select id="join_status" resultType="Integer">
+		SELECT NVL(count(*),0)
+		FROM joins
+		WHERE manna_id = #{id} AND num = #{num}
+	</select>
+	
 </mapper>
