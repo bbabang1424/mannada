@@ -3,7 +3,9 @@
 
 <mapper namespace="manna">
 	<sql id="search">
-		SELECT * FROM manna
+		SELECT manna.*, nickname 
+		FROM manna
+		LEFT OUTER JOIN user ON(manna.num = user.num)
 		<where>
 			<if test="search eq 1">
 				title LIKE CONCAT(CONCAT('%',#{keyword}),'%')
@@ -32,8 +34,9 @@
 				det_address LIKE CONCAT(CONCAT('%',#{keyword}),'%')
 			</if>
 		</where>
-		ORDER BY id DESC
+		ORDER BY manna.id DESC
 	</sql>
+	
 	<select id="total" resultType="Integer">
 		SELECT COUNT(*) 
 		FROM (<include refid="search"></include>) manna

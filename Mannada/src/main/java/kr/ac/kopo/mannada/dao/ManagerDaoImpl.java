@@ -18,4 +18,28 @@ public class ManagerDaoImpl implements ManagerDao {
 		return sql.selectOne("manager.login", manager);
 	}
 
+
+	@Override
+	public Manager item(String id) {
+		return sql.selectOne("manager.item", id);
+	}
+
+
+	@Override
+	public void update(Manager item) {
+		sql.update("manager.update", item);
+	}
+
+
+	@Override
+	public int checkPW(Manager item) {
+		return sql.selectOne("manager.check_pw", item);
+	}
+
+
+	@Override
+	public void password(Manager item) {
+		sql.update("manager.password", item);
+	}
+
 }

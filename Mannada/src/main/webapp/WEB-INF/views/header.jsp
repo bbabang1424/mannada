@@ -68,13 +68,18 @@ $(function() {
 				
 				<div class="login">
 					<ul>
-						<c:if test="${sessionScope.user == null}">
+						<c:if test="${sessionScope.user == null && sessionScope.manager == null}">
 							<li><a href="/signup">회원가입</a></li>
 							<li><button onclick="location.href='/login'">로그인</button></li>
 						</c:if>
 						
 						<c:if test="${sessionScope.user != null}">
-							<li><a href="/mypage">${sessionScope.user.nickname}님</a></li>
+							<li><a href="/user/view/${sessionScope.user.num}">${sessionScope.user.nickname}님</a></li>
+							<li><button onclick="location.href='/logout'">로그아웃</button></li>
+						</c:if>
+						
+						<c:if test="${sessionScope.manager != null}">
+							<li><a href="/mg/view/${sessionScope.manager.num}">${sessionScope.manager.nickname}님</a></li>
 							<li><button onclick="location.href='/logout'">로그아웃</button></li>
 						</c:if>
 					</ul>
@@ -124,7 +129,15 @@ $(function() {
 			
 			<div class="header-line">
 				<ul>
-					<h5><a href="/mypage">마이페이지</h5>
+					<c:if test="${sessionScope.user == null && sessionScope.manager == null}">
+						<h5><a href="/login">마이페이지</h5>
+					</c:if>
+					<c:if test="${sessionScope.user != null}">
+						<h5><a href="/user/view/${sessionScope.user.num}">마이페이지</h5>
+					</c:if>
+					<c:if test="${sessionScope.manager != null}">
+						<h5><a href="/mg/view/${sessionScope.manager.num}">마이페이지</h5>
+					</c:if>
 				</ul>
 			</div>
 		</div>

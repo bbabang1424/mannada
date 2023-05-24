@@ -6,4 +6,21 @@
 		SELECT * FROM manager
 		WHERE id = #{id} AND pw = PASSWORD(#{pw})
 	</select>
+	
+	<update id="update">
+		UPDATE manager
+		SET nickname=#{nickname}
+		WHERE id=#{id}
+	</update>
+	
+	<update id="password">
+		UPDATE manager
+		SET pw=PASSWORD(#{newPW})
+		WHERE id=#{id} AND pw=PASSWORD(#{pw})
+	</update>
+	
+	<select id="check_pw" resultType="Integer">
+		SELECT COUNT(*) FROM user
+		WHERE id=#{id} AND pw=PASSWORD(#{pw})
+	</select>
 </mapper>

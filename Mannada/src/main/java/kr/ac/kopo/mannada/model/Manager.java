@@ -1,11 +1,13 @@
 package kr.ac.kopo.mannada.model;
 
 public class Manager {
+	private int num;
 	private String id;
 	private String pw;
 	private String name;
 	private String nickname;
 	
+	private String newPW;
 	
 	public String getId() {
 		return id;
@@ -30,6 +32,18 @@ public class Manager {
 	}
 	public void setNickname(String nickname) {
 		this.nickname = nickname;
+	}
+	public int getNum() {
+		return num;
+	}
+	public void setNum(int num) {
+		this.num = num;
+	}
+	public String getNewPW() {
+		return newPW;
+	}
+	public void setNewPW(String newPW) {
+		this.newPW = newPW;
 	}
 	
 }

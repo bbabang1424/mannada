@@ -12,8 +12,10 @@ public class User {
 	private int status;
 	private Date delDate;
 	
-	private String img;
 	private String newPW;
+	
+	private Attach attach;
+	private float starAvg;
 
 	public String getStatus_() {
 		if(status==0)
@@ -86,20 +88,28 @@ public class User {
 		this.delDate = delDate;
 	}
 
-	public String getImg() {
-		return img;
-	}
-
-	public void setImg(String img) {
-		this.img = img;
-	}
-
 	public String getNewPW() {
 		return newPW;
 	}
 
 	public void setNewPW(String newPW) {
 		this.newPW = newPW;
+	}
+
+	public Attach getAttach() {
+		return attach;
+	}
+
+	public void setAttach(Attach attach) {
+		this.attach = attach;
+	}
+
+	public float getStarAvg() {
+		return starAvg;
+	}
+
+	public void setStarAvg(float starAvg) {
+		this.starAvg = starAvg;
 	}
 	
 }
