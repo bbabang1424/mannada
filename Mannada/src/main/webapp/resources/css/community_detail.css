@@ -166,6 +166,26 @@ h4 {
 	padding-right: 2.5%;
 }
 
+.text_box_notice {
+	border-bottom: 1px solid #ccc;
+	text-align: left;
+	padding-top: 34px;
+	padding-bottom: 35px;
+	font-size: 15px;
+	line-height: 24px;
+	word-break: break-all;
+	white-space: pre-line;
+	padding-left: 2.5%;
+	padding-right: 2.5%;
+}
+
+.attach {
+	    padding: 10px;
+    text-align: left;
+    margin-left: 1.5%;
+    margin-bottom: 0.5%;
+}
+
 .lower {
 	display: inline-block;
 	margin-top: 3%;
