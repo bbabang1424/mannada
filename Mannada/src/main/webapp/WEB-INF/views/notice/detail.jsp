@@ -31,7 +31,6 @@
 			</div>
 		<div class="Writer_date_views">
 			<div class="Writer_date">
-				<img src="/resources/image/person.png" class="person">
 				<div class="Writer">
 					<span style="font-weight: bold; margin-right: 3px;"> 작성자</span> ${item.nickname}
 				</div>
@@ -43,8 +42,20 @@
 			
 			</div>
 
-			<div>
-				<div class="text_box">${item.content }</div>
+			<div class="text_box_notice">
+				<div class="">${item.content }</div>
+			</div>
+			
+			<div class="attach" >
+
+				<div>
+					<c:forEach var="attach" items="${item.attachs }">
+						<li><i class="bi bi-paperclip" style="color: #0d6efd; font-family: 'Material Icons';"></i>
+						<a href="/upload/${attach.uuid }_${attach.filename}">${attach.filename }</a>
+						</li>
+					</c:forEach>
+				</div>
+
 			</div>
 		</div>
 		<!-- lower:하단이란 뜻 -->

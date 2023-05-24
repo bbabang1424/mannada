@@ -12,6 +12,7 @@
 }
 /*베너  */
 .banner {
+	max-width: 1920px;
 	color: white;
 	border-color: #60a8ef;
 	width: 100%;
@@ -24,7 +25,8 @@
 }
 
 .banner_text {
-	width: 65%;
+	max-width: 1241px;
+	width: 100%;
 	margin: 0 auto;
 }
 
@@ -36,14 +38,16 @@
 }
 
 .page_title {
-	width: 62%;
-	padding-top: 21px;
-	font-weight: bolder;
+	width: 100%;
+	padding-bottom: 9px;
 	margin: 0 auto;
+	max-width: 1181px;
+	padding-top: 3px;
 }
 
 .page_text {
-	width: 62%;
+	max-width: 1178px;
+	width: 100%;
 	padding-bottom: 33px;
 	margin: 0 auto;
 }
@@ -87,42 +91,86 @@
 }
 
 #title {
-	    display: inline-block;
-    width: 79%;
-    padding: 0.375rem 1.25rem 0.375rem 0.75rem;
-    font-size: 1rem;
-    font-weight: 400;
-    line-height: 1.5;
-    color: #212529;
-    background-color: #fff;
-    background-repeat: no-repeat;
-    background-position: right 0.75rem center;
-    background-size: 16px 12px;
-    border: 1px solid #ced4da;
-    border-radius: 0.375rem;
-    padding: 0.375rem 1.25rem 0.375rem 0.75rem;
+	display: inline-block;
+	width: 79%;
+	padding: 0.375rem 1.25rem 0.375rem 0.75rem;
+	font-size: 1rem;
+	font-weight: 400;
+	line-height: 1.5;
+	color: #212529;
+	background-color: #fff;
+	background-repeat: no-repeat;
+	background-position: right 0.75rem center;
+	background-size: 16px 12px;
+	border: 1px solid #ced4da;
+	border-radius: 0.375rem;
+	padding: 0.375rem 1.25rem 0.375rem 0.75rem;
 }
-.select{
-margin-right: 1%;
-    display: inline-block;
-    width: 12%;
-    padding: 0.375rem 1.25rem 0.375rem 0.75rem;
-    font-size: 1rem;
-    font-weight: 400;
-    line-height: 1.5;
-    color: #212529;
-    background-color: #fff;
-    background-repeat: no-repeat;
-    background-position: right 0.75rem center;
-    background-size: 16px 12px;
-    border: 1px solid #ced4da;
-    border-radius: 0.375rem;
-    padding: 0.375rem 1.25rem 0.375rem 0.75rem;
+
+#notice_title {
+	display: inline-block;
+	width: 92%;
+	padding: 0.375rem 1.25rem 0.375rem 0.75rem;
+	font-size: 1rem;
+	font-weight: 400;
+	line-height: 1.5;
+	color: #212529;
+	background-color: #fff;
+	background-repeat: no-repeat;
+	background-position: right 0.75rem center;
+	background-size: 16px 12px;
+	border: 1px solid #ced4da;
+	border-radius: 0.375rem;
+	padding: 0.375rem 1.25rem 0.375rem 0.75rem;
 }
+
+.select {
+	margin-right: 1%;
+	display: inline-block;
+	width: 12%;
+	padding: 0.375rem 1.25rem 0.375rem 0.75rem;
+	font-size: 1rem;
+	font-weight: 400;
+	line-height: 1.5;
+	color: #212529;
+	background-color: #fff;
+	background-repeat: no-repeat;
+	background-position: right 0.75rem center;
+	background-size: 16px 12px;
+	border: 1px solid #ced4da;
+	border-radius: 0.375rem;
+	padding: 0.375rem 1.25rem 0.375rem 0.75rem;
+}
+
 .detail {
 	text-align: left;
 	padding-top: 3%;
 	padding-bottom: 3%;
+}
+
+.content_border {
+	border-bottom: 1px solid #ccc;
+}
+.add_info{
+	margin-right: 1%;
+}
+.attach {
+	text-align: left;
+	padding-top: 2%;
+	padding-bottom: 2%;
+}
+
+.attach_box {
+	width: 85%;
+	display: inline-block;
+}
+.input-group {
+	    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    width: 85% !important;
+    margin-left: 7%;
 }
 
 /*  하단 /취소,등록*/
@@ -140,6 +188,19 @@ margin-right: 1%;
 	height: 30px;
 	margin-right: 1%;
 }
+/* 가상 선택자 어떻게 해야 할까... */
+/* .title::before {
+	content: '안녕';
+	position: absolute;
+	left: 0;
+	top: 100%;
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+	transition-property: top, border-radius;
+	transition-duration: 0.5s;
+	z-index: -1;
+} */
 /* 취소 */
 .cancel_btn {
 	background-color: #de2f00;

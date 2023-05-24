@@ -17,7 +17,19 @@
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
 	rel="stylesheet">
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script type="text/javascript">
+	function EtValue() {
+		const form = document.write_post;
 
+		if (form.content.value == '' || form.content.value == ' ') {
+			swal('', '수정할 내용을 입력해주세요.', 'error')
+			form.content.focus();
+			return;
+		}
+		form.submit();
+	}
+</script>
 </head>
 <body>
 	<div class="banner">
@@ -38,7 +50,6 @@
 
 			<div class="Writer_date_views">
 				<div class="Writer_date">
-					<img src="/resources/image/person.png" class="person">
 					<div class="Writer">
 						<span style="font-weight: bold;">작성자</span> ${item.nickname}
 					</div>
@@ -57,7 +68,7 @@
 	</section>
 
 	<div class="container_box">
-		<form method="post" class="replyupdate_box">
+		<form method="post" name="write_post" class="replyupdate_box">
 			<div style="border-top: 2px solid blue;">
 				<input type="hidden" name="replyId" value="${reply.id }">
 				<div>
@@ -65,7 +76,7 @@
 						placeholder="수정할 내용을 입력해주세요.">${reply.content }</textarea>
 				</div>
 				<div class="reply_btn_lsit">
-					<button class="replyupdate_btn">수정</button>
+					<button class="replyupdate_btn" type="button" onclick="EtValue()">수정</button>
 					<a href="../detail/${reply.id} "><button class="back_btn"
 							type="button">취소</button></a>
 				</div>

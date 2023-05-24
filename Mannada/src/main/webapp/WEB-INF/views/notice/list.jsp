@@ -44,9 +44,9 @@
 		<p class="page_text">만나다의 새로운 소식, 시스템 점검등을 공지하는 공간입니다.</p>
 	</div>
 
-	
-			<div>
-		<div class="selelct_lsit">
+
+	<section class="table_info">
+		<div class="selelct_list">
 			<div class="category">
 				<select name="search" class="form-select form-select-sm">
 					<option value="1">제목</option>
@@ -82,7 +82,7 @@
 						<th>조회수</th>
 					</tr>
 				</thead>
-				<tbody >
+				<tbody>
 					<c:if test="${list.size() < 1}">
 						<tr>
 							<td colspan="5">등록된 글이 없습니다.</td>
@@ -102,33 +102,34 @@
 				</tbody>
 			</table>
 		</div>
-	</div>
-
-		<tfoot>
-			<tr>
-				<td colspan="5">
-					<ol class="pagination pagination-sm justify-content-center"
-						style="margin-bottom: 5%; margin-top: 5%; text-align: center;">
-						<li class="page_nation_item"><a href="?page=1${pager.query}"
-							class="page-link">처음</a></li>
-						<li class="page_nation_item"><a
-							href="?page=${pager.prev}${pager.query}" class="page-link">이전</a></li>
-
-						<c:forEach var="page" items="${pager.list}">
-							<li class="page_nation_item"><a
-								href="?page=${page}${pager.query}"
-								class="page-link ${page eq pager.page ? 'active' : ''}">${page}</a></li>
-						</c:forEach>
-
-						<li class="page_nation_item"><a
-							href="?page=${pager.next}${pager.query}" class="page-link">다음</a></li>
-						<li class="page_nation_item"><a
-							href="?page=${pager.last}${pager.query}" class="page-link">마지막</a></li>
-					</ol>
-				</td>
-			</tr>
-		</tfoot>
+	</section>
 	
+
+	<tfoot>
+		<tr>
+			<td colspan="5">
+				<ol class="pagination pagination-sm justify-content-center"
+					style="margin-bottom: 5%; margin-top: 5%; text-align: center;">
+					<li class="page_nation_item"><a href="?page=1${pager.query}"
+						class="page-link">처음</a></li>
+					<li class="page_nation_item"><a
+						href="?page=${pager.prev}${pager.query}" class="page-link">이전</a></li>
+
+					<c:forEach var="page" items="${pager.list}">
+						<li class="page_nation_item"><a
+							href="?page=${page}${pager.query}"
+							class="page-link ${page eq pager.page ? 'active' : ''}">${page}</a></li>
+					</c:forEach>
+
+					<li class="page_nation_item"><a
+						href="?page=${pager.next}${pager.query}" class="page-link">다음</a></li>
+					<li class="page_nation_item"><a
+						href="?page=${pager.last}${pager.query}" class="page-link">마지막</a></li>
+				</ol>
+			</td>
+		</tr>
+	</tfoot>
+
 
 	<!-- <a href="../">이전</a> -->
 	<jsp:include page="../footer.jsp"></jsp:include></body>

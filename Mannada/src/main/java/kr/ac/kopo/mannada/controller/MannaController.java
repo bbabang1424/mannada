@@ -100,16 +100,6 @@ public class MannaController {
 		
 		return "redirect:list";
 	}
-	
-	@PostMapping("/addPartner/{id}")
-	public String addPartner(@PathVariable int id, @SessionAttribute User user) {
-		
-		HashMap<String, Object> map = new HashMap<>();
-		map.put("mannaId", id);
-		map.put("num", user.getNum());
-		userService.addPartner(map);
-		
-		return "redirect:list";
-	}
+
 
 }
