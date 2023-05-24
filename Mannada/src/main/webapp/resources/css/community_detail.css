@@ -70,7 +70,7 @@
 }
 
 .category_title_box {
-	padding: 1.5% 1% 1.5% 1.5%;
+	padding: 1.5% 1% 1.5% 2%;
 	text-align: left;
 	width: 100%;
 	display: inline-block;
@@ -115,13 +115,15 @@
 }
 
 .title {
-	width: 100%;
+	width: 96%;
 	display: inline-block;
 	text-align: left;
 }
 
 h4 {
-	margin: 1%;
+	margin-top: 1%;
+	font-size: 20px;
+	margin-bottom: 1%;
 }
 
 .Writer_date_views {

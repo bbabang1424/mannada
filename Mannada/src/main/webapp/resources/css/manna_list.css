@@ -70,6 +70,14 @@
 	padding: 0.5em;
 }
 
+#empty_list {
+	   margin-bottom:5%;
+	width: 100%;
+	max-width: 1220px;
+	text-align: left;
+	padding: 0.5em;
+}
+
 .card {
 	border: 2px solid #D3D3D3;
 	display: inline-block;
@@ -304,7 +312,7 @@ div>.gauge_bar>div:first-child {
 	display: inline-block;
 	position: absolute;
 	left: 180px;
-	top: 58px;
+	top: 55px;
 	color: black;
 	width: 48%;
 	overflow: hidden;
@@ -325,7 +333,7 @@ div>.gauge_bar>div:first-child {
 	text-overflow: ellipsis;
 	position: absolute;
 	left: 180px;
-	top: 94px;
+	top: 93px;
 }
 
 .model_grade {
@@ -346,7 +354,7 @@ div>.gauge_bar>div:first-child {
 	display: inline-block;
 	position: absolute;
 	left: 180px;
-	top: 117px;
+	top: 116px;
 }
 
 .model_personnel {

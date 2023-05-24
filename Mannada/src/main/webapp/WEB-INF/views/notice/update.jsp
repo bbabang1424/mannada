@@ -47,7 +47,7 @@
 				<tbody>
 					<tr style="border-bottom: 1px solid #ccc;">
 						<th id="interval">제 목</th>
-						<td class="title"><input id="title" name="title" type="text"
+						<td class="title"><input id="notice_title" name="title" type="text"
 							value="${item.title}"></td>
 					</tr>
 
