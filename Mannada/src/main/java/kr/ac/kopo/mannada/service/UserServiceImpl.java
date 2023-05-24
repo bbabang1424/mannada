@@ -99,7 +99,7 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public void password(User item) {
+	public void password(User item) { 
 		dao.password(item);
 	}
 

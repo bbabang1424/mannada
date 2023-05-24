@@ -58,7 +58,7 @@ $(function() {
 			type: 'POST',
 			data: JSON.stringify({ pw: pw}),
 			success: function(pw) {
-				if(pw == 'OK') {
+				if(pw == 'OK') { 
 					console.log(pw);
 					swal("비밀번호 변경이 가능합니다", '', 'success');
 					return isCheck3 = $('#pw').val();

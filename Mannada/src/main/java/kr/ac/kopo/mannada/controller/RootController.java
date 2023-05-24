@@ -114,7 +114,7 @@ public class RootController {
 		service.signup(item);
 		
 		return "signup_ok";
-	}
+	} 
 
 	/* 회원가입 시 중복 아이디 확인. */
 	@ResponseBody

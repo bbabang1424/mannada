@@ -11,6 +11,6 @@ public interface ManagerService {
 	void update(Manager item);
 	
 	boolean checkPW(Manager item);
-
+ 
 	void password(Manager item);
 }

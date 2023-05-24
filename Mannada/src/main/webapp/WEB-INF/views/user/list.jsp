@@ -77,7 +77,7 @@
 									href="?page=${pager.next}${pager.query}" class="page-link">▶</a></li>
 								<li class="page-item"><a
 									href="?page=${pager.last}${pager.query}" class="page-link">마지막</a></li>
-							</ul>
+							</ul> 
 						</td>
 					</tr>
 				</tfoot>

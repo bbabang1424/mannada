@@ -50,7 +50,7 @@ public class UserController {
 	QuestionService qnaService;
 	
 	/* 회원 관리 */
-	@GetMapping("/list")
+	@GetMapping("/list") 
 	public String list(Model model, Pager pager) {
 		pager.setPerPage(10);
 		

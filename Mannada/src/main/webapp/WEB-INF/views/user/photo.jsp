@@ -19,7 +19,7 @@
 	<div class="container">
 		<div>
 			<h3>프로필 등록</h3>
-		</div>
+		</div> 
 		<div>
 			<form name="photoInfo_from" method="post" style="width:700px" enctype="multipart/form-data">
 	            <div>

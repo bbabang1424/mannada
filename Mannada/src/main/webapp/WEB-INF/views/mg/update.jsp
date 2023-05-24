@@ -106,7 +106,7 @@ $(function() {
 	<div class="container">
 		<div>
 			<h3>정보변경</h3>
-		</div>
+		</div> 
 		<div>
 			<form name="updateInfo_from" method="post">
 				<div>
@@ -125,7 +125,7 @@ $(function() {
 				</div>
 			</form>
 		</div>
-	</div>
+	</div> 
 </body>
 <jsp:include page="../footer.jsp"></jsp:include>
 </html>

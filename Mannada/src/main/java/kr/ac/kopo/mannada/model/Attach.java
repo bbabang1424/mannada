@@ -5,7 +5,7 @@ public class Attach {
 	private int id;
 	private String filename;
 	private String uuid;
-	//외래키
+	//외래키  
 	private int num;
 	private int noticeId;
 	

@@ -86,7 +86,7 @@ public class UserDaoImpl implements UserDao {
 
 	@Override
 	public void password(User item) {
-		sql.update("user.password", item);
+		sql.update("user.password", item);  
 	}
 
 	@Override

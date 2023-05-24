@@ -65,7 +65,7 @@ public class ManagerController {
 
 	@PostMapping("/update/{num}")
 	public String update(@PathVariable String id, Manager item, @SessionAttribute Manager manager) {
-		item.setId(item.getId());
+		item.setId(item.getId()); 
 		
 		service.update(item);
 		

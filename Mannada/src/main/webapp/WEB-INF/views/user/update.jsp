@@ -26,7 +26,7 @@ $(function() {
 		//console.dir(form.nickname);
 		
 		$('#nick').click(function(){
-			if (form.nickname.value == '') {
+			if (form.nickname.value == '') { 
 				swal('회원정보변경', '닉네임을 입력해주세요', 'info');
 	            form.nickname.focus();
 	            return;

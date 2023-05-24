@@ -9,7 +9,7 @@ public interface ManagerDao {
 	Manager item(String id);
 
 	void update(Manager item);
-
+ 
 	int checkPW(Manager item);
 
 	void password(Manager item);

@@ -121,7 +121,7 @@ $(function() {
 						</tr>
 					</c:forEach>
 				</tbody>
-				<tfoot>
+				<tfoot> 
 					<tr>
 						<td colspan="5">
 							<ol class="pagination pagination-sm justify-content-center"

@@ -9,7 +9,7 @@
 	
 	<update id="update">
 		UPDATE manager
-		SET nickname=#{nickname}
+		SET nickname=#{nickname} 
 		WHERE id=#{id}
 	</update>
 	
@@ -20,7 +20,7 @@
 	</update>
 	
 	<select id="check_pw" resultType="Integer">
-		SELECT COUNT(*) FROM user
-		WHERE id=#{id} AND pw=PASSWORD(#{pw})
+		SELECT COUNT(*) FROM user 
+		WHERE id=#{id} AND pw=PASSWORD(#{pw}) 
 	</select>
 </mapper>

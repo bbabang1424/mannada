@@ -12,7 +12,7 @@ public class User {
 	private int status;
 	private Date delDate;
 	
-	private String newPW;
+	private String newPW;  
 	
 	private Attach attach;
 	private float starAvg;

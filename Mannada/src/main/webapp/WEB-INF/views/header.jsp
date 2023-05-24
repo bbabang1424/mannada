@@ -83,7 +83,7 @@ $(function() {
 							<li><button onclick="location.href='/logout'">로그아웃</button></li>
 						</c:if>
 					</ul>
-				</div>
+				</div> 
 			</div>
 				
 			<div id="ham">

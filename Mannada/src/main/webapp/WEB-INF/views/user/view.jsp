@@ -355,7 +355,7 @@ $(function() {
 			</table>
 			<table border="1">
 				<thead>
-					<tr>
+					<tr> 
 						<th>No</th>
 						<th>질문</th>
 						<th>작성일</th>

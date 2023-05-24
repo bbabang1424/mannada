@@ -30,7 +30,7 @@ public interface UserDao {
 	
 	List<Review> reviewList(int num);
 
-	void reviewAdd(Review review);
+	void reviewAdd(Review review); 
 
 	void reviewDelete(int id);
 

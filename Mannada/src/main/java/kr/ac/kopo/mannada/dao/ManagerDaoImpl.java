@@ -18,7 +18,7 @@ public class ManagerDaoImpl implements ManagerDao {
 		return sql.selectOne("manager.login", manager);
 	}
 
-
+ 
 	@Override
 	public Manager item(String id) {
 		return sql.selectOne("manager.item", id);
@@ -27,7 +27,7 @@ public class ManagerDaoImpl implements ManagerDao {
 
 	@Override
 	public void update(Manager item) {
-		sql.update("manager.update", item);
+		sql.update("manager.update", item); 
 	}
 
 

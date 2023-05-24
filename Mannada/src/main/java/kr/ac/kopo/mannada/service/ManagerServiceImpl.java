@@ -10,7 +10,7 @@ import kr.ac.kopo.mannada.model.Manager;
 public class ManagerServiceImpl implements ManagerService {
 	
 	@Autowired
-	ManagerDao dao;
+	ManagerDao dao; 
 	
 
 	@Override
@@ -24,7 +24,7 @@ public class ManagerServiceImpl implements ManagerService {
 			
 			return true;
 		} else
-			return false;
+			return false; 
 	}
 
 

@@ -53,7 +53,7 @@ $(function() {
 					console.log("인증실패"+pw);
 					swal("현재비밀번호가 아닙니다", '', 'error');
 					return $('#pw').val('');
-				}
+				} 
 			}
 		});
 	});
