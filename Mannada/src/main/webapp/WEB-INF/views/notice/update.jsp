@@ -47,14 +47,29 @@
 				<tbody>
 					<tr style="border-bottom: 1px solid #ccc;">
 						<th id="interval">제 목</th>
-						<td class="title"><input id="title" name="title" type="text"
+						<td class="title"><input id="notice_title" name="title" type="text"
 							value="${item.title}"></td>
 					</tr>
 
-					<tr>
+					<tr class="content_border">
 						<th id="interval">본문내용</th>
 						<td class="detail"><textarea id="summernote" name="content"
 								class="control" placeholder="텍스트 내용을 입력해주세요">${item.content }</textarea>
+						</td>
+					</tr>
+					
+					<tr>
+						<th id="interval">첨부파일</th>
+						<td class="attach" id="attachs">
+							<button type="button" id="add" class="btn btn-sm btn-primary mt-2 mb-2 add_info" >추가</button>
+							
+							<div class="attach_box" >
+								<c:forEach var="attach" items="${item.attachs}">
+									<li  class="mb-2 "><a href="/upload/${attach.filename}">${attach.filename}</a>
+										<button type="button" class="btn btn-sm btn-danger delete"
+											data-id="${attach.id}">삭제</button></li>
+								</c:forEach>
+							</div>
 						</td>
 					</tr>
 				</tbody>

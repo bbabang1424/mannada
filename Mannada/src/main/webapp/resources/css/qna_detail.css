@@ -63,12 +63,13 @@
 }
 
 .title {
-	width: 95%;
+	width: 96%;
 	display: inline-block;
 	text-align: left;
 }
 
 .title_size {
+	font-size:20px;
 	margin-top: 1%;
 	margin-bottom: 1%;
 }
