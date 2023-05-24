@@ -129,6 +129,7 @@ $(function() {
 			
 			<div class="header-line">
 				<ul>
+<<<<<<< HEAD
 					<c:if test="${sessionScope.user == null && sessionScope.manager == null}">
 						<h5><a href="/login">마이페이지</h5>
 					</c:if>
@@ -138,11 +139,16 @@ $(function() {
 					<c:if test="${sessionScope.manager != null}">
 						<h5><a href="/mg/view/${sessionScope.manager.num}">마이페이지</h5>
 					</c:if>
+=======
+					<h5><a href="/mypage">마이페이지</a></h5>
+>>>>>>> branch 'master' of https://github.com/xyident/mannada.git
 				</ul>
 			</div>
 		</div>
 	</div>
 	
 
-	<a href="/chat/list" id="talk-button" class="show"></a>
+	<c:if test="${sessionScope.user != null}">
+		<a href="/chat/list" id="talk-button" class="show"></a>
+	</c:if>
 	<a id="top-button" class="show"></a>

@@ -10,6 +10,12 @@ window.addEventListener("load", () => {
     });
 
 
+    // 모달 닫기 버튼
+    document.querySelector(".btn-close").addEventListener("click", e => {
+    });
+
+
+    // 참여 버튼
     document.querySelector("#join_btn").addEventListener("click", e => {
         const mannaId = 1;
 
@@ -21,13 +27,13 @@ window.addEventListener("load", () => {
             if (resp.status == 200)
                 return resp.json();
         }).then(result => {
-            const joinBtn =  document.querySelector("#join_btn");
-            joinBtn.textContent = "참여 취소";
+            document.querySelector("#join_btn").textContent = "참여 취소";
         });
 
     });
 
 
+    // 참여 취소 버튼
     document.querySelector("#join_btn.cancle").addEventListener("click", e => {
         const mannaId = 9;
 
@@ -39,8 +45,7 @@ window.addEventListener("load", () => {
             if (resp.status == 200)
                 return resp.json();
         }).then(result => {
-            const joinBtn =  document.querySelector("#join_btn");
-            joinBtn.textContent = "참여";
+            document.querySelector("#join_btn").textContent = "참여";
         });
 
     });
@@ -91,44 +96,58 @@ function getPage(page, query) {
 
 
 function makeItem(element){
+    const id = element.id;
+
+    const a = document.createElement("a")
+    a.href = "detail/" + id;
 
     const card = document.createElement("div");
     card.classList.add("card");
-    card.addEventListener("click", e => {
-        const id = element.id;
 
-        fetch("/api/item/" + id)
-        .then(resp => resp.json())
-        .then(result => {
-            e.preventDefault();  
-            const memberBox = document.querySelector(".member_num");
-            
-            for(var i in result.member){
-                const nameDiv = document.createElement("div");
-                nameDiv.textContent = result.member.nickname;
+    // 모달 만들던 것 -이현주
+    // card.addEventListener("click", e => {
+    //     const id = element.id;
 
-                memberBox.append(nameDiv);
-            };
+    //     fetch("/api/item/" + id)
+    //     .then(resp => resp.json())
+    //     .then(result => {
+    //         e.preventDefault();  
+    //         const memberBox = document.querySelector(".member_num");
             
-            document.querySelector(".model_Category").textContent = "[" + result.item.category_ + "]";
-            document.querySelector(".model_address").innerHTML = '<i class="bi bi-geo-alt"></i> ' + result.item.address;
-            document.querySelector(".model_title h4").textContent = result.item.title;
-            document.querySelector(".model_Writer").textContent = "작성자: " + result.item.nickname;
-            document.querySelector(".model_grade").innerHTML = '<i class="bi bi-star"></i> ' + result.item.star;
-            document.querySelector(".model_views").innerHTML = '<i class="bi bi-eye"></i> ' + result.item.viewCnt;
-            document.querySelector(".model_date").innerHTML = '<i class="bi bi-calendar-check"></i> ' + result.item.dDay;
+    //         for(var i in result.member){
+    //             const nameDiv = document.createElement("div");
+    //             nameDiv.textContent = result.member.nickname;
+
+    //             memberBox.append(nameDiv);
+    //         };
             
-            document.querySelector(".model_personnel span").textContent = "참여 현황: " + result.item.sum + "/" + result.item.member;
-            document.querySelector("#model_progress").value = result.item.sum;
-            document.querySelector("#model_progress").max = result.item.member;
+    //         document.querySelector(".model_Category").textContent = "[" + result.item.category_ + "]";
+    //         document.querySelector(".model_address").innerHTML = '<i class="bi bi-geo-alt"></i> ' + result.item.address;
+    //         document.querySelector(".model_title h4").textContent = result.item.title;
+    //         document.querySelector(".model_Writer").textContent = "작성자: " + result.item.nickname;
+    //         document.querySelector(".model_grade").innerHTML = '<i class="bi bi-star"></i> ' + result.item.star;
+    //         document.querySelector(".model_views").innerHTML = '<i class="bi bi-eye"></i> ' + result.item.viewCnt;
+    //         document.querySelector(".model_date").innerHTML = '<i class="bi bi-calendar-check"></i> ' + result.item.dDay;
             
-            document.querySelector(".model_text_box").innerHTML = result.item.content;
+    //         document.querySelector(".model_personnel span").textContent = "참여 현황: " + result.item.sum + "/" + result.item.member;
+    //         document.querySelector("#model_progress").value = result.item.sum;
+    //         document.querySelector("#model_progress").max = result.item.member;
+            
+    //         document.querySelector(".model_text_box").innerHTML = result.item.content;
+
+            
+    //         if(result.status == 1){
+    //             document.querySelector("#join_btn").textContent = "참여 취소";
+    //         } else {
+    //             document.querySelector("#join_btn").textContent = "참여";
+    //         }
             
               
-            const modal = new bootstrap.Modal(document.getElementById("detailModal"));
-            modal.toggle();  
-        });
-    });
+    //         const modal = new bootstrap.Modal(document.getElementById("detailModal"));
+    //         modal.toggle(); 
+            
+    //     });
+    // });
 
 
 	const div = document.createElement("div");
@@ -161,25 +180,19 @@ function makeItem(element){
     line.classList.add("line");
 
     card.append(line);
-
-
-    const i = document.createElement("i");
-    i.classList.add("bi", "bi-check");
     
 
-    const address = document.createElement("div");
-    address.classList.add("date_day");
+    const nickname = document.createElement("div");
+    nickname.classList.add("date_day");
 
-    address.append(i);
-    address.textContent = element["address"];
+    nickname.textContent = "작성자 : " + element["nickname"];
     
-    card.append(address);
+    card.append(nickname);
     
     
     const dDay = document.createElement("div");
     dDay.classList.add("interval");
-    
-    dDay.append(i);
+   
     dDay.textContent = "D-day : " + element["dDay"];
     
     card.append(dDay);
@@ -188,7 +201,6 @@ function makeItem(element){
     const member = document.createElement("div");
     member.classList.add("interval");
 
-    member.append(i);
     member.textContent = "인원 : " + "(" + element["sum"] + "/" + element["member"] + ")";
     
     card.append(member);
@@ -201,6 +213,6 @@ function makeItem(element){
     card.append(progress);
  
 
-
-    return card;
+    a.append(card);
+    return a;
 }

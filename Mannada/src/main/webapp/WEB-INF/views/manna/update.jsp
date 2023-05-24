@@ -38,7 +38,7 @@
 		content = content.replace("<p>", '');
 		content = content.replace("</p>", '');
 
-		if (form.title.value == '' || form.title.value == ' ') {
+		if (form.title.value.trim() == '') {
 			swal('', '제목을 입력해주세요.', 'error')
 			form.title.focus();
 			return;
@@ -76,7 +76,7 @@
 				<tbody>
 					<tr style="border-bottom: 1px solid #ccc;">
 						<th id="interval">제 목</th>
-						<td class="title"><input id="title" name="title" type="text" value="${item.title}"></td>
+						<td class="title"><input maxlength="30" id="title" name="title" type="text" value="${item.title}"></td>
 					</tr>
 					<!--뭘로 가져와야 할까...?  -->
 					<tr  style="border-bottom: 1px solid #ccc;">

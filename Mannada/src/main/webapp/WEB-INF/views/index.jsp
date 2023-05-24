@@ -1,9 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-<!-- 	
+	pageEncoding="UTF-8"%>	
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%> 
- -->
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,6 +13,7 @@
 <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDI-f5yrjAVhR8g9-FlTF-s_kLAEnZZ55k&callback=initMap"></script>
 <script src="/resources/js/searchAddress.js"></script>
 <link rel="stylesheet" href="/resources/css/manna_list.css">
+<link rel="stylesheet" href="/resources/css/community_list.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <link rel="stylesheet"
 	href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">
@@ -81,9 +80,9 @@ const pager_item = [ {
 		    <div class="swiper-pagination"></div>
 	</div> 
 
-	<div class="container"> 
+	<div class="container-index"> 
 		<div>
-			<div class="category center">
+			<div class="category-index center">
 				<div>
 					<h2>Category</h2>
 				</div>
@@ -155,8 +154,7 @@ const pager_item = [ {
 			<c:if test="${list.size() < 1 }">
 				<div>등록 된 게시글이 없습니다.</div>
 			</c:if>
-			<!-- 아 이거 고쳐야됨~~ 우ㅣ로 올라가지마~~~ -->
-			<div class="card_box">
+			<div class="card_box" style="margin:0 auto;">
 					<div id="empty_list">등록 된 게시글이 없습니다.</div>
 				</div>
 			
@@ -178,13 +176,109 @@ const pager_item = [ {
 	</div>
 	
 	<div>
-		<div class="content" style="margin: 0 auto;">
-			<div class="list-more">
+		<div class="top-content" style="margin: 100px auto;">
+			<div class="list-more" style="padding: 0;">
 				<h4><b>인기 게시글</b></h4>
 				<div>
 					<a href="/community/list"><h6>더보기 <i class="fa-solid fa-chevron-right"></i></h6></a>
 				</div>
 			</div>
+			<!-- @@@@@@ 조회수 순 정렬 / 카테고리별로 나누기 필요 @@@@@ -->
+			<div>
+				<table class="table table-hover table_table " id="table_size">
+					<thead>
+						<tr class="table_menu">
+							<th>카테고리</th>
+							<th>제목</th>
+							<th>작성자</th>
+							<th>작성일</th>
+							<th>조회수</th>
+						</tr>
+					</thead>
+					<tbody >
+						<c:if test="${list.size() < 1}">
+							<tr>
+								<td colspan="5">등록된 글이 없습니다.</td>
+							</tr>
+						</c:if>
+						<c:forEach var="item" items="${commuList}" end="4">
+							<tr
+								style="border: 1px solid #dddddd; padding-top: 10px; border-right: 1px solid White; border-left: 1px solid White;">
+								 <td><div class="category_color category_color_${item.category}"></div>${item.category_}</td> 
+								<td><a style="color: black;" href="/community/detail/${item.id}">${item.title}</a></td>
+								<td><div class="nickname">${item.nickname}</div></td>
+								<td><fmt:formatDate value="${item.regDate}"
+										pattern="yyyy-MM-dd " /></td>
+								<td>${item.viewCnt}</td>
+							</tr>
+						</c:forEach>
+					</tbody>
+				</table>
+			</div>
+			
+			<!-- @@@@@ 2분할
+			<div class="top-table">
+				<div class="recent-table">
+					<table class="table table-hover table_table " id="table_size" >
+					<thead>
+						<tr class="table_menu"> 
+							<th>카테고리</th>
+							<th>제목</th> 
+							<th>작성일</th>
+							<th>조회수</th>
+						</tr>
+					</thead>
+					<tbody >
+						<c:if test="${list.size() < 1}">
+							<tr>
+								<td colspan="5">등록된 글이 없습니다.</td>
+							</tr>
+						</c:if>
+						<c:forEach var="item" items="${commuList}" end="4">
+							<tr
+								style="border: 1px solid #dddddd; padding-top: 10px; border-right: 1px solid White; border-left: 1px solid White;">
+								 <td><div class="category_color category_color_${item.category}"></div>${item.category_}</td> 
+								<td><a style="color: black;" href="/community/detail/${item.id}">${item.title}</a></td>
+								<td><fmt:formatDate value="${item.regDate}"
+										pattern="yyyy-MM-dd " /></td>
+								<td>${item.viewCnt}</td>
+							</tr>
+						</c:forEach>
+					</tbody>
+				</table>
+				</div>
+				
+				<div class="recent-table">
+					<table class="table table-hover table_table " id="table_size" >
+					<thead>
+						<tr class="table_menu"> 
+							<th>카테고리</th>
+							<th>제목</th> 
+							<th>작성일</th>
+							<th>조회수</th>
+						</tr>
+					</thead>
+					<tbody >
+						<c:if test="${list.size() < 1}">
+							<tr>
+								<td colspan="5">등록된 글이 없습니다.</td>
+							</tr>
+						</c:if>
+						<c:forEach var="item" items="${commuList}" end="4">
+							<tr
+								style="border: 1px solid #dddddd; padding-top: 10px; border-right: 1px solid White; border-left: 1px solid White;">
+								 <td><div class="category_color category_color_${item.category}"></div>${item.category_}</td> 
+								<td><a style="color: black;" href="/community/detail/${item.id}">${item.title}</a></td>
+								<td><fmt:formatDate value="${item.regDate}"
+										pattern="yyyy-MM-dd " /></td>
+								<td>${item.viewCnt}</td>
+							</tr>
+						</c:forEach>
+					</tbody>
+				</table>
+				</div>
+			</div>
+			-->
 		</div>
 	</div>
 	
@@ -255,7 +349,7 @@ const pager_item = [ {
 							
 					<div class="buttons">
 						<button id="searchAddress">검색</button>
-						<button type="button" id="reset">초기화</button>
+						<button type="reset" id="reset">초기화</button>
 					</div>
 				</form>
 			</div>

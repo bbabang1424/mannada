@@ -99,7 +99,8 @@
 
 			<div class="chat_banner">
 				<div class="chat_text">
-					ROOM <i class="bi bi-chat-fill" style="position: absolute; top: 14%; left: 26%;"></i>
+					ROOM <i class="bi bi-chat-fill"
+						style="position: absolute; top: 14%; left: 26%;"></i>
 				</div>
 			</div>
 
@@ -108,7 +109,9 @@
 					<a href="../detail/${item.id}">
 						<div class="list_box ${item.id == id ? 'active' : ''}">
 							<div class="day_day">
-								<div>${item.dDay }</div>
+								<div>
+									<span class="nick_name">${item.nickname}</span> ${item.dDay }
+								</div>
 							</div>
 							<div class="box_title">
 								<div>${item.title }</div>

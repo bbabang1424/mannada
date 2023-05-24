@@ -34,17 +34,21 @@
 	/*제목 아이디 써야 등록*/
 	function EtValue() {
 		const form = document.write_post;
+		let content = form.content.value.replace(/&nbsp;/g, '');
+		content = content.replace("<br>", '');
+		content = content.replace("<p>", '');
+		content = content.replace("</p>", '');
 
-		if (form.title.value == '' || form.title.value == ' ') {
+		if (form.title.value.trim() == '') {
 			swal('', '제목을 입력해주세요.', 'error')
 			form.title.focus();
 			return;
-		} else if (form.member.value == '') {
+		} else if (form.member.value == ''|| form.member.value < 1) {
 			swal('', ' 참여인원을 지정해주세요.', 'error')
-			form.content.focus();
+			form.member.focus();
 			return;
-		} else if (form.content.value == '' || form.content.value == ' ') {
-			swal('', '내용을 입력해주세요.', 'error')
+		} else if (content.trim() == '') {
+	        swal('','내용을 입력해주세요.','error')
 			form.content.focus();
 			return;
 		}
@@ -73,7 +77,7 @@
 				<tbody>
 					<tr style="border-bottom: 1px solid #ccc;">
 						<th id="interval">제 목</th>
-						<td class="title"><input id="title" name="title" type="text">${item.id}</td>
+						<td class="title"><input maxlength="30" id="title" name="title" type="text">${item.id}</td>
 					</tr>
 
 					<tr style="border-bottom: 1px solid #ccc;">

@@ -1,6 +1,6 @@
 @charset "UTF-8";
 
-#room #chat{
+#room #chat {
 	-ms-overflow-style: none;
 }
 
@@ -16,16 +16,18 @@
 }
 /*베너  */
 .banner {
-	color: white;
-	border-color: #60a8ef;
-	width: 100%;
-	background-color: #60a8ef;
-	border: 1px solid;
+	    color: white;
+    border-color: #60a8ef;
+    width: 100%;
+    background-color: #60a8ef;
+    border: 1px solid;
 }
 
 .banner_text {
-	width: 66%;
-	margin: 0 auto;
+	    max-width: 1200px;
+    width: 100%;
+    margin: auto;
+    padding-left: 0%;
 }
 
 .banner_text>li {
@@ -57,14 +59,14 @@
 }
 
 #room {
-	background: #e9ecef;
+	background: #e9ecef00;
 	border: 1px solid #e9ecef;
 	width: 40%;
 	overflow-y: auto;
 }
 
 .chat_banner {
-	background: #e9ecef;
+	background: #e9ecef00;
 	position: sticky;
 	width: 100%;
 	top: 0%;
@@ -84,25 +86,29 @@
 	font-size: 0.8em;
 }
 
+.nick_name {
+	font-size: 17px;
+	margin-right: 1%;
+}
+
 .box_title {
 	overflow: hidden;
 	text-overflow: ellipsis;
 	white-space: pre;
 	width: 95%;
-	margin-top: 3%;
+	margin-top: 2%;
 	display: inline-block;
 	font-size: 22px;
 }
 
 .list_box {
-	margin: 1px 1%;
+	/* margin: 4px 1%; */
 	background: white;
 	color: black;
 	line-height: .4em;
 	padding: 15px;
 	border: 1px solid white;
 }
-
 
 /* .list_box:hover {
 	color: blue;
@@ -239,7 +245,6 @@
 	background-color: white;
 	text-align: left;
 	width: 100%;
-	margin-left: -0.2px;
 	height: 90px;
 	position: absolute;
 	top: 88%;

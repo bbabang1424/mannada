@@ -7,7 +7,7 @@
 <head>
 <meta charset="UTF-8">
 
-<title>만나다</title>
+<title>manna_list</title>
 <jsp:include page="../header.jsp"></jsp:include>
 <link rel="stylesheet" href="/resources/css/manna_list.css">
 <link rel="stylesheet"
@@ -32,25 +32,20 @@
 .hide {
 	display: none;
 }
+
 </style>
 
 <script type="text/javascript">
 	const pager_url = "/api/manna";
-	const pager_item = [ {
-		name : "id"
-	}, {
-		name : "category_"
-	}, {
-		name : "title"
-	}, {
-		name : "address"
-	}, {
-		name : "dDay"
-	}, {
-		name : "sum"
-	}, {
-		name : "member"
-	} ];
+	const pager_item = [ 
+		{name : "id"}, 
+		{name : "category_"	}, 
+		{name : "title"},
+		{name : "nickname"},
+		{name : "dDay"},
+		{name : "sum"},
+		{name : "member"}
+		];
 </script>
 <script src="/resources/js/manna.js"></script>
 </head>
@@ -95,15 +90,10 @@
 					<c:if test="${sessionScope.user.id == null }">
 						<div class="writing"></div>
 					</c:if>
-
 				</div>
-
-
-
 				<div class="card_box">
 					<div id="empty_list">등록 된 게시글이 없습니다.</div>
 				</div>
-
 			</div>
 		</section>
 	</div>
@@ -114,15 +104,13 @@
 	</div>
 
 
-
-
-
-	<!-- 모달 -->
-	<div class="modal" id="detailModal" tabindex="-1">
+	<%-- <!-- 모달 -->
+	<div class="modal hide" id="detailModal" tabindex="-1">
 		<div class="modal-dialog">
 			<div class="modal-content">
 
 				<section class="model_content">
+					<button type="button" class="btn-close" aria-label="Close"></button>
 					<div class="box">
 						<div class="first">
 							<div class="img"></div>
@@ -180,25 +168,30 @@
 									<button type="button" id="join_btn"">참여</button>
 								</div>
 							</div>
-							<!--내용 안불러 와짐 -->
+							
 							<div class="model_text_box">${item.content}</div>
 						</div>
 						<!-- lower:하단이란 뜻 -->
 						<div class="model_lower">
 							<!-- modify:수정하다란 뜻 -->
 							<!-- 수정이랑 목록 이동 모르겠음... -->
+
 							<a href="../update/${id}"><button class="button_modify">수정</button></a>
 							<a href="../delete/${id}"><button class="button_delete">삭제</button></a>
-							<a href="../lsit"><button class="button_back">목록</button></a>
+							<!-- <a href="../lsit"><button class="button_back">목록</button></a> -->
+
+							<a href="../manna/update/${item.id}"><button class="button_modify">수정</button></a>
+							<a href="../delete/${item.id}"><button class="button_delete">삭제</button></a>
+
 						</div>
 						<!-- 채팅 버튼 일부러 뺴놈 이모지 넣음으로써 버튼 높 낮이 변함-->
-						<button class="button_chatting"><i class="bi bi-chat-fill"></i>
-						</button>
+						<a href="../chat/detail/${item.id}"><button class="button_chatting"><i class="bi bi-chat-fill"></i>
+						</button></a>
 					</div>
 				</section>
 			</div>
 		</div>
-	</div>
+	</div> --%>
 
 	<jsp:include page="../footer.jsp"></jsp:include>
 </body>

@@ -2,6 +2,7 @@ package kr.ac.kopo.mannada.dao;
 
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import kr.ac.kopo.mannada.model.Manna;
 import kr.ac.kopo.mannada.model.User;
@@ -30,5 +31,7 @@ public interface MannaDao {
 	void addJoin(HashMap<String, Object> map);
 
 	void deleteJoin(HashMap<String, Object> map);
+
+	int joinStatus(Map<String, Object> js);
 
 }
