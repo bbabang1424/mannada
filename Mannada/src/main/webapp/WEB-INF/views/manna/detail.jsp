@@ -100,7 +100,11 @@
 					<i class="bi bi-chat-fill"></i>
 				</button></a>
 			</div>
+			
 		
+		</div>
+		<div class="back">
+		<a href="../list"><button class="button_back">목록</button></a>
 		</div>
 	</section>
 

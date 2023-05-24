@@ -71,7 +71,7 @@
 }
 
 #empty_list {
-	   margin-bottom:5%;
+	margin-bottom: 5%;
 	width: 100%;
 	max-width: 1220px;
 	text-align: left;
@@ -134,7 +134,7 @@
 	overflow: hidden;
 	text-overflow: ellipsis;
 	margin-top: 3px;
-	margin-left: 12px;
+	margin-left: 8px;
 	position: inherit;
 	color: black;
 	top: 6%;
@@ -153,8 +153,8 @@ progress {
 	border-radius: 9px;
 	position: absolute;
 	top: 82%;
-	width: 80%;
-	left: 8%;
+	width: 82%;
+	left: 7%;
 }
 
 /* 크기 조절은 height에서 */
