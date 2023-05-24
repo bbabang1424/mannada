@@ -14,6 +14,7 @@
 
 /*베너  */
 .banner {
+	max-width: 1920px;
 	color: white;
 	border-color: #60a8ef;
 	width: 100%;
@@ -26,7 +27,8 @@
 }
 
 .banner_text {
-	width: 65%;
+	max-width: 1241px;
+	width: 100%;
 	margin: 0 auto;
 }
 
@@ -38,14 +40,16 @@
 }
 
 .page_title {
-	width: 62%;
-	padding-top: 21px;
-	font-weight: bolder;
+	width: 100%;
+	padding-bottom: 9px;
 	margin: 0 auto;
+	max-width: 1181px;
+	padding-top: 3px;
 }
 
 .page_text {
-	width: 62%;
+	max-width: 1178px;
+	width: 100%;
 	padding-bottom: 33px;
 	margin: 0 auto;
 }
@@ -59,12 +63,13 @@
 }
 
 .title {
-	width: 95%;
+	width: 96%;
 	display: inline-block;
 	text-align: left;
 }
 
 .title_size {
+	font-size:20px;
 	margin-top: 1%;
 	margin-bottom: 1%;
 }
@@ -92,13 +97,14 @@ hr {
 }
 
 .Writer {
+	margin-bottom: 1%;
 	margin-top: 1%;
 	width: 95%;
 	display: inline-block;
 }
 
 .date_views {
-	    font-size: 0.96em;
+	font-size: 0.96em;
 	position: absolute;
 	top: 21.5%;
 	left: 83.5%;
@@ -127,7 +133,7 @@ hr {
 	background-color: #f3f3f3;
 	max-width: 1200px;
 	width: 100%;
-	padding: 0.5em;
+	padding: 1.5em;
 	border-top: 2px solid blue;
 	margin: auto;
 }

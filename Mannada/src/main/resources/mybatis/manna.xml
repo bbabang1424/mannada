@@ -3,7 +3,7 @@
 
 <mapper namespace="manna">
 	<sql id="search">
-		SELECT * FROM manna
+		SELECT m.*, nickname FROM manna m LEFT OUTER JOIN user u ON m.num = u.num
 		<where>
 			<if test="search eq 1">
 				title LIKE CONCAT(CONCAT('%',#{keyword}),'%')
@@ -103,5 +103,12 @@
 		UPDATE manna SET viewCnt = viewCnt + 1
 		WHERE id = #{id}
 	</update>
+	
+	
+	<select id="join_status" resultType="Integer">
+		SELECT NVL(count(*),0)
+		FROM joins
+		WHERE manna_id = #{id} AND num = #{num}
+	</select>
 	
 </mapper>

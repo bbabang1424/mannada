@@ -36,13 +36,9 @@
 	 	<level value="info" />	
 	 </logger>
 	 
-<<<<<<< HEAD
-	 <logger name="org.mariadb.jdbc">
-	 		<level value="debug" />
-=======
+
 	 <logger name="org.mariadkb.jdbc">
 	 	<level value="debug" /> 
->>>>>>> branch 'master' of https://github.com/xyident/mannada.git
 	 </logger>
 
 	<!-- Root Logger -->

@@ -24,9 +24,11 @@ $(function() {
 	  });
 	// 다른 부분 누르면 자동으로 닫히게끔 하는 기능 추가하고 싶음
 	
+
 	  var btn = $('#top-button');
 	  var btn2 = $('#talk-button');
-
+		
+	  /*
 		$(window).scroll(function() {
 		  if ($(window).scrollTop() > 300) {
 		    btn.addClass('show');
@@ -37,11 +39,12 @@ $(function() {
 		  }
 		 
 		});
-
+	*/
 		btn.on('click', function(e) {
 		  e.preventDefault();
 		  $('html, body').animate({scrollTop:0}, '300');
 		});
+
 });
 </script>
 <body>
@@ -71,6 +74,7 @@ $(function() {
 						</c:if>
 						
 						<c:if test="${sessionScope.user != null}">
+							<li><a href="/mypage">${sessionScope.user.nickname}님</a></li>
 							<li><button onclick="location.href='/logout'">로그아웃</button></li>
 						</c:if>
 					</ul>
@@ -127,5 +131,5 @@ $(function() {
 	</div>
 	
 
-	<a href="/chat/list" id="talk-button"></a>
-	<a id="top-button"></a>
+	<a href="/chat/list" id="talk-button" class="show"></a>
+	<a id="top-button" class="show"></a>

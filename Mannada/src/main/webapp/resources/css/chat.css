@@ -1,6 +1,6 @@
 @charset "UTF-8";
 
-body {
+#room #chat {
 	-ms-overflow-style: none;
 }
 
@@ -77,11 +77,16 @@ body {
 	display: inline-block;
 	font-size: 30px;
 	font-weight: bold;
-	margin: 4%;
+	margin: 4% 3%;
 }
 
 .day_day {
 	font-size: 0.8em;
+}
+
+.nick_name {
+	font-size: 17px;
+	margin-right: 1%;
 }
 
 .box_title {
@@ -89,13 +94,13 @@ body {
 	text-overflow: ellipsis;
 	white-space: pre;
 	width: 95%;
-	margin-top: 3%;
+	margin-top: 2%;
 	display: inline-block;
 	font-size: 22px;
 }
 
 .list_box {
-	margin: 1px 1%;
+	margin: 4px 1%;
 	background: white;
 	color: black;
 	line-height: .4em;
@@ -103,14 +108,13 @@ body {
 	border: 1px solid white;
 }
 
-
 /* .list_box:hover {
 	color: blue;
 } */
 .list_box.active {
-	color: black;
-	background: #f1f3f5;
-	border: #f1f3f5;
+	color: #f8f9fa;
+	background: #60a8ef;
+	border: #60a8ef;
 }
 
 #room .list {

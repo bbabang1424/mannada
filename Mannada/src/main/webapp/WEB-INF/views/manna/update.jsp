@@ -26,6 +26,34 @@
 <script src="/resources/summernote/summernote-lite.js"></script>
 <script src="/resources/summernote/lang/summernote-ko-KR.js"></script>
 <script src="/resources/js/summernote.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script type="text/javascript">
+	/*EtValue>> enrolment:등록 EtValue>
+	 줄여서 등록값*/
+	/*제목 아이디 써야 등록*/
+	function EtValue() {
+		const form = document.write_post;
+		let content = form.content.value.replace(/&nbsp;/g, '');
+		content = content.replace("<br>", '');
+		content = content.replace("<p>", '');
+		content = content.replace("</p>", '');
+
+		if (form.title.value == '' || form.title.value == ' ') {
+			swal('', '제목을 입력해주세요.', 'error')
+			form.title.focus();
+			return;
+		} else if (form.member.value == ''|| form.member.value < 1) {
+			swal('', ' 참여인원을 지정해주세요.', 'error')
+			form.member.focus();
+			return;
+		} else if (content.trim() == '') {
+	        swal('','내용을 입력해주세요.','error')
+			form.content.focus();
+			return;
+		}
+		form.submit();
+	}
+</script>
 </head>
 <body>
 	<div class="banner">
@@ -38,7 +66,7 @@
 		<p class="page_text">등록 된 글의 내용을 수정하는 공간입니다.</p>
 	</div>
 	<div class="container">
-			<form method="post" >
+			<form method="post" name="write_post">
 			<table class="box">
 				<colgroup>
 					<col width="10%" />
@@ -89,7 +117,7 @@
 			</table>
 			<!-- 하단:lower -->
 			<div class="lower">
-				<button class="raise_btn">등록</button>
+				<button class="raise_btn" type="button" onclick="EtValue()">등록</button>
 				<a href="../list"><button type="button" class="cancel_btn">취소</button></a>
 			</div>
 		</form>

@@ -44,15 +44,25 @@ public class MannaRestController {
 	}
 	
 	@GetMapping("/api/item/{id}")
-		public Map<String, Object> item(@PathVariable int id){
+	public Map<String, Object> item(@PathVariable int id, @SessionAttribute User user){
+		
+		service.addViewCnt(id);
+		
 		Map<String, Object> map = new HashMap<String, Object>();
 		
 		Manna item = service.item(id);
-		
 		List <User> member = service.memberList(id);
+		
+		
+		Map<String, Object> js = new HashMap<String, Object>();
+		js.put("id", id);
+		js.put("num", user.getNum());
+		int status = service.joinStatus(js);
+		
 		
 		map.put("item", item);
 		map.put("member", member);
+		map.put("status", status);
 		
 		return map;
 	}

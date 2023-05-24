@@ -2,6 +2,7 @@ package kr.ac.kopo.mannada.dao;
 
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -71,6 +72,11 @@ public class MannaDaoImpl implements MannaDao {
 	@Override
 	public void deleteJoin(HashMap<String, Object> map) {
 		sql.delete("manna.delete_join", map);
+	}
+
+	@Override
+	public int joinStatus(Map<String, Object> js) {
+		return sql.selectOne("manna.join_status", js);
 	}
 
 }

@@ -10,6 +10,12 @@ window.addEventListener("load", () => {
     });
 
 
+    // 모달 닫기 버튼
+    document.querySelector(".btn-close").addEventListener("click", e => {
+    });
+
+
+    // 참여 버튼
     document.querySelector("#join_btn").addEventListener("click", e => {
         const mannaId = 1;
 
@@ -21,13 +27,13 @@ window.addEventListener("load", () => {
             if (resp.status == 200)
                 return resp.json();
         }).then(result => {
-            const joinBtn =  document.querySelector("#join_btn");
-            joinBtn.textContent = "참여 취소";
+            document.querySelector("#join_btn").textContent = "참여 취소";
         });
 
     });
 
 
+    // 참여 취소 버튼
     document.querySelector("#join_btn.cancle").addEventListener("click", e => {
         const mannaId = 9;
 
@@ -39,8 +45,7 @@ window.addEventListener("load", () => {
             if (resp.status == 200)
                 return resp.json();
         }).then(result => {
-            const joinBtn =  document.querySelector("#join_btn");
-            joinBtn.textContent = "참여";
+            document.querySelector("#join_btn").textContent = "참여";
         });
 
     });
@@ -80,10 +85,11 @@ function getPage(page, query) {
                 });
             };
 
-            if(page >= result.pager.last){
+            if(page >= result.pager.last || window.location.pathname == '/'){
                 document.querySelector("#more-btn").classList.add("hide");
             }
-                
+            
+
         });
 }
 
@@ -99,6 +105,7 @@ function makeItem(element){
         fetch("/api/item/" + id)
         .then(resp => resp.json())
         .then(result => {
+            e.preventDefault();  
             const memberBox = document.querySelector(".member_num");
             
             for(var i in result.member){
@@ -121,10 +128,18 @@ function makeItem(element){
             document.querySelector("#model_progress").max = result.item.member;
             
             document.querySelector(".model_text_box").innerHTML = result.item.content;
+
+            
+            if(result.status == 1){
+                document.querySelector("#join_btn").textContent = "참여 취소";
+            } else {
+                document.querySelector("#join_btn").textContent = "참여";
+            }
             
               
             const modal = new bootstrap.Modal(document.getElementById("detailModal"));
-            modal.toggle();  
+            modal.toggle(); 
+            
         });
     });
 
@@ -159,25 +174,19 @@ function makeItem(element){
     line.classList.add("line");
 
     card.append(line);
-
-
-    const i = document.createElement("i");
-    i.classList.add("bi", "bi-check");
     
 
-    const address = document.createElement("div");
-    address.classList.add("date_day");
+    const nickname = document.createElement("div");
+    nickname.classList.add("date_day");
 
-    address.append(i);
-    address.textContent = element["address"];
+    nickname.textContent = "작성자 : " + element["nickname"];
     
-    card.append(address);
+    card.append(nickname);
     
     
     const dDay = document.createElement("div");
     dDay.classList.add("interval");
-    
-    dDay.append(i);
+   
     dDay.textContent = "D-day : " + element["dDay"];
     
     card.append(dDay);
@@ -186,7 +195,6 @@ function makeItem(element){
     const member = document.createElement("div");
     member.classList.add("interval");
 
-    member.append(i);
     member.textContent = "인원 : " + "(" + element["sum"] + "/" + element["member"] + ")";
     
     card.append(member);

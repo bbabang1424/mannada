@@ -34,7 +34,9 @@
 					<div class=active-color>
 						<div class="list_box">
 							<div class="day_day">
-								<div>${item.dDay }</div>
+								<div>
+									<span class="nick_name">${item.nickname}</span> ${item.dDay }
+								</div>
 							</div>
 							<div class="box_title">
 							<div >${item.title }</div>
