@@ -26,30 +26,37 @@
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
 <script type="text/javascript">
+	//첨부파일
 	$(function() {
-		
-		$("#add").click(function(){
+		//첨부파일 관련
+		//삭제 버튼 눌렀을때
+		$("#attachs").on("click", ".delete", function() {
+			const div = $(this).closest(".input-group");
+			div.remove();
+		});
+		//첨부파일의 추가를 눌렀을때 삭제버튼 생성(위임)
+		$("#add").click(function() {
 			const div = $("<div>");
 			div.addClass("input-group");
 			div.addClass("mb-3");
-			
+
 			const input = $("<input>");
-			input.attr("type","file");
+			input.attr("type", "file");
 			input.attr("name", "attach");
 			input.addClass("form-control");
 			input.addClass("form-control-sm");
-			
+
 			const button = $("<button>");
 			button.attr("type", "button");
 			button.addClass("btn");
 			button.addClass("btn-sm");
-			button.addClass("btn-danger");
+			button.addClass("btn-outline-danger");
 			button.addClass("delete");
 			button.text("삭제");
-			
+
 			div.append(input);
 			div.append(button);
-			
+
 			$("#attachs").append(div);
 		});
 	});
@@ -76,20 +83,23 @@
 				<tbody>
 					<tr style="border-bottom: 1px solid #ccc;">
 						<th id="interval">제 목</th>
-						<td class="title"><input id="notice_title" name="title" type="text">${item.id}</td>
+						<td class="title"><input id="notice_title" name="title"
+							type="text">${item.id}</td>
 					</tr>
 
-					<tr>
+					<tr class="content_border">
 						<th id="interval">본문내용</th>
 						<td class="detail"><textarea id="summernote" name="content"
 								placeholder="텍스트 내용을 입력해주세요"></textarea></td>
 					</tr>
 
 					<tr>
-						<th>첨부파일</th>
-						<td class="detail">
-							<button type="button" id="add" class="btn btn-sm btn-primary">추가</button>
-							<input type="file" name="attach">
+						<th id="interval">첨부파일</th>
+						<td class="attach" id="attachs">
+							<button type="button" id="add" class="btn btn-sm btn-primary mt-2 mb-2 add_info" >추가</button>
+							<div class="attach_box" >
+								<input type="file" name="attach" class="form-control form-control-sm">
+							</div>
 						</td>
 					</tr>
 				</tbody>

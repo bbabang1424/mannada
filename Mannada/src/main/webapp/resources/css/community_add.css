@@ -148,6 +148,31 @@
 	padding-bottom: 3%;
 }
 
+.content_border {
+	border-bottom: 1px solid #ccc;
+}
+.add_info{
+	margin-right: 1%;
+}
+.attach {
+	text-align: left;
+	padding-top: 2%;
+	padding-bottom: 2%;
+}
+
+.attach_box {
+	width: 85%;
+	display: inline-block;
+}
+.input-group {
+	    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    width: 85% !important;
+    margin-left: 7%;
+}
+
 /*  하단 /취소,등록*/
 .lower {
 	margin-top: 3%;
