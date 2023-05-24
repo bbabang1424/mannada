@@ -96,52 +96,58 @@ function getPage(page, query) {
 
 
 function makeItem(element){
+    const id = element.id;
+
+    const a = document.createElement("a")
+    a.href = "detail/" + id;
 
     const card = document.createElement("div");
     card.classList.add("card");
-    card.addEventListener("click", e => {
-        const id = element.id;
 
-        fetch("/api/item/" + id)
-        .then(resp => resp.json())
-        .then(result => {
-            e.preventDefault();  
-            const memberBox = document.querySelector(".member_num");
-            
-            for(var i in result.member){
-                const nameDiv = document.createElement("div");
-                nameDiv.textContent = result.member.nickname;
+    // 모달 만들던 것 -이현주
+    // card.addEventListener("click", e => {
+    //     const id = element.id;
 
-                memberBox.append(nameDiv);
-            };
+    //     fetch("/api/item/" + id)
+    //     .then(resp => resp.json())
+    //     .then(result => {
+    //         e.preventDefault();  
+    //         const memberBox = document.querySelector(".member_num");
             
-            document.querySelector(".model_Category").textContent = "[" + result.item.category_ + "]";
-            document.querySelector(".model_address").innerHTML = '<i class="bi bi-geo-alt"></i> ' + result.item.address;
-            document.querySelector(".model_title h4").textContent = result.item.title;
-            document.querySelector(".model_Writer").textContent = "작성자: " + result.item.nickname;
-            document.querySelector(".model_grade").innerHTML = '<i class="bi bi-star"></i> ' + result.item.star;
-            document.querySelector(".model_views").innerHTML = '<i class="bi bi-eye"></i> ' + result.item.viewCnt;
-            document.querySelector(".model_date").innerHTML = '<i class="bi bi-calendar-check"></i> ' + result.item.dDay;
+    //         for(var i in result.member){
+    //             const nameDiv = document.createElement("div");
+    //             nameDiv.textContent = result.member.nickname;
+
+    //             memberBox.append(nameDiv);
+    //         };
             
-            document.querySelector(".model_personnel span").textContent = "참여 현황: " + result.item.sum + "/" + result.item.member;
-            document.querySelector("#model_progress").value = result.item.sum;
-            document.querySelector("#model_progress").max = result.item.member;
+    //         document.querySelector(".model_Category").textContent = "[" + result.item.category_ + "]";
+    //         document.querySelector(".model_address").innerHTML = '<i class="bi bi-geo-alt"></i> ' + result.item.address;
+    //         document.querySelector(".model_title h4").textContent = result.item.title;
+    //         document.querySelector(".model_Writer").textContent = "작성자: " + result.item.nickname;
+    //         document.querySelector(".model_grade").innerHTML = '<i class="bi bi-star"></i> ' + result.item.star;
+    //         document.querySelector(".model_views").innerHTML = '<i class="bi bi-eye"></i> ' + result.item.viewCnt;
+    //         document.querySelector(".model_date").innerHTML = '<i class="bi bi-calendar-check"></i> ' + result.item.dDay;
             
-            document.querySelector(".model_text_box").innerHTML = result.item.content;
+    //         document.querySelector(".model_personnel span").textContent = "참여 현황: " + result.item.sum + "/" + result.item.member;
+    //         document.querySelector("#model_progress").value = result.item.sum;
+    //         document.querySelector("#model_progress").max = result.item.member;
+            
+    //         document.querySelector(".model_text_box").innerHTML = result.item.content;
 
             
-            if(result.status == 1){
-                document.querySelector("#join_btn").textContent = "참여 취소";
-            } else {
-                document.querySelector("#join_btn").textContent = "참여";
-            }
+    //         if(result.status == 1){
+    //             document.querySelector("#join_btn").textContent = "참여 취소";
+    //         } else {
+    //             document.querySelector("#join_btn").textContent = "참여";
+    //         }
             
               
-            const modal = new bootstrap.Modal(document.getElementById("detailModal"));
-            modal.toggle(); 
+    //         const modal = new bootstrap.Modal(document.getElementById("detailModal"));
+    //         modal.toggle(); 
             
-        });
-    });
+    //     });
+    // });
 
 
 	const div = document.createElement("div");
@@ -207,6 +213,6 @@ function makeItem(element){
     card.append(progress);
  
 
-
-    return card;
+    a.append(card);
+    return a;
 }
