@@ -27,14 +27,14 @@
 		<div class="box">
 			<div class="first">
 				<img class="img" src="/resources/image/profile.png">
-				<div class="a">
-					<div class="model_Category">[${item.category_}]</div>
-					<div class="model_address">
-						<i class="bi bi-geo-alt"></i> ${item.address}
+				<div class="all_content">
+					<div class="Category_address">[${item.category_}] 
+					<i class="bi bi-geo-alt"></i>${item.address}
+		
 					</div>
 
-					<div class="model_title">
-						<h4>${item.title}</h4>
+					<div class="title">
+						<div class="font-size">${item.title}</div>
 					</div>
 
 					<!-- 데이터 가져 올려고 했는데 오류가 나서 안됨 가져 올수 있는거 가져 옴 -->
