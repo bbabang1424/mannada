@@ -89,6 +89,10 @@ div {
     margin-top: 5%;
 }
 
+.checkbox {
+	margin-top: 3%;	
+}
+
 .signUp button {    
     width: 225px;
     background-color: #0359d9;
