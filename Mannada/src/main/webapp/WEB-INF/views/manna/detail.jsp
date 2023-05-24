@@ -26,7 +26,7 @@
 	<section class="content">
 		<div class="box">
 			<div class="first">
-				<div class="img"></div>
+				<img class="img" src="/resources/image/profile.png">
 				<div class="a">
 					<div class="model_Category">[${item.category_}]</div>
 					<div class="model_address">

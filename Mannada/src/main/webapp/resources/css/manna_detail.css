@@ -66,7 +66,7 @@
 
 .img {
 	margin: 2% 4%;
-	width: 141px;
+	width: 134px;
 	height: 117px;
 	background: #ccc;
 }
@@ -110,28 +110,28 @@
 	text-overflow: ellipsis;
 	position: absolute;
 	left: 180px;
-	top: 93px;
+	top: 95px;
 }
 
 .model_grade {
 	display: inline-block;
 	position: absolute;
-	top: 93px;
+	top: 95px;
 	left: 338px;
 }
 
 .model_views {
-	    display: inline-block;
-    position: absolute;
-    top: 13.5%;
-    left: 90.5%;
+	display: inline-block;
+	position: absolute;
+	top: 13.5%;
+	left: 90.5%;
 }
 
 .model_date {
 	display: inline-block;
 	position: absolute;
 	left: 180px;
-	top: 116px;
+	top: 121px;
 }
 
 .model_personnel {
@@ -144,7 +144,7 @@
 .a {
 	position: absolute;
 	width: 100%;
-	top: 2%;
+	top: 1%;
 	left: 5%;
 }
 
@@ -179,12 +179,12 @@
     animation-fill-mode:forwards;
 } */
 progress {
-    border: 0;
-    border-radius: 9px;
-    position: absolute;
-    top: 10.5%;
-    left: 71%;
-    width: 23%;
+	border: 0;
+	border-radius: 9px;
+	position: absolute;
+	top: 10.5%;
+	left: 71%;
+	width: 23%;
 }
 /* 크기 조절은 height에서 */
 progress::-webkit-progress-bar {
@@ -205,7 +205,7 @@ progress::-webkit-progress-value {
 	width: 1200px;
 	border: 1px solid;
 	border-color: #ccc;
-	margin-top: 3%;
+	margin-top: 2%;
 	margin-bottom: 2%;
 }
 
@@ -214,11 +214,11 @@ progress::-webkit-progress-value {
 }
 
 .model_member {
-	    font-weight: bold;
-    position: absolute;
-    top: 28%;
-    left: 7%;
-    display: inline-block;
+	font-weight: bold;
+	position: absolute;
+	top: 28%;
+	left: 7%;
+	display: inline-block;
 }
 
 .model_member_num_box_info {
@@ -246,7 +246,6 @@ progress::-webkit-progress-value {
 
 #model_member_num>div {
 	display: inline-block;
-	padding: 8px;
 	margin: 2px;
 }
 
