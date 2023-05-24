@@ -1,5 +1,9 @@
 Manifest-Version: 1.0
 Built-By: Student
+<<<<<<< HEAD
 Build-Jdk: 11.0.14
+=======
+Build-Jdk: 11.0.18
+>>>>>>> refs/remotes/origin/master
 Created-By: Maven Integration for Eclipse
 
