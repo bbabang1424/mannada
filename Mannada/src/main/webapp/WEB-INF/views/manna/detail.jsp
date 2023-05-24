@@ -90,14 +90,17 @@
 			<div class="model_lower">
 				<!-- modify:수정하다란 뜻 -->
 				<!-- 수정이랑 목록 이동 모르겠음... -->
-				<a href="../update/${id}"><button class="button_modify">수정</button></a>
-				<a href="../delete/${id}"><button class="button_delete">삭제</button></a>
-			</div>
-			<!-- 채팅 버튼 일부러 뺴놈 이모지 넣음으로써 버튼 높 낮이 변함-->
+				<c:if test="${sessionScope.user.num == item.num }">
+					<a href="../update/${id}"><button class="button_modify">수정</button></a>
+					<a href="../delete/${id}"><button class="button_delete">삭제</button></a>
+				</c:if>
+					<!-- 채팅 버튼 일부러 뺴놈 이모지 넣음으로써 버튼 높 낮이 변함-->
 			<a href="../../chat/detail/${item.id}"><button
 					class="button_chatting">
 					<i class="bi bi-chat-fill"></i>
 				</button></a>
+			</div>
+		
 		</div>
 	</section>
 

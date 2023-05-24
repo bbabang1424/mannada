@@ -145,14 +145,12 @@ function EtValue() {
 			<div style="border:1px solid #eee;"></div>
 			<!--게시글 수정 삭제  -->
 			<!-- modify:수정하다란 뜻 -->
-			<a href="../list"><button class="button_list">목록</button></a>
+			
 			<c:if test="${sessionScope.user != null && question.status == 0}">
-		
 				<a href="../update/${id}"><button class="button_modify">수정</button></a>
 				<a href="../delete/${id}"><button class="button_delete">삭제</button></a>
-			
-			
 			</c:if>
+			<a href="../list"><button class="button_list">목록</button></a>
 		</div>
 	</section>
 	 <jsp:include page="../footer.jsp"></jsp:include>
