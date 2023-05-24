@@ -90,15 +90,10 @@
 					<c:if test="${sessionScope.user.id == null }">
 						<div class="writing"></div>
 					</c:if>
-
 				</div>
-
-
-
 				<div class="card_box">
 					<div id="empty_list">등록 된 게시글이 없습니다.</div>
 				</div>
-
 			</div>
 		</section>
 	</div>
@@ -176,20 +171,25 @@
 									<button type="button" id="join_btn"">참여</button>
 								</div>
 							</div>
-							<!--내용 안불러 와짐 -->
+							
 							<div class="model_text_box">${item.content}</div>
 						</div>
 						<!-- lower:하단이란 뜻 -->
 						<div class="model_lower">
 							<!-- modify:수정하다란 뜻 -->
 							<!-- 수정이랑 목록 이동 모르겠음... -->
+<<<<<<< HEAD
 							<a href="../update/${id}"><button class="button_modify">수정</button></a>
 							<a href="../delete/${id}"><button class="button_delete">삭제</button></a>
 							<!-- <a href="../lsit"><button class="button_back">목록</button></a> -->
+=======
+							<a href="../manna/update/${item.id}"><button class="button_modify">수정</button></a>
+							<a href="../delete/${item.id}"><button class="button_delete">삭제</button></a>
+>>>>>>> refs/remotes/origin/master
 						</div>
 						<!-- 채팅 버튼 일부러 뺴놈 이모지 넣음으로써 버튼 높 낮이 변함-->
-						<button class="button_chatting"><i class="bi bi-chat-fill"></i>
-						</button>
+						<a href="../chat/detail/${item.id}"><button class="button_chatting"><i class="bi bi-chat-fill"></i>
+						</button></a>
 					</div>
 				</section>
 			</div>
