@@ -38,7 +38,7 @@
 		content = content.replace("<p>", '');
 		content = content.replace("</p>", '');
 
-		if (form.title.value == '' || form.title.value == ' ') {
+		if (form.title.value.trim() == '') {
 			swal('', '제목을 입력해주세요.', 'error')
 			form.title.focus();
 			return;
