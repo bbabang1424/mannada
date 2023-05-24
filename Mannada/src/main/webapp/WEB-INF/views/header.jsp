@@ -124,12 +124,14 @@ $(function() {
 			
 			<div class="header-line">
 				<ul>
-					<h5><a href="/mypage">마이페이지</h5>
+					<h5><a href="/mypage">마이페이지</a></h5>
 				</ul>
 			</div>
 		</div>
 	</div>
 	
 
-	<a href="/chat/list" id="talk-button" class="show"></a>
+	<c:if test="${sessionScope.user != null}">
+		<a href="/chat/list" id="talk-button" class="show"></a>
+	</c:if>
 	<a id="top-button" class="show"></a>

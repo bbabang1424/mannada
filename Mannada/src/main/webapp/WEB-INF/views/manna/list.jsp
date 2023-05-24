@@ -7,7 +7,7 @@
 <head>
 <meta charset="UTF-8">
 
-<title>만나다</title>
+<title>manna_list</title>
 <jsp:include page="../header.jsp"></jsp:include>
 <link rel="stylesheet" href="/resources/css/manna_list.css">
 <link rel="stylesheet"
@@ -104,10 +104,7 @@
 	</div>
 
 
-
-
-
-	<!-- 모달 -->
+	<%-- <!-- 모달 -->
 	<div class="modal hide" id="detailModal" tabindex="-1">
 		<div class="modal-dialog">
 			<div class="modal-content">
@@ -178,14 +175,14 @@
 						<div class="model_lower">
 							<!-- modify:수정하다란 뜻 -->
 							<!-- 수정이랑 목록 이동 모르겠음... -->
-<<<<<<< HEAD
+
 							<a href="../update/${id}"><button class="button_modify">수정</button></a>
 							<a href="../delete/${id}"><button class="button_delete">삭제</button></a>
 							<!-- <a href="../lsit"><button class="button_back">목록</button></a> -->
-=======
+
 							<a href="../manna/update/${item.id}"><button class="button_modify">수정</button></a>
 							<a href="../delete/${item.id}"><button class="button_delete">삭제</button></a>
->>>>>>> refs/remotes/origin/master
+
 						</div>
 						<!-- 채팅 버튼 일부러 뺴놈 이모지 넣음으로써 버튼 높 낮이 변함-->
 						<a href="../chat/detail/${item.id}"><button class="button_chatting"><i class="bi bi-chat-fill"></i>
@@ -194,7 +191,7 @@
 				</section>
 			</div>
 		</div>
-	</div>
+	</div> --%>
 
 	<jsp:include page="../footer.jsp"></jsp:include>
 </body>
