@@ -95,16 +95,4 @@ public class CommunityServiceImpl implements CommunityService {
 		return dao.detailReply(id);
 	}
 
-	/* 메인페이지용 */
-	
-	@Override
-	public List<Community> reviewList(Pager pager) {
-		return dao.reviewList(pager);
-	}
-
-	@Override
-	public List<Community> talkList(Pager pager) {
-		return dao.talkList(pager);
-	}
-
 }

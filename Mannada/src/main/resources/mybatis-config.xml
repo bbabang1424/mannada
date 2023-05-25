@@ -21,7 +21,7 @@
 		<typeAlias type="kr.ac.kopo.mannada.model.Attach" alias="Attach"/>
 		<typeAlias type="kr.ac.kopo.mannada.model.Review" alias="Review"/> 
 	</typeAliases>
-	 
+ 	 
 	<mappers>
 		<mapper resource="mybatis/user.xml" />
 		<mapper resource="mybatis/manager.xml" />

@@ -11,8 +11,8 @@ window.addEventListener("load", () => {
 
 
     // 모달 닫기 버튼
-    document.querySelector(".btn-close").addEventListener("click", e => {
-    });
+    //document.querySelector(".btn-close").addEventListener("click", e => {
+    //});
 
 
     // 참여 버튼
@@ -99,11 +99,7 @@ function makeItem(element){
     const id = element.id;
 
     const a = document.createElement("a")
-    if(window.location.pathname == '/')
-        a.href = "manna/detail/" + id; // 메인페이지용으로 if문 추가
-    else 
-        a.href = "detail/" + id;
-
+    a.href = "detail/" + id;
 
     const card = document.createElement("div");
     card.classList.add("card");

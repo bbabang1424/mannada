@@ -1,7 +1,7 @@
 package kr.ac.kopo.mannada.model;
 
 public class Attach {
-	//기본 구성키
+	//기본 구성키 
 	private int id;
 	private String filename;
 	private String uuid;

@@ -32,8 +32,4 @@ public interface CommunityService {
 
 	List<Reply> detailReply(int id);
 
-	List<Community> reviewList(Pager pager);
-
-	List<Community> talkList(Pager pager);
-
 }

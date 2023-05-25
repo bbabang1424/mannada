@@ -23,6 +23,28 @@
 			<p>상태가 회원탈퇴라면 1년후에 모든 정보와 회원정보를 삭제해주세요.</p>
 		</div>
 		<div>
+			<form class="row mb-2">
+				<div class="col-2">
+					<select class="form-select form-select-sm" name="search">
+						<option value="1">회원번호</option>
+						<option value="2">이메일</option>
+						<option value="3">닉네임</option>
+						<option value="4">소개 글</option>
+						<option value="5">탈퇴일자</option>
+					</select>
+				</div> 
+				<div class="col-2">
+					<input
+						class="form-control form-control-sm keyword-all"
+						name="keyword" type="text">
+				</div>
+
+				<div class="col-1">
+					<button id="searchBtn" class="btn btn-dark btn-sm">검색</button>
+				</div>
+			</form>
+		</div>
+		<div>
 			<table border="1" class="table">
 				<thead class="table-dark">
 					<tr>

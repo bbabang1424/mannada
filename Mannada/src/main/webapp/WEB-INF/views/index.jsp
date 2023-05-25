@@ -177,14 +177,13 @@ const pager_item = [ {
 	
 	<div>
 		<div class="top-content" style="margin: 100px auto;">
-			<div class="list-more" style="padding: 0; margin-bottom:10px;">
+			<div class="list-more" style="padding: 0;">
 				<h4><b>인기 게시글</b></h4>
 				<div>
 					<a href="/community/list"><h6>더보기 <i class="fa-solid fa-chevron-right"></i></h6></a>
 				</div>
 			</div>
 			<!-- @@@@@@ 조회수 순 정렬 / 카테고리별로 나누기 필요 @@@@@ -->
-			<!-- 분할 없음
 			<div>
 				<table class="table table-hover table_table " id="table_size">
 					<thead>
@@ -216,7 +215,8 @@ const pager_item = [ {
 					</tbody>
 				</table>
 			</div>
-			-->
+			
+			<!-- @@@@@ 2분할
 			<div class="top-table">
 				<div class="recent-table">
 					<table class="table table-hover table_table " id="table_size" >
@@ -234,7 +234,7 @@ const pager_item = [ {
 								<td colspan="5">등록된 글이 없습니다.</td>
 							</tr>
 						</c:if>
-						<c:forEach var="item" items="${commuReview}" end="4">
+						<c:forEach var="item" items="${commuList}" end="4">
 							<tr
 								style="border: 1px solid #dddddd; padding-top: 10px; border-right: 1px solid White; border-left: 1px solid White;">
 								 <td><div class="category_color category_color_${item.category}"></div>${item.category_}</td> 
@@ -264,7 +264,7 @@ const pager_item = [ {
 								<td colspan="5">등록된 글이 없습니다.</td>
 							</tr>
 						</c:if>
-						<c:forEach var="item" items="${commuTalk}" end="4">
+						<c:forEach var="item" items="${commuList}" end="4">
 							<tr
 								style="border: 1px solid #dddddd; padding-top: 10px; border-right: 1px solid White; border-left: 1px solid White;">
 								 <td><div class="category_color category_color_${item.category}"></div>${item.category_}</td> 
@@ -278,6 +278,7 @@ const pager_item = [ {
 				</table>
 				</div>
 			</div>
+			-->
 		</div>
 	</div>
 	

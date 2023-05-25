@@ -15,7 +15,7 @@
 
 <title>비밀번호변경</title>
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-<script>
+<script> 
 $(function() {
 	let isCheck3;
 	
@@ -53,10 +53,14 @@ $(function() {
 	$('#checkPW').click(function() {
 		const pw = $('#pw').val();
 		$.ajax({
-			url:'/mg/checkPW/${manager.id}',
+			url:'/mg/checkPW',
 			contentType: "application/json",
 			type: 'POST',
-			data: JSON.stringify({ pw: pw}),
+			data: JSON.stringify({
+				//불러오는 값이 이메일이면 .kr을 확장자로 처리해서 삭제되기 때문에 
+				//따로 데이터에 '값'을 넣어서 문자열이라는 것을 인식시켜야함 : 회원번호로 구성하는게 베스트 
+				id: '${manager.id}',
+				pw: pw}),
 			success: function(pw) {
 				if(pw == 'OK') { 
 					console.log(pw);

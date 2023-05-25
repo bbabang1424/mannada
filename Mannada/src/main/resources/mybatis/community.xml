@@ -33,21 +33,6 @@
 		LIMIT #{offset}, #{perPage}
 	</select>
 
-	<select id="mainList_review" resultType="community">
-		SELECT community.*
-		FROM community
-		WHERE category=1
-		ORDER BY viewCnt DESC
-		LIMIT #{offset}, #{perPage}
-	</select>
-	
-	<select id="mainList_talk" resultType="community">
-		SELECT community.*
-		FROM community
-		WHERE category=2
-		ORDER BY viewCnt DESC
-		LIMIT #{offset}, #{perPage}
-	</select>
 
 	<insert id="add">
 		INSERT INTO community

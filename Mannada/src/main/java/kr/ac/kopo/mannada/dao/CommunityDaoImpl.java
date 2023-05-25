@@ -89,16 +89,4 @@ public class CommunityDaoImpl implements CommunityDao {
 		return sql.selectList("community.detail_reply", id);
 	}
 
-	/* 메인페이지용 */
-	
-	@Override
-	public List<Community> reviewList(Pager pager) {
-		return sql.selectList("community.mainList_review", pager);
-	}
-
-	@Override
-	public List<Community> talkList(Pager pager) {
-		return sql.selectList("community.mainList_talk", pager);
-	}
-
 }

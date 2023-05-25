@@ -92,12 +92,12 @@
 	
 	<delete id="delete_join">
 		DELETE FROM joins
-		WHERE manna_id = #{id} AND num = #{num}
+		WHERE manna_id = #{mannaId} AND num = #{num}
 	</delete>
 	
 	<delete id="delete_joins">
 		DELETE FROM joins
-		WHERE manna_id = #{id}
+		WHERE manna_id = #{mannaId}
 	</delete>
 	
 	

@@ -38,18 +38,21 @@
 				num = #{keyword}
 			</if>
 			<if test="search eq 2">
-				nickname LIKE CONCAT(CONCAT('%',#{keyword}),'%')
+				id LIKE CONCAT(CONCAT('%',#{keyword}),'%')
 			</if>
 			<if test="search eq 3">
-				intro LIKE CONCAT(CONCAT('%',#{keyword}),'%')
+				nickname LIKE CONCAT(CONCAT('%',#{keyword}),'%')
 			</if>
 			<if test="search eq 4">
+				intro LIKE CONCAT(CONCAT('%',#{keyword}),'%')
+			</if>
+			<if test="search eq 5">
 				delDate LIKE CONCAT(CONCAT('%',#{keyword}),'%')
 			</if>
 		</where>
 		ORDER BY id DESC
 	</sql>
-	
+	 
 	<select id="total" resultType="Integer">
 		SELECT COUNT(*) 
 		FROM (<include refid="search"></include>) user
