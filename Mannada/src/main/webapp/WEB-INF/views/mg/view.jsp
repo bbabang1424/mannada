@@ -69,10 +69,7 @@ $(function() {
 		<nav class="my-nav">
 			<ul>
 				<li>작성 글</li>
-				<li>QnA</li>
-			<c:if test="${sessionScope.manager.id == manager.id}">
-				<li>회원관리</li>
-			</c:if>
+				<li>Q n A</li>
 			</ul>
 		</nav>
 	</header>
