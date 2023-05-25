@@ -36,15 +36,15 @@ public class MannaController {
 	}
 	
 	@GetMapping("/detail/{id}")
-	public String detail(@PathVariable int id, Model model, @SessionAttribute User user) {
+	public String detail(@PathVariable int id, Model model) {
 		
 		service.addViewCnt(id);
 		
-		Map<String, Object> js = new HashMap<String, Object>();
-		js.put("id", id);
-		js.put("num", user.getNum());
-		int status = service.joinStatus(js);
-		model.addAttribute("status", status);
+		/*
+		 * Map<String, Object> js = new HashMap<String, Object>(); js.put("id", id);
+		 * js.put("num", user.getNum()); int status = service.joinStatus(js);
+		 * model.addAttribute("status", status);
+		 */
 		
 		Manna item = service.item(id);
 		model.addAttribute("item", item);
