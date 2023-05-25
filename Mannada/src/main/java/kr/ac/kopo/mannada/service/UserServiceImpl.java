@@ -80,7 +80,7 @@ public class UserServiceImpl implements UserService {
 		int total = dao.reviewTotal(viewPager);
 		viewPager.setTotal(total);
 		
-		return dao.reviewList(num);
+		return dao.reviewList(num, viewPager);
 	}
 
 	@Override

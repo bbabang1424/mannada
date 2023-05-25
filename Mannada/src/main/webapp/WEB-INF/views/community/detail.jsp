@@ -60,7 +60,7 @@ function EtValue() {
 				<div class="Writer_date">
 					<div class="Writer">
 						<span style="font-weight: bold; margin-right: 3px;">작성자</span>
-						${item.nickname}
+						<a href="/user/view/${item.num}">${item.nickname}</a>
 					</div>
 				</div>
 				<div class="date_views">
