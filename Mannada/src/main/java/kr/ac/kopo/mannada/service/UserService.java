@@ -24,7 +24,7 @@ public interface UserService {
 
 	User item(int num);
 
-	List<Review> reviewList(int num, Pager rePager); 
+	List<Review> reviewList(int num, Pager viewPager); 
 
 	void reviewAdd(Review review);
 

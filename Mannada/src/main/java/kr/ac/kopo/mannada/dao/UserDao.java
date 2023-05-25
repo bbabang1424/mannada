@@ -26,7 +26,7 @@ public interface UserDao {
 
 	User item(int num);
 	
-	int reviewTotal(Pager rePager);
+	int reviewTotal(Pager viewPager);
 	
 	List<Review> reviewList(int num);
 

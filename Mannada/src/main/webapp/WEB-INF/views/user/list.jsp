@@ -85,7 +85,7 @@
 								<li class="page-item"><a href="?page=1${pager.query}"
 									class="page-link">처음</a></li>
 								<li class="page-item"><a
-									href="?page=${pager.prev}${pager.query}" class="page-link">◀</a></li>
+									href="?page=${pager.prev}${pager.query}" class="page-link">이전</a></li>
 
 								<c:forEach var="page" items="${pager.list}">
 									<li class="page-item">
@@ -96,7 +96,7 @@
 								</c:forEach>
 
 								<li class="page-item"><a
-									href="?page=${pager.next}${pager.query}" class="page-link">▶</a></li>
+									href="?page=${pager.next}${pager.query}" class="page-link">다음</a></li>
 								<li class="page-item"><a
 									href="?page=${pager.last}${pager.query}" class="page-link">마지막</a></li>
 							</ul> 

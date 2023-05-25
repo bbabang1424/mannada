@@ -88,8 +88,10 @@ public class UserController {
 		List<Reply> reply = commuSerice.replyList(rePager); 
 		model.addAttribute("commuReply", reply);
 
+		Pager viewPager = new Pager();
+		rePager.setPerPage(10);
 		
-		List<Review> review = service.reviewList(num, rePager);
+		List<Review> review = service.reviewList(num, viewPager);
 		model.addAttribute("review", review);
 		
 		return path + "view";

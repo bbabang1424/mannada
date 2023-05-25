@@ -60,8 +60,8 @@ public class UserDaoImpl implements UserDao {
 	}
 
 	@Override
-	public int reviewTotal(Pager rePager) {
-		return sql.selectOne("user.review_total", rePager);
+	public int reviewTotal(Pager viewPager) {
+		return sql.selectOne("user.review_total", viewPager);
 	}
 	
 	@Override
