@@ -26,17 +26,17 @@
 	<section class="content">
 		<div class="box">
 			<div class="first">
-				
-				
-				
-					<div class="Category_address">[${item.category_}] 
-					<i class="bi bi-geo-alt"></i>${item.address}
-					</div>
 
-					<div class="title">
-						<div class="font-size">${item.title}</div>
-					</div>
-					<!-- 사진 변경 -->
+
+
+				<div class="Category_address">
+					[${item.category_}] <i class="bi bi-geo-alt"></i>${item.address}
+				</div>
+
+				<div class="title">
+					<div class="font-size">${item.title}</div>
+				</div>
+				<!-- 사진 변경 -->
 				<c:if test="${user.attach.filename != null}">
 					<img src="/upload/${user.attach.uuid}_${user.attach.filename}">
 				</c:if>
@@ -44,31 +44,33 @@
 					<img class="img" src="/resources/image/profile.png">
 				</c:if>
 				<div class="writer_date">
-						<div class="Writer">
-							작성자: ${item.nickname} <i class="bi bi-star"></i> 4.5
-						</div>
-						<div class="date">
-							<i class="bi bi-calendar-check"></i> ${item.dDay}
-						</div>
+					<div class="Writer">
+						<span style="font-weight: 500;">작성자:</span><a
+							href="/user/view/${item.num}" style="color: black;" class="b">
+							${item.nickname}</a>
+							<p class="arrow_box">회원정보</p> <i class="bi bi-star"></i> 4.5
 					</div>
+					<div class="date">
+						<i class="bi bi-calendar-check"></i> ${item.dDay}
+					</div>
+				</div>
 				<!-- personnel:인원이란 뜻 -->
 				<div class="model_personnel">
 					<!-- 참여인원/모집인원 : 참여버튼을 눌른 이용자의 인원이 나와야함-->
 					<span>참여현황:${item.sum }/${item.member}</span>
 				</div>
 				<progress id="model_progress" value="${item.sum }"
-					max="${item.member}"> 	
-				</progress> 
-					
-					 <div class="views">
-						<i class="bi bi-eye"></i> ${item.viewCnt }
-					</div>
+					max="${item.member}"> </progress>
+
+				<div class="views">
+					<i class="bi bi-eye"></i> ${item.viewCnt }
+				</div>
 				<div class="model_line"></div>
-			</div> 
-			<div class="model_middle"> 
+			</div>
+			<div class="model_middle">
 
 
-				<div class="model_member">참여인원</div> 
+				<div class="model_member">참여인원</div>
 
 				<div class="model_member_num_box_info">
 					<div id="box_info">
@@ -83,12 +85,14 @@
 					<!-- Partic: 참여란 뜻으로 참여버튼 -->
 					<!-- 참여버튼 눌렀을때 인원 표시되게 해야 함-->
 					<div class="model_Partic">
-					<c:if test="${status == 0 }">
-						<a href="../addJoin/${item.id }"><button type="button" id="join_btn">참여</button></a>
-					</c:if>
-					<c:if test="${status == 1 }">
-						<a href="../deleteJoin/${item.id }"><button type="button" id="join_btn">참여 취소</button></a>
-					</c:if>
+						<c:if test="${status == 0 }">
+							<a href="../addJoin/${item.id }"><button type="button"
+									id="join_btn">참여</button></a>
+						</c:if>
+						<c:if test="${status == 1 }">
+							<a href="../deleteJoin/${item.id }"><button type="button"
+									id="join_btn">참여 취소</button></a>
+						</c:if>
 					</div>
 				</div>
 
@@ -102,19 +106,20 @@
 					<a href="../update/${id}"><button class="button_modify">수정</button></a>
 					<a href="../delete/${id}"><button class="button_delete">삭제</button></a>
 				</c:if>
-					
+
 				<c:if test="${status == 1 }">
 					<!-- 채팅 버튼 일부러 뺴놈 이모지 넣음으로써 버튼 높 낮이 변함-->
-					<a href="../../chat/detail/${item.id}"><button class="button_chatting">
-						<i class="bi bi-chat-fill"></i>
-					</button></a>
+					<a href="../../chat/detail/${item.id}"><button
+							class="button_chatting">
+							<i class="bi bi-chat-fill"></i>
+						</button></a>
 				</c:if>
 			</div>
-			
-		
+
+
 		</div>
 		<div class="back">
-		<a href="../list"><button class="button_back">목록</button></a>
+			<a href="../list"><button class="button_back">목록</button></a>
 		</div>
 	</section>
 
