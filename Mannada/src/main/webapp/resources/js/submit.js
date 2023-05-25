@@ -19,5 +19,5 @@ function EtValue() {
 		return;
 	}
 	
-	// form.submit();
+	form.submit();
 }

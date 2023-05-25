@@ -8,7 +8,7 @@ import kr.ac.kopo.mannada.model.Manager;
 
 @Repository
 public class ManagerDaoImpl implements ManagerDao {
-	
+	 
 	@Autowired
 	SqlSession sql;
 	

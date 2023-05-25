@@ -15,7 +15,7 @@
 
 <title>비밀번호변경</title>
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-<script>
+<script> 
 $(function() {
 	let isCheck3;
 	

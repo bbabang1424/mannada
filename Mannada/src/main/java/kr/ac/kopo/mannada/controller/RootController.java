@@ -73,7 +73,7 @@ public class RootController {
 			else
 				return "redirect:" + targetUrl;
 		} else
-			return "redirect:login";
+			return "redirect:login"; 
 	}
 	@PostMapping("/managerLogin")
 	public String userLogin(Manager manager, HttpSession session) {		

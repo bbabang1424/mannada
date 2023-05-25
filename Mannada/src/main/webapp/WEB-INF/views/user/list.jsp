@@ -32,7 +32,7 @@
 						<option value="4">소개 글</option>
 						<option value="5">탈퇴일자</option>
 					</select>
-				</div>
+				</div> 
 				<div class="col-2">
 					<input
 						class="form-control form-control-sm keyword-all"

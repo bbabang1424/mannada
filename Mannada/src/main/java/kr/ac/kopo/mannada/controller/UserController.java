@@ -36,7 +36,7 @@ import kr.ac.kopo.mannada.service.UserService;
 @RequestMapping("/user")
 public class UserController {
 	final String path = "user/";
-	private String uploadPath = "d://upload/";
+	private String uploadPath = "d://upload/"; 
 	
 	@Autowired
 	UserService service;

@@ -15,7 +15,7 @@
 
 <title>정보수정</title>
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-<script>
+<script> 
 $(function() {
 	let isCheck2;
 	let isCheck3;

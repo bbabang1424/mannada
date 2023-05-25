@@ -73,7 +73,7 @@
 							<option value="4">모집일</option>
 							<option value="5">주소</option>
 							<option value="6">내용</option>
-						</select> 
+						</select>  
 							
 						<input class="search_box" name="keyword" type="text">
 							

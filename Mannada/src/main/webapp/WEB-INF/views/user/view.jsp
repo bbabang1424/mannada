@@ -16,7 +16,7 @@
 
 <title>사용자 마이페이지</title>
 
-<script>
+<script> 
 $(function() {
     $(".my-nav li").click(function() {
        $(".my-nav li").css("text-decoration", "unset");

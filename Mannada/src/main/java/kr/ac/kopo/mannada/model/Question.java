@@ -12,7 +12,7 @@ public class Question {
 	private int status;
 
 	private String nickname;
-	
+	 
 	private int rnum;
 
 	public String getStatus_() {

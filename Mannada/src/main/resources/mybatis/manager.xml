@@ -6,7 +6,7 @@
 		SELECT * FROM manager
 		WHERE id = #{id} AND pw = PASSWORD(#{pw})
 	</select>
-	
+	  
 	<select id="item" resultType="Manager">
 		SELECT *
 		FROM manager

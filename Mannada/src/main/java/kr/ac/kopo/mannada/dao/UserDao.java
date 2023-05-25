@@ -9,7 +9,7 @@ import kr.ac.kopo.mannada.model.User;
 import kr.ac.kopo.mannada.pager.Pager;
 
 public interface UserDao {
-
+ 
 	User login(User user);
 
 	void signup(User item);

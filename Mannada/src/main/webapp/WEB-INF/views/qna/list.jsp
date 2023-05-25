@@ -48,7 +48,7 @@
 		<section class="table_info">
 			<div class="selelct_list">
 				<div class="category">
-					<form>
+					<form> 
 						<select name="search" class="form-select form-select-sm">
 							<option value="1">제목</option>
 							<option value="2">닉네임</option>

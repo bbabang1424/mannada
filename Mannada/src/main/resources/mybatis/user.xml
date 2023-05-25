@@ -52,7 +52,7 @@
 		</where>
 		ORDER BY id DESC
 	</sql>
-	
+	 
 	<select id="total" resultType="Integer">
 		SELECT COUNT(*) 
 		FROM (<include refid="search"></include>) user

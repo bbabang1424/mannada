@@ -8,7 +8,7 @@ import kr.ac.kopo.mannada.model.Manager;
 
 @Service
 public class ManagerServiceImpl implements ManagerService {
-	
+ 	
 	@Autowired
 	ManagerDao dao; 
 	

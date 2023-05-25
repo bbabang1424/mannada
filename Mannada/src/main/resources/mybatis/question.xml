@@ -42,7 +42,6 @@
 		</selectKey>
 	</insert>
 
-
 	<select id="item" resultType="Question">
 		SELECT question.*, nickname
 		FROM question
@@ -50,13 +49,11 @@
 		WHERE question.id = #{id}
 	</select>
 
-
 	<update id="update">
 		UPDATE question
 		SET title = #{title}, content = #{content}
 		WHERE id = #{id}
 	</update>
-
 
 	<delete id="delete">
 		DELETE FROM question
@@ -95,7 +92,6 @@
 		SET status = 0
 		WHERE id = #{id}
 	</update>
-	
 	
 	<!-- 조회수 증가 -->
 	<update id="addViewCnt">

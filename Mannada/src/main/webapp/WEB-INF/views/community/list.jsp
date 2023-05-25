@@ -60,7 +60,7 @@
 					<div class="search">
 						<button class="search_btn">검색</button>
 					</div>
-				</form>
+				</form> 
 			</div>
 
 

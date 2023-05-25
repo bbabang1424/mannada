@@ -32,7 +32,7 @@ public class ManagerController {
 	ManagerService service;
 	
 	@Autowired
-	NoticeService noticeService;
+	NoticeService noticeService; 
 	
 	@Autowired
 	QuestionService qnaService;

@@ -16,7 +16,7 @@
 <title>프로필 사진</title>
 </head>
 <body>
-	<div class="container">
+	<div class="container"> 
 		<div>
 			<h3>프로필 등록</h3>
 		</div> 

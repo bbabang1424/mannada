@@ -15,7 +15,7 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
 
 <title>관리자 마이페이지</title>
-
+ 
 <script>
 $(function() {
     $(".my-nav li").eq(0).click(function() {

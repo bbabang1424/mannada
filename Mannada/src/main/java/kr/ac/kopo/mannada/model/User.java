@@ -11,7 +11,7 @@ public class User {
 	private Date regDate;
 	private int status;
 	private Date delDate;
-	
+	 
 	private String newPW;  
 	
 	private Attach attach;

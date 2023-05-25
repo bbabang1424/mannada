@@ -4,7 +4,7 @@ public class Manager {
 	private String id;
 	private String pw;
 	private String nickname;
-	
+	 
 	private String newPW; 
 	
 	public String getId() {
