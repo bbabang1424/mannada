@@ -50,6 +50,12 @@ public class RootController {
 		
 		List<Community> commuList = commuService.list(pager);
 		model.addAttribute("commuList", commuList);
+		
+		List<Community> commuReview = commuService.reviewList(pager);
+		model.addAttribute("commuReview", commuReview);
+		
+		List<Community> commuTalk = commuService.talkList(pager);
+		model.addAttribute("commuTalk", commuTalk);
 
 		return "index";
 	}

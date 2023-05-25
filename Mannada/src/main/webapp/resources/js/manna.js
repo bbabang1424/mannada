@@ -99,7 +99,11 @@ function makeItem(element){
     const id = element.id;
 
     const a = document.createElement("a")
-    a.href = "detail/" + id;
+    if(window.location.pathname == '/')
+        a.href = "manna/detail/" + id; // 메인페이지용으로 if문 추가
+    else 
+        a.href = "detail/" + id;
+
 
     const card = document.createElement("div");
     card.classList.add("card");
