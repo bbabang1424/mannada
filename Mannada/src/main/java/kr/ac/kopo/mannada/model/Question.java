@@ -12,10 +12,15 @@ public class Question {
 	private int status;
 
 	private String nickname;
-	
+	 
 	private int rnum;
 
-	
+	public String getStatus_() {
+		if(status==0)
+			return "답변대기";
+		else
+			return "답변완료";
+	}
 	
 	public int getRnum() {
 		return rnum;

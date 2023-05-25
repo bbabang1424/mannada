@@ -9,7 +9,7 @@ import kr.ac.kopo.mannada.model.User;
 import kr.ac.kopo.mannada.pager.Pager;
 
 public interface UserDao {
-
+ 
 	User login(User user);
 
 	void signup(User item);
@@ -26,9 +26,9 @@ public interface UserDao {
 
 	User item(int num);
 	
-	int reviewTotal(Pager rePager);
+	int reviewTotal(Pager viewPager);
 	
-	List<Review> reviewList(int num);
+	List<Review> reviewList(int num, Pager viewPager);
 
 	void reviewAdd(Review review); 
 

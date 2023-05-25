@@ -21,38 +21,39 @@
 			<li>글 목록</li>
 		</ul>
 		<h3 class="page_title">글 목록</h3>
-		<p class="page_text">새로운 만남을 만날수 있는 곧 입니다. 관심있는 카드를 눌러 참여하세요!</p>
+		<p class="page_text">새로운 만남을 만날수 있는 곳 입니다. 관심있는 카드를 눌러 참여하세요!</p>
 	</div>
 	<section class="content">
 		<div class="box">
 			<div class="first">
-				<img class="img" src="/resources/image/profile.png">
-				<div class="all_content">
-					<div class="Category_address">[${item.category_}] 
-					<i class="bi bi-geo-alt"></i>${item.address}
-		
-					</div>
 
-					<div class="title">
-						<div class="font-size">${item.title}</div>
-					</div>
 
-					<!-- 데이터 가져 올려고 했는데 오류가 나서 안됨 가져 올수 있는거 가져 옴 -->
-					<div class="model_Writer">작성자: ${item.nickname}</div>
-					<div class="model_grade">
-						<i class="bi bi-star"></i> 4.5
+
+				<div class="Category_address">
+					[${item.category_}] <i class="bi bi-geo-alt"></i>${item.address}
+				</div>
+
+				<div class="title">
+					<div class="font-size">${item.title}</div>
+				</div>
+				<!-- 사진 변경 -->
+				<c:if test="${user.attach.filename != null}">
+					<img src="/upload/${user.attach.uuid}_${user.attach.filename}">
+				</c:if>
+				<c:if test="${user.attach.filename == null}">
+					<img class="img" src="/resources/image/profile.png">
+				</c:if>
+				<div class="writer_date">
+					<div class="Writer">
+						<span style="font-weight: 500;">작성자:</span><a
+							href="/user/view/${item.num}" style="color: black;" class="b">
+							${item.nickname}</a>
+							<p class="arrow_box">회원정보</p> <i class="bi bi-star"></i> 4.5
 					</div>
-					<div class="model_date">
+					<div class="date">
 						<i class="bi bi-calendar-check"></i> ${item.dDay}
 					</div>
-					</div>
-					
-					<div class="model_views">
-						<i class="bi bi-eye"></i> 33
-					</div>
-					
-				
-
+				</div>
 				<!-- personnel:인원이란 뜻 -->
 				<div class="model_personnel">
 					<!-- 참여인원/모집인원 : 참여버튼을 눌른 이용자의 인원이 나와야함-->
@@ -60,6 +61,10 @@
 				</div>
 				<progress id="model_progress" value="${item.sum }"
 					max="${item.member}"> </progress>
+
+				<div class="views">
+					<i class="bi bi-eye"></i> ${item.viewCnt }
+				</div>
 				<div class="model_line"></div>
 			</div>
 			<div class="model_middle">
@@ -80,7 +85,14 @@
 					<!-- Partic: 참여란 뜻으로 참여버튼 -->
 					<!-- 참여버튼 눌렀을때 인원 표시되게 해야 함-->
 					<div class="model_Partic">
-						<button type="button" id="join_btn"">참여</button>
+						<c:if test="${status == 0 }">
+							<a href="../addJoin/${item.id }"><button type="button"
+									id="join_btn">참여</button></a>
+						</c:if>
+						<c:if test="${status == 1 }">
+							<a href="../deleteJoin/${item.id }"><button type="button"
+									id="join_btn">참여 취소</button></a>
+						</c:if>
 					</div>
 				</div>
 
@@ -94,20 +106,58 @@
 					<a href="../update/${id}"><button class="button_modify">수정</button></a>
 					<a href="../delete/${id}"><button class="button_delete">삭제</button></a>
 				</c:if>
+
+				<c:if test="${status == 1 }">
 					<!-- 채팅 버튼 일부러 뺴놈 이모지 넣음으로써 버튼 높 낮이 변함-->
-			<a href="../../chat/detail/${item.id}"><button
-					class="button_chatting">
-					<i class="bi bi-chat-fill"></i>
-				</button></a>
+					<a href="../../chat/detail/${item.id}"><button
+							class="button_chatting">
+							<i class="bi bi-chat-fill"></i>
+						</button></a>
+				</c:if>
 			</div>
-			
-		
+
+
 		</div>
 		<div class="back">
-		<a href="../list"><button class="button_back">목록</button></a>
+			<a href="../list"><button class="button_back">목록</button></a>
 		</div>
 	</section>
 
 	<jsp:include page="../footer.jsp"></jsp:include>
 </body>
+
+<!-- <script type="text/javascript">
+	//참여 버튼
+	document.querySelector("#join_btn").addEventListener("click", e => {
+	
+	    fetch("../../addJoin/" + ${item.id}, {
+	        method: "POST",
+	        headers: { 'Content-Type': 'application/json' },
+	        body: JSON.stringify()
+	    }).then(resp => {
+	        if (resp.status == 200)
+	            return resp.json();
+	    }).then(result => {
+	        document.querySelector("#join_btn").textContent = "참여 취소";
+	    });
+	
+	});
+	
+	
+	// 참여 취소 버튼
+	document.querySelector("#join_btn.cancle").addEventListener("click", e => {
+	
+	    fetch("../../deleteJoin/" + ${item.id}, {
+	        method: "DELETE",
+	        headers: { 'Content-Type': 'application/json' },
+	        body: JSON.stringify()
+	    }).then(resp => {
+	        if (resp.status == 200)
+	            return resp.json();
+	    }).then(result => {
+	        document.querySelector("#join_btn").textContent = "참여";
+	    });
+	
+	});
+</script> -->
 </html>

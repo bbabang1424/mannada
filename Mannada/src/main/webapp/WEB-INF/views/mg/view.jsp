@@ -15,33 +15,26 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
 
 <title>관리자 마이페이지</title>
-
+ 
 <script>
 $(function() {
-    $(".my-nav li").click(function() {
+    $(".my-nav li").eq(0).click(function() {
        $(".my-nav li").css("text-decoration", "unset");
        $(".my-nav li").eq(0).css("text-decoration", "underline");
        $(".my-set").css("display", "none");
-       $("#my-info").css("display", "unset");
+       $("#my-post").css("display", "unset");
     });
 
     $(".my-nav li").eq(1).click(function() {
        $(".my-nav li").css("text-decoration", "unset");
        $(".my-nav li").eq(1).css("text-decoration", "underline");
        $(".my-set").css("display", "none");
-       $("#my-post").css("display", "unset");
-    });
-
-    $(".my-nav li").eq(2).click(function() {
-       $(".my-nav li").css("text-decoration", "unset");
-       $(".my-nav li").eq(2).css("text-decoration", "underline");
-       $(".my-set").css("display", "none");
        $("#my-question").css("display", "unset");
     });
  });
 </script>
 <style>
-#my-post, #my-question{
+#my-question{
 	display: none;
 }
 </style>
@@ -55,47 +48,28 @@ $(function() {
 			</div>
 		</div>
 		<div>
+			${manager.nickname}
+		</div>
+		<div>
 			<c:if test="${sessionScope.manager == null}">
 				<a href="/login">정보변경</a>
 				<a href="/login">비밀번호변경</a>
 				<a href="/login">회원관리</a>
 			</c:if>
 			<c:if test="${sessionScope.manager != null}">
-				<a href="../update/${sessionScope.manager.num}">정보변경</a>
-				<a href="../password/${sessionScope.manager.num}">비밀번호변경</a>
+				<a href="../update/${sessionScope.manager.id}">정보변경</a>
+				<a href="../password/${sessionScope.manager.id}">비밀번호변경</a>
 				<a href="../../user/list">회원관리</a>
 			</c:if>
 		</div>
 		<nav class="my-nav">
 			<ul>
 				<li>작성 글</li>
-				<li>QnA</li>
-			<c:if test="${sessionScope.manager.id == manager.id}">
-				<li>회원관리</li>
-			</c:if>
+				<li>Q n A</li>
 			</ul>
 		</nav>
 	</header>
 	<section>
-		<div class="my-set" id="my-info">
-			<table border="1">
-				<colgroup>
-					<col width="15%" />
-					<col width="35%" />
-				</colgroup>			
-				<tbody>
-					<tr>
-						<th>이메일</th>
-						<td>${manager.id}</td>
-					</tr>
-					<tr>
-						<th>닉네임</th>
-						<td>${manager.nickname}</td>
-					</tr>
-				</tbody>
-			</table>
-		</div>
-		
 		<div class="my-set" id="my-post">
 			<table border="1">
 				<thead>

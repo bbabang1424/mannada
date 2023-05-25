@@ -16,7 +16,7 @@
 
 <title>사용자 마이페이지</title>
 
-<script>
+<script> 
 $(function() {
     $(".my-nav li").click(function() {
        $(".my-nav li").css("text-decoration", "unset");
@@ -171,10 +171,12 @@ $(function() {
 					<col width="35%" />
 				</colgroup>			
 				<tbody>
+				<c:if test="${sessionScope.user.id == user.id}">
 					<tr>
 						<th>이메일</th>
 						<td>${user.id}</td>
 					</tr>
+				</c:if>
 					<tr>
 						<th>닉네임</th>
 						<td>${user.nickname}</td>
@@ -245,6 +247,30 @@ $(function() {
 								</tr>
 							</c:forEach>
 						</tbody>
+						<tfoot>
+							<tr>
+								<td colspan="5">
+									<ol class="pagination pagination-sm justify-content-center"
+										style="margin-bottom: 5%; margin-top: 5%;">
+										<li class="page_nation_item"><a href="?page=1${pager.query}"
+											class="page-link">처음</a></li>
+										<li class="page_nation_item"><a
+											href="?page=${pager.prev}${pager.query}" class="page-link">이전</a></li>
+			
+										<c:forEach var="page" items="${pager.list}">
+											<li class="page_nation_item"><a
+												href="?page=${page}${pager.query}"
+												class="page-link ${page eq pager.page ? 'active' : ''}">${page}</a></li>
+										</c:forEach>
+			
+										<li class="page_nation_item"><a
+											href="?page=${pager.next}${pager.query}" class="page-link">다음</a></li>
+										<li class="page_nation_item"><a
+											href="?page=${pager.last}${pager.query}" class="page-link">마지막</a></li>
+									</ol>
+								</td>
+							</tr>
+						</tfoot>
 					</table>
 				</div>
 			</div>

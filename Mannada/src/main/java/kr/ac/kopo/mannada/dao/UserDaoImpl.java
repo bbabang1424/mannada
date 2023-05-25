@@ -14,7 +14,7 @@ import kr.ac.kopo.mannada.pager.Pager;
 
 @Repository
 public class UserDaoImpl implements UserDao {
-
+ 
 	@Autowired
 	SqlSession sql; 
 	
@@ -60,13 +60,17 @@ public class UserDaoImpl implements UserDao {
 	}
 
 	@Override
-	public int reviewTotal(Pager rePager) {
-		return sql.selectOne("user.review_total", rePager);
+	public int reviewTotal(Pager viewPager) {
+		return sql.selectOne("user.review_total", viewPager);
 	}
 	
 	@Override
-	public List<Review> reviewList(int num) {
-		return sql.selectList("user.review", num);
+	public List<Review> reviewList(int num, Pager viewPager) {
+		HashMap<String, Object> mapList = new HashMap<String, Object>();
+		mapList.put("num", num);
+		mapList.put("viewPager" , viewPager);
+		
+		return sql.selectList("user.review", mapList);
 	}
 
 	@Override
