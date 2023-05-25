@@ -48,14 +48,19 @@
 		<section class="table_info">
 			<div class="selelct_list">
 				<div class="category">
-					<select name="search" class="form-select form-select-sm">
-						<option value="1">제목</option>
-						<option value="2">내용</option>
-					</select> <input class="search_box" id="category" name="category"
-						type="text">
-					<div class="search">
-						<button class="search_btn">검색</button>
-					</div>
+					<form>
+						<select name="search" class="form-select form-select-sm">
+							<option value="1">제목</option>
+							<option value="2">닉네임</option>
+							<option value="3">내용</option>
+						</select> 
+						
+						<input class="search_box" name="keyword" type="text">
+						
+						<div class="search">
+							<button class="search_btn">검색</button>
+						</div>
+					</form>
 				</div>
 
 

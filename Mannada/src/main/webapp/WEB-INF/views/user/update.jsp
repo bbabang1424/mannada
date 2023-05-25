@@ -115,7 +115,7 @@ $(function() {
 				</div>
 				<div>
 					<label>닉네임</label>
-					<input type="text" name="nickname" id="nick" value="${user.nickname}">
+					<input type="text" name="nickname" id="nick" value="${user.nickname}" placeholder="${user.nickname}">
 					<button type="button" id="checkNick">닉네임 중복확인</button>
 				</div>
 				

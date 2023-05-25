@@ -73,7 +73,7 @@ public class RootController {
 			else
 				return "redirect:" + targetUrl;
 		} else
-			return "redirect:.";
+			return "redirect:login";
 	}
 	@PostMapping("/managerLogin")
 	public String userLogin(Manager manager, HttpSession session) {		
@@ -90,7 +90,7 @@ public class RootController {
 				return "redirect:" + targetUrl;
 
 		} else
-			return "redirect:.";
+			return "redirect:login";
 	}
 	/* 로그아웃 */
 	@RequestMapping("/logout")
@@ -130,7 +130,7 @@ public class RootController {
 	@ResponseBody
 	@GetMapping("/checkNick/{id}")
 	public String checkNick(@PathVariable String id) {
-		if (service.checkNick(id))
+		if (service.checkNick(id) && mgService.checkNick(id))
 			return "OK";
 		else
 			return "FAIL";
