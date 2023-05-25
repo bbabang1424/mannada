@@ -26,46 +26,49 @@
 	<section class="content">
 		<div class="box">
 			<div class="first">
-				<img class="img" src="/resources/image/profile.png">
-				<div class="all_content">
+				
+				
+				
 					<div class="Category_address">[${item.category_}] 
 					<i class="bi bi-geo-alt"></i>${item.address}
-		
 					</div>
 
 					<div class="title">
 						<div class="font-size">${item.title}</div>
 					</div>
-
-					<!-- 데이터 가져 올려고 했는데 오류가 나서 안됨 가져 올수 있는거 가져 옴 -->
-					<div class="model_Writer">작성자: ${item.nickname}</div>
-					<div class="model_grade">
-						<i class="bi bi-star"></i> 4.5
+					<!-- 사진 변경 -->
+				<c:if test="${user.attach.filename != null}">
+					<img src="/upload/${user.attach.uuid}_${user.attach.filename}">
+				</c:if>
+				<c:if test="${user.attach.filename == null}">
+					<img class="img" src="/resources/image/profile.png">
+				</c:if>
+				<div class="writer_date">
+						<div class="Writer">
+							작성자: ${item.nickname} <i class="bi bi-star"></i> 4.5
+						</div>
+						<div class="date">
+							<i class="bi bi-calendar-check"></i> ${item.dDay}
+						</div>
 					</div>
-					<div class="model_date">
-						<i class="bi bi-calendar-check"></i> ${item.dDay}
-					</div>
-					</div>
-					
-					<div class="model_views">
-						<i class="bi bi-eye"></i> ${item.viewCnt }
-					</div>
-					
-				
-
 				<!-- personnel:인원이란 뜻 -->
 				<div class="model_personnel">
 					<!-- 참여인원/모집인원 : 참여버튼을 눌른 이용자의 인원이 나와야함-->
 					<span>참여현황:${item.sum }/${item.member}</span>
 				</div>
 				<progress id="model_progress" value="${item.sum }"
-					max="${item.member}"> </progress>
+					max="${item.member}"> 	
+				</progress> 
+					
+					 <div class="views">
+						<i class="bi bi-eye"></i> ${item.viewCnt }
+					</div>
 				<div class="model_line"></div>
-			</div>
-			<div class="model_middle">
+			</div> 
+			<div class="model_middle"> 
 
 
-				<div class="model_member">참여인원</div>
+				<div class="model_member">참여인원</div> 
 
 				<div class="model_member_num_box_info">
 					<div id="box_info">

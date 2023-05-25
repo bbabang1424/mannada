@@ -65,29 +65,23 @@
 }
 
 .img {
-	    width: 150px;
-    height: 150px;
-    border-radius: 70%;
-    overflow: hidden;
-    margin: 1% 2% 0% 2%;
+	width: 60px;
+	height: 60px;
+	border-radius: 70%;
+	overflow: hidden;
+	margin: 0.5% 2.5% 0% 2%;
 }
 
 .Category_address {
+	margin: 10px 10px 0px 10px;
 	display: inline-block;
-	position: absolute;
-	left: 178px;
-	top: 22px;
 }
 
-
-
 .title {
+	margin: 0px 0px 10px 10px;
 	display: inline-block;
-	position: absolute;
-	left: 180px;
-	top: 50px;
 	color: black;
-	width: 48%;
+	width: 80%;
 	overflow: hidden;
 	text-overflow: ellipsis;
 	height: 30px;
@@ -96,55 +90,42 @@
 	-webkit-line-clamp: 1;
 	-webkit-box-orient: vertical;
 }
-.font-size{
+
+.font-size {
 	display: inline-block;
 	font-size: 22px;
-}
-.model_Writer {
-	word-wrap: break-word;
-	display: inline-block;
-	width: 150px;
-	white-space: nowrap;
-	overflow: hidden;
-	text-overflow: ellipsis;
-	position: absolute;
-	left: 180px;
-	top: 95px;
+	font-weight: bold;
 }
 
-.model_grade {
-	display: inline-block;
+.writer_date {
 	position: absolute;
-	top: 95px;
-	left: 338px;
+	width: 100%;
+	top: 11%;
+	left: 10%;
 }
 
-.model_views {
+.Writer {
+	word-wrap: break-word; */
 	display: inline-block;
-	position: absolute;
-	top: 13.5%;
-	left: 90.5%;
+	width: 100%;
 }
 
-.model_date {
+.date {
+	display: inline-block;
+}
+
+.views {
 	display: inline-block;
 	position: absolute;
-	left: 180px;
-	top: 121px;
+	left: 93.5%;
+	top: 12%;
 }
 
 .model_personnel {
 	display: inline-block;
 	position: absolute;
-	left: 86%;
-	top: 66px;
-}
-
-.all_content {
-	position: absolute;
-	width: 100%;
-	top: 1%;
-	left: 5%;
+	left: 89%;
+	top: 45px;
 }
 
 .personnel {
@@ -181,8 +162,8 @@ progress {
 	border: 0;
 	border-radius: 9px;
 	position: absolute;
-	top: 10.5%;
-	left: 71%;
+	top: 8.5%;
+	left: 74%;
 	width: 23%;
 }
 /* 크기 조절은 height에서 */
