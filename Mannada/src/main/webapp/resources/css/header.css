@@ -83,6 +83,7 @@ li { list-style:none; }
 }
 
 .header-nav { display:none; background-color:#fff;  border-bottom:1px solid #d9d9d9;  position: fixed; top: 87.76px; width:100%; z-index:99; } 
+.header-nav a { color: #000; }
 .header-inner {   display: flex; }
 .header-line { border-left: 1px solid #d9d9d9; }
 .header-line:last-child { border-right: 1px solid #d9d9d9;}

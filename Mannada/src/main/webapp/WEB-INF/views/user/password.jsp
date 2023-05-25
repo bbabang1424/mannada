@@ -17,7 +17,7 @@
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script>
 $(function() {
-	let isCheck3; 
+	let isCheck3;
 	
 	$('#changePW').click(function(){
 		const form = document.changePW_form;

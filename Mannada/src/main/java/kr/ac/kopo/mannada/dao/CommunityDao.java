@@ -34,4 +34,8 @@ public interface CommunityDao {
 
 	List<Reply> detailReply(int id);
 
+	List<Community> reviewList(Pager pager);
+
+	List<Community> talkList(Pager pager);
+
 }

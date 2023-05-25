@@ -69,27 +69,26 @@ public class MannaRestController {
 	
 	
 	@PostMapping("/addJoin/{id}")
-	public int addjoin(@PathVariable int id, @SessionAttribute User user) {
+	public String addjoin(@PathVariable int id, @SessionAttribute User user) {
 		
 		HashMap<String, Object> map = new HashMap<>();
 		map.put("mannaId", id);
 		map.put("num", user.getNum());
 		service.addJoin(map);
 		
-		int status = 1;
-		
-		return status;
+		return "redirect:list";
 	}
 	
 
 	@DeleteMapping("/deleteJoin/{id}")
-	public void deleteJoin(@PathVariable int id, @SessionAttribute User user) {
+	public String deleteJoin(@PathVariable int id, @SessionAttribute User user) {
 		
 		HashMap<String, Object> map = new HashMap<>();
 		map.put("mannaId", id);
 		map.put("num", user.getNum());
 		service.deleteJoin(map);
 		
+		return "redirect:list";
 	}
 
 }

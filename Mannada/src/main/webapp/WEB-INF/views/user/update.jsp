@@ -15,7 +15,7 @@
 
 <title>회원정보수정</title>
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-<script> 
+<script>
 $(function() {
 	let isCheck2;
 	let isCheck3;
@@ -115,7 +115,7 @@ $(function() {
 				</div>
 				<div>
 					<label>닉네임</label>
-					<input type="text" name="nickname" id="nick" value="${user.nickname}" placeholder="${user.nickname}">
+					<input type="text" name="nickname" id="nick" value="${user.nickname}">
 					<button type="button" id="checkNick">닉네임 중복확인</button>
 				</div>
 				

@@ -15,7 +15,7 @@
 
 <title>회원탈퇴</title>
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-<script> 
+<script>
 $(function() {
 	let isCheck3;
 	

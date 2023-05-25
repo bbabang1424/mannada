@@ -8,7 +8,7 @@ import kr.ac.kopo.mannada.model.Manager;
 
 @Repository
 public class ManagerDaoImpl implements ManagerDao {
-	 
+	
 	@Autowired
 	SqlSession sql;
 	
@@ -20,8 +20,8 @@ public class ManagerDaoImpl implements ManagerDao {
 
  
 	@Override
-	public Manager item(String nickname) {
-		return sql.selectOne("manager.item", nickname);
+	public Manager item(String id) {
+		return sql.selectOne("manager.item", id);
 	}
 
 
@@ -40,12 +40,6 @@ public class ManagerDaoImpl implements ManagerDao {
 	@Override
 	public void password(Manager item) {
 		sql.update("manager.password", item);
-	}
-
-
-	@Override
-	public int checkNick(String id) {
-		return sql.selectOne("manager.check_nick", id);
 	}
 
 }

@@ -32,15 +32,15 @@ public class ManagerController {
 	ManagerService service;
 	
 	@Autowired
-	NoticeService noticeService; 
+	NoticeService noticeService;
 	
 	@Autowired
 	QuestionService qnaService;
 	
 	/* 마이페이지 */
-	@GetMapping("/view/{nickname}")
-	public String view(@PathVariable String nickname, Model model, @SessionAttribute Manager manager) {
-		Manager item = service.item(nickname);
+	@GetMapping("/view/{id}")
+	public String view(@PathVariable String id, Model model) {
+		Manager item = service.item(id);
 		model.addAttribute("manager", item);
 		
 		Pager pager = new Pager();
@@ -48,7 +48,6 @@ public class ManagerController {
 		
 		List<Notice> notice = noticeService.list(pager);
 		model.addAttribute("myNotice", notice);
-		
 		List<Question> qna = qnaService.list(pager);
 		model.addAttribute("myQnA", qna);
 		
@@ -56,7 +55,7 @@ public class ManagerController {
 	}
 	
 	/* 회원정보 변경 */
-	@GetMapping("/update/{id}")
+	@GetMapping("/update/{num}")
 	public String update(@PathVariable String id, Model model, HttpSession session) {
 		Manager item = service.item(id);
 		model.addAttribute("manager", item);
@@ -64,13 +63,13 @@ public class ManagerController {
 		return path + "update";
 	}
 
-	@PostMapping("/update/{id}")
+	@PostMapping("/update/{num}")
 	public String update(@PathVariable String id, Manager item, @SessionAttribute Manager manager) {
-		item.setId(manager.getId());
+		item.setId(item.getId()); 
 		
 		service.update(item);
 		
-		return "redirect:../view/" + item.getNickname();
+		return "redirect:../view/" + id;
 	}
 	
 	/* 비밀번호 변경 */
@@ -85,10 +84,9 @@ public class ManagerController {
 	/* 수정 전에 비밀번호 확인 */
 	//@ResponseBody : 경로를 고정해서 요청하는 언어테이션임 redirect를 리턴해야할때는 사용x
 	@ResponseBody
-	@PostMapping("/checkPW")
-	public String checkPW(@RequestBody Manager item) {
-		//System.out.println(item.getId());
-		item.setId(item.getId());
+	@PostMapping("/checkPW/{id}")
+	public String checkPW(@PathVariable String id, @RequestBody Manager item) {
+		item.setId(id);
 			
 		if (service.checkPW(item))
 			return "OK";
@@ -96,13 +94,12 @@ public class ManagerController {
 			return "FAIL";
 	}
 		
-	@PostMapping("/password/{nickname}")
-	public String password(@PathVariable String nickname, Manager item, @SessionAttribute Manager manager) {
-		//보안을 위해 로그인여부확인
-		item.setId(manager.getId());
+	@PostMapping("/password/{id}")
+	public String password(@PathVariable String id, Manager item, @SessionAttribute Manager manager) {
+		item.setId(id);
 		
 		service.password(item);
 		
-		return "redirect:../view/" + item.getNickname();
+		return "redirect:../view/" + id;
 	}
 }

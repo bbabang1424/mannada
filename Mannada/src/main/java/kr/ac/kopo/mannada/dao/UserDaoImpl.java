@@ -14,7 +14,7 @@ import kr.ac.kopo.mannada.pager.Pager;
 
 @Repository
 public class UserDaoImpl implements UserDao {
- 
+
 	@Autowired
 	SqlSession sql; 
 	

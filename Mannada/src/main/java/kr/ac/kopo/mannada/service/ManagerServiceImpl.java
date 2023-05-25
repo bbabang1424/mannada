@@ -8,7 +8,7 @@ import kr.ac.kopo.mannada.model.Manager;
 
 @Service
 public class ManagerServiceImpl implements ManagerService {
- 	
+	
 	@Autowired
 	ManagerDao dao; 
 	
@@ -19,6 +19,7 @@ public class ManagerServiceImpl implements ManagerService {
 		
 		if(item != null) {
 			manager.setPw(item.getPw());
+			manager.setName(item.getName());
 			manager.setNickname(item.getNickname());
 			
 			return true;
@@ -26,15 +27,18 @@ public class ManagerServiceImpl implements ManagerService {
 			return false; 
 	}
 
+
 	@Override
-	public Manager item(String nickname) {
-		return dao.item(nickname);
+	public Manager item(String id) {
+		return dao.item(id);
 	}
+
 
 	@Override
 	public void update(Manager item) {
 		dao.update(item);
 	}
+
 
 	@Override
 	public boolean checkPW(Manager item) {
@@ -44,17 +48,10 @@ public class ManagerServiceImpl implements ManagerService {
 			return false;
 	}
 
+
 	@Override
 	public void password(Manager item) {
 		dao.password(item);
-	}
-
-	@Override
-	public boolean checkNick(String id) {
-		if(dao.checkNick(id)==0)
-			return true;
-		else
-			return false;
 	}
 
 }

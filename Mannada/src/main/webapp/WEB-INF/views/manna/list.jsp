@@ -68,18 +68,13 @@
 					<div class="category_select">
 						<select name="search" class="form-select form-select-sm">
 							<option value="1">제목</option>
-							<option value="2">닉네임</option>
-							<option value="3">모집인원</option>
-							<option value="4">모집일</option>
-							<option value="5">주소</option>
-							<option value="6">내용</option>
-						</select>  
-							
-						<input class="search_box" name="keyword" type="text">
-							
+							<option value="2">내용</option>
+						</select> <input class="search_box" id="category" name="category"
+							type="text">
 						<div class="search">
 							<button class="search_btn">검색</button>
 						</div>
+
 
 						<c:if test="${sessionScope.user != null }">
 							<div class="writing">

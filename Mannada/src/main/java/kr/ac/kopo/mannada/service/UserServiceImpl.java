@@ -12,7 +12,7 @@ import kr.ac.kopo.mannada.model.Attach;
 import kr.ac.kopo.mannada.model.Review;
 import kr.ac.kopo.mannada.model.User;
 import kr.ac.kopo.mannada.pager.Pager;
- 
+
 @Service
 public class UserServiceImpl implements UserService {
 	private String uploadPath = "d://upload/";

@@ -21,7 +21,7 @@
 			<li>글 목록</li>
 		</ul>
 		<h3 class="page_title">글 목록</h3>
-		<p class="page_text">새로운 만남을 만날수 있는 곳 입니다. 관심있는 카드를 눌러 참여하세요!</p>
+		<p class="page_text">새로운 만남을 만날수 있는 곧 입니다. 관심있는 카드를 눌러 참여하세요!</p>
 	</div>
 	<section class="content">
 		<div class="box">
@@ -48,7 +48,7 @@
 					</div>
 					
 					<div class="model_views">
-						<i class="bi bi-eye"></i> ${item.viewCnt }
+						<i class="bi bi-eye"></i> 33
 					</div>
 					
 				
@@ -80,12 +80,7 @@
 					<!-- Partic: 참여란 뜻으로 참여버튼 -->
 					<!-- 참여버튼 눌렀을때 인원 표시되게 해야 함-->
 					<div class="model_Partic">
-					<c:if test="${status == 0 }">
-						<a href="../addJoin/${item.id }"><button type="button" id="join_btn">참여</button></a>
-					</c:if>
-					<c:if test="${status == 1 }">
-						<a href="../deleteJoin/${item.id }"><button type="button" id="join_btn">참여 취소</button></a>
-					</c:if>
+						<button type="button" id="join_btn"">참여</button>
 					</div>
 				</div>
 
@@ -99,13 +94,11 @@
 					<a href="../update/${id}"><button class="button_modify">수정</button></a>
 					<a href="../delete/${id}"><button class="button_delete">삭제</button></a>
 				</c:if>
-					
-				<c:if test="${status == 1 }">
 					<!-- 채팅 버튼 일부러 뺴놈 이모지 넣음으로써 버튼 높 낮이 변함-->
-					<a href="../../chat/detail/${item.id}"><button class="button_chatting">
-						<i class="bi bi-chat-fill"></i>
-					</button></a>
-				</c:if>
+			<a href="../../chat/detail/${item.id}"><button
+					class="button_chatting">
+					<i class="bi bi-chat-fill"></i>
+				</button></a>
 			</div>
 			
 		
@@ -117,39 +110,4 @@
 
 	<jsp:include page="../footer.jsp"></jsp:include>
 </body>
-
-<!-- <script type="text/javascript">
-	//참여 버튼
-	document.querySelector("#join_btn").addEventListener("click", e => {
-	
-	    fetch("../../addJoin/" + ${item.id}, {
-	        method: "POST",
-	        headers: { 'Content-Type': 'application/json' },
-	        body: JSON.stringify()
-	    }).then(resp => {
-	        if (resp.status == 200)
-	            return resp.json();
-	    }).then(result => {
-	        document.querySelector("#join_btn").textContent = "참여 취소";
-	    });
-	
-	});
-	
-	
-	// 참여 취소 버튼
-	document.querySelector("#join_btn.cancle").addEventListener("click", e => {
-	
-	    fetch("../../deleteJoin/" + ${item.id}, {
-	        method: "DELETE",
-	        headers: { 'Content-Type': 'application/json' },
-	        body: JSON.stringify()
-	    }).then(resp => {
-	        if (resp.status == 200)
-	            return resp.json();
-	    }).then(result => {
-	        document.querySelector("#join_btn").textContent = "참여";
-	    });
-	
-	});
-</script> -->
 </html>

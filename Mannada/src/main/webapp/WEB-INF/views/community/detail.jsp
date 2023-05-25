@@ -48,8 +48,8 @@ function EtValue() {
 
 					<div class="category_title">
 						<h1 class="comm_category">
-							<span class="category_info">${item.category_}</span>
-							<div class="title_info">${item.title}</div>
+							<span class="b">${item.category_}</span>
+							<div class="a">${item.title}</div>
 						</h1>
 
 					</div>
