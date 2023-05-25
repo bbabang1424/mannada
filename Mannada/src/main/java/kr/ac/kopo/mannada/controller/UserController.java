@@ -20,6 +20,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import kr.ac.kopo.mannada.model.Attach;
 import kr.ac.kopo.mannada.model.Community;
+import kr.ac.kopo.mannada.model.Manager;
 import kr.ac.kopo.mannada.model.Manna;
 import kr.ac.kopo.mannada.model.Question;
 import kr.ac.kopo.mannada.model.Reply;
@@ -35,7 +36,7 @@ import kr.ac.kopo.mannada.service.UserService;
 @RequestMapping("/user")
 public class UserController {
 	final String path = "user/";
-	private String uploadPath = "d://upload/";
+	private String uploadPath = "d://upload/"; 
 	
 	@Autowired
 	UserService service;
@@ -51,7 +52,7 @@ public class UserController {
 	
 	/* 회원 관리 */
 	@GetMapping("/list") 
-	public String list(Model model, Pager pager) {
+	public String list(Model model, Pager pager, @SessionAttribute Manager manager) {
 		pager.setPerPage(10);
 		
 		List<User> list = service.list(pager);
@@ -87,8 +88,10 @@ public class UserController {
 		List<Reply> reply = commuSerice.replyList(rePager); 
 		model.addAttribute("commuReply", reply);
 
+		Pager viewPager = new Pager();
+		rePager.setPerPage(5);
 		
-		List<Review> review = service.reviewList(num, rePager);
+		List<Review> review = service.reviewList(num, viewPager);
 		model.addAttribute("review", review);
 		
 		return path + "view";
@@ -98,7 +101,7 @@ public class UserController {
 	//추가
 	@RequestMapping("/review/{num}")
 	public String review(@PathVariable int num, Review review, @SessionAttribute User user) {
-		review.setNum(num);
+		review.setNum(user.getNum());
 		
 		review.setWriter(user.getNum());
 		
@@ -128,7 +131,7 @@ public class UserController {
 
 	@PostMapping("/update/{num}")
 	public String update(@PathVariable int num, User item, @SessionAttribute User user) {
-		item.setNum(item.getNum());
+		item.setNum(user.getNum());
 		
 		service.update(item);
 		
@@ -159,7 +162,7 @@ public class UserController {
 		
 	@PostMapping("/password/{num}")
 	public String password(@PathVariable int num, User item, @SessionAttribute User user) {
-		item.setNum(num);
+		item.setNum(user.getNum());
 		
 		service.password(item);
 		
@@ -177,7 +180,7 @@ public class UserController {
 	
 	@PostMapping("/stop/{num}")
 	public String stop(@PathVariable int num, User item, @SessionAttribute User user, HttpSession session) {
-		item.setNum(num);
+		item.setNum(user.getNum());
 		
 		service.stop(item);
 		
@@ -200,7 +203,7 @@ public class UserController {
 	
 	@PostMapping("/photo/{num}")
 	public String photo(@PathVariable int num, MultipartFile uploadFile, User item, @SessionAttribute User user) {
-		item.setNum(item.getNum());
+		item.setNum(user.getNum());
 		
 		//삭제하고 등록되게 함 : ajax 필요x
 		Attach prevAttach = service.item(num).getAttach();

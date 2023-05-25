@@ -15,7 +15,7 @@
 
 <title>정보수정</title>
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-<script>
+<script> 
 $(function() {
 	let isCheck2;
 	let isCheck3;
@@ -35,22 +35,9 @@ $(function() {
 	            return;
 			}
 		})
-		
-		if (form.pw.value == '') {
-			swal('정보변경', '현재비밀번호를 입력해주세요', 'info');
-            form.pw.focus();
-            return;
-		} else if (isCheck3 != form.pw.value) {
-			swal('정보변경', '현재비밀번호를 확인해주세요', 'warning');
-			return;
-        } else if (form.intro.value == '') {
-        	swal('정보변경', '간단한 소개를 입력해주세요', 'info');
-            form.intro.focus();
-            return;
-		}
 		swal('정보변경이 완료되었습니다', '', 'success');
-	     console.dir(updateInfo_from);
-	     form.submit();
+	    console.dir(updateInfo_from);
+	    form.submit();
 	})
 	
 	$('#checkNick').click(function () {
@@ -115,7 +102,7 @@ $(function() {
 				</div>
 				<div>
 					<label>닉네임</label>
-					<input type="text" name="nickname" id="nick" value="${manager.nickname}">
+					<input type="text" name="nickname" id="nick" value="${manager.nickname}" placeholder="${manager.nickname}">
 					<button type="button" id="checkNick">닉네임 중복확인</button>
 				</div>
 				

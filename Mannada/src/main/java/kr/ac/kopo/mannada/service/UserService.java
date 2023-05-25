@@ -2,11 +2,10 @@ package kr.ac.kopo.mannada.service;
 
 import java.util.HashMap;
 import java.util.List;
-
 import kr.ac.kopo.mannada.model.Review;
 import kr.ac.kopo.mannada.model.User;
 import kr.ac.kopo.mannada.pager.Pager;
-
+ 
 public interface UserService {
 
 	boolean login(User user);
@@ -24,7 +23,7 @@ public interface UserService {
 
 	User item(int num);
 
-	List<Review> reviewList(int num, Pager rePager); 
+	List<Review> reviewList(int num, Pager viewPager); 
 
 	void reviewAdd(Review review);
 
@@ -41,5 +40,5 @@ public interface UserService {
 	void photo(User item);
 	
 	void attachDelete(int attachId);
-	
+
 }

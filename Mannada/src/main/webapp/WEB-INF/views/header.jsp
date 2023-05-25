@@ -12,7 +12,7 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 <link href="/resources/css/header.css" rel="stylesheet"> 
  
-<script>
+<script> 
 $(function() {
 	  $('#check_box').on('click', function() {
 	    event.stopPropagation();  
@@ -79,7 +79,7 @@ $(function() {
 						</c:if>
 						
 						<c:if test="${sessionScope.manager != null}">
-							<li><a href="/mg/view/${sessionScope.manager.num}">${sessionScope.manager.nickname}님</a></li>
+							<li><a href="/mg/view/${sessionScope.manager.nickname}">${sessionScope.manager.nickname}님</a></li>
 							<li><button onclick="location.href='/logout'">로그아웃</button></li>
 						</c:if>
 					</ul>
@@ -136,7 +136,7 @@ $(function() {
 						<h5><a href="/user/view/${sessionScope.user.num}">마이페이지</h5>
 					</c:if>
 					<c:if test="${sessionScope.manager != null}">
-						<h5><a href="/mg/view/${sessionScope.manager.num}">마이페이지</h5>
+						<h5><a href="/mg/view/${sessionScope.manager.nickname}">마이페이지</h5>
 					</c:if>
 				</ul>
 			</div>

@@ -3,7 +3,8 @@
 
 <mapper namespace="question">
 	<sql id="search">
-		SELECT question.*, nickname FROM question
+		SELECT question.*, nickname 
+		FROM question
 		LEFT OUTER JOIN user ON question.num = user.num
 		<where>
 			<if test="search == 1">
@@ -33,14 +34,13 @@
 	</select>
 
 	<insert id="add">
-		INSERT INTO question (num, title, reg_date, content)
-		values (#{num}, #{title}, NOW(), #{content})
+		INSERT INTO question (num, title, reg_date, content, status)
+		values (#{num}, #{title}, NOW(), #{content} #{status})
 
 		<selectKey keyColumn="id" keyProperty="id" resultType="Integer" order="AFTER">
 			SELECT LAST_INSERT_ID()
 		</selectKey>
 	</insert>
-
 
 	<select id="item" resultType="Question">
 		SELECT question.*, nickname
@@ -49,13 +49,11 @@
 		WHERE question.id = #{id}
 	</select>
 
-
 	<update id="update">
 		UPDATE question
 		SET title = #{title}, content = #{content}
 		WHERE id = #{id}
 	</update>
-
 
 	<delete id="delete">
 		DELETE FROM question
@@ -94,7 +92,6 @@
 		SET status = 0
 		WHERE id = #{id}
 	</update>
-	
 	
 	<!-- 조회수 증가 -->
 	<update id="addViewCnt">
