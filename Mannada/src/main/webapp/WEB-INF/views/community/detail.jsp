@@ -114,7 +114,7 @@ function EtValue() {
 		<!-- 댓글 목록 -->
 		<div class="reply-box">
 			<div class="list_btn">
-				<div style="margin-top: 2%;"></div>
+				<div style="margin-top: 1%;"></div>
 			</div>
 
 			<c:forEach var="reply" items="${reply }">
@@ -154,7 +154,7 @@ function EtValue() {
 			</c:forEach>
 
 
-			<div style="border-top: 1px solid #ccc; margin-top: 2%;"></div>
+			<div style="border-top: 1px solid #ccc; margin-top: 1%;"></div>
 		</div>	
 		<!-- 페이지네이션 형태만 잡음-->
 		<tfoot>

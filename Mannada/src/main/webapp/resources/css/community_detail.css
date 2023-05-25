@@ -179,10 +179,10 @@ h4 {
 }
 
 .attach {
-	    padding: 10px;
-    text-align: left;
-    margin-left: 1.5%;
-    margin-bottom: 0.5%;
+	padding: 10px;
+	text-align: left;
+	margin-left: 1.5%;
+	margin-bottom: 0.5%;
 }
 
 .lower {
@@ -301,21 +301,23 @@ h4 {
 }
 
 .profile {
-	margin-top: 12%;
-	margin-bottom: 12%;
-	width: 116px;
-	margin-left: 16%;
-	height: 104px;
+	width: 80px;
+	height: 80px;
+	border-radius: 70%;
+	overflow: hidden;
+	margin-top: 20%;
+	margin-bottom: 20%;
+	margin-left: 25%;
 }
 
 .reply_name_date {
 	position: relative;
 	display: inline-block;
 	width: 100%;
+	margin-top: 2.5%;
 }
 
 .reply_nickname {
-	margin-top: 1.5%;
 	font-weight: bold;
 	margin-bottom: 0.5%;
 	margin-left: 2%;
@@ -340,11 +342,11 @@ h4 {
 }
 
 .reply-content {
+	margin-bottom: 2.5%; */
+	margin-top: -1%;
 	White-space: pre-line;
-	margin-top: 0.5%;
 	word-break: break-all;
 	margin-left: 2%;
-	margin-bottom: 1%;
 }
 
 /* 댓글 입력 */
@@ -390,13 +392,13 @@ textarea {
 }
 
 .reply_btn {
-	margin-bottom: 2%;
 	width: 100%;
 	text-align: right;
 	display: inline-block;
 }
 
 .reply-update-btn {
+	margin-bottom: 1%;
 	color: black;
 	width: 50px;
 	margin-top: 1%;
@@ -414,7 +416,7 @@ textarea {
 }
 
 .reply_delete {
-	margin-right: 1.5%;
+	margin-right: 1%;
 	color: black;
 	display: inline-block;
 	width: 50px;

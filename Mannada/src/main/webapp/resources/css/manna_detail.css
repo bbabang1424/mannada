@@ -65,10 +65,11 @@
 }
 
 .img {
-	margin: 2% 4%;
-	width: 134px;
-	height: 117px;
-	background: #ccc;
+	    width: 150px;
+    height: 150px;
+    border-radius: 70%;
+    overflow: hidden;
+    margin: 1% 2% 0% 2%;
 }
 
 .Category_address {
