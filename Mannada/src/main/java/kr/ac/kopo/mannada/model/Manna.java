@@ -19,7 +19,7 @@ public class Manna {
 	/*외래키*/
 	private String userId;
 	private String nickname;
-	
+ 	
 	/*구성키*/
 	private int rnum;	
 	private int sum;

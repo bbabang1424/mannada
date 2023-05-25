@@ -11,7 +11,7 @@ public class Review {
 	
 	//외래키
 	private int num;
-	
+	 
 	//추가
 	private String nickname; 
 

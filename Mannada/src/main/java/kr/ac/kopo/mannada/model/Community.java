@@ -1,7 +1,7 @@
 package kr.ac.kopo.mannada.model;
 
 import java.util.Date;
-
+ 
 public class Community {
 	private int id;
 	private int num;

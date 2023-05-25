@@ -11,7 +11,7 @@ public class Reply {
 	
 	private String nickname;
 	
-	
+	 
 	public String getNickname() {
 		return nickname;
 	}

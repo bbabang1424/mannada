@@ -12,7 +12,7 @@ import kr.ac.kopo.mannada.model.Attach;
 import kr.ac.kopo.mannada.model.Review;
 import kr.ac.kopo.mannada.model.User;
 import kr.ac.kopo.mannada.pager.Pager;
-
+ 
 @Service
 public class UserServiceImpl implements UserService {
 	private String uploadPath = "d://upload/";
@@ -76,11 +76,11 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public List<Review> reviewList(int num, Pager rePager) {
-		int total = dao.reviewTotal(rePager);
-		rePager.setTotal(total);
+	public List<Review> reviewList(int num, Pager viewPager) {
+		int total = dao.reviewTotal(viewPager);
+		viewPager.setTotal(total);
 		
-		return dao.reviewList(num);
+		return dao.reviewList(num, viewPager);
 	}
 
 	@Override

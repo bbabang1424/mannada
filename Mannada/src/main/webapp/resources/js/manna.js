@@ -11,8 +11,8 @@ window.addEventListener("load", () => {
 
 
     // 모달 닫기 버튼
-    document.querySelector(".btn-close").addEventListener("click", e => {
-    });
+    //document.querySelector(".btn-close").addEventListener("click", e => {
+    //});
 
 
     // 참여 버튼

@@ -48,8 +48,8 @@ function EtValue() {
 
 					<div class="category_title">
 						<h1 class="comm_category">
-							<span class="b">${item.category_}</span>
-							<div class="a">${item.title}</div>
+							<span class="category_info">${item.category_}</span>
+							<div class="title_info">${item.title}</div>
 						</h1>
 
 					</div>
@@ -60,7 +60,7 @@ function EtValue() {
 				<div class="Writer_date">
 					<div class="Writer">
 						<span style="font-weight: bold; margin-right: 3px;">작성자</span>
-						${item.nickname}
+						<a href="/user/view/${item.num}">${item.nickname}</a>
 					</div>
 				</div>
 				<div class="date_views">
