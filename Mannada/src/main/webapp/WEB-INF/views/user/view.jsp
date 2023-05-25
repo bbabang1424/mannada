@@ -171,10 +171,12 @@ $(function() {
 					<col width="35%" />
 				</colgroup>			
 				<tbody>
+				<c:if test="${sessionScope.user.id == user.id}">
 					<tr>
 						<th>이메일</th>
 						<td>${user.id}</td>
 					</tr>
+				</c:if>
 					<tr>
 						<th>닉네임</th>
 						<td>${user.nickname}</td>
