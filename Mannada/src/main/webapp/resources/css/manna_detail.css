@@ -140,6 +140,17 @@
 	border-bottom-color: #333333b3;
 	border-width: 10px;
 	pointer-events: none;
+	
+	/*     content: '';
+    width: 50px; 사이즈
+    height: 50px; 사이즈
+    border-top: 5px solid #121212; 선 두께
+    border-right: 5px solid #121212; 선 두께
+    display: inline-block;
+    transform: rotate(135deg); 각도
+    position: absolute;
+    top: 120px; 기본 0px 값으로 해주세요
+    left: 935px; 기본 0px 값으로 해주세요 */
 }
 
 .b:hover+p.arrow_box {
