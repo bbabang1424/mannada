@@ -96,7 +96,7 @@
 							type="number">${item.member} 명</td>
 					</tr>
 					<tr style="border-bottom: 1px solid #ccc;">
-						<th id="interval">모집 일</th>
+						<th id="interval">모집일</th>
 						<td class="dDay"><input id="currentDate" type="date"
 							name="dDay">${item.dDay}</td>
 					</tr>
