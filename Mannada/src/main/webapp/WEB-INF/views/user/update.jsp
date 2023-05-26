@@ -43,11 +43,8 @@ $(function() {
 		} else if (isCheck3 != form.pw.value) {
 			swal('회원정보변경', '현재비밀번호를 확인해주세요', 'warning');
 			return;
-        } else if (form.intro.value == '') {
-        	swal('회원정보변경', '간단한 소개를 입력해주세요', 'info');
-            form.intro.focus();
-            return;
-		}
+        }
+		
 		swal('회원정보변경이 완료되었습니다', '', 'success');
 	     console.dir(updateInfo_from);
 	     form.submit();
@@ -100,10 +97,17 @@ $(function() {
 	});
 });
 </script>
+
+<style>
+.imgBox img {
+	width:300px; 
+	height:300px;
+}
+</style>
 </head>
 <jsp:include page="../header.jsp"></jsp:include>
 <body>
-	<div class="container">
+	<div class="Container">
 		<div>
 			<h3>회원정보변경</h3>
 		</div>

@@ -62,7 +62,7 @@
 	
 	<select id="item" resultType="Manna">
 		SELECT manna.*, nickname, (SELECT (count(*) - 1) FROM joins WHERE manna_id = #{id}) as sum
-			   , filename, uuid, AVG(star) starAvg
+			   , filename, uuid, AVG(star) starAvg, COUNT(star) starCnt
 		FROM manna
 		LEFT OUTER JOIN user ON(manna.num = user.num)
 		LEFT OUTER JOIN profile ON (user.num = profile.num)

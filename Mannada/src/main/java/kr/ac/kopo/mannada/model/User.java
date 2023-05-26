@@ -16,6 +16,7 @@ public class User {
 	
 	private Attach attach;
 	private float starAvg;
+	private int starCnt;
 
 	public String getStatus_() {
 		if(status==0)
@@ -110,6 +111,14 @@ public class User {
 
 	public void setStarAvg(float starAvg) {
 		this.starAvg = starAvg;
+	}
+
+	public int getStarCnt() {
+		return starCnt;
+	}
+
+	public void setStarCnt(int starCnt) {
+		this.starCnt = starCnt;
 	}
 	
 }

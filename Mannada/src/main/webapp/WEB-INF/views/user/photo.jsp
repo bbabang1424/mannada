@@ -15,6 +15,7 @@
 
 <title>프로필 사진</title>
 </head>
+<jsp:include page="../header.jsp"></jsp:include>
 <body>
 	<div class="container"> 
 		<div>
@@ -34,6 +35,7 @@
 		</div>
 	</div>
 </body>
+<jsp:include page="../footer.jsp"></jsp:include>
 <script>
 $(function() {
 	$('#goBack').click(function(){

@@ -26,6 +26,7 @@ public class Manna {
 	private String uuid;
 	private String filename;
 	private float starAvg;
+	private int starCnt;
 
 	/*category와 status 한글 처리 : 데이터베이스가 처리하지 못할 시 제한을 두는 역할*/
 	public String getCategory_() {
@@ -193,5 +194,13 @@ public class Manna {
 
 	public void setStarAvg(float starAvg) {
 		this.starAvg = starAvg;
+	}
+
+	public int getStarCnt() {
+		return starCnt;
+	}
+
+	public void setStarCnt(int starCnt) {
+		this.starCnt = starCnt;
 	}
 }

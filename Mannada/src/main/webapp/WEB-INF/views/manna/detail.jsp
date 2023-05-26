@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Manna_detail</title>
+<title>만나다</title>
 <jsp:include page="../header.jsp"></jsp:include>
 <link rel="stylesheet" href="/resources/css/manna_detail.css">
 <link rel="stylesheet"
@@ -37,10 +37,10 @@
 					<div class="font-size">${item.title}</div>
 				</div>
 				<!-- 사진 변경 -->
-				<c:if test="${user.attach.filename != null}">
-					<img src="/upload/${user.attach.uuid}_${user.attach.filename}">
+				<c:if test="${item.filename != null}">
+					<img class="img" src="/upload/${item.uuid}_${item.filename}">
 				</c:if>
-				<c:if test="${user.attach.filename == null}">
+				<c:if test="${item.filename == null}">
 					<img class="img" src="/resources/image/profile.png">
 				</c:if>
 				<div class="writer_date">
@@ -48,7 +48,7 @@
 						<span style="font-weight: 500;">작성자:</span><a
 							href="/user/view/${item.num}" style="color: black;" class="b">
 							${item.nickname}</a>
-							<p class="arrow_box">회원정보</p> <i class="bi bi-star"></i> 4.5
+							<p class="arrow_box">회원정보</p> <i class="bi bi-star"></i> ${item.starAvg}(${item.starCnt})
 					</div>
 					<div class="date">
 						<i class="bi bi-calendar-check"></i> ${item.dDay}

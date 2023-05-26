@@ -15,7 +15,7 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
 
 <title>사용자 마이페이지</title>
-
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script> 
 $(function() {
     $(".my-nav li").click(function() {
@@ -93,6 +93,17 @@ $(function() {
 	for(var i=0; i<checkStar.length; i++){
 	    checkStar[i].addEventListener("click", color);
 	}
+	
+	$('#reviewSubmit').click(function(){
+		const form = document.reviewInfo_from;
+		
+		if (form.star.value < 1) {
+			swal('한줄평', '별(★)을 선택해주세요', 'info');
+            form.star.focus();
+            return;
+		}
+        form.submit();
+	}); 
  });
 </script>
 <style>
@@ -136,7 +147,7 @@ $(function() {
 			${user.nickname}
 		</div>
 		<div>
-			★${user.starAvg}
+			★${user.starAvg}(${user.starCnt})
 		</div>
 		<div>
 			<c:if test="${sessionScope.user == null}">
@@ -189,12 +200,10 @@ $(function() {
 			</table>
 			
 			<div>
-				<div>
-					<h3>한줄평</h3>
-				</div>
-				<div>
+				<div>한줄평</div>
+				<div class="self-hidden">
 					<!-- user에 있는 form이니까 action은 user의 경로 사용 -->
-					<form name="photoInfo_from" method="post" style="width:700px" enctype="multipart/form-data" action="../review/${user.num}">
+					<form name="reviewInfo_from" method="post" style="width:700px" enctype="multipart/form-data" action="../review/${user.num}">
 						<div>
 			            	<label class="star" for="star1">★</label><input type="radio" class="checkStar" id="star1" value="1" name="star">
 							<label class="star" for="star2">★</label><input type="radio" class="checkStar" id="star2" value="2" name="star">
@@ -205,7 +214,7 @@ $(function() {
 						</div>
 						<div>
 							<textarea rows="10" class="review_textarea" name="content" placeholder="로그인 후에 작성해주세요"></textarea>
-							<button>등록</button>
+							<button type="button" id="reviewSubmit" onClick="login_check();">등록</button>
 						</div>
 					</form>
 				</div>
