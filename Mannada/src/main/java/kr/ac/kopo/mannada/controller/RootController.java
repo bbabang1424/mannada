@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+
 import kr.ac.kopo.mannada.model.Address;
 import kr.ac.kopo.mannada.model.Community;
 import kr.ac.kopo.mannada.model.Manager;
@@ -20,6 +21,7 @@ import kr.ac.kopo.mannada.model.User;
 import kr.ac.kopo.mannada.pager.Pager;
 import kr.ac.kopo.mannada.service.AddressService;
 import kr.ac.kopo.mannada.service.CommunityService;
+import kr.ac.kopo.mannada.service.MailSendService;
 import kr.ac.kopo.mannada.service.ManagerService;
 import kr.ac.kopo.mannada.service.MannaService;
 import kr.ac.kopo.mannada.service.UserService;
@@ -41,6 +43,9 @@ public class RootController {
 	
 	@Autowired
 	CommunityService commuService;
+	
+	@Autowired
+	MailSendService mailService;
 	
 
 	@RequestMapping("/")
@@ -180,5 +185,16 @@ public class RootController {
 		model.addAttribute("mannaList", mannaList);
 		
 		return "searchAddress";
+	}
+	
+	
+	//이메일 인증
+	@GetMapping("/mailCheck")
+	@ResponseBody
+	public String mailCheck(String email) {
+		System.out.println("이메일 인증 요청이 들어옴!");
+		System.out.println("이메일 인증 이메일 : " + email);
+		
+		return mailService.joinEmail(email);
 	}
 }
