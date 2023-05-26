@@ -7,6 +7,8 @@
 <jsp:include page="header.jsp"></jsp:include>
 <link rel="stylesheet" href="/resources/css/login.css">
 <link rel="stylesheet" href="/resources/image/swiper1.jpg"/>
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">
 <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
 <script type="text/javascript">
 
@@ -61,8 +63,17 @@ function mgValue() {
 </style>
 </head>
 <body>
+<div class="banner">
+		<ul class="banner_text">
+			<li>HOME</li>
+			<i class="bi bi-caret-right-fill"></i>
+			<li>로그인</li>
+			
+		</ul>
+	</div>
 <div class="background-image">
 </div>
+
 	<div class="login-box">
         <br>
         <div class="title">

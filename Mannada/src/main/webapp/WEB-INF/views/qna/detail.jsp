@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>qna_detail</title>
+<title>만나다</title>
 <jsp:include page="../header.jsp"></jsp:include>
 <link rel="stylesheet" href="/resources/css/qna_detail.css">
 <script src="/resources/js/question.js"></script>
