@@ -6,11 +6,22 @@
 <meta charset="UTF-8">
 <jsp:include page="header.jsp"></jsp:include>
 <title>만나다</title>
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">
 <link rel="stylesheet" href="/resources/css/signup_ok.css">
 <link rel="stylesheet" href="/resources/image/swiper1.jpg"/>
 
 </head>
 <body>
+<div class="banner">
+		<ul class="banner_text">
+			<li>HOME</li>
+			<i class="bi bi-caret-right-fill"></i>
+			<li>회원가입</li>
+			
+		</ul>
+	</div>
+	
 <div class="background-image">
 </div>
 	<div class="signup-box">

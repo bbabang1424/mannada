@@ -6,7 +6,30 @@
  text-decoration: none;
  color: unset;
 }
+/* 각 페이지 퍼블리싱, 파란 베너 김소연 */
+.banner {
+	color: white;
+	border-color: #60a8ef;
+	width: 100%;
+	background-color: #60a8ef;
+	
+}
 
+.banner_text {
+	max-width: 1200px;
+	width: 100%;
+	margin: auto;
+	padding-left: 0%;
+}
+
+.banner_text>li {
+	display: inline-block;
+	font-weight: bold;
+	padding-bottom: 13px;
+	padding-top: 13px;
+	margin: 0 auto;
+	padding-top: 13px;
+}
 
 .background-image {
 	width: 100%;
