@@ -32,11 +32,11 @@ function EtValue() {
 </head>
 <body>
 	<div class="banner">
-		<ul class="banner_text">
+		<div class="banner_text">
 			<li>커뮤니티</li>
 			<i class="bi bi-caret-right-fill"></i>
 			<li>목록</li>
-		</ul>
+		</div>
 		<h3 class="page_title">커뮤니티</h3>
 		<p class="page_text">만남에 대한 후기와 소통을 자유옵게 글로 적어주세요!</p>
 	</div>

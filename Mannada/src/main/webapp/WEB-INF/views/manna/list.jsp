@@ -52,11 +52,13 @@
 <body>
 
 	<div class="banner">
-		<ul class="banner_text">
+	
+		<div class="banner_text">
 			<li>만나다</li>
 			<i class="bi bi-caret-right-fill"></i>
 			<li>글 목록</li>
-		</ul>
+			
+		</div>
 		<h3 class="page_title">글 목록</h3>
 		<p class="page_text">새로운 만남을 만날수 있는 곧 입니다. 관심있는 카드를 눌러 참여하세요!</p>
 	</div>
