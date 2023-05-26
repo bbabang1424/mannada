@@ -7,7 +7,7 @@
 <head>
 <meta charset="UTF-8">
 
-<title>manna_list</title>
+<title>먼나다</title>
 <jsp:include page="../header.jsp"></jsp:include>
 <link rel="stylesheet" href="/resources/css/manna_list.css">
 <link rel="stylesheet"
