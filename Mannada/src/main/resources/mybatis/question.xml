@@ -35,7 +35,7 @@
 
 	<insert id="add">
 		INSERT INTO question (num, title, reg_date, content, status)
-		values (#{num}, #{title}, NOW(), #{content} #{status})
+		VALUES (#{num}, #{title}, NOW(), #{content}, #{status})
 
 		<selectKey keyColumn="id" keyProperty="id" resultType="Integer" order="AFTER">
 			SELECT LAST_INSERT_ID()

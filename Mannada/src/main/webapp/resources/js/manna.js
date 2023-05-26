@@ -56,8 +56,15 @@ window.addEventListener("load", () => {
 function getPage(page, query) {
     let url = `${pager_url}?page=${page}`;
 
-    if (query)
+    if (query) {
         url += "&" + new URLSearchParams(query).toString();
+        
+        const body = document.querySelector(".card_box");
+
+            body.querySelectorAll(".item").forEach(element => {
+                element.remove();
+            });
+	}
 
     console.log(url);
 
@@ -103,6 +110,8 @@ function makeItem(element){
         a.href = "manna/detail/" + id; // 메인페이지용으로 if문 추가
     else 
         a.href = "detail/" + id;
+        
+    a.classList.add("item");
 
 
     const card = document.createElement("div");
