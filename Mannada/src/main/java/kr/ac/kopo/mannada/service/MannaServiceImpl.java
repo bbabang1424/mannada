@@ -2,6 +2,7 @@ package kr.ac.kopo.mannada.service;
 
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -93,6 +94,11 @@ public class MannaServiceImpl implements MannaService {
 	@Override
 	public void deleteJoin(HashMap<String, Object> map) {
 		dao.deleteJoin(map);
+	}
+
+	@Override
+	public int joinStatus(Map<String, Object> js) {
+		return dao.joinStatus(js);
 	}
 
 }

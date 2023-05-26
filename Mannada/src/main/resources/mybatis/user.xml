@@ -4,14 +4,16 @@
 <mapper namespace="user">
 	<select id="login" resultType="User">
 		SELECT * FROM user
-		WHERE id=#{id} AND pw=PASSWORD(#{pw})
+		WHERE id=#{id} AND pw=PASSWORD(#{pw})  
 	</select>
 
 	<insert id="signup">
-		INSERT INTO user(id, pw, nickname, reg_date)
-		VALUES (#{id}, PASSWORD(#{pw}), #{nickname}, NOW())
-	</insert>	
+		INSERT INTO user
+		(id, pw, nickname, status, reg_date)
+		VALUES (#{id}, PASSWORD(#{pw}), #{nickname}, 0, NOW())
+	</insert>
 	
+	<!-- 이메일 중복제거 -->
 	<select id="check_id" resultType="Integer">
 		SELECT COUNT(*) FROM user
 		WHERE id=#{id}
@@ -22,24 +24,121 @@
 		VALUES (#{mannaId}, #{num})
 	</insert>
 	
-	<!-- 마이페이지 -->
-	<select id="item" resultType="User">
-		SELECT user.*, pro.id as img
-		FROM user
-		LEFT OUTER JOIN profile pro ON(user.num=pro.num)
-		WHERE user.id=#{id}
+	<!-- 닉네임 중복제거 -->
+	<select id="check_nick" resultType="Integer">
+		SELECT COUNT(*) FROM user
+		WHERE nickname=#{nickname}
 	</select>
 	
-	<update id="modify">
-		UPDATE user 
-		SET  img_url=#{imgUrl}, nickname=#{nickname}, name =#{name}, phone=#{phone}
-		WHERE id = #{id}
-	</update>
-   
-	<update id="pw_modify">
+	<!-- 마이페이지관련 -->
+	<sql id="search">
+		SELECT * FROM user
+		<where>
+			<if test="search eq 1">
+				num = #{keyword}
+			</if>
+			<if test="search eq 2">
+				id LIKE CONCAT(CONCAT('%',#{keyword}),'%')
+			</if>
+			<if test="search eq 3">
+				nickname LIKE CONCAT(CONCAT('%',#{keyword}),'%')
+			</if>
+			<if test="search eq 4">
+				intro LIKE CONCAT(CONCAT('%',#{keyword}),'%')
+			</if>
+			<if test="search eq 5">
+				delDate LIKE CONCAT(CONCAT('%',#{keyword}),'%')
+			</if>
+		</where>
+		ORDER BY id DESC
+	</sql>
+	 
+	<select id="total" resultType="Integer">
+		SELECT COUNT(*) 
+		FROM (<include refid="search"></include>) user
+	</select>
+	
+	<select id="list" resultType="User">
+		SELECT * FROM (<include refid="search"></include>) user
+	</select>
+	
+	<select id="item" resultMap="UserMap">
+		SELECT user.*, profile.id pid, profile.uuid, profile.filename, AVG(star) starAvg
+		FROM user
+		LEFT OUTER JOIN profile ON user.num = profile.num
+		LEFT OUTER JOIN review ON user.num = review.num
+		GROUP BY user.num
+		HAVING user.num=#{num}
+	</select>
+	
+	<!-- ORM 객체-관계 매핑 : 단일 첨부파일 -->
+	<resultMap id="UserMap" type="User" autoMapping="true">
+		<id column="num" property="num"/>
+		<association property="attach" autoMapping="true">		
+			<id column="pid" property="id"/>
+		</association>
+	</resultMap>
+	
+	<update id="update">
 		UPDATE user
-		SET pw=PASSWORD(#{pw}) 
-		WHERE id=#{id} 
+		SET nickname=#{nickname}, intro=#{intro} 
+		WHERE num=#{num}
 	</update>
+	
+	<update id="password">
+		UPDATE user
+		SET pw=PASSWORD(#{newPW})
+		WHERE num=#{num} AND pw=PASSWORD(#{pw})
+	</update>
+	
+	<select id="check_pw" resultType="Integer">
+		SELECT COUNT(*) FROM user
+		WHERE num=#{num} AND pw=PASSWORD(#{pw})
+	</select>
+
+	<update id="stop">
+		UPDATE user
+		SET pw='', del_date=NOW(), status=1
+		WHERE num=#{num} AND pw=PASSWORD(#{pw})
+	</update>
+	
+	<insert id="photo">
+		INSERT INTO profile
+		(uuid, filename, num)
+		VALUES (#{uuid}, #{filename}, #{num})
+	</insert>
+	
+	<select id="photo_item" resultType="Attach">
+		SELECT * FROM profile
+		WHERE id=#{id}
+	</select>
+	
+	<delete id="photo_delete">
+		DELETE FROM profile
+		WHERE id=#{id}
+	</delete>
+	
+	<!-- 한줄평 관련 -->
+	<select id="review_total" resultType="Integer">
+		SELECT COUNT(*) FROM review
+	</select>
+	
+	<select id="review" resultType="Review">
+		SELECT review.*, nickname
+		FROM review
+		LEFT OUTER JOIN user ON review.writer = user.num
+		WHERE review.num=#{num}
+		ORDER BY review.id DESC;
+	</select>
+	
+	<insert id="review_add">
+		INSERT INTO review(num, id, writer, star, content, reg_date)
+		VALUES(#{num}, #{id}, #{writer}, #{star}, #{content}, NOW())
+	</insert>
+
+	<delete id="review_delete">
+		DELETE FROM review
+		WHERE id = #{id}
+	</delete>
 	
 </mapper>

@@ -9,6 +9,8 @@ a { color: #000; }
 	--swiper-pagination-progressbar-bg-color: rgba(255, 255, 255, 0.25);
 }
 
+
+
 .swiper {
 	width: 100%;
 	height: 550px;
@@ -42,7 +44,7 @@ a { color: #000; }
 	width: calc(100% - 1180px);
 }
 
-#slide-1 {
+.slide-text {
 	font-size: 35pt;
     font-weight: 900;
     color: #fff;
@@ -50,25 +52,30 @@ a { color: #000; }
     letter-spacing: -1.5pt;
 }
 
+.container-index {
+    margin: auto;
+    max-width: 1200px;
+}
+
 .center { text-align: center; }
-.category {
+.category-index {
 	margin: 60px 0;
 }
-.category a:hover { color:#000; }
-.category h2 { font-weight:700; letter-spacing: -1pt; padding-bottom: 30px;}
-.category ul { padding-left: 0; display: flex;  justify-content: space-between; }
-.category li { display: inline-block; padding: 10px 30px;}
+.category-index a:hover { color:#000; }
+.category-index h2 { font-weight:700; letter-spacing: -1pt; padding-bottom: 30px;}
+.category-index ul { padding-left: 0; display: flex;  justify-content: space-between; }
+.category-index li { display: inline-block; padding: 10px 30px;}
 .category-inner { max-width:1000px; margin: 0 auto;}
 .icon img { width:70px; display: block; margin-bottom: 10px; }
 
-.recent-manna {
-	display: flex;
-    padding: 0 40px;
+.list-more {
+	display: flex; 
+    padding: 0 85px 0 45px;
     justify-content: space-between;
     align-items: baseline;
 }
   
-.recent-manna h6 {
+.list-more h6 {
 	color:#0359d9; 
 }
 
@@ -92,6 +99,23 @@ a { color: #000; }
 .tutorial li {
 	width: min-content;
 	text-align: center; 
+}
+
+.top-content {
+	margin-top: 7%;
+    max-width: 1200px;
+    position: relative;
+    width: 100%;
+}
+
+.top-table {
+	margin: 0 auto;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+.recent-table {
+	width: 49%;
 }
 
 .mannam-map {

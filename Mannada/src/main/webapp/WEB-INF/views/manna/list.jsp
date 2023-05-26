@@ -7,7 +7,7 @@
 <head>
 <meta charset="UTF-8">
 
-<title>만나다</title>
+<title>manna_list</title>
 <jsp:include page="../header.jsp"></jsp:include>
 <link rel="stylesheet" href="/resources/css/manna_list.css">
 <link rel="stylesheet"
@@ -32,20 +32,20 @@
 .hide {
 	display: none;
 }
+
 </style>
 
 <script type="text/javascript">
 	const pager_url = "/api/manna";
-	const pager_item = [
-		{name : "id"},
-		{name : "category_"},
+	const pager_item = [ 
+		{name : "id"}, 
+		{name : "category_"	}, 
 		{name : "title"},
-		{name : "address"},
+		{name : "nickname"},
 		{name : "dDay"},
 		{name : "sum"},
 		{name : "member"}
-	];
-
+		];
 </script>
 <script src="/resources/js/manna.js"></script>
 </head>
@@ -63,19 +63,23 @@
 
 	<div class="container">
 		<section class="content ">
-
 			<div class="select_list">
 				<div class="selelct_lsit">
 					<div class="category_select">
 						<select name="search" class="form-select form-select-sm">
 							<option value="1">제목</option>
-							<option value="2">내용</option>
-						</select> <input class="search_box" id="category" name="category"
-							type="text">
+							<option value="2">닉네임</option>
+							<option value="3">모집인원</option>
+							<option value="4">모집일</option>
+							<option value="5">주소</option>
+							<option value="6">내용</option>
+						</select>  
+							
+						<input class="search_box" name="keyword" type="text">
+							
 						<div class="search">
 							<button class="search_btn">검색</button>
 						</div>
-
 
 						<c:if test="${sessionScope.user != null }">
 							<div class="writing">
@@ -87,21 +91,15 @@
 							</div>
 						</c:if>
 					</div>
-					
+
 					<c:if test="${sessionScope.user.id == null }">
 						<div class="writing"></div>
 					</c:if>
-
 				</div>
-
-
-
 				<div class="card_box">
 					<div id="empty_list">등록 된 게시글이 없습니다.</div>
 				</div>
-
 			</div>
-
 		</section>
 	</div>
 
@@ -111,15 +109,13 @@
 	</div>
 
 
-
-
-
-	<!-- 모달 -->
-	<div class="modal" id="detailModal" tabindex="-1">
+	<%-- <!-- 모달 -->
+	<div class="modal hide" id="detailModal" tabindex="-1">
 		<div class="modal-dialog">
 			<div class="modal-content">
 
 				<section class="model_content">
+					<button type="button" class="btn-close" aria-label="Close"></button>
 					<div class="box">
 						<div class="first">
 							<div class="img"></div>
@@ -130,7 +126,7 @@
 							</div>
 
 							<div class="model_title">
-								<h4 >${item.title}</h4>
+								<h4>${item.title}</h4>
 							</div>
 
 							<!-- 데이터 가져 올려고 했는데 오류가 나서 안됨 가져 올수 있는거 가져 옴 -->
@@ -152,22 +148,24 @@
 								<!-- 참여인원/모집인원 : 참여버튼을 눌른 이용자의 인원이 나와야함-->
 								<span>참여현황:${item.sum }/${item.member}</span>
 							</div>
-							<progress id="model_progress" value="${item.sum }" max="${item.member}"> </progress>
+							<progress id="model_progress" value="${item.sum }"
+								max="${item.member}"> </progress>
 							<div class="model_line"></div>
 						</div>
 						<div class="model_middle">
 
-							
-								<div class="model_member">참여인원</div>
-								
-								<div class="model_member_num_box_info">
+
+							<div class="model_member">참여인원</div>
+
+							<div class="model_member_num_box_info">
 								<div id="box_info">
-								<div style="border: 1px solid #ddd;" class="member_num" id="model_member_num">
-									<!-- 참여버튼을 누른 사람의 아이디를 가져와야함-->
-									<c:forEach var="member" items="${list}">
-										<div>${member.nickname }</div>
-									</c:forEach>
-								</div>
+									<div style="border: 1px solid #ddd;" class="member_num"
+										id="model_member_num">
+										<!-- 참여버튼을 누른 사람의 아이디를 가져와야함-->
+										<c:forEach var="member" items="${list}">
+											<div>${member.nickname }</div>
+										</c:forEach>
+									</div>
 								</div>
 								<!-- Partic: 참여란 뜻으로 참여버튼 -->
 								<!-- 참여버튼 눌렀을때 인원 표시되게 해야 함-->
@@ -175,26 +173,31 @@
 									<button type="button" id="join_btn"">참여</button>
 								</div>
 							</div>
-
-
-							<!--내용 안불러 와짐 -->
+							
 							<div class="model_text_box">${item.content}</div>
 						</div>
 						<!-- lower:하단이란 뜻 -->
 						<div class="model_lower">
 							<!-- modify:수정하다란 뜻 -->
 							<!-- 수정이랑 목록 이동 모르겠음... -->
+
 							<a href="../update/${id}"><button class="button_modify">수정</button></a>
 							<a href="../delete/${id}"><button class="button_delete">삭제</button></a>
-							<button class="button_chatting">채팅</button>
-							<a href="../lsit"><button class="button_back">목록</button></a>
+							<!-- <a href="../lsit"><button class="button_back">목록</button></a> -->
+
+							<a href="../manna/update/${item.id}"><button class="button_modify">수정</button></a>
+							<a href="../delete/${item.id}"><button class="button_delete">삭제</button></a>
+
 						</div>
+						<!-- 채팅 버튼 일부러 뺴놈 이모지 넣음으로써 버튼 높 낮이 변함-->
+						<a href="../chat/detail/${item.id}"><button class="button_chatting"><i class="bi bi-chat-fill"></i>
+						</button></a>
 					</div>
 				</section>
 			</div>
 		</div>
-	</div>
-	
+	</div> --%>
+
 	<jsp:include page="../footer.jsp"></jsp:include>
 </body>
 </html>

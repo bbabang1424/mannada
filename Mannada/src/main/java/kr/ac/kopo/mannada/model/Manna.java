@@ -19,10 +19,13 @@ public class Manna {
 	/*외래키*/
 	private String userId;
 	private String nickname;
-	
+ 	
 	/*구성키*/
 	private int rnum;	
 	private int sum;
+	private String uuid;
+	private String filename;
+	private float starAvg;
 
 	/*category와 status 한글 처리 : 데이터베이스가 처리하지 못할 시 제한을 두는 역할*/
 	public String getCategory_() {
@@ -166,5 +169,29 @@ public class Manna {
 
 	public void setSum(int sum) {
 		this.sum = sum;
+	}
+
+	public String getUuid() {
+		return uuid;
+	}
+
+	public void setUuid(String uuid) {
+		this.uuid = uuid;
+	}
+
+	public String getFilename() {
+		return filename;
+	}
+
+	public void setFilename(String filename) {
+		this.filename = filename;
+	}
+
+	public float getStarAvg() {
+		return starAvg;
+	}
+
+	public void setStarAvg(float starAvg) {
+		this.starAvg = starAvg;
 	}
 }

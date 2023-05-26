@@ -11,7 +11,24 @@
 <link rel="stylesheet" href="/resources/css/community_detail.css">
 <link rel="stylesheet"
 	href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
+<script type="text/javascript">
+
+/*EtValue>> enrolment:등록 EtValue>
+줄여서 등록값*/
+/*제목 아이디 써야 등록*/
+function EtValue() {
+	const form = document.write_post;
+	
+	if(form.content.value == '' || form.content.value == ' ') {
+        swal('','코맨트를 입력해주세요.','error')
+		form.content.focus();
+		return;
+	}
+	form.submit();
+}
+</script>
 </head>
 <body>
 	<div class="banner">
@@ -26,15 +43,24 @@
 
 	<section class="container">
 		<div class="box">
-			<div class="title">
-				<h4>${item.title}</h4>
+			<div class="category_title_box">
+				<div class="category_color category_color_${item.category}">
+
+					<div class="category_title">
+						<h1 class="comm_category">
+							<span class="category_info">${item.category_}</span>
+							<div class="title_info">${item.title}</div>
+						</h1>
+
+					</div>
+				</div>
 			</div>
 
 			<div class="Writer_date_views">
 				<div class="Writer_date">
-					<img src="/resources/image/person.png" class="person">
 					<div class="Writer">
-						<span style="font-weight: bold;">작성자</span> ${item.nickname}
+						<span style="font-weight: bold; margin-right: 3px;">작성자</span>
+						<a href="/user/view/${item.num}">${item.nickname}</a>
 					</div>
 				</div>
 				<div class="date_views">
@@ -50,10 +76,13 @@
 		</div>
 		<!-- lower:하단이란 뜻 -->
 		<div class="lower">
-			<a href="../list"><button class="button_back">목록</button></a>
+			
 			<!-- modify:수정하다란 뜻 -->
-			<a href="../update/${id}"><button class="button_modify">수정</button></a>
-			<a href="../delete/${id}"><button class="button_delete">삭제</button></a>
+			<c:if test="${sessionScope.user.num == item.num }">
+				<a href="../update/${id}"><button class="button_modify">수정</button></a>
+				<a href="../delete/${id}"><button class="button_delete">삭제</button></a>
+			</c:if>
+			<a href="../list"><button class="button_back">목록</button></a>
 		</div>
 	</section>
 
@@ -67,13 +96,13 @@
 		<c:if test="${sessionScope.user != null}">
 			<!-- 댓글 입력 -->
 			<div class="replyFrom">
-				<form action="../replyAdd" method="post">
+				<form action="../replyAdd" method="post" name="write_post">
 					<div class="text-board">
-						<textarea rows="5" name="content" placeholder="로그인 후 코멘트를 달아주세요!"></textarea>
+						<textarea name="content" placeholder="로그인 후 코멘트를 달아주세요!"></textarea>
 						<input type="hidden" name="commuId" value="${item.id }">
 					</div>
 					<div class="reply_up">
-						<button class="reply_up_btn">등록</button>
+						<button class="reply_up_btn" type="button" onclick="EtValue()">등록</button>
 					</div>
 				</form>
 			</div>
@@ -85,7 +114,7 @@
 		<!-- 댓글 목록 -->
 		<div class="reply-box">
 			<div class="list_btn">
-				<div style="margin-top: 2%;"></div>
+				<div style="margin-top: 1%;"></div>
 			</div>
 
 			<c:forEach var="reply" items="${reply }">
@@ -110,10 +139,10 @@
 										</div> <!-- 수정 삭제 -->
 										<div class="reply_btn">
 											<c:if test="${sessionScope.user.num == reply.num }">
-												<button class="reply-update-btn ${reply.id }" type="button"
-													onclick="replyUpdate(${reply.id}, ${reply.commuId }, ${reply.content })">수정</button>
-												<a href="../replyDelete/${reply.id }?id=${item.id}"><button
-														class="reply_delete">삭제</button></a>
+												<a href="../replyUpdate/${reply.id}"><button class="reply-update-btn ${reply.id }" type="button"
+													onclick="replyUpdate(${reply.id}, ${reply.commuId }, ${reply.content })">수정</button></a>
+												<a href="../replyDelete/${reply.id }?id=${item.id}">
+												<button class="reply_delete">삭제</button></a>
 											</c:if>
 										</div>
 									</td>
@@ -125,7 +154,7 @@
 			</c:forEach>
 
 
-			<div style="border-top: 1px solid #ccc; margin-top: 2%;"></div>
+			<div style="border-top: 1px solid #ccc; margin-top: 1%;"></div>
 		</div>	
 		<!-- 페이지네이션 형태만 잡음-->
 		<tfoot>

@@ -35,7 +35,8 @@
 	socket.onmessage = function(msg) {
 		let message = document.getElementById("message");
 
-		message.innerHTML += "<div class='list ${item.num == num ? 'my' : 'you' }'>" + msg.data + "</div>";
+		message.innerHTML += "<div class='list ${item.num == num ? 'my' : 'you' }'>"
+				+ msg.data + "</div>";
 
 		$('#message').scrollTop($('#message')[0].scrollHeight);
 	}
@@ -65,9 +66,12 @@
 			let regDate = year + "-" + month + "-" + date + " " + hours + ":"
 					+ minutes;
 
-			socket.send("<div class='user'><div class='name'>" + '${sessionScope.user.nickname}'
-					+ "</div></div><div class='balloon'>" + content.value + "</div><div class='user'>"
-					 + "</div><div class='user'><p class='time'>" + regDate + "</p></div>");
+			socket.send("<div class='user'><div class='name'>"
+					+ '${sessionScope.user.nickname}'
+					+ "</div></div><div class='balloon'>" + content.value
+					+ "</div><div class='user'>"
+					+ "</div><div class='user'><p class='time'>" + regDate
+					+ "</p></div>");
 
 			content.value = "";
 			content.focus();
@@ -89,17 +93,28 @@
 			<li>채팅</li>
 		</ul>
 	</div>
+
 	<div class="container">
 		<div id="room">
+
+			<div class="chat_banner">
+				<div class="chat_text">
+					ROOM <i class="bi bi-chat-fill"
+						style="position: absolute; top: 14%; left: 26%;"></i>
+				</div>
+			</div>
+
 			<c:forEach var="item" items="${roomList }">
 				<div class="active-color">
 					<a href="../detail/${item.id}">
 						<div class="list_box ${item.id == id ? 'active' : ''}">
 							<div class="day_day">
-								<div>${item.dDay }</div>
+								<div>
+									<span class="nick_name">${item.nickname}</span> ${item.dDay }
+								</div>
 							</div>
 							<div class="box_title">
-								<div >${item.title }</div>
+								<div>${item.title }</div>
 							</div>
 						</div>
 					</a>

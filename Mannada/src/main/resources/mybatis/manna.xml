@@ -3,7 +3,9 @@
 
 <mapper namespace="manna">
 	<sql id="search">
-		SELECT * FROM manna
+		SELECT manna.*, nickname 
+		FROM manna
+		LEFT OUTER JOIN user ON(manna.num = user.num)
 		<where>
 			<if test="search eq 1">
 				title LIKE CONCAT(CONCAT('%',#{keyword}),'%')
@@ -32,8 +34,9 @@
 				det_address LIKE CONCAT(CONCAT('%',#{keyword}),'%')
 			</if>
 		</where>
-		ORDER BY id DESC
+		ORDER BY manna.id DESC
 	</sql>
+	
 	<select id="total" resultType="Integer">
 		SELECT COUNT(*) 
 		FROM (<include refid="search"></include>) manna
@@ -59,8 +62,11 @@
 	
 	<select id="item" resultType="Manna">
 		SELECT manna.*, nickname, (SELECT (count(*) - 1) FROM joins WHERE manna_id = #{id}) as sum
+			   , filename, uuid, AVG(star) starAvg
 		FROM manna
 		LEFT OUTER JOIN user ON(manna.num = user.num)
+		LEFT OUTER JOIN profile ON (user.num = profile.num)
+		LEFT OUTER JOIN review ON (user.num = review.num)
 		WHERE manna.id=#{id}
 	</select>
 	
@@ -89,12 +95,12 @@
 	
 	<delete id="delete_join">
 		DELETE FROM joins
-		WHERE manna_id = #{id} AND num = #{num}
+		WHERE manna_id = #{mannaId} AND num = #{num}
 	</delete>
 	
 	<delete id="delete_joins">
 		DELETE FROM joins
-		WHERE manna_id = #{id}
+		WHERE manna_id = #{mannaId}
 	</delete>
 	
 	
@@ -103,5 +109,12 @@
 		UPDATE manna SET viewCnt = viewCnt + 1
 		WHERE id = #{id}
 	</update>
+	
+	
+	<select id="join_status" resultType="Integer">
+		SELECT NVL(count(*),0)
+		FROM joins
+		WHERE manna_id = #{id} AND num = #{num}
+	</select>
 	
 </mapper>

@@ -24,15 +24,21 @@
 			<div class="title">
 				<h1 style="font-size: 21px; font-weight:bold;">회원가입</h1>
 			</div>
+				
 			<div class="email-title">이메일</div>
 			<div class="email">
 				<input id="email" type="email" name="id" placeholder="이메일">
-				<button type="button" class="id_overlap_button" onclick="id_overlap_check()" style="float:right;">중복확인</button>
+				<button type="button" class="id_overlap_button" onclick="id_overlap_check()" style="float:right;">중복확인</button>																											
 				<div id="emailError" class="error"></div>
+				<input id="email_auth_key" type="text" style="width: 70%;" placeholder="인증번호 6자리를 입력해주세요!" disabled="disabled" maxlength="6">
+				<button type="button" class="id_overlap_button" id="mail-check-btn" style="float:right;">본인인증</button>
 			</div>
+				
+				
+					
 			
 			<div class="password-title">비밀번호</div>
-			<div class="password">
+			<div class="password"> 
 				<input id="password" type="password" name="pw"
 					placeholder="비밀번호 (영문, 숫자 포함 최소 8자, 최대 20자 이내)">
 				<div id="passwordError" class="error"></div>
@@ -44,15 +50,17 @@
 					placeholder="비밀번호 확인">
 				<div id="passwordCheckError" class="error"></div>
 			</div>
-
+			
+						
 			<div class="nickname-title">닉네임</div>
 	        <div class="nickname">            
-	            <input name="nickname" id="nickname" type="text" placeholder="닉네임 (공백없이 한글, 영문, 숫자만 입력 가능)">
-	            <button type="button" class="id_overlap_button" onclick="id_overlap_check()" style="float:right;">중복확인</button>
+	            <input name="nickname" id="nickname" type="text" placeholder="닉네임 (공백없이 20자이내 한글, 영문, 숫자만 입력 가능)">
+	            <button type="button" class="id_overlap_button" onclick="id_overlap_check()" style="float:right;">중복확인</button>	            
 	            <div id="nicknameError" class="error"></div>            
-	        </div>      		    
-			
-			<div>
+	        </div>    
+	        
+	        					
+			<div class="checkbox">
 				<input type="checkbox" id="remember-check">개인정보 수집 및 정보이용에 동의합니다.
 			</div>
 		
@@ -73,4 +81,41 @@
     </div>
 	</div>
 </body>
+
+<script type="text/javascript">
+
+$('#mail-check-btn').click(function() {
+	const eamil = $('#email').val(); // 이메일 주소값 얻어오기!
+	console.log('완성된 이메일 : ' + eamil); // 이메일 오는지 확인
+	const checkInput = $('#email_auth_key') // 인증번호 입력하는곳 
+	
+	$.ajax({
+		type : 'get',
+		url : '/mailCheck?email="/>'+eamil, // GET방식이라 Url 뒤에 email을 뭍힐수있다.
+		success : function (data) {
+			console.log("data : " +  data);
+			checkInput.attr('disabled',false);
+			code =data;
+			alert('인증번호가 전송되었습니다.')
+		}			
+	}); // end ajax
+}); // end send eamil
+
+// 인증번호 비교 
+// blur -> focus가 벗어나는 경우 발생
+$('#email_auth_key').blur(function () {
+	const inputCode = $(this).val();
+	//const $resultMsg = $('#mail-check-warn');
+	
+	if(inputCode === code){
+		$resultMsg.html('인증번호가 일치합니다.');
+		$resultMsg.css('color','green');
+		$('#mail-check-btn').attr('disabled',true);
+		$('#mail').attr('readonly',true);
+	}else{
+		$resultMsg.html('인증번호가 불일치 합니다. 다시 확인해주세요!.');
+		$resultMsg.css('color','red');
+	}
+});
+</script>
 </html>

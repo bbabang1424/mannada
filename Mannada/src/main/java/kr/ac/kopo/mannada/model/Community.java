@@ -1,7 +1,7 @@
 package kr.ac.kopo.mannada.model;
 
 import java.util.Date;
-
+ 
 public class Community {
 	private int id;
 	private int num;
@@ -23,6 +23,14 @@ public class Community {
 			return "소통";
 		else
 			return "없음";
+	}
+	
+	public int getCategory() {
+		return category;
+	}
+	
+	public void setCategory(int category) {
+		this.category = category;
 	}
 	
 	public int getRnum() {

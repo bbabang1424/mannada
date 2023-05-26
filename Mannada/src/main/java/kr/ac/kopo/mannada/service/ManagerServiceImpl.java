@@ -5,13 +5,12 @@ import org.springframework.stereotype.Service;
 
 import kr.ac.kopo.mannada.dao.ManagerDao;
 import kr.ac.kopo.mannada.model.Manager;
-import kr.ac.kopo.mannada.model.User;
 
 @Service
 public class ManagerServiceImpl implements ManagerService {
-	
+ 	
 	@Autowired
-	ManagerDao dao;
+	ManagerDao dao; 
 	
 
 	@Override
@@ -20,11 +19,41 @@ public class ManagerServiceImpl implements ManagerService {
 		
 		if(item != null) {
 			manager.setPw(item.getPw());
-			manager.setName(item.getName());
 			manager.setNickname(item.getNickname());
 			
 			return true;
 		} else
+			return false; 
+	}
+
+	@Override
+	public Manager item(String nickname) {
+		return dao.item(nickname);
+	}
+
+	@Override
+	public void update(Manager item) {
+		dao.update(item);
+	}
+
+	@Override
+	public boolean checkPW(Manager item) {
+		if(dao.checkPW(item)==1)
+			return true;
+		else
+			return false;
+	}
+
+	@Override
+	public void password(Manager item) {
+		dao.password(item);
+	}
+
+	@Override
+	public boolean checkNick(String id) {
+		if(dao.checkNick(id)==0)
+			return true;
+		else
 			return false;
 	}
 

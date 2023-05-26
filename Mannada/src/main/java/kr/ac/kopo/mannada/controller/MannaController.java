@@ -2,7 +2,6 @@ package kr.ac.kopo.mannada.controller;
 
 import java.util.HashMap;
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -14,7 +13,6 @@ import org.springframework.web.bind.annotation.SessionAttribute;
 
 import kr.ac.kopo.mannada.model.Manna;
 import kr.ac.kopo.mannada.model.User;
-import kr.ac.kopo.mannada.pager.Pager;
 import kr.ac.kopo.mannada.service.MannaService;
 import kr.ac.kopo.mannada.service.UserService;
 
@@ -39,6 +37,12 @@ public class MannaController {
 	public String detail(@PathVariable int id, Model model) {
 		
 		service.addViewCnt(id);
+		
+		/*
+		 * Map<String, Object> js = new HashMap<String, Object>(); js.put("id", id);
+		 * js.put("num", user.getNum()); int status = service.joinStatus(js);
+		 * model.addAttribute("status", status);
+		 */
 		
 		Manna item = service.item(id);
 		model.addAttribute("item", item);
@@ -65,7 +69,7 @@ public class MannaController {
 		HashMap<String, Object> map = new HashMap<>();
 		map.put("mannaId", item.getId());
 		map.put("num", user.getNum());
-		userService.addPartner(map);
+		service.addJoin(map);
 		
 		return "redirect:list";
 	}
@@ -101,15 +105,27 @@ public class MannaController {
 		return "redirect:list";
 	}
 	
-	@PostMapping("/addPartner/{id}")
-	public String addPartner(@PathVariable int id, @SessionAttribute User user) {
+	@GetMapping("/addJoin/{id}")
+	public String addjoin(@PathVariable int id, @SessionAttribute User user) {
 		
 		HashMap<String, Object> map = new HashMap<>();
 		map.put("mannaId", id);
 		map.put("num", user.getNum());
-		userService.addPartner(map);
+		service.addJoin(map);
 		
-		return "redirect:list";
+		return "redirect:../detail/" + id;
+	}
+	
+
+	@GetMapping("/deleteJoin/{id}")
+	public String deleteJoin(@PathVariable int id, @SessionAttribute User user) {
+		
+		HashMap<String, Object> map = new HashMap<>();
+		map.put("mannaId", id);
+		map.put("num", user.getNum());
+		service.deleteJoin(map);
+		
+		return "redirect:../detail/" + id;
 	}
 
 }

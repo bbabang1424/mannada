@@ -12,7 +12,7 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 <link href="/resources/css/header.css" rel="stylesheet"> 
  
-<script>
+<script> 
 $(function() {
 	  $('#check_box').on('click', function() {
 	    event.stopPropagation();  
@@ -24,9 +24,11 @@ $(function() {
 	  });
 	// 다른 부분 누르면 자동으로 닫히게끔 하는 기능 추가하고 싶음
 	
+
 	  var btn = $('#top-button');
 	  var btn2 = $('#talk-button');
-
+		
+	  /*
 		$(window).scroll(function() {
 		  if ($(window).scrollTop() > 300) {
 		    btn.addClass('show');
@@ -37,11 +39,12 @@ $(function() {
 		  }
 		 
 		});
-
+	*/
 		btn.on('click', function(e) {
 		  e.preventDefault();
 		  $('html, body').animate({scrollTop:0}, '300');
 		});
+
 });
 </script>
 <body>
@@ -65,16 +68,22 @@ $(function() {
 				
 				<div class="login">
 					<ul>
-						<c:if test="${sessionScope.user == null}">
+						<c:if test="${sessionScope.user == null && sessionScope.manager == null}">
 							<li><a href="/signup">회원가입</a></li>
 							<li><button onclick="location.href='/login'">로그인</button></li>
 						</c:if>
 						
 						<c:if test="${sessionScope.user != null}">
+							<li><a href="/user/view/${sessionScope.user.num}">${sessionScope.user.nickname}님</a></li>
+							<li><button onclick="location.href='/logout'">로그아웃</button></li>
+						</c:if>
+						
+						<c:if test="${sessionScope.manager != null}">
+							<li><a href="/mg/view/${sessionScope.manager.nickname}">${sessionScope.manager.nickname}님</a></li>
 							<li><button onclick="location.href='/logout'">로그아웃</button></li>
 						</c:if>
 					</ul>
-				</div>
+				</div> 
 			</div>
 				
 			<div id="ham">
@@ -120,12 +129,22 @@ $(function() {
 			
 			<div class="header-line">
 				<ul>
-					<h5><a href="/mypage">마이페이지</h5>
+					<c:if test="${sessionScope.user == null && sessionScope.manager == null}">
+						<h5><a href="/login">마이페이지</h5>
+					</c:if>
+					<c:if test="${sessionScope.user != null}">
+						<h5><a href="/user/view/${sessionScope.user.num}">마이페이지</h5>
+					</c:if>
+					<c:if test="${sessionScope.manager != null}">
+						<h5><a href="/mg/view/${sessionScope.manager.nickname}">마이페이지</h5>
+					</c:if>
 				</ul>
 			</div>
 		</div>
 	</div>
 	
 
-	<a href="/chat/list" id="talk-button"></a>
-	<a id="top-button"></a>
+	<c:if test="${sessionScope.user != null}">
+		<a href="/chat/list" id="talk-button" class="show"></a>
+	</c:if>
+	<a id="top-button" class="show"></a>

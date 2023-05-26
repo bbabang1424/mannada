@@ -6,4 +6,33 @@
 		SELECT * FROM manager
 		WHERE id = #{id} AND pw = PASSWORD(#{pw})
 	</select>
+	  
+	<select id="item" resultType="Manager">
+		SELECT *
+		FROM manager
+		WHERE id=#{id} OR nickname=#{nickname}
+	</select>
+	
+	<update id="update">
+		UPDATE manager
+		SET nickname=#{nickname} 
+		WHERE id=#{id}
+	</update>
+	
+	<update id="password">
+		UPDATE manager
+		SET pw=PASSWORD(#{newPW})
+		WHERE id=#{id} AND pw=PASSWORD(#{pw})
+	</update>
+	
+	<select id="check_pw" resultType="Integer">
+		SELECT COUNT(*) FROM manager
+		WHERE id=#{id} AND pw=PASSWORD(#{pw}) 
+	</select>
+	
+	<!-- 닉네임 중복제거 -->
+	<select id="check_nick" resultType="Integer">
+		SELECT COUNT(*) FROM manager
+		WHERE nickname=#{nickname}
+	</select>
 </mapper>

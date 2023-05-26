@@ -6,4 +6,14 @@ public interface ManagerDao {
 
 	Manager login(Manager manager);
 
+	Manager item(String nickname);
+
+	void update(Manager item);
+ 
+	int checkPW(Manager item);
+
+	void password(Manager item);
+
+	int checkNick(String id); 
+
 }
