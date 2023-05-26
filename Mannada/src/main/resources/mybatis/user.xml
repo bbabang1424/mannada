@@ -65,7 +65,7 @@
 	
 	<select id="item" resultMap="UserMap">
 		SELECT user.*, profile.id pid, profile.uuid, profile.filename
-				, AVG(star) starAvg, COUNT(star) starCnt
+				, AVG(star) starAvg, COUNT(star) starCnt 
 		FROM user
 		LEFT OUTER JOIN profile ON user.num = profile.num
 		LEFT OUTER JOIN review ON user.num = review.num

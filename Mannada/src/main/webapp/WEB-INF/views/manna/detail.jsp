@@ -49,7 +49,7 @@
 							href="/user/view/${item.num}" style="color: black;" class="b">
 							${item.nickname}</a>
 							<p class="arrow_box">회원정보</p> <i class="bi bi-star"></i> ${item.starAvg}(${item.starCnt})
-					</div>
+					</div> 
 					<div class="date">
 						<i class="bi bi-calendar-check"></i> ${item.dDay}
 					</div>

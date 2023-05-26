@@ -13,13 +13,13 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 
-<title>프로필 사진</title>
+<title>만나다</title>
 </head>
 <jsp:include page="../header.jsp"></jsp:include>
 <body>
 	<div class="container"> 
 		<div>
-			<h3>프로필 등록</h3>
+			<h3>프로필 등록</h3> 
 		</div> 
 		<div>
 			<form name="photoInfo_from" method="post" style="width:700px" enctype="multipart/form-data">

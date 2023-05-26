@@ -16,7 +16,7 @@ public class User {
 	
 	private Attach attach;
 	private float starAvg;
-	private int starCnt;
+	private int starCnt; 
 
 	public String getStatus_() {
 		if(status==0)

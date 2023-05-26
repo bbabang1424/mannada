@@ -14,7 +14,7 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
 
-<title>사용자 마이페이지</title>
+<title>만나다</title>
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script> 
 $(function() {
@@ -147,7 +147,7 @@ $(function() {
 			${user.nickname}
 		</div>
 		<div>
-			★${user.starAvg}(${user.starCnt})
+			★${user.starAvg}(${user.starCnt}) 
 		</div>
 		<div>
 			<c:if test="${sessionScope.user == null}">

@@ -30,7 +30,7 @@ public class Manna {
 
 	/*category와 status 한글 처리 : 데이터베이스가 처리하지 못할 시 제한을 두는 역할*/
 	public String getCategory_() {
-		if(category==1)
+		if(category==1) 
 			return "공동구매";
 		else if(category==2)
 			return "운동";

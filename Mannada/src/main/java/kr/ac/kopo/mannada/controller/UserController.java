@@ -38,7 +38,7 @@ public class UserController {
 	final String path = "user/";
 	private String uploadPath = "d://upload/"; 
 	
-	@Autowired
+	@Autowired 
 	UserService service;
 	
 	@Autowired
