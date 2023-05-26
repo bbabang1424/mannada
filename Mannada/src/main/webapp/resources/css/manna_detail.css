@@ -100,17 +100,17 @@
 .writer_date {
 	position: absolute;
 	width: 100%;
-	top: 11%;
+	top: 10.5%;
 	left: 10%;
 }
 
 .Writer {
 	word-wrap: break-word;
-	/* display: inline-block;
-	width: 80%; */
+	margin-bottom: 3px;
 }
 
 .arrow_box {
+	font-weight: bold;
 	text-align: center;
 	display: none;
 	text-align: center;
@@ -118,7 +118,7 @@
 	width: 80px;
 	padding: 8px;
 	left: 48px;
-	top: -93%;
+	top: -100%;
 	-webkit-border-radius: 8px;
 	-moz-border-radius: 8px;
 	border-radius: 8px;
@@ -127,7 +127,7 @@
 	color: #fff;
 	font-size: 14px;
 }
-/* 회원정도 이펙트 */
+/* 회원정보 이펙트 */
 .arrow_box:after {
 	display: inline-block;
 	transform: rotate(183deg); /* 각도 */
@@ -140,7 +140,7 @@
 	border-bottom-color: #333333b3;
 	border-width: 10px;
 	pointer-events: none;
-	
+
 	/*     content: '';
     width: 50px; 사이즈
     height: 50px; 사이즈

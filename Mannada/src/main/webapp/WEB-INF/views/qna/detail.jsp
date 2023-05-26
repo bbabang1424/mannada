@@ -25,24 +25,24 @@
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
 <script type="text/javascript">
-function EtValue() {
-	const form = document.write_post;
-	
-	let content = form.content.value.replace(/&nbsp;/g, '');
-	content = content.replace("<br>", '');
-	content = content.replace("<p>", '');
-	content = content.replace("</p>", '');
-	
-	// alert(">" + content + "<");
-	
-	if(content.trim() == '') {
-        swal('','수정할 내용을 입력해주세요.','error')
-		form.content.focus();
-		return;
+	function EtValue() {
+		const form = document.write_post;
+
+		let content = form.content.value.replace(/&nbsp;/g, '');
+		content = content.replace("<br>", '');
+		content = content.replace("<p>", '');
+		content = content.replace("</p>", '');
+
+		// alert(">" + content + "<");
+
+		if (content.trim() == '') {
+			swal('', '수정할 내용을 입력해주세요.', 'error')
+			form.content.focus();
+			return;
+		}
+
+		form.submit();
 	}
-	
-	form.submit();
-}
 	//window.onload = 
 	$(document).ready(
 			function() {
@@ -62,7 +62,6 @@ function EtValue() {
 				document.getElementById('currentDate').value = new Date()
 						.toISOString().substring(0, 10);
 			});
-	
 </script>
 
 <style type="text/css">
@@ -92,7 +91,10 @@ function EtValue() {
 			<div class="Writer_date_views">
 				<div class="Writer_date">
 					<div class="Writer">
-						<span style="font-weight: bold; margin-right: 3px;"> 작성자</span> <a href="/user/view/${question.num}">${question.nickname}</a>
+						<span style="font-weight: bold; margin-right: 3px;"> 작성자</span> <a
+							href="/user/view/${question.num}"
+							style="color: black; text-decoration: none;" class="b">${question.nickname}</a>
+							<p class="arrow_box">회원정보</p>
 					</div>
 				</div>
 				<div class="date_views">
@@ -112,17 +114,17 @@ function EtValue() {
 					<fmt:formatDate value="${answer.regDate}" pattern="yyyy-MM-dd " />
 				</div>
 				<hr>
-				<div style="overflow:auto; width: 100%; height: 100px;"
+				<div style="overflow: auto; width: 100%; height: 100px;"
 					class="answer_content">${answer.content }</div>
 			</div>
 			<!-- 페이지 나눔/답글 수정 삭제 -->
 			<c:if test="${sessionScope.manager.id != null }">
-			 <div class="delete_update_btn">
-				<a href="../deleteAnswer/${question.id }"><button
-						class="delete_btn" type="button">삭제</button></a>
-				<a href="../updateAnswer/${question.id }"><button
-						class="update_btn" type="button">수정</button></a>
-			</div>
+				<div class="delete_update_btn">
+					<a href="../deleteAnswer/${question.id }"><button
+							class="delete_btn" type="button">삭제</button></a> <a
+						href="../updateAnswer/${question.id }"><button
+							class="update_btn" type="button">수정</button></a>
+				</div>
 			</c:if>
 		</c:if>
 
@@ -130,22 +132,22 @@ function EtValue() {
 		<c:if test="${sessionScope.manager != null && question.status == 0}">
 			<form action="../addAnswer" name="write_post" method="post">
 				<input type="hidden" name="questionId" value="${question.id }">
-				
+
 				<div class="summernote_top">
-				<textarea class="answer_box" id="summernote" name="content"></textarea>
+					<textarea class="answer_box" id="summernote" name="content"></textarea>
 				</div>
 				<div class="answer_btn_info">
-				<button class="answer_btn" type="button" onclick="EtValue()">답변</button>
+					<button class="answer_btn" type="button" onclick="EtValue()">답변</button>
 				</div>
 			</form>
 		</c:if>
-		
+
 		<!-- lower:하단이란 뜻 -->
 		<div class="lower">
-			<div style="border:1px solid #eee;"></div>
+			<div style="border: 1px solid #eee;"></div>
 			<!--게시글 수정 삭제  -->
 			<!-- modify:수정하다란 뜻 -->
-			
+
 			<c:if test="${sessionScope.user != null && question.status == 0}">
 				<a href="../update/${id}"><button class="button_modify">수정</button></a>
 				<a href="../delete/${id}"><button class="button_delete">삭제</button></a>
@@ -153,6 +155,6 @@ function EtValue() {
 			<a href="../list"><button class="button_list">목록</button></a>
 		</div>
 	</section>
-	 <jsp:include page="../footer.jsp"></jsp:include>
+	<jsp:include page="../footer.jsp"></jsp:include>
 </body>
 </html>

@@ -60,7 +60,8 @@ function EtValue() {
 				<div class="Writer_date">
 					<div class="Writer">
 						<span style="font-weight: bold; margin-right: 3px;">작성자</span>
-						<a href="/user/view/${item.num}">${item.nickname}</a>
+						<a href="/user/view/${item.num}" style="color: black;" class="b">${item.nickname}</a>
+						<p class="arrow_box">회원정보</p>
 					</div>
 				</div>
 				<div class="date_views">
@@ -130,7 +131,9 @@ function EtValue() {
 
 										<div class="reply_name_date">
 
-											<span class="reply_nickname">${reply.nickname }<span
+											<span class="reply_nickname"><a href="/user/view/${item.num}" style="color:black; " class="c">${reply.nickname }</a>
+											<p class="reply_arrow_box">회원정보</p>
+											<span
 												class="reply_date"><fmt:formatDate
 														value="${reply.regDate}" pattern="yyyy-MM-dd hh:mm" /></span></span>
 										</div>
