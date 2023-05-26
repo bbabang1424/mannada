@@ -110,9 +110,11 @@
 }
 
 .detail {
-	text-align: left;
-	padding-top: 3%;
-	padding-bottom: 3%;
+	    padding-right: 2%;
+    padding-left: 2%;
+    text-align: left;
+    padding-top: 3%;
+    padding-bottom: 3%;
 }
 
 .category {
@@ -259,7 +261,7 @@
 .lower {
 	margin-top: 3%;
 	text-align: right;
-	width: 96.5%;
+	width: 93.5%;
 }
 /* 등록 */
 .raise_btn {
