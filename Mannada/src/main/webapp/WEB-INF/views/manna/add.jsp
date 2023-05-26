@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>manna_add</title>
+<title>만나다</title>
 
 <!-- 우편번호 찿기인데.. -->
 <script
