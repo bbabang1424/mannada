@@ -64,13 +64,22 @@
 	margin-bottom: 3%;
 }
 
-.img {
-	border: 1px solid #ccc;
+.img_box {
+	border-radius: 70%;
+	margin: 0.5% 2.5% 0% 2%;
+	display: inline-block;
 	width: 60px;
 	height: 60px;
+}
+
+.img {
+	border: 1px solid #ccc;
+	margin: 0.5% 2.5% 0% 2%;
+	display: inline-block;
+	width: 100%;
 	border-radius: 70%;
 	overflow: hidden;
-	margin: 0.5% 2.5% 0% 2%;
+	height: auto;
 }
 
 .Category_address {

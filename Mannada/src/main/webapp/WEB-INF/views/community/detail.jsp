@@ -125,12 +125,19 @@ function EtValue() {
 							<tbody class="leply_list">
 								<tr>
 									<td width="5%;" align="left" valign="top">
-									<%-- 		<!-- 사진 변경 --> 
+									<%-- 		
+									<!-- 사진 변경 --> 
 									<c:if test="${item.filename != null}">
-											<img class="img" src="/upload/${item.uuid}_${item.filename}">
-										</c:if> --%> 
-										<%-- <c:if test="${item.filename == null}"> --%>
-										<img class="profile" src="/resources/image/profile.png"> <%-- 	</c:if> --%>
+									<div class="profile_box">
+										<img class="img" src="/upload/${item.uuid}_${item.filename}">
+									</div>
+									</c:if>
+									 --%>
+										  <%-- <c:if test="${item.filename == null}"> --%>
+										 <div class="profile_box">
+										<img class="profile" src="/resources/image/profile.png">
+										</div>
+										 <%-- 	</c:if> --%>
 									</td>
 										
 									<td style="width: 0%;"></td>

@@ -38,10 +38,14 @@
 				</div>
 				<!-- 사진 변경 -->
 				<c:if test="${item.filename != null}">
+				<div class="img_box">
 					<img class="img" src="/upload/${item.uuid}_${item.filename}">
+				</div>
 				</c:if>
 				<c:if test="${item.filename == null}">
-					<img class="img" src="/resources/image/profile.png">
+					<div class="img_box">
+						<img class="img" src="/resources/image/profile.png">
+					</div>
 				</c:if>
 				<div class="writer_date">
 					<div class="Writer">
