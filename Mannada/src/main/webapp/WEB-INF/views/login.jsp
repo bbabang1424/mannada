@@ -82,6 +82,13 @@ function mgValue() {
                 <li style="cursor: pointer;">관리자 로그인</li>
             </ul>
         </div>
+        
+        <security:http>
+			<security:remember-me data-source-ref="dataSource" token-validity-seconds="604800"/>
+			
+			<!-- logout -->
+			<security:logout logout-url="/logout" invalidate-session="true" delete-cookies="remember-me, JSEESION_ID"/>
+		</security:http>
 
         <div id="user-login">
 	        <div>
