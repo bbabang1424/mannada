@@ -124,8 +124,15 @@ function EtValue() {
 						<table class="replyTag">
 							<tbody class="leply_list">
 								<tr>
-									<td width="5%;" align="left" valign="top"><img
-										class="profile" src="/resources/image/profile.png"></td>
+									<td width="5%;" align="left" valign="top">
+									<%-- 		<!-- 사진 변경 --> 
+									<c:if test="${item.filename != null}">
+											<img class="img" src="/upload/${item.uuid}_${item.filename}">
+										</c:if> --%> 
+										<%-- <c:if test="${item.filename == null}"> --%>
+										<img class="profile" src="/resources/image/profile.png"> <%-- 	</c:if> --%>
+									</td>
+										
 									<td style="width: 0%;"></td>
 									<td style="margin: 5%; width: 51%;">
 
