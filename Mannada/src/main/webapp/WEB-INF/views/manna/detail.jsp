@@ -14,10 +14,11 @@
 
 </head>
 <body>
+	<!--참여버튼 a-jax:이현주  -->
+	<!-- 각 페이지 안내 베너:김소연  -->
 	<div class="banner">
 		<div class="banner_text">
-			<li>만나다</li>
-			<i class="bi bi-caret-right-fill"></i>
+			<li>만나다</li> <i class="bi bi-caret-right-fill"></i>
 			<li>글 목록</li>
 		</div>
 		<h3 class="page_title">글 목록</h3>
