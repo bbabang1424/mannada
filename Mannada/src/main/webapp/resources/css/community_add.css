@@ -92,7 +92,7 @@
 
 #title {
 	display: inline-block;
-	width: 79%;
+	width: 75%;
 	padding: 0.375rem 1.25rem 0.375rem 0.75rem;
 	font-size: 1rem;
 	font-weight: 400;
@@ -109,7 +109,7 @@
 
 #notice_title {
 	display: inline-block;
-	width: 92%;
+	width: 90%;
 	padding: 0.375rem 1.25rem 0.375rem 0.75rem;
 	font-size: 1rem;
 	font-weight: 400;
@@ -125,7 +125,7 @@
 }
 
 .select {
-	margin-right: 1%;
+	margin-right: 2%;
 	display: inline-block;
 	width: 12%;
 	padding: 0.375rem 1.25rem 0.375rem 0.75rem;
@@ -185,7 +185,7 @@
 .lower {
 	margin-top: 3%;
 	text-align: right;
-	width: 88%;
+	width: 87%;
 }
 /* 등록 */
 .raise_btn {

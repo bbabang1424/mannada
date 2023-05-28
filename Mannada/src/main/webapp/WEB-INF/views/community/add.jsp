@@ -46,7 +46,7 @@
 
 				<tbody>
 					<tr style="border-bottom: 1px solid #ccc;">
-						<th id="interval">제 목</th>
+						<th id="interval">제목</th>
 						<td class="title"><select name="category" class="select">
 								<option name="category" value="1">후기</option>
 								<option name="category" value="2">소통</option>
@@ -57,7 +57,7 @@
 					<tr>
 						<th id="interval">본문내용</th>
 						<td class="detail"><textarea id="summernote" name="content"
-								placeholder="텍스트 내용을 입력해주세요"></textarea></td>
+								placeholder="내용을 입력해주세요"></textarea></td>
 					</tr>
 				</tbody>
 			</table>
