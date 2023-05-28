@@ -22,8 +22,8 @@
 	border: 1px solid;
 	background-image: url(/resources/image/banner_imga.png);
 	background-repeat: no-repeat;
-	    background-size: 280px 235px;
-    background-position: 88% -20px;
+	background-size: 280px 235px;
+	background-position: 88% -20px;
 }
 
 .banner_text {
@@ -103,6 +103,27 @@ hr {
 	display: inline-block;
 }
 
+.writer_info {
+	font-weight: bold;
+	margin-right: 3px;
+	margin-left: 10px;
+}
+
+.img_box {
+	display: inline-block;
+	border-radius: 70%;
+	width: 40px;
+	height: 40px;
+}
+
+.img {
+	border: 1px solid #ccc;
+	width: 100%;
+	border-radius: 70%;
+	overflow: hidden;
+	height: auto;
+}
+
 .arrow_box {
 	font-weight: bold;
 	text-align: center;
@@ -111,7 +132,7 @@ hr {
 	position: absolute;
 	width: 80px;
 	padding: 8px;
-	left: 68px; top : -81%;
+	left: 123px;
 	-webkit-border-radius: 8px;
 	-moz-border-radius: 8px;
 	border-radius: 8px;
@@ -119,7 +140,7 @@ hr {
 	border: 1px solid #333333b3;
 	color: #fff;
 	font-size: 14px;
-	top: -81%;
+	top: -54%;
 }
 /* 회원정보 이펙트 */
 .arrow_box:after {
@@ -154,7 +175,7 @@ hr {
 .date_views {
 	font-size: 0.96em;
 	position: absolute;
-	top: 21.5%;
+	top: 32.5%;
 	left: 85.5%;
 	color: #5F5F5F;
 	display: inline-block;
