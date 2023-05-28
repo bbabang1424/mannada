@@ -15,7 +15,7 @@
 <link href="/resources/css/chat.css" rel="stylesheet">
 </head>
 <body>
-
+<!--각 페이지 안내베너 :김소연  -->
 	<div class="banner">
 		<ul class="banner_text">
 			<li>HOME</li>

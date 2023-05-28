@@ -91,7 +91,18 @@
 			<div class="Writer_date_views">
 				<div class="Writer_date">
 					<div class="Writer">
-						<span style="font-weight: bold; margin-right: 3px;"> 작성자</span> <a
+					<%-- 	<!-- 사진 변경 -->
+				<c:if test="${item.filename != null}">
+				<div class="img_box">
+					<img class="img" src="/upload/${item.uuid}_${item.filename}">
+				</div>
+				</c:if> --%>
+				<%-- <c:if test="${item.filename == null}"> --%>
+					<div class="img_box">
+						<img class="img" src="/resources/image/profile.png">
+					</div>
+					<%-- </c:if> --%>
+						<span class="writer_info"> 작성자</span> <a
 							href="/user/view/${question.num}"
 							style="color: black; text-decoration: none;" class="b">${question.nickname}</a>
 							<p class="arrow_box">회원정보</p>
