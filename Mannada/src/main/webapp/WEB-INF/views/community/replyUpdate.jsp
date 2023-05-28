@@ -33,25 +33,47 @@
 </head>
 <body>
 	<div class="banner">
-		<ul class="banner_text">
+		<div class="banner_text">
 			<li>커뮤니티</li>
 			<i class="bi bi-caret-right-fill"></i>
 			<li>댓글 수정</li>
-		</ul>
+		</div>
 		<h3 class="page_title">커뮤니티</h3>
 		<p class="page_text">만남에 대한 후기와 소통을 자유옵게 글로 적어주세요!</p>
 	</div>
 
 	<section class="container_box">
 		<div class="box">
-			<div class="title">
-				<h4>${item.title}</h4>
+			<div class="category_title_box">
+				<div class="category_color category_color_${item.category}">
+
+					<div class="category_title">
+						<h1 class="comm_category">
+							<span class="category_info">${item.category_}</span>
+							<div class="title_info">${item.title}</div>
+						</h1>
+
+					</div>
+				</div>
 			</div>
 
 			<div class="Writer_date_views">
 				<div class="Writer_date">
 					<div class="Writer">
-						<span style="font-weight: bold;">작성자</span> ${item.nickname}
+				<%-- 	<!-- 사진 변경 -->
+				<c:if test="${item.filename != null}">
+				<div class="img_box">
+					<img class="img" src="/upload/${item.uuid}_${item.filename}">
+				</div>
+				</c:if> --%>
+				<%-- <c:if test="${item.filename == null}"> --%>
+					<div class="img_box">
+						<img class="img" src="/resources/image/profile.png">
+					</div>
+					<%-- </c:if> --%>
+						<span class="writer_info">작성자</span>
+						<a href="/user/view/${item.num}" style="color: black;" class="b">${item.nickname}</a>
+						<p class="arrow_box">회원정보</p>
 					</div>
 				</div>
 				<div class="date_views">
