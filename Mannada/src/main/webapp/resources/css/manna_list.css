@@ -10,7 +10,7 @@
 
 .container {
 	max-width: 1200px;
-	padding:0;
+	padding: 0;
 	width: 100%;
 }
 
@@ -24,8 +24,8 @@
 	border: 1px solid;
 	background-image: url(/resources/image/banner_imga.png);
 	background-repeat: no-repeat;
-	    background-size: 280px 235px;
-    background-position: 88% -20px;
+	background-size: 280px 235px;
+	background-position: 88% -20px;
 }
 
 .banner_text {
@@ -58,9 +58,7 @@
 
 .content {
 	margin-top: 7%;
-	
 	position: relative;
-
 }
 
 .card_box {
