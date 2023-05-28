@@ -206,6 +206,7 @@ hr {
 	padding: 1.5em;
 	border-top: 2px solid blue;
 	margin: auto;
+	margin-top: 4%;
 }
 
 .answer_mgrId {
@@ -232,9 +233,9 @@ hr {
 }
 
 .summernote_top {
-	margin-top: 2%;
+	margin-top: 4%;
 	max-width: 1200px;
-	margin-left: 3.5%;
+	/* margin-left: 3.5%; */
 }
 
 .answer_box {
@@ -274,7 +275,7 @@ hr {
 }
 
 .answer_btn_info {
-	width: 96%;
+	width: 100%;
 }
 
 .answer_btn {
@@ -289,8 +290,8 @@ hr {
 }
 
 .delete_update_btn {
-	width: 96.2%;
-	margin-top: 1%;
+	width: 100%;
+	margin-top: 2%;
 }
 
 .delete_btn {
@@ -315,10 +316,11 @@ hr {
 }
 
 .lower {
+	max-width: 1200px;
 	display: inline-block;
 	margin-top: 1.5%;
 	text-align: right;
-	width: 93%;
+	width: 100%;
 }
 
 .lower>button {
