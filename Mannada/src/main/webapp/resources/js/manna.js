@@ -50,20 +50,24 @@ window.addEventListener("load", () => {
 
     });
 
-
 });
 
-function getPage(page, query) {
+function getPage(page, query, last_query) {
     let url = `${pager_url}?page=${page}`;
 
     if (query) {
         url += "&" + new URLSearchParams(query).toString();
         
-        const body = document.querySelector(".card_box");
-
-            body.querySelectorAll(".item").forEach(element => {
-                element.remove();
-            });
+        if(last_query != query || last_query == null){
+        	console.log(query);
+        	console.log(last_query);
+        	
+	        const body = document.querySelector(".card_box");
+	
+	        body.querySelectorAll(".item").forEach(element => {
+	            element.remove();
+	        });
+        }
 	}
 
     console.log(url);
@@ -77,8 +81,7 @@ function getPage(page, query) {
             else
                 document.querySelector("#empty_list").classList.remove("hide");
             
-            
-            document.querySelector("#more-btn").onclick = e => getPage(page + 1, query);
+            document.querySelector("#more-btn").onclick = e => getPage(page + 1, query, query);
 
 
             // 더보기 조건    
@@ -98,6 +101,7 @@ function getPage(page, query) {
             
 
         });
+
 }
 
 
