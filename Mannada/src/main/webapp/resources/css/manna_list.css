@@ -9,7 +9,8 @@
 }
 
 .container {
-	max-width: 1220px;
+	max-width: 1200px;
+	padding:0;
 	width: 100%;
 }
 
@@ -57,9 +58,9 @@
 
 .content {
 	margin-top: 7%;
-	max-width: 1274px;
+	
 	position: relative;
-	width: 100%;
+
 }
 
 .card_box {
@@ -227,7 +228,7 @@ div>.gauge_bar>div:first-child {
 
 .writing {
 	display: inline-block;
-	width: 52.5%;
+	width: 52%;
 	text-align: right;
 }
 
