@@ -103,10 +103,13 @@ function mgValue() {
 	                
 	                <div>
 	                    <input type="checkbox" id="remember-check">아이디 저장
-	                    <input type="checkbox" id="remember-check">자동 로그인
+	                    <input name="remember-me" type="checkbox" id="remember-check">자동 로그인
 	                </div>
 	                
 					<button class="login-button" type="button" onclick="userValue()">로그인</button>
+					
+					<!--  csrf 공격 방어를 위해 동적 생성 -->
+    				<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token }" />
 	            </form>
 	        </div>
 	
