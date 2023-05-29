@@ -374,9 +374,9 @@ h4 {
 	display: inline-block;
 	margin-top: 20%;
 	margin-bottom: 20%;
-	margin-left: 25%;
-	width: 80px;
-	height: 80px;
+	margin-left: 27%;
+	width: 70px;
+	height: 70px;
 }
 
 .profile {
@@ -466,8 +466,8 @@ h4 {
 }
 
 .reply-content {
-	margin-bottom: 2.5%; */
-	margin-top: -1%;
+	width: 95%;
+	margin-bottom: 2.5%;
 	White-space: pre-line;
 	word-break: break-all;
 	margin-left: 2%;
