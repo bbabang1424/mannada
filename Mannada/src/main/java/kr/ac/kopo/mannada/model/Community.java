@@ -11,9 +11,10 @@ public class Community {
 	private String content;
 	private int viewCnt;
 	
-	private String nickname;
-	
 	private int rnum;
+	private String nickname;
+	private String filename;
+	private String uuid;
 
 	/*category와 status 한글 처리 : 데이터베이스가 처리하지 못할 시 제한을 두는 역할*/
 	public String getCategory_() {
@@ -95,5 +96,21 @@ public class Community {
 
 	public void setNickname(String nickname) {
 		this.nickname = nickname;
+	}
+
+	public String getFilename() {
+		return filename;
+	}
+
+	public void setFilename(String filename) {
+		this.filename = filename;
+	}
+
+	public String getUuid() {
+		return uuid;
+	}
+
+	public void setUuid(String uuid) {
+		this.uuid = uuid;
 	}
 }

@@ -26,11 +26,12 @@
 	            <div>
 	            	<img id="preview" style="border:1px solid black; width:500px; height:500px">
 	            	<div>	            		
-		            	<input type="file" name="uploadFile" accept=".jpg, .gif, .png">
+		            	<input type="file" name="uploadFile" accept=".jpg, .jpeg, .png">
 		            	<button type="submit">등록</button>
 		            	<button type="button" id="goBack">목록</button>
 	            	</div>
 	             </div>
+	             <p></p>
 			</form>
 		</div>
 	</div>
@@ -60,7 +61,7 @@ $(function() {
 			}
 			
 			reader.readAsDataURL(fileTag.files[0]);
-		}	
+		} 
 	}
 });
 </script>
