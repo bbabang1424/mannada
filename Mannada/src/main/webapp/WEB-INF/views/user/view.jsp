@@ -131,9 +131,9 @@ $(function() {
 <jsp:include page="../header.jsp"></jsp:include>
 <body>
 	<header>
-		<div>
+		<div class="pro1">
 			<c:if test="${user.attach.filename != null}">
-				<div class="pro1">
+				<div>
 					<img src="/upload/${user.attach.uuid}_${user.attach.filename}">
 				</div>
 			</c:if>
