@@ -22,7 +22,7 @@
 	function EtValue() {
 		const form = document.write_post;
 
-		if (form.content.value == '' || form.content.value == ' ') {
+		if (form.content.value.trim() == '') {
 			swal('', '수정할 내용을 입력해주세요.', 'error')
 			form.content.focus();
 			return;
