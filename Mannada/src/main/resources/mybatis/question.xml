@@ -43,9 +43,10 @@
 	</insert>
 
 	<select id="item" resultType="Question">
-		SELECT question.*, nickname
+		SELECT question.*, nickname, filename, uuid
 		FROM question
 		LEFT OUTER JOIN user ON question.num = user.num
+		LEFT OUTER JOIN profile ON (user.num = profile.num)
 		WHERE question.id = #{id}
 	</select>
 

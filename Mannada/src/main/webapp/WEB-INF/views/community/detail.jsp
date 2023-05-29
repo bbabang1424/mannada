@@ -59,17 +59,17 @@ function EtValue() {
 			<div class="Writer_date_views">
 				<div class="Writer_date">
 					<div class="Writer">
-				<%-- 	<!-- 사진 변경 -->
+				<!-- 사진 변경 -->
 				<c:if test="${item.filename != null}">
 				<div class="img_box">
 					<img class="img" src="/upload/${item.uuid}_${item.filename}">
 				</div>
-				</c:if> --%>
-				<%-- <c:if test="${item.filename == null}"> --%>
+				</c:if>
+				<c:if test="${item.filename == null}">
 					<div class="img_box">
 						<img class="img" src="/resources/image/profile.png">
 					</div>
-					<%-- </c:if> --%>
+				</c:if>
 						<span class="writer_info">작성자</span>
 						<a href="/user/view/${item.num}" style="color: black;" class="b">${item.nickname}</a>
 						<p class="arrow_box">회원정보</p>
@@ -136,19 +136,19 @@ function EtValue() {
 							<tbody class="leply_list">
 								<tr>
 									<td width="5%;" align="left" valign="top">
-									<%-- 		
+											
 									<!-- 사진 변경 --> 
-									<c:if test="${item.filename != null}">
+									<c:if test="${reply.filename != null}">
 									<div class="profile_box">
-										<img class="img" src="/upload/${item.uuid}_${item.filename}">
+										<img class="img" src="/upload/${reply.uuid}_${reply.filename}">
 									</div>
 									</c:if>
-									 --%>
-										  <%-- <c:if test="${item.filename == null}"> --%>
+									
+									<c:if test="${reply.filename == null}">
 										 <div class="profile_box">
 										<img class="profile" src="/resources/image/profile.png">
 										</div>
-										 <%-- 	</c:if> --%>
+									</c:if>
 									</td>
 										
 									<td style="width: 0%;"></td>
