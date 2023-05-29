@@ -61,7 +61,7 @@ $(function() {
 			}
 			
 			reader.readAsDataURL(fileTag.files[0]);
-		}	
+		} 
 	}
 });
 </script>
