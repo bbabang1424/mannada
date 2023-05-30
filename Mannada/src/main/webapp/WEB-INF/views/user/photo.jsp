@@ -14,24 +14,36 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 
 <title>만나다</title>
+
+<style>
+#preview {
+	border:1px solid black; 
+	width:500px; 
+	height:500px;
+}
+</style>
 </head>
 <jsp:include page="../header.jsp"></jsp:include>
 <body>
 	<div class="container"> 
 		<div>
 			<h3>프로필 등록</h3> 
+			<p>
+	            500x500의 크기인 사진을 등록하시는걸 권장합니다.
+	            <br> 등록 가능한 파일은 .jpg, .jpeg, .png이고 크기는 최대 10MB입니다.
+	            <br> 사진을 선택하지 않고 등록하시면 기본 이미지가 프로필 사진이 됩니다.
+	        </p>
 		</div> 
 		<div>
 			<form name="photoInfo_from" method="post" style="width:700px" enctype="multipart/form-data">
 	            <div>
-	            	<img id="preview" style="border:1px solid black; width:500px; height:500px">
+	            	<img src="/resources/image/profile.png" id="preview">
 	            	<div>	            		
 		            	<input type="file" name="uploadFile" accept=".jpg, .jpeg, .png">
 		            	<button type="submit">등록</button>
 		            	<button type="button" id="goBack">목록</button>
 	            	</div>
 	             </div>
-	             <p></p>
 			</form>
 		</div>
 	</div>
@@ -43,25 +55,20 @@ $(function() {
 		window.history.back();
 	});
 	
-	//input의 name="uploadFile" 결과값을 저장할 변수
+	//input의 name="uploadFile" 결과값을 저장할 변수, 파일 미리보기 변수, 파일 선택 시 미리보기 생성 변수
 	let fileTag = document.querySelector("input[name=uploadFile]");
-	//파일 태그 변화 함수
+	let imgTag = document.querySelector("#preview");
+	let reader = new FileReader();
+	/* 파일 태그 변화 함수 */
 	fileTag.onchange = function(){
-		//파일 미리보기 변수
-		let imgTag = document.querySelector("#preview");
-		
 		//파일 여부 확인
 		if(fileTag.files.length>0){
-			//파일 선택 시 미리보기 생성
-			let reader = new FileReader();
-			
 			reader.onload = function(data){
 				console.log(data);
 				imgTag.src = data.target.result;
 			}
-			
 			reader.readAsDataURL(fileTag.files[0]);
-		} 
+		}
 	}
 });
 </script>
