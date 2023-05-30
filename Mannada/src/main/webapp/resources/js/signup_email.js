@@ -5,7 +5,7 @@ $(function () {
     $('#infoCheck').click(function () {
         const form = document.signup_form;
         const checkBox = $('#aggrement').is(":checked")
-
+		
         if (form.id.value == '') {
             swal('회원가입', '이메일을 입력하세요', 'info');
             form.id.focus();
