@@ -105,10 +105,12 @@
 	</select>
 
 	<!-- 댓글 단일 조회 -->
-	<select id="reply_item" resultType="Reply">
-		SELECT id, commu_id, num, content, reg_date
+	<select id="item_reply" resultType="Reply">
+		SELECT reply.*, user.nickname, filename, uuid
 		FROM reply
-		WHERE id = #{id}
+		LEFT OUTER JOIN user ON reply.num = user.num
+		LEFT OUTER JOIN profile ON (user.num = profile.num)
+		WHERE reply.id = #{id}
 	</select>
 
 	<!-- 댓글 수정 -->

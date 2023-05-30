@@ -120,6 +120,7 @@ public class CommunityController {
 	@PostMapping("replyUPdate/{id}")
 	public String replyUpdate(@PathVariable int id, Reply item) {
 		service.updateReply(item);
+
 		return "redirect:../detail/" + item.getCommuId(); 
 	}
 	

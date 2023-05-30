@@ -86,7 +86,7 @@
 			</div>
 
 			<div>
-				<div class="text_box">${item.content }</div>
+				<div class="text_box">${item.content}</div>
 			</div>
 		</div>
 	</section>
@@ -97,7 +97,7 @@
 				<input type="hidden" name="replyId" value="${reply.id }">
 				<div>
 					<textarea class="reply_update" style="resize: none;" name="content"
-						placeholder="수정할 내용을 입력해주세요.">${reply.content }</textarea>
+						placeholder="수정할 내용을 입력해주세요.">${reply.content}</textarea>
 				</div>
 				<div class="reply_btn_lsit">
 					<button class="replyupdate_btn" type="button" onclick="EtValue()">수정</button>
