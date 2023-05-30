@@ -61,9 +61,10 @@
 
 
 	<select id="item" resultType="community"> 
-		SELECT community.*, nickname
+		SELECT community.*, nickname, filename, uuid
 		FROM (SELECT *, LAG(id) OVER (ORDER BY id) AS prevId, LEAD(id) OVER (ORDER BY id) AS nextId FROM community) AS community
 		LEFT OUTER JOIN user ON community.num = user.num
+		LEFT OUTER JOIN profile ON (user.num = profile.num)
 		WHERE community.id = #{id}
 	</select>
 
@@ -96,16 +97,20 @@
 	
 	<!-- 댓글 조회 -->
 	<select id="detail_reply" resultType="Reply">
-		SELECT reply.*, user.nickname
-		FROM reply LEFT OUTER JOIN user ON reply.num = user.num
+		SELECT reply.*, user.nickname, filename, uuid
+		FROM reply 
+		LEFT OUTER JOIN user ON reply.num = user.num
+		LEFT OUTER JOIN profile ON (user.num = profile.num)
 		WHERE commu_id = #{id} 
 	</select>
 
 	<!-- 댓글 단일 조회 -->
 	<select id="item_reply" resultType="Reply">
-		SELECT id, commu_id, num, content, reg_date
+		SELECT reply.*, user.nickname, filename, uuid
 		FROM reply
-		WHERE id = #{id}
+		LEFT OUTER JOIN user ON reply.num = user.num
+		LEFT OUTER JOIN profile ON (user.num = profile.num)
+		WHERE reply.id = #{id}
 	</select>
 
 	<!-- 댓글 수정 -->

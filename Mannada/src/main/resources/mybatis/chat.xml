@@ -13,6 +13,7 @@
 		SELECT c.*, nickname
 		FROM chat c LEFT OUTER JOIN user u ON c.num = u.num
 		WHERE c.manna_id = #{id}
+		ORDER BY c.id 
 	</select>
 	
 	<insert id="send_message">

@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <jsp:include page="header.jsp"></jsp:include>
-<title>회원가입</title>
+<title>만나다</title>
 <link rel="stylesheet"
 	href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">
 <link rel="stylesheet" href="/resources/css/signup_email.css" />
@@ -51,7 +51,7 @@
 			<div class="password-title">비밀번호</div>
 			<div class="password"> 
 				<input id="password" type="password" name="pw"
-					placeholder="비밀번호 (영문, 숫자 포함 최소 8자, 최대 20자 이내)">
+					placeholder="비밀번호 (영문, 숫자 포함 최소 8자, 최대 20자 이내)" maxlength="20">
 				<div id="passwordError" class="error"></div>
 			</div>
 			
@@ -65,7 +65,7 @@
 						
 			<div class="nickname-title">닉네임</div>
 	        <div class="nickname">            
-	            <input name="nickname" id="nickname" type="text" placeholder="닉네임 (공백없이 20자이내 한글, 영문, 숫자만 입력 가능)">
+	            <input name="nickname" id="nickname" type="text" placeholder="닉네임 (공백없이 20자이내 한글, 영문, 숫자만 입력 가능)" maxlength="20">
 	            <button type="button" class="id_overlap_button" onclick="id_overlap_check()" style="float:right;">중복확인</button>	            
 	            <div id="nicknameError" class="error"></div>            
 	        </div>    

@@ -11,9 +11,11 @@ public class Question {
 	private int viewCnt;
 	private int status;
 
-	private String nickname;
-	 
 	private int rnum;
+	private String nickname;
+	private String filename;
+	private String uuid;
+	
 
 	public String getStatus_() {
 		if(status==0)
@@ -93,5 +95,21 @@ public class Question {
 
 	public void setStatus(int status) {
 		this.status = status;
+	}
+
+	public String getFilename() {
+		return filename;
+	}
+
+	public void setFilename(String filename) {
+		this.filename = filename;
+	}
+
+	public String getUuid() {
+		return uuid;
+	}
+
+	public void setUuid(String uuid) {
+		this.uuid = uuid;
 	}
 }

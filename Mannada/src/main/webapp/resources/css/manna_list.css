@@ -9,7 +9,8 @@
 }
 
 .container {
-	max-width: 1220px;
+	max-width: 1200px;
+	padding: 0;
 	width: 100%;
 }
 
@@ -23,8 +24,8 @@
 	border: 1px solid;
 	background-image: url(/resources/image/banner_imga.png);
 	background-repeat: no-repeat;
-	    background-size: 280px 235px;
-    background-position: 88% -20px;
+	background-size: 280px 235px;
+	background-position: 78% 26%;
 }
 
 .banner_text {
@@ -57,9 +58,7 @@
 
 .content {
 	margin-top: 7%;
-	max-width: 1274px;
 	position: relative;
-	width: 100%;
 }
 
 .card_box {
@@ -186,7 +185,7 @@ div>.gauge_bar>div:first-child {
 	display: inline-block;
 	max-width: 1200px;
 	width: 100%;
-	margin-bottom: 1%;
+	/* margin-bottom: 1%; */
 }
 
 .search_box {
@@ -208,15 +207,13 @@ div>.gauge_bar>div:first-child {
 }
 
 .search {
+	margin-left: 1%;
 	display: inline-block;
-	width: 3%;
 }
 
 .search_btn {
-	margin-left: 20%;
 	border-radius: 8%;
 	width: 70px;
-	height: 40px;
 	background-color: #0080ff;
 	color: white;
 	border-color: #0080ff;
@@ -227,7 +224,7 @@ div>.gauge_bar>div:first-child {
 
 .writing {
 	display: inline-block;
-	width: 52.5%;
+	width: 48%;
 	text-align: right;
 }
 
