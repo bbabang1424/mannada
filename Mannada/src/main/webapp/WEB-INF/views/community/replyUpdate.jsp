@@ -77,7 +77,7 @@
 				</div>
 				<div class="reply_btn_lsit">
 					<button class="replyupdate_btn" type="button" onclick="EtValue()">수정</button>
-					<a href="../detail/${reply.id} "><button class="back_btn"
+					<a href="../detail/${item.id} "><button class="back_btn"
 							type="button">취소</button></a>
 				</div>
 			</div>

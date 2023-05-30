@@ -102,7 +102,7 @@
 	</select>
 
 	<!-- 댓글 단일 조회 -->
-	<select id="reply_item" resultType="Reply">
+	<select id="item_reply" resultType="Reply">
 		SELECT id, commu_id, num, content, reg_date
 		FROM reply
 		WHERE id = #{id}
