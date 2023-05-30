@@ -1,7 +1,6 @@
 package kr.ac.kopo.mannada.controller;
 
 import java.io.File;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
@@ -83,18 +82,45 @@ public class NoticeController {
 	}
 	
 	@GetMapping("/update/{id}")
-	public String update(@PathVariable int id, Model model) {
-		
+	public String update(@PathVariable int id, Model model, @SessionAttribute Manager manager) {
 		Notice item = service.item(id);
-		model.addAttribute("item", item);
 		
-		return path + "update";
+		if(manager.getId().equals(item.getMgrId())) {
+			model.addAttribute("item", item);
+			return path + "update";
+		} else		
+			return "redirect:../list";
 	}
 	
 	@PostMapping("/update/{id}")
-	public String update(@PathVariable int id, Notice item) {
+	public String update(@PathVariable int id, Notice item, @SessionAttribute Manager manager) {
+		item.setMgrId(manager.getId());
 		
-		service.update(item);
+		try {
+			List<Attach> list = new ArrayList<Attach>();
+			
+			for(MultipartFile attach : item.getAttach()) {
+				
+				if(attach != null && !attach.isEmpty()) {
+					String filename = attach.getOriginalFilename();
+					String uuid = UUID.randomUUID().toString();
+					
+					attach.transferTo(new File(uploadPath + uuid + "_" + filename));
+					
+					Attach attachItem = new Attach();
+					attachItem.setFilename(filename);
+					attachItem.setUuid(uuid);
+					
+					list.add(attachItem);
+				}
+			}
+			
+			item.setAttachs(list);
+			
+			service.update(item);
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
 		
 		return "redirect:../list";
 	}

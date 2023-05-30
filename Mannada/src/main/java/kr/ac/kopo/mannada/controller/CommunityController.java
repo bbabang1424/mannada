@@ -104,22 +104,26 @@ public class CommunityController {
 	
 	@GetMapping("replyUpdate/{id}")
 	public String replyUpdate(@PathVariable int id, Model model) {
-		//기본 데이터 가져오기
-		Community item = service.item(id);
-		model.addAttribute("item", item);
-		
+
 		Reply reply = service.replyItem(id);
 		model.addAttribute("reply", reply);
 		
+		int commuId = reply.getCommuId();
+		Community item = service.item(commuId);
+		model.addAttribute("item", item);
+
+
 		return path + "replyUpdate";
 	}
 	
-	@PostMapping("replyUPdate/{id}")
-	public String replyUpdate(@PathVariable int id, Reply item) {
-		
+
+	@PostMapping("replyUpdate/{id}")
+	public String replyUpdate(@PathVariable int id, Reply item, Community commu) {
+
 		service.updateReply(item);
 
-		return "redirect:../detail/" + item.getCommuId(); 
+		return "redirect:../detail/" + commu.getId(); 
+
 	}
 	
 
