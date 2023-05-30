@@ -103,7 +103,7 @@ function EtValue() {
 						<img class="img" src="/upload/${question.uuid}_${question.filename}">
 					</div>
 				</c:if> 
-				 <c:if test="${item.filename == null}"> 
+				 <c:if test="${question.filename == null}"> 
 					<div class="img_box">
 						<img class="img" src="/resources/image/profile.png">
 					</div>
