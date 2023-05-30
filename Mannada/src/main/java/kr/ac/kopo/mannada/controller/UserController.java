@@ -91,7 +91,7 @@ public class UserController {
 		Pager viewPager = new Pager();
 		rePager.setPerPage(5);
 		
-		List<Review> review = service.reviewList(num, viewPager);
+		List<Review> review = service.reviewList(num);
 		model.addAttribute("review", review);
 		
 		return path + "view";

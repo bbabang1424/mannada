@@ -114,8 +114,8 @@ public class QuestionController {
 	
 	@PostMapping("/updateAnswer/{id}")
 	public String updateAnswer(@PathVariable int id, Answer item) {
-		
 		item.setQuestionId(id);
+		
 		service.updateAnswer(item);
 		
 		return "redirect:../detail/" + id;

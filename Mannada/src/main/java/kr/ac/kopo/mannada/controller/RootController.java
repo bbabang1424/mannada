@@ -2,6 +2,7 @@ package kr.ac.kopo.mannada.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -129,9 +130,10 @@ public class RootController {
 
 	/* 회원가입 시 중복 아이디 확인. */
 	@ResponseBody
-	@GetMapping("/checkId/{id}")
-	public String checkId(@PathVariable String id) {
-
+	@GetMapping("/checkId")
+	public String checkId(HttpServletRequest request) {
+		String id = request.getParameter("id");
+		
 		if (service.checkId(id))
 			return "OK";
 		else

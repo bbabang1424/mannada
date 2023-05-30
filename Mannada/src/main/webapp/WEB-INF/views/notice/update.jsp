@@ -24,6 +24,60 @@
 <script src="/resources/js/summernote.js"></script>
 <script src="/resources/js/submit.js"></script>
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+<script type="text/javascript">
+	//첨부파일
+	$(function() {
+		//첨부파일 관련
+		
+		$("#files .delete").click(function(){
+			const id = $(this).data("id");
+			const button = $(this);
+
+			$.ajax({
+				type: 'POST',
+				url: '../delete_attach/' + id,
+				success: function(result){
+					console.log(result);
+					
+					button.closest("li").remove();
+				}
+				
+			});
+		});
+		
+		//삭제 버튼 눌렀을때
+		$("#attachs").on("click", ".delete", function() {
+			const div = $(this).closest(".input-group");
+			div.remove();
+		});
+		//첨부파일의 추가를 눌렀을때 삭제버튼 생성(위임)
+		$("#add").click(function() {
+			const div = $("<div>");
+			div.addClass("input-group");
+			div.addClass("mb-3");
+
+			const input = $("<input>");
+			input.attr("type", "file");
+			input.attr("name", "attach");
+			input.addClass("form-control");
+			input.addClass("form-control-sm");
+
+			const button = $("<button>");
+			button.attr("type", "button");
+			button.addClass("btn");
+			button.addClass("btn-sm");
+			button.addClass("btn-outline-danger");
+			button.addClass("delete");
+			button.text("삭제");
+
+			div.append(input);
+			div.append(button);
+
+			$("#attachs").append(div);
+		});
+	});
+</script>
 </head>
 <body>
 	<div class="banner">
@@ -64,11 +118,13 @@
 							<button type="button" id="add" class="btn btn-sm btn-primary mt-2 mb-2 add_info" >추가</button>
 							
 							<div class="attach_box" >
-								<c:forEach var="attach" items="${item.attachs}">
-									<li  class="mb-2 "><a href="/upload/${attach.filename}">${attach.filename}</a>
-										<button type="button" class="btn btn-sm btn-danger delete"
-											data-id="${attach.id}">삭제</button></li>
-								</c:forEach>
+								<ul id="files">
+									<c:forEach var="attach" items="${item.attachs }">
+										<li  class="mb-2 "><a href="/upload/${attach.uuid }_${attach.filename}">${attach.filename}</a>
+											<button type="button" class="btn btn-sm btn-danger delete"
+												data-id="${attach.id}">삭제</button></li>
+									</c:forEach>
+								</ul>
 							</div>
 						</td>
 					</tr>
