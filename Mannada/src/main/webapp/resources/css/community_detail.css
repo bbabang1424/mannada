@@ -6,6 +6,15 @@
 	font-family: 'Noto Sans KR';
 }
 
+/* @media  ( min-width : 1025px) {
+	.banner {
+		background-image: url(/resources/image/banner_imga.png);
+		background-repeat: no-repeat;
+		background-size: 280px 235px;
+		background-position: 79% 26%;
+	}
+} */
+
 .container {
 	width: 100%;
 	text-align: center;
@@ -33,7 +42,7 @@
 	background-image: url(/resources/image/banner_imga.png);
 	background-repeat: no-repeat;
 	background-size: 280px 235px;
-	background-position: 88% -20px;
+	background-position: 78% 26%;
 }
 
 .banner_text {
