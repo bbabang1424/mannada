@@ -59,9 +59,9 @@ function mgValue() {
 </script>
 
 <style type="text/css">
-	#manager-login{
-		 display: none;
-	}
+#manager-login{
+	display: none;
+}
 </style>
 </head>
 <body>

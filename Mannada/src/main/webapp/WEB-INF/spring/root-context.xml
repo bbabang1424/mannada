@@ -53,10 +53,7 @@
 			<bean class="kr.ac.kopo.mannada.websocket.ChatInterceptor"></bean>
 		</websocket:handshake-interceptors>
 	</websocket:handlers>
-	
-	
-	
-	
+		
 
    <!-- 이메일 인증 관련 빈 등록 -->
    <bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">

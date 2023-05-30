@@ -110,6 +110,25 @@
       </div>
    </section>
 
+<<<<<<< HEAD
+	<div class="container_box">
+		<form method="post" name="write_post" class="replyupdate_box">
+			<div style="border-top: 2px solid blue;">
+				<input type="hidden" name="replyId" value="${reply.id }">
+				<div>
+					<textarea class="reply_update" style="resize: none;" name="content"
+						placeholder="수정할 내용을 입력해주세요.">${reply.content}</textarea>
+				</div>
+				<div class="reply_btn_lsit">
+					<button class="replyupdate_btn" type="button" onclick="EtValue()">수정</button>
+					<a href="../detail/${reply.commuId} "><button class="back_btn"
+							type="button">취소</button></a>
+				</div>
+			</div>
+		</form>
+	</div>
+	<jsp:include page="../footer.jsp"></jsp:include>
+=======
    <div class="container_box">
       <form method="post" name="write_post" class="replyupdate_box">
          <div style="border-top: 2px solid blue;">
@@ -127,6 +146,10 @@
       </form>
    </div>
    <jsp:include page="../footer.jsp"></jsp:include>
+<<<<<<< HEAD
+>>>>>>> refs/remotes/origin/master
+=======
+>>>>>>> branch 'master' of https://github.com/xyident/mannada.git
 >>>>>>> refs/remotes/origin/master
 </body>
 </html>
