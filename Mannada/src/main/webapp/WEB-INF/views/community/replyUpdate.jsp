@@ -95,7 +95,7 @@
       <form method="post" name="write_post" class="replyupdate_box">
          <div style="border-top: 2px solid blue;">
             <input type="hidden" name="replyId" value="${reply.id }">
-            <div>
+            <div class="text_box_info">
                <textarea class="reply_update" style="resize: none;" name="content"
                   placeholder="수정할 내용을 입력해주세요.">${reply.content}</textarea>
             </div>
