@@ -23,7 +23,7 @@ public interface UserService {
 
 	User item(int num);
 
-	List<Review> reviewList(int num, Pager viewPager); 
+	List<Review> reviewList(int num); 
 
 	void reviewAdd(Review review);
 
