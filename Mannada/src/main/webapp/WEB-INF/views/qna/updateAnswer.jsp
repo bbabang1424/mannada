@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>qna_update_Answer</title>
+<title>만나다</title>
 <jsp:include page="../header.jsp"></jsp:include>
 <link rel="stylesheet" href="/resources/css/qna_detail.css">
 <link rel="stylesheet"
@@ -97,17 +97,17 @@ function EtValue() {
 			<div class="Writer_date_views">
 				<div class="Writer_date">
 					<div class="Writer">
-					<%-- 	<!-- 사진 변경 -->
+					 	<!-- 사진 변경 -->
 				<c:if test="${item.filename != null}">
 				<div class="img_box">
 					<img class="img" src="/upload/${item.uuid}_${item.filename}">
 				</div>
-				</c:if> --%>
-				<%-- <c:if test="${item.filename == null}"> --%>
+				</c:if> 
+				 <c:if test="${item.filename == null}"> 
 					<div class="img_box">
 						<img class="img" src="/resources/image/profile.png">
 					</div>
-					<%-- </c:if> --%>
+					 </c:if> 
 						<span class="writer_info"> 작성자</span> <a
 							href="/user/view/${question.num}"
 							style="color: black; text-decoration: none;" class="b">${question.nickname}</a>
