@@ -6,7 +6,7 @@
 	font-family: 'Noto Sans KR';
 }
 
-/* @media ( min-width : 1025px) {
+/* @media  ( min-width : 1025px) {
 	.banner {
 		background-image: url(/resources/image/banner_imga.png);
 		background-repeat: no-repeat;
@@ -42,7 +42,7 @@
 	background-image: url(/resources/image/banner_imga.png);
 	background-repeat: no-repeat;
 	background-size: 280px 235px;
-	background-position: 79% 26%;
+	background-position: 78% 26%;
 }
 
 .banner_text {
