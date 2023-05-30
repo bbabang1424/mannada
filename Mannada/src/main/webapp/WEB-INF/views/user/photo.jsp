@@ -32,7 +32,7 @@
 	            500x500의 크기인 사진을 등록하시는걸 권장합니다.
 	            <br> 등록 가능한 파일은 .jpg, .jpeg, .png이고 크기는 최대 10MB입니다.
 	            <br> 사진을 선택하지 않고 등록하시면 기본 이미지가 프로필 사진이 됩니다.
-	        </p>
+	        </p> 
 		</div> 
 		<div>
 			<form name="photoInfo_from" method="post" style="width:700px" enctype="multipart/form-data">
