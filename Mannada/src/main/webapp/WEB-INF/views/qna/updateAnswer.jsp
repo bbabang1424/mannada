@@ -97,17 +97,17 @@ function EtValue() {
 			<div class="Writer_date_views">
 				<div class="Writer_date">
 					<div class="Writer">
-					<%-- 	<!-- 사진 변경 -->
-				<c:if test="${item.filename != null}">
+			<!-- 사진 변경 -->
+				<c:if test="${question.filename != null}">
 				<div class="img_box">
-					<img class="img" src="/upload/${item.uuid}_${item.filename}">
+					<img class="img" src="/upload/${question.uuid}_${question.filename}">
 				</div>
-				</c:if> --%>
-				<%-- <c:if test="${item.filename == null}"> --%>
+				</c:if>
+				<c:if test="${question.filename == null}"> --%>
 					<div class="img_box">
 						<img class="img" src="/resources/image/profile.png">
 					</div>
-					<%-- </c:if> --%>
+				</c:if>
 						<span class="writer_info"> 작성자</span> <a
 							href="/user/view/${question.num}"
 							style="color: black; text-decoration: none;" class="b">${question.nickname}</a>
@@ -120,18 +120,18 @@ function EtValue() {
 				</div>
 			</div>
 			<div>
-				<div class="text_box">${question.content }</div>
+				<div class="text_box">${question.content}</div>
 			</div>
 		</div>
 
 		<form method="post" name="write_post">
-			<input type="hidden" name="questionId" value="${question.id }">
+			<input type="hidden" name="questionId" value="${question.id}">
 			<div class="summernote_top">
 				<textarea id="summernote" class="answer_box" name="content"
-					placeholder="답변을 입력해주세요">${answer.content }</textarea>
+					placeholder="답변을 입력해주세요">${answer.content}</textarea>
 			</div>
 			<div class="answer_btn_lsit">
-				<a href="../detail/${question.id }"><button class="cancell_btn"
+				<a href="../detail/${question.id}"><button class="cancell_btn"
 						type="button">취소</button></a>
 				<button class="update_Answer_btn" type="button" onclick="EtValue()">수정</button>
 			</div>
