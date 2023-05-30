@@ -217,6 +217,11 @@ h4 {
 	display: block;
 }
 
+.b {
+	text-decoration: none;
+	color: black;
+}
+
 .date_views {
 	font-size: 0.96em;
 	position: absolute;
@@ -487,7 +492,7 @@ h4 {
 	width: 100%;
 	max-width: 1200px;
 	margin: auto;
-	margin-top: 6%;
+	margin-top: 2%;
 	border-top: 2px solid blue;
 	border-bottom: 2px solid blue;
 	margin-bottom: 4%;
@@ -590,7 +595,7 @@ textarea {
 }
 
 .text_box_info {
-	margin: 22px 6px 17px;
+	margin: 24px 6px 18px;
 }
 
 .reply_btn_lsit {

@@ -74,7 +74,7 @@
                      </div>
                   </c:if>
                   <span class="writer_info">작성자</span>
-                  <a href="/user/view/${item.num}" style="color: black;" class="b">${item.nickname}</a>
+                  <a href="/user/view/${item.num}" class="b">${item.nickname}</a>
                   <p class="arrow_box">회원정보</p>
                </div>
             </div>
