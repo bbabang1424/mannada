@@ -92,12 +92,12 @@ $(function() {
 			</div>
 			<div>
 				<label>새로운 비밀번호</label>
-				<input type="password" name="newPW">
+				<input type="password" name="newPW" placeholder="비밀번호 (영문, 숫자 포함 최소 8자, 최대 20자 이내)" maxlength="20">
 			</div>
 				
 			<div>
 				<label>새로운 비밀번호 확인</label>
-				<input type="password" name="newPW2">
+				<input type="password" name="newPW2" placeholder="비밀번호 (영문, 숫자 포함 최소 8자, 최대 20자 이내)" maxlength="20">
 			</div>
 			
 			<div>
