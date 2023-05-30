@@ -87,6 +87,7 @@
 							<th>작성자</th>
 							<th>작성일</th>
 							<th>조회수</th>
+							<th>상태</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -104,6 +105,7 @@
 								<td><fmt:formatDate value="${item.regDate}"
 										pattern="yyyy-MM-dd " /></td>
 								<td>${item.viewCnt}</td>
+								<td>${item.status_}</td>
 							</tr>
 						</c:forEach>
 					</tbody>
