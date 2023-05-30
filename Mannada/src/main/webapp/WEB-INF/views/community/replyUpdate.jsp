@@ -46,89 +46,51 @@
 
    <section class="container_box">
       <div class="box">
-         <div class="category_title_box">
-            <div class="category_color category_color_${item.category}">
+			<div class="category_title_box">
+				<div class="category_color category_color_${item.category}">
 
-               <div class="category_title">
-                  <h1 class="comm_category">
-                     <span class="category_info">${item.category_}</span>
-                     <div class="title_info">${item.title}</div>
-                  </h1>
+					<div class="category_title">
+						<h1 class="comm_category">
+							<span class="category_info">${item.category_}</span>
+							<div class="title_info">${item.title}</div>
+						</h1>
 
-               </div>
-            </div>
-         </div>
-
-         <div class="Writer_date_views">
-            <div class="Writer_date">
-               <div class="Writer">
-                  <!-- 사진 변경 -->
-                  <c:if test="${item.filename != null}">
-                     <div class="img_box">
-                        <img class="img" src="/upload/${item.uuid}_${item.filename}">
-                     </div>
-                  </c:if>
-                  <c:if test="${item.filename == null}">
-                     <div class="img_box">
-                        <img class="img" src="/resources/image/profile.png">
-                     </div>
-                  </c:if>
-                  <span class="writer_info">작성자</span>
-                  <a href="/user/view/${item.num}" class="b">${item.nickname}</a>
-                  <p class="arrow_box">회원정보</p>
-               </div>
-            </div>
-            <div class="date_views">
-               <fmt:formatDate value="${item.regDate}" pattern="yyyy-MM-dd " />
-               | 조회수 ${item.viewCnt}
-            </div>
-
-<<<<<<< HEAD
-	<div class="container_box">
-		<form method="post" name="write_post" class="replyupdate_box">
-			<div style="border-top: 2px solid blue;">
-				<input type="hidden" name="replyId" value="${reply.id }">
-				<div>
-					<textarea class="reply_update" style="resize: none;" name="content"
-						placeholder="수정할 내용을 입력해주세요.">${reply.content }</textarea>
-				</div>
-				<div class="reply_btn_lsit">
-					<button class="replyupdate_btn" type="button" onclick="EtValue()">수정</button>
-					<a href="../detail/${item.id} "><button class="back_btn"
-							type="button">취소</button></a>
+					</div>
 				</div>
 			</div>
-		</form>
-	</div>
-	<jsp:include page="../footer.jsp"></jsp:include>
-=======
-         </div>
 
-         <div>
-            <div class="text_box">${item.content}</div>
-         </div>
-      </div>
+			<div class="Writer_date_views">
+				<div class="Writer_date">
+					<div class="Writer">
+				<!-- 사진 변경 -->
+				<c:if test="${item.filename != null}">
+				<div class="img_box">
+					<img class="img" src="/upload/${item.uuid}_${item.filename}">
+				</div>
+				</c:if>
+				<c:if test="${item.filename == null}">
+					<div class="img_box">
+						<img class="img" src="/resources/image/profile.png">
+					</div>
+				</c:if>
+						<span class="writer_info">작성자</span>
+						<a href="/user/view/${item.num}" style="color: black;" class="b">${item.nickname}</a>
+						<p class="arrow_box">회원정보</p>
+					</div>
+				</div>
+				<div class="date_views">
+					<fmt:formatDate value="${item.regDate}" pattern="yyyy-MM-dd " />
+					| 조회수 ${item.viewCnt}
+				</div>
+
+			</div>
+
+			<div>
+				<div class="text_box">${item.content }</div>
+			</div>
+		</div>
    </section>
-
-<<<<<<< HEAD
-	<div class="container_box">
-		<form method="post" name="write_post" class="replyupdate_box">
-			<div style="border-top: 2px solid blue;">
-				<input type="hidden" name="replyId" value="${reply.id }">
-				<div>
-					<textarea class="reply_update" style="resize: none;" name="content"
-						placeholder="수정할 내용을 입력해주세요.">${reply.content}</textarea>
-				</div>
-				<div class="reply_btn_lsit">
-					<button class="replyupdate_btn" type="button" onclick="EtValue()">수정</button>
-					<a href="../detail/${reply.commuId} "><button class="back_btn"
-							type="button">취소</button></a>
-				</div>
-			</div>
-		</form>
-	</div>
-	<jsp:include page="../footer.jsp"></jsp:include>
-=======
+   
    <div class="container_box">
       <form method="post" name="write_post" class="replyupdate_box">
          <div style="border-top: 2px solid blue;">
@@ -146,10 +108,6 @@
       </form>
    </div>
    <jsp:include page="../footer.jsp"></jsp:include>
-<<<<<<< HEAD
->>>>>>> refs/remotes/origin/master
-=======
->>>>>>> branch 'master' of https://github.com/xyident/mannada.git
->>>>>>> refs/remotes/origin/master
+
 </body>
 </html>

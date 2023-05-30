@@ -17,16 +17,16 @@
 /*EtValue>> enrolment:등록 EtValue>
 줄여서 등록값*/
 /*제목 아이디 써야 등록*/
-function EtValue() {
-	const form = document.write_post;
-	
-	if(form.content.value == '' || form.content.value == ' ') {
-        swal('','코맨트를 입력해주세요.','error')
-		form.content.focus();
-		return;
-	}
-	form.submit();
-}
+   function EtValue() {
+      const form = document.write_post;
+
+      if (form.content.value.trim() == '') {
+         swal('', '수정할 내용을 입력해주세요.', 'error')
+         form.content.focus();
+         return;
+      }
+      form.submit();
+   }
 </script>
 </head>
 <body>
