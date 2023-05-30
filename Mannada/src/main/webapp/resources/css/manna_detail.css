@@ -79,7 +79,7 @@
 	width: 100%;
 	border-radius: 70%;
 	overflow: hidden;
-	height: auto;
+	height: 100%;
 }
 
 .Category_address {
@@ -253,7 +253,7 @@ progress::-webkit-progress-value {
 .model_member {
 	font-weight: bold;
 	position: absolute;
-	top: 28%;
+	top: 26.5%;
 	left: 7%;
 	display: inline-block;
 }

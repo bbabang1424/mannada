@@ -14,7 +14,6 @@
 		background-position: 79% 26%;
 	}
 } */
-
 .container {
 	width: 100%;
 	text-align: center;
@@ -28,7 +27,7 @@
 	text-align: center;
 	max-width: 1200px;
 	margin: auto;
-	margin-top: 5%;
+	margin-top: 4%;
 }
 
 /* 각 페이지 퍼블리싱, 파란 베너 김소연 */
@@ -167,7 +166,7 @@ h4 {
 	width: 100%;
 	border-radius: 70%;
 	overflow: hidden;
-	height: auto;
+	height: 100%;
 }
 
 .arrow_box {
@@ -216,6 +215,11 @@ h4 {
 
 .b:hover+p.arrow_box {
 	display: block;
+}
+
+.b {
+	text-decoration: none;
+	color: black;
 }
 
 .date_views {
@@ -269,7 +273,7 @@ h4 {
 	margin-top: 3%;
 	text-align: right;
 	width: 100%;
-	margin-bottom: 5%;
+	margin-bottom: 2%;
 }
 
 .lower>button {
@@ -488,7 +492,7 @@ h4 {
 	width: 100%;
 	max-width: 1200px;
 	margin: auto;
-	margin-top: 6%;
+	margin-top: 2%;
 	border-top: 2px solid blue;
 	border-bottom: 2px solid blue;
 	margin-bottom: 4%;
@@ -587,11 +591,15 @@ textarea {
 .reply_update {
 	padding: 15px;
 	width: 97%;
-	margin: 2% 1%;
 	height: 6.25em;
 }
 
+.text_box_info {
+	margin: 24px 6px 18px;
+}
+
 .reply_btn_lsit {
+	height: 47px;
 	text-align: right;
 }
 
@@ -606,7 +614,7 @@ textarea {
 
 .back_btn {
 	margin-bottom: 2%;
-	margin-right: 2%;
+	margin-right: 27px;
 	width: 50px;
 	height: 30px;
 	border: 1px solid #ff0000;
