@@ -128,5 +128,9 @@ $('#email_auth_key').blur(function () {
 		$resultMsg.css('color','red');
 	}
 });
+
+$('.go_back').click(function(){
+	window.history.back();
+});
 </script>
 </html>
