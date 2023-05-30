@@ -106,7 +106,14 @@ public class CommunityController {
 
 	
 	@GetMapping("replyUpdate/{id}")
-	public String replyUpdate(@PathVariable int id) {
+	public String replyUpdate(@PathVariable int id, Model model) {
+		//기본 데이터 가져오기
+		Community item = service.item(id);
+		model.addAttribute("item", item);
+		
+		Reply reply = service.replyItem(id);
+		model.addAttribute("reply", reply);
+		
 		return path + "replyUpdate";
 	}
 	
