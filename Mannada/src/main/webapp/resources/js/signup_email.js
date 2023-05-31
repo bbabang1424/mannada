@@ -5,35 +5,35 @@ $(function () {
     $('#infoCheck').click(function () {
         const form = document.signup_form;
         const checkBox = $('#aggrement').is(":checked")
-
+		
         if (form.id.value == '') {
-            swal('회원정보변경', '이메일을 입력하세요', 'info');
+            swal('회원가입', '이메일을 입력하세요', 'info');
             form.id.focus();
             return;
         } else if (isCheck != form.id.value) {
-            swal('회원정보변경', '중복체크 해주세요', 'warning');
+            swal('회원가입', '중복체크 해주세요', 'warning');
             return;
         } else if (form.pw.value == '') {
-            swal('회원정보변경', '비밀번호를 입력하세요');
+            swal('회원가입', '비밀번호를 입력하세요');
             form.pw.focus();
             return;
         } else if (form.pw_v.value == '') {
-            swal('회원정보변경', '비밀번호를 확인하세요');
+            swal('회원가입', '비밀번호를 확인하세요');
             form.pw_v.focus();
             return;
         } else if (form.pw.value != form.pw_v.value) {
-            swal('회원정보변경', '비밀번호가 서로 다릅니다', 'warning');
+            swal('회원가입', '비밀번호가 서로 다릅니다', 'warning');
             form.pw.focus();
             return;
         } else if (form.nickname.value == '') { 
-			swal('회원정보변경', '닉네임을 입력해주세요', 'info');
+			swal('회원가입', '닉네임을 입력해주세요', 'info');
 	        form.nickname.focus();
 	        return;
 		} else if (isCheck2 != form.nickname.value) {
-			swal('회원정보변경', '닉네임 중복체크 해주세요', 'warning');
+			swal('회원가입', '닉네임 중복체크 해주세요', 'warning');
 	        return;
        } else if(checkBox == false) {
-            swal('회원정보변경', '개인정보 수집 및 이용에 동의해주세요', 'warning');
+            swal('회원가입', '개인정보 수집 및 이용에 동의해주세요', 'warning');
             return;
        }
        swal('회원가입 완료' , '', 'success');

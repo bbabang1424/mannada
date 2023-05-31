@@ -51,7 +51,7 @@
 			<div class="password-title">비밀번호</div>
 			<div class="password"> 
 				<input name="pw" id="password" type="password"
-					placeholder="비밀번호 (영문, 숫자 포함 최소 8자, 최대 20자 이내)" maxlength="20">
+					placeholder="비밀번호 (영문+숫자:8~20자리)" maxlength="20">
 				<div id="passwordError" class="error"></div>
 			</div>
 			
@@ -127,6 +127,10 @@ $('#email_auth_key').blur(function () {
 		$resultMsg.html('인증번호가 불일치 합니다. 다시 확인해주세요!.');
 		$resultMsg.css('color','red');
 	}
+});
+
+$('.go_back').click(function(){
+	window.history.back();
 });
 </script>
 </html>
