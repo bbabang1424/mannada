@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import kr.ac.kopo.mannada.model.Address;
 import kr.ac.kopo.mannada.model.Community;
@@ -79,13 +80,14 @@ public class RootController {
 			String targetUrl = (String) session.getAttribute("target_url");
 			System.out.println("RootController: " + targetUrl);
 			session.removeAttribute("target_url");
-
+			
 			if (targetUrl == null)
 				return "redirect:.";
 			else
 				return "redirect:" + targetUrl;
-		} else
-			return "redirect:login"; 
+		} else {
+			return "redirect:login";
+		}
 	}
 	@PostMapping("/managerLogin")
 	public String userLogin(Manager manager, HttpSession session) {		

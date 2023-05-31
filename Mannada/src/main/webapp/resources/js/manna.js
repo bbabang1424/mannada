@@ -16,39 +16,39 @@ window.addEventListener("load", () => {
 
 
     // 참여 버튼
-    document.querySelector("#join_btn").addEventListener("click", e => {
-        const mannaId = 1;
+    // document.querySelector("#join_btn").addEventListener("click", e => {
+    //     const mannaId = 1;
 
-        fetch("/addJoin/" + mannaId, {
-            method: "POST",
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify()
-        }).then(resp => {
-            if (resp.status == 200)
-                return resp.json();
-        }).then(result => {
-            document.querySelector("#join_btn").textContent = "참여 취소";
-        });
+    //     fetch("/addJoin/" + mannaId, {
+    //         method: "POST",
+    //         headers: { 'Content-Type': 'application/json' },
+    //         body: JSON.stringify()
+    //     }).then(resp => {
+    //         if (resp.status == 200)
+    //             return resp.json();
+    //     }).then(result => {
+    //         document.querySelector("#join_btn").textContent = "참여 취소";
+    //     });
 
-    });
+    // });
 
 
     // 참여 취소 버튼
-    document.querySelector("#join_btn.cancle").addEventListener("click", e => {
-        const mannaId = 9;
+//     document.querySelector("#join_btn.cancle").addEventListener("click", e => {
+//         const mannaId = 9;
 
-        fetch("/deleteJoin/" + mannaId, {
-            method: "DELETE",
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify()
-        }).then(resp => {
-            if (resp.status == 200)
-                return resp.json();
-        }).then(result => {
-            document.querySelector("#join_btn").textContent = "참여";
-        });
+//         fetch("/deleteJoin/" + mannaId, {
+//             method: "DELETE",
+//             headers: { 'Content-Type': 'application/json' },
+//             body: JSON.stringify()
+//         }).then(resp => {
+//             if (resp.status == 200)
+//                 return resp.json();
+//         }).then(result => {
+//             document.querySelector("#join_btn").textContent = "참여";
+//         });
 
-    });
+//     });
 
 });
 
@@ -59,8 +59,8 @@ function getPage(page, query, last_query) {
         url += "&" + new URLSearchParams(query).toString();
         
         if(last_query != query || last_query == null){
-        	console.log(query);
-        	console.log(last_query);
+        	// console.log(query);
+        	// console.log(last_query);
         	
 	        const body = document.querySelector(".card_box");
 	

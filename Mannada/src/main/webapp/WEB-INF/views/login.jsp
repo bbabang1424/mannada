@@ -17,14 +17,20 @@
 $(function(){
 	$(".title li").eq(0).click(function() {
 		$(".title li").css("text-decoration", "unset");
-		$(".title li").eq(0).css("text-decoration", "underline");
+		$(".title li").css("font-size", "0.8em");
+		$(".title li").css("font-weight", "400");
+		$(".title li").eq(0).css("font-size", "1em");
+		$(".title li").eq(0).css("font-weight", "bold");
 		$("#manager-login").css("display", "none");
 		$("#user-login").css("display", "unset");
 	});
 
 	$(".title li").eq(1).click(function() {
 		$(".title li").css("text-decoration", "unset");
-		$(".title li").eq(1).css("text-decoration", "underline");
+		$(".title li").css("font-size", "0.8em");
+		$(".title li").css("font-weight", "400");
+		$(".title li").eq(1).css("font-size", "1em");
+		$(".title li").eq(1).css("font-weight", "bold");
 		$("#user-login").css("display", "none");
 		$("#manager-login").css("display", "unset");
 	});
@@ -61,7 +67,12 @@ function mgValue() {
 <style type="text/css">
 #manager-login{
 	display: none;
-} 
+}
+
+#center {
+	margin-left:15%;
+	margin-right:15%;
+}
 </style>
 </head>
 <body>
@@ -69,8 +80,7 @@ function mgValue() {
 		<ul class="banner_text">
 			<li>HOME</li>
 			<i class="bi bi-caret-right-fill"></i>
-			<li>로그인</li>
-			
+			<li>로그인</li>	
 		</ul>
 	</div>
 <div class="background-image">
@@ -80,8 +90,9 @@ function mgValue() {
         <br>
         <div class="title">
             <ul>
-                <li style="cursor: pointer;">사용자 로그인</li>
-                <li style="cursor: pointer;">관리자 로그인</li>
+                <li style="cursor: pointer;" id="user">사용자 로그인</li>
+                <span id="center">|</span>
+                <li style="cursor: pointer;" id="mg">관리자 로그인</li>
             </ul>
         </div>
         
