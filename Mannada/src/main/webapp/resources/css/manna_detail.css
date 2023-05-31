@@ -7,7 +7,7 @@
 }
 /* 각 페이지 퍼블리싱, 파란 베너 김소연 */
 .banner {
-	max-width: 1920px;
+	max-width: 100%;
 	color: white;
 	border-color: #60a8ef;
 	width: 100%;
@@ -16,7 +16,7 @@
 	background-image: url(/resources/image/banner_imga.png);
 	background-repeat: no-repeat;
 	background-size: 280px 235px;
-      background-position: 78% 26%;
+	background-position: 78% 26%;
 }
 
 .banner_text {
