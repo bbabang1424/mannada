@@ -34,10 +34,10 @@
 </style>
 </head>
 <body>
+	<!-- 각 페이지 안내베너:김소연 -->
 	<div class="banner">
 		<div class="banner_text">
-			<li>공지사항</li>
-			<i class="bi bi-caret-right-fill"></i>
+			<li>공지사항</li> <i class="bi bi-caret-right-fill"></i>
 			<li>목록</li>
 		</div>
 		<h3 class="page_title">공지사항</h3>

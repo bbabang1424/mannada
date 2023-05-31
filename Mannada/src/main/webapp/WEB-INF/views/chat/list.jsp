@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>chat_list</title>
+<title>만나다</title>
 <jsp:include page="../header.jsp"></jsp:include>
 <link rel="stylesheet"
 	href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">
@@ -15,7 +15,7 @@
 <link href="/resources/css/chat.css" rel="stylesheet">
 </head>
 <body>
-
+<!--각 페이지 안내베너 :김소연  -->
 	<div class="banner">
 		<ul class="banner_text">
 			<li>HOME</li>

@@ -8,13 +8,14 @@
 
 .container {
 	text-align: center;
-	max-width: 1220px;
+	max-width: 1200px !important;
 	margin: 7em 19%;
+	padding: 0;
 }
 
 /* 각 페이지 , 파란 베너 김소연 */
 .banner {
-	max-width: 1920px;
+	max-width: 100%;
 	color: white;
 	border-color: #60a8ef;
 	width: 100%;
@@ -22,8 +23,8 @@
 	border: 1px solid;
 	background-image: url(/resources/image/banner_imga.png);
 	background-repeat: no-repeat;
-	    background-size: 280px 235px;
-    background-position: 88% -20px;
+	background-size: 280px 235px;
+	background-position: 78% 26%;
 }
 
 .banner_text {
@@ -103,6 +104,27 @@ hr {
 	display: inline-block;
 }
 
+.writer_info {
+	font-weight: bold;
+	margin-right: 3px;
+	margin-left: 10px;
+}
+
+.img_box {
+	display: inline-block;
+	border-radius: 70%;
+	width: 40px;
+	height: 40px;
+}
+
+.img {
+	border: 1px solid #ccc;
+	width: 100%;
+	border-radius: 70%;
+	overflow: hidden;
+	height: 100%;
+}
+
 .arrow_box {
 	font-weight: bold;
 	text-align: center;
@@ -111,7 +133,7 @@ hr {
 	position: absolute;
 	width: 80px;
 	padding: 8px;
-	left: 68px; top : -81%;
+	left: 123px;
 	-webkit-border-radius: 8px;
 	-moz-border-radius: 8px;
 	border-radius: 8px;
@@ -119,7 +141,7 @@ hr {
 	border: 1px solid #333333b3;
 	color: #fff;
 	font-size: 14px;
-	top: -81%;
+	top: -54%;
 }
 /* 회원정보 이펙트 */
 .arrow_box:after {
@@ -154,7 +176,7 @@ hr {
 .date_views {
 	font-size: 0.96em;
 	position: absolute;
-	top: 21.5%;
+	top: 32.5%;
 	left: 85.5%;
 	color: #5F5F5F;
 	display: inline-block;
@@ -184,6 +206,7 @@ hr {
 	padding: 1.5em;
 	border-top: 2px solid blue;
 	margin: auto;
+	margin-top: 4%;
 }
 
 .answer_mgrId {
@@ -210,9 +233,9 @@ hr {
 }
 
 .summernote_top {
-	margin-top: 2%;
+	margin-top: 4%;
 	max-width: 1200px;
-	margin-left: 3.5%;
+	/* margin-left: 3.5%; */
 }
 
 .answer_box {
@@ -224,7 +247,7 @@ hr {
 }
 
 .answer_btn_lsit {
-	width: 96%;
+	width: 100%;
 }
 
 .update_Answer_btn {
@@ -252,7 +275,7 @@ hr {
 }
 
 .answer_btn_info {
-	width: 96%;
+	width: 100%;
 }
 
 .answer_btn {
@@ -267,8 +290,8 @@ hr {
 }
 
 .delete_update_btn {
-	width: 96.2%;
-	margin-top: 1%;
+	width: 100%;
+	margin-top: 2%;
 }
 
 .delete_btn {
@@ -293,10 +316,11 @@ hr {
 }
 
 .lower {
+	max-width: 1200px;
 	display: inline-block;
 	margin-top: 1.5%;
 	text-align: right;
-	width: 93%;
+	width: 100%;
 }
 
 .lower>button {

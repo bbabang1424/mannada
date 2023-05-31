@@ -76,8 +76,8 @@
 
 				<tbody>
 					<tr style="border-bottom: 1px solid #ccc;">
-						<th id="interval">제 목</th>
-						<td class="title"><input maxlength="30" id="title" name="title" type="text">${item.id}</td>
+						<th id="interval">제목</th>
+						<td class="title"><input  maxlength="30" id="title" name="title" type="text">${item.id}</td>
 					</tr>
 
 					<tr style="border-bottom: 1px solid #ccc;">
@@ -116,7 +116,7 @@
 					<tr>
 						<th id="interval">본문내용</th>
 						<td class="detail"><textarea id="summernote" class="control"
-								placeholder="텍스트 내용을 입력해주세요" name="content"></textarea></td>
+								placeholder="내용을 입력해주세요." name="content"></textarea></td>
 					</tr>
 				</tbody>
 			</table>

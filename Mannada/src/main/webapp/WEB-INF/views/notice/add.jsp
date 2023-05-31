@@ -82,7 +82,7 @@
 
 				<tbody>
 					<tr style="border-bottom: 1px solid #ccc;">
-						<th id="interval">제 목</th>
+						<th id="interval">제목</th>
 						<td class="title"><input maxlength="30" id="notice_title" name="title"
 							type="text">${item.id}</td>
 					</tr>
@@ -90,7 +90,7 @@
 					<tr class="content_border">
 						<th id="interval">본문내용</th>
 						<td class="detail"><textarea id="summernote" name="content"
-								placeholder="텍스트 내용을 입력해주세요"></textarea></td>
+								placeholder="내용을 입력해주세요."></textarea></td>
 					</tr>
 
 					<tr>

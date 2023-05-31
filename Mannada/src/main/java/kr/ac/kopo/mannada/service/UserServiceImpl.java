@@ -76,11 +76,8 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public List<Review> reviewList(int num, Pager viewPager) {
-		int total = dao.reviewTotal(viewPager);
-		viewPager.setTotal(total);
-		
-		return dao.reviewList(num, viewPager);
+	public List<Review> reviewList(int num) {
+		return dao.reviewList(num);
 	}
 
 	@Override

@@ -28,7 +28,7 @@ public interface UserDao {
 	
 	int reviewTotal(Pager viewPager);
 	
-	List<Review> reviewList(int num, Pager viewPager);
+	List<Review> reviewList(int numr);
 
 	void reviewAdd(Review review); 
 

@@ -35,7 +35,7 @@
 </style>
 </head>
 <body>
-	
+	<!-- 각 페이지 안내베너:김소연 -->
 		<div class="banner">
 			<div class="banner_text">
 				<li>Q & A</li>
@@ -51,7 +51,7 @@
 					<form> 
 						<select name="search" class="form-select form-select-sm">
 							<option value="1">제목</option>
-							<option value="2">닉네임</option>
+							<option value="2">작성자</option>
 							<option value="3">내용</option>
 						</select> 
 						
@@ -87,6 +87,7 @@
 							<th>작성자</th>
 							<th>작성일</th>
 							<th>조회수</th>
+							<th>답변상태</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -104,6 +105,7 @@
 								<td><fmt:formatDate value="${item.regDate}"
 										pattern="yyyy-MM-dd " /></td>
 								<td>${item.viewCnt}</td>
+								<td>${item.status_}</td>
 							</tr>
 						</c:forEach>
 					</tbody>
