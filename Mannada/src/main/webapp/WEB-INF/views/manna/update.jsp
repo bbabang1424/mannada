@@ -83,9 +83,9 @@
 						<th id="interval">카테고리</th>
 						<td class="category">
 						<input class="Choose_start" type="radio" name="category"  value="1" ${item.category==1?"selected":""}> 공동구매 
-						<input class="Choose" type="radio" name="category"  value="2" ${item.category==2?"selected":""}> 운동 
-						<input class="Choose" type="radio" name="category"  value="3" ${item.category==3?"selected":""}> 게임
-						<input class="Choose" type="radio" name="category"  value="4" ${item.category==4?"selected":""}>식사
+						<input class="Choose" type="radio" name="category"  value="2" ${item.category==2?"selected":""}> 게임 
+						<input class="Choose" type="radio" name="category"  value="3" ${item.category==3?"selected":""}> 식사
+						<input class="Choose" type="radio" name="category"  value="4" ${item.category==4?"selected":""}> 스포츠
 						<input class="Choose" type="radio" name="category" checked="checked" value="5" ${item.category==5?"selected":""}>기타</td>
 					</tr>
 					<tr style="border-bottom: 1px solid #ccc;">

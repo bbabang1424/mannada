@@ -2,6 +2,8 @@ package kr.ac.kopo.mannada.controller;
 
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -34,15 +36,24 @@ public class MannaController {
 	}
 	
 	@GetMapping("/detail/{id}")
-	public String detail(@PathVariable int id, Model model) {
+	public String detail(@PathVariable int id, Model model, @SessionAttribute(required = false) User user) {
 		
 		service.addViewCnt(id);
 		
-		/*
-		 * Map<String, Object> js = new HashMap<String, Object>(); js.put("id", id);
-		 * js.put("num", user.getNum()); int status = service.joinStatus(js);
-		 * model.addAttribute("status", status);
-		 */
+		if(user == null) {
+			int num = 0;
+		} else {
+			int num = user.getNum();
+		}
+		
+		Map<String, Object> js = new HashMap<String, Object>();
+		js.put("id", id);
+		if(user != null) {
+			js.put("num", user.getNum());
+		}
+		int status = service.joinStatus(js);
+		model.addAttribute("status", status);
+		 
 		
 		Manna item = service.item(id);
 		model.addAttribute("item", item);

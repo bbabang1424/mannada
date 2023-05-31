@@ -33,11 +33,11 @@ public class Manna {
 		if(category==1) 
 			return "공동구매";
 		else if(category==2)
-			return "운동";
+			return "게임";
 		else if(category==3)
 			return "식사";
 		else if(category==4)
-			return "게임";
+			return "스포츠";
 		else if(category==5)
 			return "기타";
 		else

@@ -37,15 +37,6 @@
 
 <script type="text/javascript">
 	const pager_url = "/api/manna";
-	const pager_item = [ 
-		{name : "id"}, 
-		{name : "category_"	}, 
-		{name : "title"},
-		{name : "nickname"},
-		{name : "dDay"},
-		{name : "sum"},
-		{name : "member"}
-		];
 </script>
 <script src="/resources/js/manna.js"></script>
 </head>
@@ -59,7 +50,7 @@
 
 		</div>
 		<h3 class="page_title">글 목록</h3>
-		<p class="page_text">새로운 만남을 만날수 있는 곧 입니다. 관심있는 카드를 눌러 참여하세요!</p>
+		<p class="page_text">새로운 만남을 만날수 있는 곳 입니다. 관심있는 카드를 눌러 참여하세요!</p>
 	</div>
 
 	<div class="container">
