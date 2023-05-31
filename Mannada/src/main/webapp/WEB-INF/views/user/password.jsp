@@ -15,67 +15,7 @@
 
 <title>만나다</title>
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-<script>
-$(function() {
-	let isCheck3; 
-	
-	$('#changePW').click(function(){
-		const form = document.changePW_form;
-		
-		//console.dir(form.newPW);
-		
-		if (form.pw.value == '') {
-			swal('비밀번호변경', '현재비밀번호를 입력해주세요', 'info');
-            form.pw.focus();
-            return;
-		} else if (isCheck3 != form.pw.value) {
-			swal('비밀번호변경', '현재비밀번호를 확인해주세요', 'warning');
-			return;
-		} else if (form.newPW.value == '') {
-			swal('비밀번호변경', '새로운 비밀번호를 입력해주세요', 'info');
-            form.newPW.focus();
-            return;
-		} else if (form.newPW2.value == '') {
-			swal('비밀번호변경', '새로운 비밀번호 확인해주세요', 'info');
-            form.newPW2.focus();
-            return;
-		} else if (form.newPW.value != form.newPW2.value) {
-			swal('비밀번호변경', '새로운 비밀번호가 서로 다릅니다', 'warning');
-            form.newPW.focus();
-            form.newPW2.focus();
-            return;
-        }
-		swal('비밀번호 변경이 완료되었습니다', '', 'success');
-	     //console.dir(changePW_form);
-	    form.submit();
-	})
-	
-	$('#checkPW').click(function() {
-		const pw = $('#pw').val();
-		$.ajax({
-			url:'/user/checkPW/${user.num}',
-			contentType: "application/json",
-			type: 'POST',
-			data: JSON.stringify({ pw: pw}),
-			success: function(pw) {
-				if(pw == 'OK') {
-					console.log(pw);
-					swal("비밀번호 변경이 가능합니다", '', 'success');
-					return isCheck3 = $('#pw').val();
-				} else {
-					console.log(pw);
-					swal("현재비밀번호가 아닙니다", '', 'error');
-					return $('#pw').val('');
-				}
-			}
-		});
-	});
-	
-	$('#goBack').click(function(){
-		window.history.back();
-	});
-});
-</script>
+<script src="/resources/js/user_updatePW.js"></script>
 </head>
 <jsp:include page="../header.jsp"></jsp:include>
 <body>
@@ -86,13 +26,18 @@ $(function() {
 		
 		<form name="changePW_form" method="post">
 			<div>
+				<label>이메일(아이디)</label>
+				<input type="text" name="id" id="email" value="${user.id}" readonly>
+			</div>
+			<div>
 				<label>현재비밀번호</label>
 				<input type="password" name="pw" id="pw">
 				<button type="button" id="checkPW">확인</button>
 			</div>
 			<div>
 				<label>새로운 비밀번호</label>
-				<input type="password" name="newPW" placeholder="비밀번호 (영문+숫자:8~20자리)" maxlength="20">
+				<input type="password" name="newPW" id="password" maxlength="20">
+				<div id="passwordError" class="error"></div>
 			</div>
 			
 			<div>
