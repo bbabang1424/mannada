@@ -144,7 +144,7 @@ const pager_item = [ {
 </div>
 
 	<div>
-		<section class="content" style="margin: 0 auto;">
+		<section class="top-content" style="margin: 0 auto;">
 		<div class="list-more">
 			<h4><b>최근 게시글</b></h4>
 			<div>
@@ -220,12 +220,24 @@ const pager_item = [ {
 			<div class="top-table">
 				<div class="recent-table">
 					<table class="table table-hover table_table " id="table_size" >
+						<div>
+							<div>
+							
+							</div>
+							
+							<div>
+							</div>
+						</div>
+						
 					<thead>
 						<tr class="table_menu"> 
+							<!-- <th colspan="4">후기</th> -->
+							 
 							<th>카테고리</th>
 							<th>제목</th> 
 							<th>작성일</th>
 							<th>조회수</th>
+							
 						</tr>
 					</thead>
 					<tbody >
@@ -237,7 +249,8 @@ const pager_item = [ {
 						<c:forEach var="item" items="${commuReview}" end="4">
 							<tr
 								style="border: 1px solid #dddddd; padding-top: 10px; border-right: 1px solid White; border-left: 1px solid White;">
-								 <td><div class="category_color category_color_${item.category}"></div>${item.category_}</td> 
+								<!-- <td><c:forEach var="cnt" begin="1" end="5">${cnt}</c:forEach></td>  -->
+								<td><div class="category_color category_color_${item.category}"></div>${item.category_}</td> 
 								<td><a style="color: black;" href="/community/detail/${item.id}">${item.title}</a></td>
 								<td><fmt:formatDate value="${item.regDate}"
 										pattern="yyyy-MM-dd " /></td>
@@ -252,10 +265,13 @@ const pager_item = [ {
 					<table class="table table-hover table_table " id="table_size" >
 					<thead>
 						<tr class="table_menu"> 
+							<!-- <th colspan="4">소통</th>  -->
+							
 							<th>카테고리</th>
 							<th>제목</th> 
 							<th>작성일</th>
 							<th>조회수</th>
+							
 						</tr>
 					</thead>
 					<tbody >
@@ -267,7 +283,7 @@ const pager_item = [ {
 						<c:forEach var="item" items="${commuTalk}" end="4">
 							<tr
 								style="border: 1px solid #dddddd; padding-top: 10px; border-right: 1px solid White; border-left: 1px solid White;">
-								 <td><div class="category_color category_color_${item.category}"></div>${item.category_}</td> 
+								<td><div class="category_color category_color_${item.category}"></div>${item.category_}</td> 
 								<td><a style="color: black;" href="/community/detail/${item.id}">${item.title}</a></td>
 								<td><fmt:formatDate value="${item.regDate}"
 										pattern="yyyy-MM-dd " /></td>
@@ -289,11 +305,14 @@ const pager_item = [ {
 				</div>
 				<form name="addrSearch" action="searchAddress">
 					<div class="grid-container">
+						
 						<div class="item">
+							<div style="display:none;">
 							<label>도로명</label>
-							<input type="radio" name="addressType" value="road" checked>
+							<input type="radio" name="addressType" value="road" >
 							<label>지번</label>
-							<input type="radio" name="addressType" value="jibun">
+							<input type="radio" name="addressType" value="jibun" checked>
+							</div>
 						</div>
 		
 						<div class="item">
