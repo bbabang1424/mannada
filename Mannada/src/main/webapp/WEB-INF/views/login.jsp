@@ -116,7 +116,6 @@ function mgValue() {
 	                
 	                <div>
 	                    <input type="checkbox" id="remember-check">아이디 저장
-	                    <input name="remember-me" type="checkbox" id="remember-check">자동 로그인
 	                </div>
 	                
 					<button class="login-button" type="button" onclick="userValue()">로그인</button>
