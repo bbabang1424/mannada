@@ -61,6 +61,7 @@
 
 .login-box .title {
     border-bottom: 1px solid black;
+    text-align: center;
 }
 
 .login-box .title ul {
@@ -72,6 +73,11 @@
     list-style-type: none;
     display: inline-block;
     font-size: 0.8em;
+}
+
+.login-box .title ul li:first-child {
+    font-size: 1em;
+    font-weight: bold;
 }
 
 .login-box .title ul li:hover {
