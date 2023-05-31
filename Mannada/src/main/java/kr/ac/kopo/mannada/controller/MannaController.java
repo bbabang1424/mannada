@@ -108,14 +108,6 @@ public class MannaController {
 		return "redirect:../list";
 	}
 	
-	/*테스트*/
-	@GetMapping("/dummy")
-	public String dummy() {
-		service.dummy();
-		
-		return "redirect:list";
-	}
-	
 	@GetMapping("/addJoin/{id}")
 	public String addjoin(@PathVariable int id, @SessionAttribute User user) {
 		
