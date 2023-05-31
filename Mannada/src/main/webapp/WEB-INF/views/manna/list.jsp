@@ -37,15 +37,6 @@
 
 <script type="text/javascript">
 	const pager_url = "/api/manna";
-	const pager_item = [ 
-		{name : "id"}, 
-		{name : "category_"	}, 
-		{name : "title"},
-		{name : "nickname"},
-		{name : "dDay"},
-		{name : "sum"},
-		{name : "member"}
-		];
 </script>
 <script src="/resources/js/manna.js"></script>
 </head>
@@ -59,50 +50,47 @@
 
 		</div>
 		<h3 class="page_title">글 목록</h3>
-		<p class="page_text">새로운 만남을 만날수 있는 곧 입니다. 관심있는 카드를 눌러 참여하세요!</p>
+		<p class="page_text">새로운 만남을 만날수 있는 곳 입니다. 관심있는 카드를 눌러 참여하세요!</p>
 	</div>
 
 	<div class="container">
-		<section class="content ">
-			<div class="select_list">
-				<div class="selelct_lsit">
-					<div class="category_select">
-						<select name="search" class="form-select form-select-sm">
-							<option value="1">제목</option>
-							<option value="2">닉네임</option>
-							<option value="3">모집인원</option>
-							<option value="4">모집일</option>
-							<option value="5">주소</option>
-							<option value="6">내용</option>
-						</select>  
-							
-						<input class="search_box" name="keyword" type="text">
-							
-						<div class="search">
-							<button class="search_btn">검색</button>
-						</div>
+		
+			<div class="selelct_lsit">
+				<div class="category_select">
+					<select name="search" class="form-select form-select-sm">
+						<option value="1">제목</option>
+						<option value="2">닉네임</option>
+						<option value="3">모집인원</option>
+						<option value="4">모집일</option>
+						<option value="5">주소</option>
+						<option value="6">내용</option>
+					</select> <input class="search_box" name="keyword" type="text">
 
-						<c:if test="${sessionScope.user != null }">
-							<div class="writing">
-								<a href="../../manna/add">
-									<button class="writing_btn">
-										<i class="bi bi-pencil-fill"></i> 글쓰기
-									</button>
-								</a>
-							</div>
-						</c:if>
+					<div class="search">
+						<button class="search_btn">검색</button>
 					</div>
 
-					<c:if test="${sessionScope.user.id == null }">
-						<div class="writing"></div>
+					<c:if test="${sessionScope.user != null }">
+						<div class="writing">
+							<a href="../../manna/add">
+								<button class="writing_btn">
+									<i class="bi bi-pencil-fill"></i> 글쓰기
+								</button>
+							</a>
+						</div>
 					</c:if>
 				</div>
-				<div class="card_box">
-					<div id="empty_list">등록 된 게시글이 없습니다.</div>
-				</div>
+
+				<c:if test="${sessionScope.user.id == null }">
+					<div class="writing"></div>
+				</c:if>
 			</div>
-		</section>
+			<div class="card_box">
+				<div id="empty_list">등록 된 게시글이 없습니다.</div>
+			</div>
+		
 	</div>
+
 
 
 	<div class="more">

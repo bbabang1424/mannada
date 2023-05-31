@@ -9,6 +9,8 @@
 }
 
 .container {
+	margin-top: 5%;
+	position: relative;
 	max-width: 1200px;
 	padding: 0;
 	width: 100%;
@@ -56,11 +58,6 @@
 	margin: 0 auto;
 }
 
-.content {
-	margin-top: 7%;
-	position: relative;
-}
-
 .card_box {
 	width: 100%;
 	max-width: 1220px;
@@ -81,7 +78,7 @@
 	border: 2px solid #D3D3D3;
 	display: inline-block;
 	width: 272px;
-	height: 210px;
+	height: 217px;
 	padding: 10px;
 	margin: 10px;
 	text-align: left;
@@ -133,17 +130,17 @@
 	overflow: hidden;
 	text-overflow: ellipsis;
 	margin-top: 3px;
-	margin-left: 8px;
+	margin-left: 10px;
 	position: inherit;
 	color: black;
-	top: 6%;
+	top: 8%;
 }
 
 .interval {
 	margin-top: 3px;
 	margin-left: 10px;
 	position: inherit;
-	top: 3%;
+	top: 4%;
 	color: black;
 }
 

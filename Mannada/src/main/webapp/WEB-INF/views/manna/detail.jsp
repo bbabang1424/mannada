@@ -26,7 +26,7 @@
 	</div>
 	<section class="content">
 		<div class="box">
-			<div class="first">
+			<div class="first" style="position: relative;">
 
 
 
@@ -62,23 +62,24 @@
 				<!-- personnel:인원이란 뜻 -->
 				<div class="model_personnel">
 					<!-- 참여인원/모집인원 : 참여버튼을 눌른 이용자의 인원이 나와야함-->
-					<span>참여현황:${item.sum }/${item.member}</span>
+					<span style="margin-right: 5px;">참여현황:</span>${item.sum }/${item.member}
 				</div>
 				<progress id="model_progress" value="${item.sum }"
 					max="${item.member}"> </progress>
 
 				<div class="views">
-					<i class="bi bi-eye"></i> ${item.viewCnt }
+					<span style="margin-right: 5px;"><i class="bi bi-eye"></i></span> ${item.viewCnt }
 				</div>
 				<div class="model_line"></div>
 			</div>
 			<div class="model_middle">
 
 
-				<div class="model_member">참여인원</div>
+				
 
 				<div class="model_member_num_box_info">
 					<div id="box_info">
+					<div class="model_member">참여인원</div>
 						<div style="border: 1px solid #ddd;" class="member_num"
 							id="model_member_num">
 							<!-- 참여버튼을 누른 사람의 아이디를 가져와야함-->

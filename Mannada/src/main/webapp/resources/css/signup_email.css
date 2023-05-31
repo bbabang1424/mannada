@@ -6,7 +6,6 @@
 	border-color: #60a8ef;
 	width: 100%;
 	background-color: #60a8ef;
-	
 }
 
 .banner_text {
@@ -27,131 +26,133 @@
 
 .background-image {
 	width: 100%;
-	height: 100%;
+	height: 128%;
 	position: absolute;
-	background-image: url("/resources/image/login-back.jpg");
+	background-image: url(/resources/image/login-back.jpg);
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	background-size: cover;
-    opacity: 0.5;
+	opacity: 0.5;
 }
 
 .body {
-    width: 600px;
-    border: 1px solid whitesmoke;
-    margin: 3em auto 0;
-    padding: 25px;
-    position: relative;
-    background-color: white;
-    border-radius: 30px;
-    box-shadow: inset 0 0px 10px 5px #E0E0E0;
+	width: 600px;
+	border: 1px solid whitesmoke;
+	margin: 4em auto 0;
+	margin-bottom: 8%;
+	padding: 25px;
+	position: relative;
+	background-color: white;
+	border-radius: 30px;
+	box-shadow: inset 0 0px 10px 5px #E0E0E0;
 }
 
-input{
-    border: 1px solid black;
-    border-radius: 3px;
-    line-height: 35px;
-    font-size: 12px;
-    padding-left: 10px;
-    padding-right: 10px;
+input {
+	border: 1px solid black;
+	border-radius: 3px;
+	line-height: 35px;
+	font-size: 12px;
+	padding-left: 10px;
+	padding-right: 10px;
 }
 
 .wrapper {
-    padding: 10px;
+	padding: 10px;
 }
 
 div {
-    padding-top: 1px;
-    padding-bottom: 1px;
+	padding-top: 1px;
+	padding-bottom: 1px;
 }
 
 .title {
-    text-align: center;
-    font-weight: 700;
-    color: #0359d9; 
+	text-align: center;
+	font-weight: 700;
+	color: #0359d9;
 }
 
 .email input {
-    width: 70%;
+	width: 70%;
 }
 
 .email-title {
-    font-weight: bold;
+	font-weight: bold;
 }
 
 .email_auth {
-		
+	
 }
+
 .password input {
-    width: 100%;
+	width: 100%;
 }
 
 .password-title {
-    font-weight: bold;
-    margin-top: 15px;
+	font-weight: bold;
+	margin-top: 15px;
 }
 
 .passwordCheck input {
-    width: 100%;
+	width: 100%;
 }
 
 .passwordCheck-title {
-    font-weight: bold;
+	font-weight: bold;
 }
 
 .nickname input {
-    width: 70%;
+	width: 70%;
 }
 
 .nickname-title {
-    font-weight: bold;
+	font-weight: bold;
 }
 
 .id_overlap_button {
-    width: 28%;
-    background-color: #0359d9;
-    border-radius: 3px; 
-    border: none;
+	width: 28%;
+	background-color: #0359d9;
+	border-radius: 3px;
+	border: none;
 }
 
 .gender {
-    text-align: center;
-    margin-top: 5%;
+	text-align: center;
+	margin-top: 5%;
 }
 
 .checkbox {
 	margin-bottom: -10px;
 }
 
-.signUp button {    
-    width: 225px;
-    background-color: #0359d9;
-    border: none;
-    border-radius: 3px;
+.signUp button {
+	width: 225px;
+	background-color: #0359d9;
+	border: none;
+	border-radius: 3px;
 }
 
 .go_back button {
-    width: 225px;
-    background-color: #d9d9d9;
-    border: none;
-    color: black;
-    border-radius: 3px;
+	width: 225px;
+	background-color: #d9d9d9;
+	border: none;
+	color: black;
+	border-radius: 3px;
 }
 
-button{
-    cursor: pointer;
-    height: 40px;
-    color: white;
+button {
+	cursor: pointer;
+	height: 40px;
+	color: white;
 }
 
-.error{
-    font-size: 1px;
-    height: 20px;
-    color:red;
-    font-weight: 700;
+.error {
+	font-size: 1px;
+	height: 20px;
+	color: red;
+	font-weight: 700;
 }
 
 .inline {
-    display: flex;
-    justify-content: space-around;
+	display: flex;
+	justify-content: space-around;
 }
