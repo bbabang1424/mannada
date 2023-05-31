@@ -71,6 +71,7 @@ function mgValue() {
 			
 		</ul>
 	</div>
+	
 <div class="background-image">
 </div>
 

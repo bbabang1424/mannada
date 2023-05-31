@@ -1,0 +1,86 @@
+@charset "UTF-8";
+
+#my-post, #my-reply, #my-calender{
+	display: none;
+}
+.star {
+	font-size: 2rem;
+	color: #ddd;
+}
+.checkStar {
+	display: none;
+}
+.yellowStar {
+	color: #facf32;
+}
+
+.pro1 img {
+	width : 200px;
+	height : 200px;
+}
+
+.view {
+	width: 100px;
+	height: 100px;
+}
+
+
+.title {
+	border-bottom: 1px solid black;
+	font-weight: bold;
+	padding: 15px 5px;
+	color: #0359d9; 	
+}
+
+.user-button .photo {
+	width: 95px;
+    height: 35px;
+    background-color: #3090d6;
+    color: black;    
+    border: 1px solid black;
+    border-radius: 3px;
+}
+
+.user-button .update {
+	width: 105px;
+    height: 35px;
+    background-color: #3090d6;
+    color: black;    
+    border: 1px solid black;
+    border-radius: 3px;
+}
+
+.user-button .password {
+	width: 105px;
+    height: 35px;
+    background-color: #3090d6;
+    color: black;    
+    border: 1px solid black;
+    border-radius: 3px;
+}
+
+.user-button .stop {
+	width: 95px;
+    height: 35px;
+    background-color: gray;
+    color: black;    
+    border: 1px solid black;
+    border-radius: 3px;
+}
+
+.profile-box {	
+	border: 1px solid black;
+	color: black;
+	width: 500px;
+	height: 400px;
+	margin: 3em auto;
+	padding: 35px 30px;
+	position: relative;
+}
+
+.profile {	
+    width: 25%;
+    height: auto;
+    border-radius: 70%;
+    overflow: hidden;
+}

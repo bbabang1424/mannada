@@ -15,6 +15,7 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
 
 <title>만나다</title>
+<link rel="stylesheet" href="/resources/css/view.css">
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script> 
 $(function() {
@@ -106,31 +107,33 @@ $(function() {
 	}); 
  });
 </script>
-<style>
-#my-post, #my-reply, #my-calender{
-	display: none;
-}
-.star {
-	font-size: 2rem;
-	color: #ddd;
-}
-.checkStar {
-	display: none;
-}
-.yellowStar {
-	color: #facf32;
-}
-
-.pro1 img {
-	width : 200px;
-	height : 200px;
-}
-
-</style>
 </head>
 <jsp:include page="../header.jsp"></jsp:include>
 <body>
-	<header>
+	<div class="title">
+		마이페이지
+	</div>
+		<div class="user-button" style="float: right; margin: 10px 30px;">
+			<c:if test="${sessionScope.user == null}">
+				<a href="/login">프로필사진</a>
+				<a href="/login">회원정보변경</a>
+				<a href="/login">비밀번호변경</a>
+				<a href="/login">회원탈퇴</a>
+			</c:if>			
+			
+			
+			<c:if test="${sessionScope.user != null}">				
+					<a href="../photo/${sessionScope.user.num}"><button type="button" class="photo">프로필 사진</button></a>	
+											
+					<a href="../update/${sessionScope.user.num}"><button type="button" class="update">회원정보변경</button></a>	
+			
+					<a href="../password/${sessionScope.user.num}"><button type="button" class="password">비밀번호변경</button></a>	
+				
+					<a href="../stop/${sessionScope.user.num}"><button type="button" class="stop">회원탈퇴</button></a>													
+			</c:if>					
+		</div>
+		
+	<header class="profile-box">
 		<div>
 			<c:if test="${user.attach.filename != null}">
 				<div class="pro1">
@@ -139,7 +142,7 @@ $(function() {
 			</c:if>
 			<c:if test="${user.attach.filename == null}">
 				<div>
-					<img src="/resources/image/profile.png">
+					<img class="profile" src="/resources/image/profile.png">
 				</div>
 			</c:if>
 		</div>
@@ -148,22 +151,10 @@ $(function() {
 		</div>
 		<div>
 			★${user.starAvg}(${user.starCnt}) 
-		</div>
-		<div>
-			<c:if test="${sessionScope.user == null}">
-				<a href="/login">프로필사진</a>
-				<a href="/login">회원정보변경</a>
-				<a href="/login">비밀번호변경</a>
-				<a href="/login">회원탈퇴</a>
-			</c:if>
-			<c:if test="${sessionScope.user != null}">
-				<a href="../photo/${sessionScope.user.num}">프로필사진</a>
-				<a href="../update/${sessionScope.user.num}">회원정보변경</a>
-				<a href="../password/${sessionScope.user.num}">비밀번호변경</a>
-				<a href="../stop/${sessionScope.user.num}">회원탈퇴</a>
-			</c:if>
-		</div>
-		<nav class="my-nav">
+		</div>									
+	</header>
+	
+	<nav class="my-nav">
 			<ul>
 				<li>My Page</li>
 				<li>작성 글</li>
@@ -172,8 +163,8 @@ $(function() {
 				<li>캘린더</li>
 			</c:if>
 			</ul>
-		</nav>
-	</header>
+		</nav>		
+		
 	<section>
 		<div class="my-set" id="my-info">
 			<table border="1">
