@@ -27,7 +27,7 @@
 		<form name="changePW_form" method="post">
 			<div>
 				<label>이메일(아이디)</label>
-				<input type="text" name="id" id="email" value="${user.id}" readonly>
+				<input type="text" name="id" id="email" value="${user.id}" readonly> 
 			</div>
 			<div>
 				<label>현재비밀번호</label>

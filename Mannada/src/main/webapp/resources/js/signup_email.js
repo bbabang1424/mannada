@@ -118,7 +118,7 @@ $(function () {
 	    }
 	    
 	    if(/(\w)\1\1\1/.test(password)){
-	        passwordError.innerText = '같은 문자를 4번 이상 사용하실 수 없습니다';
+	        passwordError.innerText = '같은 문자를 4번 이상 사용하실 수 없습니다'; 
 	        $('#password').focus();
 	        return false;
 	    }

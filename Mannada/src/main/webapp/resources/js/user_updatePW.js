@@ -1,4 +1,4 @@
-$(function() {
+$(function() { 
 	let isCheck3;
 	
 	let keyupPW;

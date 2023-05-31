@@ -63,7 +63,7 @@
 			</div>
 			
 						
-			<div class="nickname-title">닉네임</div>
+			<div class="nickname-title">닉네임</div> 
 	        <div class="nickname">            
 	            <input name="nickname" id="nick" type="text" placeholder="닉네임 (공백없이 20자이내 한글, 영문, 숫자만 입력 가능)" maxlength="20">
 	            <button type="button" class="id_overlap_button" id="checkNick" style="float:right;">중복확인</button>	            

@@ -61,7 +61,7 @@ function mgValue() {
 <style type="text/css">
 #manager-login{
 	display: none;
-}
+} 
 </style>
 </head>
 <body>

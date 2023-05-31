@@ -1,4 +1,4 @@
-$(function() {
+$(function() { 
 	let isCheck2;
 	let isCheck3;
 	
