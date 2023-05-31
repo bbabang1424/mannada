@@ -133,4 +133,5 @@ $('.go_back').click(function(){
 	window.history.back();
 });
 </script>
+<jsp:include page="footer.jsp"></jsp:include>
 </html>
