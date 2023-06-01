@@ -12,10 +12,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
-
 import kr.ac.kopo.mannada.model.Address;
 import kr.ac.kopo.mannada.model.Community;
 import kr.ac.kopo.mannada.model.Manager;
@@ -71,27 +68,7 @@ public class RootController {
 	/* 로그인 */
 	@GetMapping("/login")
 	public String login(HttpSession session, Model model) {
-		/* 아이디 저장 관련 */
-		//로그인 상태 확인
-		String loginOk = (String)session.getAttribute("loginOk");
-		
-		//form에서 아이디 얻어오기
-		String userId = (String)session.getAttribute("userId");
-		String mgId = (String)session.getAttribute("mgId");
-		
-		if(loginOk == null)
-			return "login";
-		else {
-			//유저 : 로그인 중의 아이디 + request 저장
-			String userSave = service.saveId(userId);
-			model.addAttribute("userId", userSave);
-
-			//관리자 : 로그인 중의 아이디 + request 저장
-			String mgSave = mgService.saveId(mgId);
-			model.addAttribute("mgId", mgSave);
-			
-			return "login";
-		}
+		return "login";
 	}
 	@PostMapping("/userLogin")
 	public String userLogin(User user, HttpSession session) {		
@@ -126,42 +103,6 @@ public class RootController {
 
 		} else
 			return "redirect:login";
-	}
-	/* 로그인 일치여부 확인 : required = false 널값일 가능성이 있으면 추가 */
-	@PostMapping("/userCheck")
-	public String userCheck(@RequestParam String id, @RequestParam String pw, @RequestParam(required = false) String saveId, HttpSession session) {
-		//아이디, 비밀번호 일치여부 확인
-		int userCheck = service.checkLogin(id, pw);
-		
-		if(userCheck==1) {
-			//세션에 8시간 저장
-			session.setMaxInactiveInterval(60*60*8);
-			
-			//아이디, 로그인 상태, 아이디저장 여부 세션에 저장
-			session.setAttribute("userId", id);
-			session.setAttribute("loginOk", "yes");
-			session.setAttribute("saveOk", saveId);
-			
-			return "OK";
-		} else
-			return "FAIL";
-	}
-	@PostMapping("/mgCheck")
-	public String mgCheck(@RequestParam String id, @RequestParam String pw, @RequestParam(required = false) String saveId, HttpSession session) {
-		int mgCheck = mgService.checkLogin(id, pw);
-		
-		if(mgCheck==1) {
-			//세션에 8시간 저장
-			session.setMaxInactiveInterval(60*60*8);
-			
-			//아이디, 로그인 상태, 아이디저장 여부 세션에 저장
-			session.setAttribute("mgId", id);
-			session.setAttribute("loginOk", "yes");
-			session.setAttribute("saveOk", saveId);
-			
-			return "OK";
-		} else
-			return "FAIL";
 	}
 	
 	/* 로그아웃 */
