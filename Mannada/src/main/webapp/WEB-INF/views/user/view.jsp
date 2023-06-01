@@ -123,7 +123,7 @@
 	<header class="profile-box">
 		<div class="user-button">
 			<c:if test="${sessionScope.user == null}">
-				<a href="/login">프로필사진</a>
+				<a href="/login">프로필수정</a>
 				<a href="/login">회원정보변경</a>
 				<a href="/login">비밀번호변경</a>
 				<a href="/login">회원탈퇴</a>
@@ -132,7 +132,7 @@
 
 			<c:if test="${sessionScope.user != null}">
 				<a href="../photo/${sessionScope.user.num}"><button
-						type="button" class="photo">프로필 사진</button></a>
+						type="button" class="photo">프로필 수정</button></a>
 
 				<a href="../update/${sessionScope.user.num}"><button
 						type="button" class="update">회원정보변경</button></a>
