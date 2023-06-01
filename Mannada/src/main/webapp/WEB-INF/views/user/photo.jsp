@@ -14,20 +14,15 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 
 <title>만나다</title>
+<link rel="stylesheet" href="/resources/css/photo.css">
 
-<style>
-#preview {
-	border:1px solid black; 
-	width:500px; 
-	height:500px;
-}
-</style>
 </head>
 <jsp:include page="../header.jsp"></jsp:include>
+
 <body>
 	<div class="container"> 
 		<div>
-			<h3>프로필 등록</h3>
+			<h3>프로필 수정</h3>
 			<p>
 	            500x500의 크기인 사진을 등록하시는걸 권장합니다.
 	            <br> 등록 가능한 파일은 .jpg, .jpeg, .png이고 크기는 최대 10MB입니다.
@@ -40,7 +35,7 @@
 	            	<img src="/resources/image/profile.png" id="preview">
 	            	<div>	            		
 		            	<input type="file" name="uploadFile" accept=".jpg, .jpeg, .png">
-		            	<button type="submit">등록</button>
+		            	<button id="button" type="submit">등록</button>		            	
 		            	<button type="button" id="goBack">목록</button>
 	            	</div>
 	             </div>
