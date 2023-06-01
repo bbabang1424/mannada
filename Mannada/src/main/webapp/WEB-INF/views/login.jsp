@@ -123,6 +123,52 @@ function mgValue() {
 					
 					<!--  csrf 공격 방어를 위해 동적 생성 -->
     				<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token }" />
+<<<<<<< HEAD
+=======
+	            </form>
+	        </div>
+	
+	        
+	        <div class="flex">
+	            <div class="find-account">
+	               | <a href="">아이디 찾기</a> | <a href="">비밀번호 찾기</a> |               
+	            </div>
+	            
+	        </div> 
+	
+	            <button type="button" class="naver-btn"><img src="/resources/image/naver_logo.png" alt="">네이버 계정으로 로그인</button>
+	            
+	            <button  type="button" class="kakao-btn"><img src="/resources/image/kakao_logo.png" alt="">카카오 계정으로 로그인</button>
+	
+	            <button  type="button" class="google-btn"><img src="/resources/image/google_logo.png" alt="">구글 계정으로 로그인</button>       
+	
+	            <div class="blank">
+	                아직 회원이 아니신가요?
+	            </div>
+	
+	            <div>
+	                <a href="/signup"><button type="button" class="signup">회원가입</button></a>
+	            </div>
+	        </div>
+	        
+	        
+	        <div id="manager-login">
+	            <form name="mg_login" method="post" action="/managerLogin" class="login-form">
+	                <div>
+	                    <input class="input" type="email" id="textbox mg_id" name="id" placeholder="아이디(이메일) 입력">
+	                </div>
+	                
+	                <div>
+	                    <input class="input" type="password" id="textbox mg_pw" name="pw" placeholder="비밀번호 입력">
+	                </div>
+	                
+	                <div>
+	                    <input type="checkbox" id="remember-check">아이디 저장
+	                    <input type="checkbox" id="remember-check">자동 로그인
+	                </div>
+	                
+					<button class="login-button" type="button" onclick="mgValue()">로그인</button>
+>>>>>>> branch 'master' of https://github.com/xyident/mannada.git
 				</form>
 			</div>
 	        

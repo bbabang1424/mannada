@@ -89,7 +89,7 @@ function EtValue() {
 				<div class="text_box">${item.content }</div>
 			</div>
 		</div>
-   </section>
+   
    
    <div class="container_box">
       <form method="post" name="write_post" class="replyupdate_box">
@@ -106,6 +106,8 @@ function EtValue() {
          </div>
       </form>
    </div>
+   
+   </section>
    <jsp:include page="../footer.jsp"></jsp:include>
 
 </body>

@@ -44,7 +44,7 @@
 		<p class="page_text">만나다의 새로운 소식, 시스템 점검등을 공지하는 공간입니다.</p>
 	</div>
 
-
+<div class="container">
 	<section class="table_info">
 		<div class="selelct_list">
 			<div class="category">
@@ -114,8 +114,7 @@
 	<tfoot>
 		<tr>
 			<td colspan="5">
-				<ol class="pagination pagination-sm justify-content-center"
-					style="margin-bottom: 5%; margin-top: 5%; text-align: center;">
+				<ol class="pagination pagination-sm justify-content-center" style="margin: 5%;">
 					<li class="page_nation_item"><a href="?page=1${pager.query}"
 						class="page-link">처음</a></li>
 					<li class="page_nation_item"><a
@@ -135,6 +134,7 @@
 			</td>
 		</tr>
 	</tfoot>
+	</div>
 
 
 	<!-- <a href="../">이전</a> -->
