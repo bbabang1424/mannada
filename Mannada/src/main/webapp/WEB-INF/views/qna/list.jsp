@@ -45,6 +45,7 @@
 			<h3 class="page_title">Q & A</h3>
 			<p class="page_text">궁금한 점, 문의할 점을 올려주세요!</p>
 		</div>
+		<div class="container">
 		<section class="table_info">
 			<div class="selelct_list">
 				<div class="category">
@@ -111,32 +112,32 @@
 					</tbody>
 				</table>
 			</div>
-			</section>>
+			</section>
 
-			<tfoot>
-				<tr>
-					<td colspan="5">
-						<ol class="pagination pagination-sm justify-content-center"
-							style="margin-bottom: 5%; margin-top: 5%;">
-							<li class="page_nation_item"><a href="?page=1${pager.query}"
-								class="page-link">처음</a></li>
-							<li class="page_nation_item"><a
-								href="?page=${pager.prev}${pager.query}" class="page-link">이전</a></li>
+		<tfoot>
+			<tr>
+				<td colspan="5">
+					<ol class="pagination pagination-sm justify-content-center" style="margin: 5%;">
+						<li class="page_nation_item"><a href="?page=1${pager.query}"
+							class="page-link">처음</a></li>
+						<li class="page_nation_item"><a
+							href="?page=${pager.prev}${pager.query}" class="page-link">이전</a></li>
 
-							<c:forEach var="page" items="${pager.list}">
-								<li class="page_nation_item"><a
-									href="?page=${page}${pager.query}"
-									class="page-link ${page eq pager.page ? 'active' : ''}">${page}</a></li>
-							</c:forEach>
+						<c:forEach var="page" items="${pager.list}">
+							<li class="page_nation_item"><a
+								href="?page=${page}${pager.query}"
+								class="page-link ${page eq pager.page ? 'active' : ''}">${page}</a></li>
+						</c:forEach>
 
-							<li class="page_nation_item"><a
-								href="?page=${pager.next}${pager.query}" class="page-link">다음</a></li>
-							<li class="page_nation_item"><a
-								href="?page=${pager.last}${pager.query}" class="page-link">마지막</a></li>
-						</ol>
-					</td>
-				</tr>
-			</tfoot>
+						<li class="page_nation_item"><a
+							href="?page=${pager.next}${pager.query}" class="page-link">다음</a></li>
+						<li class="page_nation_item"><a
+							href="?page=${pager.last}${pager.query}" class="page-link">마지막</a></li>
+					</ol>
+				</td>
+			</tr>
+		</tfoot>
+	</div>
 		
 		<!-- <a href="../">이전</a> -->
 		<jsp:include page="../footer.jsp"></jsp:include>
