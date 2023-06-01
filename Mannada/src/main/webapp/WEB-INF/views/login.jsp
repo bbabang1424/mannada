@@ -76,27 +76,26 @@ function mgValue() {
 </style>
 </head>
 <body>
-<div class="banner">
-		<ul class="banner_text">
-			<li>HOME</li>
-			<i class="bi bi-caret-right-fill"></i>
-			<li>로그인</li>	
-		</ul>
+	<div class="banner">
+			<ul class="banner_text">
+				<li>HOME</li>
+				<i class="bi bi-caret-right-fill"></i>
+				<li>로그인</li>	
+			</ul>
 	</div>
-	
-<div class="background-image">
-</div>
+	<div class="background-image">
+	</div>
 
 	<div class="login-box">
-        <br>
-        <div class="title">
-            <ul>
-                <li style="cursor: pointer;" id="user">사용자 로그인</li>
-                <span id="center">|</span>
-                <li style="cursor: pointer;" id="mg">관리자 로그인</li>
-            </ul>
-        </div>
-        
+		<br>
+		<div class="title">
+			<ul>
+				<li style="cursor: pointer;" id="user">사용자 로그인</li>
+				<span id="center">|</span>
+				<li style="cursor: pointer;" id="mg">관리자 로그인</li>
+			</ul>
+		</div>
+     
         <security:http>
 			<security:remember-me data-source-ref="dataSource" token-validity-seconds="604800"/>
 			
@@ -104,11 +103,12 @@ function mgValue() {
 			<security:logout logout-url="/logout" invalidate-session="true" delete-cookies="remember-me, JSEESION_ID"/>
 		</security:http>
 
-        <div id="user-login">
-	        <div>
+		<div id="user-login">
+			<div>
 	            <form name="user_login" method="post" action="/userLogin" class="login-form">
 	                <div>
-	                    <input class="input" type="email" id="textbox user_id" name="id" placeholder="아이디(이메일) 입력">
+	                    <input class="input" type="email" id="textbox user_id" name="id" placeholder="아이디(이메일) 입력"
+	                    value="${sessionScope.saveOk==null ? '' : sessionScope.userId}">
 	                </div>
 	                
 	                <div>
@@ -116,59 +116,57 @@ function mgValue() {
 	                </div>
 	                
 	                <div>
-	                    <input type="checkbox" id="remember-check">아이디 저장
-	                    <input name="remember-me" type="checkbox" id="remember-check">자동 로그인
+	                    <input type="checkbox" id="remember-check" name="saveId" ${sessionScope.saveOk==null ? "" : "checked"}>아이디 저장
 	                </div>
 	                
 					<button class="login-button" type="button" onclick="userValue()">로그인</button>
 					
 					<!--  csrf 공격 방어를 위해 동적 생성 -->
     				<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token }" />
-	            </form>
-	        </div>
-	
-	        
-	        <div class="flex">
-	            <div class="find-account">
-	               | <a href="">아이디 찾기</a> | <a href="">비밀번호 찾기</a> |               
-	            </div>
-	            
-	        </div> 
-	
-	            <button type="button" class="naver-btn"><img src="/resources/image/naver_logo.png" alt="">네이버 계정으로 로그인</button>
-	            
-	            <button  type="button" class="kakao-btn"><img src="/resources/image/kakao_logo.png" alt="">카카오 계정으로 로그인</button>
-	
-	            <button  type="button" class="google-btn"><img src="/resources/image/google_logo.png" alt="">구글 계정으로 로그인</button>       
-	
-	            <div class="blank">
-	                아직 회원이 아니신가요?
-	            </div>
-	
-	            <div>
-	                <a href="/signup"><button type="button" class="signup">회원가입</button></a>
-	            </div>
-	        </div>
-	        
-	        
-	        <div id="manager-login">
-	            <form name="mg_login" method="post" action="/managerLogin" class="login-form">
-	                <div>
-	                    <input class="input" type="email" id="textbox mg_id" name="id" placeholder="아이디(이메일) 입력">
-	                </div>
-	                
-	                <div>
-	                    <input class="input" type="password" id="textbox mg_pw" name="pw" placeholder="비밀번호 입력">
-	                </div>
-	                
-	                <div>
-	                    <input type="checkbox" id="remember-check">아이디 저장
-	                </div>
-	                
-					<button class="login-button" type="button" onclick="mgValue()">로그인</button>
 				</form>
-	        </div>
-        </div>     
+			</div>
+	        
+			<div class="flex">
+				<div class="find-account">
+					| <a href="">아이디 찾기</a> | <a href="">비밀번호 찾기</a> |               
+				</div> 
+			</div> 
+	
+			<button type="button" class="naver-btn"><img src="/resources/image/naver_logo.png" alt="">네이버 계정으로 로그인</button>
+	            
+			<button  type="button" class="kakao-btn"><img src="/resources/image/kakao_logo.png" alt="">카카오 계정으로 로그인</button>
+	
+			<button  type="button" class="google-btn"><img src="/resources/image/google_logo.png" alt="">구글 계정으로 로그인</button>       
+	
+			<div class="blank">
+				아직 회원이 아니신가요?
+			</div>
+	
+			<div>
+				<a href="/signup"><button type="button" class="signup">회원가입</button></a>
+			</div>
+		</div>
+	        
+	        
+	    <div id="manager-login">
+	        <form name="mg_login" method="post" action="/managerLogin" class="login-form">
+	            <div>
+	               <input class="input" type="text" id="textbox mg_id" name="id" placeholder="아이디 입력"
+	                value="${sessionScope.saveOk==null ? '' : sessionScope.mgId}">
+	            </div>
+	                
+	            <div>
+	                <input class="input" type="password" id="textbox mg_pw" name="pw" placeholder="비밀번호 입력">
+	            </div>
+	                
+				<div>
+					<input type="checkbox" id="remember-check" name="saveId" ${sessionScope.saveOk==null ? "" : "checked"}>아이디 저장
+				</div>
+	                
+				<button class="login-button" type="button" onclick="mgValue()">로그인</button>
+			</form>
+		</div>
+	</div>     
 </body>
 <jsp:include page="footer.jsp"></jsp:include>
 </html>

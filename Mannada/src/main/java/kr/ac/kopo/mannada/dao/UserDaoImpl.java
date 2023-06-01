@@ -2,6 +2,7 @@ package kr.ac.kopo.mannada.dao;
 
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -112,6 +113,16 @@ public class UserDaoImpl implements UserDao {
 	@Override
 	public void photoDelete(int attachId) {
 		sql.delete("user.photo_delete", attachId);
+	}
+
+	@Override
+	public int checkLogin(Map<String, String> check) {
+		return sql.selectOne("user.check_login", check);
+	}
+
+	@Override
+	public String saveId(String userId) {
+		return sql.selectOne("user.save_id", userId);
 	}
 
 }

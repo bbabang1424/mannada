@@ -17,8 +17,7 @@ public interface UserService {
 	void addPartner(HashMap<String, Object> map);
 
 	boolean checkNick(String id);
-
-	/* UserController 구성 */
+	
 	List<User> list(Pager pager);
 
 	User item(int num);
@@ -40,5 +39,9 @@ public interface UserService {
 	void photo(User item);
 	
 	void attachDelete(int attachId);
+	
+	int checkLogin(String id, String pw);
+
+	String saveId(String userId);
 
 }
