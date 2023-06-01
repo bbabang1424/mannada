@@ -222,7 +222,7 @@ const pager_item = [ {
 					<table class="table table-hover table_table " id="table_size" >
 						<div>
 							<div>
-								<h5>후기 카테고리</h5>
+								<h5>후기 TOP 5</h5>
 							</div>
 							
 							<div>
@@ -250,7 +250,7 @@ const pager_item = [ {
 							<tr
 								style="border: 1px solid #dddddd; padding-top: 10px; border-right: 1px solid White; border-left: 1px solid White;">
 								<!-- <td><c:forEach var="cnt" begin="1" end="5">${cnt}</c:forEach></td>  -->
-								<td style="font-weight:700; color:#de2f00;"><c:out value="${status.count}" /></td>
+								<td style="font-weight:700; color:#de2f00;"><div><c:out value="${status.count}" /></div></td>
 								<!-- <td><div class="category_color category_color_${item.category}"></div>${item.category_}</td> --> 
 								<td><a style="color: black;" href="/community/detail/${item.id}">${item.title}</a></td>
 								<td><fmt:formatDate value="${item.regDate}"
@@ -266,7 +266,7 @@ const pager_item = [ {
 					<table class="table table-hover table_table " id="table_size" >
 					<div>
 							<div>
-								<h5>소통 카테고리</h5>
+								<h5>소통 TOP 5</h5>
 							</div>
 							
 							<div>
@@ -292,7 +292,7 @@ const pager_item = [ {
 						<c:forEach var="item" items="${commuTalk}" end="4" varStatus="status">
 							<tr
 								style="border: 1px solid #dddddd; padding-top: 10px; border-right: 1px solid White; border-left: 1px solid White;">
-								<td style="font-weight:700; color:#de2f00;"><c:out value="${status.count}" /></td>
+								<td style="font-weight:700; color:#de2f00;"><div><c:out value="${status.count}" /></div></td>
 								<!-- <td><div class="category_color category_color_${item.category}"></div>${item.category_}</td>  --> 
 								<td><a style="color: black;" href="/community/detail/${item.id}">${item.title}</a></td>
 								<td><fmt:formatDate value="${item.regDate}"

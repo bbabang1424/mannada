@@ -163,7 +163,7 @@
 
 .attach_box {
 	width: 82.5%;
-	display: inline-block;
+	display: inline-table;
 }
 
 .mb-3 {
