@@ -130,13 +130,15 @@ function EtValue() {
 				<textarea id="summernote" class="answer_box" name="content"
 					placeholder="답변을 입력해주세요">${answer.content}</textarea>
 			</div>
-			<div class="answer_btn_lsit">
-				<a href="../detail/${question.id}"><button class="cancell_btn"
-						type="button">취소</button></a>
-				<button class="update_Answer_btn" type="button" onclick="EtValue()">수정</button>
-			</div>
+			
 
 		</form>
+		<div class="answer_btn_lsit">
+			<button class="update_Answer_btn" type="button" onclick="EtValue()">수정</button>
+				<a href="../detail/${question.id}"><button class="cancell_btn"
+						type="button">취소</button></a>
+			
+			</div>
 
 	</section>
 
