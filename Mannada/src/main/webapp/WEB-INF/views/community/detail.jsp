@@ -95,7 +95,7 @@
 			</c:if>
 			<a href="../list"><button class="button_back">목록</button></a>
 		</div>
-	</section>
+	
 
 
 
@@ -103,9 +103,13 @@
 
 	<div class="content">
 	<!-- 커뮤 댓글 로그인 안됐을때 권한이 권한이 없다고 보이게 하고 싶음... -->
-		<%-- <c:if test="${sessionScope. }"> 
-		권한이 없습니다.
-		 </c:if> --%>
+		 <c:if test="${sessionScope.user == null}">
+		 <div class="replyFrom">
+		 <div class="text-board">
+			<div style="margin: 2%;">권한이 없습니다. 로그인해주세요!</div>
+			</div>
+			</div>
+		 </c:if>
 		
 		<!-- 댓글 쓰기  -->
 		<c:if test="${sessionScope.user != null}">
@@ -215,6 +219,7 @@
 		</tfoot>		
 
 	</div>
+	</section>
 
 
 	<jsp:include page="../footer.jsp"></jsp:include>

@@ -45,6 +45,8 @@
 		<h3 class="page_title">커뮤니티</h3>
 		<p class="page_text">만남에 대한 후기와 소통을 자유롭게 글로 적어주세요!</p>
 	</div>
+	
+	<div class="container">
 	<section class="table_info">
 		<div class="selelct_list">
 			<div class="category">
@@ -115,8 +117,7 @@
 	<tfoot>
 		<tr>
 			<td colspan="5">
-				<ol class="pagination pagination-sm justify-content-center"
-					style="margin-bottom: 5%; margin-top: 5%;">
+				<ol class="pagination pagination-sm justify-content-center" style="margin: 5%;">
 					<li class="page_nation_item"><a href="?page=1${pager.query}"
 						class="page-link">처음</a></li>
 					<li class="page_nation_item"><a

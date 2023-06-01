@@ -18,21 +18,20 @@
 	width: 100%;
 	text-align: center;
 	max-width: 1200px;
-	margin-top: 5%;
 	padding: 0;
+	margin: 5% auto;
 }
 /*replyupdate> 위에 컨테이너 안 먹어서 class따로 줌  */
 .container_box {
 	width: 100%;
 	text-align: center;
 	max-width: 1200px;
-	margin: auto;
-	margin-top: 4%;
+	margin: 5% auto;
 }
 
 /* 각 페이지 퍼블리싱, 파란 베너 김소연 */
 .banner {
-	    max-width: 100%;
+	max-width: 100%;
 	color: white;
 	border-color: #60a8ef;
 	width: 100%;
@@ -273,7 +272,7 @@ h4 {
 	margin-top: 3%;
 	text-align: right;
 	width: 100%;
-	margin-bottom: 2%;
+	
 }
 
 .lower>button {
@@ -494,18 +493,16 @@ h4 {
 	margin: auto;
 	margin-top: 2%;
 	border-top: 2px solid blue;
-	border-bottom: 2px solid blue;
 	margin-bottom: 4%;
 }
 /* 댓글 등록 버튼 */
 .reply_up {
-	width: 189%;
-	margin-bottom: 2%;
-	margin-left: 4%;
+	margin-top: 2%;
+	text-align: right;
+	width: 100%;
 }
 
 .reply_up_btn {
-	margin-right: 0.5%;
 	background: #555555;
 	border: 1px solid #555555;
 	color: white;
@@ -514,18 +511,19 @@ h4 {
 }
 
 .text-board {
-	margin-top: 2%;
+	background: #f3f3f3;
+	border: 1px solid #f3f3f3;
 	text-align: left;
 }
 
 textarea {
 	resize: none;
-	margin: 1em;
 	display: inline-block;
 	padding: 15px;
 	border: 1px solid #ced4da;
-	width: 100%;
-	margin-left: 0%;
+	width: 96%;
+	/* margin-left: 0%; */
+	margin: 2%;
 }
 
 .reply_btn {

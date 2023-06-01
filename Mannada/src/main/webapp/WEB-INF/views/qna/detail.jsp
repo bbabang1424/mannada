@@ -120,13 +120,17 @@
 		<div style="margin: 2%;"></div>
 		
 		<!--qna 로그인 안돼어 있어도 대기중이면 대기중이라고 보였으면 좋겠음.. 어떻게 해야지 -->
-		<c:if test="${sessionScope.user != null && question.status == 0}">
+		<c:if test="${sessionScope.answer == null && question.status == 0}">
 		<div class="answer_answer" style="text-align: left;">
-		답변 대기중 입니다
+		답변 대기중 입니다.
 		</div>
 		</c:if>
 		
 		<c:if test="${question.status == 1 }">
+		<!-- <div class="a">
+		<samp>답변</samp>
+		</div> -->
+		
 			<div class="answer_answer">
 				<div class="answer_mgrId">${answer.nickname }</div>
 				<div class="answer_date">
