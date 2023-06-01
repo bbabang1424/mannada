@@ -512,9 +512,8 @@ h4 {
 }
 
 .text-board {
-	background: #eee;
-	border: 1px solid #eee;
-	/* margin-top: 2%; */
+	background: #f3f3f3;
+	border: 1px solid #f3f3f3;
 	text-align: left;
 }
 
