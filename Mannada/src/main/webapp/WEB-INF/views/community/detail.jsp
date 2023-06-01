@@ -195,8 +195,7 @@
 		<tfoot>
 			<tr>
 				<td colspan="5">
-					<ol class="pagination pagination-sm justify-content-center"
-						style="margin-bottom: 5%; margin-top: 5%;">
+					<ol class="pagination pagination-sm justify-content-center" style="margin: 5%;">
 						<li class="page_nation_item"><a href="?page=1${pager.query}"
 							class="page-link">처음</a></li>
 						<li class="page_nation_item"><a

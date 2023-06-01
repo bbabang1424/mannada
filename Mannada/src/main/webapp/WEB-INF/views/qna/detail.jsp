@@ -55,7 +55,7 @@
 					maxHeight : null, // 최대 높이
 					focus : false, // 에디터 로딩후 포커스를 맞출지 여부
 					lang : "ko-KR", // 한글 설정
-					placeholder : '답변을 입력해주세요' //placeholder 설정
+					placeholder : '답변을 입력해주세요.' //placeholder 설정
 
 				});
 
@@ -117,8 +117,14 @@
 				<div class="text_box">${question.content }</div>
 			</div>
 		</div>
-		<div style="margin: 2%;"></div>
-		
+		<div class="lower">
+		<c:if test="${sessionScope.user != null && question.status == 0}">
+				<a href="../update/${id}"><button class="button_modify">수정</button></a>
+				<a href="../delete/${id}"><button class="button_delete">삭제</button></a>
+				
+			</c:if>
+			<a href="../list"><button class="button_back">목록</button></a>
+		</div>
 		<!--qna 로그인 안돼어 있어도 대기중이면 대기중이라고 보였으면 좋겠음.. 어떻게 해야지 -->
 		<c:if test="${sessionScope.answer == null && question.status == 0}">
 		<div class="answer_answer" style="text-align: left;">
@@ -143,12 +149,11 @@
 			<!-- 페이지 나눔/답글 수정 삭제 -->
 			<c:if test="${sessionScope.manager.id != null }">
 				<div class="delete_update_btn">
-					<a href="../deleteAnswer/${question.id }"><button
-							class="delete_btn" type="button">삭제</button></a> <a
-						href="../updateAnswer/${question.id }"><button
-							class="update_btn" type="button">수정</button></a>
+				<a href="../updateAnswer/${question.id }"><button class="update_btn" type="button">수정</button></a>
+					<a href="../deleteAnswer/${question.id }"><button class="delete_btn" type="button">삭제</button></a> 
 				</div>
 			</c:if>
+		
 		</c:if>
 
 		<!-- 삭제를 눌렀을때 다시 답글을 달수 있도록 -->
@@ -161,22 +166,13 @@
 				</div>
 				<div class="answer_btn_info">
 					<button class="answer_btn" type="button" onclick="EtValue()">답변</button>
+				   
 				</div>
 			</form>
 		</c:if>
 
-		<!-- lower:하단이란 뜻 -->
-		<div class="lower">
-			<div style="border: 1px solid #eee;"></div>
-			<!--게시글 수정 삭제  -->
-			<!-- modify:수정하다란 뜻 -->
-
-			<c:if test="${sessionScope.user != null && question.status == 0}">
-				<a href="../update/${id}"><button class="button_modify">수정</button></a>
-				<a href="../delete/${id}"><button class="button_delete">삭제</button></a>
-			</c:if>
-			<a href="../list"><button class="button_list">목록</button></a>
-		</div>
+		
+		
 	</section>
 	<jsp:include page="../footer.jsp"></jsp:include>
 </body>
