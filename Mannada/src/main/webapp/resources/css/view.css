@@ -1,0 +1,200 @@
+@charset "UTF-8";
+
+#my-post, #my-reply, #my-calender{
+	display: none;
+}
+.star {
+	font-size: 2rem;
+	color: #ddd;
+}
+.checkStar {
+	display: none;
+}
+.yellowStar {
+	color: #facf32;
+}
+
+.view {
+	width: 100px;
+	height: 100px;
+}
+
+/* ------------------------ */
+
+.title {
+    border-bottom: 1px solid black;
+    font-weight: bold;
+    padding: 15px 5px;
+    color: #0359d9;
+    font-size: 25px;
+    margin: 15px 50px;
+}
+
+.user-button {
+	position: absolute;
+    top: 15px;
+    right: 40px;
+}
+
+.user-button .photo {
+	width: 80px;
+    height: 30px;
+    background-color: #0359d9;
+    color: white;    
+    border: none;
+    border-radius: 3px;
+    font-size: 0.8em;
+}
+
+.user-button .update {
+	width: 90px;
+    height: 30px;
+    background-color: #ddd;
+    color: black;    
+    border: none;
+    border-radius: 3px;
+    font-size: 0.8em;
+}
+
+.user-button .password {
+	width: 90px;
+    height: 30px;
+    background-color: #ddd;
+    color: black;    
+    border: none;
+    border-radius: 3px;
+    font-size: 0.8em;
+}
+
+.user-button .stop {
+	width: 70px;
+    height: 30px;
+    background-color: #CC0000;
+    color: white;    
+    border: none;
+    border-radius: 3px;
+    font-size: 0.8em;
+}
+
+.profile-box {	
+    color: black;
+    max-width: 1200px;
+    width: 90%;
+    height: 230px;
+    margin: 1em auto;
+    padding: 35px 30px;
+    position: relative;
+    background-color: aliceblue;
+    border-radius: 40px;
+    border: none;
+}
+
+.pro1 img {
+	width: 150px;
+    height: 150px;
+    position: absolute;
+    top: 25px;
+}
+
+.profile-img {
+	width: 125px;
+    height: 0px;
+    margin: -6px;			
+}
+
+.profile {	
+    width: 100%;
+    height: auto;
+    border-radius: 70%;
+    overflow: hidden;
+    margin: 1em 1em;
+}
+
+.user-nickname {
+	margin: 1em 13em;
+    width: 70px;
+    text-align: center;
+}
+
+.user-date {
+	margin: 10px 130px;
+    position: absolute;
+    left: 185px;
+    top: 280px;
+}
+
+.user-date > table {
+	border: none;
+}
+
+/*tab css*/
+
+.tab {
+	float:left;
+	width:100%;
+	height:290px;	
+}
+
+.tabnav {
+	font-size:0;
+	width:100%;
+	border:1px solid #ddd;
+    padding: 0;
+}
+
+.tabnav li {
+	display: inline-block; 
+	height:46px;
+	text-align:center;
+	border-right:1px solid #ddd;
+    width: 25%;
+    max-width: 300px;
+}
+
+.tabnav li a:before {
+	content:"";
+	position:absolute;
+	left:0;
+	top:0px;
+	width:100%;
+	height:3px;
+}
+
+.tabnav li a.active:before {
+	background:#0359d9;
+}
+
+.tabnav li a.active {
+	border-bottom:1px solid #fff;
+}
+
+.tabnav li a {
+	position:relative;
+	display:block;
+	background: #f8f8f8;
+	color: #000;
+	padding:0 30px;
+	line-height:46px;
+	text-decoration:none;
+	font-size:16px;
+}
+
+.tabnav li a:hover, 
+.tabnav li a.active {
+	background:#fff;
+	color:#0359d9;
+	font-weight: bold;
+}
+
+.tabcontent {
+	padding: 20px;
+	height:300px;
+	border:1px solid #ddd;
+	border-top:none;
+}
+
+.my-nav {
+    display:inline-block;
+    width: 100vw;
+    text-align: center;
+}
