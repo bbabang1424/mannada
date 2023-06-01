@@ -3,6 +3,7 @@ package kr.ac.kopo.mannada.service;
 import java.io.File;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -134,6 +135,20 @@ public class UserServiceImpl implements UserService {
 			
 			dao.photoDelete(attachId);
 		}
+	}
+
+	@Override
+	public int checkLogin(String id, String pw) {
+		Map<String, String> check = new HashMap<String, String>();
+		check.put("id", id);
+		check.put("pw", pw);
+		
+		return dao.checkLogin(check);
+	}
+
+	@Override
+	public String saveId(String userId) {
+		return dao.saveId(userId);
 	}
 
 }

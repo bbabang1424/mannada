@@ -2,6 +2,7 @@ package kr.ac.kopo.mannada.dao;
 
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import kr.ac.kopo.mannada.model.Attach;
 import kr.ac.kopo.mannada.model.Review;
@@ -47,5 +48,9 @@ public interface UserDao {
 	Attach photoItem(int attachId);
 
 	void photoDelete(int attachId);
+
+	int checkLogin(Map<String, String> check);
+
+	String saveId(String userId);
 	
 }

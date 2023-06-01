@@ -6,7 +6,19 @@
 		SELECT * FROM user
 		WHERE id=#{id} AND pw=PASSWORD(#{pw})  
 	</select>
-
+	
+	<!-- 로그인 일치여부 확인 -->
+	<select id="check_login" parameterType="Hashmap" resultType="int">
+		SELECT COUNT(*) FROM user
+		WHERE id=#{id} AND pw=PASSWORD(#{pw})
+	</select>
+	
+	<!-- 아이디 저장 -->
+	<select id="save_id" parameterType="String" resultType="String">
+		SELECT id FROM user
+		WHERE id=#{id}
+	</select>
+	
 	<insert id="signup">
 		INSERT INTO user
 		(id, pw, nickname, status, reg_date)

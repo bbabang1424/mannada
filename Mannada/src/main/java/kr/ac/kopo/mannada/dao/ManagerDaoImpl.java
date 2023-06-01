@@ -1,5 +1,7 @@
 package kr.ac.kopo.mannada.dao;
 
+import java.util.Map;
+
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -46,6 +48,18 @@ public class ManagerDaoImpl implements ManagerDao {
 	@Override
 	public int checkNick(String id) {
 		return sql.selectOne("manager.check_nick", id);
+	}
+
+
+	@Override
+	public int checkLogin(Map<String, String> check) {
+		return sql.selectOne("manager.check_login", check);
+	}
+
+
+	@Override
+	public String saveId(String mgId) {
+		return sql.selectOne("manager.save_id", mgId);
 	}
 
 }

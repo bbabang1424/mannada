@@ -54,13 +54,13 @@
 		</websocket:handshake-interceptors>
 	</websocket:handlers>
 		
-
+		
    <!-- 이메일 인증 관련 빈 등록 -->
    <bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
-      <property name="host" value="xyident124@naver.com" />
-      <property name="port" value="7070" />
-      <property name="username" value="xyident124@naver.com" />
-      <property name="password" value="asdf14428" />
+      <property name="host" value="smtp.gmail.com" />
+      <property name="port" value="465" />
+      <property name="username" value="xyident903@gmail.com" />
+      <property name="password" value="nsnyeqkjxwoicker" />
       <property name="javaMailProperties">
          <props>
                 <prop key="mail.transport.protocol">smtp</prop>
