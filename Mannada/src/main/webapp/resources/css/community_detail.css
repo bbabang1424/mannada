@@ -261,10 +261,11 @@ h4 {
 }
 
 .attach {
+	border-top: 1px solid #ccc;
+	width: 100%;
 	padding: 10px;
 	text-align: left;
-	margin-left: 1.5%;
-	margin-bottom: 0.5%;
+	margin: 10px auto;
 }
 
 .lower {
@@ -272,7 +273,6 @@ h4 {
 	margin-top: 3%;
 	text-align: right;
 	width: 100%;
-	
 }
 
 .lower>button {

@@ -248,8 +248,7 @@ div>.gauge_bar>div:first-child {
 }
 
 #more-btn:hover {
-	padding: 5px 20px;
-	border-radius: 20px;
+	
 	background: #555555;
 	border: unset;
 	color: white;
