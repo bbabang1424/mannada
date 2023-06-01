@@ -270,21 +270,19 @@ h4 {
 
 .lower {
 	display: inline-block;
-	margin-top: 3%;
+	margin-top: 2%;
 	text-align: right;
 	width: 100%;
 }
 
 .lower>button {
 	margin: 5px;
-	width: 50px;
-	height: 30px;
+	padding: 5px 20px;
 }
 
 .button_back {
+	padding: 5px 20px;
 	margin: 4px;
-	width: 50px;
-	height: 30px;
 	background-color: #ed9818;
 	color: white;
 	border-color: #ed9818;
@@ -293,9 +291,8 @@ h4 {
 }
 
 .button_modify {
+	padding: 5px 20px;
 	margin: 5px;
-	width: 50px;
-	height: 30px;
 	background-color: #fff;
 	color: #000;
 	border-color: #000;
@@ -310,9 +307,8 @@ h4 {
 }
 
 .button_delete {
+	padding: 5px 20px;
 	margin: 5px;
-	width: 50px;
-	height: 30px;
 	text-align: center;
 	background-color: white;
 	border-color: #000;
@@ -487,13 +483,13 @@ h4 {
 
 /* 댓글 입력 */
 .replyFrom {
-	text-align: center;
-	width: 100%;
-	max-width: 1200px;
-	margin: auto;
-	margin-top: 2%;
-	border-top: 2px solid blue;
-	margin-bottom: 4%;
+	    text-align: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    margin-top: 3%;
+    border-top: 2px solid blue;
+    margin-bottom: 4%;
 }
 /* 댓글 등록 버튼 */
 .reply_up {
@@ -506,8 +502,7 @@ h4 {
 	background: #555555;
 	border: 1px solid #555555;
 	color: white;
-	width: 50px;
-	height: 30px;
+	padding: 5px 20px;
 }
 
 .text-board {
@@ -535,13 +530,13 @@ textarea {
 .reply-update-btn {
 	margin-bottom: 1%;
 	color: black;
-	width: 50px;
+	padding:5px 20px;
 	margin-top: 1%;
 	margin-right: 1%;
-	height: 30px;
+	
 	background: white;
 	border: 1px solid black;
-	width: 50px;
+
 }
 
 .reply-update-btn:hover {
@@ -554,8 +549,7 @@ textarea {
 	margin-right: 1%;
 	color: black;
 	display: inline-block;
-	width: 50px;
-	height: 30px;
+	padding:5px 20px;
 	background: white;
 	border: 1px solid black;
 	display: inline-block;
@@ -597,24 +591,22 @@ textarea {
 }
 
 .reply_btn_lsit {
-	height: 47px;
+	
 	text-align: right;
 }
 
 .replyupdate_btn {
 	margin-right: 1%;
-	width: 50px;
-	height: 30px;
+	padding:5px 20px;
 	border: 1px solid #0080ff;
 	color: white;
 	background-color: #0080ff;
 }
 
 .back_btn {
-	margin-bottom: 2%;
+	margin-bottom: 25px;
 	margin-right: 27px;
-	width: 50px;
-	height: 30px;
+	padding:5px 20px;
 	border: 1px solid #ff0000;
 	color: white;
 	background-color: #ff0000;

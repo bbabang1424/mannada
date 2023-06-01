@@ -119,7 +119,6 @@ public class CommunityController {
 
 	@PostMapping("replyUpdate/{id}")
 	public String replyUpdate(@PathVariable int id, Reply item, @SessionAttribute User user) {
-		item.setCommuId(id);
 		
 		service.updateReply(item);
 
