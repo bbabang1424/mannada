@@ -119,13 +119,17 @@
 							<button type="button" id="add" class="btn btn-sm btn-primary mt-2 mb-2 add_info" >추가</button>
 							
 							<div class="attach_box" >
-								<ul id="files">
+								<div id="files">
 									<c:forEach var="attach" items="${item.attachs }">
-										<li  class="mb-2 "><a href="/upload/${attach.uuid }_${attach.filename}">${attach.filename}</a>
-											<button type="button" class="btn btn-sm btn-danger delete"
+									<ul>
+										<li><a href="/upload/${attach.uuid }_${attach.filename}">${attach.filename}</a><button style="margin-left: 1%;" type="button" class="btn btn-sm btn-danger delete"
 												data-id="${attach.id}">삭제</button></li>
+										
+										
+										</ul>
+											
 									</c:forEach>
-								</ul>
+								</div>
 							</div>
 						</td>
 					</tr>

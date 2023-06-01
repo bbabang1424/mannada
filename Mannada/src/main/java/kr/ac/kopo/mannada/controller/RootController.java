@@ -13,8 +13,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
-
 import kr.ac.kopo.mannada.model.Address;
 import kr.ac.kopo.mannada.model.Community;
 import kr.ac.kopo.mannada.model.Manager;
@@ -69,7 +67,7 @@ public class RootController {
 
 	/* 로그인 */
 	@GetMapping("/login")
-	public String login() {
+	public String login(HttpSession session, Model model) {
 		return "login";
 	}
 	@PostMapping("/userLogin")
@@ -106,9 +104,11 @@ public class RootController {
 		} else
 			return "redirect:login";
 	}
+	
 	/* 로그아웃 */
 	@RequestMapping("/logout")
 	public String logout(HttpSession session) {
+		session.removeAttribute("loginOk"); //로그인 상태 세션 제거
 		session.invalidate(); // 세션 데이터 삭제
 
 		return "redirect:.";

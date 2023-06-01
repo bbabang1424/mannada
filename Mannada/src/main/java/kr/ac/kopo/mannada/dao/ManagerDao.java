@@ -14,6 +14,6 @@ public interface ManagerDao {
 
 	void password(Manager item);
 
-	int checkNick(String id); 
+	int checkNick(String id);
 
 }

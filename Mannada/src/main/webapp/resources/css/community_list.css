@@ -7,8 +7,9 @@
 }
 
 .container {
-	max-width: 1220px;
-	margin: 10%;
+	max-width: 1200px;
+	width: 100%;
+	margin: 5% auto;
 }
 /* 각 페이지 퍼블리싱, 파란 베너 김소연 */
 .banner {
@@ -22,6 +23,19 @@
 	background-repeat: no-repeat;
 	background-size: 280px 235px;
 	background-position: 78% 26%;
+}
+
+toboy>tr>td {
+	padding: 20px;
+}
+
+.table_box {
+	border: 1px solid #dddddd;
+	border-right: 1px solid White;
+	border-left: 1px solid White;
+}
+tbody> .table_box> td{
+	padding: 18px;
 }
 
 .banner_text {

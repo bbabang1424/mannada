@@ -49,7 +49,7 @@
 
 .content {
 	max-width: 1200px;
-	margin: 0 auto;
+	margin: 5% auto;
 }
 
 .box {
@@ -60,7 +60,6 @@
 	margin: 10px;
 	display: inline-block;
 	position: relative;
-	margin-top: 7%;
 	margin-bottom: 3%;
 }
 
@@ -327,13 +326,12 @@ progress::-webkit-progress-value {
 
 .button_modify {
 	margin: 5px;
-	width: 50px;
-	height: 30px;
-	background-color: #fff;
+	padding: 5px 20px; background-color : #fff;
 	color: #000;
 	border-color: #000;
 	border: 1px solid;
 	text-align: center;
+	background-color: #fff;
 }
 
 .button_modify:hover {
@@ -344,8 +342,7 @@ progress::-webkit-progress-value {
 
 .button_delete {
 	margin: 5px;
-	width: 50px;
-	height: 30px;
+	padding: 5px 20px;
 	text-align: center;
 	background-color: white;
 	border-color: #000;
@@ -360,8 +357,7 @@ progress::-webkit-progress-value {
 }
 
 .button_back {
-	width: 50px;
-	height: 30px;
+	padding: 5px 20px;
 	background: #ed9818;
 	border: 1px solid #ed9818;
 	color: white;
@@ -370,9 +366,7 @@ progress::-webkit-progress-value {
 
 .button_chatting {
 	margin: 5px;
-	width: 50px;
-	height: 30px;
-	padding-bottom: 1%;
+	padding: 5px 20px;
 	background: #0359d9;
 	border: 1px solid #0359d9;
 	color: white;
@@ -382,5 +376,4 @@ progress::-webkit-progress-value {
 	display: inline-block;
 	text-align: right;
 	width: 94%;
-	margin-bottom: 5%;
 }

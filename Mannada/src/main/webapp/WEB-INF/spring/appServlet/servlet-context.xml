@@ -40,5 +40,6 @@
 	
 	<!-- 
 	<context:property-placeholder location="classpath:/db-config/email.properties" />
- -->
+	 -->
+	
 </beans:beans>

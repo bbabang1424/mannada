@@ -47,5 +47,5 @@ public class ManagerDaoImpl implements ManagerDao {
 	public int checkNick(String id) {
 		return sql.selectOne("manager.check_nick", id);
 	}
-
+	
 }

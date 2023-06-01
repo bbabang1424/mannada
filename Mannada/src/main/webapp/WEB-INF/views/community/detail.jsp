@@ -95,7 +95,7 @@
 			</c:if>
 			<a href="../list"><button class="button_back">목록</button></a>
 		</div>
-	</section>
+	
 
 
 
@@ -219,6 +219,7 @@
 		</tfoot>		
 
 	</div>
+	</section>
 
 
 	<jsp:include page="../footer.jsp"></jsp:include>
