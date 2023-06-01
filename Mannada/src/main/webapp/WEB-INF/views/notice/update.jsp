@@ -114,7 +114,7 @@
 					</tr>
 					
 					<tr>
-						<th id="interval">첨부파일</th>
+						<td id="interval">첨부파일</th>
 						<td class="attach" id="attachs">
 							<button type="button" id="add" class="btn btn-sm btn-primary mt-2 mb-2 add_info" >추가</button>
 							
