@@ -53,7 +53,7 @@
 				<form>
 					<select name="search" class="form-select form-select-sm">
 						<option value="1">제목</option>
-						<option value="2">닉네임</option>
+						<option value="2">작성자</option>
 						<option value="3">내용</option>
 					</select> 
 					
