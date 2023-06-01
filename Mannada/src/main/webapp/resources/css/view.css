@@ -3,21 +3,13 @@
 #my-post, #my-reply, #my-calender{
 	display: none;
 }
-.star {
-	font-size: 2rem;
-	color: #ddd;
-}
-.checkStar {
-	display: none;
-}
-.yellowStar {
-	color: #facf32;
-}
 
-.view {
+
+
+/* .view {
 	width: 100px;
 	height: 100px;
-}
+} */
 
 /* ------------------------ */
 
@@ -96,12 +88,6 @@
     top: 25px;
 }
 
-.profile-img {
-	width: 125px;
-    height: 0px;
-    margin: -6px;			
-}
-
 .profile {	
     width: 100%;
     height: auto;
@@ -112,15 +98,21 @@
 
 .user-nickname {
 	margin: 1em 13em;
-    width: 70px;
+    width: 75px;
     text-align: center;
+    position: relative;
+    top: 23px;
 }
 
 .user-date {
 	margin: 10px 130px;
     position: absolute;
-    left: 185px;
-    top: 280px;
+    left: 110px;
+    top: 120px;
+    border: 3px solid #ddd;
+    background-color: white;
+	border-radius: 10px;
+	padding: 5px;
 }
 
 .user-date > table {
@@ -188,7 +180,7 @@
 
 .tabcontent {
 	padding: 20px;
-	height:300px;
+	height:370px;
 	border:1px solid #ddd;
 	border-top:none;
 }
@@ -198,3 +190,75 @@
     width: 100vw;
     text-align: center;
 }
+
+.review-title {
+	position: relative;
+    left: -30%;	
+}
+
+.text1 {
+	font-weight: bold;
+	font-size: 25px;
+	position: relative;
+	right: 37px;
+}
+
+.star {
+	font-size: 2rem;
+	color: #ddd;
+	padding: 5px;
+    position: relative;
+    left: -54px;
+}
+
+.checkStar {
+	display: none;
+}
+
+.yellowStar {
+	color: #facf32;
+}
+
+.review_textarea {
+	resize: vertical;
+    width: 430px;
+    height: 150px;
+    position: relative;
+    left: 95px;
+}
+
+.text-note > button {
+	width: 80px;
+    height: 30px;
+    background-color: #0359d9;
+    color: white;    
+    border: none;
+    border-radius: 3px;
+    font-size: 0.8em;
+    position: relative;
+    top: 30px;
+    left: 12px;
+}
+
+.review-date {
+	position: relative;
+    left: 50%;
+    top: -275px;     
+}
+
+.review-date th {
+	color: darkblue;
+	background-color: aliceblue;
+}
+
+.review-date th, .review-date td {
+	border: 2px solid darkblue;	
+	padding: 3px;
+	border-left: none;
+	
+}
+
+.review-date th:first-child, .bluetop td:first-child {
+  border-left: none;
+}
+
