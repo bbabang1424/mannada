@@ -16,10 +16,10 @@
 } */
 .container {
 	width: 100%;
-	text-align: center;
-	max-width: 1200px;
-	margin-top: 5%;
-	padding: 0;
+    text-align: center;
+    max-width: 1200px;
+    padding: 0;
+    margin: 5% auto;
 }
 /*replyupdate> 위에 컨테이너 안 먹어서 class따로 줌  */
 .container_box {
