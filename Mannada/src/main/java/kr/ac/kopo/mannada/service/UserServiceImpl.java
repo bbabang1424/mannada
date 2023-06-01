@@ -137,18 +137,4 @@ public class UserServiceImpl implements UserService {
 		}
 	}
 
-	@Override
-	public int checkLogin(String id, String pw) {
-		Map<String, String> check = new HashMap<String, String>();
-		check.put("id", id);
-		check.put("pw", pw);
-		
-		return dao.checkLogin(check);
-	}
-
-	@Override
-	public String saveId(String userId) {
-		return dao.saveId(userId);
-	}
-
 }

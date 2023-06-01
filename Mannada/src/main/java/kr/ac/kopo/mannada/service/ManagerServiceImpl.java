@@ -1,8 +1,5 @@
 package kr.ac.kopo.mannada.service;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -58,20 +55,6 @@ public class ManagerServiceImpl implements ManagerService {
 			return true;
 		else
 			return false;
-	}
-
-	@Override
-	public int checkLogin(String id, String pw) {
-		Map<String, String> check = new HashMap<String, String>();
-		check.put("id", id);
-		check.put("pw", pw);
-		
-		return dao.checkLogin(check);
-	}
-
-	@Override
-	public String saveId(String mgId) {
-		return dao.saveId(mgId);
 	}
 
 }

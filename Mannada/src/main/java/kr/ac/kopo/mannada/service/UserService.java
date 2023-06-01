@@ -39,9 +39,5 @@ public interface UserService {
 	void photo(User item);
 	
 	void attachDelete(int attachId);
-	
-	int checkLogin(String id, String pw);
-
-	String saveId(String userId);
 
 }

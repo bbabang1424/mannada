@@ -15,9 +15,5 @@ public interface ManagerService {
 	void password(Manager item);
 
 	boolean checkNick(String id);
-
-	int checkLogin(String id, String pw);
-
-	String saveId(String mgId);
 }
  
