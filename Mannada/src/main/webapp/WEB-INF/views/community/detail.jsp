@@ -102,11 +102,15 @@
 	<!-- 댓글 영역 -->
 
 	<div class="content">
-	<!-- 커뮤 댓글 로그인 안됐을때 권한이 권한이 없다고 보이게 하고 싶음... -->
-		<%-- <c:if test="${sessionScope. }"> 
-		권한이 없습니다.
-		 </c:if> --%>
-		
+		<!-- 커뮤 댓글 로그인 안됐을때 권한이 권한이 없다고 보이게 하고 싶음... -->
+		<c:if test="${sessionScope.user == null}">
+			<div class="replyFrom">
+				<div >
+					<div>권한이 없습니다.</div>
+				</div>
+			</div>
+		</c:if>
+
 		<!-- 댓글 쓰기  -->
 		<c:if test="${sessionScope.user != null}">
 			<!-- 댓글 입력 -->
