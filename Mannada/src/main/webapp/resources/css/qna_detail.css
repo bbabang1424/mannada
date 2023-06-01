@@ -207,6 +207,7 @@ hr {
 	border-top: 2px solid blue;
 	margin: auto;
 	margin-bottom: 1%;
+	margin-top: 1%;
 }
 
 .answer_mgrId {
@@ -329,8 +330,7 @@ hr {
 
 .button_list {
 	margin-top: 2%;
-	width: 50px;
-	height: 30px;
+	padding: 5px 20px;
 	background-color: #ed9818;;
 	color: white;
 	border-color: #ed9818;
@@ -344,13 +344,13 @@ hr {
 
 .button_modify {
 	margin: 5px;
-	width: 50px;
-	height: 30px;
+	padding: 5px 20px; 
 	background-color: #fff;
 	color: #000;
 	border-color: #000;
 	border: 1px solid;
 	text-align: center;
+	background-color: #fff;
 }
 
 .button_modify:hover {
@@ -361,8 +361,7 @@ hr {
 
 .button_delete {
 	margin: 5px;
-	width: 50px;
-	height: 30px;
+	padding: 5px 20px;
 	text-align: center;
 	background-color: white;
 	border-color: #000;

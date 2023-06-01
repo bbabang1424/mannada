@@ -84,18 +84,18 @@
 							id="model_member_num">
 							<!-- 참여버튼을 누른 사람의 아이디를 가져와야함-->
 							<c:forEach var="member" items="${list}">
-								<div>${member.nickname }</div>
+								<div class="${member.num } item">${member.nickname }</div>
 							</c:forEach>
 						</div>
 					</div>
 					<!-- Partic: 참여란 뜻으로 참여버튼 -->
 					<!-- 참여버튼 눌렀을때 인원 표시되게 해야 함-->
 					<div class="model_Partic">
-						<c:if test="${status == 0 }">
+						<c:if test="${status == 0 && sessionScope.user.num != item.num }">
 							<a href="../addJoin/${item.id }"><button type="button"
 									id="join_btn">참여</button></a>
 						</c:if>
-						<c:if test="${status == 1 }">
+						<c:if test="${status == 1 && sessionScope.user.num != item.num }}">
 							<a href="../deleteJoin/${item.id }"><button type="button"
 									id="join_btn">참여 취소</button></a>
 						</c:if>
@@ -132,38 +132,63 @@
 	<jsp:include page="../footer.jsp"></jsp:include>
 </body>
 
-<!-- <script type="text/javascript">
-	//참여 버튼
-	document.querySelector("#join_btn").addEventListener("click", e => {
+<script type="text/javascript">
+const mannaId = '${ item.id }';
+
+// 참여 버튼
+document.querySelector("#join_btn").addEventListener("click", e => {
+
+    fetch("/addJoin/" + mannaId, {
+        method: "POST",
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify()
+    }).then(resp => {
+        if (resp.status == 200)
+            return resp.json();
+    }).then(result => {
+        document.querySelector("#join_btn").textContent = "참여 취소";
+        document.querySelector("#join_btn").classList.add('cancle');
+        
+        document.querySelector(".model_personnel").textContent = '참여현황: ${sum}/${item.member}'
+        document.querySelector("#model_progress").value = '${sum}'
+        
+        makeMember(memberList);
+    });
+
+});
+
+
+// 참여 취소 버튼
+document.querySelector("#join_btn.cancle").addEventListener("click", e => {
+
+    fetch("/deleteJoin/" + mannaId, {
+        method: "DELETE",
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify()
+    }).then(resp => {
+        if (resp.status == 200)
+            return resp.json();
+    }).then(result => {
+        document.querySelector("#join_btn").textContent = "참여";
+        document.querySelector("#join_btn").classList.remove('cancle');
+
+        document.querySelector(".model_personnel").textContent = '참여현황: ${sum}/${item.member}'
+        document.querySelector("#model_progress").value = '${sum}'
+        
+        makeMember(memberList);
+    });
+
+});
+
+function makeMember(list){
+	const body = document.querySelector("model_member_num")
 	
-	    fetch("../../addJoin/" + ${item.id}, {
-	        method: "POST",
-	        headers: { 'Content-Type': 'application/json' },
-	        body: JSON.stringify()
-	    }).then(resp => {
-	        if (resp.status == 200)
-	            return resp.json();
-	    }).then(result => {
-	        document.querySelector("#join_btn").textContent = "참여 취소";
-	    });
-	
-	});
+	body.querySelectorAll(".item").forEach(element => {
+        element.remove();
+    });
 	
 	
-	// 참여 취소 버튼
-	document.querySelector("#join_btn.cancle").addEventListener("click", e => {
 	
-	    fetch("../../deleteJoin/" + ${item.id}, {
-	        method: "DELETE",
-	        headers: { 'Content-Type': 'application/json' },
-	        body: JSON.stringify()
-	    }).then(resp => {
-	        if (resp.status == 200)
-	            return resp.json();
-	    }).then(result => {
-	        document.querySelector("#join_btn").textContent = "참여";
-	    });
-	
-	});
-</script> -->
+}
+</script>
 </html>
