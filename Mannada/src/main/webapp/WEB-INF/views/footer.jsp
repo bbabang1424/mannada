@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <style>
-.footer { width: 100%; background-color:#4d4d4d; color:#fff; padding: 50px 0 100px; font-size: 10pt;  }
+.footer { width: 100%; background-color:#4d4d4d; color:#fff; padding: 50px 0 100px; font-size: 10pt; z-index:5; position: relative; }
 .footer a { color: #fff; }
 .footer-flex { display: flex; }
 
@@ -32,7 +32,7 @@
 	<div class="footer">
 		<div class="max-width footer-flex">
 			<div>
-				<div id="logo-footer">
+				<div id="logo-footer"> 
 					<img src="/resources/image/logo.png">
 				</div>
 			</div>
