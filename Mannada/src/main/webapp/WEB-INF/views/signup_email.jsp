@@ -46,7 +46,8 @@
 				<div id="emailError" class="error"></div>
 				<input id="email_auth_key" type="text" style="width: 70%;" placeholder="인증번호 6자리를 입력해주세요!" disabled="disabled" maxlength="6">
 				<button type="button" class="id_overlap_button" id="mail-check-btn" style="float:right;">본인인증</button>
-			</div>				
+				<span id="mail-check-warn"></span>			
+			</div>
 			
 			<div class="password-title">비밀번호</div>
 			<div class="password"> 
@@ -102,7 +103,7 @@ $('#mail-check-btn').click(function() {
 	
 	$.ajax({
 		type : 'get',
-		url : '/mailCheck?email="/>'+eamil, // GET방식이라 Url 뒤에 email을 뭍힐수있다.
+		url : '/mailCheck?email='+eamil, // GET방식이라 Url 뒤에 email을 뭍힐수있다.
 		success : function (data) {
 			console.log("data : " +  data);
 			checkInput.attr('disabled',false);
@@ -116,13 +117,16 @@ $('#mail-check-btn').click(function() {
 // blur -> focus가 벗어나는 경우 발생
 $('#email_auth_key').blur(function () {
 	const inputCode = $(this).val();
-	//const $resultMsg = $('#mail-check-warn');
+	const $resultMsg = $('#mail-check-warn');
 	
 	if(inputCode === code){
 		$resultMsg.html('인증번호가 일치합니다.');
 		$resultMsg.css('color','green');
-		$('#mail-check-btn').attr('disabled',true);
-		$('#mail').attr('readonly',true);
+		$('#mail-Check-Btn').attr('disabled',true);
+		$('#userEamil1').attr('readonly',true);
+		$('#userEamil2').attr('readonly',true);
+		$('#userEmail2').attr('onFocus', 'this.initialSelect = this.selectedIndex');
+        $('#userEmail2').attr('onChange', 'this.selectedIndex = this.initialSelect');
 	}else{
 		$resultMsg.html('인증번호가 불일치 합니다. 다시 확인해주세요!.');
 		$resultMsg.css('color','red');
