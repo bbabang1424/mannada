@@ -122,9 +122,7 @@ function mgValue() {
 					<button class="login-button" type="button" onclick="userValue()">로그인</button>
 					
 					<!--  csrf 공격 방어를 위해 동적 생성 -->
-    				<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token }" />
-<<<<<<< HEAD
-=======
+    				<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
 	            </form>
 	        </div>
 	
@@ -168,7 +166,6 @@ function mgValue() {
 	                </div>
 	                
 					<button class="login-button" type="button" onclick="mgValue()">로그인</button>
->>>>>>> branch 'master' of https://github.com/xyident/mannada.git
 				</form>
 			</div>
 	        
