@@ -91,15 +91,14 @@
 						<th>조회수</th>
 					</tr>
 				</thead>
-				<tbody >
+				<tbody>
 					<c:if test="${list.size() < 1}">
 						<tr>
 							<td colspan="5">등록된 글이 없습니다.</td>
 						</tr>
 					</c:if>
 					<c:forEach var="item" items="${list}">
-						<tr
-							style="border: 1px solid #dddddd; padding-top: 10px; border-right: 1px solid White; border-left: 1px solid White;">
+						<tr class="table_box">
 							<td>${item.rnum}</td>
 							 <td><div class="category_color category_color_${item.category}"></div>${item.category_}</td> 
 							<td><a style="color: black;" href="detail/${item.id}">${item.title}</a></td>

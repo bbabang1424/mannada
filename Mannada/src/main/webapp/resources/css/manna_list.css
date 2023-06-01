@@ -9,11 +9,11 @@
 }
 
 .container {
-	    position: relative;
-    max-width: 1200px;
-    padding: 0;
-    width: 100%;
-    margin: 5% auto;
+	position: relative;
+	max-width: 1200px;
+	padding: 0;
+	width: 100%;
+	margin: 5% auto;
 }
 
 /* 각 페이지 퍼블리싱, 파란 베너 김소연 */
@@ -237,11 +237,10 @@ div>.gauge_bar>div:first-child {
 .more {
 	text-align: center;
 	margin-bottom: 5%;
-	margin-top: 3%;
 }
 
 #more-btn {
-	padding: 5px 20px;
+	padding: 10px 30px;
 	border-radius: 20px;
 	background: white;
 	border: 1px solid black;
