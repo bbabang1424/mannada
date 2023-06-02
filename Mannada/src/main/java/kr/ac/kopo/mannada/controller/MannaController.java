@@ -98,7 +98,7 @@ public class MannaController {
 		item.setId(id);
 		service.update(item);
 		
-		return "redirect:../list";
+		return "redirect:../detail/" + id;
 	}
 	
 	@GetMapping("/delete/{id}")

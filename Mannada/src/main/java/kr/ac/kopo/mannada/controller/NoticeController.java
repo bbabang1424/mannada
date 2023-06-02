@@ -89,7 +89,7 @@ public class NoticeController {
 			model.addAttribute("item", item);
 			return path + "update";
 		} else		
-			return "redirect:../list";
+			return "redirect:../detail/" + id;
 	}
 	
 	@PostMapping("/update/{id}")
@@ -122,7 +122,7 @@ public class NoticeController {
 			// TODO: handle exception
 		}
 		
-		return "redirect:../list";
+		return "redirect:../detail/" + id;
 	}
 	
 	@GetMapping("/delete/{id}")
