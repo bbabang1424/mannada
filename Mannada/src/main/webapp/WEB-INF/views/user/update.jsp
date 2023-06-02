@@ -14,49 +14,63 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 
 <title>만나다</title>
+<link rel="stylesheet" href="/resources/css/update.css">
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script src="/resources/js/user_update.js"></script> 
 
-<style>
-.imgBox img {
-	width:300px; 
-	height:300px;
-}
-</style>
 </head>
 <jsp:include page="../header.jsp"></jsp:include>
 <body>
-	<div class="Container">
-		<div>
+<div class="background-image"></div>
+
+	<div class="container-box">
+		<div class="title">
 			<h3>회원정보변경</h3>
 		</div>
 		<div>
 			<form name="updateInfo_from" method="post">
-				<div>
+				<div class="email">
 					<label>이메일</label>
-					<input type="text" name="id" value="${user.id}" readonly>
+					
+					<div>
+						<input type="text" name="id" value="${user.id}" readonly="readonly">	
+					</div>					
 				</div>
-				<div>
+				
+				<div class="nickname">
 					<label>닉네임</label>
-					<input type="text" name="nickname" id="nick" value="${user.nickname}" placeholder="${user.nickname}">	
-					<button type="button" id="checkNick">닉네임 중복확인</button>
+					
+					<div>
+						<input type="text" name="nickname" id="nick" value="${user.nickname}" placeholder="${user.nickname}">
+					</div>				
+										
+										
+					<button type="button" id="checkNick">중복확인</button>
 					<div id="nicknameError" class="error"></div> 
 				</div>
 				
-				<div>
+				<div class="password">
 					<label>현재비밀번호</label>
-					<input type="password" name="pw" id="pw">
+					
+					<div>
+						<input type="password" name="pw" id="pw">
+					</div>
+					
 					<button type="button" id="checkPW">확인</button>
 				</div>
 				
-				<div>
+				<div class="intro">
 					<label>소개</label>
-					<textarea name="intro">${user.intro}</textarea>
+					
+					<div>
+						<textarea name="intro">${user.intro}</textarea>
+					</div>
+					
 				</div>
 				
-				<div>
+				<div class="btn-box">					
+					<button type="button" id="goBack" class="goback">이전으로</button>
 					<button type="button" id="updateInfo">등록</button>
-					<button type="button" id="goBack">이전으로</button>
 				</div>
 			</form>
 		</div>

@@ -41,7 +41,7 @@
 	        </div>
 			<div class="email-title">이메일</div>
 			<div class="email">
-				<input name="id" id="email" type="email" placeholder="이메일">
+				<input name="id" id="email" type="email" placeholder="이메일">	
 				<button type="button" class="id_overlap_button" id="checkId" style="float:right;">중복확인</button>																											
 				<div id="emailError" class="error"></div>
 				<input id="email_auth_key" type="text" style="width: 70%;" placeholder="인증번호 6자리를 입력해주세요!" disabled="disabled" maxlength="6">
