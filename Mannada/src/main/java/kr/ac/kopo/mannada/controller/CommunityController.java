@@ -103,7 +103,7 @@ public class CommunityController {
 
 	
 	@GetMapping("replyUpdate/{id}")
-	public String replyUpdate(@PathVariable int id, Model model) {
+	public String replyUpdate(@PathVariable int id, Model model, Community commu) {
 
 		Reply reply = service.replyItem(id);
 		model.addAttribute("reply", reply);
@@ -119,7 +119,6 @@ public class CommunityController {
 
 	@PostMapping("replyUpdate/{id}")
 	public String replyUpdate(@PathVariable int id, Reply item, @SessionAttribute User user) {
-		
 		service.updateReply(item);
 
 		return "redirect:../detail/" + id;
