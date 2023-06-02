@@ -64,7 +64,7 @@ public class CommunityController {
 		
 		service.update(item);
 		
-		return "redirect:../list";
+		return "redirect:../detail/" + id;
 	}
 	
 	@GetMapping("/delete/{id}")
@@ -122,7 +122,7 @@ public class CommunityController {
 		
 		service.updateReply(item);
 
-		return "redirect:../detail/" + item.getCommuId();
+		return "redirect:../detail/" + id;
 
 	}
 	
