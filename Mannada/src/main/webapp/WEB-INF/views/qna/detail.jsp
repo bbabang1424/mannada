@@ -118,7 +118,7 @@
 			</div>
 		</div>
 		<div class="lower">
-		<c:if test="${sessionScope.user != null && question.status == 0}">
+		<c:if test="${sessionScope.user.num == question.num && question.status == 0}">
 				<a href="../update/${id}"><button class="button_modify">수정</button></a>
 				<a href="../delete/${id}"><button class="button_delete">삭제</button></a>
 		</c:if>

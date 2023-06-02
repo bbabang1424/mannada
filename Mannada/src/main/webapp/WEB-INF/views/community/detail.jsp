@@ -21,7 +21,7 @@
       const form = document.write_post;
 
       if (form.content.value.trim() == '') {
-         swal('', '수정할 내용을 입력해주세요.', 'error')
+         swal('', '내용을 입력해주세요.', 'error')
          form.content.focus();
          return;
       }
@@ -89,7 +89,7 @@
 		<div class="lower">
 			
 			<!-- modify:수정하다란 뜻 -->
-			<c:if test="${sessionScope.user.num == item.num }">
+			<c:if test="${sessionScope.user.num == item.num}">
 				<a href="../update/${id}"><button class="button_modify">수정</button></a>
 				<a href="../delete/${id}"><button class="button_delete">삭제</button></a>
 			</c:if>
@@ -117,7 +117,7 @@
 			<div class="replyFrom">
 				<form action="../replyAdd" method="post" name="write_post">
 					<div class="text-board">
-						<textarea name="content" placeholder="로그인 후 코멘트를 달아주세요!"></textarea>
+						<textarea name="content" placeholder="코멘트를 달아주세요!"></textarea>
 						<input type="hidden" name="commuId" value="${item.id }">
 					</div>
 					<div class="reply_up">
@@ -135,7 +135,6 @@
 			<div class="list_btn">
 				<div style="margin-top: 1%;"></div>
 			</div>
-
 			<c:forEach var="reply" items="${reply }">
 				<li>
 					<div>
