@@ -64,7 +64,7 @@ public class CommunityController {
 		
 		service.update(item);
 		
-		return "redirect:../detail/" + id;
+		return "redirect:../list";
 	}
 	
 	@GetMapping("/delete/{id}")
@@ -102,8 +102,8 @@ public class CommunityController {
 	}
 
 	
-	@GetMapping("replyUpdate/{id}")
-	public String replyUpdate(@PathVariable int id, Model model, Community commu) {
+	@GetMapping("/replyUpdate/{id}")
+	public String replyUpdate(@PathVariable int id, Model model) {
 
 		Reply reply = service.replyItem(id);
 		model.addAttribute("reply", reply);
@@ -117,11 +117,12 @@ public class CommunityController {
 	}
 	
 
-	@PostMapping("replyUpdate/{id}")
-	public String replyUpdate(@PathVariable int id, Reply item, @SessionAttribute User user) {
+	@PostMapping("/replyUpdate/{id}")
+	public String replyUpdate(@PathVariable int id, @RequestParam(value = "id") int commuId, Reply item, @SessionAttribute User user) throws Exception {
+		
 		service.updateReply(item);
 
-		return "redirect:../detail/" + id;
+		return "redirect:../detail/" + commuId;
 
 	}
 	
