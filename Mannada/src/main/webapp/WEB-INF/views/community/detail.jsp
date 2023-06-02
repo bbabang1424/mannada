@@ -89,7 +89,7 @@
 		<div class="lower">
 			
 			<!-- modify:수정하다란 뜻 -->
-			<c:if test="${sessionScope.user.num == item.num }">
+			<c:if test="${sessionScope.user.num == item.num}">
 				<a href="../update/${id}"><button class="button_modify">수정</button></a>
 				<a href="../delete/${id}"><button class="button_delete">삭제</button></a>
 			</c:if>
