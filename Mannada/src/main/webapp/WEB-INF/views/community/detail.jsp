@@ -186,35 +186,8 @@
 					</div>
 				</li>
 			</c:forEach>
-
-
 			<div style="border-top: 1px solid #ccc; margin-top: 1%;"></div>
 		</div>	
-		<!-- 페이지네이션 형태만 잡음-->
-		<tfoot>
-			<tr>
-				<td colspan="5">
-					<ol class="pagination pagination-sm justify-content-center" style="margin: 5%;">
-						<li class="page_nation_item"><a href="?page=1${pager.query}"
-							class="page-link">처음</a></li>
-						<li class="page_nation_item"><a
-							href="?page=${pager.prev}${pager.query}" class="page-link">이전</a></li>
-
-						<c:forEach var="page" items="${pager.list}">
-							<li class="page_nation_item"><a
-								href="?page=${page}${pager.query}"
-								class="page-link ${page eq pager.page ? 'active' : ''}">${page}</a></li>
-						</c:forEach>
-
-						<li class="page_nation_item"><a
-							href="?page=${pager.next}${pager.query}" class="page-link">다음</a></li>
-						<li class="page_nation_item"><a
-							href="?page=${pager.last}${pager.query}" class="page-link">마지막</a></li>
-					</ol>
-				</td>
-			</tr>
-
-		</tfoot>		
 
 	</div>
 	</section>
