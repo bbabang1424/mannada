@@ -119,7 +119,7 @@ public class CommunityController {
 
 	@PostMapping("/replyUpdate/{id}")
 	public String replyUpdate(@PathVariable int id, @RequestParam(value = "id") int commuId, Reply item, @SessionAttribute User user) throws Exception {
-		
+		item.setId(id);
 		service.updateReply(item);
 
 		return "redirect:../detail/" + commuId;
