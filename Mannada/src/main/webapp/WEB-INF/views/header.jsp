@@ -11,7 +11,9 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 <link href="/resources/css/header.css" rel="stylesheet"> 
- 
+<style>
+	.deco-none, .deco-none a { text-decoration:none; }
+</style>
 <script> 
 $(function() {
 	  $('#check_box').on('click', function() {
@@ -57,7 +59,7 @@ $(function() {
 				<a href="/"><img src="/resources/image/logo.png"></a>
 			</div>
 
-			<div class="flex-end">
+			<div class="flex-end deco-none">
 				<div class="menu">
 					<ul>
 						<li><a href="/manna/list">만나다</a></li>
@@ -101,7 +103,7 @@ $(function() {
 	</div>
 	
 	<div class="header-nav">
-		<div class="max-width header-inner">
+		<div class="max-width header-inner deco-none">
 			<div class="header-line">
 				<ul>
 					<h5><a href="/manna/list">만나다</a></h5>
@@ -145,6 +147,6 @@ $(function() {
 	
 
 	<c:if test="${sessionScope.user != null}">
-		<a href="/chat/list" id="talk-button" class="show"></a>
+		<a href="/chat/list" id="talk-button" class="show deco-none"></a>
 	</c:if>
-	<a id="top-button" class="show"></a>
+	<a id="top-button" class="show deco-none"></a>

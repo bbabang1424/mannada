@@ -9,13 +9,13 @@
 .container {
 	text-align: center;
 	max-width: 1200px !important;
-	margin: 7em 19%;
-	padding: 0;
+	margin: 5% auto !important;
+	padding: 0 !important;
 }
 
 /* 각 페이지 , 파란 베너 김소연 */
 .banner {
-	max-width: 1920px;
+	max-width: 100%;
 	color: white;
 	border-color: #60a8ef;
 	width: 100%;
@@ -24,7 +24,7 @@
 	background-image: url(/resources/image/banner_imga.png);
 	background-repeat: no-repeat;
 	background-size: 280px 235px;
-	    background-position: 78% 26%;
+	background-position: 78% 26%;
 }
 
 .banner_text {
@@ -60,7 +60,6 @@
 	text-align: center;
 	border-bottom: 1px solid #ccc;
 	max-width: 1200px;
-	margin: auto;
 }
 
 .title {
@@ -174,10 +173,10 @@ hr {
 }
 
 .date_views {
-	font-size: 0.96em;
+	font-size: 14px;
 	position: absolute;
-	top: 32.5%;
-	left: 85.5%;
+	top: 34.5%;
+	left: 86%;
 	color: #5F5F5F;
 	display: inline-block;
 }
@@ -206,7 +205,8 @@ hr {
 	padding: 1.5em;
 	border-top: 2px solid blue;
 	margin: auto;
-	margin-top: 4%;
+	margin-bottom: 1%;
+	margin-top: 3%;
 }
 
 .answer_mgrId {
@@ -218,10 +218,11 @@ hr {
 }
 
 .answer_date {
-	/* margin-right: 1%; */
+	font-size: 14px;
 	color: #5F5F5F;
 	text-align: right;
 	display: inline-block;
+	color: #5F5F5F;
 }
 
 .answer_content {
@@ -248,27 +249,23 @@ hr {
 
 .answer_btn_lsit {
 	width: 100%;
+	max-width: 1200px;
+	text-align: right;
 }
 
 .update_Answer_btn {
-	margin-bottom: 2%;
 	margin-right: 1%;
-	float: right;
-	margin-top: 2%;
 	display: inline-block;
-	width: 50px;
-	height: 30px;
+	padding: 5px 20px;
 	border: 1px solid #0080ff;
 	color: white;
 	background-color: #0080ff;
 }
 
 .cancell_btn {
-	float: right;
 	margin-top: 2%;
 	display: inline-block;
-	width: 50px;
-	height: 30px;
+	padding: 5px 20px;
 	border: 1px solid #ff0000;
 	color: white;
 	background-color: #ff0000;
@@ -276,29 +273,36 @@ hr {
 
 .answer_btn_info {
 	width: 100%;
+	text-align: right;
+	margin-top: 2%;
 }
 
 .answer_btn {
-	float: right;
-	margin-top: 2%;
 	display: inline-block;
-	width: 50px;
-	height: 30px;
+	padding: 5px 20px;
 	border: 1px solid #0707d9;
 	color: white;
 	background-color: #0707d9;
 }
 
+.answer_back {
+	padding: 5px 20px;
+	background-color: #ed9818;;
+	color: white;
+	border-color: #ed9818;
+	border: 1px solid;
+	text-align: center;
+}
+
 .delete_update_btn {
 	width: 100%;
 	margin-top: 2%;
+	text-align: right;
 }
 
 .delete_btn {
-	float: right;
 	display: inline-block;
-	width: 50px;
-	height: 30px;
+	padding: 5px 20px;
 	border: 1px solid #ff0000;
 	color: white;
 	background-color: #ff0000;
@@ -306,10 +310,8 @@ hr {
 
 .update_btn {
 	margin-right: 1%;
-	float: right;
 	display: inline-block;
-	width: 50px;
-	height: 30px;
+	padding: 5px 20px;
 	border: 1px solid #0080ff;
 	color: white;
 	background-color: #0080ff;
@@ -325,34 +327,18 @@ hr {
 
 .lower>button {
 	margin: 5px;
-	width: 50px;
-	height: 30px;
-}
-
-.button_list {
-	margin-top: 2%;
-	width: 50px;
-	height: 30px;
-	background-color: #ed9818;;
-	color: white;
-	border-color: #ed9818;
-	border: 1px solid;
-	text-align: center;
-}
-
-.btn_list {
-	width: 50%;
+	padding: 5px 20px;
 }
 
 .button_modify {
 	margin: 5px;
-	width: 50px;
-	height: 30px;
+	padding: 5px 20px;
 	background-color: #fff;
 	color: #000;
 	border-color: #000;
 	border: 1px solid;
 	text-align: center;
+	background-color: #fff;
 }
 
 .button_modify:hover {
@@ -363,8 +349,7 @@ hr {
 
 .button_delete {
 	margin: 5px;
-	width: 50px;
-	height: 30px;
+	padding: 5px 20px;
 	text-align: center;
 	background-color: white;
 	border-color: #000;
@@ -376,4 +361,13 @@ hr {
 	background-color: #de2f00;
 	border: #de2f00;
 	color: #fff;
+}
+
+.button_back {
+	padding: 5px 20px;
+	background-color: #ed9818;;
+	color: white;
+	border-color: #ed9818;
+	border: 1px solid;
+	text-align: center;
 }

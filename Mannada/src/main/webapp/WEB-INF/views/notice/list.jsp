@@ -44,14 +44,14 @@
 		<p class="page_text">만나다의 새로운 소식, 시스템 점검등을 공지하는 공간입니다.</p>
 	</div>
 
-
+<div class="container">
 	<section class="table_info">
 		<div class="selelct_list">
 			<div class="category">
 				<form>
 					<select name="search" class="form-select form-select-sm">
 						<option value="1">제목</option>
-						<option value="2">닉네임</option>
+						<option value="2">작성자</option>
 						<option value="3">내용</option>
 					</select> 
 						
@@ -96,7 +96,7 @@
 					</c:if>
 					<c:forEach var="item" items="${list}">
 						<tr
-							style="border: 1px solid #dddddd; padding-top: 10px; border-right: 1px solid White; border-left: 1px solid White;">
+							class="table_box">
 							<td>${item.rnum}</td>
 							<td><a style="color: black;" href="detail/${item.id}">${item.title}</a></td>
 							<td><div class="nickname">${item.nickname}</div></td>
@@ -114,8 +114,7 @@
 	<tfoot>
 		<tr>
 			<td colspan="5">
-				<ol class="pagination pagination-sm justify-content-center"
-					style="margin-bottom: 5%; margin-top: 5%; text-align: center;">
+				<ol class="pagination pagination-sm justify-content-center" style="margin: 5%;">
 					<li class="page_nation_item"><a href="?page=1${pager.query}"
 						class="page-link">처음</a></li>
 					<li class="page_nation_item"><a
@@ -135,6 +134,7 @@
 			</td>
 		</tr>
 	</tfoot>
+	</div>
 
 
 	<!-- <a href="../">이전</a> -->

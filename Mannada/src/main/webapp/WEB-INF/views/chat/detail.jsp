@@ -35,6 +35,7 @@
 	socket.onmessage = function(msg) {
 		let message = document.getElementById("message");
 
+		// item.num을 js식으로 바꾸기.. 
 		message.innerHTML += "<div class='list ${item.num == num ? 'my' : 'you' }'>"
 				+ msg.data + "</div>";
 

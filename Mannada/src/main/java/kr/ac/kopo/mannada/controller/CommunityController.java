@@ -118,11 +118,11 @@ public class CommunityController {
 	
 
 	@PostMapping("replyUpdate/{id}")
-	public String replyUpdate(@PathVariable int id, Reply item, Community commu) {
-
+	public String replyUpdate(@PathVariable int id, Reply item, @SessionAttribute User user) {
+		
 		service.updateReply(item);
 
-		return "redirect:../detail/" + commu.getId(); 
+		return "redirect:../detail/" + item.getCommuId();
 
 	}
 	

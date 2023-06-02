@@ -5,8 +5,9 @@
 	<select id="manna_list" resultType="Manna">
 		SELECT m.id, category, title, d_day, nickname
 		FROM joins j LEFT OUTER JOIN manna m ON j.manna_id = m.id
-		LEFT OUTER JOIN user u ON j.num = u.num
+		LEFT OUTER JOIN user u ON m.num = u.num
 		WHERE j.num = #{num}
+		ORDER BY m.id DESC
 	</select>
 	
 	<select id="chat_list" resultType="Chat">

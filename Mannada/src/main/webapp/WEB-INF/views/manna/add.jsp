@@ -84,9 +84,9 @@
 						<th id="interval">카테고리</th>
 						<td class="category"><input class="Choose_start" type="radio"
 							name="category" value="1"> 공동구매 <input class="Choose"
-							type="radio" name="category" value="2"> 운동 <input
-							class="Choose" type="radio" name="category" value="3"> 게임
-							<input class="Choose" type="radio" name="category" value="4">식사
+							type="radio" name="category" value="2"> 게임 <input
+							class="Choose" type="radio" name="category" value="3"> 식사
+							<input class="Choose" type="radio" name="category" value="4">스포츠
 							<input class="Choose" type="radio" name="category" value="5"
 							checked="checked"> 기타${item.category_}</td>
 					</tr>

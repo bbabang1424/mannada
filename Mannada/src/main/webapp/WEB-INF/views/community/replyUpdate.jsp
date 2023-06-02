@@ -24,7 +24,6 @@
 
 function EtValue() {
       const form = document.write_post;
-
       if (form.content.value.trim() == '') {
          swal('', '수정할 내용을 입력해주세요.', 'error')
          form.content.focus();
@@ -90,7 +89,7 @@ function EtValue() {
 				<div class="text_box">${item.content }</div>
 			</div>
 		</div>
-   </section>
+   
    
    <div class="container_box">
       <form method="post" name="write_post" class="replyupdate_box">
@@ -107,6 +106,8 @@ function EtValue() {
          </div>
       </form>
    </div>
+   
+   </section>
    <jsp:include page="../footer.jsp"></jsp:include>
 
 </body>

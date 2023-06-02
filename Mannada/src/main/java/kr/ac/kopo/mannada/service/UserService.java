@@ -17,8 +17,7 @@ public interface UserService {
 	void addPartner(HashMap<String, Object> map);
 
 	boolean checkNick(String id);
-
-	/* UserController 구성 */
+	
 	List<User> list(Pager pager);
 
 	User item(int num);

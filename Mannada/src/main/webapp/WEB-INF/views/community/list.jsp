@@ -45,13 +45,15 @@
 		<h3 class="page_title">커뮤니티</h3>
 		<p class="page_text">만남에 대한 후기와 소통을 자유롭게 글로 적어주세요!</p>
 	</div>
+	
+	<div class="container">
 	<section class="table_info">
 		<div class="selelct_list">
 			<div class="category">
 				<form>
 					<select name="search" class="form-select form-select-sm">
 						<option value="1">제목</option>
-						<option value="2">닉네임</option>
+						<option value="2">작성자</option>
 						<option value="3">내용</option>
 					</select> 
 					
@@ -89,15 +91,14 @@
 						<th>조회수</th>
 					</tr>
 				</thead>
-				<tbody >
+				<tbody>
 					<c:if test="${list.size() < 1}">
 						<tr>
 							<td colspan="5">등록된 글이 없습니다.</td>
 						</tr>
 					</c:if>
 					<c:forEach var="item" items="${list}">
-						<tr
-							style="border: 1px solid #dddddd; padding-top: 10px; border-right: 1px solid White; border-left: 1px solid White;">
+						<tr class="table_box">
 							<td>${item.rnum}</td>
 							 <td><div class="category_color category_color_${item.category}"></div>${item.category_}</td> 
 							<td><a style="color: black;" href="detail/${item.id}">${item.title}</a></td>
@@ -115,8 +116,7 @@
 	<tfoot>
 		<tr>
 			<td colspan="5">
-				<ol class="pagination pagination-sm justify-content-center"
-					style="margin-bottom: 5%; margin-top: 5%;">
+				<ol class="pagination pagination-sm justify-content-center" style="margin: 5%;">
 					<li class="page_nation_item"><a href="?page=1${pager.query}"
 						class="page-link">처음</a></li>
 					<li class="page_nation_item"><a

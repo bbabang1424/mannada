@@ -12,7 +12,7 @@
 }
 /* 각 페이지 퍼블리싱, 파란 베너 김소연 */
 .banner {
-	max-width: 1920px;
+	max-width: 100%;
 	color: white;
 	border-color: #60a8ef;
 	width: 100%;
@@ -21,7 +21,7 @@
 	background-image: url(/resources/image/banner_imga.png);
 	background-repeat: no-repeat;
 	background-size: 280px 235px;
-	        background-position: 78% 26%;
+	background-position: 78% 26%;
 }
 
 .banner_text {
@@ -53,8 +53,7 @@
 }
 
 .box {
-	margin-left: 10%;
-	width: 80%;
+	width: 100%;
 	text-align: center;
 	border-bottom: 1px solid #ccc;
 	border-top: 1px solid #ccc;
@@ -164,11 +163,11 @@
 
 .attach_box {
 	width: 82.5%;
-	display: inline-block;
+	display: inline-table;
 }
 
 .mb-3 {
-	margin-left: 7.5% !important;
+	margin-left: 55px !important;
 	margin-bottom: 1rem !important;
 }
 
@@ -185,15 +184,14 @@
 .lower {
 	margin-top: 3%;
 	text-align: right;
-	width: 87%;
+	width: 96%;
 }
 /* 등록 */
 .raise_btn {
 	background-color: #2cb2ff;
 	border: #2cb2ff;
 	color: #fff;
-	width: 50px;
-	height: 30px;
+	padding: 5px 20px;
 	margin-right: 1%;
 }
 /* 가상 선택자 어떻게 해야 할까... */
@@ -214,7 +212,6 @@
 	background-color: #de2f00;
 	border: #de2f00;
 	color: #fff;
-	width: 50px;
-	height: 30px;
+	padding: 5px 20px;
 	margin-right: 4%;
 }

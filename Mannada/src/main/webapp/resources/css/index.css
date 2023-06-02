@@ -70,7 +70,7 @@ a { color: #000; }
 
 .list-more {
 	display: flex; 
-    padding: 0 85px 0 45px;
+    padding: 0px 35px 0 20px;
     justify-content: space-between;
     align-items: baseline;
 }

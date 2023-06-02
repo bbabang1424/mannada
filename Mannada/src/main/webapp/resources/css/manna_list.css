@@ -9,14 +9,16 @@
 }
 
 .container {
+	position: relative;
 	max-width: 1200px;
 	padding: 0;
 	width: 100%;
+	margin: 5% auto;
 }
 
 /* 각 페이지 퍼블리싱, 파란 베너 김소연 */
 .banner {
-	max-width: 1920px;
+	max-width: 100%;
 	color: white;
 	border-color: #60a8ef;
 	width: 100%;
@@ -56,11 +58,6 @@
 	margin: 0 auto;
 }
 
-.content {
-	margin-top: 7%;
-	position: relative;
-}
-
 .card_box {
 	width: 100%;
 	max-width: 1220px;
@@ -81,7 +78,7 @@
 	border: 2px solid #D3D3D3;
 	display: inline-block;
 	width: 272px;
-	height: 210px;
+	height: 217px;
 	padding: 10px;
 	margin: 10px;
 	text-align: left;
@@ -133,17 +130,17 @@
 	overflow: hidden;
 	text-overflow: ellipsis;
 	margin-top: 3px;
-	margin-left: 8px;
+	margin-left: 10px;
 	position: inherit;
 	color: black;
-	top: 6%;
+	top: 8%;
 }
 
 .interval {
 	margin-top: 3px;
 	margin-left: 10px;
 	position: inherit;
-	top: 3%;
+	top: 4%;
 	color: black;
 }
 
@@ -240,11 +237,10 @@ div>.gauge_bar>div:first-child {
 .more {
 	text-align: center;
 	margin-bottom: 5%;
-	margin-top: 3%;
 }
 
 #more-btn {
-	padding: 5px 20px;
+	padding: 10px 30px;
 	border-radius: 20px;
 	background: white;
 	border: 1px solid black;
@@ -252,8 +248,7 @@ div>.gauge_bar>div:first-child {
 }
 
 #more-btn:hover {
-	padding: 5px 20px;
-	border-radius: 20px;
+	
 	background: #555555;
 	border: unset;
 	color: white;

@@ -33,6 +33,9 @@
 				OR
 				det_address LIKE CONCAT(CONCAT('%',#{keyword}),'%')
 			</if>
+			<if test="search eq 8">
+				category = #{keyword}
+			</if>
 		</where>
 		ORDER BY manna.id DESC
 	</sql>
@@ -43,7 +46,7 @@
 	</select>
 	
 	<select id="list" resultType="Manna">
-		SELECT @ROWNUM:=@ROWNUM+1 AS rnum, manna.* 
+		SELECT @ROWNUM:=@ROWNUM+1 AS rnum, manna.* , (SELECT (count(*) - 1) FROM joins WHERE manna_id = manna.id) as sum
 		FROM (<include refid="search"></include>) manna
 			 , (SELECT @ROWNUM:=0) R
 		ORDER BY rnum DESC
@@ -73,7 +76,7 @@
 	<select id="member_list" resultType="User">
 		SELECT j.num, nickname
 		FROM joins j LEFT OUTER JOIN user u ON j.num = u.num
-		WHERE manna_id = #{id}
+		WHERE manna_id = #{id} AND j.num != (SELECT num FROM manna WHERE id = #{id})
 	</select>
 	
 	<update id="update">

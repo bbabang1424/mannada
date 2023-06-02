@@ -17,14 +17,20 @@
 $(function(){
 	$(".title li").eq(0).click(function() {
 		$(".title li").css("text-decoration", "unset");
-		$(".title li").eq(0).css("text-decoration", "underline");
+		$(".title li").css("font-size", "0.8em");
+		$(".title li").css("font-weight", "400");
+		$(".title li").eq(0).css("font-size", "1em");
+		$(".title li").eq(0).css("font-weight", "bold");
 		$("#manager-login").css("display", "none");
 		$("#user-login").css("display", "unset");
 	});
 
 	$(".title li").eq(1).click(function() {
 		$(".title li").css("text-decoration", "unset");
-		$(".title li").eq(1).css("text-decoration", "underline");
+		$(".title li").css("font-size", "0.8em");
+		$(".title li").css("font-weight", "400");
+		$(".title li").eq(1).css("font-size", "1em");
+		$(".title li").eq(1).css("font-weight", "bold");
 		$("#user-login").css("display", "none");
 		$("#manager-login").css("display", "unset");
 	});
@@ -62,26 +68,31 @@ function mgValue() {
 #manager-login{
 	display: none;
 }
+
+#center {
+	margin-left:15%;
+	margin-right:15%;
+}
 </style>
 </head>
 <body>
-<div class="banner">
-		<ul class="banner_text">
-			<li>HOME</li>
-			<i class="bi bi-caret-right-fill"></i>
-			<li>로그인</li>
-			
-		</ul>
+	<div class="banner">
+			<ul class="banner_text">
+				<li>HOME</li>
+				<i class="bi bi-caret-right-fill"></i>
+				<li>로그인</li>	
+			</ul>
 	</div>
-<div class="background-image">
-</div>
+	<div class="background-image">
+	</div>
 
 	<div class="login-box">
         <br>
         <div class="title">
             <ul>
-                <li style="cursor: pointer;">사용자 로그인</li>
-                <li style="cursor: pointer;">관리자 로그인</li>
+                <li style="cursor: pointer;" id="user">사용자 로그인</li>
+                <span id="center">|</span>
+                <li style="cursor: pointer;" id="mg">관리자 로그인</li>
             </ul>
         </div>
         
@@ -96,7 +107,8 @@ function mgValue() {
 	        <div>
 	            <form name="user_login" method="post" action="/userLogin" class="login-form">
 	                <div>
-	                    <input class="input" type="email" id="textbox user_id" name="id" placeholder="아이디(이메일) 입력">
+	                    <input class="input" type="email" id="textbox user_id" name="id" placeholder="아이디(이메일) 입력"
+	                    value="${sessionScope.saveOk==null ? '' : sessionScope.userId}">
 	                </div>
 	                
 	                <div>
@@ -104,8 +116,7 @@ function mgValue() {
 	                </div>
 	                
 	                <div>
-	                    <input type="checkbox" id="remember-check">아이디 저장
-	                    <input name="remember-me" type="checkbox" id="remember-check">자동 로그인
+	                    <input type="checkbox" id="remember-check" name="saveId" ${sessionScope.saveOk==null ? "" : "checked"}>아이디 저장
 	                </div>
 	                
 					<button class="login-button" type="button" onclick="userValue()">로그인</button>
@@ -114,13 +125,11 @@ function mgValue() {
     				<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token }" />
 	            </form>
 	        </div>
-	
 	        
 	        <div class="flex">
 	            <div class="find-account">
 	               | <a href="">아이디 찾기</a> | <a href="">비밀번호 찾기</a> |               
-	            </div>
-	            
+	            </div> 
 	        </div> 
 	
 	            <button type="button" class="naver-btn"><img src="/resources/image/naver_logo.png" alt="">네이버 계정으로 로그인</button>
@@ -142,7 +151,8 @@ function mgValue() {
 	        <div id="manager-login">
 	            <form name="mg_login" method="post" action="/managerLogin" class="login-form">
 	                <div>
-	                    <input class="input" type="email" id="textbox mg_id" name="id" placeholder="아이디(이메일) 입력">
+	                    <input class="input" type="text" id="textbox mg_id" name="id" placeholder="아이디 입력"
+	                    value="${sessionScope.saveOk==null ? '' : sessionScope.mgId}">
 	                </div>
 	                
 	                <div>
@@ -150,8 +160,7 @@ function mgValue() {
 	                </div>
 	                
 	                <div>
-	                    <input type="checkbox" id="remember-check">아이디 저장
-	                    <input type="checkbox" id="remember-check">자동 로그인
+	                    <input type="checkbox" id="remember-check" name="saveId" ${sessionScope.saveOk==null ? "" : "checked"}>아이디 저장
 	                </div>
 	                
 					<button class="login-button" type="button" onclick="mgValue()">로그인</button>
@@ -159,4 +168,5 @@ function mgValue() {
 	        </div>
         </div>     
 </body>
+<jsp:include page="footer.jsp"></jsp:include>
 </html>

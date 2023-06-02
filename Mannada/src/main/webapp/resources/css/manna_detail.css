@@ -7,7 +7,7 @@
 }
 /* 각 페이지 퍼블리싱, 파란 베너 김소연 */
 .banner {
-	max-width: 1920px;
+	max-width: 100%;
 	color: white;
 	border-color: #60a8ef;
 	width: 100%;
@@ -16,7 +16,7 @@
 	background-image: url(/resources/image/banner_imga.png);
 	background-repeat: no-repeat;
 	background-size: 280px 235px;
-      background-position: 78% 26%;
+	background-position: 78% 26%;
 }
 
 .banner_text {
@@ -49,7 +49,7 @@
 
 .content {
 	max-width: 1200px;
-	margin: 0 auto;
+	margin: 5% auto;
 }
 
 .box {
@@ -60,7 +60,6 @@
 	margin: 10px;
 	display: inline-block;
 	position: relative;
-	margin-top: 7%;
 	margin-bottom: 3%;
 }
 
@@ -110,7 +109,7 @@
 .writer_date {
 	position: absolute;
 	width: 100%;
-	top: 10.5%;
+	top: 51.5%;
 	left: 10%;
 }
 
@@ -174,14 +173,14 @@
 .views {
 	display: inline-block;
 	position: absolute;
-	left: 93.5%;
-	top: 12%;
+	left: 92.5%;
+	top: 64%;
 }
 
 .model_personnel {
 	display: inline-block;
 	position: absolute;
-	left: 89%;
+	left: 88.5%;
 	top: 45px;
 }
 
@@ -219,7 +218,7 @@ progress {
 	border: 0;
 	border-radius: 9px;
 	position: absolute;
-	top: 8.5%;
+	top: 44.5%;
 	left: 74%;
 	width: 23%;
 }
@@ -253,8 +252,8 @@ progress::-webkit-progress-value {
 .model_member {
 	font-weight: bold;
 	position: absolute;
-	top: 26.5%;
-	left: 7%;
+	top: 30.5%;
+	left: -18%;
 	display: inline-block;
 }
 
@@ -265,11 +264,13 @@ progress::-webkit-progress-value {
 }
 
 #box_info {
+	position: relative;
 	display: inline-block;
 	width: 60%;
 	text-align: left;
 	margin-left: 18%;
 	margin-top: 1%;
+	display: inline-block;
 }
 
 #model_member_num {
@@ -325,13 +326,13 @@ progress::-webkit-progress-value {
 
 .button_modify {
 	margin: 5px;
-	width: 50px;
-	height: 30px;
+	padding: 5px 20px;
 	background-color: #fff;
 	color: #000;
 	border-color: #000;
 	border: 1px solid;
 	text-align: center;
+	background-color: #fff;
 }
 
 .button_modify:hover {
@@ -342,8 +343,7 @@ progress::-webkit-progress-value {
 
 .button_delete {
 	margin: 5px;
-	width: 50px;
-	height: 30px;
+	padding: 5px 20px;
 	text-align: center;
 	background-color: white;
 	border-color: #000;
@@ -358,8 +358,7 @@ progress::-webkit-progress-value {
 }
 
 .button_back {
-	width: 50px;
-	height: 30px;
+	padding: 5px 20px;
 	background: #ed9818;
 	border: 1px solid #ed9818;
 	color: white;
@@ -368,9 +367,7 @@ progress::-webkit-progress-value {
 
 .button_chatting {
 	margin: 5px;
-	width: 50px;
-	height: 30px;
-	padding-bottom: 1%;
+	padding: 5px 26px;
 	background: #0359d9;
 	border: 1px solid #0359d9;
 	color: white;
@@ -379,6 +376,5 @@ progress::-webkit-progress-value {
 .back {
 	display: inline-block;
 	text-align: right;
-	width: 94%;
-	margin-bottom: 5%;
+	width: 94.3%;
 }

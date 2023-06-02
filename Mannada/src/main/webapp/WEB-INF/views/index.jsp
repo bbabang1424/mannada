@@ -144,7 +144,7 @@ const pager_item = [ {
 </div>
 
 	<div>
-		<section class="content" style="margin: 0 auto;">
+		<section class="top-content" style="margin: 0 auto;">
 		<div class="list-more">
 			<h4><b>최근 게시글</b></h4>
 			<div>
@@ -220,12 +220,24 @@ const pager_item = [ {
 			<div class="top-table">
 				<div class="recent-table">
 					<table class="table table-hover table_table " id="table_size" >
+						<div>
+							<div>
+								<h5>후기 TOP 5</h5>
+							</div>
+							
+							<div>
+								<div></div>
+							</div>
+						</div>
+						
 					<thead>
 						<tr class="table_menu"> 
-							<th>카테고리</th>
+							<!-- <th colspan="4">후기</th> -->
+							<th>순위</th>
+							<!-- <th>카테고리</th>  -->
 							<th>제목</th> 
 							<th>작성일</th>
-							<th>조회수</th>
+							<th>조회수</th> 
 						</tr>
 					</thead>
 					<tbody >
@@ -234,10 +246,12 @@ const pager_item = [ {
 								<td colspan="5">등록된 글이 없습니다.</td>
 							</tr>
 						</c:if>
-						<c:forEach var="item" items="${commuReview}" end="4">
+						<c:forEach var="item" items="${commuReview}" end="4" varStatus="status">
 							<tr
 								style="border: 1px solid #dddddd; padding-top: 10px; border-right: 1px solid White; border-left: 1px solid White;">
-								 <td><div class="category_color category_color_${item.category}"></div>${item.category_}</td> 
+								<!-- <td><c:forEach var="cnt" begin="1" end="5">${cnt}</c:forEach></td>  -->
+								<td style="font-weight:700; color:#de2f00;"><div><c:out value="${status.count}" /></div></td>
+								<!-- <td><div class="category_color category_color_${item.category}"></div>${item.category_}</td> --> 
 								<td><a style="color: black;" href="/community/detail/${item.id}">${item.title}</a></td>
 								<td><fmt:formatDate value="${item.regDate}"
 										pattern="yyyy-MM-dd " /></td>
@@ -250,9 +264,20 @@ const pager_item = [ {
 				
 				<div class="recent-table">
 					<table class="table table-hover table_table " id="table_size" >
+					<div>
+							<div>
+								<h5>소통 TOP 5</h5>
+							</div>
+							
+							<div>
+								<div></div>
+							</div>
+						</div>
 					<thead>
 						<tr class="table_menu"> 
-							<th>카테고리</th>
+							<!-- <th colspan="4">소통</th> -->
+							<th>순위</th>
+							<!-- <th>카테고리</th>  -->
 							<th>제목</th> 
 							<th>작성일</th>
 							<th>조회수</th>
@@ -264,10 +289,11 @@ const pager_item = [ {
 								<td colspan="5">등록된 글이 없습니다.</td>
 							</tr>
 						</c:if>
-						<c:forEach var="item" items="${commuTalk}" end="4">
+						<c:forEach var="item" items="${commuTalk}" end="4" varStatus="status">
 							<tr
 								style="border: 1px solid #dddddd; padding-top: 10px; border-right: 1px solid White; border-left: 1px solid White;">
-								 <td><div class="category_color category_color_${item.category}"></div>${item.category_}</td> 
+								<td style="font-weight:700; color:#de2f00;"><div><c:out value="${status.count}" /></div></td>
+								<!-- <td><div class="category_color category_color_${item.category}"></div>${item.category_}</td>  --> 
 								<td><a style="color: black;" href="/community/detail/${item.id}">${item.title}</a></td>
 								<td><fmt:formatDate value="${item.regDate}"
 										pattern="yyyy-MM-dd " /></td>
@@ -289,11 +315,14 @@ const pager_item = [ {
 				</div>
 				<form name="addrSearch" action="searchAddress">
 					<div class="grid-container">
+						
 						<div class="item">
+							<div style="display:none;">
 							<label>도로명</label>
 							<input type="radio" name="addressType" value="road" checked>
 							<label>지번</label>
 							<input type="radio" name="addressType" value="jibun">
+							</div>
 						</div>
 		
 						<div class="item">
