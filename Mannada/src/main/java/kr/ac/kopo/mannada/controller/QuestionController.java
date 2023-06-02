@@ -65,7 +65,7 @@ public class QuestionController {
 		
 		service.update(item);
 		
-		return "redirect:../list";
+		return "redirect:../detail/" + id;
 	}
 	
 	@GetMapping("/delete/{id}")
