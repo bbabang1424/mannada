@@ -121,8 +121,7 @@
 		<c:if test="${sessionScope.user != null && question.status == 0}">
 				<a href="../update/${id}"><button class="button_modify">수정</button></a>
 				<a href="../delete/${id}"><button class="button_delete">삭제</button></a>
-				
-			</c:if>
+		</c:if>
 			<a href="../list"><button class="button_back">목록</button></a>
 		</div>
 		<!--qna 로그인 안돼어 있어도 대기중이면 대기중이라고 보였으면 좋겠음.. 어떻게 해야지 -->
