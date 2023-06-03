@@ -32,7 +32,27 @@
 }
 
 tbody>.table_box>td {
-	padding: 14px;
+	vertical-align: middle;
+	padding: 15px;
+}
+
+td>a {
+	color: black;
+	word-wrap: break-word;
+	display: contents !important;
+	width: 200px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.nickname {
+	word-wrap: break-word;
+	display: contents !important;
+	width: 200px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
 
 .banner_text {

@@ -53,7 +53,7 @@
 								<option value="1">후기</option>
 								<option value="2">소통</option>
 						</select>
-						<input id="title" name="title" type="text" value="${item.title}"></td>
+						<input maxlength="30" id="title" name="title" type="text" value="${item.title}"></td>
 					</tr>
 
 					<tr>
