@@ -159,7 +159,7 @@
 		</div>
 
 		<div class="user-nickname">
-			<div>${user.nickname} 님</div>
+			<div style="font-weight: bold;">${user.nickname} 님</div>
 			<div>★${user.starAvg}(${user.starCnt})</div>
 		</div>
 		<div class="my-set" id="my-info">

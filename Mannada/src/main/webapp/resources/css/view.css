@@ -79,6 +79,12 @@
     background-color: aliceblue;
     border-radius: 40px;
     border: none;
+    background-image: url(/resources/image/view-back.jpg);
+    background-repeat: no-repeat;    
+    background-size: cover;
+    opacity: 95%;
+    
+    
 }
 
 .pro1 img {

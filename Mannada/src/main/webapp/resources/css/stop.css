@@ -1,0 +1,94 @@
+@charset "UTF-8";
+
+.background-image {
+	width: 100%;
+    height: 100%;
+    position: absolute;
+    background-image: url(/resources/image/photo-back.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    opacity: 0.5;
+}
+
+.container-box {
+    border: 1px solid whitesmoke;
+    color: black;
+    width: 510px;
+    height: 382px;
+    margin: 2em auto;
+    margin-bottom: 8%;
+    padding: 15px 45px;
+    position: relative;
+    background-color: white;
+    border-radius: 30px;
+    box-shadow: inset 0 0px 10px 5px #E0E0E0;
+    margin-top: 4%;
+}
+
+.title h3 {
+	text-align: center;
+	font-weight: bold;
+}
+
+.title p {
+    font-weight: bold;
+    text-align: center;
+    border: 3px solid darkblue;
+    background-color: aliceblue;
+    border-radius: 10px;
+    padding: 5px;
+    margin: 20px;
+}
+
+.title-sub {
+	text-align: center;	
+	font-size: 13px;
+}
+
+.password {
+    margin: 10px 5px;
+    padding: 13px 0px;
+}
+
+.pw input {
+	border-radius: 3px;
+	padding: 5px;	
+	width: 69%;
+}
+
+.password button {
+	width: 118px;
+    height: 38px;
+    background-color: #0359d9;
+    border-radius: 3px;
+    border: none;
+    color: white;
+    float: right;
+    position: relative;
+    top: -38px;
+}
+
+.go-back-btn button {
+    width: 118px;
+    height: 38px;
+    background-color: #ddd;
+    border-radius: 3px;
+    border: none;
+    color: black;
+    position: relative;
+    top: 15px;
+    left: 75px;
+}
+
+.stop-btn button {
+    width: 118px;
+    height: 38px;
+    background-color: #CC0000;
+    border-radius: 3px;
+    border: none;
+    color: white;
+    position: relative;
+    top: -23px;
+    left: 229px;
+}
