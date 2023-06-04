@@ -236,7 +236,7 @@ div>.gauge_bar>div:first-child {
 
 .more {
 	text-align: center;
-	margin-bottom: 5%;
+	margin-top: 3%;
 }
 
 #more-btn {
@@ -248,7 +248,6 @@ div>.gauge_bar>div:first-child {
 }
 
 #more-btn:hover {
-	
 	background: #555555;
 	border: unset;
 	color: white;

@@ -55,7 +55,7 @@
 
 	<div class="container">
 		
-			<div class="selelct_lsit">
+			<!-- <div class="selelct_lsit"> -->
 				<div class="category_select">
 					<select name="search" class="form-select form-select-sm">
 						<option value="1">제목</option>
@@ -81,20 +81,21 @@
 					</c:if>
 				</div>
 
-				<c:if test="${sessionScope.user.id == null }">
+			<%-- 	<c:if test="${sessionScope.user.id == null }">
 					<div class="writing"></div>
-				</c:if>
-			</div>
+				</c:if> --%>
+			
 			<div class="card_box">
 				<div id="empty_list">등록 된 게시글이 없습니다.</div>
 			</div>
 		
-	</div>
+	<!-- </div> -->
 
 
 
 	<div class="more">
 		<button type="button" id="more-btn">더보기</button>
+	</div>
 	</div>
 
 
