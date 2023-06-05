@@ -64,10 +64,20 @@ public class RootController {
 
 		return "index";
 	}
+	
 
 	/* 로그인 */
 	@GetMapping("/login")
 	public String login(HttpSession session, Model model) {
+		//아이디, 비밀번호 일치여부 메세지 보내기
+		String msg = (String) session.getAttribute("msg");
+		
+		if(msg != null) {
+			model.addAttribute("msg", msg);
+			
+			session.removeAttribute("msg");
+		}
+		
 		return "login";
 	}
 	@PostMapping("/userLogin")
@@ -84,6 +94,9 @@ public class RootController {
 			else
 				return "redirect:" + targetUrl;
 		} else {
+			//유저 : 일치여부 세션 생성 = 메세지는 동일한 내용이니까 변수를 나눌 필요x
+			session.setAttribute("msg", "아이디 또는 비밀번호가 일치하지 않습니다");
+			
 			return "redirect:login";
 		}
 	}
@@ -101,8 +114,12 @@ public class RootController {
 			else
 				return "redirect:" + targetUrl;
 
-		} else
+		} else {
+			//관리자 : 일치여부 세션 생성 = 메세지는 동일한 내용이니까 변수를 나눌 필요x
+			session.setAttribute("msg", "아이디 또는 비밀번호가 일치하지 않습니다");
+			
 			return "redirect:login";
+		}
 	}
 	
 	/* 로그아웃 */

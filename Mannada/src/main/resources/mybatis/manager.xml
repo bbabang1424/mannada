@@ -6,18 +6,6 @@
 		SELECT * FROM manager
 		WHERE id = #{id} AND pw = PASSWORD(#{pw})
 	</select>
-	
-	<!-- 로그인 일치여부 확인 -->
-	<select id="check_login" parameterType="Hashmap" resultType="int">
-		SELECT COUNT(*) FROM manager
-		WHERE id=#{id} AND pw=PASSWORD(#{pw})
-	</select>
-	
-	<!-- 아이디 저장 -->
-	<select id="save_id" parameterType="String" resultType="String">
-		SELECT id FROM manager
-		WHERE id=#{id}
-	</select>
 	  
 	<select id="item" resultType="Manager">
 		SELECT *
