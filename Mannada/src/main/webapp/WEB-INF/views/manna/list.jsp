@@ -2,6 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -37,6 +38,12 @@
 
 <script type="text/javascript">
 	const pager_url = "/api/manna";
+	
+	$(document).ready(function(){
+	$('li').on('click', function(){
+		$(this).addClass('active');
+		});
+	});
 </script>
 <script src="/resources/js/manna.js"></script>
 </head>
@@ -52,8 +59,41 @@
 		<h3 class="page_title">글 목록</h3>
 		<p class="page_text">새로운 만남을 만날수 있는 곳 입니다. 관심있는 카드를 눌러 참여하세요!</p>
 	</div>
-
 	<div class="container">
+	<div class="category-inner">
+		<ul class="category_list">
+			<li><a href="/manna/list">
+				<div class="icon">
+				전체
+				</div>
+				</a></li>
+			<li><a href="/manna/list?search=8&keyword=1">
+				<div class="icon">
+				공동구매
+				</div>
+				</a></li>
+			<li><a href="/manna/list?search=8&keyword=2">
+				<div class="icon">
+				게임
+				</div>
+				</a></li>
+			<li><a href="/manna/list?search=8&keyword=3">
+				<div class="icon">
+				식사
+				</div>
+				</a></li>
+			<li><a href="/manna/list?search=8&keyword=4">
+				<div class="icon">
+				스포츠
+				</div>
+				</a></li>
+			<li><a href="/manna/list?search=8&keyword=5">
+				<div class="icon">
+				기타
+				</div>
+				</a></li>
+		</ul>
+	</div>
 		
 			<!-- <div class="selelct_lsit"> -->
 				<div class="category_select">

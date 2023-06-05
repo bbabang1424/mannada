@@ -190,7 +190,33 @@
 		</div>	
 
 	</div>
+	
+	<!-- 형태만 잡아 놓음/cif로 10개 넘어가면 보이게하기 -->
+	<tfoot>
+		<tr>
+			<td colspan="5">
+				<ol class="pagination pagination-sm justify-content-center" style="margin: 5%;">
+					<li class="page_nation_item"><a href="?page=1${pager.query}"
+						class="page-link">처음</a></li>
+					<li class="page_nation_item"><a
+						href="?page=${pager.prev}${pager.query}" class="page-link">이전</a></li>
+
+					<c:forEach var="page" items="${pager.list}">
+						<li class="page_nation_item"><a
+							href="?page=${page}${pager.query}"
+							class="page-link ${page eq pager.page ? 'active' : ''}">${page}</a></li>
+					</c:forEach>
+
+					<li class="page_nation_item"><a
+						href="?page=${pager.next}${pager.query}" class="page-link">다음</a></li>
+					<li class="page_nation_item"><a
+						href="?page=${pager.last}${pager.query}" class="page-link">마지막</a></li>
+				</ol>
+			</td>
+		</tr>
+	</tfoot>
 	</section>
+	
 
 
 	<jsp:include page="../footer.jsp"></jsp:include>

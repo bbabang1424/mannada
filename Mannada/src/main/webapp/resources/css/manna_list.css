@@ -8,6 +8,28 @@
 	font-family: 'Noto Sans KR';
 }
 
+.category_list>li {
+	/* border: 1px solid #ccc;  */
+	margin: 5px;
+	list-style-type: none;
+	padding: 5px;
+	display: inline-block;
+}
+
+ui li .active{
+	border-bottom: 2px solid #0080ff;
+}
+
+li>a{
+	color: black;
+}
+.category_list {
+	max-width: 1200px;
+	width: 100%;
+	/* padding: 9px; */
+	padding-left: 2%;
+}
+
 .container {
 	position: relative;
 	max-width: 1200px;
