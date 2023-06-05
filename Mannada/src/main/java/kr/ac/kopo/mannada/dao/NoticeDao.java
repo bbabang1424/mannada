@@ -26,4 +26,6 @@ public interface NoticeDao {
 
 	boolean deleteAttach(int id);
 
+	void addViewCnt(int id);
+
 }

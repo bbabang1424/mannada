@@ -90,27 +90,27 @@ const pager_item = [ {
 				<div>
 					<div class="category-inner">
 						<ul>
-							<li><a href="/mannada/category">
+							<li><a href="/manna/list?search=8&keyword=1">
 								<div class="icon"><img src="/resources/image/purchases.png">
 								#공동구매
 								</div>
 								</a></li>
-							<li><a href="/mannada/category">
+							<li><a href="/manna/list?search=8&keyword=2">
 								<div class="icon"><img src="/resources/image/game.png">
 								#게임
 								</div>
 								</a></li>
-							<li><a href="/mannada/category">
+							<li><a href="/manna/list?search=8&keyword=3">
 								<div class="icon"><img src="/resources/image/spoon.png">
 								#식사
 								</div>
 								</a></li>
-							<li><a href="/mannada/category">
+							<li><a href="/manna/list?search=8&keyword=4">
 								<div class="icon"><img src="/resources/image/sport.png">
 								#스포츠
 								</div>
 								</a></li>
-							<li><a href="/mannada/category">
+							<li><a href="/manna/list?search=8&keyword=5">
 								<div class="icon"><img src="/resources/image/more.png">
 								#기타
 								</div>

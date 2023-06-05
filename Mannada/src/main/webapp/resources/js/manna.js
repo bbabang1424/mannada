@@ -1,6 +1,9 @@
 window.addEventListener("load", () => {
 
-    getPage(1);
+	const href =  document.location.href.split("?");
+	const query = href[1];
+
+    getPage(1, query);
 
     document.querySelector(".search_btn").addEventListener("click", e => {
         const search = document.querySelector("select[name='search']").value;

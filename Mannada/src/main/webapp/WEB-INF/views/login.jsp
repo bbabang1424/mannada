@@ -6,15 +6,19 @@
 <head>
 <meta charset="UTF-8">
 <title>만나다</title>
-<jsp:include page="header.jsp"></jsp:include>
+<script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
 <link rel="stylesheet" href="/resources/css/login.css">
 <link rel="stylesheet" href="/resources/image/swiper1.jpg"/>
-<link rel="stylesheet"
-	href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">
-<script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
-<script type="text/javascript">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
+<script>
 $(function(){
+	//메세지는 일치여부 하나니까 나눌 필요x
+	const msg = '${msg}';
+	if(msg)
+		swal('로그인', msg, 'error');
+	
 	$(".title li").eq(0).click(function() {
 		$(".title li").css("text-decoration", "unset");
 		$(".title li").css("font-size", "0.8em");
@@ -35,8 +39,7 @@ $(function(){
 		$("#manager-login").css("display", "unset");
 	});
 });
-
-/*아이디, 비밀번호 입력하면 로그인*/
+/* 아이디, 비밀번호 입력하면 로그인 */
 function userValue() {
 	const form = document.user_login;
 	
@@ -46,7 +49,8 @@ function userValue() {
 	}else if(form.pw.value == ''){
 		form.pw.focus();
 		return;
-	}
+	} 
+	
 	form.submit();
 }
 
@@ -64,7 +68,7 @@ function mgValue() {
 }
 </script>
 
-<style type="text/css">
+<style>
 #manager-login{
 	display: none;
 }
@@ -75,6 +79,7 @@ function mgValue() {
 }
 </style>
 </head>
+<jsp:include page="header.jsp"></jsp:include>
 <body>
 	<div class="banner">
 			<ul class="banner_text">
@@ -108,7 +113,7 @@ function mgValue() {
 	            <form name="user_login" method="post" action="/userLogin" class="login-form">
 	                <div>
 	                    <input class="input" type="email" id="textbox user_id" name="id" placeholder="아이디(이메일) 입력"
-	                    value="${sessionScope.saveOk==null ? '' : sessionScope.userId}">
+	                    value="">
 	                </div>
 	                
 	                <div>
@@ -116,7 +121,7 @@ function mgValue() {
 	                </div>
 	                
 	                <div>
-	                    <input type="checkbox" id="remember-check" name="saveId" ${sessionScope.saveOk==null ? "" : "checked"}>아이디 저장
+	                    <input type="checkbox" id="remember-check"> 아이디 저장
 	                </div>
 	                
 					<button class="login-button" type="button" onclick="userValue()">로그인</button>
@@ -152,7 +157,7 @@ function mgValue() {
 	            <form name="mg_login" method="post" action="/managerLogin" class="login-form">
 	                <div>
 	                    <input class="input" type="text" id="textbox mg_id" name="id" placeholder="아이디 입력"
-	                    value="${sessionScope.saveOk==null ? '' : sessionScope.mgId}">
+	                    value="">
 	                </div>
 	                
 	                <div>
@@ -160,7 +165,7 @@ function mgValue() {
 	                </div>
 	                
 	                <div>
-	                    <input type="checkbox" id="remember-check" name="saveId" ${sessionScope.saveOk==null ? "" : "checked"}>아이디 저장
+	                    <input type="checkbox" id="remember-check"> 아이디 저장
 	                </div>
 	                
 					<button class="login-button" type="button" onclick="mgValue()">로그인</button>

@@ -135,6 +135,8 @@ public class NoticeController {
 	@GetMapping("/detail/{id}")
 	public String detail(@PathVariable int id, Model model) {
 		
+		service.addViewCnt(id);
+		
 		Notice item = service.item(id);
 		model.addAttribute("item", item);
 		
