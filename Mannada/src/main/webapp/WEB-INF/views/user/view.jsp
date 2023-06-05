@@ -123,7 +123,7 @@
 	<header class="profile-box">
 		<div class="user-button">
 			<c:if test="${sessionScope.user == null}">
-				<a href="/login">프로필사진</a>
+				<a href="/login">프로필수정</a>
 				<a href="/login">회원정보변경</a>
 				<a href="/login">비밀번호변경</a>
 				<a href="/login">회원탈퇴</a>
@@ -132,7 +132,7 @@
 
 			<c:if test="${sessionScope.user != null}">
 				<a href="../photo/${sessionScope.user.num}"><button
-						type="button" class="photo">프로필 사진</button></a>
+						type="button" class="photo">프로필 수정</button></a>
 
 				<a href="../update/${sessionScope.user.num}"><button
 						type="button" class="update">회원정보변경</button></a>
@@ -159,8 +159,24 @@
 		</div>
 
 		<div class="user-nickname">
-			<div>${user.nickname}님</div>
+			<div style="font-weight: bold;">${user.nickname} 님</div>
 			<div>★${user.starAvg}(${user.starCnt})</div>
+		</div>
+		<div class="my-set" id="my-info">
+			<div class="user-date">
+				<table border="1">
+					<colgroup>
+						<col width="15%" />
+						<col width="55%" />
+					</colgroup>
+					<tbody>						
+						<tr>
+							<th style="left: 10px;">소개:</th>
+							<td>${user.intro}</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
 		</div>
 
 	</header>
@@ -177,63 +193,21 @@
 			<li><a href="#tab04">캘린더</a></li>
 			</c:if>			
 		</ul>
+		
 		<div class="tabcontent">
 			<div id="tab01">
-				
-			</div>
-			<div id="tab02">tab2 content</div>
-			<div id="tab03">tab2 content</div>
-			<div id="tab04">tab2 content</div>
-		</div>
-	</div>
-</nav>
-	
-
-	<%-- <nav class="my-nav">
-		<ul>
-			<li>My Page</li>
-			<li>작성 글</li>
-			<li>작성 댓글</li>
-			<c:if test="${sessionScope.user.id == user.id}">
-				<li>캘린더</li>
-			</c:if>
-		</ul>
-	</nav> --%>
-
 	<section>
-		<div class="my-set" id="my-info">
-			<div class="user-date">
-				<table border="1">
-					<colgroup>
-						<col width="15%" />
-						<col width="55%" />
-					</colgroup>
-					<tbody>
-						<c:if test="${sessionScope.user.id == user.id}">
-							<tr>
-								<th>- 이메일:</th>
-								<td>${user.id}</td>
-							</tr>
-						</c:if>
-						<tr>
-							<th>- 닉네임:</th>
-							<td>${user.nickname}</td>
-						</tr>
-						<tr>
-							<th>- 소개:</th>
-							<td>${user.intro}</td>
-						</tr>
-					</tbody>
-				</table>
-			</div>
 
 			<div>
-				<div>한줄평</div>
+				<div class="review-title">
+					<div class="text1">나의 평점은?</div>
+					<div class="text2">별점과 이용경험을 남겨주세요.</div>					
+				</div>
 				<div class="self-hidden">
 					<!-- user에 있는 form이니까 action은 user의 경로 사용 -->
 					<form name="reviewInfo_from" method="post" style="width: 700px"
 						enctype="multipart/form-data" action="../review/${user.num}">
-						<div>
+						<div class="review-star">
 							<label class="star" for="star1">★</label><input type="radio"
 								class="checkStar" id="star1" value="1" name="star"> <label
 								class="star" for="star2">★</label><input type="radio"
@@ -244,31 +218,25 @@
 								class="checkStar" id="star4" value="4" name="star"> <label
 								class="star" for="star5">★</label><input type="radio"
 								class="checkStar" id="star5" value="5" name="star">
-							<p id="chooseWord"></p>
+							<p id="chooseWord" style="color: rgb(153, 153, 153);position: relative;right: 120px;"></p>
 						</div>
-						<div>
+						<div class="text-note">
 							<textarea rows="10" class="review_textarea" name="content"
-								placeholder="로그인 후에 작성해주세요"></textarea>
+								placeholder="로그인 후에 작성해주세요."></textarea>
 							<button type="button" id="reviewSubmit" onClick="login_check();">등록</button>
 						</div>
 					</form>
 				</div>
 				<div>
-					<table>
-						<tbody>
-							<c:forEach var="review" items="${review}">
-								<tr>
-									<td>${review.nickname}</td>
-									<td><fmt:formatDate value="${review.regDate}"
-											pattern="yyyy-MM-dd hh:mm" /></td>
-									<td><c:if test="${sessionScope.user.num == review.writer}">
-											<a href="../${user.num}/reviewDelete/${review.id}"
-												class="btn btn-outline-danger"> <i class="bi bi-trash3"></i>
-											</a>
-										</c:if></td>
-								</tr>
-								<tr>
-									<td>${review.star}<c:if test="${review.star ==1}">
+					<table class="review-date">
+						<tbody>	
+							<th>닉네임</th><th>한줄평</th><th>작성일</th><th>별점</th>						
+							<c:forEach var="review" items="${review}">																									
+										<tr><td class="nickname">${review.nickname}</td>
+										<td>${review.content}</td>
+										<td class="regdate"><fmt:formatDate value="${review.regDate}"
+											pattern="yyyy-MM-dd hh:mm" /></td>																											
+										<td><c:if test="${review.star ==1}">
 											<label class="yellowStar">★</label>
 										</c:if> <c:if test="${review.star ==2}">
 											<label class="yellowStar">★★</label>
@@ -279,12 +247,27 @@
 										</c:if> <c:if test="${review.star ==5}">
 											<label class="yellowStar">★★★★★</label>
 										</c:if>
-									</td>
-								<tr>
-									<td>${review.content}</td>
+										</td>														
+								<td><c:if test="${sessionScope.user.num == review.writer}">
+											<a href="../${user.num}/reviewDelete/${review.id}"
+												class="btn btn-outline-danger"> <i class="bi bi-trash3"></i>
+											</a>
+										</c:if>
+									</td>									
+								
 								</tr>
 							</c:forEach>
-						</tbody>
+						</tbody>			
+				</table>
+				</div>
+			</div>
+		</div>
+			</div>
+			<div id="tab02"></div>
+			<div id="tab03"></div>
+			<div id="tab04"></div>
+		</div>
+</nav>
 						<tfoot>
 							<tr>
 								<td colspan="5">
@@ -309,10 +292,7 @@
 								</td>
 							</tr>
 						</tfoot>
-					</table>
-				</div>
-			</div>
-		</div>
+					
 
 		<div class="my-set" id="my-post">
 			<table border="1">

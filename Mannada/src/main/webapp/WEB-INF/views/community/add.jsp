@@ -50,7 +50,7 @@
 						<td class="title"><select name="category" class="select">
 								<option name="category" value="1">후기</option>
 								<option name="category" value="2">소통</option>
-						</select> <input id="title" name="title" type="text">${item.id}</td>
+						</select> <input maxlength="30" id="title" name="title" type="text">${item.id}</td>
 
 					</tr>
 
@@ -64,7 +64,7 @@
 			<!-- 하단:lower -->
 			<div class="lower">
 				<button class="raise_btn" type="button" onclick="EtValue()">등록</button>
-				<a href="list"><button type="button" class="cancel_btn">취소</button></a>
+				<a href="javascript:history.back();"><button type="button" class="cancel_btn">취소</button></a>
 			</div>
 		</form>
 	</div>

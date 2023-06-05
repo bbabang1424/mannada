@@ -308,7 +308,7 @@ progress::-webkit-progress-value {
 
 .model_text_box {
 	margin: auto;
-	padding: 15px;
+	padding: 20px;
 	overflow: auto;
 	width: 87%;
 	margin-top: 3%;
@@ -326,7 +326,8 @@ progress::-webkit-progress-value {
 
 .button_modify {
 	margin: 5px;
-	padding: 5px 20px; background-color : #fff;
+	padding: 5px 20px;
+	background-color: #fff;
 	color: #000;
 	border-color: #000;
 	border: 1px solid;
@@ -366,7 +367,7 @@ progress::-webkit-progress-value {
 
 .button_chatting {
 	margin: 5px;
-	padding: 5px 20px;
+	padding: 5px 26px;
 	background: #0359d9;
 	border: 1px solid #0359d9;
 	color: white;
@@ -375,5 +376,5 @@ progress::-webkit-progress-value {
 .back {
 	display: inline-block;
 	text-align: right;
-	width: 94%;
+	width: 94.3%;
 }

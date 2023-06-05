@@ -222,10 +222,10 @@ h4 {
 }
 
 .date_views {
-	font-size: 0.96em;
+	font-size: 14px;
 	position: absolute;
-	top: 32.5%;
-	left: 85.5%;
+	top: 34.5%;
+	left: 86%;
 	color: #5F5F5F;
 	display: inline-block;
 }
@@ -233,58 +233,47 @@ h4 {
 .Writer_date {
 	border-top: 1px solid #ddd;
 	text-align: left;
-	padding-left: 24px;
+	padding-left: 27px;
 }
 
 .text_box {
 	text-align: left;
-	padding-top: 34px;
-	padding-bottom: 35px;
-	font-size: 15px;
 	line-height: 24px;
 	word-break: break-all;
+	padding: 27px;
 	white-space: pre-line;
-	padding-left: 2.5%;
-	padding-right: 2.5%;
 }
 
 .text_box_notice {
 	text-align: left;
-	padding-top: 34px;
-	padding-bottom: 35px;
-	font-size: 15px;
 	line-height: 24px;
 	word-break: break-all;
-	white-space: pre-line;
-	padding-left: 2.5%;
-	padding-right: 2.5%;
+	padding: 27px;
+	/*  white-space: pre-line; */
 }
 
 .attach {
-	padding: 10px;
+	border-top: 1px solid #ccc;
+	width: 100%;
+	padding: 10px 27px;
 	text-align: left;
-	margin-left: 1.5%;
-	margin-bottom: 0.5%;
 }
 
 .lower {
 	display: inline-block;
-	margin-top: 3%;
+	margin-top: 2%;
 	text-align: right;
 	width: 100%;
-	
 }
 
 .lower>button {
 	margin: 5px;
-	width: 50px;
-	height: 30px;
+	padding: 5px 20px;
 }
 
 .button_back {
+	padding: 5px 20px;
 	margin: 4px;
-	width: 50px;
-	height: 30px;
 	background-color: #ed9818;
 	color: white;
 	border-color: #ed9818;
@@ -293,9 +282,8 @@ h4 {
 }
 
 .button_modify {
+	padding: 5px 20px;
 	margin: 5px;
-	width: 50px;
-	height: 30px;
 	background-color: #fff;
 	color: #000;
 	border-color: #000;
@@ -310,9 +298,8 @@ h4 {
 }
 
 .button_delete {
+	padding: 5px 20px;
 	margin: 5px;
-	width: 50px;
-	height: 30px;
 	text-align: center;
 	background-color: white;
 	border-color: #000;
@@ -491,7 +478,7 @@ h4 {
 	width: 100%;
 	max-width: 1200px;
 	margin: auto;
-	margin-top: 2%;
+	margin-top: 3%;
 	border-top: 2px solid blue;
 	margin-bottom: 4%;
 }
@@ -506,8 +493,7 @@ h4 {
 	background: #555555;
 	border: 1px solid #555555;
 	color: white;
-	width: 50px;
-	height: 30px;
+	padding: 5px 20px;
 }
 
 .text-board {
@@ -535,13 +521,11 @@ textarea {
 .reply-update-btn {
 	margin-bottom: 1%;
 	color: black;
-	width: 50px;
+	padding: 5px 20px;
 	margin-top: 1%;
 	margin-right: 1%;
-	height: 30px;
 	background: white;
 	border: 1px solid black;
-	width: 50px;
 }
 
 .reply-update-btn:hover {
@@ -554,8 +538,7 @@ textarea {
 	margin-right: 1%;
 	color: black;
 	display: inline-block;
-	width: 50px;
-	height: 30px;
+	padding: 5px 20px;
 	background: white;
 	border: 1px solid black;
 	display: inline-block;
@@ -597,24 +580,21 @@ textarea {
 }
 
 .reply_btn_lsit {
-	height: 47px;
 	text-align: right;
 }
 
 .replyupdate_btn {
 	margin-right: 1%;
-	width: 50px;
-	height: 30px;
+	padding: 5px 20px;
 	border: 1px solid #0080ff;
 	color: white;
 	background-color: #0080ff;
 }
 
 .back_btn {
-	margin-bottom: 2%;
+	margin-bottom: 25px;
 	margin-right: 27px;
-	width: 50px;
-	height: 30px;
+	padding: 5px 20px;
 	border: 1px solid #ff0000;
 	color: white;
 	background-color: #ff0000;

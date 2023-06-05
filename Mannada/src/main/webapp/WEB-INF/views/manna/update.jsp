@@ -118,7 +118,7 @@
 			<!-- 하단:lower -->
 			<div class="lower">
 				<button class="raise_btn" type="button" onclick="EtValue()">등록</button>
-				<a href="../list"><button type="button" class="cancel_btn">취소</button></a>
+				<a href="javascript:history.back();"><button type="button" class="cancel_btn">취소</button></a>
 			</div>
 		</form>
 	 </div>

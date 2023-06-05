@@ -10,7 +10,7 @@
 	text-align: center;
 	max-width: 1200px !important;
 	margin: 5% auto !important;
-	padding: 0;
+	padding: 0 !important;
 }
 
 /* 각 페이지 , 파란 베너 김소연 */
@@ -60,7 +60,6 @@
 	text-align: center;
 	border-bottom: 1px solid #ccc;
 	max-width: 1200px;
-	margin: auto 0% 4%;
 }
 
 .title {
@@ -94,7 +93,6 @@ hr {
 .Writer_date_views {
 	position: relative;
 	background-color: #f3f3f3;
-	/*  font-size: larger; */
 }
 
 .Writer {
@@ -174,29 +172,26 @@ hr {
 }
 
 .date_views {
-	font-size: 0.96em;
+	font-size: 14px;
 	position: absolute;
-	top: 32.5%;
-	left: 85.5%;
+	top: 34.5%;
+	left: 86%;
 	color: #5F5F5F;
 	display: inline-block;
 }
 
 .Writer_date {
 	text-align: left;
-	padding-left: 2%;
+	padding-left: 27px;
 }
 
 .text_box {
 	text-align: left;
-	padding-top: 34px;
-	padding-bottom: 35px;
 	font-size: 15px;
 	line-height: 24px;
 	word-break: break-all;
 	white-space: pre-line;
-	padding-left: 2.5%;
-	padding-right: 2.5%;
+	padding: 27px;
 }
 
 .answer_answer {
@@ -207,7 +202,7 @@ hr {
 	border-top: 2px solid blue;
 	margin: auto;
 	margin-bottom: 1%;
-	margin-top: 1%;
+	margin-top: 3%;
 }
 
 .answer_mgrId {
@@ -219,10 +214,11 @@ hr {
 }
 
 .answer_date {
-	/* margin-right: 1%; */
+	font-size: 14px;
 	color: #5F5F5F;
 	text-align: right;
 	display: inline-block;
+	color: #5F5F5F;
 }
 
 .answer_content {
@@ -256,8 +252,7 @@ hr {
 .update_Answer_btn {
 	margin-right: 1%;
 	display: inline-block;
-	width: 50px;
-	height: 30px;
+	padding: 5px 20px;
 	border: 1px solid #0080ff;
 	color: white;
 	background-color: #0080ff;
@@ -266,8 +261,7 @@ hr {
 .cancell_btn {
 	margin-top: 2%;
 	display: inline-block;
-	width: 50px;
-	height: 30px;
+	padding: 5px 20px;
 	border: 1px solid #ff0000;
 	color: white;
 	background-color: #ff0000;
@@ -275,29 +269,36 @@ hr {
 
 .answer_btn_info {
 	width: 100%;
+	text-align: right;
+	margin-top: 2%;
 }
 
 .answer_btn {
-	float: right;
-	margin-top: 2%;
 	display: inline-block;
-	width: 50px;
-	height: 30px;
+	padding: 5px 20px;
 	border: 1px solid #0707d9;
 	color: white;
 	background-color: #0707d9;
 }
 
+.answer_back {
+	padding: 5px 20px;
+	background-color: #ed9818;;
+	color: white;
+	border-color: #ed9818;
+	border: 1px solid;
+	text-align: center;
+}
+
 .delete_update_btn {
 	width: 100%;
 	margin-top: 2%;
+	text-align: right;
 }
 
 .delete_btn {
-	float: right;
 	display: inline-block;
-	width: 50px;
-	height: 30px;
+	padding: 5px 20px;
 	border: 1px solid #ff0000;
 	color: white;
 	background-color: #ff0000;
@@ -305,10 +306,8 @@ hr {
 
 .update_btn {
 	margin-right: 1%;
-	float: right;
 	display: inline-block;
-	width: 50px;
-	height: 30px;
+	padding: 5px 20px;
 	border: 1px solid #0080ff;
 	color: white;
 	background-color: #0080ff;
@@ -324,27 +323,12 @@ hr {
 
 .lower>button {
 	margin: 5px;
-	width: 50px;
-	height: 30px;
-}
-
-.button_list {
-	margin-top: 2%;
 	padding: 5px 20px;
-	background-color: #ed9818;;
-	color: white;
-	border-color: #ed9818;
-	border: 1px solid;
-	text-align: center;
-}
-
-.btn_list {
-	width: 50%;
 }
 
 .button_modify {
 	margin: 5px;
-	padding: 5px 20px; 
+	padding: 5px 20px;
 	background-color: #fff;
 	color: #000;
 	border-color: #000;
@@ -373,4 +357,13 @@ hr {
 	background-color: #de2f00;
 	border: #de2f00;
 	color: #fff;
+}
+
+.button_back {
+	padding: 5px 20px;
+	background-color: #ed9818;;
+	color: white;
+	border-color: #ed9818;
+	border: 1px solid;
+	text-align: center;
 }

@@ -92,7 +92,7 @@ function EtValue() {
    
    
    <div class="container_box">
-      <form method="post" name="write_post" class="replyupdate_box">
+      <form action="../replyUpdate/${reply.id }?id=${item.id}" method="post" name="write_post" class="replyupdate_box">
          <div style="border-top: 2px solid blue;">
             <input type="hidden" name="replyId" value="${reply.id }">
             <div class="text_box_info">

@@ -53,7 +53,7 @@
 								<option value="1">후기</option>
 								<option value="2">소통</option>
 						</select>
-						<input id="title" name="title" type="text" value="${item.title}"></td>
+						<input maxlength="30" id="title" name="title" type="text" value="${item.title}"></td>
 					</tr>
 
 					<tr>
@@ -67,7 +67,7 @@
 			<!-- 하단:lower -->
 			<div class="lower">
 				<button class="raise_btn" type="button" onclick="EtValue()">등록</button>
-				<a href="../list"><button type="button" class="cancel_btn">취소</button></a>
+				<a href="javascript:history.back();"><button type="button" class="cancel_btn">취소</button></a>
 			</div>
 		</form>
 	 </div>

@@ -21,7 +21,7 @@
       const form = document.write_post;
 
       if (form.content.value.trim() == '') {
-         swal('', '수정할 내용을 입력해주세요.', 'error')
+         swal('', '내용을 입력해주세요.', 'error')
          form.content.focus();
          return;
       }
@@ -37,7 +37,7 @@
 			<li>목록</li>
 		</div>
 		<h3 class="page_title">커뮤니티</h3>
-		<p class="page_text">만남에 대한 후기와 소통을 자유옵게 글로 적어주세요!</p>
+		<p class="page_text">만남에 대한 후기와 소통을 자유롭게 글로 적어주세요!</p>
 	</div>
 
 	<section class="container">
@@ -89,7 +89,7 @@
 		<div class="lower">
 			
 			<!-- modify:수정하다란 뜻 -->
-			<c:if test="${sessionScope.user.num == item.num }">
+			<c:if test="${sessionScope.user.num == item.num}">
 				<a href="../update/${id}"><button class="button_modify">수정</button></a>
 				<a href="../delete/${id}"><button class="button_delete">삭제</button></a>
 			</c:if>
@@ -117,7 +117,7 @@
 			<div class="replyFrom">
 				<form action="../replyAdd" method="post" name="write_post">
 					<div class="text-board">
-						<textarea name="content" placeholder="로그인 후 코멘트를 달아주세요!"></textarea>
+						<textarea name="content" placeholder="코멘트를 달아주세요!"></textarea>
 						<input type="hidden" name="commuId" value="${item.id }">
 					</div>
 					<div class="reply_up">
@@ -135,7 +135,6 @@
 			<div class="list_btn">
 				<div style="margin-top: 1%;"></div>
 			</div>
-
 			<c:forEach var="reply" items="${reply }">
 				<li>
 					<div>
@@ -187,36 +186,8 @@
 					</div>
 				</li>
 			</c:forEach>
-
-
 			<div style="border-top: 1px solid #ccc; margin-top: 1%;"></div>
 		</div>	
-		<!-- 페이지네이션 형태만 잡음-->
-		<tfoot>
-			<tr>
-				<td colspan="5">
-					<ol class="pagination pagination-sm justify-content-center"
-						style="margin-bottom: 5%; margin-top: 5%;">
-						<li class="page_nation_item"><a href="?page=1${pager.query}"
-							class="page-link">처음</a></li>
-						<li class="page_nation_item"><a
-							href="?page=${pager.prev}${pager.query}" class="page-link">이전</a></li>
-
-						<c:forEach var="page" items="${pager.list}">
-							<li class="page_nation_item"><a
-								href="?page=${page}${pager.query}"
-								class="page-link ${page eq pager.page ? 'active' : ''}">${page}</a></li>
-						</c:forEach>
-
-						<li class="page_nation_item"><a
-							href="?page=${pager.next}${pager.query}" class="page-link">다음</a></li>
-						<li class="page_nation_item"><a
-							href="?page=${pager.last}${pager.query}" class="page-link">마지막</a></li>
-					</ol>
-				</td>
-			</tr>
-
-		</tfoot>		
 
 	</div>
 	</section>

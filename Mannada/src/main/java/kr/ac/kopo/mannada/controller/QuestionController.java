@@ -65,7 +65,7 @@ public class QuestionController {
 		
 		service.update(item);
 		
-		return "redirect:../list";
+		return "redirect:../detail/" + id;
 	}
 	
 	@GetMapping("/delete/{id}")
@@ -101,7 +101,7 @@ public class QuestionController {
 	}
 	
 	@GetMapping("/updateAnswer/{id}")
-	public String updateAnswer(@PathVariable int id, Model model) {
+	public String updateAnswer(@PathVariable int id, Model model, @SessionAttribute Manager manager) {
 		
 		Question item = service.item(id);
 		model.addAttribute("question", item);
@@ -113,7 +113,7 @@ public class QuestionController {
 	}
 	
 	@PostMapping("/updateAnswer/{id}")
-	public String updateAnswer(@PathVariable int id, Answer item) {
+	public String updateAnswer(@PathVariable int id, Answer item, @SessionAttribute Manager manager) {
 		item.setQuestionId(id);
 		
 		service.updateAnswer(item);
