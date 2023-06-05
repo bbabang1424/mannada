@@ -74,6 +74,7 @@
 }
 
 .chat_text {
+	position: relative;
 	color: black;
 	width: 100%;
 	display: inline-block;

@@ -102,7 +102,7 @@
 			<div class="chat_banner">
 				<div class="chat_text">
 					ROOM <i class="bi bi-chat-fill"
-						style="position: absolute; top: 14%; left: 26%;"></i>
+						style="position: absolute; top: -11%; left: 23%;"></i>
 				</div>
 			</div>
 
