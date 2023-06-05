@@ -41,10 +41,13 @@
 			<form name="photoInfo_from" method="post" style="width: 700px"
 				enctype="multipart/form-data">
 				<div>
-					<img class="profile" src="/resources/image/profile.png"
-						id="preview">
+					<div class="profile">        
+<img src="/resources/image/profile.png" id="preview">
+</div>
+
+					
 					<div class="pro1">
-						<div>
+						<div class="user-profile">
 							<input type="file" name="uploadFile" accept=".jpg, .jpeg, .png">							
 						</div>					
 						
