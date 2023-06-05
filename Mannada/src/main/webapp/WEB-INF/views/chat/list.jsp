@@ -15,20 +15,23 @@
 <link href="/resources/css/chat.css" rel="stylesheet">
 </head>
 <body>
-<!--각 페이지 안내베너 :김소연  -->
+	<!--각 페이지 안내베너 :김소연  -->
 	<div class="banner">
 		<ul class="banner_text">
 			<li>HOME</li>
 			<i class="bi bi-caret-right-fill"></i>
 			<li>채팅</li>
-			
+
 		</ul>
 	</div>
 	<div class="container">
 		<div id="room">
 			<div class="chat_banner">
-		<div class="chat_text">ROOM<i class="bi bi-chat-fill" style="position: absolute; top: 14%; left: 26%;"></i></div>
-		</div>
+				<div class="chat_text">
+					ROOM<i class="bi bi-chat-fill"
+						style="position: absolute; top: -11%; left: 23%;"></i>
+				</div>
+			</div>
 			<c:forEach var="item" items="${list }">
 				<a href="detail/${item.id}">
 					<div class=active-color>
@@ -39,7 +42,7 @@
 								</div>
 							</div>
 							<div class="box_title">
-							<div >${item.title }</div>
+								<div>${item.title }</div>
 							</div>
 						</div>
 					</div>

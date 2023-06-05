@@ -73,7 +73,7 @@
 	        
 	        					
 			<div class="checkbox">
-				<input type="checkbox" id="aggrement">개인정보 수집 및 정보이용에 동의합니다.
+				<input type="checkbox" id="aggrement"> 개인정보 수집 및 정보이용에 동의합니다.
 			</div>
 		
 	        <div class="line">
