@@ -55,10 +55,13 @@ public class NoticeServiceImpl implements NoticeService {
 		
 		dao.update(item);
 		
-		for(Attach attach : item.getAttachs()) {
-			attach.setNoticeId(item.getId());
+		if(item.getAttachs() != null) {
+			for(Attach attach : item.getAttachs()) {
+				attach.setNoticeId(item.getId());
+				
+				dao.addAttach(attach);
+			}
 			
-			dao.addAttach(attach);
 		}
 	}
 
@@ -75,6 +78,11 @@ public class NoticeServiceImpl implements NoticeService {
 		}
 		else
 			return false;
+	}
+
+	@Override
+	public void addViewCnt(int id) {
+		dao.addViewCnt(id);
 	}
 	
 
