@@ -39,11 +39,11 @@
 <script type="text/javascript">
 	const pager_url = "/api/manna";
 	
-	
+	$(document).ready(function(){
 	$('li').on('click', function(){
 		$(this).addClass('active');
 		});
-	
+	});
 </script>
 <script src="/resources/js/manna.js"></script>
 </head>
