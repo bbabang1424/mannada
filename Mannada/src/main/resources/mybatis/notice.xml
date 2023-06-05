@@ -91,4 +91,10 @@
 		WHERE id = #{id}
 	</delete>
 
+
+	<!-- 조회수 증가 -->
+	<update id="addViewCnt">
+		UPDATE notice SET viewCnt = viewCnt + 1
+		WHERE id = #{id}
+	</update>
 </mapper>
