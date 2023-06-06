@@ -92,7 +92,7 @@
 	</div>
 
 	<div class="container">
-		<form method="post" name="write_post" >
+		<form method="post" name="write_post" enctype="multipart/form-data">
 			<table class="box">
 				<colgroup>
 					<col width="10%" />
