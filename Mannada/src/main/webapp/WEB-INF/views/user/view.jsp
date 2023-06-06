@@ -195,8 +195,6 @@
 		
 		<div class="tabcontent">
 			<div id="tab01">
-
-
 			<div class="mypage">
 				<div class="review-title">
 					<div class="text1">나의 평점은?</div>
