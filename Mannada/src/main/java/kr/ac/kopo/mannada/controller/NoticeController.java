@@ -97,6 +97,7 @@ public class NoticeController {
 		item.setMgrId(manager.getId());
 		
 		try {
+			
 			List<Attach> list = new ArrayList<Attach>();
 			
 			for(MultipartFile attach : item.getAttach()) {
