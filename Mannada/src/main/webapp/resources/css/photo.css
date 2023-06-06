@@ -33,14 +33,20 @@
 	margin: 20px;
 }
 
-.profile {	
+.profile {   
     width: 155px;
-    height: auto;
+    height: 155px;
     border-radius: 70%;
     overflow: hidden;
     margin: 2em 1em;
     position: relative;
     left: 16%;
+}
+
+.profile img {
+   object-fit: cover;
+    width: 100%;
+    height: 100%;
 }
 
 .pro1 img {
@@ -53,6 +59,9 @@
 .pro1{
 	position: relative;
 	left: 115px;
+}
+.user-profile {
+	
 }
 
 .pro-btn {

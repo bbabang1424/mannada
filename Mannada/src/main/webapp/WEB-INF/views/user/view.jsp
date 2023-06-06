@@ -117,9 +117,8 @@
 </head>
 <jsp:include page="../header.jsp"></jsp:include>
 <body>
+<div class="container">
 	<div class="title">마이페이지</div>
-
-
 	<header class="profile-box">
 		<div class="user-button">
 			<c:if test="${sessionScope.user == null}">
@@ -196,9 +195,9 @@
 		
 		<div class="tabcontent">
 			<div id="tab01">
-	<section>
 
-			<div>
+
+			<div class="mypage">
 				<div class="review-title">
 					<div class="text1">나의 평점은?</div>
 					<div class="text2">별점과 이용경험을 남겨주세요.</div>					
@@ -268,30 +267,7 @@
 			<div id="tab04"></div>
 		</div>
 </nav>
-						<tfoot>
-							<tr>
-								<td colspan="5">
-									<ol class="pagination pagination-sm justify-content-center"
-										style="margin-bottom: 5%; margin-top: 5%;">
-										<li class="page_nation_item"><a
-											href="?page=1${pager.query}" class="page-link">처음</a></li>
-										<li class="page_nation_item"><a
-											href="?page=${pager.prev}${pager.query}" class="page-link">이전</a></li>
-
-										<c:forEach var="page" items="${pager.list}">
-											<li class="page_nation_item"><a
-												href="?page=${page}${pager.query}"
-												class="page-link ${page eq pager.page ? 'active' : ''}">${page}</a></li>
-										</c:forEach>
-
-										<li class="page_nation_item"><a
-											href="?page=${pager.next}${pager.query}" class="page-link">다음</a></li>
-										<li class="page_nation_item"><a
-											href="?page=${pager.last}${pager.query}" class="page-link">마지막</a></li>
-									</ol>
-								</td>
-							</tr>
-						</tfoot>
+						
 					
 
 		<div class="my-set" id="my-post">
@@ -503,7 +479,7 @@
 		</div>
 
 		<!-- 캘린더 추가 -->
-	</section>
+</div>
 </body>
 <jsp:include page="../footer.jsp"></jsp:include>
 </html>
