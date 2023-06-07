@@ -91,14 +91,14 @@
 					<!-- Partic: 참여란 뜻으로 참여버튼 -->
 					<!-- 참여버튼 눌렀을때 인원 표시되게 해야 함-->
 					<div class="model_Partic">
-						<c:if test="${item.status < 1 }">
+						<c:if test="${item.status < 0 }">
 							<button type="button" style="background-color: #999">참여 불가</button>
 						</c:if>
-						<c:if test="${item.status == 1 && status == 0 && sessionScope.user.num != item.num }">
+						<c:if test="${item.status >= 0 && status == 0 && sessionScope.user.num != item.num && sessionScope.user != null }">
 							<a href="../addJoin/${item.id }"><button type="button"
 									id="join_btn">참여</button></a>
 						</c:if>
-						<c:if test="${item.status == 1 && status == 1 && sessionScope.user.num != item.num }}">
+						<c:if test="${item.status >= 0 && status == 1 && sessionScope.user.num != item.num && sessionScope.user != null }">
 							<a href="../deleteJoin/${item.id }"><button type="button"
 									id="join_btn" class="cancle">참여 취소</button></a>
 						</c:if>

@@ -24,6 +24,7 @@
 
 	socket.onopen = function() {
 		connect = true;
+		socket.send('make//${id}');
 		/* alert("서버 연결 완료"); */
 	}
 
@@ -48,8 +49,13 @@
 
 		let regDate = year + "-" + month + "-" + date + " " + hours + ":"
 				+ minutes;
+		
+		
+		console.log(msg.data);
+		
+		let first_div = usernum == '${num}' ? "<div class='list my'>" : "<div class='list you'>"
 			
-		message.innerHTML += usernum == '${num}' ? "<div class='list my'>" : "<div class='list you'>"
+		message.innerHTML += first_div
 				+ "<div class='user'><div class='name'>"
 				+ arr[1]
 				+ "</div></div><div class='balloon'>" + arr[2]
@@ -76,7 +82,7 @@
 			let content = document.getElementById("content");
 
 			
-			socket.send('${sessionScope.user.num}:${sessionScope.user.nickname}:'+content.value)
+			socket.send('chat//${id}//${sessionScope.user.num}:${sessionScope.user.nickname}:'+content.value)
 
 			content.value = "";
 			content.focus();
