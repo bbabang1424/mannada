@@ -168,6 +168,16 @@ public class RootController {
 			return "FAIL";
 	}
 	
+	/* 아이디 혹은 비번 찾기 관련 */
+	@GetMapping("/findpage")
+	public String findpage(Model model) {
+		return "findpage";
+	}
+	@PostMapping("/findpage")
+	public String findpage() {
+		return "redirect:findpage";
+	}
+	
 	/*selectbox 주소관련*/
 	@ResponseBody
 	@GetMapping("/metro")
