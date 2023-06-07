@@ -466,7 +466,7 @@ h4 {
 
 .reply-content {
 	width: 95%;
-	margin-bottom: 2.5%;
+	/* margin-bottom: 2.5%; */
 	White-space: pre-line;
 	word-break: break-all;
 	margin-left: 2%;
