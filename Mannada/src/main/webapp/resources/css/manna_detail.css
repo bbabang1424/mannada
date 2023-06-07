@@ -82,7 +82,7 @@
 }
 
 .Category_address {
-	margin: 10px 10px 0px 10px;
+	margin: 10px;
 	display: inline-block;
 }
 
@@ -109,7 +109,7 @@
 .writer_date {
 	position: absolute;
 	width: 100%;
-	top: 51.5%;
+	top: 53.5%;
 	left: 10%;
 }
 
@@ -173,7 +173,7 @@
 .views {
 	display: inline-block;
 	position: absolute;
-	left: 93%;
+	left: 92.2;
 	top: 64%;
 }
 
