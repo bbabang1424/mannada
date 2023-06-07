@@ -140,7 +140,7 @@ function getCookie(cookieName) {
 	<div class="banner">
 			<ul class="banner_text">
 				<li>HOME</li>
-				<i class="bi bi-caret-right-fill"></i>
+				<i class="bi bi-caret-right-fill"></i> 
 				<li>로그인</li>	
 			</ul>
 	</div>
