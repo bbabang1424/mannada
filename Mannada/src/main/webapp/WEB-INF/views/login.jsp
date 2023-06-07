@@ -7,17 +7,35 @@
 <meta charset="UTF-8">
 <title>만나다</title>
 <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
 <link rel="stylesheet" href="/resources/css/login.css">
 <link rel="stylesheet" href="/resources/image/swiper1.jpg"/>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
 <script>
+/* 코드 많아서 js파일로 생성 시 에러발생함. jsp파일에 그냥 두기 */
 $(function(){
 	//메세지는 일치여부 하나니까 나눌 필요x
 	const msg = '${msg}';
 	if(msg)
 		swal('로그인', msg, 'error');
+	
+	/* 유저 : 아이디 저장 표시 */
+	let mail = getCookie("Cookie_mail");
+	console.log(mail);		
+	if(mail) {
+		$("#user-login input[name='id']").val(mail);
+		$("#user-rememberId").attr("checked", true);
+	}
+	
+	/* 관리자 : 아이디 저장 표시 */
+	let id = getCookie("Cookie_id");	
+	console.log(id);	
+	if(id) {
+		$("#manager-login input[name='id']").val(id);
+		$("#mg-rememberId").attr("checked", true);
+	}
 	
 	$(".title li").eq(0).click(function() {
 		$(".title li").css("text-decoration", "unset");
@@ -42,29 +60,67 @@ $(function(){
 /* 아이디, 비밀번호 입력하면 로그인 */
 function userValue() {
 	const form = document.user_login;
+	const checkBox = $('#user-rememberId').is(":checked");
 	
 	if(form.id.value == '') {
 		form.id.focus();
-		return;
-	}else if(form.pw.value == ''){
+		return; // 아래 if문을 막는다.
+	} else if(form.pw.value == ''){
 		form.pw.focus();
 		return;
-	} 
-	
+	} else if(checkBox){
+		setCookie("Cookie_mail", form.id.value, 7);
+	} else {
+		deleteCookie("Cookie_mail");
+	}
 	form.submit();
 }
 
 function mgValue() {
 	const form = document.mg_login;
+	const checkBox = $('#mg-rememberId').is(":checked");
 	
 	if(form.id.value == '') {
 		form.id.focus();
 		return;
-	}else if(form.pw.value == ''){
+	} else if(form.pw.value == ''){
 		form.pw.focus();
 		return;
+	} else if(checkBox){
+		setCookie("Cookie_id", form.id.value, 7);
+	} else {
+		deleteCookie("Cookie_id");
 	}
 	form.submit();
+}
+
+/* 쿠키 관련 코드 */
+//저장
+function setCookie(cookieName, value, exdays){
+    var exdate = new Date();
+    exdate.setDate(exdate.getDate() + exdays);
+    var cookieValue = escape(value) + ((exdays==null) ? "" : "; expires=" + exdate.toGMTString());
+    document.cookie = cookieName + "=" + cookieValue;
+}
+//삭제
+function deleteCookie(cookieName){
+    var expireDate = new Date();
+    expireDate.setDate(expireDate.getDate() - 1);
+    document.cookie = cookieName + "= " + "; expires=" + expireDate.toGMTString();
+}
+//불러오기
+function getCookie(cookieName) {
+    cookieName = cookieName + '=';
+    var cookieData = document.cookie;
+    var start = cookieData.indexOf(cookieName);
+    var cookieValue = '';
+    if(start != -1){
+        start += cookieName.length;
+        var end = cookieData.indexOf(';', start);
+        if(end == -1)end = cookieData.length;
+        cookieValue = cookieData.substring(start, end);
+    }
+    return unescape(cookieValue);
 }
 </script>
 
@@ -112,7 +168,7 @@ function mgValue() {
 	        <div>
 	            <form name="user_login" method="post" action="/userLogin" class="login-form">
 	                <div>
-	                    <input class="input" type="email" id="textbox user_id" name="id" placeholder="아이디(이메일) 입력"
+	                    <input class="input" type="email" id="textbox user_id" name="id" placeholder="이메일 입력"
 	                    value="">
 	                </div>
 	                
@@ -121,10 +177,10 @@ function mgValue() {
 	                </div>
 	                
 	                <div>
-	                    <input type="checkbox" id="remember-check"> 아이디 저장
+	                    <input type="checkbox" id="user-rememberId"> 아이디 저장
 	                </div>
 	                
-					<button class="login-button" type="button" onclick="userValue()">로그인</button>
+					<button class="login-button" type="button" onclick="userValue();">로그인</button>
 					
 					<!--  csrf 공격 방어를 위해 동적 생성 -->
     				<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token }" />
@@ -165,10 +221,10 @@ function mgValue() {
 	                </div>
 	                
 	                <div>
-	                    <input type="checkbox" id="remember-check"> 아이디 저장
+	                    <input type="checkbox" id="mg-rememberId"> 아이디 저장
 	                </div>
 	                
-					<button class="login-button" type="button" onclick="mgValue()">로그인</button>
+					<button class="login-button" type="button" onclick="mgValue();">로그인</button>
 				</form>
 	        </div>
         </div>     
