@@ -17,14 +17,16 @@
 	<!--참여버튼 a-jax:이현주  -->
 	<!-- 각 페이지 안내 베너:김소연  -->
 	<div class="banner">
-		<div class="banner_text">
+		<ul class="banner_text">
 			<li>만나다</li> <i class="bi bi-caret-right-fill"></i>
 			<li>글 목록</li>
-		</div>
+		
 		<h3 class="page_title">글 목록</h3>
 		<p class="page_text">새로운 만남을 만날수 있는 곳 입니다. 관심있는 카드를 눌러 참여하세요!</p>
+	</ul>
 	</div>
-	<section class="content">
+	
+	<section class="container">
 		<div class="box">
 			<div class="first" style="position: relative;">
 
@@ -91,14 +93,14 @@
 					<!-- Partic: 참여란 뜻으로 참여버튼 -->
 					<!-- 참여버튼 눌렀을때 인원 표시되게 해야 함-->
 					<div class="model_Partic">
-						<c:if test="${item.status < 1 }">
+						<c:if test="${item.status < 0 }">
 							<button type="button" style="background-color: #999">참여 불가</button>
 						</c:if>
-						<c:if test="${item.status == 1 && status == 0 && sessionScope.user.num != item.num }">
+						<c:if test="${item.status >= 0 && status == 0 && sessionScope.user.num != item.num && sessionScope.user != null }">
 							<a href="../addJoin/${item.id }"><button type="button"
 									id="join_btn">참여</button></a>
 						</c:if>
-						<c:if test="${item.status == 1 && status == 1 && sessionScope.user.num != item.num }}">
+						<c:if test="${item.status >= 0 && status == 1 && sessionScope.user.num != item.num && sessionScope.user != null }">
 							<a href="../deleteJoin/${item.id }"><button type="button"
 									id="join_btn" class="cancle">참여 취소</button></a>
 						</c:if>

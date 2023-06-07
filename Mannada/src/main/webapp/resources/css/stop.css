@@ -34,10 +34,10 @@
 .title p {
     font-weight: bold;
     text-align: center;
-    border: 3px solid darkblue;
-    background-color: whitesmoke;
+    border: 3px solid #cc0000;
+    background-color: white;
     border-radius: 10px;
-    padding: 5px;
+    padding: 10px;
     margin: 20px;
 }
 
@@ -48,7 +48,6 @@
 
 .password {
     margin: 10px 5px;
-    padding: 13px 0px;
 }
 
 .pw input {
@@ -77,7 +76,7 @@
     border: none;
     color: black;
     position: relative;
-    top: 15px;
+    top: 30px;
     left: 75px;
 }
 
@@ -89,6 +88,6 @@
     border: none;
     color: white;
     position: relative;
-    top: -23px;
+    top: -8px;
     left: 229px;
 }

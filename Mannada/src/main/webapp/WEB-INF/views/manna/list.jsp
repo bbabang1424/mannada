@@ -52,15 +52,14 @@
 <body>
 	<!--만나다 더보기 기능: 이현주  -->
 	<div class="banner">
-
-		<div class="banner_text">
+		<ul class="banner_text" >
 			<li>만나다</li> <i class="bi bi-caret-right-fill"></i>
 			<li>글 목록</li>
-
-		</div>
 		<h3 class="page_title">글 목록</h3>
 		<p class="page_text">새로운 만남을 만날수 있는 곳 입니다. 관심있는 카드를 눌러 참여하세요!</p>
+	</ul>
 	</div>
+	
 	<div class="container">
 	<div class="category-inner">
 		<ul class="category_list">
