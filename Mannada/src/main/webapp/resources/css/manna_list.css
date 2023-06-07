@@ -16,7 +16,7 @@
 	display: inline-block;
 }
 
-ui li .active{
+ul li.active{
 	border-bottom: 2px solid #0080ff;
 }
 

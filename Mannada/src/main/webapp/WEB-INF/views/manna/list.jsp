@@ -39,11 +39,13 @@
 <script type="text/javascript">
 	const pager_url = "/api/manna";
 	
+	/*
 	$(document).ready(function(){
 	$('li').on('click', function(){
 		$(this).addClass('active');
 		});
 	});
+	*/
 </script>
 <script src="/resources/js/manna.js"></script>
 </head>
@@ -62,32 +64,32 @@
 	<div class="container">
 	<div class="category-inner">
 		<ul class="category_list">
-			<li><a href="/manna/list">
+			<li  class="${param.keyword == null ? 'active' : ''}"><a href="/manna/list">
 				<div class="icon">
 				전체
 				</div>
 				</a></li>
-			<li><a href="/manna/list?search=8&keyword=1">
+			<li class="${param.keyword == 1 ? 'active' : ''}"><a href="/manna/list?search=8&keyword=1">
 				<div class="icon">
 				공동구매
 				</div>
 				</a></li>
-			<li><a href="/manna/list?search=8&keyword=2">
+			<li class="${param.keyword == 2 ? 'active' : ''}"><a href="/manna/list?search=8&keyword=2">
 				<div class="icon">
 				게임
 				</div>
 				</a></li>
-			<li><a href="/manna/list?search=8&keyword=3">
+			<li class="${param.keyword == 3 ? 'active' : ''}"><a href="/manna/list?search=8&keyword=3">
 				<div class="icon">
 				식사
 				</div>
 				</a></li>
-			<li><a href="/manna/list?search=8&keyword=4">
+			<li class="${param.keyword == 4 ? 'active' : ''}"><a href="/manna/list?search=8&keyword=4">
 				<div class="icon">
 				스포츠
 				</div>
 				</a></li>
-			<li><a href="/manna/list?search=8&keyword=5">
+			<li class="${param.keyword == 5 ? 'active' : ''}"><a href="/manna/list?search=8&keyword=5">
 				<div class="icon">
 				기타
 				</div>
