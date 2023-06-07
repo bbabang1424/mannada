@@ -19,6 +19,7 @@
 	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 
 <title>만나다</title>
+<!-- <script src="/resources/js/photo.js"></script> -->
 <link rel="stylesheet" href="/resources/css/photo.css">
 
 </head>
@@ -41,25 +42,25 @@
 			<form name="photoInfo_from" method="post" style="width: 700px"
 				enctype="multipart/form-data">
 				<div>
-					<div class="profile">        
-<img src="/resources/image/profile.png" id="preview">
-</div>
+					<div class="profile">
+						<img src="/resources/image/profile.png" id="preview">
+					</div>
 
-					
-					<div class="pro1">
-						<div class="user-profile">
-							<input type="file" name="uploadFile" accept=".jpg, .jpeg, .png">							
-						</div>					
-						
-					<div class="pro-btn">
-						<div class="pro-btn1">
-							<button type="button" id="goBack">취소</button>
+
+					<div class="pro1">				
+						 <div class="upload-btn">						 
+							<button><input type="file" name="uploadFile" accept=".jpg, .jpeg, .png"></button>							
 						</div>
 						
-						<div class="pro-btn2">							
-							<button class="upload" id="button" type="submit">적용</button>							
-						</div>	
-					</div>
+						<div class="pro-btn">
+							<div class="pro-btn1">
+								<button type="button" id="goBack">취소</button>
+							</div>
+
+							<div class="pro-btn2">
+								<button class="upload" id="button" type="submit">적용</button>
+							</div>
+						</div>
 					</div>
 				</div>
 			</form>

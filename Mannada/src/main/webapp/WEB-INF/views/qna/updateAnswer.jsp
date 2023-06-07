@@ -79,13 +79,14 @@ function EtValue() {
 </head>
 <body>
 	<div class="banner">
-		<div class="banner_text">
+		<ul class="banner_text">
 			<li>Q & A</li>
 			<i class="bi bi-caret-right-fill"></i>
 			<li>목록</li>
-		</div>
+		
 		<h3 class="page_title">Q & A</h3>
 		<p class="page_text">궁금한 점, 문의할 점을 올려주세요!</p>
+		</ul>
 	</div>
 
 	<section class="container">

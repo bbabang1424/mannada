@@ -26,7 +26,7 @@ li>a{
 .category_list {
 	max-width: 1200px;
 	width: 100%;
-	padding-left: 2%;
+	padding-left: 20px;
 }
 
 .container {
@@ -52,6 +52,7 @@ li>a{
 }
 
 .banner_text {
+	padding-left:10px;
 	max-width: 1200px;
 	width: 100%;
 	margin: 0 auto;
