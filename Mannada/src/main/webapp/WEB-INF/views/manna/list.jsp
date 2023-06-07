@@ -8,7 +8,7 @@
 <head>
 <meta charset="UTF-8">
 
-<title>먼나다</title>
+<title>만나다</title>
 <jsp:include page="../header.jsp"></jsp:include>
 <link rel="stylesheet" href="/resources/css/manna_list.css">
 <link rel="stylesheet"
