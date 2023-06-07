@@ -14,7 +14,7 @@
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
 <script>
-/* 코드 많아서 js파일로 생성 시 에러발생함. jsp파일에 그냥 두기 */
+/* js파일로 옮길 시 에러발생함. jsp파일에 그냥 두기 */
 $(function(){
 	//메세지는 일치여부 하나니까 나눌 필요x
 	const msg = '${msg}';
@@ -189,7 +189,7 @@ function getCookie(cookieName) {
 	        
 	        <div class="flex">
 	            <div class="find-account">
-	               | <a href="">아이디 찾기</a> | <a href="">비밀번호 찾기</a> |               
+	               | <a href="/findpage">아이디 찾기</a> | <a href="/findpage">비밀번호 찾기</a> |         
 	            </div> 
 	        </div> 
 	
