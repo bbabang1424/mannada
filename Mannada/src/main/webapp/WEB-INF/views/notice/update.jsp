@@ -82,17 +82,18 @@
 </head>
 <body>
 	<div class="banner">
-		<div class="banner_text">
+		<ul class="banner_text">
 			<li>공지사항</li>
 			<i class="bi bi-caret-right-fill"></i>
 			<li>글 변경</li>
-		</div>
+		
 		<h3 class="page_title">공지사항</h3>
 		<p class="page_text">등록 된 글의 내용을 변경하는 공간 입니다.</p>
+	</ul>
 	</div>
 
 	<div class="container">
-		<form method="post" name="write_post" >
+		<form method="post" name="write_post" enctype="multipart/form-data">
 			<table class="box">
 				<colgroup>
 					<col width="10%" />

@@ -1,7 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>	
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%> 
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>  
 <!DOCTYPE html>
 <html>
 <head>
@@ -237,7 +238,7 @@ const pager_item = [ {
 							<!-- <th>카테고리</th>  -->
 							<th>제목</th> 
 							<th>작성일</th>
-							<th>조회수</th> 
+							<th>조회수</th>
 						</tr>
 					</thead>
 					<tbody >
@@ -246,16 +247,23 @@ const pager_item = [ {
 								<td colspan="5">등록된 글이 없습니다.</td>
 							</tr>
 						</c:if>
-						<c:forEach var="item" items="${commuReview}" end="4" varStatus="status">
+						<c:forEach var="item" items="${commuReview}" end="4" varStatus="ranking">
 							<tr
 								style="border: 1px solid #dddddd; padding-top: 10px; border-right: 1px solid White; border-left: 1px solid White;">
 								<!-- <td><c:forEach var="cnt" begin="1" end="5">${cnt}</c:forEach></td>  -->
-								<td style="font-weight:700; color:#de2f00;"><div><c:out value="${status.count}" /></div></td>
+								<td class="ranking" style="font-weight:700; color:#999;"><div><c:out value="${ranking.count}" /></div></td>
 								<!-- <td><div class="category_color category_color_${item.category}"></div>${item.category_}</td> --> 
-								<td><a style="color: black;" href="/community/detail/${item.id}">${item.title}</a></td>
+								<td><a style="color: black;" href="/community/detail/${item.id}" title="${item.title}">
+									<c:if test="${fn:length(item.title) < 24}">
+										${item.title}
+									</c:if>
+									<c:if test="${fn:length(item.title) >= 24}">
+										${fn:substring(item.title,0,23)}...
+									</c:if>
+									</a></td>
 								<td><fmt:formatDate value="${item.regDate}"
-										pattern="yyyy-MM-dd " /></td>
-								<td>${item.viewCnt}</td>
+										pattern="yyyy-MM-dd " /></td>		
+								<td>${item.viewCnt}</td> 
 							</tr>
 						</c:forEach>
 					</tbody>
@@ -289,12 +297,19 @@ const pager_item = [ {
 								<td colspan="5">등록된 글이 없습니다.</td>
 							</tr>
 						</c:if>
-						<c:forEach var="item" items="${commuTalk}" end="4" varStatus="status">
+						<c:forEach var="item" items="${commuTalk}" end="4" varStatus="ranking">
 							<tr
 								style="border: 1px solid #dddddd; padding-top: 10px; border-right: 1px solid White; border-left: 1px solid White;">
-								<td style="font-weight:700; color:#de2f00;"><div><c:out value="${status.count}" /></div></td>
+								<td class="ranking" style="font-weight:700; color:#999;"><div><c:out value="${ranking.count}" /></div></td>
 								<!-- <td><div class="category_color category_color_${item.category}"></div>${item.category_}</td>  --> 
-								<td><a style="color: black;" href="/community/detail/${item.id}">${item.title}</a></td>
+								<td><a style="color: black;" href="/community/detail/${item.id}" title="${item.title}">
+									<c:if test="${fn:length(item.title) < 24}">
+										${item.title}
+									</c:if>
+									<c:if test="${fn:length(item.title) >= 24}">
+										${fn:substring(item.title,0,23)}...
+									</c:if>
+									</a></td>
 								<td><fmt:formatDate value="${item.regDate}"
 										pattern="yyyy-MM-dd " /></td>
 								<td>${item.viewCnt}</td>

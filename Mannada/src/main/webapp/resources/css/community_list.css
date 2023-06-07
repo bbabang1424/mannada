@@ -7,7 +7,7 @@
 }
 
 .container {
-	max-width: 1200px;
+	max-width: 1200px !important;
 	width: 100%;
 	margin: 5% auto;
 }
@@ -56,6 +56,7 @@ td>a {
 }
 
 .banner_text {
+	padding-left:10px;
 	max-width: 1200px;
 	width: 100%;
 	margin: 0 auto;

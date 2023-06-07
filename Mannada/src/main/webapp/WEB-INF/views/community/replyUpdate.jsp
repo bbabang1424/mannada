@@ -35,16 +35,18 @@ function EtValue() {
 </head>
 <body>
    <div class="banner">
-      <div class="banner_text">
+      <ul class="banner_text">
          <li>커뮤니티</li>
          <i class="bi bi-caret-right-fill"></i>
          <li>댓글 수정</li>
-      </div>
+      
       <h3 class="page_title">커뮤니티</h3>
       <p class="page_text">만남에 대한 후기와 소통을 자유옵게 글로 적어주세요!</p>
+   </ul>
    </div>
+   
 
-   <section class="container_box">
+   <section class="container">
       <div class="box">
 			<div class="category_title_box">
 				<div class="category_color category_color_${item.category}">

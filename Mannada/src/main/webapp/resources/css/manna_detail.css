@@ -20,6 +20,7 @@
 }
 
 .banner_text {
+	padding-left:10px;
 	max-width: 1200px;
 	width: 100%;
 	margin: 0 auto;
@@ -47,17 +48,17 @@
 	margin: 0 auto;
 }
 
-.content {
-	max-width: 1200px;
+.container {
+	max-width: 1200px !important;
 	margin: 5% auto;
 }
 
 .box {
+	max-width: 1200px;
 	border-bottom: 1px solid #ccc;
 	border-top: 2px solid blue;
-	width: 1200px;
+	width: 100%;
 	padding: 10px;
-	margin: 10px;
 	display: inline-block;
 	position: relative;
 	margin-bottom: 3%;
@@ -82,7 +83,7 @@
 }
 
 .Category_address {
-	margin: 10px 10px 0px 10px;
+	margin: 10px;
 	display: inline-block;
 }
 
@@ -109,7 +110,7 @@
 .writer_date {
 	position: absolute;
 	width: 100%;
-	top: 51.5%;
+	top: 53.5%;
 	left: 10%;
 }
 
@@ -173,7 +174,7 @@
 .views {
 	display: inline-block;
 	position: absolute;
-	left: 93%;
+	left: 92.2%;
 	top: 64%;
 }
 
@@ -238,7 +239,7 @@ progress::-webkit-progress-value {
 }
 
 .model_line {
-	width: 1200px;
+	width: 1157px;
 	border: 1px solid;
 	border-color: #ccc;
 	margin-top: 2%;
@@ -376,5 +377,5 @@ progress::-webkit-progress-value {
 .back {
 	display: inline-block;
 	text-align: right;
-	width: 94.3%;
+	width: 93.3%;
 }

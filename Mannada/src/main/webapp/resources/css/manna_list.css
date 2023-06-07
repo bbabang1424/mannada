@@ -16,7 +16,7 @@
 	display: inline-block;
 }
 
-ui li .active{
+ul li.active{
 	border-bottom: 2px solid #0080ff;
 }
 
@@ -26,8 +26,7 @@ li>a{
 .category_list {
 	max-width: 1200px;
 	width: 100%;
-	/* padding: 9px; */
-	padding-left: 2%;
+	padding-left: 20px;
 }
 
 .container {
@@ -53,6 +52,7 @@ li>a{
 }
 
 .banner_text {
+	padding-left:10px;
 	max-width: 1200px;
 	width: 100%;
 	margin: 0 auto;
