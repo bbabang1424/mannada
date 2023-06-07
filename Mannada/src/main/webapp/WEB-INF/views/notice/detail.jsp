@@ -36,7 +36,7 @@
 					<span style="font-weight: bold; margin-right: 3px;"> 작성자</span> ${item.nickname}
 				</div>
 			</div>
-				<div class="date_views">
+				<div class="notice_date_views">
 					<fmt:formatDate value="${item.regDate}" pattern="yyyy-MM-dd " />
 				| 조회수 ${item.viewCnt}
 				</div>
