@@ -8,7 +8,7 @@
 <head>
 <meta charset="UTF-8">
 
-<title>먼나다</title>
+<title>만나다</title>
 <jsp:include page="../header.jsp"></jsp:include>
 <link rel="stylesheet" href="/resources/css/manna_list.css">
 <link rel="stylesheet"
@@ -39,55 +39,56 @@
 <script type="text/javascript">
 	const pager_url = "/api/manna";
 	
+	/*
 	$(document).ready(function(){
 	$('li').on('click', function(){
 		$(this).addClass('active');
 		});
 	});
+	*/
 </script>
 <script src="/resources/js/manna.js"></script>
 </head>
 <body>
 	<!--만나다 더보기 기능: 이현주  -->
 	<div class="banner">
-
-		<div class="banner_text">
+		<ul class="banner_text" >
 			<li>만나다</li> <i class="bi bi-caret-right-fill"></i>
 			<li>글 목록</li>
-
-		</div>
 		<h3 class="page_title">글 목록</h3>
 		<p class="page_text">새로운 만남을 만날수 있는 곳 입니다. 관심있는 카드를 눌러 참여하세요!</p>
+	</ul>
 	</div>
+	
 	<div class="container">
 	<div class="category-inner">
 		<ul class="category_list">
-			<li><a href="/manna/list">
+			<li  class="${param.keyword == null ? 'active' : ''}"><a href="/manna/list">
 				<div class="icon">
 				전체
 				</div>
 				</a></li>
-			<li><a href="/manna/list?search=8&keyword=1">
+			<li class="${param.keyword == 1 ? 'active' : ''}"><a href="/manna/list?search=8&keyword=1">
 				<div class="icon">
 				공동구매
 				</div>
 				</a></li>
-			<li><a href="/manna/list?search=8&keyword=2">
+			<li class="${param.keyword == 2 ? 'active' : ''}"><a href="/manna/list?search=8&keyword=2">
 				<div class="icon">
 				게임
 				</div>
 				</a></li>
-			<li><a href="/manna/list?search=8&keyword=3">
+			<li class="${param.keyword == 3 ? 'active' : ''}"><a href="/manna/list?search=8&keyword=3">
 				<div class="icon">
 				식사
 				</div>
 				</a></li>
-			<li><a href="/manna/list?search=8&keyword=4">
+			<li class="${param.keyword == 4 ? 'active' : ''}"><a href="/manna/list?search=8&keyword=4">
 				<div class="icon">
 				스포츠
 				</div>
 				</a></li>
-			<li><a href="/manna/list?search=8&keyword=5">
+			<li class="${param.keyword == 5 ? 'active' : ''}"><a href="/manna/list?search=8&keyword=5">
 				<div class="icon">
 				기타
 				</div>

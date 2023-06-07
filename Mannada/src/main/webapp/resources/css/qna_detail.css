@@ -10,7 +10,6 @@
 	text-align: center;
 	max-width: 1200px !important;
 	margin: 5% auto !important;
-	padding: 0 !important;
 }
 
 /* 각 페이지 , 파란 베너 김소연 */
@@ -28,6 +27,7 @@
 }
 
 .banner_text {
+	padding-left:10px;
 	max-width: 1200px;
 	width: 100%;
 	margin: 0 auto;
