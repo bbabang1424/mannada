@@ -38,7 +38,6 @@ $(function(){
 </script>
 <jsp:include page="header.jsp"></jsp:include>
 <body>
-	<!-- 안내베너:감소연 -->
 	<div class="banner">
 		<ul class="banner_text">
 			<li>로그인</li>
