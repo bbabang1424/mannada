@@ -60,9 +60,9 @@
 		<ul class="banner_text" >
 			<li>만나다</li>
 			<i class="bi bi-caret-right-fill"></i>
-			<li>글 변경</li>
+			<li>글 수정</li>
 		
-		<h3 class="page_title">글 변경</h3>
+		<h3 class="page_title">만나다</h3>
 		<p class="page_text">등록 된 글의 내용을 수정하는 공간입니다.</p>
 		</ul>
 	</div>

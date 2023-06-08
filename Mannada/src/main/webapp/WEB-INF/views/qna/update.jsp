@@ -30,7 +30,7 @@
 		<ul class="banner_text">
 			<li>Q & A</li>
 			<i class="bi bi-caret-right-fill"></i>
-			<li>글 변경</li>
+			<li>글 수정</li>
 		
 		<h3 class="page_title">Q & A</h3>
 		<p class="page_text">등록 된 글의 내용을 변경하는 공간 입니다.</p>

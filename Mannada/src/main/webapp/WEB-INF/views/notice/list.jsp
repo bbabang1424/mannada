@@ -37,8 +37,8 @@
 	<!-- 각 페이지 안내베너:김소연 -->
 	<div class="banner">
 		<ul class="banner_text">
-			<li>공지사항</li> <i class="bi bi-caret-right-fill"></i>
-			<li>목록</li>
+			<li>HOME</li> <i class="bi bi-caret-right-fill"></i>
+			<li>공지사항</li>
 		
 		<h3 class="page_title">공지사항</h3>
 		<p class="page_text">만나다의 새로운 소식, 시스템 점검등을 공지하는 공간입니다.</p>
