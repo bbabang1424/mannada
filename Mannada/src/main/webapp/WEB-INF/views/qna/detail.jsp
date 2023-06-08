@@ -74,9 +74,9 @@
 <body>
 	<div class="banner">
 		<ul class="banner_text">
-			<li>Q & A</li>
+			<li>HOME</li>
 			<i class="bi bi-caret-right-fill"></i>
-			<li>목록</li>
+			<li>Q & A</li>
 		<h3 class="page_title">Q & A</h3>
 		<p class="page_text">궁금한 점, 문의할 점을 올려주세요!</p>
 	</ul>

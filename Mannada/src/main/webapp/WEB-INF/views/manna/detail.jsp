@@ -18,10 +18,10 @@
 	<!-- 각 페이지 안내 베너:김소연  -->
 	<div class="banner">
 		<ul class="banner_text">
-			<li>만나다</li> <i class="bi bi-caret-right-fill"></i>
-			<li>글 목록</li>
+			<li>HOME</li> <i class="bi bi-caret-right-fill"></i>
+			<li>만나다</li>
 		
-		<h3 class="page_title">글 목록</h3>
+		<h3 class="page_title">만나다</h3>
 		<p class="page_text">새로운 만남을 만날수 있는 곳 입니다. 관심있는 카드를 눌러 참여하세요!</p>
 	</ul>
 	</div>
@@ -141,7 +141,7 @@
 const mannaId = '${ item.id }';
 
 // 참여 버튼
-document.querySelector("#join_btn").addEventListener("click", e => {
+/* document.querySelector("#join_btn").addEventListener("click", e => {
 
     fetch("/addJoin/" + mannaId, {
         method: "POST",
@@ -191,7 +191,7 @@ function makeMember(list){
 	body.querySelectorAll(".item").forEach(element => {
         element.remove();
     });
-	
+	 */
 	
 	
 }

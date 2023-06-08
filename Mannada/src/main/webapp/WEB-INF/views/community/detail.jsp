@@ -32,9 +32,9 @@
 <body>
 	<div class="banner">
 		<ul class="banner_text">
-			<li>커뮤니티</li>
+			<li>HOME</li>
 			<i class="bi bi-caret-right-fill"></i>
-			<li>목록</li>
+			<li>커뮤니타</li>
 		
 		<h3 class="page_title">커뮤니티</h3>
 		<p class="page_text">만남에 대한 후기와 소통을 자유롭게 글로 적어주세요!</p>
@@ -129,7 +129,7 @@
 		</c:if>
 		<div class="reply_text">
 			<span class="all_reply">전체 댓글</span>
-			<div class="mow_many">0</div>
+			<div class="mow_many">${item.totalReply }</div>
 		</div>
 		<!-- 댓글 목록 -->
 		<div class="reply-box">
@@ -144,18 +144,18 @@
 								<tr>
 									<td width="5%;" align="left" valign="top">
 											
-									<!-- 사진 변경 --> 
-									<c:if test="${reply.filename != null}">
-									<div class="profile_box">
-										<img class="img" src="/upload/${reply.uuid}_${reply.filename}">
-									</div>
-									</c:if>
-									
-									<c:if test="${reply.filename == null}">
-										 <div class="profile_box">
-										<img class="profile" src="/resources/image/profile.png">
-										</div>
-									</c:if>
+										<!-- 사진 변경 --> 
+										<c:if test="${reply.filename != null}">
+											<div class="profile_box">
+												<img class="img" src="/upload/${reply.uuid}_${reply.filename}">
+											</div>
+										</c:if>
+										
+										<c:if test="${reply.filename == null}">
+											<div class="profile_box">
+												<img class="profile" src="/resources/image/profile.png">
+											</div>
+										</c:if>
 									</td>
 										
 									<td style="width: 0%;"></td>
@@ -169,9 +169,12 @@
 												class="reply_date"><fmt:formatDate
 														value="${reply.regDate}" pattern="yyyy-MM-dd hh:mm" /></span></span>
 										</div>
+										
 										<div class="content_info">
 											<div class="reply-content ${reply.id }">${reply.content }</div>
-										</div> <!-- 수정 삭제 -->
+										</div>
+										
+										<!-- 수정 삭제 -->
 										<div class="reply_btn">
 											<c:if test="${sessionScope.user.num == reply.num }">
 												<a href="../replyUpdate/${reply.id}"><button class="reply-update-btn ${reply.id }" type="button"
@@ -193,29 +196,31 @@
 	</div>
 	
 	<!-- 형태만 잡아 놓음/cif로 10개 넘어가면 보이게하기 -->
-	<tfoot>
-		<tr>
-			<td colspan="5">
-				<ol class="pagination pagination-sm justify-content-center" style="margin: 5%;">
-					<li class="page_nation_item"><a href="?page=1${pager.query}"
-						class="page-link">처음</a></li>
-					<li class="page_nation_item"><a
-						href="?page=${pager.prev}${pager.query}" class="page-link">이전</a></li>
-
-					<c:forEach var="page" items="${pager.list}">
+	<c:if test="${item.totalReply > 10 }">
+		<tfoot>
+			<tr>
+				<td colspan="5">
+					<ol class="pagination pagination-sm justify-content-center" style="margin: 5%;">
+						<li class="page_nation_item"><a href="?page=1${pager.query}"
+							class="page-link">처음</a></li>
 						<li class="page_nation_item"><a
-							href="?page=${page}${pager.query}"
-							class="page-link ${page eq pager.page ? 'active' : ''}">${page}</a></li>
-					</c:forEach>
-
-					<li class="page_nation_item"><a
-						href="?page=${pager.next}${pager.query}" class="page-link">다음</a></li>
-					<li class="page_nation_item"><a
-						href="?page=${pager.last}${pager.query}" class="page-link">마지막</a></li>
-				</ol>
-			</td>
-		</tr>
-	</tfoot>
+							href="?page=${pager.prev}${pager.query}" class="page-link">이전</a></li>
+	
+						<c:forEach var="page" items="${pager.list}">
+							<li class="page_nation_item"><a
+								href="?page=${page}${pager.query}"
+								class="page-link ${page eq pager.page ? 'active' : ''}">${page}</a></li>
+						</c:forEach>
+	
+						<li class="page_nation_item"><a
+							href="?page=${pager.next}${pager.query}" class="page-link">다음</a></li>
+						<li class="page_nation_item"><a
+							href="?page=${pager.last}${pager.query}" class="page-link">마지막</a></li>
+					</ol>
+				</td>
+			</tr>
+		</tfoot>
+	</c:if>
 	</section>
 	
 

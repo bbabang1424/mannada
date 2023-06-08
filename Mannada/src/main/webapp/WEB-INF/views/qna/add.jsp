@@ -28,7 +28,7 @@
 <body>
 	<div class="banner">
 		<ul class="banner_text">
-			<li>커뮤니티</li>
+			<li>Q & A</li>
 			<i class="bi bi-caret-right-fill"></i>
 			<li>글쓰기</li>
 		
