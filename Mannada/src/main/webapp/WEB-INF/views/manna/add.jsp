@@ -61,9 +61,9 @@
 		<ul class="banner_text" >
 			<li>만나다</li>
 			<i class="bi bi-caret-right-fill"></i>
-			<li>글 등록</li>
+			<li>글쓰기</li>
 		
-		<h3 class="page_title">글 등록</h3>
+		<h3 class="page_title">만나다</h3>
 		<p class="page_text">새로운 사람을 모집하는 공고를 올리는 공간입니다.</p>
 	</ul>
 	</div>
