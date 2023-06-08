@@ -51,9 +51,9 @@ $(function(){
 			<div class="container__form container--signup">
 				<form name="findID" class="form" id="form1">
 					<p class="form__title">아이디 찾기</p>
-		      		<input type="email" placeholder="Email" class="input" />
+		      		<input type="email" name="id" placeholder="Email" class="input" />
 					<div id="emailError" class="error"></div>
-		      		<button class="btn">확인</button>
+		      		<button class="btn" id="checkId">확인</button>
 		    	</form>
 		  	</div>
 		
@@ -61,9 +61,9 @@ $(function(){
 			<div class="container__form container--signin">
 			  	<form name="findPW" class="form" id="form2">
 			    	<p class="form__title">비밀번호 찾기</p>
-			      	<input type="email" placeholder="Email" class="input" />
+			      	<input type="email" name="id" placeholder="Email" class="input" />
 			      	<div id="pwAlarm" class="error"></div>
-			      	<button class="btn">메일 보내기</button>
+			      	<button class="btn" id="send">메일 보내기</button>
 			   </form>
 			</div>
 			
