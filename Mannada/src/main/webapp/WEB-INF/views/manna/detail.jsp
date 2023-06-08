@@ -141,7 +141,7 @@
 const mannaId = '${ item.id }';
 
 // 참여 버튼
-document.querySelector("#join_btn").addEventListener("click", e => {
+/* document.querySelector("#join_btn").addEventListener("click", e => {
 
     fetch("/addJoin/" + mannaId, {
         method: "POST",
@@ -191,7 +191,7 @@ function makeMember(list){
 	body.querySelectorAll(".item").forEach(element => {
         element.remove();
     });
-	
+	 */
 	
 	
 }
