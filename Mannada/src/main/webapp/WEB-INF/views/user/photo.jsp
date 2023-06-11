@@ -19,7 +19,6 @@
 	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 
 <title>만나다</title>
-<!-- <script src="/resources/js/photo.js"></script> -->
 <link rel="stylesheet" href="/resources/css/photo.css">
 
 </head>
@@ -47,11 +46,11 @@
 					</div>
 
 
-					<div class="pro1">				
-						 <div class="upload-btn">						 
-							<button><input type="file" name="uploadFile" accept=".jpg, .jpeg, .png"></button>							
-						</div>
-						
+					<div class="pro1">
+						<div class="upload-btn">
+							<input type="file" name="uploadFile" accept=".jpg, .jpeg, .png">
+						</div>						
+
 						<div class="pro-btn">
 							<div class="pro-btn1">
 								<button type="button" id="goBack">취소</button>
