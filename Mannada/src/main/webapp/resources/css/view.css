@@ -136,6 +136,7 @@ ul.tabs li{
     cursor: pointer;
     width: 295px;
     border: 1px solid #ddd;
+    border-radius: 20px;
 }
 
 ul.tabs li.current{
@@ -147,6 +148,7 @@ ul.tabs li.current{
     border-left: none;
     border-bottom: none;
     border-right: none;
+    border-radius: 20px;
 }
 
 .tab-content{
@@ -162,6 +164,7 @@ ul.tabs li.current{
     width: 94%;
     border-top: none;
     margin: 20px 38px;
+    padding: 30px;
 }
 
 .tabnav li a:before {
@@ -245,3 +248,82 @@ ul.tabs li.current{
 	
 }
 
+.tabcontent2-1 {
+/*     background: aliceblue;
+    border: 3px solid darkblue;
+    border-radius: 10px;
+    border-collapse: initial; */
+       
+    background: aliceblue;    
+    border-radius: 10px;
+    border-collapse: initial;
+    border: 2px solid #0359d9;
+    display: inline-block;
+    width: 327px;
+    height: 140px;
+    padding: 10px;
+    margin: 10px;    
+    position: relative;
+    text-align: center; 	
+}
+
+.tabcontent2-1 th {
+	padding: 5px;
+}
+
+.tabcontent2-2 {
+background: aliceblue;
+    border-radius: 10px;
+    border-collapse: initial;
+    border: 2px solid #0359d9;
+    display: inline-block;
+    width: 292px;
+    height: 245px;
+    padding: 10px;
+    margin: 10px;
+    position: relative;
+    text-align: center;	
+}
+
+
+.tabcontent2-2 th {
+	padding: 5px;
+}
+
+.tabcontent2-3 {
+    background: aliceblue;    
+    border-radius: 10px;
+    border-collapse: initial;
+    border: 2px solid #0359d9;
+    display: inline-block;
+    width: 252px;
+    height: 134px;
+    padding: 10px;
+    margin: 10px;    
+    position: relative;
+    text-align: center; 	
+}
+
+
+.tabcontent2-3 th {
+	padding: 5px;
+}
+
+
+.tabcontent-3 {
+	background: aliceblue;    
+    border-radius: 10px;
+    border-collapse: initial;
+    border: 2px solid #0359d9;
+    display: inline-block;
+    width: 218px;
+    height: 134px;
+    padding: 10px;
+    margin: 10px;    
+    position: relative;
+    text-align: center; 
+}
+
+.tabcontent-3 th {
+	padding: 5px;
+}

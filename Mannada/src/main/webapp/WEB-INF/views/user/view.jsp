@@ -193,7 +193,7 @@
 			<!-- 탭 메뉴 내용 시작 -->
 			<div id="tab-1" class="tab-content current">
 				<div class="tabcontent">
-         <div id="tab01">
+         <div>
          <div class="mypage">
             <div class="review-title">
                <div class="text1">나의 평점은?</div>
@@ -261,7 +261,7 @@
 			</div>
 			
 			<div id="tab-2" class="tab-content">
-				<table border="1">
+				<table border="1" class="tabcontent2-1">
             <thead>
                <tr>
                   <th>No</th>
@@ -313,7 +313,9 @@
                </tr>
             </tfoot>
          </table>
-         <table border="1">
+         
+         <div class="tabcontent2-2-box">
+         <table border="1" class="tabcontent2-2">
             <thead>
                <tr>
                   <th>No</th>
@@ -362,8 +364,10 @@
                   </td>
                </tr>
             </tfoot>
-         </table>         
-         <table border="1">
+         </table>        
+         </div>
+          
+         <table border="1" class="tabcontent2-3">
             <thead>
                <tr>
                   <th>No</th>
@@ -418,7 +422,7 @@
 			</div>
 			
 			<div id="tab-3" class="tab-content">
-				 <table border="1">
+				 <table border="1" class="tabcontent-3">
             <thead>
                <tr>
                   <th>No</th>
