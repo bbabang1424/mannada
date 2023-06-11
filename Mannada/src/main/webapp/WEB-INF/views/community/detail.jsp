@@ -34,7 +34,7 @@
 		<ul class="banner_text">
 			<li>HOME</li>
 			<i class="bi bi-caret-right-fill"></i>
-			<li>커뮤니타</li>
+			<li>커뮤니티</li>
 		
 		<h3 class="page_title">커뮤니티</h3>
 		<p class="page_text">만남에 대한 후기와 소통을 자유롭게 글로 적어주세요!</p>
@@ -177,8 +177,8 @@
 										<!-- 수정 삭제 -->
 										<div class="reply_btn">
 											<c:if test="${sessionScope.user.num == reply.num }">
-												<a href="../replyUpdate/${reply.id}"><button class="reply-update-btn ${reply.id }" type="button"
-													onclick="replyUpdate(${reply.id}, ${reply.commuId }, ${reply.content })">수정</button></a>
+												<a href="../replyUpdate/${reply.id}">
+												<button class="reply-update-btn ${reply.id }" type="button">수정</button></a>
 												<a href="../replyDelete/${reply.id }?id=${item.id}">
 												<button class="reply_delete">삭제</button></a>
 											</c:if>

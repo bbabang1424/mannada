@@ -1,73 +1,4 @@
 window.addEventListener("load", () => {
-    document.getElementById("add").addEventListener("click", e => {
-        const modal = new bootstrap.Modal(document.getElementById("addModal"));
-        modal.toggle();
-    });
-
-    document.querySelector("#addModal .submit").addEventListener("click", e => {
-        const item = {};
-
-        document.querySelectorAll("#addModal .pager-item").forEach(element => {
-            item[element.name] = element.value
-        });
-
-        console.log(item);
-
-        fetch(pager_url, {
-            method: "POST",
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(item)
-        }).then(resp => {
-            if (resp.status == 200)
-                return resp.json();
-        }).then(result => {
-            console.log(result);
-
-            const tbody = document.querySelector("#empty_list");
-            const tr = makeItem(result);
-
-            console.log(tbody);
-            console.log(tr);
-
-            tbody.after(tr);
-        });
-    });
-
-    document.querySelector("#updateModal .submit").addEventListener("click", e => {
-        const item = {};
-
-        document.querySelectorAll("#updateModal .pager-item").forEach(element => {
-            item[element.name] = element.value;
-        });
-
-        console.log(item);
-
-        fetch(pager_url, {
-            method: "PUT",
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(item)
-        }).then(resp => {
-            if (resp.status == 200)
-                return resp.json();
-        }).then(result => {
-            console.log(result);
-
-            const tr = document.querySelector(`#list tr[data-id='${result.id}']`);
-
-            pager_item.forEach(item => {
-                if (item.select) {
-                    tr.querySelector(`.${item.name}`).textContent = result[item.name];
-                    tr.querySelector(`.${item.name}`).textContent = result[`${item.name}_`];
-
-                } else {
-                    tr.querySelector(`.${item.name}`).textContent = result[item.name];
-
-                    if (item.suffix)
-                        tr.querySelector(`.${item.name}`).textContent += item.suffix;
-                }
-            });
-        });
-    });
 
     getPage(1);
 
@@ -134,31 +65,73 @@ function makeItem(element) {
     const tr = document.createElement("tr");
     tr.dataset.id = element.id;
 
-    
+
     const profile = document.createElement("td");
-    profile.style.cssText  = 'width:5%; align:left; valign:top';
+    profile.style.cssText = 'width:5%; align:left; valign:top';
 
     const profile_box = document.createElement("div");
     profile_box.classList.add("profile_box")
-    
+
     const img = document.createElement("img");
     img.classList.add("img");
-    
-    if(element.filename == null)
-        img.src = "/upload/${element.uuid}_${element.filename}";
+
+    if (element.filename == null)
+        img.src = "/upload/" + element.reply.uuid + "_" + element.reply.filename;
     else
         img.src = "/resources/image/profile.png";
-    
+
     profile_box.append(img);
     profile.append(profile_box);
 
 
     const td = document.createElement("td");
-    td.style.css.width='0%';
+    td.style.css.width = '0%';
 
 
     const reply = document.createElement("td");
-    reply.style.cssText  = 'margin: 5%; width: 51%';
+    reply.style.cssText = 'margin: 5%; width: 51%';
+
+    const reply_name_date = document.createElement("div");
+
+    const reply_nickname = document.createElement("span");
+
+    const c = document.createElement("a");
+    c.href = "/user/view/" + element.item.num;
+    c.style.color = "black";
+    c.classList.add("c");
+    c.textContent = element.reply.nickname;
+    reply_nickname.append(c);
+    reply_name_date.append(reply_nickname);
+
+    const reply_arrow_box = document.createElement("p");
+    reply_arrow_box.classList.add("reply_arrow_box");
+    reply_arrow_box.textContent = "회원정보";
+    reply_name_date.append(reply_arrow_box);
+
+    const reply_date = document.createElement("span");
+    var date = element.reply.regDate;
+    const formatDate = (current_datetime) => {
+        let formatted_date = current_datetime.getFullYear() + "-" + (current_datetime.getMonth() + 1) + "-" + current_datetime.getDate() + " " + current_datetime.getHours() + ":" + current_datetime.getMinutes();
+        return formatted_date;
+    }
+    reply_date.textContent = formatDate(date);
+    reply_name_date.append(reply_date);
+
+    reply.append(reply_name_date);
+
+    const content_info = document.createElement("div");
+    content_info.classList.add("content_info", "${reply.id}");
+    content_info.textContent = element.reply.content;
+
+    reply.append(content_info);
+
+    const reply_btn = document.createElement("div");
+    if("${sessionScope.user.num == reply.num }"){
+        //아무튼 버튼 만들기.. 
+    }
+
+    reply.append(reply_btn);
+
 
     return tr;
 }
