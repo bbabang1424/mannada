@@ -16,7 +16,7 @@
 	border: 1px solid whitesmoke;
 	color: black;
 	width: 500px;
-	height: 525px;
+	height: 495px;
 	margin: 2em auto;
 	margin-bottom: 8%;	
 	padding: 15px 45px;
@@ -115,10 +115,21 @@ input[type=file]::file-selector-button {
   cursor: pointer;
 }
 
+.pro1 p {
+    border-radius: 30px;
+    width: 395px;
+    padding: 10px;
+    margin: 5px 15px;
+    position: relative;
+    right: 120px;
+    text-align: center;
+    font-size: 0.8em;
+}
+
 .pro-btn {
 	position: relative;
     left: 10px;
-    top: 90px;
+    top: 40px;
 }
 
 .pro-btn1 button {
