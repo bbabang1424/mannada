@@ -68,27 +68,27 @@
 				전체
 				</div>
 				</a></li>
-			<li class="${param.keyword == 1 ? 'active' : ''}"><a href="/manna/list?search=8&keyword=1">
+			<li class="${param.search == 8 && param.keyword == 1 ? 'active' : ''}"><a href="/manna/list?search=8&keyword=1">
 				<div class="icon">
 				공동구매
 				</div>
 				</a></li>
-			<li class="${param.keyword == 2 ? 'active' : ''}"><a href="/manna/list?search=8&keyword=2">
+			<li class="${param.search == 8 && param.keyword == 2 ? 'active' : ''}"><a href="/manna/list?search=8&keyword=2">
 				<div class="icon">
 				게임
 				</div>
 				</a></li>
-			<li class="${param.keyword == 3 ? 'active' : ''}"><a href="/manna/list?search=8&keyword=3">
+			<li class="${param.search == 8 && param.keyword == 3 ? 'active' : ''}"><a href="/manna/list?search=8&keyword=3">
 				<div class="icon">
 				식사
 				</div>
 				</a></li>
-			<li class="${param.keyword == 4 ? 'active' : ''}"><a href="/manna/list?search=8&keyword=4">
+			<li class="${param.search == 8 && param.keyword == 4 ? 'active' : ''}"><a href="/manna/list?search=8&keyword=4">
 				<div class="icon">
 				스포츠
 				</div>
 				</a></li>
-			<li class="${param.keyword == 5 ? 'active' : ''}"><a href="/manna/list?search=8&keyword=5">
+			<li class="${param.search == 8 && param.keyword == 5 ? 'active' : ''}"><a href="/manna/list?search=8&keyword=5">
 				<div class="icon">
 				기타
 				</div>

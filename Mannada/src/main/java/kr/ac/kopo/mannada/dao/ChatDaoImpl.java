@@ -1,5 +1,6 @@
 package kr.ac.kopo.mannada.dao;
 
+import java.util.HashMap;
 import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
@@ -29,6 +30,16 @@ public class ChatDaoImpl implements ChatDao {
 	@Override
 	public void add(Chat item) {
 		sql.insert("chat.send_message", item);
+	}
+
+	@Override
+	public void userSetNull(HashMap<String, Object> map) {
+		sql.update("chat.user_setNull", map);
+	}
+
+	@Override
+	public void delete(int id) {
+		sql.delete("chat.delete", id);
 	}
 
 }
