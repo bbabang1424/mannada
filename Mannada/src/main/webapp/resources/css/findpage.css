@@ -30,17 +30,76 @@
 	padding-top: 13px;
 }
 
-:root {
-  /* COLORS */
+.background-image {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	background-image: url(/resources/image/login-back.jpg);
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+	opacity: 0.5;
+}
+
+.find-box {
+	border: 1px solid whitesmoke;
+    color: black;
+    width: 500px;
+    height: 356px;
+    margin: 8em auto;
+    padding: 15px 45px;
+    position: relative;
+    background-color: white;
+    border-radius: 30px;
+    box-shadow: inset 0 0px 10px 5px #E0E0E0;
+}
+
+.find-box .title {
+	border-bottom: 1px solid black;	
+	text-align: center;
+	margin: 5% 0%;
+}
+
+.find-box .title p {
+	font-weight: 700;
+}
+
+.find-box .input {
+	padding: 10px;
+	margin: 2% 0%;
+	width: 100%;
+	box-sizing: border-box;
+}
+
+.find-box #find-pw {
+	width: 100%;
+	height: 40px;
+	background-color: #0359D9;
+	color: white;
+	border: none;
+	border-radius: 3px;
+}
+
+.notice {
+	font-size: 14px;
+    height: 35px;
+    color: red;
+}
+
+
+
+
+/* :root {
+  COLORS
   --white: #e9e9e9;
   --gray: #333;
   --blue: #0367a6;
   --lightblue: #008997;
 
-  /* RADII */
+  RADII
   --button-radius: 0.7rem;
 
-  /* SIZES */
+  SIZES
   --max-width: 758px;
   --max-height: 420px;
 
@@ -241,4 +300,4 @@
     opacity: 1;
     z-index: 5;
   }
-}
+} */

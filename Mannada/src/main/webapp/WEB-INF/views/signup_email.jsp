@@ -108,7 +108,7 @@ $('#mail-check-btn').click(function() {
 			console.log("data : " +  data);
 			checkInput.attr('disabled',false);
 			code =data;
-			alert('인증번호가 전송되었습니다.')
+			swal('회원가입', '인증번호가 전송되었습니다.', 'success');
 		}			
 	}); // end ajax
 }); // end send eamil

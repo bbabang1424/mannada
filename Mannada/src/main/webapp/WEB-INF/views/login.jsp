@@ -144,9 +144,7 @@ function getCookie(cookieName) {
 				<li>로그인</li>	
 			</ul>
 	</div>
-	<div class="background-image">
-	</div>
-
+	<div class="background-image"></div>
 	<div class="login-box">
         <br>
         <div class="title">
@@ -168,8 +166,7 @@ function getCookie(cookieName) {
 	        <div>
 	            <form name="user_login" method="post" action="/userLogin" class="login-form">
 	                <div>
-	                    <input class="input" type="email" id="textbox user_id" name="id" placeholder="이메일 입력"
-	                    value="">
+	                    <input class="input" type="email" id="textbox user_id" name="id" placeholder="이메일 입력">
 	                </div>
 	                
 	                <div>
@@ -189,7 +186,7 @@ function getCookie(cookieName) {
 	        
 	        <div class="flex">
 	            <div class="find-account">
-	               | <a href="/findpage">아이디 찾기</a> | <a href="/findpage">비밀번호 찾기</a> |         
+	              | <a href="/findpage">비밀번호를 잊어버리셨나요?</a> |         
 	            </div> 
 	        </div> 
 	
@@ -212,8 +209,7 @@ function getCookie(cookieName) {
 	        <div id="manager-login">
 	            <form name="mg_login" method="post" action="/managerLogin" class="login-form">
 	                <div>
-	                    <input class="input" type="text" id="textbox mg_id" name="id" placeholder="아이디 입력"
-	                    value="">
+	                    <input class="input" type="text" id="textbox mg_id" name="id" placeholder="아이디 입력">
 	                </div>
 	                
 	                <div>
@@ -226,8 +222,8 @@ function getCookie(cookieName) {
 	                
 					<button class="login-button" type="button" onclick="mgValue();">로그인</button>
 				</form>
-	        </div>
-        </div>     
+	       </div>
+      </div>     
 </body>
 <jsp:include page="footer.jsp"></jsp:include>
 </html>

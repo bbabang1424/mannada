@@ -39,4 +39,6 @@ public interface UserService {
 	void photo(User item);
 	
 	void attachDelete(int attachId);
+
+	int checkFind(User user);
 }

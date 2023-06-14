@@ -58,6 +58,12 @@ public class MailSendService {
 				e.printStackTrace();
 			}
 		}
+
+
+		public void findPW(String id, String nickname) {
+			// TODO Auto-generated method stub
+			
+		}
 		
 	
 }
