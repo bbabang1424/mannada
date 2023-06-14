@@ -1,8 +1,8 @@
 package kr.ac.kopo.mannada.model;
 
 public class KakaoUser {
-	private String id;
 	private String nickname;
+	private String email;
 
 	
 	public KakaoUser() {
@@ -11,18 +11,19 @@ public class KakaoUser {
 	
 	public KakaoUser(String nickname, String profile_image) {
 		super();
-		this.id = id;
 		this.nickname = nickname;
+		this.email = email;
 	}
 	
 	
 
-	public String getId() {
-		return id;
+
+	public String getEmail() {
+		return email;
 	}
 
-	public void setId(String id) {
-		this.id = id;
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
 	public String getNickname() {
