@@ -1,5 +1,6 @@
 package kr.ac.kopo.mannada.dao;
 
+import java.util.HashMap;
 import java.util.List;
 
 import kr.ac.kopo.mannada.model.Chat;
@@ -12,5 +13,9 @@ public interface ChatDao {
 	List<Chat> chatList(int id);
 
 	void add(Chat item);
+
+	void userSetNull(HashMap<String, Object> map);
+
+	void delete(int id);
 
 }

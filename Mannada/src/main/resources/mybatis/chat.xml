@@ -21,4 +21,15 @@
 		INSERT INTO chat(manna_id, num, content, reg_date)
 		VALUES (#{mannaId}, #{num},#{content}, NOW())
 	</insert>
+	
+	
+	<update id="user_setNull">
+		UPDATE chat SET num = null
+		WHERE num = #{num}
+	</update>
+	
+	<delete id="delete">
+		DELETE FROM chat
+		WHEER manna_id = #{id}
+	</delete>
 </mapper>

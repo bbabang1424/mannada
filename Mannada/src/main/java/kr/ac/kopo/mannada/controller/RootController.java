@@ -202,6 +202,8 @@ public class RootController {
 	/*주소검색*/
 	@GetMapping("/searchAddress")
 	public String searchAddress(String addressType, String metro, String city, String address, Model model) {
+		System.out.println("1111");
+		
 		/** address 를 select값 제대로 불러오는지 확인하는 코드
 		model.addAttribute("address", metro + " " + city + " " + address);
 		**/		
@@ -217,7 +219,8 @@ public class RootController {
 		
 		String query = "?search=7&keyword=" + metro + " " + city + " " + address;
 		
-		return "manna/list" + query;
+		return "redirect:/manna/list" + query;
+//		return "searchAddress";
 	}
 	
 	
