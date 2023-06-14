@@ -94,7 +94,7 @@
 					<!-- 참여버튼 눌렀을때 인원 표시되게 해야 함-->
 					<div class="model_Partic">
 						<c:if test="${item.status < 0 }">
-							<button type="button" style="background-color: #999">기간 지남</button>
+							<button type="button" style="background-color: #999">마감</button>
 						</c:if>
 						<c:if test="${item.status >= 0 && status == 0 && sessionScope.user.num != item.num && sessionScope.user != null }">
 							<a href="../addJoin/${item.id }"><button type="button"
