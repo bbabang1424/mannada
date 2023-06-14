@@ -13,6 +13,12 @@
 		VALUES (#{id}, PASSWORD(#{pw}), #{nickname}, 0, NOW())
 	</insert>
 	
+	<insert id="kakao_signup">
+		INSERT INTO user
+		(id, nickname, status, reg_date)
+		VALUES (#{email}, #{nickname}, 0, NOW())
+	</insert>
+	
 	<!-- 이메일 중복제거 -->
 	<select id="check_id" resultType="Integer">
 		SELECT COUNT(*) FROM user
@@ -29,6 +35,17 @@
 		SELECT COUNT(*) FROM user
 		WHERE nickname=#{nickname}
 	</select>
+	
+	<!-- 비밀번호 찾기 관련 -->
+	<select id="check_find" resultType="Integer">
+		SELECT COUNT(*) FROM user 
+		WHERE id = #{id} AND nickname = #{nickname}
+	</select>
+	<update id="find_pw">
+		UPDATE user
+		SET pw=PASSWORD(#{pw})
+		WHERE id = #{id} AND nickname = #{nickname}
+	</update>
 	
 	<!-- 마이페이지관련 -->
 	<sql id="search">
@@ -90,7 +107,7 @@
 	<update id="password">
 		UPDATE user
 		SET pw=PASSWORD(#{newPW})
-		WHERE num=#{num} AND pw=PASSWORD(#{pw})
+		WHERE (num=#{num} AND pw=PASSWORD(#{pw})) OR (id=#{id} AND nickname=#{nickname})
 	</update>
 	
 	<select id="check_pw" resultType="Integer">

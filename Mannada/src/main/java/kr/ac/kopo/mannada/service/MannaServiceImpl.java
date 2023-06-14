@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import kr.ac.kopo.mannada.dao.ChatDao;
 import kr.ac.kopo.mannada.dao.MannaDao;
 import kr.ac.kopo.mannada.model.Manna;
 import kr.ac.kopo.mannada.model.User;
@@ -18,6 +19,10 @@ public class MannaServiceImpl implements MannaService {
 	
 	@Autowired
 	MannaDao dao;
+	
+	@Autowired
+	ChatDao chatDao;
+	
 
 	@Override
 	public List<Manna> list(Pager pager) {
@@ -45,6 +50,7 @@ public class MannaServiceImpl implements MannaService {
 	@Transactional
 	@Override
 	public void delete(int id) {
+		chatDao.delete(id);
 		dao.deleteJoins(id);
 		
 		dao.delete(id);
@@ -91,8 +97,10 @@ public class MannaServiceImpl implements MannaService {
 		dao.addJoin(map);
 	}
 
+	@Transactional
 	@Override
 	public void deleteJoin(HashMap<String, Object> map) {
+		chatDao.userSetNull(map);
 		dao.deleteJoin(map);
 	}
 

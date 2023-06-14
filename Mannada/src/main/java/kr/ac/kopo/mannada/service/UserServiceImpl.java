@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import kr.ac.kopo.mannada.dao.UserDao;
 import kr.ac.kopo.mannada.model.Attach;
+import kr.ac.kopo.mannada.model.KakaoUser;
 import kr.ac.kopo.mannada.model.Review;
 import kr.ac.kopo.mannada.model.User;
 import kr.ac.kopo.mannada.pager.Pager;
@@ -135,4 +136,13 @@ public class UserServiceImpl implements UserService {
 		}
 	}
 
+	@Override
+	public int checkFind(User user) {
+		return dao.checkFind(user);
+	}
+
+	@Override
+	public void signup(KakaoUser item) {
+		dao.signup(item);
+	}
 }

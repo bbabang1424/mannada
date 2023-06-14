@@ -2,6 +2,8 @@ package kr.ac.kopo.mannada.service;
 
 import java.util.HashMap;
 import java.util.List;
+
+import kr.ac.kopo.mannada.model.KakaoUser;
 import kr.ac.kopo.mannada.model.Review;
 import kr.ac.kopo.mannada.model.User;
 import kr.ac.kopo.mannada.pager.Pager;
@@ -39,4 +41,8 @@ public interface UserService {
 	void photo(User item);
 	
 	void attachDelete(int attachId);
+
+	int checkFind(User user);
+
+	void signup(KakaoUser item);
 }
