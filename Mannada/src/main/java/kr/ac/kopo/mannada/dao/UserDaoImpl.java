@@ -113,4 +113,9 @@ public class UserDaoImpl implements UserDao {
 		sql.delete("user.photo_delete", attachId);
 	}
 
+	@Override
+	public int checkFind(User user) {
+		return sql.selectOne("user.check_find", user);
+	}
+
 }

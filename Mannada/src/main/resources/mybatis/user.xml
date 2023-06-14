@@ -30,6 +30,17 @@
 		WHERE nickname=#{nickname}
 	</select>
 	
+	<!-- 비밀번호 찾기 관련 -->
+	<select id="check_find" resultType="Integer">
+		SELECT COUNT(*) FROM user 
+		WHERE id = #{id} AND nickname = #{nickname}
+	</select>
+	<update id="find_pw">
+		UPDATE user
+		SET pw=PASSWORD(#{pw})
+		WHERE id = #{id} AND nickname = #{nickname}
+	</update>
+	
 	<!-- 마이페이지관련 -->
 	<sql id="search">
 		SELECT * FROM user

@@ -135,4 +135,8 @@ public class UserServiceImpl implements UserService {
 		}
 	}
 
+	@Override
+	public int checkFind(User user) {
+		return dao.checkFind(user);
+	}
 }

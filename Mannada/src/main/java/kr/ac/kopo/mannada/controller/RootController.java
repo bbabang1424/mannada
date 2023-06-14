@@ -170,12 +170,22 @@ public class RootController {
 	
 	/* 아이디 혹은 비번 찾기 관련 */
 	@GetMapping("/findpage")
-	public String findpage(Model model) {
+	public String findpage() {
 		return "findpage";
 	}
 	@PostMapping("/findpage")
-	public String findpage() {
-		return "redirect:findpage";
+	public String findpage(User user, Model model) {
+		
+		if(service.checkFind(user)==0) {
+			model.addAttribute("msg", "닉네임 혹은 이메일이 일치하지 않습니다");
+			return "/findpage";
+		} else {
+			mailService.findPW(user.getId(), user.getNickname());
+			model.addAttribute("user", user.getId());
+			
+			return "/findpage";
+		}
+		
 	}
 	
 	/*selectbox 주소관련*/

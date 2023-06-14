@@ -46,5 +46,7 @@ public interface UserDao {
 	Attach photoItem(int attachId);
 
 	void photoDelete(int attachId);
+
+	int checkFind(User user);
 	
 }
