@@ -248,12 +248,13 @@ ul.tabs li.current{
 	
 }
 
+
 .tabcontent2-1 {
-/*     background: aliceblue;
+/* 	background: aliceblue;
     border: 3px solid darkblue;
     border-radius: 10px;
-    border-collapse: initial; */
-       
+    border-collapse: initial;  */
+        
     background: aliceblue;    
     border-radius: 10px;
     border-collapse: initial;
@@ -266,13 +267,13 @@ ul.tabs li.current{
     position: relative;
     text-align: center; 	
 }
-
+ 
 .tabcontent2-1 th {
 	padding: 5px;
 }
 
 .tabcontent2-2 {
-background: aliceblue;
+	background: aliceblue;
     border-radius: 10px;
     border-collapse: initial;
     border: 2px solid #0359d9;
@@ -309,7 +310,7 @@ background: aliceblue;
 	padding: 5px;
 }
 
-
+/* 
 .tabcontent-3 {
 	background: aliceblue;    
     border-radius: 10px;
@@ -322,8 +323,13 @@ background: aliceblue;
     margin: 10px;    
     position: relative;
     text-align: center; 
-}
+} */
 
-.tabcontent-3 th {
-	padding: 5px;
+.table_menu_3 {
+	border-top: 2px solid blue;
+	background-color: #f3f3f3;
+	text-align: center;
+	color: #000000;
+	border-right: 1px solid White;
+	border-left: 1px solid White;
 }

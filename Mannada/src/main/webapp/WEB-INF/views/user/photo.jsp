@@ -17,16 +17,13 @@
 	src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-
 <title>만나다</title>
 <link rel="stylesheet" href="/resources/css/photo.css">
-
 </head>
 <jsp:include page="../header.jsp"></jsp:include>
 
 <body>
 	<div class="background-image"></div>
-
 
 	<div class="container-box">
 		<div>
@@ -49,7 +46,11 @@
 					<div class="pro1">
 						<div class="upload-btn">
 							<input type="file" name="uploadFile" accept=".jpg, .jpeg, .png">
-						</div>						
+						</div>					
+						
+						<p><span style="color: red;">* 500x500의 크기인 사진을 등록하시는걸 권장합니다.<br> 사진을 선택하지 않고 등록하시면 기본 이미지가 프로필 사진이 됩니다.</span></p>
+						
+						
 
 						<div class="pro-btn">
 							<div class="pro-btn1">

@@ -224,7 +224,7 @@
                </form>
             </div>
             <div>
-               <table class="review-date">
+               <table>
                   <tbody>   
                      <th>닉네임</th><th>한줄평</th><th>작성일</th><th>별점</th>                  
                      <c:forEach var="review" items="${review}">                                                                           
@@ -422,9 +422,9 @@
 			</div>
 			
 			<div id="tab-3" class="tab-content">
-				 <table border="1" class="tabcontent-3">
+				 <table border="1"  class="table table-hover table_table " id="table_size">
             <thead>
-               <tr>
+               <tr class="table_menu_3">
                   <th>No</th>
                   <th>내용</th>
                   <th>작성일</th>
@@ -448,8 +448,7 @@
             <tfoot>
                <tr>
                   <td colspan="5">
-                     <ol class="pagination pagination-sm justify-content-center"
-                        style="margin-bottom: 5%; margin-top: 5%;">
+                     <ol class="pagination pagination-sm justify-content-center">                      
                         <li class="page_nation_item"><a
                            href="?page=1${pager.query}" class="page-link">처음</a></li>
                         <li class="page_nation_item"><a
