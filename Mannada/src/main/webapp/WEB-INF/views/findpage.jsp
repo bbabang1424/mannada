@@ -38,12 +38,13 @@ $(function(){
 </script>
 <jsp:include page="header.jsp"></jsp:include>
 <body>
+<!-- 안내베너: 감소연 -->
 	<div class="banner">
-			<ul class="banner_text">
-				<li>HOME</li>
-				<i class="bi bi-caret-right-fill"></i> 
-				<li>아이디/비밀번호 찾기</li>	
-			</ul>
+		<ul class="banner_text">
+			<li>로그인</li>
+			<i class="bi bi-caret-right-fill"></i>
+			<li>아이디/비밀번호 찾기</li>
+		</ul>
 	</div>
 	<div class="body">
 		<div class="container right-panel-active">

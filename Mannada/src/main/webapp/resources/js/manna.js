@@ -9,12 +9,15 @@ window.addEventListener("load", () => {
         const search = document.querySelector("select[name='search']").value;
         const keyword = document.querySelector("input[name='keyword']").value;
 
+		document.location.replace("/manna/list");
+
         getPage(1, { search, keyword });
     });
 
 });
 
 function getPage(page, query, last_query) {
+	
     let url = `${pager_url}?page=${page}`;
 
     if (query) {

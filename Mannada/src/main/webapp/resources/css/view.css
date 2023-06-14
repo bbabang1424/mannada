@@ -120,24 +120,51 @@
 
 /*tab css*/
 
-.tab {
-	width: 100%;
+/* tab-1 */
+ul.tabs{
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+    text-align: center;
 }
 
-.tabnav {
-    font-size: 0;
-    width: 83%;
+ul.tabs li{
+    display: inline-block;
+    background: aliceblue;
+    color: black;
+    padding: 10px 15px;
+    cursor: pointer;
+    width: 295px;
     border: 1px solid #ddd;
-    padding: 0;
+    border-radius: 20px;
 }
 
-.tabnav li {
-	display: inline-block; 
-	height:46px;
-	text-align:center;
-	border-right:1px solid #ddd;
-    width: 25%;
-    max-width: 300px;
+ul.tabs li.current{
+    background: white;
+    color: #0359d9;
+    font-weight: bold;
+    border-top: 4px solid;
+    width: 300px;
+    border-left: none;
+    border-bottom: none;
+    border-right: none;
+    border-radius: 20px;
+}
+
+.tab-content{
+    display: none;
+    background: #e0e0e0;
+    padding: 12px;
+}
+
+.tab-content.current{
+    display: inherit;
+    background: none;
+    border: 1px solid #ddd;
+    width: 94%;
+    border-top: none;
+    margin: 20px 38px;
+    padding: 30px;
 }
 
 .tabnav li a:before {
@@ -149,56 +176,20 @@
 	height:3px;
 }
 
-.tabnav li a.active:before {
-	background:#0359d9;
-}
-
-.tabnav li a.active {
-	border-bottom:1px solid #fff;
-}
-
-.tabnav li a {
-	position:relative;
-	display:block;
-	background: #f8f8f8;
-	color: #000;
-	padding:0 30px;
-	line-height:46px;
-	text-decoration:none;
-	font-size:16px;
-}
-
-.tabnav li a:hover, 
-.tabnav li a.active {
-	background:#fff;
-	color:#0359d9;
-	font-weight: bold;
-}
-
-.my-nav {
-    display:inline-block;
-    width: 100vw;
-    text-align: center;
-}
-
 .tabcontent {
 	padding: 20px;
 	height:370px;
-	border:1px solid #ddd;
-	border-top:none;
-	width: 83%;
 }
 
 .review-title {
-	position: relative;
-    left: -30%;	
+    position: relative;
+    left: 4%;
 }
 
 .text1 {
 	font-weight: bold;
 	font-size: 25px;
 	position: relative;
-	right: 37px;
 }
 
 .star {
@@ -206,7 +197,7 @@
     color: #ddd;
     padding: 5px;
     position: relative;
-    left: -105px;
+    left: 37px;
 }
 
 .checkStar {
@@ -257,7 +248,88 @@
 	
 }
 
-.review-date th:first-child, .bluetop td:first-child {
-  border-left: none;
+
+.tabcontent2-1 {
+/* 	background: aliceblue;
+    border: 3px solid darkblue;
+    border-radius: 10px;
+    border-collapse: initial;  */
+        
+    background: aliceblue;    
+    border-radius: 10px;
+    border-collapse: initial;
+    border: 2px solid #0359d9;
+    display: inline-block;
+    width: 327px;
+    height: 140px;
+    padding: 10px;
+    margin: 10px;    
+    position: relative;
+    text-align: center; 	
+}
+ 
+.tabcontent2-1 th {
+	padding: 5px;
 }
 
+.tabcontent2-2 {
+	background: aliceblue;
+    border-radius: 10px;
+    border-collapse: initial;
+    border: 2px solid #0359d9;
+    display: inline-block;
+    width: 292px;
+    height: 245px;
+    padding: 10px;
+    margin: 10px;
+    position: relative;
+    text-align: center;	
+}
+
+
+.tabcontent2-2 th {
+	padding: 5px;
+}
+
+.tabcontent2-3 {
+    background: aliceblue;    
+    border-radius: 10px;
+    border-collapse: initial;
+    border: 2px solid #0359d9;
+    display: inline-block;
+    width: 252px;
+    height: 134px;
+    padding: 10px;
+    margin: 10px;    
+    position: relative;
+    text-align: center; 	
+}
+
+
+.tabcontent2-3 th {
+	padding: 5px;
+}
+
+/* 
+.tabcontent-3 {
+	background: aliceblue;    
+    border-radius: 10px;
+    border-collapse: initial;
+    border: 2px solid #0359d9;
+    display: inline-block;
+    width: 218px;
+    height: 134px;
+    padding: 10px;
+    margin: 10px;    
+    position: relative;
+    text-align: center; 
+} */
+
+.table_menu_3 {
+	border-top: 2px solid blue;
+	background-color: #f3f3f3;
+	text-align: center;
+	color: #000000;
+	border-right: 1px solid White;
+	border-left: 1px solid White;
+}
