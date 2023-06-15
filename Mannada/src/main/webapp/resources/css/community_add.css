@@ -12,7 +12,7 @@
 }
 /* 각 페이지 퍼블리싱, 안내 베너 김소연 */
 .banner {
-height: 160px;
+	height: 160px;
 	max-width: 100%;
 	color: white;
 	border-color: #60a8ef;
@@ -24,7 +24,7 @@ height: 160px;
 }
 
 .banner_text {
-	  padding-left:10px;
+	padding-left: 10px;
 	max-width: 1200px;
 	width: 100%;
 	margin: 0 auto;
@@ -38,11 +38,11 @@ height: 160px;
 }
 
 .page_title {
-	    width: 100%;
-    padding-bottom: 4px;
-    margin: 0 auto;
-    max-width: 1200px;
-    padding-top: 10px;
+	width: 100%;
+	padding-bottom: 4px;
+	margin: 0 auto;
+	max-width: 1200px;
+	padding-top: 10px;
 }
 
 .page_text {
@@ -166,8 +166,12 @@ height: 160px;
 	display: inline-table;
 }
 
+#files>ul {
+	padding-left: 10px;
+}
+
 .mb-3 {
-	margin-left: 55px !important;
+	margin-left: 65px !important;
 	margin-bottom: 1rem !important;
 }
 
@@ -176,7 +180,7 @@ height: 160px;
 	display: flex;
 	flex-wrap: wrap;
 	align-items: stretch;
-	width: 84% !important;
+	width: 83% !important;
 	margin-left: 7%;
 }
 
