@@ -1,5 +1,6 @@
 package kr.ac.kopo.mannada.dao;
 
+import java.util.HashMap;
 import java.util.List;
 
 import kr.ac.kopo.mannada.model.Community;
@@ -32,10 +33,12 @@ public interface CommunityDao {
 
 	List<Reply> replyList(Pager pager);
 
-	List<Reply> detailReply(int id);
+	List<Reply> detailReply(HashMap<String, Object> map);
 
 	List<Community> reviewList(Pager pager);
 
 	List<Community> talkList(Pager pager);
+
+	int totalReply(int id);
 
 }
