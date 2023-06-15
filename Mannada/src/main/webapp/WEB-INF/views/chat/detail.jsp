@@ -68,6 +68,7 @@
 	}
 
 	function send() {
+		
 		if (connect) {
 
 			$.ajax({
@@ -161,11 +162,9 @@
 
 			<div class="send">
 				<form id="message_form">
-					<input type="number" name="mannaId" value="${item.id}"
-						class="hidden" id="mannaId"> <input type="number"
-						name="num" value="${sessionScope.user.num}" class="hidden"
-						id="num"> <input type="text" name="content" id="content"
-						onkeyup="enterkey()">
+					<input type="number" name="mannaId" value="${item.id}" class="hidden" id="mannaId">
+					<input type="number" name="num" value="${sessionScope.user.num}" class="hidden" id="num">
+					<input type="text" name="content" id="content" onkeyup="enterkey()">
 					<button type="button" onclick="send()">전송</button>
 				</form>
 			</div>

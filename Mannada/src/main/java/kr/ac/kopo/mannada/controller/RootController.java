@@ -203,7 +203,7 @@ public class RootController {
 
 			model.addAttribute("user", user.getId());
 			
-			return "/login";
+			return "/findpage";
 		}
 		
 	}

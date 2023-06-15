@@ -108,11 +108,11 @@ $(function() {
 			<div class="header-line">
 				<ul>
 					<h5><a href="/manna/list">만나다</a></h5>
-					<li><a href="/mannada/category">공동구매</a></li>
-					<li><a href="/mannada/category">스포츠</a></li>
-					<li><a href="/mannada/category">게임</a></li>
-					<li><a href="/mannada/category">식사</a></li>
-					<li><a href="/mannada/category">기타</a></li>
+					<li><a href="/manna/list?search=8&keyword=1">공동구매</a></li>
+					<li><a href="/manna/list?search=8&keyword=2">스포츠</a></li>
+					<li><a href="/manna/list?search=8&keyword=3">게임</a></li>
+					<li><a href="/manna/list?search=8&keyword=4">식사</a></li>
+					<li><a href="/manna/list?search=8&keyword=5">기타</a></li>
 				</ul>
 			</div>
 			

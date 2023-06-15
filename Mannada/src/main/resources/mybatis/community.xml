@@ -111,7 +111,6 @@
 		LEFT OUTER JOIN profile ON (user.num = profile.num)
 		WHERE commu_id = #{id}
 		ORDER BY id DESC
-		LIMIT #{offset}, #{perPage}
 	</select>
 
 	<!-- 댓글 단일 조회 -->
