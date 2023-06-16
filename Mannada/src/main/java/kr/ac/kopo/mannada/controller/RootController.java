@@ -247,21 +247,14 @@ public class RootController {
 		List<Manna> mannaList = mannaService.list(pager);
 		model.addAttribute("mannaList", mannaList);
 		
-<<<<<<< HEAD
+		return "searchAddress";
+		
 		/*
 		 * String query = "?search=7&keyword=" + metro + " " + city + " " + address;
+		 * System.out.println(query);
 		 * 
 		 * return "redirect:/manna/list" + query;
 		 */
-		return "searchAddress";
-=======
-		return "searchAddress";
-		
-//		String query = "?search=7&keyword=" + metro + " " + city + " " + address;
-//		System.out.println(query);
-//		
-//		return "redirect:/manna/list" + query;
->>>>>>> branch 'master' of https://github.com/xyident/mannada.git
 	}
 	
 	
