@@ -223,12 +223,13 @@
                   </div>
                </form>
             </div>
-            <div>
+            
+            <div class="review-table">            
                <table>
-                  <tbody>   
+                  <tbody>                     	
                      <th>닉네임</th><th>한줄평</th><th>작성일</th><th>별점</th>                  
                      <c:forEach var="review" items="${review}">                                                                           
-                              <tr><td class="nickname">${review.nickname}</td>
+                              <tr class="table_menu_1"><td class="nickname">${review.nickname}</td>
                               <td>${review.content}</td>
                               <td class="regdate"><fmt:formatDate value="${review.regDate}"
                                  pattern="yyyy-MM-dd hh:mm" /></td>                                                                                 
@@ -261,9 +262,9 @@
 			</div>
 			
 			<div id="tab-2" class="tab-content">
-				<table border="1" class="tabcontent2-1">
+				<table border="1" class="table table-hover table_table" id="table_size">
             <thead>
-               <tr>
+               <tr class="table_menu_2">
                   <th>No</th>
                   <th>만나다</th>
                   <th>카테고리</th>
@@ -314,10 +315,10 @@
             </tfoot>
          </table>
          
-         <div class="tabcontent2-2-box">
-         <table border="1" class="tabcontent2-2">
+         <div>
+         <table border="1" class="table table-hover table_table" id="table_size">
             <thead>
-               <tr>
+               <tr class="table_menu_2">
                   <th>No</th>
                   <th>커뮤니티</th>
                   <th>작성일</th>
@@ -365,61 +366,8 @@
                </tr>
             </tfoot>
          </table>        
-         </div>
-          
-         <table border="1" class="tabcontent2-3">
-            <thead>
-               <tr>
-                  <th>No</th>
-                  <th>질문</th>
-                  <th>작성일</th>
-                  <th>조회수</th>
-                  <th>상태</th>
-               </tr>
-            </thead>
-            <tbody>
-               <c:if test="${myQnA.size() < 1}">
-                  <tr>
-                     <td colspan="5">등록 된 게시글이 없습니다.</td>
-                  </tr>
-               </c:if>
-               <c:forEach var="item" items="${myQnA}">
-                  <tr>
-                     <td>${item.id}</td>
-                     <td><a href="/qna/detail/${item.id}">${item.title}</a></td>
-                     <td><fmt:formatDate value="${item.regDate}"
-                           pattern="yyyy-MM-dd" /></td>
-                     <td>${item.viewCnt}</td>
-                     <td>${item.status_}</td>
-                  </tr>
-               </c:forEach>
-            </tbody>
-            <tfoot>
-               <tr>
-                  <td colspan="5">
-                     <ol class="pagination pagination-sm justify-content-center"
-                        style="margin-bottom: 5%; margin-top: 5%;">
-                        <li class="page_nation_item"><a
-                           href="?page=1${pager.query}" class="page-link">처음</a></li>
-                        <li class="page_nation_item"><a
-                           href="?page=${pager.prev}${pager.query}" class="page-link">이전</a></li>
-
-                        <c:forEach var="page" items="${pager.list}">
-                           <li class="page_nation_item"><a
-                              href="?page=${page}${pager.query}"
-                              class="page-link ${page eq pager.page ? 'active' : ''}">${page}</a></li>
-                        </c:forEach>
-
-                        <li class="page_nation_item"><a
-                           href="?page=${pager.next}${pager.query}" class="page-link">다음</a></li>
-                        <li class="page_nation_item"><a
-                           href="?page=${pager.last}${pager.query}" class="page-link">마지막</a></li>
-                     </ol>
-                  </td>
-               </tr>
-            </tfoot>
-         </table>
-			</div>
+         </div>                   
+	</div>
 			
 			<div id="tab-3" class="tab-content">
 				 <table border="1"  class="table table-hover table_table " id="table_size">
@@ -479,6 +427,7 @@
 			
 			<!-- 탭 메뉴 내용 끝 -->
 		</div>
+	</div>
 </body>
 <jsp:include page="../footer.jsp"></jsp:include>
 </html>

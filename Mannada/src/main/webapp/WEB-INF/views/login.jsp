@@ -13,7 +13,26 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
+<script src="https://t1.kakaocdn.net/kakao_js_sdk/2.2.0/kakao.min.js" integrity="sha384-x+WG2i7pOR+oWb6O5GV5f1KN2Ko6N7PTGPS7UlasYWNxZMKQA63Cj/B2lbUmUfuC" crossorigin="anonymous"></script>
 <script>
+	window.addEventListener("load", e => {
+		document.querySelector(".kakao-btn").addEventListener("click", e => {
+			// SDK를 초기화 합니다. 사용할 앱의 JavaScript 키를 설정해야 합니다.
+		    Kakao.init('1c5dbd45518c2d8b05ce31ff5c8b207d');
+
+		    // SDK 초기화 여부를 판단합니다.
+		    if(Kakao.isInitialized())
+		    	console.log("카카오 API 초기화 성공");
+		    else
+		    	console.log("카카오 API 초기화 실패");
+		    
+		    Kakao.Auth.authorize({redirectUri: 'http://localhost:7070/after'});
+		    
+		});
+	});
+	
+	
+	
 /* js파일로 옮길 시 에러발생함. jsp파일에 그냥 두기 */
 $(function(){
 	//메세지는 일치여부 하나니까 나눌 필요x

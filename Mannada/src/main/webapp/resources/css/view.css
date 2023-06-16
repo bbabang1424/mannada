@@ -4,15 +4,6 @@
 	display: none;
 }
 
-
-
-/* .view {
-	width: 100px;
-	height: 100px;
-} */
-
-/* ------------------------ */
-
 .title {
     border-bottom: 1px solid black;
     font-weight: bold;
@@ -130,7 +121,7 @@ ul.tabs{
 
 ul.tabs li{
     display: inline-block;
-    background: aliceblue;
+    background: #F9F9F9;
     color: black;
     padding: 10px 15px;
     cursor: pointer;
@@ -152,7 +143,7 @@ ul.tabs li.current{
 }
 
 .tab-content{
-    display: none;
+	display: none;
     background: #e0e0e0;
     padding: 12px;
 }
@@ -165,6 +156,7 @@ ul.tabs li.current{
     border-top: none;
     margin: 20px 38px;
     padding: 30px;
+    border-radius: 20px;
 }
 
 .tabnav li a:before {
@@ -209,12 +201,13 @@ ul.tabs li.current{
 }
 
 .review_textarea {
-    resize: vertical;
     width: 430px;
     height: 150px;
     position: relative;
     left: 45px;
     resize: none;
+    border-radius: 10px;
+    padding: 10px;
 }
 
 .text-note > button {
@@ -230,100 +223,41 @@ ul.tabs li.current{
     left: -38px;
 }
 
-.review-date {
-	position: relative;
-    left: 50%;
-    top: -275px;     
-}
-
-.review-date th {
-	color: darkblue;
-	background-color: aliceblue;
-}
-
-.review-date th, .review-date td {
-	border: 2px solid darkblue;	
-	padding: 3px;
-	border-left: none;
-	
-}
-
-
-.tabcontent2-1 {
-/* 	background: aliceblue;
-    border: 3px solid darkblue;
-    border-radius: 10px;
-    border-collapse: initial;  */
-        
-    background: aliceblue;    
-    border-radius: 10px;
-    border-collapse: initial;
-    border: 2px solid #0359d9;
-    display: inline-block;
-    width: 327px;
-    height: 140px;
-    padding: 10px;
-    margin: 10px;    
+.review-table > table {
+    width: 50%;
     position: relative;
-    text-align: center; 	
-}
- 
-.tabcontent2-1 th {
-	padding: 5px;
+    left: 50%; 
+    text-align: center;
+    margin: -317px 0px;
 }
 
-.tabcontent2-2 {
-	background: aliceblue;
+.review-table > table th {
+    color: white;
+    background: #0359d9;
+    padding: 6px;
+}
+
+.review-table > tbody {
     border-radius: 10px;
-    border-collapse: initial;
-    border: 2px solid #0359d9;
-    display: inline-block;
-    width: 292px;
-    height: 245px;
-    padding: 10px;
-    margin: 10px;
-    position: relative;
-    text-align: center;	
 }
 
-
-.tabcontent2-2 th {
-	padding: 5px;
+.table_menu_1 {
+	border-top: 2px solid #ddd;
+	background-color: #F9F9F9;
+	text-align: center;
+	color: #000000;
+	border-right: 1px solid White;
+	border-left: 1px solid White;
 }
 
-.tabcontent2-3 {
-    background: aliceblue;    
-    border-radius: 10px;
-    border-collapse: initial;
-    border: 2px solid #0359d9;
-    display: inline-block;
-    width: 252px;
-    height: 134px;
-    padding: 10px;
-    margin: 10px;    
-    position: relative;
-    text-align: center; 	
+.table_menu_2 {
+	border-top: 2px solid blue;
+	background-color: #f3f3f3;
+	text-align: center;
+	color: #000000;
+	border-right: 1px solid White;
+	border-left: 1px solid White;
 }
-
-
-.tabcontent2-3 th {
-	padding: 5px;
-}
-
-/* 
-.tabcontent-3 {
-	background: aliceblue;    
-    border-radius: 10px;
-    border-collapse: initial;
-    border: 2px solid #0359d9;
-    display: inline-block;
-    width: 218px;
-    height: 134px;
-    padding: 10px;
-    margin: 10px;    
-    position: relative;
-    text-align: center; 
-} */
 
 .table_menu_3 {
 	border-top: 2px solid blue;

@@ -60,9 +60,15 @@ public class MailSendService {
 		}
 
 
-		public void findPW(String id, String nickname) {
-			// TODO Auto-generated method stub
-			
+		//비밀번호 이메일
+		public String findPW(String id, String nickname) {
+			makeRandomNumber();
+			String setFrom = ".com"; // email-config에 설정한 자신의 이메일 주소를 입력 
+			String toMail = id;
+			String title = "비밀번호 변경 이메일 입니다."; // 이메일 제목 
+			String content = "임시 비밀번호는 " + authNumber + "입니다.";
+			mailSend(setFrom, toMail, title, content);
+			return Integer.toString(authNumber);
 		}
 		
 	
