@@ -217,20 +217,22 @@ public class RootController {
 		/** address 를 select값 제대로 불러오는지 확인하는 코드
 		model.addAttribute("address", metro + " " + city + " " + address);
 		**/		
-//		// pager
-//		Pager pager = new Pager();
-//		//manna.xml의 "search eq 7"과 keyword값 설정
-//		pager.setSearch(7);
-//		pager.setKeyword(metro + " " + city + " " + address);
-//		
-//		// 만나다 검색
-//		List<Manna> mannaList = mannaService.list(pager);
-//		model.addAttribute("mannaList", mannaList);
+		// pager
+		Pager pager = new Pager();
+		//manna.xml의 "search eq 7"과 keyword값 설정
+		pager.setSearch(7);
+		pager.setKeyword(metro + " " + city + " " + address);
 		
-		String query = "?search=7&keyword=" + metro + " " + city + " " + address;
+		// 만나다 검색
+		List<Manna> mannaList = mannaService.list(pager);
+		model.addAttribute("mannaList", mannaList);
 		
-		return "redirect:/manna/list" + query;
-//		return "searchAddress";
+		/*
+		 * String query = "?search=7&keyword=" + metro + " " + city + " " + address;
+		 * 
+		 * return "redirect:/manna/list" + query;
+		 */
+		return "searchAddress";
 	}
 	
 	
