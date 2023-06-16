@@ -421,8 +421,10 @@
 			</div>
 			
 			<div id="tab-4" class="tab-content">
-				<h1>캘린더</h1>
-				
+				<h3>일정을 정리해보세요!</h3>
+				<div class="calendar">	
+					<img src="/resources/image/calendar.png" id="preview">
+				</div>
 			</div>
 			
 			<!-- 탭 메뉴 내용 끝 -->
