@@ -6,10 +6,11 @@ window.addEventListener("load", () => {
     getPage(1, query);
 
     document.querySelector(".search_btn").addEventListener("click", e => {
+		
         const search = document.querySelector("select[name='search']").value;
         const keyword = document.querySelector("input[name='keyword']").value;
 
-		document.location.replace("/manna/list");
+//		document.location.replace("/manna/list");
 
         getPage(1, { search, keyword });
     });
@@ -75,7 +76,7 @@ function makeItem(element){
     const id = element.id;
 
     const a = document.createElement("a")
-    if(window.location.pathname == '/')
+    if(window.location.pathname == '/' || window.location.pathname == '/searchAddress')
         a.href = "manna/detail/" + id; // 메인페이지용으로 if문 추가
     else 
         a.href = "detail/" + id;

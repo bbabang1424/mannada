@@ -123,7 +123,7 @@
 								<div id="files">
 									<c:forEach var="attach" items="${item.attachs }">
 									<ul>
-										<li><a href="/upload/${attach.uuid }_${attach.filename}">${attach.filename}</a><button style="margin-left: 1%;" type="button" class="btn btn-sm btn-danger delete"
+										<li><a href="/upload/${attach.uuid }_${attach.filename}">${attach.filename}</a><button style="margin-left: 15px;" type="button" class="btn btn-sm btn-danger delete"
 												data-id="${attach.id}">삭제</button></li>
 										
 										
