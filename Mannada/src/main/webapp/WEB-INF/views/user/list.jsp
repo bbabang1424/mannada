@@ -1,6 +1,7 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,19 +9,35 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 <!-- CSS only -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+	rel="stylesheet">
 <!-- JavaScript Bundle with Popper -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+<script
+	src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 
 <title>회원관리</title>
+<link rel="stylesheet" href="/resources/css/list.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font /bootstrap-icons.css">
 </head>
 <jsp:include page="../header.jsp"></jsp:include>
 <body>
-	<div class="container">
+	<div class="banner">
+			<ul class="banner_text">
+				<li>HOME</li>
+				<i class="bi bi-caret-right-fill"></i> 
+				<li>로그인</li>	
+			</ul>
+	</div>
+
+	<div class="mg-background-image"></div>
+
+	<div class="mg-container-box">
 		<div>
 			<h3>회원관리</h3>
-			<p>상태가 회원탈퇴라면 1년후에 모든 정보와 회원정보를 삭제해주세요.</p>
+			<p>* 상태가 회원탈퇴라면 1년후에 모든 정보와 회원정보를 삭제해주세요.</p>
 		</div>
 		<div>
 			<form class="row mb-2">
@@ -32,10 +49,9 @@
 						<option value="4">소개 글</option>
 						<option value="5">탈퇴일자</option>
 					</select>
-				</div> 
+				</div>
 				<div class="col-2">
-					<input
-						class="form-control form-control-sm keyword-all"
+					<input class="form-control form-control-sm keyword-all"
 						name="keyword" type="text">
 				</div>
 
@@ -44,9 +60,9 @@
 				</div>
 			</form>
 		</div>
-		<div>
+		<div class="user-table">
 			<table border="1" class="table">
-				<thead class="table-dark">
+				<thead>
 					<tr>
 						<th>회원번호</th>
 						<th>이메일</th>
@@ -66,10 +82,12 @@
 					<c:forEach var="item" items="${list}">
 						<tr>
 							<td>${item.num}</td>
-							<td><a href="/user/view/${item.num}">${item.id}</a></td>							
+							<td><a href="/user/view/${item.num}">${item.id}</a></td>
 							<td>${item.nickname}</td>
-							<td><fmt:formatDate value="${item.regDate}" pattern="yyyy-MM-dd"/></td>
-							<td><fmt:formatDate value="${item.delDate}" pattern="yyyy-MM-dd"/></td>
+							<td><fmt:formatDate value="${item.regDate}"
+									pattern="yyyy-MM-dd" /></td>
+							<td><fmt:formatDate value="${item.delDate}"
+									pattern="yyyy-MM-dd" /></td>
 							<td>${item.status_}</td>
 							<td>
 								<%-- <a href="delete/${item.id}" class="btn btn-outline-danger btn-sm">삭제</a> 
@@ -99,13 +117,13 @@
 									href="?page=${pager.next}${pager.query}" class="page-link">다음</a></li>
 								<li class="page-item"><a
 									href="?page=${pager.last}${pager.query}" class="page-link">마지막</a></li>
-							</ul> 
+							</ul>
 						</td>
 					</tr>
 				</tfoot>
 			</table>
 		</div>
-		<div>
+		<div class="go-back">
 			<a href=".." class="btn btn-secondary btn-sm">이전</a>
 		</div>
 	</div>

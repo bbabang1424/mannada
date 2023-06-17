@@ -20,7 +20,6 @@
 </head>
 <jsp:include page="../header.jsp"></jsp:include>
 <body>
-<div class="background-image"></div>
 
 	<div class="container-box">
 		<div class="title">
