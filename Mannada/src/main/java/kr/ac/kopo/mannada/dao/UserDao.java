@@ -50,6 +50,6 @@ public interface UserDao {
 
 	int checkFind(User user);
 
-	void signup(KakaoUser item);
+	void kakaoSignup(User item);
 	
 }

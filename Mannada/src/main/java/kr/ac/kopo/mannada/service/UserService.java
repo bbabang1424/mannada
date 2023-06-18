@@ -44,5 +44,5 @@ public interface UserService {
 
 	int checkFind(User user);
 
-	void signup(KakaoUser item);
+	void kakaoSignup(User item);
 }
