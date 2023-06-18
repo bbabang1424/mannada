@@ -46,21 +46,21 @@ $(function() {
 <body>
 	<div class="title">마이페이지</div>
 	<header class="profile-box">
-		<div>
+		<div class="name">
 			${manager.nickname}
 		</div>
 		
-		<div>
+		<div class="mg-button">
 			<c:if test="${sessionScope.manager == null}">
-				<button><a href="/login">정보변경</a></button>
+				<a href="/login">정보변경</a>
 				<a href="/login">비밀번호변경</a>
 				<a href="/login">회원관리</a>
 			</c:if>
 			
 			<c:if test="${sessionScope.manager != null}">
-				<a href="../update/${sessionScope.manager.id}">정보변경</a>
-				<a href="../password/${sessionScope.manager.id}">비밀번호변경</a>
-				<a href="../../user/list">회원관리</a>
+				<a href="../update/${sessionScope.manager.id}"><button type="button" class="update">정보변경</button></a>
+				<a href="../password/${sessionScope.manager.id}"><button type="button" class="password">비밀번호변경</button></a>
+				<a href="../../user/list"><button type="button" class="list">회원관리</button></a>
 			</c:if>
 		</div>			
 	</header>
@@ -74,9 +74,9 @@ $(function() {
 			<div id="tab-1" class="tab-content current">
 				<div class="tabcontent">
 					<div class="my-set" id="my-post">
-			<table border="1">
+			<table border="1" class="table table-hover table_table" id="table_size">
 				<thead>
-					<tr>
+					<tr class="table_menu_2">
 						<th>No</th>
 						<th>공지</th>
 						<th>작성일</th>
@@ -129,10 +129,10 @@ $(function() {
 			
 			<section>
 			<div id="tab-2" class="tab-content">					
-		<div class="table table-hover table_table" id="table_size" id="my-question">
-			<table border="1">
+		<div>
+			<table border="1" class="table table-hover table_table" id="table_size" id="my-question">
 				<thead>
-					<tr>
+					<tr class="table_menu_2">
 						<th>No</th>
 						<th>질문</th>
 						<th>작성자</th>

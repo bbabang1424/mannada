@@ -28,7 +28,7 @@
 			<ul class="banner_text">
 				<li>HOME</li>
 				<i class="bi bi-caret-right-fill"></i> 
-				<li>로그인</li>	
+				<li>회원관리</li>	
 			</ul>
 	</div>
 

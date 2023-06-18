@@ -89,7 +89,7 @@ $(function() {
 			<ul class="banner_text">
 				<li>HOME</li>
 				<i class="bi bi-caret-right-fill"></i> 
-				<li>로그인</li>	
+				<li>비밀번호변경</li>	
 			</ul>
 	</div>
 	

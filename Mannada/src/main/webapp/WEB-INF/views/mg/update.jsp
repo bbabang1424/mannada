@@ -15,6 +15,7 @@
 
 <title>정보수정</title>
 <link rel="stylesheet" href="/resources/css/update.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font /bootstrap-icons.css">
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script> 
 $(function() {
@@ -91,6 +92,14 @@ $(function() {
 </head>
 <jsp:include page="../header.jsp"></jsp:include>
 <body>
+	<div class="banner">
+			<ul class="banner_text">
+				<li>HOME</li>
+				<i class="bi bi-caret-right-fill"></i> 
+				<li>정보변경</li>	
+			</ul>
+	</div>
+	
 <div class="mg-background-image"></div>
 
 	<div class="mg-container-box">

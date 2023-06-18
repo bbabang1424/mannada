@@ -19,10 +19,20 @@
 	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 <title>만나다</title>
 <link rel="stylesheet" href="/resources/css/photo.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font /bootstrap-icons.css">
+
 </head>
 <jsp:include page="../header.jsp"></jsp:include>
 
 <body>
+	<div class="banner">
+			<ul class="banner_text">
+				<li>HOME</li>
+				<i class="bi bi-caret-right-fill"></i> 
+				<li>프로필수정</li>	
+			</ul>
+	</div>
+	
 	<div class="background-image"></div>
 
 	<div class="container-box">
