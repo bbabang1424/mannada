@@ -127,8 +127,8 @@ $(function() {
 				</div>
 				
 				<div class="mg-btn-box">
-					<button type="button" id="updateInfo">등록</button>
-					<button type="button" id="goBack">이전으로</button>
+					<button type="button" id="goBack" style="background-color: #ddd;color: black;">이전으로</button>
+					<button type="button" id="updateInfo">등록</button>					
 				</div>
 			</form>
 		</div>
