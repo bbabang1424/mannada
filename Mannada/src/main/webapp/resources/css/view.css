@@ -216,6 +216,7 @@ ul.tabs li.current{
 .tabcontent {
 	padding: 20px;
 	height:370px;
+	/* height: 100%; */
 }
 
 .review-title {
@@ -274,6 +275,9 @@ ul.tabs li.current{
     left: 50%; 
     text-align: center;
     margin: -317px 0px;
+    
+   /*  width: 100%;
+    text-align: center; */
 }
 
 .review-table > table th {

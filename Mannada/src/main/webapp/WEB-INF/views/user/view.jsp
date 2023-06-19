@@ -195,35 +195,36 @@
 				<div class="tabcontent">
          <div>
          <div class="mypage">
-            <div class="review-title">
-               <div class="text1">나의 평점은?</div>
-               <div class="text2">별점과 이용경험을 남겨주세요.</div>               
-            </div>
-            <div class="self-hidden">
-               <!-- user에 있는 form이니까 action은 user의 경로 사용 -->
-               <form name="reviewInfo_from" method="post" style="width: 700px"
-                  enctype="multipart/form-data" action="../review/${user.num}">
-                  <div class="review-star">
-                     <label class="star" for="star1">★</label><input type="radio"
-                        class="checkStar" id="star1" value="1" name="star"> <label
-                        class="star" for="star2">★</label><input type="radio"
-                        class="checkStar" id="star2" value="2" name="star"> <label
-                        class="star" for="star3">★</label><input type="radio"
-                        class="checkStar" id="star3" value="3" name="star"> <label
-                        class="star" for="star4">★</label><input type="radio"
-                        class="checkStar" id="star4" value="4" name="star"> <label
-                        class="star" for="star5">★</label><input type="radio"
-                        class="checkStar" id="star5" value="5" name="star">
-                     <p id="chooseWord" style="color: rgb(153, 153, 153);position: relative;right: -47px;"></p>
-                  </div>
-                  <div class="text-note">
-                     <textarea rows="10" class="review_textarea" name="content"
-                        placeholder="로그인 후에 작성해주세요."></textarea>
-                     <button type="button" id="reviewSubmit" onClick="login_check();">등록</button>
-                  </div>
-               </form>
-            </div>
-
+         	<div>
+	            <div class="review-title">
+	               <div class="text1">나의 평점은?</div>
+	               <div class="text2">별점과 이용경험을 남겨주세요.</div>               
+	            </div>
+	            <div class="self-hidden">
+	               <!-- user에 있는 form이니까 action은 user의 경로 사용 -->
+	               <form name="reviewInfo_from" method="post" style="width: 700px"
+	                  enctype="multipart/form-data" action="../review/${user.num}">
+	                  <div class="review-star">
+	                     <label class="star" for="star1">★</label><input type="radio"
+	                        class="checkStar" id="star1" value="1" name="star"> <label
+	                        class="star" for="star2">★</label><input type="radio"
+	                        class="checkStar" id="star2" value="2" name="star"> <label
+	                        class="star" for="star3">★</label><input type="radio"
+	                        class="checkStar" id="star3" value="3" name="star"> <label
+	                        class="star" for="star4">★</label><input type="radio"
+	                        class="checkStar" id="star4" value="4" name="star"> <label
+	                        class="star" for="star5">★</label><input type="radio"
+	                        class="checkStar" id="star5" value="5" name="star">
+	                     <p id="chooseWord" style="color: rgb(153, 153, 153);position: relative;right: -47px;"></p>
+	                  </div>
+	                  <div class="text-note">
+	                     <textarea rows="10" class="review_textarea" name="content"
+	                        placeholder="로그인 후에 작성해주세요."></textarea>
+	                     <button type="button" id="reviewSubmit" onClick="login_check();">등록</button>
+	                  </div>
+	               </form>
+	            </div>
+			</div>
             <div class="review-table">            
                <table>
                   <tbody>                     	
