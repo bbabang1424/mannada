@@ -46,9 +46,7 @@ $(function() {
 <body>
 	<div class="title">마이페이지</div>
 	<header class="profile-box">
-		<div class="name">
-			${manager.nickname}
-		</div>
+		
 		
 		<div class="mg-button">
 			<c:if test="${sessionScope.manager == null}">

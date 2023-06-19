@@ -282,8 +282,8 @@ ul.tabs li.current{
     padding: 6px;
 }
 
-.review-table > tbody {
-    border-radius: 10px;
+.table > tbody {
+	text-align: center;
 }
 
 .table_menu_1 {
