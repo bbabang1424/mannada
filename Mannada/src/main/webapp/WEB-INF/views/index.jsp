@@ -326,7 +326,7 @@ const pager_item = [ {
 		<div id="map-layer">
 			<div class="layer-inner">
 				<div>
-					<h3>나에게 맞는 <b>맞춤 만남</b>은?</h3>
+					<h3>나에게 맞는 <b>맞춤 주소</b>는?</h3>
 				</div>
 				<form name="addrSearch" action="searchAddress">
 					<div class="grid-container">
@@ -360,7 +360,7 @@ const pager_item = [ {
 								</select>
 							</div>
  
-						
+						<!-- 
 						<div class="item">
 							<label><h5>카테고리</h5></label>
 						</div>
@@ -388,7 +388,9 @@ const pager_item = [ {
 							</select>
 						</div>
 						
+					 -->
 					</div>
+					
 							
 					<div class="buttons">
 						<button id="searchAddress">검색</button>
