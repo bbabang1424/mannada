@@ -223,11 +223,11 @@
                   </div>
                </form>
             </div>
-            
+
             <div class="review-table">            
                <table>
                   <tbody>                     	
-                     <th>닉네임</th><th>한줄평</th><th>작성일</th><th>별점</th>                  
+                     <th>닉네임</th><th>한줄평</th><th>작성일</th><th>별점</th><th></th>                 
                      <c:forEach var="review" items="${review}">                                                                           
                               <tr class="table_menu_1"><td class="nickname">${review.nickname}</td>
                               <td>${review.content}</td>
