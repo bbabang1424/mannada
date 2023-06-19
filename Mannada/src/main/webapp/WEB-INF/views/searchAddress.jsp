@@ -37,7 +37,7 @@
 </style>
 
 <script type="text/javascript">
-	const pager_url = "/api/manna";
+	// const pager_url = "/api/manna";
 	
 	/*
 	$(document).ready(function(){
@@ -47,21 +47,21 @@
 	});
 	*/
 </script>
-<script src="/resources/js/manna.js"></script>
+<!-- <script src="/resources/js/manna.js"></script> -->
 </head>
 <body>
 	<!--만나다 더보기 기능: 이현주  -->
 	<div class="banner">
 		<ul class="banner_text" >
 			<li>HOME</li> <i class="bi bi-caret-right-fill"></i>
-			<li>만나다</li>
+			<li>맞춤 검색 결과</li>
 		<h3 class="page_title">만나다</h3>
 		<p class="page_text">새로운 만남을 만날수 있는 곳 입니다. 관심있는 카드를 눌러 참여하세요!</p>
 	</ul>
 	</div>
 	
-	<div class="container">
-	<div class="category-inner">
+	<div class="container" style="margin-bottom: 10%;">
+	<%-- <div class="category-inner">
 		<ul class="category_list">
 			<li  class="${param.keyword == null ? 'active' : ''}"><a href="/manna/list">
 				<div class="icon">
@@ -94,7 +94,7 @@
 				</div>
 				</a></li>
 		</ul>
-	</div>
+	</div> --%>
 		
 			<!-- <div class="selelct_lsit"> -->
 				<div class="category_select">
@@ -133,7 +133,7 @@
 				
 				<c:forEach var="item" items="${mannaList}">
 					<div>
-					<a href="manna/detail/22" class="item">
+					<a href="manna/detail/${item.id}" class="item">
 						<div class="card">
 							<div>
 								<div class="Category">

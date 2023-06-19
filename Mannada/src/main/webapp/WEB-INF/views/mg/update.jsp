@@ -15,7 +15,7 @@
 
 <title>정보수정</title>
 <link rel="stylesheet" href="/resources/css/update.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font /bootstrap-icons.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script> 
 $(function() {
@@ -127,8 +127,8 @@ $(function() {
 				</div>
 				
 				<div class="mg-btn-box">
-					<button type="button" id="updateInfo">등록</button>
-					<button type="button" id="goBack">이전으로</button>
+					<button type="button" id="goBack" style="background-color: #ddd;color: black;">이전으로</button>
+					<button type="button" id="updateInfo">등록</button>					
 				</div>
 			</form>
 		</div>

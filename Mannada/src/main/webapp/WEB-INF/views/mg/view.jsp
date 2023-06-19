@@ -125,8 +125,8 @@ $(function() {
       </div>								
 			</div>
 			
-			<section>
-			<div id="tab-2" class="tab-content">					
+
+	<div id="tab-2" class="tab-content">					
 		<div>
 			<table border="1" class="table table-hover table_table" id="table_size" id="my-question">
 				<thead>
