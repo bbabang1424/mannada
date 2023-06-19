@@ -15,7 +15,7 @@
 
 <title>정보수정</title>
 <link rel="stylesheet" href="/resources/css/update.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font /bootstrap-icons.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script> 
 $(function() {
