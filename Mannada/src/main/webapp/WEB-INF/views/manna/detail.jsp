@@ -96,11 +96,11 @@
 						<c:if test="${item.status < 0 || item.member == item.sum}">
 							<button type="button" style="background-color: #999">마감</button>
 						</c:if>
-						<c:if test="${item.status >= 0 && status == 0 && sessionScope.user.num != item.num && sessionScope.user != null }">
+						<c:if test="${item.status >= 0 && status == 0 && sessionScope.user.num != item.num && sessionScope.user != null && item.member != item.sum}">
 							<a href="../addJoin/${item.id }"><button type="button"
 									id="join_btn">참여</button></a>
 						</c:if>
-						<c:if test="${item.status >= 0 && status == 1 && sessionScope.user.num != item.num && sessionScope.user != null }">
+						<c:if test="${item.status >= 0 && status == 1 && sessionScope.user.num != item.num && sessionScope.user != null && item.member != item.sum}">
 							<a href="../deleteJoin/${item.id }"><button type="button"
 									id="join_btn" class="cancle">참여 취소</button></a>
 						</c:if>

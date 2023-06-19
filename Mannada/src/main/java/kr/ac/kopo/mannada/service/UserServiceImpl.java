@@ -142,7 +142,7 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public void signup(KakaoUser item) {
-		dao.signup(item);
+	public void kakaoSignup(User item) {
+		dao.kakaoSignup(item);
 	}
 }

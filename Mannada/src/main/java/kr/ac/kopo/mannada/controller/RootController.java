@@ -281,14 +281,14 @@ public class RootController {
 		
 		
 		if (service.checkId(user.getEmail())) {
-			KakaoUser item = new KakaoUser();
-			item.setEmail(user.getEmail());
+			User item = new User();
+			item.setId(user.getEmail());
 			item.setNickname(user.getNickname());
 			
-			System.out.println(item.getEmail());
+			System.out.println(item.getId());
 			System.out.println(item.getNickname());
 			
-			service.signup(item);
+			service.kakaoSignup(item);
 		}
 		
 		User item = new User();

@@ -120,7 +120,7 @@ public class UserDaoImpl implements UserDao {
 	}
 
 	@Override
-	public void signup(KakaoUser item) {
+	public void kakaoSignup(User item) {
 		sql.insert("user.kakao_signup", item);
 	}
 
