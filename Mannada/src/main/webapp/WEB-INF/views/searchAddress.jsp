@@ -60,7 +60,7 @@
 	</ul>
 	</div>
 	
-	<div class="container">
+	<div class="container" style="margin-bottom: 10%;">
 	<%-- <div class="category-inner">
 		<ul class="category_list">
 			<li  class="${param.keyword == null ? 'active' : ''}"><a href="/manna/list">
