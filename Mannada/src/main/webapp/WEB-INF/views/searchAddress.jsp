@@ -131,26 +131,26 @@
 					<div id="empty_list">등록 된 게시글이 없습니다.</div>
 				</c:if>
 				
-				<c:forEach var="item" items="${mannaList }">
+				<c:forEach var="item" items="${mannaList}">
 					<div>
 					<a href="manna/detail/22" class="item">
 						<div class="card">
 							<div>
 								<div class="Category">
-									<span>${item.category_ }</span>
+									<span>${item.category_}</span>
 								</div>
 							</div>
 							<div class="title">
 								<h5>
-									<strong>${item.title }</strong>
+									<strong>${item.title}</strong>
 								</h5>
 							</div>
 							<div class="line"></div>
-							<div class="date_day">작성자 : ${item.nickname }</div>
+							<div class="date_day">작성자 : ${item.nickname}</div>
 							<div class="interval">D-day : <fmt:formatDate value="${item.regDate}"
 									pattern="yyyy-MM-dd " /></div>
-							<div class="interval">인원 : (${item.sum }/${item.member })</div>
-							<progress value="${item.sum }" max="${item.member }"></progress>
+							<div class="interval">인원 : (${item.sum}/${item.member})</div>
+							<progress value="${item.sum}" max="${item.member}"></progress>
 						</div>
 					</a>
 				</div>
