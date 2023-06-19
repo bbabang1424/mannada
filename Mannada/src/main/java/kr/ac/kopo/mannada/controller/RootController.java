@@ -145,10 +145,6 @@ public class RootController {
 	/* 회원가입 */
 	@GetMapping("/signup")
 	public String signup() {
-		return "signup";
-	}	
-	@GetMapping("/signup_email")
-	public String signupEmail() {		
 		return "signup_email";
 	}
 	@PostMapping("/signup")
@@ -203,7 +199,7 @@ public class RootController {
 
 			model.addAttribute("user", user.getId());
 			
-			return "/login";
+			return "/findpage";
 		}
 		
 	}
@@ -232,7 +228,6 @@ public class RootController {
 	/*주소검색*/
 	@GetMapping("/searchAddress")
 	public String searchAddress(String addressType, String metro, String city, String address, Model model) {
-		System.out.println("1111");
 		
 		/** address 를 select값 제대로 불러오는지 확인하는 코드
 		model.addAttribute("address", metro + " " + city + " " + address);
@@ -249,10 +244,12 @@ public class RootController {
 		
 		return "searchAddress";
 		
-//		String query = "?search=7&keyword=" + metro + " " + city + " " + address;
-//		System.out.println(query);
-//		
-//		return "redirect:/manna/list" + query;
+		/*
+		 * String query = "?search=7&keyword=" + metro + " " + city + " " + address;
+		 * System.out.println(query);
+		 * 
+		 * return "redirect:/manna/list" + query;
+		 */
 	}
 	
 	
@@ -268,7 +265,7 @@ public class RootController {
 	
 	
 	@GetMapping("/after")
-	String after(String code, Model model, HttpSession session) {
+	public String after(String code, Model model, HttpSession session) {
 		
 		String accessToken = kakaoAccessToken(code);
 		System.out.println(accessToken);
@@ -278,24 +275,26 @@ public class RootController {
 		model.addAttribute("user", user);
 		
 		
-		if (service.checkId(user.getEmail())) {
-			KakaoUser item = new KakaoUser();
-			item.setEmail(user.getEmail());
-			item.setNickname(user.getNickname());
-			
-			System.out.println(item.getEmail());
-			System.out.println(item.getNickname());
-			
-			service.signup(item);
-		}
+//		if (service.checkId(user.getEmail())) {
+//			User item = new User();
+//			item.setId(user.getEmail());
+//			item.setNickname(user.getNickname());
+//			
+//			System.out.println(item.getId());
+//			System.out.println(item.getNickname());
+//			
+//			service.kakaoSignup(item);
+//		}
+//		
+//		User item = new User();
+//		item.setId(user.getEmail());
+//		
+//		if (service.login(item)) 
+//			session.setAttribute("user", item);
 		
-		User item = new User();
-		item.setId(user.getEmail());
+		session.setAttribute("user", user);
 		
-		if (service.login(item)) 
-			session.setAttribute("user", item);
-		
-		return "redirect:/";
+		return "/after";
 				
 //		String query = "?id=" + user.getEmail();
 //		return "redirect:userLogin" + query;
@@ -324,8 +323,10 @@ public class RootController {
 		JsonObject properties = root.getAsJsonObject().get("properties").getAsJsonObject();
 		String nickname = properties.getAsJsonObject().get("nickname").getAsString();
 		
-		JsonObject account = root.getAsJsonObject().get("kakao_account").getAsJsonObject();
-		String email = account.getAsJsonObject().get("email").getAsString();
+//		JsonObject account = root.getAsJsonObject().get("kakao_account").getAsJsonObject();
+//		String email = account.getAsJsonObject().get("email").getAsString();
+		
+		String email = "";
 		
 		return new KakaoUser(nickname, email);
 	}

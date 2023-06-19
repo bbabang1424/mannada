@@ -13,6 +13,51 @@
     margin: 15px 50px;
 }
 
+.name {	
+    font-weight: bold;
+    padding: 15px 5px;
+    color: #0359d9;
+    font-size: 25px;
+    margin: 15px 50px;	
+}
+
+.mg-button {
+	position: absolute;
+    top: 15px;
+    right: 40px;
+}
+
+.mg-button .update {
+	width: 80px;
+    height: 30px;
+    background-color: #0359d9;
+    color: white;    
+    border: none;
+    border-radius: 3px;
+    font-size: 0.8em;
+}
+
+.mg-button .password {
+	width: 90px;
+    height: 30px;
+    background-color: #ddd;
+    color: black;    
+    border: none;
+    border-radius: 3px;
+    font-size: 0.8em;
+}
+
+.mg-button .list {
+	width: 70px;
+    height: 30px;
+    background-color: #CC0000;
+    color: white;    
+    border: none;
+    border-radius: 3px;
+    font-size: 0.8em;
+}
+
+/* 사용자 프로필 버튼 */
 .user-button {
 	position: absolute;
     top: 15px;
@@ -259,6 +304,7 @@ ul.tabs li.current{
 	border-left: 1px solid White;
 }
 
+
 .table_menu_3 {
 	border-top: 2px solid blue;
 	background-color: #f3f3f3;
@@ -266,4 +312,9 @@ ul.tabs li.current{
 	color: #000000;
 	border-right: 1px solid White;
 	border-left: 1px solid White;
+}
+
+.calendar img {
+	width: 100%;
+	height: 700px;
 }

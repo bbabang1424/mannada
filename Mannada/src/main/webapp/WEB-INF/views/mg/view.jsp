@@ -15,6 +15,9 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
 
 <title>관리자 마이페이지</title>
+<link rel="stylesheet" href="/resources/css/view.css">
+<script src="/resources/js/view.js"></script>
+
  
 <script>
 $(function() {
@@ -41,39 +44,39 @@ $(function() {
 </head>
 <jsp:include page="../header.jsp"></jsp:include>
 <body>
-	<header>
-		<div>
-			<div>
-				<img src="/resources/image/profile.png">
-			</div>
-		</div>
-		<div>
+	<div class="title">마이페이지</div>
+	<header class="profile-box">
+		<div class="name">
 			${manager.nickname}
 		</div>
-		<div>
+		
+		<div class="mg-button">
 			<c:if test="${sessionScope.manager == null}">
 				<a href="/login">정보변경</a>
 				<a href="/login">비밀번호변경</a>
 				<a href="/login">회원관리</a>
 			</c:if>
+			
 			<c:if test="${sessionScope.manager != null}">
-				<a href="../update/${sessionScope.manager.id}">정보변경</a>
-				<a href="../password/${sessionScope.manager.id}">비밀번호변경</a>
-				<a href="../../user/list">회원관리</a>
+				<a href="../update/${sessionScope.manager.id}"><button type="button" class="update">정보변경</button></a>
+				<a href="../password/${sessionScope.manager.id}"><button type="button" class="password">비밀번호변경</button></a>
+				<a href="../../user/list"><button type="button" class="list">회원관리</button></a>
 			</c:if>
-		</div>
-		<nav class="my-nav">
-			<ul>
-				<li>작성 글</li>
-				<li>Q n A</li>
-			</ul>
-		</nav>
+		</div>			
 	</header>
-	<section>
-		<div class="my-set" id="my-post">
-			<table border="1">
+	
+	<nav class="my-nav">
+			<ul class="tabs">
+				<li class="tab-link current" data-tab="tab-1">작성 글</li>
+				<li class="tab-link" data-tab="tab-2">Q n A</li>
+			</ul>
+			
+			<div id="tab-1" class="tab-content current">
+				<div class="tabcontent">
+					<div class="my-set" id="my-post">
+			<table border="1" class="table table-hover table_table" id="table_size">
 				<thead>
-					<tr>
+					<tr class="table_menu_2">
 						<th>No</th>
 						<th>공지</th>
 						<th>작성일</th>
@@ -121,11 +124,15 @@ $(function() {
 				</tfoot> 
 			</table>
 		</div>
+      </div>								
+			</div>
 			
-		<div class="my-set" id="my-question">
-			<table border="1">
+			<section>
+			<div id="tab-2" class="tab-content">					
+		<div>
+			<table border="1" class="table table-hover table_table" id="table_size" id="my-question">
 				<thead>
-					<tr>
+					<tr class="table_menu_2">
 						<th>No</th>
 						<th>질문</th>
 						<th>작성자</th>
@@ -177,6 +184,15 @@ $(function() {
 				</tfoot> 
 			</table>
 		</div>
+			</div>
+		
+		</nav>
+		
+		
+		
+	<section>
+		
+		
 	</section>
 </body>
 <jsp:include page="../footer.jsp"></jsp:include>

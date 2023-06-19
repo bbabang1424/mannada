@@ -60,6 +60,7 @@ $(function() {
 	
 	$('#checkPW').click(function() {
 		const pw = $('#pw').val();
+		
 		$.ajax({
 			url:'/user/checkPW/${user.num}',
 			contentType: "application/json",

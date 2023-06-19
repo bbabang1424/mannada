@@ -1,5 +1,28 @@
 @charset "UTF-8";
 
+.banner {
+	color: white;
+	border-color: #60a8ef;
+	width: 100%;
+	background-color: #60a8ef;
+}
+
+.banner_text {
+	max-width: 1200px;
+	width: 100%;
+	margin: auto;
+	padding: 0 10px;
+}
+
+.banner_text>li {
+	display: inline-block;
+	font-weight: bold;
+	padding-bottom: 13px;
+	padding-top: 13px;
+	margin: 0 auto;
+	padding-top: 13px;
+}
+
 .background-image {
 	width: 100%;
     height: 100%;
@@ -11,11 +34,37 @@
     opacity: 0.5;
 }
 
+.mg-background-image {
+	width: 100%;
+    height: 100%;
+    position: absolute;
+    background-image: url(/resources/image/mg-view-back.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    opacity: 0.5;
+}
+
 .container-box {
 	border: 1px solid whitesmoke;
 	color: black;
 	width: 500px;
-	height: 525px;
+	height: 540px;
+	margin: 2em auto;
+	margin-bottom: 8%;	
+	padding: 15px 45px;
+	position: relative;
+	background-color: white;
+	border-radius: 30px;
+	box-shadow: inset 0 0px 10px 5px #E0E0E0;
+	margin-top: 4%;	
+}
+
+.mg-container-box {
+	border: 1px solid whitesmoke;
+	color: black;
+	width: 500px;
+	height: 305px;
 	margin: 2em auto;
 	margin-bottom: 8%;	
 	padding: 15px 45px;
@@ -42,7 +91,7 @@
 }
 
 .nickname {
-	margin: 10px 0px;
+	margin-top: 10px;
 }
 
 .nickname input {
@@ -64,7 +113,7 @@
 }
 
 .password {
-	margin: 10px 0px;
+	margin-bottom: 10px;
 }
 
 .password input {
@@ -117,7 +166,25 @@
     left: 98px;
 }
 
+.mg-btn-box button {
+	width: 90px;
+    height: 35px;
+    background-color: #0359d9;
+    border-radius: 3px;
+    border: none;
+    color: white;
+    position: relative;
+    top: 30px;
+    margin: 6px;
+    left: 98px;
+}
 
+.error {
+	font-size: 1px;
+	height: 20px;
+	color: red;
+	font-weight: 700;
+}
 
 
 

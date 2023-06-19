@@ -21,9 +21,9 @@
 			<li>HOME</li> <i class="bi bi-caret-right-fill"></i>
 			<li>만나다</li>
 		
-		<h3 class="page_title">만나다</h3>
-		<p class="page_text">새로운 만남을 만날수 있는 곳 입니다. 관심있는 카드를 눌러 참여하세요!</p>
-	</ul>
+			<h3 class="page_title">만나다</h3>
+			<p class="page_text">새로운 만남을 만날수 있는 곳 입니다. 관심있는 카드를 눌러 참여하세요!</p>
+		</ul>
 	</div>
 	
 	<section class="container">
@@ -93,14 +93,14 @@
 					<!-- Partic: 참여란 뜻으로 참여버튼 -->
 					<!-- 참여버튼 눌렀을때 인원 표시되게 해야 함-->
 					<div class="model_Partic">
-						<c:if test="${item.status < 0 }">
+						<c:if test="${item.status < 0 || item.member == item.sum}">
 							<button type="button" style="background-color: #999">마감</button>
 						</c:if>
-						<c:if test="${item.status >= 0 && status == 0 && sessionScope.user.num != item.num && sessionScope.user != null }">
+						<c:if test="${item.status >= 0 && status == 0 && sessionScope.user.num != item.num && sessionScope.user != null && item.member != item.sum}">
 							<a href="../addJoin/${item.id }"><button type="button"
 									id="join_btn">참여</button></a>
 						</c:if>
-						<c:if test="${item.status >= 0 && status == 1 && sessionScope.user.num != item.num && sessionScope.user != null }">
+						<c:if test="${item.status >= 0 && status == 1 && sessionScope.user.num != item.num && sessionScope.user != null && item.member != item.sum}">
 							<a href="../deleteJoin/${item.id }"><button type="button"
 									id="join_btn" class="cancle">참여 취소</button></a>
 						</c:if>
@@ -115,7 +115,10 @@
 				<!-- 수정이랑 목록 이동 모르겠음... -->
 				<c:if test="${sessionScope.user.num == item.num }">
 					<a href="../update/${id}"><button class="button_modify">수정</button></a>
-					<a href="../delete/${id}"><button class="button_delete">삭제</button></a>
+					
+					<c:if test="${item.sum == 0 }">
+						<a href="../delete/${id}"><button class="button_delete">삭제</button></a>
+					</c:if>
 				</c:if>
 
 				<c:if test="${status == 1 }">

@@ -16,7 +16,7 @@
 	<insert id="kakao_signup">
 		INSERT INTO user
 		(id, nickname, status, reg_date)
-		VALUES (#{email}, #{nickname}, 0, NOW())
+		VALUES (#{id}, #{nickname}, 0, NOW())
 	</insert>
 	
 	<!-- 이메일 중복제거 -->
