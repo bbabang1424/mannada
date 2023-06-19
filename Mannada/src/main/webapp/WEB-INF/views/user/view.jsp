@@ -220,7 +220,9 @@
 	                  <div class="text-note">
 	                     <textarea rows="10" class="review_textarea" name="content"
 	                        placeholder="로그인 후에 작성해주세요."></textarea>
-	                     <button type="button" id="reviewSubmit" onClick="login_check();">등록</button>
+	                     <c:if test="${sessionScope.user != null}">
+	                     	<button type="button" id="reviewSubmit" onClick="login_check();">등록</button>
+	                     </c:if>
 	                  </div>
 	               </form>
 	            </div>
