@@ -219,7 +219,9 @@
                   <div class="text-note">
                      <textarea rows="10" class="review_textarea" name="content"
                         placeholder="로그인 후에 작성해주세요."></textarea>
-                     <button type="button" id="reviewSubmit" onClick="login_check();">등록</button>
+					<c:if test="${sessionScope.user != null}">
+						<button type="button" id="reviewSubmit" onClick="login_check();">등록</button>
+					</c:if>
                   </div>
                </form>
             </div>
@@ -227,7 +229,12 @@
             <div class="review-table">            
                <table>
                   <tbody>                        
-                     <th>닉네임</th><th>한줄평</th><th>작성일</th><th>별점</th>                  
+                     <th>닉네임</th><th>한줄평</th><th>작성일</th><th>별점</th><th></th>
+                     <c:if test="${review.size() < 1}">
+		                  <tr>
+		                     <td colspan="5">등록 된 한줄평이 없습니다.</td>
+		                  </tr>
+		             </c:if>                
                      <c:forEach var="review" items="${review}">                                                                           
                               <tr class="table_menu_1"><td class="nickname">${review.nickname}</td>
                               <td>${review.content}</td>
