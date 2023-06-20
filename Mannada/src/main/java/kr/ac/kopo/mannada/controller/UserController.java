@@ -82,7 +82,6 @@ public class UserController {
 
 		Pager rePager = new Pager(); 
 		rePager.setPerPage(15);
-		rePager.setSearch(2);
 		rePager.setKeyword(item.getNickname());
  
 		List<Reply> reply = commuSerice.replyList(rePager); 
