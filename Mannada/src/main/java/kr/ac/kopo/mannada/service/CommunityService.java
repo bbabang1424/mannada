@@ -30,7 +30,7 @@ public interface CommunityService {
 
 	List<Reply> replyList(Pager pager);
 
-	List<Reply> detailReply(int id);
+	List<Reply> detailReply(int id, Pager pager);
 	
 	/* 메인페이지 카테고리별 게시판 인기글 : 후기, 소통 */
 	List<Community> reviewList(Pager pager);

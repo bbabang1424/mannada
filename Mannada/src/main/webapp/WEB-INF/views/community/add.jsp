@@ -28,13 +28,14 @@
 </head>
 <body>
 	<div class="banner">
-		<div class="banner_text">
+		<ul class="banner_text">
 			<li>커뮤니티</li>
 			<i class="bi bi-caret-right-fill"></i>
 			<li>글쓰기</li>
-		</div>
+		
 		<h3 class="page_title">커뮤니티</h3>
 		<p class="page_text">만남에 대한 후기와 소통을 자유롭게 글로 적어주세요!</p>
+		</ul>
 	</div>
 	<div class="container">
 		<form method="post" name="write_post">
@@ -50,7 +51,7 @@
 						<td class="title"><select name="category" class="select">
 								<option name="category" value="1">후기</option>
 								<option name="category" value="2">소통</option>
-						</select> <input id="title" name="title" type="text">${item.id}</td>
+						</select> <input maxlength="30" id="title" name="title" type="text">${item.id}</td>
 
 					</tr>
 

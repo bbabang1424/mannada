@@ -1,7 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>	
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%> 
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>  
 <!DOCTYPE html>
 <html>
 <head>
@@ -90,27 +91,27 @@ const pager_item = [ {
 				<div>
 					<div class="category-inner">
 						<ul>
-							<li><a href="/mannada/category">
+							<li><a href="/manna/list?search=8&keyword=1">
 								<div class="icon"><img src="/resources/image/purchases.png">
 								#공동구매
 								</div>
 								</a></li>
-							<li><a href="/mannada/category">
+							<li><a href="/manna/list?search=8&keyword=2">
 								<div class="icon"><img src="/resources/image/game.png">
 								#게임
 								</div>
 								</a></li>
-							<li><a href="/mannada/category">
+							<li><a href="/manna/list?search=8&keyword=3">
 								<div class="icon"><img src="/resources/image/spoon.png">
 								#식사
 								</div>
 								</a></li>
-							<li><a href="/mannada/category">
+							<li><a href="/manna/list?search=8&keyword=4">
 								<div class="icon"><img src="/resources/image/sport.png">
 								#스포츠
 								</div>
 								</a></li>
-							<li><a href="/mannada/category">
+							<li><a href="/manna/list?search=8&keyword=5">
 								<div class="icon"><img src="/resources/image/more.png">
 								#기타
 								</div>
@@ -237,7 +238,7 @@ const pager_item = [ {
 							<!-- <th>카테고리</th>  -->
 							<th>제목</th> 
 							<th>작성일</th>
-							<th>조회수</th> 
+							<th>조회수</th>
 						</tr>
 					</thead>
 					<tbody >
@@ -246,16 +247,23 @@ const pager_item = [ {
 								<td colspan="5">등록된 글이 없습니다.</td>
 							</tr>
 						</c:if>
-						<c:forEach var="item" items="${commuReview}" end="4" varStatus="status">
+						<c:forEach var="item" items="${commuReview}" end="4" varStatus="ranking">
 							<tr
 								style="border: 1px solid #dddddd; padding-top: 10px; border-right: 1px solid White; border-left: 1px solid White;">
 								<!-- <td><c:forEach var="cnt" begin="1" end="5">${cnt}</c:forEach></td>  -->
-								<td style="font-weight:700; color:#de2f00;"><div><c:out value="${status.count}" /></div></td>
+								<td class="ranking" style="font-weight:700; color:#999;"><div><c:out value="${ranking.count}" /></div></td>
 								<!-- <td><div class="category_color category_color_${item.category}"></div>${item.category_}</td> --> 
-								<td><a style="color: black;" href="/community/detail/${item.id}">${item.title}</a></td>
+								<td><a style="color: black;" href="/community/detail/${item.id}" title="${item.title}">
+									<c:if test="${fn:length(item.title) < 24}">
+										${item.title}
+									</c:if>
+									<c:if test="${fn:length(item.title) >= 24}">
+										${fn:substring(item.title,0,23)}...
+									</c:if>
+									</a></td>
 								<td><fmt:formatDate value="${item.regDate}"
-										pattern="yyyy-MM-dd " /></td>
-								<td>${item.viewCnt}</td>
+										pattern="yyyy-MM-dd " /></td>		
+								<td>${item.viewCnt}</td> 
 							</tr>
 						</c:forEach>
 					</tbody>
@@ -289,12 +297,19 @@ const pager_item = [ {
 								<td colspan="5">등록된 글이 없습니다.</td>
 							</tr>
 						</c:if>
-						<c:forEach var="item" items="${commuTalk}" end="4" varStatus="status">
+						<c:forEach var="item" items="${commuTalk}" end="4" varStatus="ranking">
 							<tr
 								style="border: 1px solid #dddddd; padding-top: 10px; border-right: 1px solid White; border-left: 1px solid White;">
-								<td style="font-weight:700; color:#de2f00;"><div><c:out value="${status.count}" /></div></td>
+								<td class="ranking" style="font-weight:700; color:#999;"><div><c:out value="${ranking.count}" /></div></td>
 								<!-- <td><div class="category_color category_color_${item.category}"></div>${item.category_}</td>  --> 
-								<td><a style="color: black;" href="/community/detail/${item.id}">${item.title}</a></td>
+								<td><a style="color: black;" href="/community/detail/${item.id}" title="${item.title}">
+									<c:if test="${fn:length(item.title) < 24}">
+										${item.title}
+									</c:if>
+									<c:if test="${fn:length(item.title) >= 24}">
+										${fn:substring(item.title,0,23)}...
+									</c:if>
+									</a></td>
 								<td><fmt:formatDate value="${item.regDate}"
 										pattern="yyyy-MM-dd " /></td>
 								<td>${item.viewCnt}</td>
@@ -311,7 +326,7 @@ const pager_item = [ {
 		<div id="map-layer">
 			<div class="layer-inner">
 				<div>
-					<h3>나에게 맞는 <b>맞춤 만남</b>은?</h3>
+					<h3>나에게 맞는 <b>맞춤 주소</b>는?</h3>
 				</div>
 				<form name="addrSearch" action="searchAddress">
 					<div class="grid-container">
@@ -345,7 +360,7 @@ const pager_item = [ {
 								</select>
 							</div>
  
-						
+						<!-- 
 						<div class="item">
 							<label><h5>카테고리</h5></label>
 						</div>
@@ -373,7 +388,9 @@ const pager_item = [ {
 							</select>
 						</div>
 						
+					 -->
 					</div>
+					
 							
 					<div class="buttons">
 						<button id="searchAddress">검색</button>

@@ -97,6 +97,7 @@ public class NoticeController {
 		item.setMgrId(manager.getId());
 		
 		try {
+			
 			List<Attach> list = new ArrayList<Attach>();
 			
 			for(MultipartFile attach : item.getAttach()) {
@@ -134,6 +135,8 @@ public class NoticeController {
 	
 	@GetMapping("/detail/{id}")
 	public String detail(@PathVariable int id, Model model) {
+		
+		service.addViewCnt(id);
 		
 		Notice item = service.item(id);
 		model.addAttribute("item", item);

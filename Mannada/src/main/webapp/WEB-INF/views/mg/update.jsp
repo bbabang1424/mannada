@@ -14,6 +14,8 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 
 <title>정보수정</title>
+<link rel="stylesheet" href="/resources/css/update.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script> 
 $(function() {
@@ -90,25 +92,43 @@ $(function() {
 </head>
 <jsp:include page="../header.jsp"></jsp:include>
 <body>
-	<div class="container">
-		<div>
+	<div class="banner">
+			<ul class="banner_text">
+				<li>HOME</li>
+				<i class="bi bi-caret-right-fill"></i> 
+				<li>정보변경</li>	
+			</ul>
+	</div>
+	
+<div class="mg-background-image"></div>
+
+	<div class="mg-container-box">
+		<div class="title">
 			<h3>정보변경</h3>
 		</div> 
 		<div>
 			<form name="updateInfo_from" method="post">
-				<div>
-					<label>이메일</label>
-					<input type="text" name="id" value="${manager.id}" readonly>
-				</div>
-				<div>
-					<label>닉네임</label>
-					<input type="text" name="nickname" id="nick" value="${manager.nickname}" placeholder="${manager.nickname}">
-					<button type="button" id="checkNick">닉네임 중복확인</button>
+				<div class="email">
+					<label style="font-weight: bold;">이메일</label>
+					
+					<div>
+						<input type="text" name="id" value="${manager.id}" readonly="readonly">
+					</div>
 				</div>
 				
-				<div>
-					<button type="button" id="updateInfo">등록</button>
-					<button type="button" id="goBack">이전으로</button>
+				<div class="nickname">
+					<label style="font-weight: bold;">닉네임</label>
+					
+					<div>
+						<input type="text" name="nickname" id="nick" value="${manager.nickname}" placeholder="${manager.nickname}">
+					</div>
+					
+					<button type="button" id="checkNick"> 중복확인</button>
+				</div>
+				
+				<div class="mg-btn-box">
+					<button type="button" id="goBack" style="background-color: #ddd;color: black;">이전으로</button>
+					<button type="button" id="updateInfo">등록</button>					
 				</div>
 			</form>
 		</div>

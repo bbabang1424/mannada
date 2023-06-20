@@ -7,7 +7,8 @@ $(function () {
 
     $('#infoCheck').click(function () {
         const form = document.signup_form;
-        const checkBox = $('#aggrement').is(":checked")
+        const checkBox = $('#aggrement').is(":checked");
+        const emailTest = $('#email_auth_key').val();
 		
         if (form.id.value == '') {
             swal('회원가입', '이메일을 입력하세요', 'info');
@@ -15,6 +16,9 @@ $(function () {
             return;
         } else if (isCheck != form.id.value) {
             swal('회원가입', '중복체크 해주세요', 'warning');
+            return;
+        } else if (emailTest == '') {
+            swal('회원가입', '인증번호를 입력해주세요', 'warning');
             return;
         } else if (form.pw.value == '') {
             swal('회원가입', '비밀번호를 입력하세요', 'info');

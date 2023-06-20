@@ -8,6 +8,27 @@
 	font-family: 'Noto Sans KR';
 }
 
+.category_list>li {
+	margin: 5px;
+	list-style-type: none;
+	padding: 5px;
+	display: inline-block;
+}
+
+ul li.active {
+	border-bottom: 2px solid #0080ff;
+}
+
+li>a {
+	color: black;
+}
+
+.category_list {
+	max-width: 1200px;
+	width: 100%;
+	padding-left: 20px;
+}
+
 .container {
 	position: relative;
 	max-width: 1200px;
@@ -16,21 +37,21 @@
 	margin: 5% auto;
 }
 
-/* 각 페이지 퍼블리싱, 파란 베너 김소연 */
+/* 각 페이지 퍼블리싱, 안내 베너 김소연 */
 .banner {
+	height: 160px;
 	max-width: 100%;
 	color: white;
 	border-color: #60a8ef;
 	width: 100%;
 	background-color: #60a8ef;
-	border: 1px solid;
 	background-image: url(/resources/image/banner_imga.png);
 	background-repeat: no-repeat;
-	background-size: 280px 235px;
-	background-position: 78% 26%;
+	background-position: center;
 }
 
 .banner_text {
+	padding-left: 10px;
 	max-width: 1200px;
 	width: 100%;
 	margin: 0 auto;
@@ -45,10 +66,10 @@
 
 .page_title {
 	width: 100%;
-	padding-bottom: 9px;
+	padding-bottom: 4px;
 	margin: 0 auto;
 	max-width: 1200px;
-	padding-top: 3px;
+	padding-top: 10px;
 }
 
 .page_text {
@@ -67,11 +88,10 @@
 }
 
 #empty_list {
-	margin-bottom: 5%;
 	width: 100%;
-	max-width: 1220px;
-	text-align: left;
-	padding: 0.5em;
+    max-width: 1200px;
+    text-align: left;
+    padding: 10px;
 }
 
 .card {
@@ -236,7 +256,7 @@ div>.gauge_bar>div:first-child {
 
 .more {
 	text-align: center;
-	margin-bottom: 5%;
+	margin-top: 3%;
 }
 
 #more-btn {
@@ -248,7 +268,6 @@ div>.gauge_bar>div:first-child {
 }
 
 #more-btn:hover {
-	
 	background: #555555;
 	border: unset;
 	color: white;

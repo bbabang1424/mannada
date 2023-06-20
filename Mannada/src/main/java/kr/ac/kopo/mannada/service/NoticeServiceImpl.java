@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import kr.ac.kopo.mannada.dao.NoticeDao;
 import kr.ac.kopo.mannada.model.Attach;
@@ -26,10 +27,9 @@ public class NoticeServiceImpl implements NoticeService {
 		return dao.list(pager);
 	}
 
+	@Transactional
 	@Override
 	public void add(Notice item) {
-		if(item.getTitle() == "")
-			item.setTitle(null);
 		
 		dao.add(item);
 		
@@ -48,17 +48,19 @@ public class NoticeServiceImpl implements NoticeService {
 		return dao.item(id);
 	}
 
+	@Transactional
 	@Override
 	public void update(Notice item) {
-		if(item.getTitle() == "")
-			item.setTitle(null);
 		
 		dao.update(item);
 		
-		for(Attach attach : item.getAttachs()) {
-			attach.setNoticeId(item.getId());
+		if(item.getAttachs() != null) {
+			for(Attach attach : item.getAttachs()) {
+				attach.setNoticeId(item.getId());
+				
+				dao.addAttach(attach);
+			}
 			
-			dao.addAttach(attach);
 		}
 	}
 
@@ -75,6 +77,11 @@ public class NoticeServiceImpl implements NoticeService {
 		}
 		else
 			return false;
+	}
+
+	@Override
+	public void addViewCnt(int id) {
+		dao.addViewCnt(id);
 	}
 	
 

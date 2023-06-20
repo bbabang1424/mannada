@@ -1,5 +1,6 @@
 package kr.ac.kopo.mannada.service;
 
+import java.util.HashMap;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -91,8 +92,18 @@ public class CommunityServiceImpl implements CommunityService {
 	}
 
 	@Override
-	public List<Reply> detailReply(int id) {
-		return dao.detailReply(id);
+	public List<Reply> detailReply(int id, Pager pager) {
+		
+		int total = dao.totalReply(id);
+		pager.setTotal(total);
+		pager.setPerPage(10);
+		pager.setPage(1);
+		
+		HashMap<String, Object> map = new HashMap<>();
+		map.put("id", id);
+		map.put("pager", pager);
+		
+		return dao.detailReply(map);
 	}
 
 	/* 메인페이지용 */

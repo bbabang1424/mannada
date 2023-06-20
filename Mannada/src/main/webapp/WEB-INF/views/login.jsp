@@ -6,15 +6,56 @@
 <head>
 <meta charset="UTF-8">
 <title>만나다</title>
-<jsp:include page="header.jsp"></jsp:include>
+<script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
 <link rel="stylesheet" href="/resources/css/login.css">
 <link rel="stylesheet" href="/resources/image/swiper1.jpg"/>
-<link rel="stylesheet"
-	href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">
-<script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
-<script type="text/javascript">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
+<script src="https://t1.kakaocdn.net/kakao_js_sdk/2.2.0/kakao.min.js" integrity="sha384-x+WG2i7pOR+oWb6O5GV5f1KN2Ko6N7PTGPS7UlasYWNxZMKQA63Cj/B2lbUmUfuC" crossorigin="anonymous"></script>
+<script>
+	window.addEventListener("load", e => {
+		document.querySelector(".kakao-btn").addEventListener("click", e => {
+			// SDK를 초기화 합니다. 사용할 앱의 JavaScript 키를 설정해야 합니다.
+		    Kakao.init('1c5dbd45518c2d8b05ce31ff5c8b207d');
+
+		    // SDK 초기화 여부를 판단합니다.
+		    if(Kakao.isInitialized())
+		    	console.log("카카오 API 초기화 성공");
+		    else
+		    	console.log("카카오 API 초기화 실패");
+		    
+		    Kakao.Auth.authorize({redirectUri: 'http://localhost:7070/after'});
+		    
+		});
+	});
+	
+	
+	
+/* js파일로 옮길 시 에러발생함. jsp파일에 그냥 두기 */
 $(function(){
+	//메세지는 일치여부 하나니까 나눌 필요x
+	const msg = '${msg}';
+	if(msg)
+		swal('로그인', msg, 'error');
+	
+	/* 유저 : 아이디 저장 표시 */
+	let mail = getCookie("Cookie_mail");
+	console.log(mail);		
+	if(mail) {
+		$("#user-login input[name='id']").val(mail);
+		$("#user-rememberId").attr("checked", true);
+	}
+	
+	/* 관리자 : 아이디 저장 표시 */
+	let id = getCookie("Cookie_id");	
+	console.log(id);	
+	if(id) {
+		$("#manager-login input[name='id']").val(id);
+		$("#mg-rememberId").attr("checked", true);
+	}
+	
 	$(".title li").eq(0).click(function() {
 		$(".title li").css("text-decoration", "unset");
 		$(".title li").css("font-size", "0.8em");
@@ -35,36 +76,74 @@ $(function(){
 		$("#manager-login").css("display", "unset");
 	});
 });
-
-/*아이디, 비밀번호 입력하면 로그인*/
+/* 아이디, 비밀번호 입력하면 로그인 */
 function userValue() {
 	const form = document.user_login;
+	const checkBox = $('#user-rememberId').is(":checked");
 	
 	if(form.id.value == '') {
 		form.id.focus();
-		return;
-	}else if(form.pw.value == ''){
+		return; // 아래 if문을 막는다.
+	} else if(form.pw.value == ''){
 		form.pw.focus();
 		return;
+	} else if(checkBox){
+		setCookie("Cookie_mail", form.id.value, 7);
+	} else {
+		deleteCookie("Cookie_mail");
 	}
 	form.submit();
 }
 
 function mgValue() {
 	const form = document.mg_login;
+	const checkBox = $('#mg-rememberId').is(":checked");
 	
 	if(form.id.value == '') {
 		form.id.focus();
 		return;
-	}else if(form.pw.value == ''){
+	} else if(form.pw.value == ''){
 		form.pw.focus();
 		return;
+	} else if(checkBox){
+		setCookie("Cookie_id", form.id.value, 7);
+	} else {
+		deleteCookie("Cookie_id");
 	}
 	form.submit();
 }
+
+/* 쿠키 관련 코드 */
+//저장
+function setCookie(cookieName, value, exdays){
+    var exdate = new Date();
+    exdate.setDate(exdate.getDate() + exdays);
+    var cookieValue = escape(value) + ((exdays==null) ? "" : "; expires=" + exdate.toGMTString());
+    document.cookie = cookieName + "=" + cookieValue;
+}
+//삭제
+function deleteCookie(cookieName){
+    var expireDate = new Date();
+    expireDate.setDate(expireDate.getDate() - 1);
+    document.cookie = cookieName + "= " + "; expires=" + expireDate.toGMTString();
+}
+//불러오기
+function getCookie(cookieName) {
+    cookieName = cookieName + '=';
+    var cookieData = document.cookie;
+    var start = cookieData.indexOf(cookieName);
+    var cookieValue = '';
+    if(start != -1){
+        start += cookieName.length;
+        var end = cookieData.indexOf(';', start);
+        if(end == -1)end = cookieData.length;
+        cookieValue = cookieData.substring(start, end);
+    }
+    return unescape(cookieValue);
+}
 </script>
 
-<style type="text/css">
+<style>
 #manager-login{
 	display: none;
 }
@@ -75,17 +154,16 @@ function mgValue() {
 }
 </style>
 </head>
+<jsp:include page="header.jsp"></jsp:include>
 <body>
 	<div class="banner">
 			<ul class="banner_text">
 				<li>HOME</li>
-				<i class="bi bi-caret-right-fill"></i>
+				<i class="bi bi-caret-right-fill"></i> 
 				<li>로그인</li>	
 			</ul>
 	</div>
-	<div class="background-image">
-	</div>
-
+	<div class="background-image"></div>
 	<div class="login-box">
         <br>
         <div class="title">
@@ -107,8 +185,7 @@ function mgValue() {
 	        <div>
 	            <form name="user_login" method="post" action="/userLogin" class="login-form">
 	                <div>
-	                    <input class="input" type="email" id="textbox user_id" name="id" placeholder="아이디(이메일) 입력"
-	                    value="${sessionScope.saveOk==null ? '' : sessionScope.userId}">
+	                    <input class="input" type="email" id="textbox user_id" name="id" placeholder="이메일 입력">
 	                </div>
 	                
 	                <div>
@@ -116,10 +193,10 @@ function mgValue() {
 	                </div>
 	                
 	                <div>
-	                    <input type="checkbox" id="remember-check" name="saveId" ${sessionScope.saveOk==null ? "" : "checked"}>아이디 저장
+	                    <input type="checkbox" id="user-rememberId"> 아이디 저장
 	                </div>
 	                
-					<button class="login-button" type="button" onclick="userValue()">로그인</button>
+					<button class="login-button" type="button" onclick="userValue();">로그인</button>
 					
 					<!--  csrf 공격 방어를 위해 동적 생성 -->
     				<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token }" />
@@ -128,7 +205,7 @@ function mgValue() {
 	        
 	        <div class="flex">
 	            <div class="find-account">
-	               | <a href="">아이디 찾기</a> | <a href="">비밀번호 찾기</a> |               
+	              | <a href="/findpage">비밀번호를 잊어버리셨나요?</a> |         
 	            </div> 
 	        </div> 
 	
@@ -151,8 +228,7 @@ function mgValue() {
 	        <div id="manager-login">
 	            <form name="mg_login" method="post" action="/managerLogin" class="login-form">
 	                <div>
-	                    <input class="input" type="text" id="textbox mg_id" name="id" placeholder="아이디 입력"
-	                    value="${sessionScope.saveOk==null ? '' : sessionScope.mgId}">
+	                    <input class="input" type="text" id="textbox mg_id" name="id" placeholder="아이디 입력">
 	                </div>
 	                
 	                <div>
@@ -160,13 +236,13 @@ function mgValue() {
 	                </div>
 	                
 	                <div>
-	                    <input type="checkbox" id="remember-check" name="saveId" ${sessionScope.saveOk==null ? "" : "checked"}>아이디 저장
+	                    <input type="checkbox" id="mg-rememberId"> 아이디 저장
 	                </div>
 	                
-					<button class="login-button" type="button" onclick="mgValue()">로그인</button>
+					<button class="login-button" type="button" onclick="mgValue();">로그인</button>
 				</form>
-	        </div>
-        </div>     
+	       </div>
+      </div>     
 </body>
 <jsp:include page="footer.jsp"></jsp:include>
 </html>

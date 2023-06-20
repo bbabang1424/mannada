@@ -14,20 +14,19 @@
 	color: unset;
 	text-decoration: none;
 }
-/* 각 페이지 퍼블리싱, 파란 베너 김소연 */
+/* 각 페이지 남매 베너 김소연 */
 .banner {
 	color: white;
 	border-color: #60a8ef;
 	width: 100%;
 	background-color: #60a8ef;
-	border: 1px solid;
 }
 
 .banner_text {
 	max-width: 1200px;
 	width: 100%;
 	margin: auto;
-	padding-left: 0%;
+	padding-left: 10px;
 }
 
 .banner_text>li {
@@ -74,6 +73,7 @@
 }
 
 .chat_text {
+	position: relative;
 	color: black;
 	width: 100%;
 	display: inline-block;

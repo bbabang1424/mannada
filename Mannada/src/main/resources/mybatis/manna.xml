@@ -65,7 +65,8 @@
 	
 	<select id="item" resultType="Manna">
 		SELECT manna.*, nickname, (SELECT (count(*) - 1) FROM joins WHERE manna_id = #{id}) as sum
-			   , filename, uuid, AVG(star) starAvg, COUNT(star) starCnt 
+			   , filename, uuid, AVG(star) starAvg, COUNT(star) starCnt
+			   , sign(d_day - STR_TO_DATE(DATE_FORMAT(SYSDATE(), '%Y-%m-%d'), '%Y-%m-%d')) as STATUS
 		FROM manna
 		LEFT OUTER JOIN user ON(manna.num = user.num)
 		LEFT OUTER JOIN profile ON (user.num = profile.num)

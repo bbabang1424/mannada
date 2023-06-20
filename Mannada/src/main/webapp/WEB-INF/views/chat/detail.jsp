@@ -24,6 +24,7 @@
 
 	socket.onopen = function() {
 		connect = true;
+		socket.send('make//${id}');
 		/* alert("서버 연결 완료"); */
 	}
 
@@ -34,15 +35,40 @@
 
 	socket.onmessage = function(msg) {
 		let message = document.getElementById("message");
+		
+		let arr = msg.data.split(":");
+		let usernum = arr[0];
+		
+		let today = new Date();
 
-		// item.num을 js식으로 바꾸기.. 
-		message.innerHTML += "<div class='list ${item.num == num ? 'my' : 'you' }'>"
-				+ msg.data + "</div>";
+		let year = today.getFullYear(); // 년도
+		let month = today.getMonth() + 1; // 월
+		let date = today.getDate(); // 날짜
+		let hours = today.getHours(); // 시
+		let minutes = today.getMinutes(); // 분
+
+		let regDate = year + "-" + month + "-" + date + " " + hours + ":"
+				+ minutes;
+		
+		
+		console.log(msg.data);
+		
+		let first_div = usernum == '${num}' ? "<div class='list my'>" : "<div class='list you'>"
+			
+		message.innerHTML += first_div
+				+ "<div class='user'><div class='name'>"
+				+ arr[1]
+				+ "</div></div><div class='balloon'>" + arr[2]
+				+ "</div><div class='user'>"
+				+ "</div><div class='user'><p class='time'>" + regDate
+				+ "</p></div>"
+				+ "</div>";
 
 		$('#message').scrollTop($('#message')[0].scrollHeight);
 	}
 
 	function send() {
+		
 		if (connect) {
 
 			$.ajax({
@@ -56,23 +82,8 @@
 
 			let content = document.getElementById("content");
 
-			let today = new Date();
-
-			let year = today.getFullYear(); // 년도
-			let month = today.getMonth() + 1; // 월
-			let date = today.getDate(); // 날짜
-			let hours = today.getHours(); // 시
-			let minutes = today.getMinutes(); // 분
-
-			let regDate = year + "-" + month + "-" + date + " " + hours + ":"
-					+ minutes;
-
-			socket.send("<div class='user'><div class='name'>"
-					+ '${sessionScope.user.nickname}'
-					+ "</div></div><div class='balloon'>" + content.value
-					+ "</div><div class='user'>"
-					+ "</div><div class='user'><p class='time'>" + regDate
-					+ "</p></div>");
+			
+			socket.send('chat//${id}//${sessionScope.user.num}:${sessionScope.user.nickname}:'+content.value)
 
 			content.value = "";
 			content.focus();
@@ -102,7 +113,7 @@
 			<div class="chat_banner">
 				<div class="chat_text">
 					ROOM <i class="bi bi-chat-fill"
-						style="position: absolute; top: 14%; left: 26%;"></i>
+						style="position: absolute; top: -11%; left: 23%;"></i>
 				</div>
 			</div>
 
@@ -151,11 +162,9 @@
 
 			<div class="send">
 				<form id="message_form">
-					<input type="number" name="mannaId" value="${item.id}"
-						class="hidden" id="mannaId"> <input type="number"
-						name="num" value="${sessionScope.user.num}" class="hidden"
-						id="num"> <input type="text" name="content" id="content"
-						onkeyup="enterkey()">
+					<input type="number" name="mannaId" value="${item.id}" class="hidden" id="mannaId">
+					<input type="number" name="num" value="${sessionScope.user.num}" class="hidden" id="num">
+					<input type="text" name="content" id="content" onkeyup="enterkey()">
 					<button type="button" onclick="send()">전송</button>
 				</form>
 			</div>

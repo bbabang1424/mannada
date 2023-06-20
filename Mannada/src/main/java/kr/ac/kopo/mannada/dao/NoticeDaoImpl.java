@@ -65,4 +65,9 @@ public class NoticeDaoImpl implements NoticeDao {
 			return false;
 	}
 
+	@Override
+	public void addViewCnt(int id) {
+		sql.update("notice.addViewCnt", id);
+	}
+
 }

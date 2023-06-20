@@ -82,17 +82,18 @@
 </head>
 <body>
 	<div class="banner">
-		<div class="banner_text">
+		<ul class="banner_text">
 			<li>공지사항</li>
 			<i class="bi bi-caret-right-fill"></i>
-			<li>글 변경</li>
-		</div>
+			<li>글 수정</li>
+		
 		<h3 class="page_title">공지사항</h3>
 		<p class="page_text">등록 된 글의 내용을 변경하는 공간 입니다.</p>
+	</ul>
 	</div>
 
 	<div class="container">
-		<form method="post" name="write_post" >
+		<form method="post" name="write_post" enctype="multipart/form-data">
 			<table class="box">
 				<colgroup>
 					<col width="10%" />
@@ -122,7 +123,7 @@
 								<div id="files">
 									<c:forEach var="attach" items="${item.attachs }">
 									<ul>
-										<li><a href="/upload/${attach.uuid }_${attach.filename}">${attach.filename}</a><button style="margin-left: 1%;" type="button" class="btn btn-sm btn-danger delete"
+										<li><a href="/upload/${attach.uuid }_${attach.filename}">${attach.filename}</a><button style="margin-left: 15px;" type="button" class="btn btn-sm btn-danger delete"
 												data-id="${attach.id}">삭제</button></li>
 										
 										

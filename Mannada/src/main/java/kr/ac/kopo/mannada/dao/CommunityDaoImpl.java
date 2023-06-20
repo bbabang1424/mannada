@@ -1,5 +1,6 @@
 package kr.ac.kopo.mannada.dao;
 
+import java.util.HashMap;
 import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
@@ -85,8 +86,13 @@ public class CommunityDaoImpl implements CommunityDao {
 	}
 
 	@Override
-	public List<Reply> detailReply(int id) {
-		return sql.selectList("community.detail_reply", id);
+	public int totalReply(int id) {
+		return sql.selectOne("community.total_reply", id);
+	}
+	
+	@Override
+	public List<Reply> detailReply(HashMap<String, Object> map) {
+		return sql.selectList("community.detail_reply", map);
 	}
 
 	/* 메인페이지용 */

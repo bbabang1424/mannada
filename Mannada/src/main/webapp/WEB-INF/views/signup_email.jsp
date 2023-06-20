@@ -73,7 +73,7 @@
 	        
 	        					
 			<div class="checkbox">
-				<input type="checkbox" id="aggrement">개인정보 수집 및 정보이용에 동의합니다.
+				<input type="checkbox" id="aggrement"> 개인정보 수집 및 정보이용에 동의합니다.
 			</div>
 		
 	        <div class="line">
@@ -108,7 +108,7 @@ $('#mail-check-btn').click(function() {
 			console.log("data : " +  data);
 			checkInput.attr('disabled',false);
 			code =data;
-			alert('인증번호가 전송되었습니다.')
+			swal('회원가입', '인증번호가 전송되었습니다.', 'success');
 		}			
 	}); // end ajax
 }); // end send eamil

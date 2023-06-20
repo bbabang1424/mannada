@@ -4,15 +4,6 @@
 	display: none;
 }
 
-
-
-/* .view {
-	width: 100px;
-	height: 100px;
-} */
-
-/* ------------------------ */
-
 .title {
     border-bottom: 1px solid black;
     font-weight: bold;
@@ -22,6 +13,51 @@
     margin: 15px 50px;
 }
 
+.name {	
+    font-weight: bold;
+    padding: 15px 5px;
+    color: #0359d9;
+    font-size: 25px;
+    margin: 15px 50px;	
+}
+
+.mg-button {
+	position: absolute;
+    top: 15px;
+    right: 40px;
+}
+
+.mg-button .update {
+	width: 80px;
+    height: 30px;
+    background-color: #0359d9;
+    color: white;    
+    border: none;
+    border-radius: 3px;
+    font-size: 0.8em;
+}
+
+.mg-button .password {
+	width: 90px;
+    height: 30px;
+    background-color: #ddd;
+    color: black;    
+    border: none;
+    border-radius: 3px;
+    font-size: 0.8em;
+}
+
+.mg-button .list {
+	width: 70px;
+    height: 30px;
+    background-color: #CC0000;
+    color: white;    
+    border: none;
+    border-radius: 3px;
+    font-size: 0.8em;
+}
+
+/* 사용자 프로필 버튼 */
 .user-button {
 	position: absolute;
     top: 15px;
@@ -78,7 +114,6 @@
     position: relative;
     background-color: aliceblue;
     border-radius: 40px;
-    border: none;
 }
 
 .pro1 img {
@@ -121,26 +156,52 @@
 
 /*tab css*/
 
-.tab {
-	float:left;
-	width:100%;
-	height:290px;	
+/* tab-1 */
+ul.tabs{
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+    text-align: center;
 }
 
-.tabnav {
-	font-size:0;
-	width:100%;
-	border:1px solid #ddd;
-    padding: 0;
+ul.tabs li{
+    display: inline-block;
+    background: #F9F9F9;
+    color: black;
+    padding: 10px 15px;
+    cursor: pointer;
+    width: 295px;
+    border: 1px solid #ddd;
+    border-radius: 20px;
 }
 
-.tabnav li {
-	display: inline-block; 
-	height:46px;
-	text-align:center;
-	border-right:1px solid #ddd;
-    width: 25%;
-    max-width: 300px;
+ul.tabs li.current{
+    background: white;
+    color: #0359d9;
+    font-weight: bold;
+    border-top: 4px solid;
+    width: 300px;
+    border-left: none;
+    border-bottom: none;
+    border-right: none;
+    border-radius: 20px;
+}
+
+.tab-content{
+	display: none;
+    background: #e0e0e0;
+    padding: 12px;
+}
+
+.tab-content.current{
+    display: inherit;
+    background: none;
+    border: 1px solid #ddd;
+    width: 94%;
+    border-top: none;
+    margin: 20px 38px;
+    padding: 30px;
+    border-radius: 20px;
 }
 
 .tabnav li a:before {
@@ -152,63 +213,29 @@
 	height:3px;
 }
 
-.tabnav li a.active:before {
-	background:#0359d9;
-}
-
-.tabnav li a.active {
-	border-bottom:1px solid #fff;
-}
-
-.tabnav li a {
-	position:relative;
-	display:block;
-	background: #f8f8f8;
-	color: #000;
-	padding:0 30px;
-	line-height:46px;
-	text-decoration:none;
-	font-size:16px;
-}
-
-.tabnav li a:hover, 
-.tabnav li a.active {
-	background:#fff;
-	color:#0359d9;
-	font-weight: bold;
-}
-
 .tabcontent {
 	padding: 20px;
 	height:370px;
-	border:1px solid #ddd;
-	border-top:none;
-}
-
-.my-nav {
-    display:inline-block;
-    width: 100vw;
-    text-align: center;
+	/* height: 100%; */
 }
 
 .review-title {
-	position: relative;
-    left: -30%;	
+    position: relative;
+    left: 4%;
 }
 
 .text1 {
 	font-weight: bold;
 	font-size: 25px;
 	position: relative;
-	right: 37px;
 }
 
 .star {
-	font-size: 2rem;
-	color: #ddd;
-	padding: 5px;
+    font-size: 2rem;
+    color: #ddd;
+    padding: 5px;
     position: relative;
-    left: -54px;
+    left: 37px;
 }
 
 .checkStar {
@@ -220,11 +247,13 @@
 }
 
 .review_textarea {
-	resize: vertical;
     width: 430px;
     height: 150px;
     position: relative;
-    left: 95px;
+    left: 45px;
+    resize: none;
+    border-radius: 10px;
+    padding: 10px;
 }
 
 .text-note > button {
@@ -237,28 +266,59 @@
     font-size: 0.8em;
     position: relative;
     top: 30px;
-    left: 12px;
+    left: -38px;
 }
 
-.review-date {
-	position: relative;
-    left: 50%;
-    top: -275px;     
+.review-table > table {
+    width: 50%;
+    position: relative;
+    left: 50%; 
+    text-align: center;
+    margin: -317px 0px;
+    
+   /*  width: 100%;
+    text-align: center; */
 }
 
-.review-date th {
-	color: darkblue;
-	background-color: aliceblue;
+.review-table > table th {
+    color: white;
+    background: #0359d9;
+    padding: 6px;
 }
 
-.review-date th, .review-date td {
-	border: 2px solid darkblue;	
-	padding: 3px;
-	border-left: none;
-	
+.table > tbody {
+	text-align: center;
 }
 
-.review-date th:first-child, .bluetop td:first-child {
-  border-left: none;
+.table_menu_1 {
+	border-top: 2px solid #ddd;
+	background-color: #F9F9F9;
+	text-align: center;
+	color: #000000;
+	border-right: 1px solid White;
+	border-left: 1px solid White;
 }
 
+.table_menu_2 {
+	border-top: 2px solid blue;
+	background-color: #f3f3f3;
+	text-align: center;
+	color: #000000;
+	border-right: 1px solid White;
+	border-left: 1px solid White;
+}
+
+
+.table_menu_3 {
+	border-top: 2px solid blue;
+	background-color: #f3f3f3;
+	text-align: center;
+	color: #000000;
+	border-right: 1px solid White;
+	border-left: 1px solid White;
+}
+
+.calendar img {
+	width: 100%;
+	height: 700px;
+}

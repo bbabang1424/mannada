@@ -1,5 +1,6 @@
 package kr.ac.kopo.mannada.controller;
 
+import java.util.HashMap;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -76,14 +77,14 @@ public class CommunityController {
 	}
 	
 	@GetMapping("/detail/{id}")
-	public String detail(@PathVariable int id, Model model) {
+	public String detail(@PathVariable int id, Model model, Pager pager) {
 		
 		service.addViewCnt(id);
 		
 		Community item = service.item(id);
 		model.addAttribute("item", item);
 		
-		List<Reply> reply = service.detailReply(id); 
+		List<Reply> reply = service.detailReply(id, pager); 
 		model.addAttribute("reply", reply);
 		
 		return path + "detail";

@@ -15,6 +15,18 @@ public class Community {
 	private String nickname;
 	private String filename;
 	private String uuid;
+	
+	private int totalReply;
+	
+	
+
+	public int getTotalReply() {
+		return totalReply;
+	}
+
+	public void setTotalReply(int totalReply) {
+		this.totalReply = totalReply;
+	}
 
 	/*category와 status 한글 처리 : 데이터베이스가 처리하지 못할 시 제한을 두는 역할*/
 	public String getCategory_() {

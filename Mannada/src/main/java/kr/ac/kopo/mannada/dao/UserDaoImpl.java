@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import kr.ac.kopo.mannada.model.Attach;
+import kr.ac.kopo.mannada.model.KakaoUser;
 import kr.ac.kopo.mannada.model.Review;
 import kr.ac.kopo.mannada.model.User;
 import kr.ac.kopo.mannada.pager.Pager;
@@ -111,6 +112,16 @@ public class UserDaoImpl implements UserDao {
 	@Override
 	public void photoDelete(int attachId) {
 		sql.delete("user.photo_delete", attachId);
+	}
+
+	@Override
+	public int checkFind(User user) {
+		return sql.selectOne("user.check_find", user);
+	}
+
+	@Override
+	public void kakaoSignup(User item) {
+		sql.insert("user.kakao_signup", item);
 	}
 
 }

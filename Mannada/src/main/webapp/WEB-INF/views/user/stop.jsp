@@ -14,6 +14,8 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 
 <title>만나다</title>
+<link rel="stylesheet" href="/resources/css/stop.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script> 
 $(function() {
@@ -66,23 +68,48 @@ $(function() {
 </head>
 <jsp:include page="../header.jsp"></jsp:include>
 <body>
-	<div class="container">
-		<div>
+	<div class="banner">
+			<ul class="banner_text">
+				<li>HOME</li>
+				<i class="bi bi-caret-right-fill"></i> 
+				<li>회원탈퇴</li>	
+			</ul>
+	</div>
+	
+<div class="background-image"></div>
+
+	<div class="container-box">
+		<div class="title">
 			<h3>회원탈퇴</h3>
 			
-			<p>서비스를 더이상 이용하실 수 없습니다 <br> 진행하시겠습니까?</p>
-			<p>(회원탈퇴를 진행하셔도 개인정보나 게시한 글에 대한 정보는 1년 후에 완전히 삭제됩니다)</p>
+			<p>서비스를 더이상 이용하실 수 없습니다. <br> 계속 진행하시겠습니까?</p>			
 		</div>
+		
+		<div class="title-sub">
+			<p>* 회원탈퇴를 진행하셔도 개인정보나 <br> 게시한 글에 대한 정보는 1년 후에 완전히 삭제됩니다.</p>
+		</div>
+		
+		
 		<div>
 			<form name="stop_from" method="post">
-				<div>
-					<label>현재비밀번호</label>
-					<input type="password" name="pw" id="pw">
+				<div class="password">
+					<label>현재 비밀번호</label>
+					
+					<div class="pw">
+						<input type="password" name="pw" id="pw">
+					</div>
+					
 					<button type="button" id="checkPW">확인</button>
 				</div>
-				<div>
-					<button type="button" id="stop">회원탈퇴</button>
-					<button type="button" id="goBack">이전으로</button>
+				
+				<div class="btn-box">
+					<div class="go-back-btn">
+						<button type="button" id="goBack">이전으로</button>
+					</div>
+				
+					<div class="stop-btn">
+						<button type="button" id="stop">회원탈퇴</button>
+					</div>										
 				</div>
 			</form>
 		</div>

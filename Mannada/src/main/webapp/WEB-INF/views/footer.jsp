@@ -1,33 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<style>
-.footer { width: 100%; background-color:#4d4d4d; color:#fff; padding: 50px 0 100px; font-size: 10pt; z-index:5; position: relative; }
-.footer a { color: #fff; }
-.footer-flex { display: flex; }
-
-#logo-footer img { width: 170px; filter: invert(99%) sepia(77%) saturate(343%) hue-rotate(228deg) brightness(120%) contrast(100%);}
-
-.footer-contents { margin-left: 40px; }
-.footer-contents span { position:relative; margin-left: 30px; }
-.footer-contents > div:not(:first-child) { margin-bottom: 15px; }
-.footer-top { font-weight: 700; padding: 20px 0 40px;}
-.footer-top span:not(:last-child)::after {
-    content: "";
-    position: absolute;
-    top: 6px;
-    right: -17px;
-    width: 1px;
-    height: 10px;
-    background-color: #999;
-}
-.footer-info { display: grid; }
-</style>
-</head>
-<body>
+<!DOCTYPE html> 
+	</div>
 
 	<div class="footer">
 		<div class="max-width footer-flex">
@@ -63,6 +37,4 @@
 		</div>
 	</div>
 	
-	
-</body>
-</html>
+	 

@@ -62,6 +62,7 @@
 
 	<select id="item" resultType="community"> 
 		SELECT community.*, nickname, filename, uuid
+			, (SELECT count(*) FROM reply WHERE commu_id = #{id}) AS total_reply
 		FROM (SELECT *, LAG(id) OVER (ORDER BY id) AS prevId, LEAD(id) OVER (ORDER BY id) AS nextId FROM community) AS community
 		LEFT OUTER JOIN user ON community.num = user.num
 		LEFT OUTER JOIN profile ON (user.num = profile.num)
@@ -90,6 +91,13 @@
 	
 	
 	<!-- 댓글 -->	
+	
+	<select id="total_reply" resultType="Integer">
+		SELECT COUNT(*)
+		FROM reply
+		WHERE commu_id = #{id}
+	</select>
+	
 	<insert id="add_reply">
 		INSERT INTO reply(commu_id, num, content, reg_date)
 		VALUES(#{commuId}, #{num}, #{content}, NOW())
@@ -101,7 +109,8 @@
 		FROM reply 
 		LEFT OUTER JOIN user ON reply.num = user.num
 		LEFT OUTER JOIN profile ON (user.num = profile.num)
-		WHERE commu_id = #{id} 
+		WHERE commu_id = #{id}
+		ORDER BY id DESC
 	</select>
 
 	<!-- 댓글 단일 조회 -->
