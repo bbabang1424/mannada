@@ -20,30 +20,6 @@
 
  
 <script>
-const notice_url = "/mg/api/notice";
-const notice_item = [
-	{name: "id" },
-	{name: "title" },
-	{name: "nickname" },
-	{name: "regDate" },
-	{name: "viewCnt" }
-];
-const qna_url = "/mg/api/qna";
-const qna_item = [
-	{name: "id" },
-	{name: "title" },
-	{name: "nickname" },
-	{name: "regDate" },
-	{name: "viewCnt" },
-	{name: "status_" }
-	
-];
-
-</script>
-
-<script src="/resources/js/mg_pager.js"></script>
-
-<script>
 $(function() {
     $(".my-nav li").eq(0).click(function() {
        $(".my-nav li").css("text-decoration", "unset");
@@ -60,13 +36,8 @@ $(function() {
     });
  });
 </script>
-
 <style>
 #my-question{
-	display: none;
-}
-
-.hide {
 	display: none;
 }
 </style>
@@ -110,19 +81,43 @@ $(function() {
 						<th>조회수</th>
 					</tr>
 				</thead>
-				<tbody id="notice">
+				<tbody>
 					<c:if test="${myNotice.size() < 1}">
-						<tr class="empty">
+						<tr>
 							<td colspan="5">등록 된 게시글이 없습니다.</td>
 						</tr>
 					</c:if> 
+					<c:forEach var="item" items="${myNotice}"> 
+						<tr>
+	 						<td>${item.id}</td>
+							<td><a href="/notice/detail/${item.id}">${item.title}</a></td>
+							<td>${item.nickname}</td>
+							<td><fmt:formatDate value="${item.regDate}" pattern="yyyy-MM-dd" /></td>
+							<td>${item.viewCnt}</td>
+						</tr>
+					</c:forEach>
 				</tbody>
 				<tfoot> 
 					<tr>
 						<td colspan="5">
-							<div class="more">
-								<button type="button" id="notice-more-btn">더보기</button>
-							</div>
+							<ol class="pagination pagination-sm justify-content-center"
+								style="margin-bottom: 5%; margin-top: 5%;">
+								<li class="page_nation_item"><a href="?page=1${pager.query}"
+									class="page-link">처음</a></li>
+								<li class="page_nation_item"><a
+									href="?page=${pager.prev}${pager.query}" class="page-link">이전</a></li>
+	
+								<c:forEach var="page" items="${pager.list}">
+									<li class="page_nation_item"><a
+										href="?page=${page}${pager.query}"
+										class="page-link ${page eq pager.page ? 'active' : ''}">${page}</a></li>
+								</c:forEach>
+	
+								<li class="page_nation_item"><a
+									href="?page=${pager.next}${pager.query}" class="page-link">다음</a></li>
+								<li class="page_nation_item"><a
+									href="?page=${pager.last}${pager.query}" class="page-link">마지막</a></li>
+							</ol>
 						</td>
 					</tr>
 				</tfoot> 
@@ -145,19 +140,44 @@ $(function() {
 						<th>상태</th>
 					</tr>
 				</thead>
-				<tbody id="qna">
+				<tbody>
                    	<c:if test="${myQnA.size() < 1}">
 						<tr>
 							<td colspan="5">등록 된 게시글이 없습니다.</td>
 						</tr>
-					</c:if>
+					</c:if>  
+					<c:forEach var="item" items="${myQnA}">      	
+	  					<tr>
+							<td>${item.id}</td>
+							<td><a href="/qna/detail/${item.id}">${item.title}</a></td>
+							<td>${item.nickname}</td>
+							<td><fmt:formatDate value="${item.regDate}" pattern="yyyy-MM-dd" /></td>
+							<td>${item.viewCnt}</td>
+							<td>${item.status_}</td>
+						</tr>
+					</c:forEach>
 				</tbody>
 				<tfoot>
 					<tr>
 						<td colspan="5">
-							<div class="more">
-								<button type="button" id="qna-more-btn">더보기</button>
-							</div>
+							<ol class="pagination pagination-sm justify-content-center"
+								style="position: relative;left: 12%;margin-bottom: 5%; margin-top: 5%;">
+								<li class="page_nation_item"><a href="?page=1${pager.query}"
+									class="page-link">처음</a></li>
+									<li class="page_nation_item"><a
+									href="?page=${pager.prev}${pager.query}" class="page-link">이전</a></li>
+		
+								<c:forEach var="page" items="${pager.list}">
+									<li class="page_nation_item"><a
+										href="?page=${page}${pager.query}"
+										class="page-link ${page eq pager.page ? 'active' : ''}">${page}</a></li>
+								</c:forEach>
+	
+								<li class="page_nation_item"><a
+									href="?page=${pager.next}${pager.query}" class="page-link">다음</a></li>
+								<li class="page_nation_item"><a
+									href="?page=${pager.last}${pager.query}" class="page-link">마지막</a></li>
+							</ol>
 						</td>
 					</tr>
 				</tfoot> 

@@ -1,6 +1,8 @@
 package kr.ac.kopo.mannada.controller;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpSession;
 
@@ -16,6 +18,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.SessionAttribute;
 
 import kr.ac.kopo.mannada.model.Manager;
+import kr.ac.kopo.mannada.model.Manna;
 import kr.ac.kopo.mannada.model.Notice;
 import kr.ac.kopo.mannada.model.Question;
 import kr.ac.kopo.mannada.pager.Pager;
@@ -43,13 +46,13 @@ public class ManagerController {
 		Manager item = service.item(nickname);
 		model.addAttribute("manager", item);
 		
-		pager.setPerPage(15);
-		
-		List<Notice> notice = noticeService.list(pager);
-		model.addAttribute("myNotice", notice);
-		
-		List<Question> qna = qnaService.list(pager);
-		model.addAttribute("myQnA", qna);
+//		pager.setPerPage(15);
+//		
+//		List<Notice> notice = noticeService.list(pager);
+//		model.addAttribute("myNotice", notice);
+//		
+//		List<Question> qna = qnaService.list(pager);
+//		model.addAttribute("myQnA", qna);
 		
 		return path + "view";
 	}
@@ -103,5 +106,36 @@ public class ManagerController {
 		service.password(item);
 		
 		return "redirect:../view/" + item.getNickname();
+	}
+	
+	
+	@ResponseBody
+	@GetMapping("/api/notice")
+	public Map<String, Object> noticeList(Pager pager){
+		Map<String, Object> noticeMap = new HashMap<>();
+		
+		pager.setPerPage(15);
+		
+		List<Notice> notice = noticeService.list(pager);
+		
+		noticeMap.put("notice_list", notice);
+		noticeMap.put("notice_pager", pager);
+		
+		return noticeMap;
+	}
+	
+	@ResponseBody
+	@GetMapping("/api/qna")
+	public Map<String, Object> qnaList(Pager pager){
+		Map<String, Object> qnaMap = new HashMap<>();
+		
+		pager.setPerPage(15);
+		
+		List<Question> qna = qnaService.list(pager);
+		
+		qnaMap.put("qna_list", qna);
+		qnaMap.put("qna_pager", pager);
+		
+		return qnaMap;
 	}
 }
