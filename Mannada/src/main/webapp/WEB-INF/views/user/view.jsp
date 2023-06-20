@@ -118,7 +118,7 @@
 <jsp:include page="../header.jsp"></jsp:include>
 <body>
    <div class="container">
-      <div class="title">마이페이지</div>
+      <div class="title">${user.nickname}의 페이지</div>
       <header class="profile-box">
          <div class="user-button">
             <c:if test="${sessionScope.user == null}">
