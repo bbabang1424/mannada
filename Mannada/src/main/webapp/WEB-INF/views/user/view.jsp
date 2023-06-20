@@ -229,36 +229,43 @@
             <div class="review-table">            
                <table>
                   <tbody>                        
-                     <th>닉네임</th><th>한줄평</th><th>작성일</th><th>별점</th><th></th>
-                     <c:if test="${review.size() < 1}">
-		                  <tr>
-		                     <td colspan="5">등록 된 한줄평이 없습니다.</td>
-		                  </tr>
-		             </c:if>                
+					  <th>닉네임</th><th>한줄평</th><th>작성일</th><th>별점</th><th></th>
+                      <c:if test="${review.size() < 1}">
+						<tr>
+							<td colspan="5">등록 된 한줄평이 없습니다.</td>
+						</tr>
+					  </c:if>                
                      <c:forEach var="review" items="${review}">                                                                           
-                              <tr class="table_menu_1"><td class="nickname">${review.nickname}</td>
-                              <td>${review.content}</td>
-                              <td class="regdate"><fmt:formatDate value="${review.regDate}"
-                                 pattern="yyyy-MM-dd hh:mm" /></td>                                                                                 
-                              <td><c:if test="${review.star ==1}">
-                                 <label class="yellowStar">★</label>
-                              </c:if> <c:if test="${review.star ==2}">
-                                 <label class="yellowStar">★★</label>
-                              </c:if> <c:if test="${review.star ==3}">
-                                 <label class="yellowStar">★★★</label>
-                              </c:if> <c:if test="${review.star ==4}">
-                                 <label class="yellowStar">★★★★</label>
-                              </c:if> <c:if test="${review.star ==5}">
-                                 <label class="yellowStar">★★★★★</label>
-                              </c:if>
-                              </td>                                          
-                        <td><c:if test="${sessionScope.user.num == review.writer}">
-                                 <a href="../${user.num}/reviewDelete/${review.id}"
-                                    class="btn btn-outline-danger"> <i class="bi bi-trash3"></i>
-                                 </a>
-                              </c:if>
-                           </td>                                                   
-                        </tr>
+						<tr class="table_menu_1">
+							<td class="nickname">${review.nickname}</td>
+							<td>${review.content}</td>
+							<td class="regdate">
+								<fmt:formatDate value="${review.regDate}" pattern="yyyy-MM-dd hh:mm" />
+							</td>                                                                                 
+							<td>
+								<c:if test="${review.star ==1}">
+									<label class="yellowStar">★</label>
+								</c:if> 
+								<c:if test="${review.star ==2}">
+									<label class="yellowStar">★★</label>
+								</c:if> 
+								<c:if test="${review.star ==3}">
+									<label class="yellowStar">★★★</label>
+								</c:if> 
+								<c:if test="${review.star ==4}">
+									<label class="yellowStar">★★★★</label>
+								</c:if> 
+								<c:if test="${review.star ==5}">
+									<label class="yellowStar">★★★★★</label>
+								</c:if>
+							</td>                                          
+							<td>
+								<c:if test="${sessionScope.user.num == review.writer}">
+									<a href="../${user.num}/reviewDelete/${review.id}"
+                                    class="btn btn-outline-danger"> <i class="bi bi-trash3"></i></a>
+								</c:if>
+							</td>                                                   
+						</tr>
                      </c:forEach>
                   </tbody>         
             </table>
