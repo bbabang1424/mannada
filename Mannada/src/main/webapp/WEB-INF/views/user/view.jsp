@@ -216,6 +216,7 @@
                         class="checkStar" id="star5" value="5" name="star">
                      <p id="chooseWord" style="color: rgb(153, 153, 153);position: relative;right: -47px;"></p>
                   </div>
+                  <input type="hidden" name="num" value="${user.num}">
                   <input type="hidden" name="writer" value="${sessionScope.user.num}">
                   <div class="text-note">
                      <textarea rows="10" class="review_textarea" name="content"

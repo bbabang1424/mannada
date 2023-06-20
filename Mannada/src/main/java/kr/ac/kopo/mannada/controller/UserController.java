@@ -97,8 +97,9 @@ public class UserController {
 	//추가
 	@RequestMapping("/review/{num}")
 	public String review(@PathVariable int num, Review review, @SessionAttribute User user) {
-		review.setNum(user.getNum());
-		
+		//리뷰의 num값 가져오기
+		review.setNum(review.getNum());
+		//작성자의 num값 가져오기
 		review.setWriter(user.getNum());
 		
 		service.reviewAdd(review);
