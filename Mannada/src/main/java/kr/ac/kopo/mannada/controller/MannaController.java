@@ -102,7 +102,13 @@ public class MannaController {
 	}
 	
 	@GetMapping("/delete/{id}")
-	public String delete(@PathVariable int id) {
+	public String delete(@PathVariable int id, @SessionAttribute User user) {
+		
+		HashMap<String, Object> map = new HashMap<>();
+		map.put("mannaId", id);
+		map.put("num", user.getNum());
+		service.deleteJoin(map);
+		
 		service.delete(id);
 		
 		return "redirect:../list";
