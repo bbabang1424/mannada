@@ -45,7 +45,7 @@ $(function() {
 <jsp:include page="../header.jsp"></jsp:include>
 <body>
 	<div class="container">
-		<div class="mg-title">${manager.nickname}의 페이지</div>
+		<div class="title">${manager.nickname}의 페이지</div>
 		<header class="profile-box">
 			<div class="mg-button">
 				<c:if test="${sessionScope.manager == null}">
