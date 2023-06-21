@@ -53,8 +53,6 @@ public class UserController {
 	/* 회원 관리 */
 	@GetMapping("/list") 
 	public String list(Model model, Pager pager, @SessionAttribute Manager manager) {
-		pager.setPerPage(10);
-		
 		List<User> list = service.list(pager);
 		model.addAttribute("list", list);
 		
@@ -63,11 +61,10 @@ public class UserController {
 	
 	/* 마이페이지 */
 	@GetMapping("/view/{num}")
-	public String view(@PathVariable int num, Model model) {
+	public String view(@PathVariable int num, Model model, Pager pager, Pager rePager) {
 		User item = service.item(num);
 		model.addAttribute("user", item);
 		
-		Pager pager = new Pager();
 		pager.setPerPage(5);
 		pager.setSearch(2);
 		pager.setKeyword(item.getNickname());
@@ -80,9 +77,7 @@ public class UserController {
 		model.addAttribute("myCommu", commu);
 		
 
-		Pager rePager = new Pager(); 
 		rePager.setPerPage(15);
-		rePager.setSearch(2);
 		rePager.setKeyword(item.getNickname());
  
 		List<Reply> reply = commuSerice.replyList(rePager); 
@@ -98,8 +93,9 @@ public class UserController {
 	//추가
 	@RequestMapping("/review/{num}")
 	public String review(@PathVariable int num, Review review, @SessionAttribute User user) {
-		review.setNum(user.getNum());
-		
+		//리뷰의 num값 가져오기
+		review.setNum(review.getNum());
+		//작성자의 num값 가져오기
 		review.setWriter(user.getNum());
 		
 		service.reviewAdd(review);

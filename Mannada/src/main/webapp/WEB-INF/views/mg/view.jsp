@@ -14,7 +14,7 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
 
-<title>관리자 마이페이지</title>
+<title>만나다</title>
 <link rel="stylesheet" href="/resources/css/view.css">
 <script src="/resources/js/view.js"></script>
 
@@ -46,8 +46,7 @@ $(function() {
 <body>
 	<div class="title">마이페이지</div>
 	<header class="profile-box">
-		
-		
+		<div style="font-weight: bold;">${manager.nickname}님</div>
 		<div class="mg-button">
 			<c:if test="${sessionScope.manager == null}">
 				<a href="/login">정보변경</a>
@@ -77,6 +76,7 @@ $(function() {
 					<tr class="table_menu_2">
 						<th>No</th>
 						<th>공지</th>
+						<th>작성자</th>
 						<th>작성일</th>
 						<th>조회수</th>
 					</tr>
@@ -91,6 +91,7 @@ $(function() {
 						<tr>
 	 						<td>${item.id}</td>
 							<td><a href="/notice/detail/${item.id}">${item.title}</a></td>
+							<td>${item.nickname}</td>
 							<td><fmt:formatDate value="${item.regDate}" pattern="yyyy-MM-dd" /></td>
 							<td>${item.viewCnt}</td>
 						</tr>
@@ -160,7 +161,7 @@ $(function() {
 					<tr>
 						<td colspan="5">
 							<ol class="pagination pagination-sm justify-content-center"
-								style="margin-bottom: 5%; margin-top: 5%;">
+								style="position: relative;left: 12%;margin-bottom: 5%; margin-top: 5%;">
 								<li class="page_nation_item"><a href="?page=1${pager.query}"
 									class="page-link">처음</a></li>
 									<li class="page_nation_item"><a

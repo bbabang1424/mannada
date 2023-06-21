@@ -18,7 +18,7 @@
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 
-<title>회원관리</title>
+<title>만나다</title>
 <link rel="stylesheet" href="/resources/css/list.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">
 </head>
@@ -124,7 +124,7 @@
 			</table>
 		</div>
 		<div class="go-back">
-			<a href=".." class="btn btn-secondary btn-sm">이전</a>
+			<a href="javascript:window.history.back();" class="btn btn-secondary btn-sm">이전으로</a>
 		</div>
 	</div>
 </body>

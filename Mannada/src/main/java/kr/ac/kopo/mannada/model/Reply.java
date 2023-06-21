@@ -13,6 +13,8 @@ public class Reply {
 	private String filename;
 	private String uuid;
 	
+	private String rnum;
+	
 	 
 	public String getNickname() {
 		return nickname;
@@ -61,5 +63,11 @@ public class Reply {
 	}
 	public void setUuid(String uuid) {
 		this.uuid = uuid;
+	}
+	public String getRnum() {
+		return rnum;
+	}
+	public void setRnum(String rnum) {
+		this.rnum = rnum;
 	}
 }

@@ -48,15 +48,18 @@
 			</div>
 			
 			<div class="attach" >
-
+				<c:if test="${item.attachs.size() < 1}">
+					<div>
+						<div class="x">등록 된 첨부파일이 없습니다.</div>
+					</div>
+				</c:if>
 				<div>
-					<c:forEach var="attach" items="${item.attachs }">
+					<c:forEach var="attach" items="${item.attachs}">
 						<li><i class="bi bi-paperclip" style="color: #0d6efd; font-family: 'Material Icons';"></i>
 						<a href="/upload/${attach.uuid }_${attach.filename}">${attach.filename }</a>
 						</li>
 					</c:forEach>
 				</div>
-
 			</div>
 		</div>
 		<!-- lower:하단이란 뜻 -->
