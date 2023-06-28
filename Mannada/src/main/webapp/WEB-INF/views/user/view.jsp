@@ -118,7 +118,7 @@
 <jsp:include page="../header.jsp"></jsp:include>
 <body>
    <div class="container">
-      <div class="title">마이페이지</div>
+      <div class="title">${user.nickname}의 페이지</div>
       <header class="profile-box">
          <div class="user-button">
             <c:if test="${sessionScope.user == null}">
@@ -216,10 +216,14 @@
                         class="checkStar" id="star5" value="5" name="star">
                      <p id="chooseWord" style="color: rgb(153, 153, 153);position: relative;right: -47px;"></p>
                   </div>
+                  <input type="hidden" name="num" value="${user.num}">
+                  <input type="hidden" name="writer" value="${sessionScope.user.num}">
                   <div class="text-note">
                      <textarea rows="10" class="review_textarea" name="content"
                         placeholder="로그인 후에 작성해주세요."></textarea>
-                     <button type="button" id="reviewSubmit" onClick="login_check();">등록</button>
+					<c:if test="${sessionScope.user != null}">
+						<button type="button" id="reviewSubmit" onClick="login_check();">등록</button>
+					</c:if>
                   </div>
                </form>
             </div>
@@ -227,31 +231,43 @@
             <div class="review-table">            
                <table>
                   <tbody>                        
-                     <th>닉네임</th><th>한줄평</th><th>작성일</th><th>별점</th>                  
+					  <th>닉네임</th><th>한줄평</th><th>작성일</th><th>별점</th><th></th>
+                      <c:if test="${review.size() < 1}">
+						<tr>
+							<td colspan="5">등록 된 한줄평이 없습니다.</td>
+						</tr>
+					  </c:if>                
                      <c:forEach var="review" items="${review}">                                                                           
-                              <tr class="table_menu_1"><td class="nickname">${review.nickname}</td>
-                              <td>${review.content}</td>
-                              <td class="regdate"><fmt:formatDate value="${review.regDate}"
-                                 pattern="yyyy-MM-dd hh:mm" /></td>                                                                                 
-                              <td><c:if test="${review.star ==1}">
-                                 <label class="yellowStar">★</label>
-                              </c:if> <c:if test="${review.star ==2}">
-                                 <label class="yellowStar">★★</label>
-                              </c:if> <c:if test="${review.star ==3}">
-                                 <label class="yellowStar">★★★</label>
-                              </c:if> <c:if test="${review.star ==4}">
-                                 <label class="yellowStar">★★★★</label>
-                              </c:if> <c:if test="${review.star ==5}">
-                                 <label class="yellowStar">★★★★★</label>
-                              </c:if>
-                              </td>                                          
-                        <td><c:if test="${sessionScope.user.num == review.writer}">
-                                 <a href="../${user.num}/reviewDelete/${review.id}"
-                                    class="btn btn-outline-danger"> <i class="bi bi-trash3"></i>
-                                 </a>
-                              </c:if>
-                           </td>                                                   
-                        </tr>
+						<tr class="table_menu_1">
+							<td class="nickname">${review.nickname}</td>
+							<td>${review.content}</td>
+							<td class="regdate">
+								<fmt:formatDate value="${review.regDate}" pattern="yyyy-MM-dd hh:mm" />
+							</td>                                                                                 
+							<td>
+								<c:if test="${review.star ==1}">
+									<label class="yellowStar">★</label>
+								</c:if> 
+								<c:if test="${review.star ==2}">
+									<label class="yellowStar">★★</label>
+								</c:if> 
+								<c:if test="${review.star ==3}">
+									<label class="yellowStar">★★★</label>
+								</c:if> 
+								<c:if test="${review.star ==4}">
+									<label class="yellowStar">★★★★</label>
+								</c:if> 
+								<c:if test="${review.star ==5}">
+									<label class="yellowStar">★★★★★</label>
+								</c:if>
+							</td>                                          
+							<td>
+								<c:if test="${sessionScope.user.num == review.writer}">
+									<a href="../${user.num}/reviewDelete/${review.id}"
+                                    class="btn btn-outline-danger"> <i class="bi bi-trash3"></i></a>
+								</c:if>
+							</td>                                                   
+						</tr>
                      </c:forEach>
                   </tbody>         
             </table>

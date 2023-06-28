@@ -163,7 +163,7 @@
 
 										<div class="reply_name_date">
 
-											<span class="reply_nickname"><a href="/user/view/${item.num}" style="color:black; " class="c">${reply.nickname }</a>
+											<span class="reply_nickname"><a href="/user/view/${reply.num}" style="color:black; " class="c">${reply.nickname}</a>
 											<p class="reply_arrow_box">회원정보</p>
 											<span
 												class="reply_date"><fmt:formatDate
@@ -176,9 +176,9 @@
 										
 										<!-- 수정 삭제 -->
 										<div class="reply_btn">
-											<c:if test="${sessionScope.user.num == reply.num }">
+											<c:if test="${sessionScope.user.num == reply.num}">
 												<a href="../replyUpdate/${reply.id}">
-												<button class="reply-update-btn ${reply.id }" type="button">수정</button></a>
+												<button class="reply-update-btn ${reply.id}" type="button">수정</button></a>
 												<a href="../replyDelete/${reply.id }?id=${item.id}">
 												<button class="reply_delete">삭제</button></a>
 											</c:if>

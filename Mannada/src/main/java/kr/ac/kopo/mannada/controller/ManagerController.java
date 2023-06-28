@@ -39,11 +39,10 @@ public class ManagerController {
 	
 	/* 마이페이지 */
 	@GetMapping("/view/{nickname}")
-	public String view(@PathVariable String nickname, Model model, @SessionAttribute Manager manager) {
+	public String view(@PathVariable String nickname, Model model, Pager pager, @SessionAttribute Manager manager) {
 		Manager item = service.item(nickname);
 		model.addAttribute("manager", item);
 		
-		Pager pager = new Pager();
 		pager.setPerPage(15);
 		
 		List<Notice> notice = noticeService.list(pager);
