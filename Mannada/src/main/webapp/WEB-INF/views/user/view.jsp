@@ -20,6 +20,13 @@
 <link rel="stylesheet"
    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
 
+<!-- fullcalendar css -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.1/main.css">
+<script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.1/main.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+<!-- fullcalendar 언어 설정관련 script -->
+<script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.1/locales-all.js"></script>
+
 <title>만나다</title>
 <link rel="stylesheet" href="/resources/css/view.css">
 <script src="/resources/js/view.js"></script>
@@ -114,6 +121,7 @@
       });
    });
 </script>
+  
 </head>
 <jsp:include page="../header.jsp"></jsp:include>
 <body>
@@ -436,15 +444,13 @@
 
          </div>
          
-         <div id="tab-4" class="tab-content">
+        <div id="tab-4" class="tab-content">
             <h3>일정을 정리해보세요!</h3>
-            <div class="calendar">   
-               <img src="/resources/image/calendar.png" id="preview">
-            </div>
-         </div>
-         
-         <!-- 탭 메뉴 내용 끝 -->
-      </div>
+            <div id="calendar">   
+               <!-- <img src="/resources/image/calendar.png" id="preview"> -->
+         	</div>
+      	</div>
+      	<!-- 탭 메뉴 내용 끝 -->
    </div>
 </body>
 <jsp:include page="../footer.jsp"></jsp:include>

@@ -319,7 +319,14 @@ ul.tabs li.current{
 	border-left: 1px solid White;
 }
 
-.calendar img {
+#calendar {
+	width: 100%;
+	height: 750px;
+}
+
+#calendar img {
 	width: 100%;
 	height: 700px;
 }
+
+
