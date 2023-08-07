@@ -329,4 +329,17 @@ ul.tabs li.current{
 	height: 700px;
 }
 
+.more {
+	text-align: center;
+	margin: 3%;
+}
+
+#more-btn {
+	padding: 10px 30px;
+	border-radius: 20px;
+	background: white;
+	border: 1px solid black;
+	font-weight: bold;
+}
+
 

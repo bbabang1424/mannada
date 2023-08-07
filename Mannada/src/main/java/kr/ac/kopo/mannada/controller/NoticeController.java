@@ -127,7 +127,7 @@ public class NoticeController {
 	}
 	
 	@GetMapping("/delete/{id}")
-	public String delete(@PathVariable int id) {
+	public String delete(@PathVariable int id, @SessionAttribute Manager manager) {
 		service.delete(id);
 		
 		return "redirect:../list";

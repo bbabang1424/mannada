@@ -131,7 +131,7 @@
 		</div>
 		</c:if>
 		
-		<c:if test="${question.status == 1 }">
+		<c:if test="${question.status == 1}">
 		<!-- <div class="a">
 		<samp>답변</samp>
 		</div> -->

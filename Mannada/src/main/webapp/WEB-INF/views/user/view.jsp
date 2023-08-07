@@ -279,14 +279,17 @@
                      </c:forEach>
                   </tbody>         
             </table>
+            <div class="more">
+				<button type="button" id="more-btn">더보기</button>
+			</div>
             </div>
          </div>
       </div>
          </div>                        
          </div>
          
-         <div id="tab-2" class="tab-content">
-            <table border="1" class="table table-hover table_table" id="table_size">
+       <div id="tab-2" class="tab-content">
+          <table border="1" class="table table-hover table_table" id="table_size">
             <thead>
                <tr class="table_menu_2">
                   <th>No</th>
@@ -313,136 +316,73 @@
                   </tr>
                </c:forEach>
             </tbody>
-            <tfoot>
-               <tr>
-                  <td colspan="5">
-                     <ol class="pagination pagination-sm justify-content-center"
-                        style="margin-bottom: 5%; margin-top: 5%;">
-                        <li class="page_nation_item"><a
-                           href="?page=1${pager.query}" class="page-link">처음</a></li>
-                        <li class="page_nation_item"><a
-                           href="?page=${pager.prev}${pager.query}" class="page-link">이전</a></li>
-
-                        <c:forEach var="page" items="${pager.list}">
-                           <li class="page_nation_item"><a
-                              href="?page=${page}${pager.query}"
-                              class="page-link ${page eq pager.page ? 'active' : ''}">${page}</a></li>
-                        </c:forEach>
-
-                        <li class="page_nation_item"><a
-                           href="?page=${pager.next}${pager.query}" class="page-link">다음</a></li>
-                        <li class="page_nation_item"><a
-                           href="?page=${pager.last}${pager.query}" class="page-link">마지막</a></li>
-                     </ol>
-                  </td>
-               </tr>
-            </tfoot>
          </table>
-         
-         <div>
-         <table border="1" class="table table-hover table_table" id="table_size">
-            <thead>
-               <tr class="table_menu_2">
-                  <th>No</th>
-                  <th>커뮤니티</th>
-                  <th>작성일</th>
-                  <th>조회수</th>
-               </tr>
-            </thead>
-            <tbody>
-               <c:if test="${myCommu.size() < 1}">
-                  <tr>
-                     <td colspan="5">등록 된 게시글이 없습니다.</td>
-                  </tr>
-               </c:if>
-               <c:forEach var="item" items="${myCommu}">
-                  <tr>
-                     <td>${item.id}</td>
-                     <td><a href="/commu/detail/${item.id}">${item.title}</a></td>
-                     <td><fmt:formatDate value="${item.regDate}"
-                           pattern="yyyy-MM-dd" /></td>
-                     <td>${item.viewCnt}</td>
-                  </tr>
-               </c:forEach>
-            </tbody>
-            <tfoot>
-               <tr>
-                  <td colspan="5">
-                     <ol class="pagination pagination-sm justify-content-center"
-                        style="margin-bottom: 5%; margin-top: 5%;">
-                        <li class="page_nation_item"><a
-                           href="?page=1${pager.query}" class="page-link">처음</a></li>
-                        <li class="page_nation_item"><a
-                           href="?page=${pager.prev}${pager.query}" class="page-link">이전</a></li>
-
-                        <c:forEach var="page" items="${pager.list}">
-                           <li class="page_nation_item"><a
-                              href="?page=${page}${pager.query}"
-                              class="page-link ${page eq pager.page ? 'active' : ''}">${page}</a></li>
-                        </c:forEach>
-
-                        <li class="page_nation_item"><a
-                           href="?page=${pager.next}${pager.query}" class="page-link">다음</a></li>
-                        <li class="page_nation_item"><a
-                           href="?page=${pager.last}${pager.query}" class="page-link">마지막</a></li>
-                     </ol>
-                  </td>
-               </tr>
-            </tfoot>
-         </table>        
+         <div class="more">
+				<button type="button" id="more-btn">더보기</button>
+			</div>
+         <div>         
+	         <table border="1" class="table table-hover table_table" id="table_size">
+	            <thead>
+	               <tr class="table_menu_2">
+	                  <th>No</th>
+	                  <th>커뮤니티</th>
+	                  <th>작성일</th>
+	                  <th>조회수</th>
+	               </tr>
+	            </thead>
+	            <tbody>
+	               <c:if test="${myCommu.size() < 1}">
+	                  <tr>
+	                     <td colspan="5">등록 된 게시글이 없습니다.</td>
+	                  </tr>
+	               </c:if>
+	               <c:forEach var="item" items="${myCommu}">
+	                  <tr>
+	                     <td>${item.id}</td>
+	                     <td><a href="/commu/detail/${item.id}">${item.title}</a></td>
+	                     <td><fmt:formatDate value="${item.regDate}"
+	                           pattern="yyyy-MM-dd" /></td>
+	                     <td>${item.viewCnt}</td>
+	                  </tr>
+	               </c:forEach>
+	            </tbody>
+	         </table>
+	         <div class="more">
+				<button type="button" id="more-btn">더보기</button>
+			</div>     
          </div>                   
-   </div>
+   	</div>
          
          <div id="tab-3" class="tab-content">
              <table border="1"  class="table table-hover table_table " id="table_size">
-            <thead>
-               <tr class="table_menu_3">
-                  <th>No</th>
-                  <th>내용</th>
-                  <th>작성일</th>
-               </tr>
-            </thead>
-            <tbody>
-               <c:if test="${commuReply.size() < 1}">
-                  <tr>
-                     <td colspan="5">등록 된 댓글이 없습니다.</td>
-                  </tr>
-               </c:if>
-               <c:forEach var="item" items="${commuReply}">
-                  <tr>
-                     <td>${item.rnum}</td>
-                     <td><a href="commu/detail/${item.commuId}">${item.content}</a></td>
-                     <td><fmt:formatDate value="${item.regDate}"
-                           pattern="yyyy-MM-dd hh:mm" /></td>
-                  </tr>
-               </c:forEach>
-            </tbody>
-            <tfoot>
-               <tr>
-                  <td colspan="5">
-                     <ol class="pagination pagination-sm justify-content-center">                      
-                        <li class="page_nation_item"><a
-                           href="?page=1${pager.query}" class="page-link">처음</a></li>
-                        <li class="page_nation_item"><a
-                           href="?page=${pager.prev}${pager.query}" class="page-link">이전</a></li>
-
-                        <c:forEach var="page" items="${pager.list}">
-                           <li class="page_nation_item"><a
-                              href="?page=${page}${pager.query}"
-                              class="page-link ${page eq pager.page ? 'active' : ''}">${page}</a></li>
-                        </c:forEach>
-
-                        <li class="page_nation_item"><a
-                           href="?page=${pager.next}${pager.query}" class="page-link">다음</a></li>
-                        <li class="page_nation_item"><a
-                           href="?page=${pager.last}${pager.query}" class="page-link">마지막</a></li>
-                     </ol>
-                  </td>
-               </tr>
-            </tfoot>
-         </table>
-
-         </div>
+	            <thead>
+	               <tr class="table_menu_3">
+	                  <th>No</th>
+	                  <th>내용</th>
+	                  <th>작성일</th>
+	               </tr>
+	            </thead>
+	            <tbody>
+	               <c:if test="${commuReply.size() < 1}">
+	                  <tr>
+	                     <td colspan="5">등록 된 댓글이 없습니다.</td>
+	                  </tr>
+	               </c:if>
+	               <c:forEach var="item" items="${commuReply}">
+	                  <tr>
+	                     <td>${item.rnum}</td>
+	                     <td><a href="commu/detail/${item.commuId}">${item.content}</a></td>
+	                     <td><fmt:formatDate value="${item.regDate}"
+	                           pattern="yyyy-MM-dd hh:mm" /></td>
+	                  </tr>
+	               </c:forEach>
+	            </tbody>
+            
+         	</table>
+			<div class="more">
+				<button type="button" id="more-btn">더보기</button>
+			</div>
+        </div>
          
         <div id="tab-4" class="tab-content">
             <h3>일정을 정리해보세요!</h3>
@@ -452,6 +392,7 @@
       	</div>
       	<!-- 탭 메뉴 내용 끝 -->
    </div>
+  </div> 
 </body>
 <jsp:include page="../footer.jsp"></jsp:include>
 </html>

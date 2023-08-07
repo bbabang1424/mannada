@@ -1,6 +1,5 @@
 package kr.ac.kopo.mannada.controller;
 
-import java.util.HashMap;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -65,15 +64,15 @@ public class CommunityController {
 		
 		service.update(item);
 		
-		return "redirect:../list";
+		return "redirect:../detail/" + item.getId();
 	}
 	
 	@GetMapping("/delete/{id}")
-	public String delete(@PathVariable int id) {
+	public String delete(@PathVariable int id, Model model) {
 		
 		service.delete(id);
-		
-		return "redirect:../list";
+			
+		return "redirect:../list";	
 	}
 	
 	@GetMapping("/detail/{id}")

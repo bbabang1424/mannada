@@ -11,6 +11,7 @@
 <link rel="stylesheet"
 	href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
 
 <script type="text/javascript">
 
@@ -92,7 +93,9 @@
 			<!-- modify:수정하다란 뜻 -->
 			<c:if test="${sessionScope.user.num == item.num}">
 				<a href="../update/${id}"><button class="button_modify">수정</button></a>
+				<c:if test="${item.totalReply == 0}">
 				<a href="../delete/${id}"><button class="button_delete">삭제</button></a>
+				</c:if>
 			</c:if>
 			<a href="../list"><button class="button_back">목록</button></a>
 		</div>
@@ -104,13 +107,13 @@
 
 	<div class="content">
 	<!-- 커뮤 댓글 로그인 안됐을때 권한이 권한이 없다고 보이게 하고 싶음... -->
-		 <c:if test="${sessionScope.user == null}">
-		 <div class="replyFrom">
-		 <div class="text-board">
-			<div style="margin: 2%;">권한이 없습니다. 로그인해주세요!</div>
+		<c:if test="${sessionScope.user == null}">
+		<div class="replyFrom">
+			<div class="text-board">
+				<div style="margin: 2%;">권한이 없습니다. 로그인해주세요!</div>
 			</div>
-			</div>
-		 </c:if>
+		</div>
+		</c:if>
 		
 		<!-- 댓글 쓰기  -->
 		<c:if test="${sessionScope.user != null}">
@@ -129,7 +132,7 @@
 		</c:if>
 		<div class="reply_text">
 			<span class="all_reply">전체 댓글</span>
-			<div class="mow_many">${item.totalReply }</div>
+			<div class="mow_many">${item.totalReply}</div>
 		</div>
 		<!-- 댓글 목록 -->
 		<div class="reply-box">
