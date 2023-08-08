@@ -145,4 +145,5 @@ public class UserServiceImpl implements UserService {
 	public void kakaoSignup(User item) {
 		dao.kakaoSignup(item);
 	}
+
 }

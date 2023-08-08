@@ -38,10 +38,13 @@
 		<div>
 			<h3>회원관리</h3>
 			<p>* 상태가 회원탈퇴라면 1년후에 모든 정보와 회원정보를 삭제해주세요.</p>
+			<div>
+				<button id="delBtn" class="btn btn-dark btn-sm">회원삭제</button>
+			</div>
 		</div>
 		<div>
 			<form class="row mb-2">
-				<div class="col-2">
+				<div class="col-3">
 					<select class="form-select form-select-sm" name="search">
 						<option value="1">회원번호</option>
 						<option value="2">이메일</option>
@@ -50,14 +53,15 @@
 						<option value="5">탈퇴일자</option>
 					</select>
 				</div>
-				<div class="col-2">
+				<div class="col-4">
 					<input class="form-control form-control-sm keyword-all"
 						name="keyword" type="text">
 				</div>
 
-				<div class="col-1">
+				<div class="col-2">
 					<button id="searchBtn" class="btn btn-dark btn-sm">검색</button>
 				</div>
+				<div class="col-1"></div>
 			</form>
 		</div>
 		<div class="user-table">
@@ -70,7 +74,6 @@
 						<th>가입일</th>
 						<th>탈퇴일</th>
 						<th>상태</th>
-						<th>관리</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -89,10 +92,6 @@
 							<td><fmt:formatDate value="${item.delDate}"
 									pattern="yyyy-MM-dd" /></td>
 							<td>${item.status_}</td>
-							<td>
-								<%-- <a href="delete/${item.id}" class="btn btn-outline-danger btn-sm">삭제</a> 
-								<a href="update/${item.id}" class="btn btn-outline-warning btn-sm">변경</a> --%>
-							</td>
 						</tr>
 					</c:forEach>
 				</tbody>

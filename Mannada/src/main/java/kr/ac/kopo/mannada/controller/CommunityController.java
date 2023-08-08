@@ -68,7 +68,7 @@ public class CommunityController {
 	}
 	
 	@GetMapping("/delete/{id}")
-	public String delete(@PathVariable int id, Model model) {
+	public String delete(@PathVariable int id) {
 		
 		service.delete(id);
 			

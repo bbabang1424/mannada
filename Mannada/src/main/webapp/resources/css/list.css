@@ -48,8 +48,16 @@
     margin-top: 4%;
 }
 
-.col-1 button {
+.col-2 button {
     background: #0359d9;
+    border: none;
+    width: 75px;
+    height: 31px;
+}
+
+#delBtn {
+	float: right;
+   	background: crimson;
     border: none;
     width: 75px;
     height: 31px;
