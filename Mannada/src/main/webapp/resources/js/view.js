@@ -11,7 +11,7 @@ $(document).ready(function(){
 	})
 });
 
-// fullcalendar 관련 코드
+/* fullcalendar 관련 코드
 document.addEventListener('DOMContentLoaded', function() {
 	var calendarEl = document.getElementById('calendar');
 	var calendar = new FullCalendar.Calendar(calendarEl, {
@@ -61,4 +61,4 @@ document.addEventListener('DOMContentLoaded', function() {
 	  locale: 'ko' // 한국어 설정  
 	});
 	calendar.render();
-});
+}); */

@@ -194,7 +194,7 @@
             <li class="tab-link current" data-tab="tab-1">My Page</li>
             <li class="tab-link" data-tab="tab-2">작성 글</li>
             <li class="tab-link" data-tab="tab-3">작성 댓글</li>
-            <li class="tab-link" data-tab="tab-4">캘린더</li>
+            <!-- <li class="tab-link" data-tab="tab-4">캘린더</li> -->
          </ul>
          <!-- 탭 메뉴 상단 끝 -->
          
@@ -279,9 +279,6 @@
                      </c:forEach>
                   </tbody>         
             </table>
-            <div class="more">
-				<button type="button" id="more-btn">더보기</button>
-			</div>
             </div>
          </div>
       </div>
@@ -317,9 +314,7 @@
                </c:forEach>
             </tbody>
          </table>
-         <div class="more">
-				<button type="button" id="more-btn">더보기</button>
-			</div>
+
          <div>         
 	         <table border="1" class="table table-hover table_table" id="table_size">
 	            <thead>
@@ -346,10 +341,7 @@
 	                  </tr>
 	               </c:forEach>
 	            </tbody>
-	         </table>
-	         <div class="more">
-				<button type="button" id="more-btn">더보기</button>
-			</div>     
+	         </table>   
          </div>                   
    	</div>
          
@@ -379,17 +371,14 @@
 	            </tbody>
             
          	</table>
-			<div class="more">
-				<button type="button" id="more-btn">더보기</button>
-			</div>
         </div>
          
-        <div id="tab-4" class="tab-content">
+        <!-- <div id="tab-4" class="tab-content">
             <h3>일정을 정리해보세요!</h3>
             <div id="calendar">   
-               <!-- <img src="/resources/image/calendar.png" id="preview"> -->
+               <img src="/resources/image/calendar.png" id="preview">
          	</div>
-      	</div>
+      	</div> -->
       	<!-- 탭 메뉴 내용 끝 -->
    </div>
   </div> 
